@@ -28,12 +28,20 @@ Verify the project's Phase-A artifacts before doing anything else:
 
 | File / Directory | Required when | Reason |
 |---|---|---|
+| `<project_path>/deck_execution_lock.json` | Always | Frozen per-page layout, rhythm, body variant, and gate contract |
 | `<project_path>/spec_lock.md` | Always | Strategist's execution contract; Executor reads it per page |
 | `<project_path>/design_spec.md` | Always | Section IX page outline; Executor cross-references it |
 | `<project_path>/images/` | `spec_lock images` references any image | Images must exist for embedding |
 | `<project_path>/templates/` | `spec_lock page_layouts` / `page_charts` references any | Layout / chart SVGs needed for batch read |
 
 If any required artifact is missing → report which one(s) and stop. Do NOT auto-fall-back into Phase A; the user must either complete Phase A in the original session or explicitly restart.
+
+If `deck_execution_lock.json` exists but seems stale, validate it before page
+generation:
+
+```bash
+python scripts/deck_execution_lock.py <project_path>/deck_plan.json --validate <project_path>/deck_execution_lock.json --json
+```
 
 ---
 
@@ -48,7 +56,8 @@ Then jump to `### Step 6: Executor Phase` and run the documented pipeline:
 - Read references (executor-base + shared-standards + chosen style file + image-layout-spec + svg-image-embedding)
 - Design Parameter Confirmation
 - Pre-generation Batch Read (every layout / chart SVG referenced in `spec_lock`)
-- Per-page `spec_lock` re-read + sequential page generation
+- Per-page `deck_execution_lock.json` + `spec_lock.md` re-read and sequential
+  page generation
 - Quality Check Gate
 - Speaker notes generation
 - Step 7: Post-processing & Export (`total_md_split` → `finalize_svg` → `svg_to_pptx`)

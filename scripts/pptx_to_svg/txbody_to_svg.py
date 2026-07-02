@@ -152,8 +152,15 @@ def convert_txbody(
         cursor_y += para.space_before_px
         visible_lines = _clip_lines_to_bottom(para, lines, cursor_y, bottom_y)
         if visible_lines:
+            textbox_attrs = (
+                _textbox_roundtrip_attrs(xfrm, anchor)
+                if len(paragraphs) == 1 else None
+            )
             text_blocks.append(
-                _emit_paragraph(para, visible_lines, inner_x, inner_w, cursor_y)
+                _emit_paragraph(
+                    para, visible_lines, inner_x, inner_w, cursor_y,
+                    textbox_attrs=textbox_attrs,
+                )
             )
         cursor_y += height + para.space_after_px
         if cursor_y >= bottom_y:
@@ -456,22 +463,9 @@ def _build_run(
             pass
 
     # Color
-    fill = default_fill
-    fill_opacity = 1.0
-    color_source = None
-    for src in (rpr, end_rpr):
-        if src is None:
-            continue
-        solid = src.find("a:solidFill", NS)
-        if solid is not None:
-            color_source = solid
-            break
-    if color_source is not None:
-        color_elem = find_color_elem(color_source)
-        hex_, alpha = resolve_color(color_elem, palette)
-        if hex_:
-            fill = hex_
-            fill_opacity = alpha
+    fill, fill_opacity = _resolve_run_fill(
+        (rpr, end_rpr), palette, default_fill=default_fill,
+    )
 
     # Font typeface
     latin_face = _typeface(rpr, "latin") or _typeface(end_rpr, "latin")
@@ -497,6 +491,38 @@ def _build_run(
         strikethrough=strikethrough,
         letter_spacing_px=letter_spacing_px,
     )
+
+
+def _resolve_run_fill(
+    sources: tuple[ET.Element | None, ...],
+    palette: ColorPalette | None,
+    *,
+    default_fill: str,
+) -> tuple[str, float]:
+    """Resolve text fill from a:rPr/endParaRPr.
+
+    SVG can render gradient text, but the current text exporter only carries a
+    simple fill color per run. Preserve visual identity by degrading DrawingML
+    gradient text to its first resolved stop instead of falling back to black.
+    """
+    for src in sources:
+        if src is None:
+            continue
+        solid = src.find("a:solidFill", NS)
+        if solid is not None:
+            hex_, alpha = resolve_color(find_color_elem(solid), palette)
+            if hex_:
+                return hex_, alpha
+
+        grad = src.find("a:gradFill", NS)
+        if grad is None:
+            continue
+        for gs in grad.findall("a:gsLst/a:gs", NS):
+            hex_, alpha = resolve_color(find_color_elem(gs), palette)
+            if hex_:
+                return hex_, alpha
+
+    return default_fill, 1.0
 
 
 def _attr_chain(sources: tuple[ET.Element | None, ...], attr: str) -> str | None:
@@ -882,6 +908,8 @@ def _emit_paragraph(
     lines: list[list[TextRun]],
     inner_x: float, inner_w: float,
     top_y: float,
+    *,
+    textbox_attrs: dict[str, str] | None = None,
 ) -> str:
     """Render a paragraph (already split into lines) as one <text> element.
 
@@ -934,18 +962,24 @@ def _emit_paragraph(
                     f"<tspan{attrs}>{_xml_escape(run.text)}</tspan>"
                 )
 
-    base_attrs = _text_base_attrs(first_run, anchor_x, first_baseline, text_anchor)
+    base_attrs = _text_base_attrs(
+        first_run, anchor_x, first_baseline, text_anchor,
+        extra_attrs=textbox_attrs,
+    )
     return f"<text{base_attrs}>{''.join(spans)}</text>"
 
 
 def _text_base_attrs(run: TextRun | None, x: float, y: float,
-                     text_anchor: str) -> str:
+                     text_anchor: str,
+                     extra_attrs: dict[str, str] | None = None) -> str:
     parts = [
         f'x="{fmt_num(x)}"',
         f'y="{fmt_num(y)}"',
         f'text-anchor="{text_anchor}"',
         'xml:space="preserve"',
     ]
+    if extra_attrs:
+        parts.extend(f'{name}="{_xml_escape(value)}"' for name, value in extra_attrs.items())
     if run is None:
         return " " + " ".join(parts)
     parts.append(f'font-family="{run.font_family}"')
@@ -966,6 +1000,22 @@ def _text_base_attrs(run: TextRun | None, x: float, y: float,
     if run.letter_spacing_px:
         parts.append(f'letter-spacing="{fmt_num(run.letter_spacing_px)}"')
     return " " + " ".join(parts)
+
+
+def _textbox_roundtrip_attrs(xfrm: Xfrm, anchor: str) -> dict[str, str]:
+    valign = {
+        "ctr": "middle",
+        "b": "bottom",
+        "t": "top",
+    }.get(anchor, "top")
+    return {
+        "data-pptx-textbox": "true",
+        "data-pptx-box-x": fmt_num(xfrm.x),
+        "data-pptx-box-y": fmt_num(xfrm.y),
+        "data-pptx-box-w": fmt_num(xfrm.w),
+        "data-pptx-box-h": fmt_num(xfrm.h),
+        "data-pptx-valign": valign,
+    }
 
 
 def _run_tspan_attrs(run: TextRun) -> str:

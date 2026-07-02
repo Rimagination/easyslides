@@ -163,6 +163,10 @@ def convert_g(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     # translation here and apply pivot-centre compensation to ``a:off``
     # below instead.
     rotate_pivot = _extract_rotate_pivot(transform) if not matrix_supported else None
+    if rotate_pivot is not None:
+        rotate_match = _ROTATE_RE.search(transform)
+        if rotate_match:
+            angle_deg = float(rotate_match.group(1))
     if matrix_supported:
         child_ctx = ctx.child(
             0, 0, 1.0, 1.0,

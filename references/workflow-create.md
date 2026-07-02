@@ -111,6 +111,8 @@ Present the **Five Confirmations** to the user:
 After user confirms, output:
 - `deck_plan.json` — page-level story contract with `action_title`, `claim`,
   `evidence_sources`, `layout_id`, `rhythm`, and `speaker_note`
+- `deck_execution_lock.json` — compact execution lock generated from the
+  validated deck plan, body variant contracts, and template tokens
 - `design_spec.md` — full design specification (11 sections)
 - `spec_lock.md` — machine-readable companion with data lines only
 
@@ -120,11 +122,35 @@ Validate the deck plan before writing `spec_lock.md`:
 python scripts/deck_plan_contract.py <project_dir>/deck_plan.json --json
 ```
 
+Then write the execution lock:
+
+```bash
+python scripts/deck_execution_lock.py <project_dir>/deck_plan.json --write <project_dir>/deck_execution_lock.json --json
+```
+
 `deck_plan.json` is the bridge from academic reasoning to visual execution.
 Every page should carry a conclusion-style `action_title`, a concise `claim`,
 traceable `evidence_sources` pointing into `source_map`, the chosen `layout_id`,
 the page `rhythm`, and the `speaker_note` intent. `design_spec.md` may explain
 the deck in prose, but the page contract belongs here so QA can check it later.
+
+If the selected template provides `body_variants.json`, `layout_id` must point
+to a verified body variant or carry enough `content_shape` for
+`scripts/body_variant_adapter.py` to select one. Each checked slide must include
+`slot_payload` keyed exactly by that variant's declared slots. Treat
+`body_variant_contract`, `template_tokens`, `text_capacity`,
+`svg_quality_checker`, `preview_render`, `pptx_roundtrip`, and
+`validate_pptx_text_layout` as required gates; a failing `body_variant_status`
+means the plan is not ready for SVG generation and arbitrary SVG inside
+`CONTENT_AREA` is not allowed.
+
+`deck_execution_lock.json` is the Executor's drift guard. Re-read it before
+every page with `spec_lock.md`; if `layout_id`, `rhythm`, body variant id,
+declared slots, or required gates no longer match the deck plan, stop and run:
+
+```bash
+python scripts/deck_execution_lock.py <project_dir>/deck_plan.json --validate <project_dir>/deck_execution_lock.json --json
+```
 
 Run the Academic QA Gate after the deck plan is final enough to execute:
 
@@ -158,7 +184,7 @@ Generate SVG pages sequentially. Each page must be hand-written.
 
 ### Rules
 
-- Re-read `spec_lock.md` before EVERY page
+- Re-read `deck_execution_lock.json` and `spec_lock.md` before EVERY page
 - viewBox must match canvas (e.g., `0 0 1280 720`)
 - Use `<rect>` for backgrounds
 - Use `<tspan>` for text wrapping
@@ -235,11 +261,16 @@ source alone.
 python scripts/office/unpack.py <output.pptx> <tmp_unpacked>
 python scripts/office/pack.py <tmp_unpacked> <tmp_roundtrip.pptx> --original <output.pptx> --validate true
 python scripts/source_to_md/ppt_to_md.py <output.pptx> -o <project_dir>/reports/pptx_text_check.md
+python scripts/validate_pptx_text_layout.py <output.pptx> --report <project_dir>/reports/text_layout_report.json
 ```
 
 If speaker notes are enabled, verify that `ppt/notesMasters/notesMaster1.xml`
 exists, the presentation has a notes master relationship, and each noted slide
 has a matching notes slide. Broken notes relationships are blocking defects.
+
+Treat any blocking issue in `text_layout_report.json` as a repair task, not as
+an acceptable warning. Prefer shorter slide copy, lower-density body variants,
+or slide splitting before shrinking body text below the template floor.
 
 Render the exported PPTX itself to preview images. SVG previews and contact
 sheets are not enough: inspect full-size dense pages such as process steps,

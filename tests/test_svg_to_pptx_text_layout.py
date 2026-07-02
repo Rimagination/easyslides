@@ -49,6 +49,21 @@ class SvgToPptxTextLayoutTests(unittest.TestCase):
 
         self.assertIn('anchor="ctr"', slide_xml)
 
+    def test_flipped_tagged_textbox_exports_positive_extent(self):
+        svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<g transform="translate(150 100) scale(-1 1) translate(-150 -100)">
+  <text x="120" y="120" data-pptx-textbox="true" data-pptx-box-x="120" data-pptx-box-y="90" data-pptx-box-w="80" data-pptx-box-h="40" data-pptx-valign="middle" font-family="Arial, sans-serif" font-size="24" fill="#000000">01-</text>
+</g>
+</svg>"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "flipped_textbox.svg"
+            path.write_text(svg, encoding="utf-8")
+            slide_xml, _, _, _ = convert_svg_to_slide_shapes(path)
+
+        self.assertIn('flipH="1"', slide_xml)
+        self.assertNotIn('cx="-', slide_xml)
+        self.assertNotIn('cy="-', slide_xml)
+
 
 if __name__ == "__main__":
     unittest.main()

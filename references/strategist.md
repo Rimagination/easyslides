@@ -107,6 +107,29 @@ page number, section, figure id, table id, or user-provided asset path. Use
 feed `spec_lock.md` `page_layouts`; use `rhythm` to feed `spec_lock.md`
 `page_rhythm`.
 
+When the chosen template has `body_variants.json`, bind content pages to its
+verified body variants instead of inventing free layouts. Record
+`content_shape` and an exact `slot_payload` for the chosen variant. The
+`scripts/deck_plan_contract.py` report must show a passing `body_variant_status`;
+the underlying `scripts/body_variant_adapter.py` supplies the
+`body_variant_contract`, `template_tokens`, `text_capacity`,
+`svg_quality_checker`, `preview_render`, and `pptx_roundtrip` gates that
+Executor must preserve.
+
+After the deck plan passes validation, generate `deck_execution_lock.json`:
+
+```bash
+python scripts/deck_execution_lock.py <project_path>/deck_plan.json --write <project_path>/deck_execution_lock.json --json
+```
+
+The execution lock freezes the plan into per-page execution facts:
+`layout_id`, `rhythm`, body variant id, declared/provided slots, palette id,
+evidence references, and required gates. Executor must re-read
+`deck_execution_lock.json` with `spec_lock.md` before every page. If either
+file drifts from `deck_plan.json`, validate with
+`scripts/deck_execution_lock.py --validate` and fix the upstream contract before
+SVG generation.
+
 ### Academic QA Gate
 
 Before handing off to Executor, run the Academic QA Gate:

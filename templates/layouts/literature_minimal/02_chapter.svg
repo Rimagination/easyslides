@@ -15,14 +15,14 @@
   </g>
   <g id="chapter-number" data-slot="CHAPTER_NUM">
     <rect x="358" y="350" width="118" height="84" fill="none"/>
-    <text x="430" y="402" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="48" fill="#FFFFFF" font-weight="bold" data-pptx-textbox="true"><tspan>{{CHAPTER_NUM}}</tspan></text>
+    <text x="430" y="402" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="48" fill="#FFFFFF" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="345" data-pptx-box-y="351.6" data-pptx-box-w="170" data-pptx-box-h="74.4"><tspan>{{CHAPTER_NUM}}</tspan></text>
   </g>
   <g id="chapter-title" data-slot="CHAPTER_TITLE">
     <rect x="512" y="312" width="500" height="92" fill="none"/>
-    <text x="522" y="374" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="60" fill="#0E2841" font-weight="bold" data-pptx-textbox="true"><tspan>{{CHAPTER_TITLE}}</tspan></text>
+    <text x="522" y="374" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="60" fill="#0E2841" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="500" data-pptx-box-y="311" data-pptx-box-w="780" data-pptx-box-h="93"><tspan>{{CHAPTER_TITLE}}</tspan></text>
   </g>
   <g id="chapter-desc" data-slot="CHAPTER_DESC">
     <rect x="512" y="420" width="540" height="46" fill="none"/>
-    <text x="522" y="450" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#4B5563" data-pptx-textbox="true"><tspan>{{CHAPTER_DESC}}</tspan></text>
+    <text x="522" y="450" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#4B5563" data-pptx-textbox="true" data-pptx-box-x="522" data-pptx-box-y="420" data-pptx-box-w="704" data-pptx-box-h="46" data-pptx-valign="middle"><tspan>{{CHAPTER_DESC}}</tspan></text>
   </g>
 </svg>

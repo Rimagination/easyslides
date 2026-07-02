@@ -1,0 +1,206 @@
+{
+  "schema_version": "easyslides.ppt_master_page_recipes.v1",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "purpose": "Whole-page layout archetypes for PPT Master-compatible SVG execution. These recipes control page-level diversity; card recipes are nested inside assigned regions.",
+  "recipes": [
+    {
+      "recipe_id": "pm_overview_mosaic",
+      "name_zh": "总览马赛克",
+      "page_role": ["overview", "executive_summary", "chapter_summary"],
+      "selection": {
+        "content_shapes": ["parallel_points", "summary", "argument_map"],
+        "item_count_min": 3,
+        "item_count_max": 6,
+        "density": "medium",
+        "best_for": "One governing conclusion with 3-6 supporting cards.",
+        "avoid_when": "Each point needs paragraph-level evidence."
+      },
+      "layout_intent": "Use uneven card sizes and one highlighted synthesis band so the page does not become a flat grid.",
+      "regions": [
+        {"id": "header", "x": 64, "y": 42, "width": 760, "height": 72},
+        {"id": "lead", "x": 72, "y": 132, "width": 520, "height": 92},
+        {"id": "card_grid", "x": 72, "y": 245, "width": 1136, "height": 300},
+        {"id": "synthesis_band", "x": 72, "y": 584, "width": 1136, "height": 72}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 34, "min_font_size_px": 30, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": true, "overflow_action": "shorten_title_or_split_page"},
+        {"slot_id": "lead", "role": "body", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.25, "max_chars_per_line_zh": 24, "max_lines": 2, "required": true, "overflow_action": "compress_to_claim"},
+        {"slot_id": "card_title", "role": "card_title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.2, "max_chars_per_line_zh": 7, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_label"},
+        {"slot_id": "card_body", "role": "card_body", "font_size_px": 18, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 8, "max_lines": 2, "repeated": true, "required": true, "overflow_action": "split_card_or_rewrite"},
+        {"slot_id": "synthesis", "role": "takeaway", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.25, "max_chars_per_line_zh": 24, "max_lines": 2, "required": true, "overflow_action": "rewrite_as_short_takeaway"}
+      ]
+    },
+    {
+      "recipe_id": "pm_evidence_split",
+      "name_zh": "左证据右解释",
+      "page_role": ["evidence", "result", "case_study"],
+      "selection": {
+        "content_shapes": ["image_evidence", "figure_explanation", "result_interpretation"],
+        "item_count_min": 2,
+        "item_count_max": 4,
+        "density": "medium",
+        "best_for": "A source figure or image plus 2-4 explanation bullets.",
+        "avoid_when": "The figure must occupy a full page."
+      },
+      "layout_intent": "Give evidence visual dominance and use a separate explanation rail with numbered claims.",
+      "regions": [
+        {"id": "image_area", "x": 70, "y": 150, "width": 560, "height": 410},
+        {"id": "explanation_rail", "x": 685, "y": 150, "width": 525, "height": 410}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 32, "min_font_size_px": 28, "line_height": 1.2, "max_chars_per_line_zh": 22, "max_lines": 1, "required": true, "overflow_action": "shorten_title"},
+        {"slot_id": "image_caption", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.25, "max_chars_per_line_zh": 22, "max_lines": 2, "required": false, "overflow_action": "move_to_notes"},
+        {"slot_id": "claim_title", "role": "card_title", "font_size_px": 18, "min_font_size_px": 16, "line_height": 1.2, "max_chars_per_line_zh": 6, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_label"},
+        {"slot_id": "claim_body", "role": "body", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.25, "max_chars_per_line_zh": 18, "max_lines": 2, "repeated": true, "required": true, "overflow_action": "compress_or_split"}
+      ]
+    },
+    {
+      "recipe_id": "pm_causal_map",
+      "name_zh": "机制因果图",
+      "page_role": ["mechanism", "framework", "explanation"],
+      "selection": {
+        "content_shapes": ["causal_chain", "mechanism", "framework"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "medium",
+        "best_for": "A cause-process-response chain that must be read left to right.",
+        "avoid_when": "Nodes require long paragraphs or dense equations."
+      },
+      "layout_intent": "Use node cards, connectors, and one lower interpretation band. Each node is a compact claim, not a paragraph.",
+      "regions": [
+        {"id": "chain", "x": 86, "y": 228, "width": 1108, "height": 215},
+        {"id": "interpretation", "x": 86, "y": 500, "width": 1108, "height": 88}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 32, "min_font_size_px": 28, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": true, "overflow_action": "shorten_title"},
+        {"slot_id": "node_title", "role": "card_title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.2, "max_chars_per_line_zh": 5, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_label"},
+        {"slot_id": "node_body", "role": "card_body", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.25, "max_chars_per_line_zh": 6, "max_lines": 2, "repeated": true, "required": true, "overflow_action": "split_node_or_compress"},
+        {"slot_id": "interpretation", "role": "takeaway", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.25, "max_chars_per_line_zh": 26, "max_lines": 2, "required": false, "overflow_action": "rewrite_as_takeaway"}
+      ]
+    },
+    {
+      "recipe_id": "pm_metric_dashboard",
+      "name_zh": "指标仪表盘",
+      "page_role": ["result", "dashboard", "finance", "metric"],
+      "selection": {
+        "content_shapes": ["metrics", "kpi", "dashboard"],
+        "item_count_min": 2,
+        "item_count_max": 6,
+        "density": "high",
+        "best_for": "Several numbers plus short interpretations.",
+        "avoid_when": "The page needs a full chart with axes."
+      },
+      "layout_intent": "Use one dominant metric, smaller secondary metrics, and an explanation panel to avoid equal-weight cards.",
+      "regions": [
+        {"id": "dominant_metric", "x": 70, "y": 155, "width": 380, "height": 230},
+        {"id": "secondary_metrics", "x": 485, "y": 155, "width": 720, "height": 230},
+        {"id": "explanation", "x": 70, "y": 420, "width": 1135, "height": 155}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 32, "min_font_size_px": 28, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": true, "overflow_action": "shorten_title"},
+        {"slot_id": "metric", "role": "metric", "font_size_px": 46, "min_font_size_px": 36, "line_height": 1.0, "max_chars_per_line_zh": 7, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_number_label"},
+        {"slot_id": "metric_label", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.2, "max_chars_per_line_zh": 10, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_label"},
+        {"slot_id": "interpretation", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 24, "max_lines": 3, "required": true, "overflow_action": "compress_or_split"}
+      ]
+    },
+    {
+      "recipe_id": "pm_comparison_matrix",
+      "name_zh": "四象限比较",
+      "page_role": ["comparison", "decision", "classification"],
+      "selection": {
+        "content_shapes": ["matrix", "comparison", "quadrant"],
+        "item_count_min": 4,
+        "item_count_max": 4,
+        "density": "medium",
+        "best_for": "Four options or categories compared by two axes.",
+        "avoid_when": "More than four categories are required."
+      },
+      "layout_intent": "Use axis labels, quadrant cards, and color-coded decisions. The axes must remain visible.",
+      "regions": [
+        {"id": "matrix", "x": 120, "y": 190, "width": 1040, "height": 400}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 32, "min_font_size_px": 28, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": true, "overflow_action": "shorten_title"},
+        {"slot_id": "axis_x", "role": "caption", "font_size_px": 14, "min_font_size_px": 12, "line_height": 1.2, "max_chars_per_line_zh": 10, "max_lines": 1, "required": true, "overflow_action": "shorten_axis_label"},
+        {"slot_id": "axis_y", "role": "caption", "font_size_px": 14, "min_font_size_px": 12, "line_height": 1.2, "max_chars_per_line_zh": 10, "max_lines": 1, "required": true, "overflow_action": "shorten_axis_label"},
+        {"slot_id": "quadrant_title", "role": "card_title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.2, "max_chars_per_line_zh": 9, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_label"},
+        {"slot_id": "quadrant_body", "role": "card_body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 10, "max_lines": 2, "repeated": true, "required": true, "overflow_action": "compress_or_split"}
+      ]
+    },
+    {
+      "recipe_id": "pm_process_roadmap",
+      "name_zh": "路线流程图",
+      "page_role": ["method", "roadmap", "workflow"],
+      "selection": {
+        "content_shapes": ["sequence", "process", "roadmap"],
+        "item_count_min": 3,
+        "item_count_max": 6,
+        "density": "medium",
+        "best_for": "Method, experiment, or implementation stages.",
+        "avoid_when": "Stages have multiple nested substeps."
+      },
+      "layout_intent": "Use staggered stage blocks and connectors instead of same-size flat cards.",
+      "regions": [
+        {"id": "roadmap", "x": 80, "y": 210, "width": 1120, "height": 300},
+        {"id": "risk_or_output", "x": 120, "y": 545, "width": 1040, "height": 62}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 32, "min_font_size_px": 28, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": true, "overflow_action": "shorten_title"},
+        {"slot_id": "step", "role": "card_title", "font_size_px": 18, "min_font_size_px": 15, "line_height": 1.2, "max_chars_per_line_zh": 6, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_step"},
+        {"slot_id": "step_detail", "role": "card_body", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.25, "max_chars_per_line_zh": 12, "max_lines": 2, "repeated": true, "required": true, "overflow_action": "compress_detail"},
+        {"slot_id": "output", "role": "takeaway", "font_size_px": 18, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 28, "max_lines": 1, "required": false, "overflow_action": "move_to_notes"}
+      ]
+    },
+    {
+      "recipe_id": "pm_argument_stack",
+      "name_zh": "论证堆叠",
+      "page_role": ["argument", "background", "rationale"],
+      "selection": {
+        "content_shapes": ["argument", "claim_evidence_reasoning"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "medium",
+        "best_for": "Claim, evidence, reasoning, and implication hierarchy.",
+        "avoid_when": "All items have equal importance."
+      },
+      "layout_intent": "Use a dominant claim block plus stacked evidence rows so the argument has hierarchy.",
+      "regions": [
+        {"id": "claim_block", "x": 75, "y": 150, "width": 460, "height": 410},
+        {"id": "evidence_stack", "x": 585, "y": 150, "width": 625, "height": 410}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 32, "min_font_size_px": 28, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": true, "overflow_action": "shorten_title"},
+        {"slot_id": "claim", "role": "takeaway", "font_size_px": 24, "min_font_size_px": 20, "line_height": 1.25, "max_chars_per_line_zh": 14, "max_lines": 3, "required": true, "overflow_action": "rewrite_as_claim"},
+        {"slot_id": "evidence_title", "role": "card_title", "font_size_px": 18, "min_font_size_px": 16, "line_height": 1.2, "max_chars_per_line_zh": 8, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_label"},
+        {"slot_id": "evidence_body", "role": "body", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.25, "max_chars_per_line_zh": 24, "max_lines": 2, "repeated": true, "required": true, "overflow_action": "compress_evidence"}
+      ]
+    },
+    {
+      "recipe_id": "pm_takeaway_panel",
+      "name_zh": "结论建议面板",
+      "page_role": ["conclusion", "recommendation", "summary"],
+      "selection": {
+        "content_shapes": ["takeaways", "recommendations", "summary_list"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "low",
+        "best_for": "A final slide with several short conclusions or actions.",
+        "avoid_when": "The page needs to show evidence details."
+      },
+      "layout_intent": "Use numbered conclusion rows with generous whitespace and one final action band.",
+      "regions": [
+        {"id": "takeaway_rows", "x": 84, "y": 160, "width": 1090, "height": 410},
+        {"id": "action_band", "x": 260, "y": 610, "width": 760, "height": 46}
+      ],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 34, "min_font_size_px": 30, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": true, "overflow_action": "shorten_title"},
+        {"slot_id": "takeaway_title", "role": "card_title", "font_size_px": 21, "min_font_size_px": 18, "line_height": 1.2, "max_chars_per_line_zh": 14, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "shorten_takeaway"},
+        {"slot_id": "takeaway_body", "role": "body", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.25, "max_chars_per_line_zh": 28, "max_lines": 1, "repeated": true, "required": true, "overflow_action": "compress_body"},
+        {"slot_id": "action", "role": "takeaway", "font_size_px": 18, "min_font_size_px": 15, "line_height": 1.2, "max_chars_per_line_zh": 20, "max_lines": 1, "required": false, "overflow_action": "move_to_speaker_notes"}
+      ]
+    }
+  ]
+}

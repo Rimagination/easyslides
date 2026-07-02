@@ -39,11 +39,13 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 try:
-    from PIL import Image, ImageEnhance
+    from PIL import Image, ImageEnhance, ImageOps
 except ImportError:  # pragma: no cover - optional visual enhancement dependency
     Image = None
     ImageEnhance = None
+    ImageOps = None
 
+from .color_resolver import ColorPalette, resolve_color
 from .emu_units import NS, Xfrm, fmt_num
 from .ooxml_loader import OoxmlPackage, PartRef
 
@@ -71,6 +73,7 @@ def convert_blip_fill(
     media_subdir: str = "assets",
     embed_inline: bool = False,
     asset_name_map: dict[str, str] | None = None,
+    palette: ColorPalette | None = None,
 ) -> PictureResult:
     """Convert an <a:blipFill> element to SVG <image>.
 
@@ -102,8 +105,13 @@ def convert_blip_fill(
 
     filename = (asset_name_map or {}).get(target, pkg.media_filename(target))
     filename, img_bytes = _normalize_office_media(filename, img_bytes)
-    filename, img_bytes = _apply_blip_image_effects(filename, img_bytes, blip)
+    filename, img_bytes = _apply_blip_image_effects(filename, img_bytes, blip, palette)
     href = _build_href(filename, img_bytes, media_subdir, embed_inline)
+    opacity = _blip_opacity(blip)
+    opacity_attr = (
+        f' opacity="{fmt_num(opacity, 4)}"'
+        if opacity < 1.0 else ""
+    )
 
     # srcRect: l/t/r/b in 1/100000ths (so 50000 = 50%).
     src_rect = blip_fill_elem.find("a:srcRect", NS)
@@ -120,7 +128,7 @@ def convert_blip_fill(
         svg = (
             f'<image href="{href}" x="{fmt_num(xfrm.x)}" y="{fmt_num(xfrm.y)}" '
             f'width="{fmt_num(xfrm.w)}" height="{fmt_num(xfrm.h)}" '
-            f'preserveAspectRatio="none"/>'
+            f'preserveAspectRatio="none"{opacity_attr}/>'
         )
     else:
         # Crop expressed as a unit-rectangle viewBox on a nested <svg>.
@@ -130,7 +138,7 @@ def convert_blip_fill(
             f'width="{fmt_num(xfrm.w)}" height="{fmt_num(xfrm.h)}" '
             f'viewBox="{fmt_num(vb_l, 5)} {fmt_num(vb_t, 5)} '
             f'{fmt_num(vb_w, 5)} {fmt_num(vb_h, 5)}" '
-            f'preserveAspectRatio="none">'
+            f'preserveAspectRatio="none"{opacity_attr}>'
             f'<image href="{href}" x="0" y="0" width="1" height="1" '
             f'preserveAspectRatio="none"/>'
             f"</svg>"
@@ -151,6 +159,7 @@ def convert_picture(
     media_subdir: str = "assets",
     embed_inline: bool = False,
     asset_name_map: dict[str, str] | None = None,
+    palette: ColorPalette | None = None,
 ) -> PictureResult:
     """Translate <p:pic> to SVG <image> (or nested <svg>+<image> for cropping)."""
     blip_fill = pic_elem.find("p:blipFill", NS)
@@ -162,6 +171,7 @@ def convert_picture(
         media_subdir=media_subdir,
         embed_inline=embed_inline,
         asset_name_map=asset_name_map,
+        palette=palette,
     )
 
 
@@ -239,6 +249,7 @@ def _apply_blip_image_effects(
     filename: str,
     img_bytes: bytes,
     blip: ET.Element,
+    palette: ColorPalette | None = None,
 ) -> tuple[str, bytes]:
     """Bake supported DrawingML blip effects into extracted image bytes.
 
@@ -246,14 +257,12 @@ def _apply_blip_image_effects(
     downstream native PPTX converter cannot reliably map back to DrawingML.
     """
     lum = blip.find("a:lum", NS)
-    if lum is None:
+    bright = _signed_pct_attr(lum, "bright") if lum is not None else None
+    contrast = _signed_pct_attr(lum, "contrast") if lum is not None else None
+    duotone = _resolve_duotone_colors(blip.find("a:duotone", NS), palette)
+    if bright is None and contrast is None and duotone is None:
         return filename, img_bytes
-
-    bright = _signed_pct_attr(lum, "bright")
-    contrast = _signed_pct_attr(lum, "contrast")
-    if bright is None and contrast is None:
-        return filename, img_bytes
-    if Image is None or ImageEnhance is None:
+    if Image is None or ImageEnhance is None or ImageOps is None:
         return filename, img_bytes
 
     try:
@@ -265,16 +274,74 @@ def _apply_blip_image_effects(
             image = ImageEnhance.Brightness(image).enhance(max(0.0, 1.0 + bright))
         if contrast is not None:
             image = ImageEnhance.Contrast(image).enhance(max(0.0, 1.0 + contrast))
+        effect_parts = [f"lum:{bright}:{contrast}"]
+        if duotone is not None:
+            image = _apply_duotone(image, *duotone)
+            effect_parts.append(f"duotone:{duotone[0]}:{duotone[1]}")
 
         out = io.BytesIO()
         save_format = output_format or "PNG"
         save_kwargs = {"quality": 95} if save_format.upper() in {"JPEG", "JPG"} else {}
-        image.save(out, format=save_format, **save_kwargs)
-        effect_key = f"lum-{bright}-{contrast}".encode("ascii")
+        save_image = image
+        if save_format.upper() in {"JPEG", "JPG"} and image.mode == "RGBA":
+            save_image = image.convert("RGB")
+        save_image.save(out, format=save_format, **save_kwargs)
+        effect_key = "|".join(effect_parts).encode("utf-8")
         digest = hashlib.sha1(effect_key).hexdigest()[:8]
         return _effect_filename(filename, digest, save_format), out.getvalue()
     except Exception:
         return filename, img_bytes
+
+
+def _resolve_duotone_colors(
+    duotone: ET.Element | None,
+    palette: ColorPalette | None,
+) -> tuple[str, str] | None:
+    if duotone is None:
+        return None
+    colors: list[str] = []
+    for child in list(duotone):
+        if not isinstance(child.tag, str):
+            continue
+        hex_, _alpha = resolve_color(child, palette)
+        if hex_:
+            colors.append(hex_)
+        if len(colors) == 2:
+            return colors[0], colors[1]
+    return None
+
+
+def _apply_duotone(image: Image.Image, dark_hex: str, light_hex: str) -> Image.Image:
+    rgba = image.convert("RGBA")
+    gray = ImageOps.grayscale(rgba)
+    dark = _hex_to_rgb(dark_hex)
+    light = _hex_to_rgb(light_hex)
+    channels = [
+        gray.point(lambda v, d=d, l=l: int(round(d + (l - d) * (v / 255.0))))
+        for d, l in zip(dark, light)
+    ]
+    channels.append(rgba.getchannel("A"))
+    return Image.merge("RGBA", channels)
+
+
+def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
+    value = hex_color.lstrip("#")
+    return (
+        int(value[0:2], 16),
+        int(value[2:4], 16),
+        int(value[4:6], 16),
+    )
+
+
+def _blip_opacity(blip: ET.Element) -> float:
+    """Return the effective opacity from DrawingML blip alpha effects."""
+    alpha_fix = blip.find("a:alphaModFix", NS)
+    if alpha_fix is None:
+        return 1.0
+    try:
+        return max(0.0, min(1.0, float(alpha_fix.attrib.get("amt", "100000")) / 100000.0))
+    except ValueError:
+        return 1.0
 
 
 def _signed_pct_attr(elem: ET.Element, name: str) -> float | None:

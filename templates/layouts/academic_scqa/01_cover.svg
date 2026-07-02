@@ -7,7 +7,7 @@
     <path d="M1127 58 L1127 70 Q1146 80 1165 70 L1165 58" fill="none" stroke="#00A6D6" stroke-width="4" stroke-linecap="round"/>
     <path d="M1182 50 L1182 66" fill="none" stroke="#17A889" stroke-width="3" stroke-linecap="round"/>
     <circle cx="1182" cy="69" r="3" fill="#17A889"/>
-    <text x="1094" y="24" fill="#0046A5" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1">{{LOGO}}</text>
+    <text x="1094" y="24" fill="#0046A5" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1" data-pptx-textbox="true" data-pptx-box-x="1094" data-pptx-box-y="0" data-pptx-box-w="170" data-pptx-box-h="54">{{LOGO}}</text>
   </g>
   <rect x="0" y="172" width="1280" height="244" fill="#0046A5"/>
   <rect x="0" y="172" width="12" height="244" fill="#00A6D6"/>
@@ -15,9 +15,9 @@
   <text x="640" y="282" text-anchor="middle" fill="#F7FAFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="42" font-weight="700" data-slot="TITLE" data-pptx-textbox="true" data-pptx-box-x="150" data-pptx-box-y="220" data-pptx-box-w="980" data-pptx-box-h="78" data-pptx-valign="middle">{{TITLE}}</text>
   <text x="640" y="344" text-anchor="middle" fill="#E8F2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26" data-slot="SUBTITLE" data-pptx-textbox="true" data-pptx-box-x="180" data-pptx-box-y="312" data-pptx-box-w="920" data-pptx-box-h="48" data-pptx-valign="middle">{{SUBTITLE}}</text>
   <rect x="450" y="472" width="380" height="2" fill="#0046A5"/>
-  <text x="640" y="526" text-anchor="middle" fill="#475569" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-slot="PRESENTER">{{PRESENTER}}</text>
-  <text x="640" y="562" text-anchor="middle" fill="#475569" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-slot="AFFILIATION">{{AFFILIATION}}</text>
-  <text x="640" y="598" text-anchor="middle" fill="#64748B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="DATE">{{DATE}}</text>
-  <text x="640" y="672" text-anchor="middle" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" data-slot="FOOTER">{{FOOTER}}</text>
+  <text x="640" y="526" text-anchor="middle" fill="#475569" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-slot="PRESENTER" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="505" data-pptx-box-w="360" data-pptx-box-h="31">{{PRESENTER}}</text>
+  <text x="640" y="562" text-anchor="middle" fill="#475569" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-slot="AFFILIATION" data-pptx-textbox="true" data-pptx-box-x="380" data-pptx-box-y="541" data-pptx-box-w="520" data-pptx-box-h="31">{{AFFILIATION}}</text>
+  <text x="640" y="598" text-anchor="middle" fill="#64748B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="DATE" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="579.1" data-pptx-box-w="360" data-pptx-box-h="27.9">{{DATE}}</text>
+  <text x="640" y="672" text-anchor="middle" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" data-slot="FOOTER" data-pptx-textbox="true" data-pptx-box-x="380" data-pptx-box-y="658.35" data-pptx-box-w="520" data-pptx-box-h="20.15">{{FOOTER}}</text>
 </svg>
 

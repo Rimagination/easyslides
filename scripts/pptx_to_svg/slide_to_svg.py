@@ -304,6 +304,7 @@ def _convert_shape(node: ShapeNode, ctx: AssemblyContext, *, top_level: bool) ->
             media_subdir=ctx.media_subdir,
             embed_inline=ctx.embed_images,
             asset_name_map=ctx.asset_name_map,
+            palette=ctx.palette,
         )
         if blip_result.svg:
             blip_image = _clip_blip_image(blip_result.svg, geom, ctx)
@@ -521,6 +522,7 @@ def _convert_picture(node: ShapeNode, ctx: AssemblyContext, *, top_level: bool) 
         media_subdir=ctx.media_subdir,
         embed_inline=ctx.embed_images,
         asset_name_map=ctx.asset_name_map,
+        palette=ctx.palette,
     )
     if not result.svg:
         return ""
@@ -674,6 +676,7 @@ def _render_graphic_preview(node: ShapeNode, ctx: AssemblyContext) -> str:
         media_subdir=ctx.media_subdir,
         embed_inline=ctx.embed_images,
         asset_name_map=ctx.asset_name_map,
+        palette=ctx.palette,
     )
     if not result.svg:
         return ""
@@ -786,6 +789,7 @@ def _emit_background_image(
         media_subdir=ctx.media_subdir,
         embed_inline=ctx.embed_images,
         asset_name_map=ctx.asset_name_map,
+        palette=ctx.palette,
     )
     if result.media:
         ctx.media.update(result.media)

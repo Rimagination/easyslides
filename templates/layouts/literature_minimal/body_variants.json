@@ -1,0 +1,28 @@
+{
+  "schema_version": "easyslides.body_variants.v1",
+  "template_id": "literature_minimal",
+  "primary_variant": "flexible_content",
+  "content_area": {
+    "x": 54,
+    "y": 208,
+    "width": 1172,
+    "height": 452
+  },
+  "selection_policy": {
+    "default": "Use flexible_content for sparse paper-reading pages; choose result_with_figure when one source figure or table is the main exhibit."
+  },
+  "variants": [
+    {
+      "variant_id": "flexible_content",
+      "best_for": "Minimal literature-report content pages with one claim and concise body text.",
+      "layout": "Classic content shell with key-message bar and flexible body area.",
+      "slots": []
+    },
+    {
+      "variant_id": "result_with_figure",
+      "best_for": "Paper result, architecture, method, or table pages where one source figure is the main exhibit.",
+      "layout": "Main source exhibit plus editable explanation callouts inside the classic content area.",
+      "slots": []
+    }
+  ]
+}

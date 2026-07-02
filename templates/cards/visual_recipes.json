@@ -1,0 +1,212 @@
+{
+  "schema_version": "easyslides.card_visual_recipes.v1",
+  "source_basis": [
+    "D:/scansci/easyslides/卡片.pptx",
+    "outputs/cards_source_svg/svg-flat/slide_13.svg",
+    "outputs/cards_source_svg/svg-flat/slide_14.svg",
+    "outputs/cards_source_svg/svg-flat/slide_16.svg",
+    "outputs/cards_source_svg/svg-flat/slide_17.svg",
+    "outputs/cards_source_svg/svg-flat/slide_21.svg",
+    "outputs/cards_source_svg/svg-flat/slide_22.svg",
+    "D:/PPT skill/_research/easyppt_refs/hugohe3__ppt-master/examples"
+  ],
+  "default_canvas": {"width": 1280, "height": 720, "unit": "px"},
+  "authoring_rule": "Recipes produce one SVG <g> component. The LLM must hand-write SVG from the recipe and keep every child inside the declared box.",
+  "recipes": [
+    {
+      "recipe_id": "pm_section_header_strip",
+      "name_zh": "章节标题横条",
+      "source_slides": ["卡片.pptx slide 13"],
+      "selection": {
+        "content_shapes": ["section_header", "chapter_anchor", "short_title"],
+        "item_count_min": 1,
+        "item_count_max": 1,
+        "density": "low",
+        "best_for": "A compact chapter or subsection header with one subtitle."
+      },
+      "box": {"x": 60, "y": 140, "width": 540, "height": 80},
+      "layers": ["shadow_or_soft_panel", "left_accent_bar", "title", "subtitle", "right_marker"],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 24, "min_font_size_px": 20, "line_height": 1.15, "max_chars_per_line_zh": 12, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "subtitle", "role": "caption", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.15, "max_chars_per_line_zh": 24, "max_lines": 1, "required": false, "overflow_action": "move_to_notes"}
+      ],
+      "svg_skeleton": "<g id=\"card-section-header\"><rect x=\"60\" y=\"140\" width=\"540\" height=\"80\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"60\" y=\"140\" width=\"5\" height=\"80\" fill=\"#156082\"/><text x=\"88\" y=\"174\" font-size=\"24\" font-weight=\"700\">{{title}}</text><text x=\"88\" y=\"204\" font-size=\"16\" fill=\"#64748B\">{{subtitle}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_text_panel_with_header",
+      "name_zh": "标题带文本面板",
+      "source_slides": ["卡片.pptx slide 14", "卡片.pptx slide 18"],
+      "selection": {
+        "content_shapes": ["bullet_panel", "evidence_panel", "text_panel", "source_summary"],
+        "item_count_min": 2,
+        "item_count_max": 4,
+        "density": "medium",
+        "best_for": "A titled panel containing 2-4 labeled evidence bullets."
+      },
+      "box": {"x": 60, "y": 160, "width": 380, "height": 300},
+      "layers": ["base_panel", "header_band", "header_icon", "title", "divider", "item_label_detail_pairs"],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.15, "max_chars_per_line_zh": 12, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "label", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.2, "max_chars_per_line_zh": 14, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "detail", "role": "caption", "font_size_px": 14, "min_font_size_px": 12, "line_height": 1.2, "max_chars_per_line_zh": 22, "max_lines": 1, "required": false, "overflow_action": "move_to_notes"}
+      ],
+      "svg_skeleton": "<g id=\"card-text-panel\"><rect x=\"60\" y=\"160\" width=\"380\" height=\"300\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"60\" y=\"160\" width=\"380\" height=\"50\" rx=\"8\" fill=\"#156082\"/><text x=\"112\" y=\"193\" font-size=\"22\" font-weight=\"700\" fill=\"#FFFFFF\">{{title}}</text><line x1=\"84\" y1=\"226\" x2=\"416\" y2=\"226\" stroke=\"#E2E8F0\"/><text x=\"84\" y=\"260\" font-size=\"17\">• {{items[0].label}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_footer_note_bar",
+      "name_zh": "底部说明条",
+      "source_slides": ["卡片.pptx slide 15"],
+      "selection": {
+        "content_shapes": ["footnote", "source_note", "caveat"],
+        "item_count_min": 1,
+        "item_count_max": 1,
+        "density": "low",
+        "best_for": "One concise explanatory note or caveat at the bottom of a slide."
+      },
+      "box": {"x": 60, "y": 615, "width": 1120, "height": 50},
+      "layers": ["soft_bar", "icon_dot", "note_text"],
+      "slots": [
+        {"slot_id": "note", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.2, "max_chars_per_line_zh": 56, "max_lines": 1, "required": true, "overflow_action": "shorten_or_split"}
+      ],
+      "svg_skeleton": "<g id=\"card-footer-note\"><rect x=\"60\" y=\"615\" width=\"1120\" height=\"50\" rx=\"8\" fill=\"#F8FAFC\"/><circle cx=\"92\" cy=\"640\" r=\"10\" fill=\"#156082\"/><text x=\"124\" y=\"646\" font-size=\"15\">{{note}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_left_accent_info_panel",
+      "name_zh": "左强调信息面板",
+      "source_slides": ["卡片.pptx slide 16"],
+      "selection": {
+        "content_shapes": ["place_fact", "definition", "context_card", "profile_card"],
+        "item_count_min": 2,
+        "item_count_max": 5,
+        "density": "medium",
+        "best_for": "A fact panel with a strong left accent and short explanatory lines."
+      },
+      "box": {"x": 60, "y": 130, "width": 600, "height": 240},
+      "layers": ["base_panel", "left_color_bar", "small_icon", "title", "stacked_facts"],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.15, "max_chars_per_line_zh": 12, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "fact", "role": "body", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.2, "max_chars_per_line_zh": 28, "max_lines": 1, "required": true, "overflow_action": "reduce_items_or_split"}
+      ],
+      "svg_skeleton": "<g id=\"card-left-accent\"><rect x=\"60\" y=\"130\" width=\"600\" height=\"240\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"60\" y=\"130\" width=\"6\" height=\"240\" fill=\"#156082\"/><text x=\"108\" y=\"176\" font-size=\"22\" font-weight=\"700\">{{title}}</text><text x=\"88\" y=\"220\" font-size=\"16\">{{items[0].fact}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_flow_strip",
+      "name_zh": "横向流程条",
+      "source_slides": ["卡片.pptx slide 17"],
+      "selection": {
+        "content_shapes": ["sequence", "workflow", "causal_chain", "question_flow"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "medium",
+        "best_for": "A single horizontal sequence with 3-5 short stage labels."
+      },
+      "box": {"x": 80, "y": 310, "width": 1080, "height": 130},
+      "layers": ["wide_base", "left_number_band", "section_title", "step_pills", "arrow_connectors", "right_questions"],
+      "slots": [
+        {"slot_id": "marker", "role": "metric", "font_size_px": 30, "min_font_size_px": 24, "line_height": 1.0, "max_chars_per_line_zh": 2, "max_lines": 1, "required": false, "overflow_action": "shorten"},
+        {"slot_id": "title", "role": "title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.15, "max_chars_per_line_zh": 16, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "step", "role": "body", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.15, "max_chars_per_line_zh": 10, "max_lines": 1, "required": true, "overflow_action": "shorten_or_reduce_steps"}
+      ],
+      "svg_skeleton": "<g id=\"card-flow-strip\"><rect x=\"80\" y=\"310\" width=\"1080\" height=\"130\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"80\" y=\"310\" width=\"64\" height=\"130\" fill=\"#156082\"/><text x=\"112\" y=\"386\" text-anchor=\"middle\" font-size=\"30\" fill=\"#FFFFFF\">{{marker}}</text><text x=\"180\" y=\"356\" font-size=\"20\" font-weight=\"700\">{{title}}</text><rect x=\"180\" y=\"382\" width=\"150\" height=\"42\" rx=\"8\" fill=\"#F1F5F9\"/><text x=\"255\" y=\"408\" text-anchor=\"middle\" font-size=\"15\">{{items[0].step}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_numbered_takeaway_list",
+      "name_zh": "编号结论列表",
+      "source_slides": ["卡片.pptx slide 19"],
+      "selection": {
+        "content_shapes": ["takeaway_list", "three_conclusions", "numbered_points"],
+        "item_count_min": 2,
+        "item_count_max": 4,
+        "density": "medium",
+        "best_for": "A short list of numbered conclusions inside one wide panel."
+      },
+      "box": {"x": 180, "y": 320, "width": 880, "height": 180},
+      "layers": ["base_panel", "numbered_circles", "takeaway_text"],
+      "slots": [
+        {"slot_id": "takeaway", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.2, "max_chars_per_line_zh": 28, "max_lines": 1, "required": true, "overflow_action": "shorten_or_split"}
+      ],
+      "svg_skeleton": "<g id=\"card-numbered-list\"><rect x=\"180\" y=\"320\" width=\"880\" height=\"180\" rx=\"8\" fill=\"#FFFFFF\"/><circle cx=\"230\" cy=\"365\" r=\"18\" fill=\"#156082\"/><text x=\"230\" y=\"371\" text-anchor=\"middle\" fill=\"#FFFFFF\" font-size=\"15\">1</text><text x=\"270\" y=\"371\" font-size=\"17\">{{items[0].takeaway}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_compact_insight_card",
+      "name_zh": "紧凑洞察卡",
+      "source_slides": ["卡片.pptx slide 20"],
+      "selection": {
+        "content_shapes": ["insight_card", "compact_facts", "warning_card"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "medium",
+        "best_for": "A compact card with one heading and several short fact lines."
+      },
+      "box": {"x": 60, "y": 220, "width": 280, "height": 200},
+      "layers": ["base_card", "top_accent", "emoji_or_icon_heading", "fact_lines"],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 18, "min_font_size_px": 16, "line_height": 1.15, "max_chars_per_line_zh": 12, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "fact", "role": "body", "font_size_px": 14, "min_font_size_px": 12, "line_height": 1.18, "max_chars_per_line_zh": 14, "max_lines": 1, "required": true, "overflow_action": "reduce_items"}
+      ],
+      "svg_skeleton": "<g id=\"card-compact-insight\"><rect x=\"60\" y=\"220\" width=\"280\" height=\"200\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"60\" y=\"220\" width=\"280\" height=\"6\" fill=\"#F59E0B\"/><text x=\"84\" y=\"270\" font-size=\"18\" font-weight=\"700\">{{title}}</text><text x=\"84\" y=\"304\" font-size=\"14\">{{items[0].fact}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_two_metric_finance_card",
+      "name_zh": "双指标财务卡",
+      "source_slides": ["卡片.pptx slide 21"],
+      "selection": {
+        "content_shapes": ["two_metrics", "budget_summary", "finance_snapshot"],
+        "item_count_min": 2,
+        "item_count_max": 2,
+        "density": "medium",
+        "best_for": "A wide card comparing two financial or numeric metrics with a note."
+      },
+      "box": {"x": 60, "y": 100, "width": 590, "height": 280},
+      "layers": ["base_card", "top_accent", "title", "subtitle", "metric_tiles", "divider", "note"],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.15, "max_chars_per_line_zh": 18, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "label", "role": "caption", "font_size_px": 13, "min_font_size_px": 11, "line_height": 1.15, "max_chars_per_line_zh": 12, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "value", "role": "metric", "font_size_px": 30, "min_font_size_px": 24, "line_height": 1.0, "max_chars_per_line_zh": 8, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "note", "role": "body", "font_size_px": 14, "min_font_size_px": 12, "line_height": 1.18, "max_chars_per_line_zh": 28, "max_lines": 1, "required": false, "overflow_action": "move_to_notes"}
+      ],
+      "svg_skeleton": "<g id=\"card-two-metric\"><rect x=\"60\" y=\"100\" width=\"590\" height=\"280\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"60\" y=\"100\" width=\"590\" height=\"6\" fill=\"#156082\"/><text x=\"88\" y=\"146\" font-size=\"20\" font-weight=\"700\">{{title}}</text><rect x=\"90\" y=\"190\" width=\"250\" height=\"100\" rx=\"8\" fill=\"#F8FAFC\"/><text x=\"112\" y=\"226\" font-size=\"13\">{{items[0].label}}</text><text x=\"112\" y=\"266\" font-size=\"30\" font-weight=\"700\">{{items[0].value}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_progress_metric_card",
+      "name_zh": "进度指标卡",
+      "source_slides": ["卡片.pptx slide 22"],
+      "selection": {
+        "content_shapes": ["progress_metric", "budget_progress", "execution_rate"],
+        "item_count_min": 3,
+        "item_count_max": 3,
+        "density": "high",
+        "best_for": "Three values plus a progress bar and one summary line."
+      },
+      "box": {"x": 650, "y": 100, "width": 590, "height": 285},
+      "layers": ["base_card", "top_accent", "title", "three_value_row", "progress_label", "progress_track", "progress_fill", "note"],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.15, "max_chars_per_line_zh": 18, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "label", "role": "caption", "font_size_px": 13, "min_font_size_px": 11, "line_height": 1.15, "max_chars_per_line_zh": 8, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "value", "role": "metric", "font_size_px": 24, "min_font_size_px": 20, "line_height": 1.0, "max_chars_per_line_zh": 8, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "progress", "role": "metric", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.0, "max_chars_per_line_zh": 8, "max_lines": 1, "required": true, "overflow_action": "shorten"}
+      ],
+      "svg_skeleton": "<g id=\"card-progress-metric\"><rect x=\"650\" y=\"100\" width=\"590\" height=\"285\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"650\" y=\"100\" width=\"590\" height=\"6\" fill=\"#156082\"/><text x=\"678\" y=\"146\" font-size=\"20\" font-weight=\"700\">{{title}}</text><rect x=\"680\" y=\"304\" width=\"450\" height=\"18\" rx=\"9\" fill=\"#E2E8F0\"/><rect x=\"680\" y=\"304\" width=\"360\" height=\"18\" rx=\"9\" fill=\"#156082\"/><text x=\"1144\" y=\"320\" font-size=\"16\">{{progress}}</text></g>"
+    },
+    {
+      "recipe_id": "pm_image_evidence_card",
+      "name_zh": "图片证据卡",
+      "source_slides": ["卡片.pptx slide 1", "卡片.pptx slide 3", "卡片.pptx slide 5", "卡片.pptx slide 7"],
+      "selection": {
+        "content_shapes": ["image_evidence", "figure_card", "image_with_caption"],
+        "item_count_min": 1,
+        "item_count_max": 1,
+        "density": "medium",
+        "best_for": "A single source figure or image embedded inside a card frame."
+      },
+      "box": {"x": 160, "y": 130, "width": 480, "height": 470},
+      "layers": ["base_card", "title_band", "caption", "image_frame", "image"],
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.15, "max_chars_per_line_zh": 14, "max_lines": 1, "required": true, "overflow_action": "shorten"},
+        {"slot_id": "caption", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.2, "max_chars_per_line_zh": 28, "max_lines": 2, "required": false, "overflow_action": "move_to_notes"},
+        {"slot_id": "image_href", "role": "image", "font_size_px": 1, "min_font_size_px": 1, "line_height": 1, "max_chars_per_line_zh": 160, "max_lines": 1, "required": true, "overflow_action": "use_project_image"}
+      ],
+      "svg_skeleton": "<g id=\"card-image-evidence\"><rect x=\"160\" y=\"130\" width=\"480\" height=\"470\" rx=\"8\" fill=\"#FFFFFF\"/><rect x=\"240\" y=\"130\" width=\"260\" height=\"40\" rx=\"20\" fill=\"#156082\"/><text x=\"370\" y=\"156\" text-anchor=\"middle\" fill=\"#FFFFFF\" font-size=\"20\">{{title}}</text><image href=\"{{image_href}}\" x=\"190\" y=\"250\" width=\"420\" height=\"300\" preserveAspectRatio=\"xMidYMid meet\"/></g>"
+    }
+  ]
+}

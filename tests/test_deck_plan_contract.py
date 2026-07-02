@@ -89,6 +89,54 @@ class DeckPlanContractTests(unittest.TestCase):
         self.assertIn("DECK-PLAN-ACTION-TITLE", codes)
         self.assertIn("DECK-PLAN-SOURCE-REF", codes)
 
+    def test_template_body_variant_payload_contract_is_enforced(self):
+        from scripts.deck_plan_contract import validate_deck_plan
+
+        plan = valid_deck_plan()
+        plan["template_id"] = "defense_topnav"
+        plan["slides"] = [plan["slides"][1]]
+        plan["slides"][0]["page"] = "P01"
+        plan["slides"][0]["layout_id"] = "defense_topnav/three_card_summary"
+        plan["slides"][0]["slot_payload"] = {
+            "CARD_1_TITLE": "Need",
+            "CARD_1_BODY": "Readers need source-linked claims.",
+            "CARD_2_TITLE": "Method",
+            "CARD_2_BODY": "The deck plan selects a verified body variant.",
+            "CARD_3_TITLE": "Gate",
+            "CARD_3_BODY": "The slot payload is checked before rendering.",
+        }
+
+        report = validate_deck_plan(plan, repo_root=ROOT)
+
+        self.assertEqual(report["status"], "pass", report["issues"])
+        self.assertEqual(report["body_variant_status"], "pass")
+        self.assertEqual(report["body_variant_reports"][0]["variant_id"], "three_card_summary")
+        self.assertIn("template_tokens", report["body_variant_reports"][0]["required_gates"])
+
+    def test_template_body_variant_payload_contract_rejects_freeform_svg(self):
+        from scripts.deck_plan_contract import validate_deck_plan
+
+        plan = valid_deck_plan()
+        plan["template_id"] = "defense_topnav"
+        plan["slides"] = [plan["slides"][1]]
+        plan["slides"][0]["page"] = "P01"
+        plan["slides"][0]["layout_id"] = "defense_topnav/three_card_summary"
+        plan["slides"][0]["slot_payload"] = {
+            "CARD_1_TITLE": "Need",
+            "FREEFORM_SVG": "<rect />",
+        }
+
+        report = validate_deck_plan(plan, repo_root=ROOT)
+        codes = {item["code"] for item in report["issues"]}
+
+        self.assertEqual(report["status"], "fail")
+        self.assertEqual(report["body_variant_status"], "fail")
+        self.assertIn("DECK-PLAN-BODY-VARIANT", codes)
+        self.assertTrue(
+            any("FREEFORM_SVG" in item["message"] for item in report["issues"]),
+            report["issues"],
+        )
+
     def test_cli_validates_json_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             plan_path = Path(tmp) / "deck_plan.json"
@@ -117,6 +165,8 @@ class DeckPlanContractTests(unittest.TestCase):
         for text in (skill, workflow, strategist):
             self.assertIn("deck_plan.json", text)
             self.assertIn("scripts/deck_plan_contract.py", text)
+            self.assertIn("body_variant_contract", text)
+            self.assertIn("scripts/body_variant_adapter.py", text)
             self.assertIn("action_title", text)
             self.assertIn("evidence_sources", text)
 

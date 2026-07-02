@@ -115,9 +115,10 @@ def run_academic_qa(plan: dict[str, Any], *, repo_root: Path | str | None = None
 
     contract = validate_deck_plan(plan, repo_root=repo)
     for item in contract["issues"]:
+        code = "AQA-BODY-VARIANT" if item["code"] == "DECK-PLAN-BODY-VARIANT" else "AQA-CONTRACT"
         issues.append(
             issue(
-                "AQA-CONTRACT",
+                code,
                 "error",
                 f"{item['code']}: {item['message']}",
                 item.get("path"),
@@ -196,6 +197,7 @@ def run_academic_qa(plan: dict[str, Any], *, repo_root: Path | str | None = None
         "issues": issues,
         "slide_count": len(slides),
         "contract_status": contract["status"],
+        "body_variant_status": contract.get("body_variant_status", "skipped"),
     }
 
 
@@ -210,6 +212,7 @@ def _file_error(message: str, path: Path) -> dict[str, Any]:
         "issues": [item],
         "slide_count": 0,
         "contract_status": "fail",
+        "body_variant_status": "skipped",
     }
 
 

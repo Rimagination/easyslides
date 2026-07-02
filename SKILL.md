@@ -11,6 +11,16 @@ description: >
 
 > Generate and edit academic/research PPTX presentations with native editable DrawingML shapes.
 
+EasySlides is a **project-backed skill**. This file is the agent entrypoint and
+task router; real deck generation depends on the full repository: `scripts/`,
+`workflows/`, `templates/`, `references/`, tests, and local runtime
+dependencies. Installing only `SKILL.md` is enough for routing guidance, but
+not enough to generate or validate PPTX files.
+
+Read `ARCHITECTURE.md` for the layer model and capability paths. Read
+`INSTALL.md` for minimal skill, full local runtime, and developer installation
+modes.
+
 ## Core Capabilities
 
 1. **Create from scratch**: Source content → SVG pages → DrawingML shapes → editable PPTX
@@ -20,6 +30,9 @@ description: >
 5. **71 visualization templates**: Charts, infographics, diagrams, strategic frameworks, and tables
 6. **11,634 icons**: Six SVG icon families for consistent academic and business visuals, with `lucide` preferred for new generic icons and emoji replacement
 7. **Template Asset Bank**: Convert many real PPTX templates into exact-reuse slide modules for manual-template-substitution quality
+8. **PPT Master Page Recipe Library**: whole-page SVG layout archetypes with fixed regions, text slots, diversity rules, and strict SVG slot measurement
+9. **Card Component Library**: 13 fixed-size card styles plus PPT Master-style visual recipes with slot capacity contracts, agent selection rules, prompt skeletons, and PPTX preview export
+9. **PPT Master compatibility mode**: Strict serial Strategist/Executor workflow, hand-written SVG pages, native DrawingML export, rebuildable backups, and gate checks via `scripts/ppt_master_pipeline.py`
 
 ## Backend-Centered Architecture
 
@@ -69,6 +82,28 @@ upstream of the existing SVG/DrawingML backend.
 
 Use `workflows/html-jsx-authoring.md` when evaluating this path.
 
+### Path D: PPT Master Compatibility Mode
+
+When the user explicitly asks to reproduce PPT Master, use the PPT Master
+workflow, or prioritize PPT Master-style SVG execution, follow
+`workflows/ppt-master-compat.md`.
+
+This mode keeps EasySlides' local converter stack but mirrors PPT Master's
+operating contract:
+
+```
+Source -> project init -> Strategist design_spec/spec_lock -> optional images
+-> Executor hand-writes SVG pages sequentially -> svg_quality_checker
+-> validate_svg_text_slots -> notes/total.md -> ppt_master_pipeline export
+-> editable PPTX
+```
+
+The Executor must write SVG pages directly into `svg_output/`; do not create a
+batch script that generates all pages. Use `references/ppt-master-compat.md`
+for execution rules, `templates/page_layouts/ppt-master-page-recipes-manual.md`
+for whole-page layout selection, and `templates/cards/assembly-manual.md` for
+nested card selection.
+
 For a large library of PPTX templates, prefer the Template Asset Bank harness:
 
 ```
@@ -78,6 +113,31 @@ PPTX templates → pptx_template_import.py workspaces → template_asset_bank.js
 Use `workflows/template-asset-bank.md` and `scripts/template_asset_bank.py` when
 the goal is to mimic manual template substitution: fixed geometry, fixed
 decorative structure, and only text/image/chart data replaced.
+
+### Path E: Slide Image Reconstruction
+
+When the source of truth is a slide screenshot, exported slide PNG, or AI mockup
+image, use `workflows/slide-image-to-editable-pptx.md`. This is an upstream
+analysis and QA contract for the existing EasySlides backend: first classify
+every visible source-image element into Layer A visual assets, Layer B native
+structure, or Layer C editable text; then assemble through SVG/shape IR and
+DrawingML export.
+
+This path explicitly forbids full-slide screenshot backgrounds, baked text in
+image assets, and dirty rectangular crops. Validate the Phase 1 element
+inventory with `scripts/slide_image_inventory.py`, then validate the final deck
+with `scripts/validate_image_reconstruction_pptx.py` alongside the normal text
+layout and render-diff gates.
+
+Use `scripts/project_manager.py init <name> --kind slide_image_reconstruction`
+and `scripts/image_reconstruction_pipeline.py init/qa` as the standard project
+facade for this path. Default QA mode is `faithful-practical`: editable text,
+native structure, and split-asset safety are blocking gates, while
+source-vs-render pixel difference is measured and reported for inspection. Use
+`--mode pixel-strict` only when near-pixel source matching is required. Complex
+raster illustrations that become ugly as vectors should use
+`preserve_source_frame`; closed/circular source assets should use masked source
+assets with clipping checks.
 
 ---
 
@@ -236,6 +296,30 @@ figure/table ids, extracted images, datasets, or user-provided assets. The
 validated deck plan feeds `design_spec.md`, `spec_lock.md` `page_rhythm`, and
 later QA gates.
 
+After the deck plan passes, freeze the execution handoff as
+`deck_execution_lock.json`:
+
+```bash
+python scripts/deck_execution_lock.py <project_path>/deck_plan.json --write <project_path>/deck_execution_lock.json --json
+```
+
+The execution lock records the per-page `layout_id`, `rhythm`, evidence refs,
+body variant selection, declared slots, template palette, and required gates.
+Executor must re-read `deck_execution_lock.json` together with `spec_lock.md`
+before each page. If either file disagrees with the current deck plan, validate
+with `scripts/deck_execution_lock.py --validate` and fix the plan before SVG
+authoring.
+
+When the selected template has `body_variants.json`, every executable content
+slide must use a verified body variant in `layout_id`, provide `content_shape`,
+and fill `slot_payload` with exactly the slots declared by that variant. The
+`scripts/deck_plan_contract.py` report includes `body_variant_status` from
+`scripts/body_variant_adapter.py`; `body_variant_contract`, `template_tokens`,
+`text_capacity`, `svg_quality_checker`, `preview_render`, `pptx_roundtrip`, and
+`visual_measure_gate`
+are blocking gates before SVG authoring. Do not let Executor bypass this by
+writing arbitrary SVG inside `CONTENT_AREA`.
+
 When the selected template exposes a `LOGO` slot, resolve it from
 user-provided assets and source-material image folders before SVG generation.
 Prefer an actual institutional, laboratory, project, or paper-source logo. If
@@ -270,8 +354,8 @@ For academic content, present the **Five Confirmations** (blocking):
 | 4 | Style objective | Mode B (data clarity) or C (logical persuasion) |
 | 5 | Color scheme | Academic blue `#003366` + accent `#0066CC` |
 
-After user confirms, output `deck_plan.json`, `design_spec.md`, and
-`spec_lock.md`.
+After user confirms, output `deck_plan.json`, `deck_execution_lock.json`,
+`design_spec.md`, and `spec_lock.md`.
 
 ### Step 2: Template and Design Foundation
 
@@ -307,7 +391,8 @@ contract before validation and export.
 - Never use `rgba()`, `foreignObject`, `<mask>`, or `<script>`
 - Reference icons via `<use data-icon="library/icon-name"/>` (see `templates/icons/README.md`); for new generic icons and emoji replacement, prefer `lucide/*` and color it with the deck theme color
 - Reference charts from `templates/charts/` as SVG templates
-- Re-read `spec_lock.md` before every page to prevent drift
+- Re-read `deck_execution_lock.json` and `spec_lock.md` before every page to
+  prevent layout, body-variant, palette, and gate drift
 
 **SVG quality check**:
 ```bash
@@ -318,12 +403,15 @@ python scripts/svg_quality_checker.py <project_dir>
 
 ```bash
 # 1. Split speaker notes
+python scripts/validate_svg_text_slots.py <project_dir>/svg_output --strict-unboxed --report <project_dir>/reports/svg_text_slot_report.json
+
+# 2. Split speaker notes
 python scripts/total_md_split.py <project_dir>
 
-# 2. Finalize SVGs (embed icons, base64 images, flatten text)
+# 3. Finalize SVGs (embed icons, base64 images, flatten text)
 python scripts/finalize_svg.py <project_dir>
 
-# 3. Export to PPTX
+# 4. Export to PPTX
 python scripts/svg_to_pptx.py <project_dir>
 ```
 
@@ -338,6 +426,8 @@ delivery:
 python scripts/office/unpack.py <output.pptx> <tmp_unpacked>
 python scripts/office/pack.py <tmp_unpacked> <tmp_roundtrip.pptx> --original <output.pptx> --validate true
 python scripts/source_to_md/ppt_to_md.py <output.pptx> -o <project_dir>/reports/pptx_text_check.md
+python scripts/render_pptx_png.py <output.pptx> --out <project_dir>/reports/rendered_png --report <project_dir>/reports/rendered_png_report.json
+python scripts/visual_measure_gate.py --pptx <output.pptx> --report <project_dir>/reports/visual_measure_report.json
 ```
 
 If speaker notes are enabled, package validation must prove that
@@ -345,13 +435,23 @@ If speaker notes are enabled, package validation must prove that
 relationship, and the deck has the expected `notesSlide*.xml` files. Missing
 notes master relationships are blocking even if slide previews look fine.
 
+`visual_measure_gate.py` is the blocking exit gate. It aggregates template slot
+contracts, template geometry, PPTX text layout, and optional rendered-PNG diff
+reports into `visual_measure_report.json`; it invokes
+`scripts/validate_pptx_text_layout.py` and writes `text_layout_report.json` as
+the PPTX text subreport. Repair any `SLOT-CONTRACT-*`, `TEXT-OVERFLOW`,
+`TEXT-OVERLAP`, `TEXT-OFF-SLIDE`, `TEXT-FONT-TOO-SMALL`, protected-region
+overlap, or visual diff threshold issue before delivery. Fix by shortening
+copy, splitting slides, choosing a lower-density layout, preserving locked
+template geometry, or rasterizing complex styling before shrinking body text.
+
 Render the final PPTX itself, not just the source SVGs. Use LibreOffice/soffice
-to export PDF and Poppler or PyMuPDF to render page PNGs. If `soffice` or
-`pdftoppm` is missing from `PATH`, locate the executable explicitly or use the
-PyMuPDF fallback; do not skip visual QA. Inspect full-size previews for dense
-cards, process pages, tables, references, and any text that was ported from a
-larger template. Contact sheets are useful for rhythm only and can hide
-one-line overflow.
+to export PDF and Poppler or PyMuPDF to render page PNGs; the wrapper is
+`scripts/render_pptx_png.py`. If `soffice` or `pdftoppm` is missing from
+`PATH`, locate the executable explicitly or use the PyMuPDF fallback; do not
+skip visual QA. Inspect full-size previews for dense cards, process pages,
+tables, references, and any text that was ported from a larger template.
+Contact sheets are useful for rhythm only and can hide one-line overflow.
 
 ### Academic Page Layouts
 
@@ -474,6 +574,61 @@ templates. Common academic charts:
 | Timeline | `timeline.svg` | Process / milestones |
 
 To use a chart: read the SVG template, replace placeholder data with actual data, and embed in the slide SVG.
+
+### Card Component Library
+
+### PPT Master Page Recipe Library
+
+Use `templates/page_layouts/ppt_master_page_recipes.json` before selecting
+cards whenever the deck follows the PPT Master-compatible route. Page recipes
+are the main source of visual diversity: they define the whole-page archetype,
+regions, slot capacity, and required text measurement contract.
+
+Useful commands:
+
+```bash
+python scripts/page_recipe.py count
+python scripts/page_recipe.py query --content-shape causal_chain --item-count 4
+python scripts/page_recipe.py validate --recipe-id pm_causal_map --payload-file payload.json
+python scripts/page_recipe.py prompt --recipe-id pm_causal_map
+```
+
+After SVG authoring, run `scripts/validate_svg_text_slots.py` before export.
+Every meaningful text item longer than a tiny label should use
+`data-pptx-textbox="true"` and `data-pptx-box-x/y/w/h` with explicit `<tspan>`
+lines. If text does not fit, shorten, split, or choose a larger page recipe.
+
+### Card Component Library
+
+Use `templates/cards/card_library.json` when content should be assembled from
+fixed-size cards instead of freeform text boxes. Read
+`templates/cards/assembly-manual.md` before selecting cards. The library
+currently contains 13 card styles covering metrics, parallel points,
+comparisons, processes, evidence, method modules, literature notes, and
+callouts.
+
+For PPT Master-like cards, also read
+`templates/cards/visual-recipes-manual.md` and query
+`templates/cards/visual_recipes.json` through `scripts/card_recipe.py`. Visual
+recipes define fixed geometry, slot capacity, layered SVG skeletons, and a
+prompt contract the Executor can follow when hand-writing SVG pages.
+
+Useful commands:
+
+```bash
+python scripts/card_library.py count
+python scripts/card_library.py query --content-shape parallel_points --item-count 3
+python scripts/card_library.py validate --card-id three_card_summary --payload-file payload.json
+python scripts/card_library.py preview --output outputs/card_library_preview.pptx
+python scripts/card_recipe.py count
+python scripts/card_recipe.py query --content-shape sequence --item-count 3
+python scripts/card_recipe.py validate --recipe-id pm_flow_strip --payload-file payload.json
+python scripts/card_recipe.py prompt --recipe-id pm_flow_strip
+```
+
+Before rendering a card into PPTX, validate the payload. If a slot exceeds its
+declared capacity, shorten, split, or choose another card/body variant; do not
+expand the card or shrink text below the declared minimum.
 
 ---
 

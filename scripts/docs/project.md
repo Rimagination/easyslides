@@ -10,6 +10,7 @@ Main entry point for project setup and validation.
 
 ```bash
 python3 scripts/project_manager.py init <project_name> --format ppt169
+python3 scripts/project_manager.py init <project_name> --format ppt169 --kind slide_image_reconstruction
 python3 scripts/project_manager.py import-sources <project_path> <source1> [<source2> ...]
 python3 scripts/project_manager.py validate <project_path>
 python3 scripts/project_manager.py info <project_path>
@@ -36,9 +37,16 @@ Examples:
 
 ```bash
 python3 scripts/project_manager.py init my_presentation --format ppt169
+python3 scripts/project_manager.py init screenshot_rebuild --format ppt169 --kind slide_image_reconstruction
 python3 scripts/project_manager.py validate projects/my_presentation_ppt169_20251116
 python3 scripts/project_manager.py info projects/my_presentation_ppt169_20251116
 ```
+
+For slide screenshots or AI mockups, initialize with
+`--kind slide_image_reconstruction`, then run
+`scripts/image_reconstruction_pipeline.py init/qa`. This adds the natural
+handoff folders `analysis/`, `pages/page_001/assets/split/`, `pptx/`, and
+`reports/` without changing the normal deck project layout.
 
 ## `project_utils.py`
 

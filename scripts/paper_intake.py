@@ -26,6 +26,17 @@ except ModuleNotFoundError:  # pragma: no cover - supports direct script executi
 IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 HEADING_RE = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp"}
+DEFAULT_TEMPLATE_ID = "academic_scqa"
+ROLE_BODY_VARIANTS = {
+    "paper_identity": ("flexible_canvas", "text"),
+    "background_and_gap": ("intro_policy", "context"),
+    "research_question": ("key_finding", "key_finding"),
+    "method_or_model": ("research_method", "method"),
+    "key_results": ("key_finding", "figure"),
+    "contributions": ("flexible_canvas", "text"),
+    "references": ("flexible_canvas", "text"),
+    "limitations_and_outlook": ("flexible_canvas", "text"),
+}
 
 
 def _relative(path: Path, root: Path) -> str:
@@ -183,6 +194,9 @@ def _slide_for_role(index: int, role: str, paper: dict[str, str], figures: list[
         evidence_source = figures[0]["id"]
         locator = figures[0]["title"]
         kind = "figure"
+    elif role == "references":
+        locator = "references"
+        kind = "reference"
 
     action_title_by_role = {
         "paper_identity": f"{title} is ready for a traceable paper report",
@@ -191,6 +205,7 @@ def _slide_for_role(index: int, role: str, paper: dict[str, str], figures: list[
         "method_or_model": "The method slide should connect approach to evidence",
         "key_results": "Key results should be shown with source-linked figures",
         "contributions": "Contributions should separate proven claims from interpretation",
+        "references": "Source provenance remains visible for review and reuse",
         "limitations_and_outlook": "Limitations and outlook should stay tied to the source",
     }
     claim_by_role = {
@@ -200,10 +215,12 @@ def _slide_for_role(index: int, role: str, paper: dict[str, str], figures: list[
         "method_or_model": "The method or model should be summarized from source evidence.",
         "key_results": "The result section should use figure/table evidence rather than unsupported prose.",
         "contributions": "The contribution statement should be checked against the paper's own wording.",
+        "references": "References and source provenance are retained for traceability.",
         "limitations_and_outlook": "Limitations and outlook should preserve the paper's caveats.",
     }
 
-    return {
+    variant_id, content_shape = ROLE_BODY_VARIANTS.get(role, ("flexible_canvas", "text"))
+    slide = {
         "page": page,
         "role": role,
         "action_title": action_title_by_role.get(role, role.replace("_", " ").title()),
@@ -215,10 +232,69 @@ def _slide_for_role(index: int, role: str, paper: dict[str, str], figures: list[
                 "kind": kind,
             }
         ],
-        "layout_id": f"auto/{role}",
+        "layout_id": f"{DEFAULT_TEMPLATE_ID}/{variant_id}",
+        "content_shape": content_shape,
+        "slot_payload": _slot_payload_for_role(role, paper, figures),
         "rhythm": _rhythm_for_role(role),
         "speaker_note": f"Verify and explain the {role.replace('_', ' ')} using the linked source evidence.",
     }
+    return slide
+
+
+def _slot_payload_for_role(
+    role: str,
+    paper: dict[str, str],
+    figures: list[dict[str, str]],
+) -> dict[str, str]:
+    title = paper["title"]
+    first_figure = figures[0] if figures else None
+    figure_title = first_figure["title"] if first_figure else "Source figure"
+    figure_path = first_figure["path"] if first_figure else ""
+
+    if role == "background_and_gap":
+        return {
+            "BADGE_1_LABEL": "Situation",
+            "BADGE_1_HEADING": "Source context",
+            "BADGE_1_BULLETS": f"{title} provides the academic background and problem setting.",
+            "BADGE_2_LABEL": "Complication",
+            "BADGE_2_HEADING": "Gap to verify",
+            "BADGE_2_BULLETS": "Use the paper text to extract the unresolved gap before rendering.",
+            "SLOGAN": "Keep the background traceable to the source.",
+            "FOOTNOTE": "Draft payload; verify before visual execution.",
+        }
+    if role == "research_question":
+        return {
+            "FINDING_LABEL": "Question",
+            "FINDING": "The research question anchors the deck narrative.",
+            "CONTEXT": "Extract the exact question from the source paper before final rendering.",
+            "SOURCE": "paper:main",
+            "IMAGE": "",
+        }
+    if role == "method_or_model":
+        return {
+            "BLOCK_1_HEADING": "Approach",
+            "BLOCK_1_COPY": "Summarize the method from the paper's own terminology.",
+            "IMAGE_1": figure_path,
+            "BLOCK_2_HEADING": "Evidence link",
+            "BLOCK_2_COPY": "Tie each method claim to the declared source map.",
+            "IMAGE_2": "",
+        }
+    if role == "key_results":
+        return {
+            "FINDING_LABEL": "Result",
+            "FINDING": "Key results should be shown with source-linked evidence.",
+            "CONTEXT": f"Use {figure_title} as the primary exhibit." if first_figure else "Add figure or table evidence before rendering.",
+            "SOURCE": first_figure["id"] if first_figure else "paper:main",
+            "IMAGE": figure_path,
+        }
+
+    content_by_role = {
+        "paper_identity": f"The report is based on {title}; keep title, authors, venue, and source path visible.",
+        "contributions": "Separate proven contributions from interpretation, and keep every claim linked to source evidence.",
+        "references": "List the main paper and extracted figure/table sources used by the deck.",
+        "limitations_and_outlook": "Preserve the paper's caveats, limitations, and outlook without inventing stronger conclusions.",
+    }
+    return {"CONTENT_BODY": content_by_role.get(role, f"Plan {role.replace('_', ' ')} from source evidence.")}
 
 
 def _rhythm_for_role(role: str) -> str:
@@ -246,14 +322,19 @@ def build_paper_report_deck_plan(
     catalog = load_profiles(repo / "references" / "scenario_profiles.json")
     validate_profiles(catalog)
     profile = get_profile("single_paper_report", catalog)
+    roles = list(profile["default_story_spine"])
+    if "references" not in roles:
+        insert_at = roles.index("limitations_and_outlook") if "limitations_and_outlook" in roles else len(roles)
+        roles.insert(insert_at, "references")
     slides = [
         _slide_for_role(index, role, paper, figures)
-        for index, role in enumerate(profile["default_story_spine"], start=1)
+        for index, role in enumerate(roles, start=1)
     ]
 
     return {
         "schema_version": "easyslides.deck_plan.v1",
         "scenario_profile": "single_paper_report",
+        "template_id": DEFAULT_TEMPLATE_ID,
         "paper": {
             "title": paper["title"],
             "source_id": paper["id"],

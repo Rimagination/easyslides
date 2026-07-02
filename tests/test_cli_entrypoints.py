@@ -42,6 +42,49 @@ class CliEntrypointTests(unittest.TestCase):
         self.assertIn("SVG Quality Check Tool", result.stdout)
         self.assertNotIn("Unable to import dependency modules", result.stdout + result.stderr)
 
+    def test_ppt_master_pipeline_help_is_printable(self):
+        result = run_cli("scripts/ppt_master_pipeline.py", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("PPT Master-compatible workflow gates", result.stdout)
+
+    def test_render_pptx_png_help_is_printable(self):
+        result = run_cli("scripts/render_pptx_png.py", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Render a PPTX deck to per-slide PNG files", result.stdout)
+
+    def test_image_reconstruction_pipeline_help_is_printable(self):
+        result = run_cli("scripts/image_reconstruction_pipeline.py", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("slide-image-to-editable PPTX reconstruction", result.stdout)
+
+    def test_validate_svg_text_slots_help_is_printable(self):
+        result = run_cli("scripts/validate_svg_text_slots.py", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Validate SVG text against fixed PPTX text slots", result.stdout)
+
+    def test_page_recipe_help_is_printable(self):
+        result = run_cli("scripts/page_recipe.py", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("PPT Master whole-page layout recipes", result.stdout)
+
+    def test_page_recipe_preview_help_is_printable(self):
+        result = run_cli("scripts/page_recipe_preview.py", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Generate a PPT Master page recipe preview project", result.stdout)
+
+    def test_project_manager_setup_pdf_tools_can_run_check_without_installing(self):
+        result = run_cli("scripts/project_manager.py", "setup-pdf-tools", "--skip-python")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("mineru", result.stdout.lower())
+        self.assertIn("pdffigures2", result.stdout.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

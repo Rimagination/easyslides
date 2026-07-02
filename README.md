@@ -4,6 +4,14 @@
 
 ![Defense Palette Family](templates/layouts/assets/defense_palette_family_preview.svg)
 
+EasySlides is a **project-backed Codex skill**. `SKILL.md` is the agent
+entrypoint, but real PPTX generation, template reuse, slide-image
+reconstruction, and QA gates require the full repository.
+
+- Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
+- Installation: [INSTALL.md](INSTALL.md)
+- Skill entrypoint: [SKILL.md](SKILL.md)
+
 ---
 
 ## 中文
@@ -86,6 +94,11 @@ API Key 请放在环境变量或本地 `.env` 中，不要提交真实密钥。`
 
 EasySlides is a local PPTX generation toolchain for academic talks and research presentations. Its goal is to turn papers, reports, web pages, Markdown, and other source materials into structured, visually consistent, and PowerPoint-editable decks.
 
+It is a project-backed skill: installing only `SKILL.md` gives an agent the
+routing guide, while installing the full repository provides the runtime,
+templates, workflows, and QA gates required for actual PPTX generation. See
+[ARCHITECTURE.md](ARCHITECTURE.md) and [INSTALL.md](INSTALL.md).
+
 Core pipeline:
 
 ```text
@@ -104,7 +117,7 @@ source material -> project workspace -> deck plan -> SVG/layout templates -> edi
 ### Quick Start
 
 ```powershell
-python -m pip install -r requirements.txt
+python scripts/project_manager.py setup-pdf-tools --install
 python -m pytest -q
 ```
 
@@ -115,6 +128,17 @@ python scripts/project_manager.py init my_presentation --format ppt169
 python scripts/project_manager.py import-sources projects/my_presentation <source_files...> --copy
 python scripts/project_manager.py validate projects/my_presentation
 ```
+
+For paper-PPT workflows that require structured figures/tables, add
+`--require-structured-pdf` to `import-sources`. The strict scholarly extraction
+chain is `MinerU -> PDFFigures2 -> fail fast`; it does not silently fall back to
+plain PyMuPDF text extraction. `--require-mineru` is kept as a compatibility
+alias for the same strict mode. On first use, run
+`python scripts/project_manager.py setup-pdf-tools --install`; it installs
+Python requirements, checks MinerU token configuration, builds PDFFigures2, and
+writes `PDFFIGURES2_JAR` to local `.env`. Configure PDFFigures2 manually with
+`PDFFIGURES2_CMD` (a command template using `{pdf}` and `{out}`) or
+`PDFFIGURES2_JAR`.
 
 Export a PPTX after authoring SVG pages:
 

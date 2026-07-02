@@ -48,6 +48,7 @@ def write_sample_project(project: Path) -> None:
 
 class PaperIntakeTests(unittest.TestCase):
     def test_builds_single_paper_deck_plan_from_project_sources(self):
+        from scripts.academic_qa_gate import run_academic_qa
         from scripts.deck_plan_contract import validate_deck_plan
         from scripts.paper_intake import build_paper_report_deck_plan
 
@@ -57,15 +58,22 @@ class PaperIntakeTests(unittest.TestCase):
 
             plan = build_paper_report_deck_plan(project, repo_root=ROOT)
             report = validate_deck_plan(plan, repo_root=ROOT)
+            qa = run_academic_qa(plan, repo_root=ROOT)
 
         self.assertEqual(plan["schema_version"], "easyslides.deck_plan.v1")
         self.assertEqual(plan["scenario_profile"], "single_paper_report")
+        self.assertEqual(plan["template_id"], "academic_scqa")
         self.assertEqual(report["status"], "pass", report["issues"])
+        self.assertEqual(report["body_variant_status"], "pass")
+        self.assertEqual(qa["status"], "pass", qa["issues"])
         self.assertEqual(plan["paper"]["title"], "Evidence-First Slide Generation")
         source_ids = {item["id"] for item in plan["source_map"]}
         self.assertIn("paper:main", source_ids)
         self.assertIn("fig:1", source_ids)
+        self.assertTrue(all("slot_payload" in slide for slide in plan["slides"]))
+        self.assertTrue(all("content_shape" in slide for slide in plan["slides"]))
         self.assertTrue(any(slide["role"] == "key_results" for slide in plan["slides"]))
+        self.assertTrue(any(slide["role"] == "references" for slide in plan["slides"]))
         self.assertTrue(
             any(
                 evidence["source_id"] == "fig:1"

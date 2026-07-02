@@ -4,7 +4,11 @@
   "style_system": "academic_blue_cyan_teal_scqa_report",
   "replication_mode": "classic",
   "distillation_model": "five_shells_plus_scqa_body_variants",
-  "canvas": {"width": 1280, "height": 720, "format": "ppt169"},
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "format": "ppt169"
+  },
   "source": {
     "repo": "academic_report_html_slot_templates",
     "source_surface": "12 HTML templates with data-slot manifest"
@@ -14,47 +18,114 @@
       "layout_id": "A02-S01",
       "page_id": "cover",
       "svg_path": "templates/layouts/academic_scqa/01_cover.svg",
-      "role_fit": ["cover"],
-      "slots": ["LOGO", "TITLE", "SUBTITLE", "PRESENTER", "AFFILIATION", "DATE", "FOOTER"]
+      "role_fit": [
+        "cover"
+      ],
+      "slots": [
+        "LOGO",
+        "TITLE",
+        "SUBTITLE",
+        "PRESENTER",
+        "AFFILIATION",
+        "DATE",
+        "FOOTER"
+      ]
     },
     {
       "layout_id": "A02-S02",
       "page_id": "toc",
       "svg_path": "templates/layouts/academic_scqa/02_toc.svg",
-      "role_fit": ["agenda", "SCQA_overview"],
-      "slots": ["LOGO", "TOC_TITLE", "TOC_INTRO", "TOC_ITEM_1_TITLE", "TOC_ITEM_2_TITLE", "TOC_ITEM_3_TITLE", "TOC_ITEM_4_TITLE", "TOC_ITEM_5_TITLE"]
+      "role_fit": [
+        "agenda",
+        "SCQA_overview"
+      ],
+      "slots": [
+        "LOGO",
+        "TOC_TITLE",
+        "TOC_INTRO",
+        "TOC_ITEM_1_TITLE",
+        "TOC_ITEM_2_TITLE",
+        "TOC_ITEM_3_TITLE",
+        "TOC_ITEM_4_TITLE",
+        "TOC_ITEM_5_TITLE"
+      ]
     },
     {
       "layout_id": "A02-S03",
       "page_id": "chapter",
       "svg_path": "templates/layouts/academic_scqa/02_chapter.svg",
-      "role_fit": ["section_open", "SCQA_phase_open"],
-      "slots": ["LOGO", "CHAPTER_NUM", "CHAPTER_TITLE", "CHAPTER_DESC", "SECTION_STATEMENT", "SCQA_LABEL"]
+      "role_fit": [
+        "section_open",
+        "SCQA_phase_open"
+      ],
+      "slots": [
+        "LOGO",
+        "CHAPTER_NUM",
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC",
+        "SECTION_STATEMENT",
+        "SCQA_LABEL"
+      ]
     },
     {
       "layout_id": "A02-S04",
       "page_id": "content",
       "svg_path": "templates/layouts/academic_scqa/03_content.svg",
-      "role_fit": ["background_context", "problem_analysis", "research_question", "method", "evidence", "comparison", "data", "finding"],
-      "slots": ["LOGO", "PAGE_TITLE", "KEY_MESSAGE", "SECTION_NAME", "CONTENT_AREA", "CONTENT_BODY", "SOURCE", "PAGE_NUM"],
+      "role_fit": [
+        "background_context",
+        "problem_analysis",
+        "research_question",
+        "method",
+        "evidence",
+        "comparison",
+        "data",
+        "finding"
+      ],
+      "slots": [
+        "LOGO",
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "SECTION_NAME",
+        "CONTENT_AREA",
+        "CONTENT_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
       "body_variants": "body_variants.json"
     },
     {
       "layout_id": "A02-S05",
       "page_id": "ending",
       "svg_path": "templates/layouts/academic_scqa/04_ending.svg",
-      "role_fit": ["closing"],
-      "slots": ["LOGO", "THANK_YOU", "ENDING_SUBTITLE", "PRESENTER", "CONTACT_INFO", "FOOTER"]
+      "role_fit": [
+        "closing"
+      ],
+      "slots": [
+        "LOGO",
+        "THANK_YOU",
+        "ENDING_SUBTITLE",
+        "PRESENTER",
+        "CONTACT_INFO",
+        "FOOTER"
+      ]
     }
   ],
   "logo_policy": {
     "slot": "LOGO",
     "slot_type": "image",
-    "source_priority": ["user-provided materials"],
+    "source_priority": [
+      "user-provided materials"
+    ],
     "fallback": "degree-cap icon",
     "replacement_rule": "When a real logo is found, replace the full LOGO group or hide the fallback drawing."
   },
-  "default_sections": ["Situation", "Complication", "Question", "Answer", "Discussion"],
+  "default_sections": [
+    "Situation",
+    "Complication",
+    "Question",
+    "Answer",
+    "Discussion"
+  ],
   "global_rules": [
     "Keep the five shell SVG files as the stable template surface.",
     "Select a body variant from body_variants.json for every content slide.",
@@ -62,6 +133,343 @@
     "Resolve LOGO from user-provided materials first; keep the degree-cap icon fallback when no suitable logo is available.",
     "Keep generated content inside CONTENT_AREA and split slides before shrinking text below readable size.",
     "Keep PAGE_TITLE short and KEY_MESSAGE as the conclusion sentence; do not duplicate wording."
-  ]
+  ],
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "compress_text_to_capacity",
+      "choose_lower_density_layout",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ],
+    "allowed_overflow_actions": [
+      "split",
+      "truncate"
+    ],
+    "role_defaults": {
+      "logo": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "cover_title": {
+        "default_font_size_px": 56,
+        "min_font_size_px": 42,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "title": {
+        "default_font_size_px": 36,
+        "min_font_size_px": 26,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 20,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "subtitle": {
+        "default_font_size_px": 28,
+        "min_font_size_px": 20,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "metadata": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "toc_desc": {
+        "default_font_size_px": 17,
+        "min_font_size_px": 13,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "overflow_action": "truncate",
+        "max_lines": 2
+      },
+      "chapter_number": {
+        "default_font_size_px": 48,
+        "min_font_size_px": 36,
+        "line_height": 1.1,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "chapter_title": {
+        "default_font_size_px": 56,
+        "min_font_size_px": 36,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_desc": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "page_title": {
+        "default_font_size_px": 30,
+        "min_font_size_px": 22,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 20,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "section_label": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 10,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "key_message": {
+        "default_font_size_px": 21,
+        "min_font_size_px": 16,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 34,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 16,
+        "line_height": 1.28,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 12
+      },
+      "source": {
+        "default_font_size_px": 14,
+        "min_font_size_px": 10,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 42,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "closing_title": {
+        "default_font_size_px": 64,
+        "min_font_size_px": 42,
+        "line_height": 1.1,
+        "max_chars_per_line_zh": 10,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "contact": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      }
+    }
+  },
+  "slot_models": {
+    "cover": [
+      {
+        "slot_id": "LOGO",
+        "role": "logo",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "TITLE",
+        "role": "cover_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SUBTITLE",
+        "role": "subtitle",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "AFFILIATION",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "DATE",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "FOOTER",
+        "role": "source",
+        "max_lines": 1
+      }
+    ],
+    "toc": [
+      {
+        "slot_id": "TOC_TITLE",
+        "role": "title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "TOC_INTRO",
+        "role": "subtitle",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "LOGO",
+        "role": "logo",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "TOC_ITEM_1_TITLE",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "TOC_ITEM_2_TITLE",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "TOC_ITEM_3_TITLE",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "TOC_ITEM_4_TITLE",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "TOC_ITEM_5_TITLE",
+        "role": "toc_item",
+        "max_lines": 2
+      }
+    ],
+    "chapter": [
+      {
+        "slot_id": "CHAPTER_NUM",
+        "role": "chapter_number",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "SCQA_LABEL",
+        "role": "section_label",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "CHAPTER_TITLE",
+        "role": "chapter_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "CHAPTER_DESC",
+        "role": "chapter_desc",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SECTION_STATEMENT",
+        "role": "key_message",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "LOGO",
+        "role": "logo",
+        "max_lines": 1
+      }
+    ],
+    "content": [
+      {
+        "slot_id": "PAGE_TITLE",
+        "role": "page_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "LOGO",
+        "role": "logo",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "KEY_MESSAGE",
+        "role": "key_message",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "CONTENT_AREA",
+        "role": "body",
+        "max_lines": 12
+      },
+      {
+        "slot_id": "CONTENT_BODY",
+        "role": "body",
+        "max_lines": 12
+      },
+      {
+        "slot_id": "SOURCE",
+        "role": "source",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "SECTION_NAME",
+        "role": "source",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "PAGE_NUM",
+        "role": "page_number",
+        "fixed_geometry": true
+      }
+    ],
+    "ending": [
+      {
+        "slot_id": "LOGO",
+        "role": "logo",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "THANK_YOU",
+        "role": "closing_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "ENDING_SUBTITLE",
+        "role": "subtitle",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "CONTACT_INFO",
+        "role": "contact",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "FOOTER",
+        "role": "source",
+        "max_lines": 1
+      }
+    ]
+  }
 }
-

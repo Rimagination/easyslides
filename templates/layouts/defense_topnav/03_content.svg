@@ -7,7 +7,7 @@
     <path id="nav-logo-mark" d="M56.6 31 L83 42 L56.6 53 L30.2 42 Z M40 50 L56.6 57 L73.2 50 L73.2 66 C62.8 72 50.4 72 40 66 Z" fill="#183A6A"/>
     <rect id="nav-active-tab" data-active-index="1" x="112.4" y="0" width="205.85" height="101.15" fill="#FFFFFF"/>
     <g id="nav-items" text-anchor="middle" font-family="Microsoft YaHei, Source Han Sans CN, Arial, sans-serif">
-      <text id="nav-active-label" x="215.33" y="50.1" font-size="24" font-weight="bold" fill="#183A6A" data-slot="ACTIVE_SECTION_LABEL" data-slot-token="{{ACTIVE_SECTION_LABEL}}">{{ACTIVE_SECTION_LABEL}}</text>
+      <text id="nav-active-label" x="215.33" y="50.1" font-size="24" font-weight="bold" fill="#183A6A" data-slot="ACTIVE_SECTION_LABEL" data-slot-token="{{ACTIVE_SECTION_LABEL}}" data-pptx-textbox="true" data-pptx-box-x="215.33" data-pptx-box-y="24.9" data-pptx-box-w="520" data-pptx-box-h="37.2">{{ACTIVE_SECTION_LABEL}}</text>
       <text id="nav-active-subtitle" x="215.33" y="69.57" font-size="12" fill="#183A6A">Background and Current Situation</text>
       <text id="nav-label-2" x="426.57" y="50.1" font-size="24" font-weight="bold" fill="#FFFFFF">研究目标和内容</text>
       <text id="nav-subtitle-2" x="426.57" y="69.57" font-size="12" fill="#FFFFFF" fill-opacity="0.4">Goals and Content</text>
@@ -31,6 +31,6 @@
     <text x="86" y="238" text-anchor="start" xml:space="preserve" font-size="22" fill="#000000" data-slot="CONTENT_BODY" data-pptx-textbox="true" data-pptx-box-x="86" data-pptx-box-y="212" data-pptx-box-w="1114" data-pptx-box-h="438">{{CONTENT_BODY}}</text>
   </g>
   <g id="page-footer" font-family="Microsoft YaHei, Source Han Sans CN, Arial, sans-serif">
-    <text x="1168" y="688" text-anchor="middle" font-size="18" font-weight="bold" fill="#183A6A" data-slot="PAGE_NUM">{{PAGE_NUM}}</text>
+    <text x="1168" y="688" text-anchor="middle" font-size="18" font-weight="bold" fill="#183A6A" data-slot="PAGE_NUM" data-pptx-textbox="true" data-pptx-box-x="1123" data-pptx-box-y="669.1" data-pptx-box-w="90" data-pptx-box-h="27.9">{{PAGE_NUM}}</text>
   </g>
 </svg>

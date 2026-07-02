@@ -13,17 +13,17 @@
   <g id="ending-meta" font-family="Microsoft YaHei, Source Han Sans CN, Arial, sans-serif" font-size="24" font-weight="bold" fill="#000000">
     <g transform="translate(320 0)">
       <path d="M -18 608 L 0 600 L 18 608 L 0 616 Z M -10 616 L 0 620 L 10 616 L 10 628 C 4 632 -4 632 -10 628 Z" fill="#183A6A"/>
-      <text x="0" y="660" text-anchor="middle" data-slot="PRESENTER"><tspan>答辩人：</tspan><tspan>{{PRESENTER}}</tspan></text>
+      <text x="0" y="660" text-anchor="middle" data-slot="PRESENTER" data-pptx-textbox="true" data-pptx-box-x="0" data-pptx-box-y="641.1" data-pptx-box-w="360" data-pptx-box-h="27.9"><tspan>答辩人：</tspan><tspan>{{PRESENTER}}</tspan></text>
     </g>
     <g transform="translate(640 0)">
       <circle cx="0" cy="608" r="9" fill="#183A6A"/>
       <path d="M -20 634 C -16 622 -8 617 0 617 C 8 617 16 622 20 634 Z" fill="#183A6A"/>
-      <text x="0" y="660" text-anchor="middle" data-slot="ADVISOR"><tspan>导师：</tspan><tspan>{{ADVISOR}}</tspan></text>
+      <text x="0" y="660" text-anchor="middle" data-slot="ADVISOR" data-pptx-textbox="true" data-pptx-box-x="0" data-pptx-box-y="641.1" data-pptx-box-w="360" data-pptx-box-h="27.9"><tspan>导师：</tspan><tspan>{{ADVISOR}}</tspan></text>
     </g>
     <g transform="translate(960 0)">
       <rect x="-18" y="595" width="36" height="28" rx="4" fill="none" stroke="#183A6A" stroke-width="3"/>
       <path d="M -17 600 L 0 613 L 17 600" fill="none" stroke="#183A6A" stroke-width="3" stroke-linejoin="round"/>
-      <text x="0" y="660" text-anchor="middle" data-slot="CONTACT"><tspan>专业：</tspan><tspan>{{CONTACT}}</tspan></text>
+      <text x="0" y="660" text-anchor="middle" data-slot="CONTACT" data-pptx-textbox="true" data-pptx-box-x="0" data-pptx-box-y="641.1" data-pptx-box-w="360" data-pptx-box-h="27.9"><tspan>专业：</tspan><tspan>{{CONTACT}}</tspan></text>
     </g>
   </g>
 </svg>

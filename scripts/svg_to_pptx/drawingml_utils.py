@@ -7,6 +7,28 @@ import math
 from xml.etree import ElementTree as ET
 
 from .drawingml_context import AffineMatrix, ConvertContext, IDENTITY_MATRIX
+try:
+    from scripts.layout_metrics import (
+        EMU_PER_PX as SHARED_EMU_PER_PX,
+        FONT_PX_TO_HUNDREDTHS_PT as SHARED_FONT_PX_TO_HUNDREDTHS_PT,
+        estimate_text_width_px,
+        is_cjk_char as shared_is_cjk_char,
+        matrix_multiply as shared_matrix_multiply,
+        parse_transform_matrix as shared_parse_transform_matrix,
+        px_to_emu as shared_px_to_emu,
+        transform_point as shared_transform_point,
+    )
+except ImportError:  # pragma: no cover - direct script execution
+    from layout_metrics import (
+        EMU_PER_PX as SHARED_EMU_PER_PX,
+        FONT_PX_TO_HUNDREDTHS_PT as SHARED_FONT_PX_TO_HUNDREDTHS_PT,
+        estimate_text_width_px,
+        is_cjk_char as shared_is_cjk_char,
+        matrix_multiply as shared_matrix_multiply,
+        parse_transform_matrix as shared_parse_transform_matrix,
+        px_to_emu as shared_px_to_emu,
+        transform_point as shared_transform_point,
+    )
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -15,8 +37,8 @@ from .drawingml_context import AffineMatrix, ConvertContext, IDENTITY_MATRIX
 SVG_NS = 'http://www.w3.org/2000/svg'
 XLINK_NS = 'http://www.w3.org/1999/xlink'
 
-EMU_PER_PX = 9525  # 1 SVG px = 9525 EMU (96 DPI)
-FONT_PX_TO_HUNDREDTHS_PT = 75  # 1px = 0.75pt -> 75 hundredths-of-a-point
+EMU_PER_PX = SHARED_EMU_PER_PX
+FONT_PX_TO_HUNDREDTHS_PT = SHARED_FONT_PX_TO_HUNDREDTHS_PT
 ANGLE_UNIT = 60000  # DrawingML angle: 60000ths of a degree
 
 # SVG attributes inheritable from parent <g>
@@ -134,7 +156,7 @@ DASH_PRESETS = {
 
 def px_to_emu(px: float) -> int:
     """Convert SVG pixels to EMU."""
-    return round(px * EMU_PER_PX)
+    return shared_px_to_emu(px)
 
 
 def _f(val: str | None, default: float = 0.0) -> float:
@@ -157,16 +179,7 @@ _NUMBER_RE = re.compile(r'[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?')
 
 def matrix_multiply(left: AffineMatrix, right: AffineMatrix) -> AffineMatrix:
     """Compose two SVG affine matrices, applying ``right`` before ``left``."""
-    a1, b1, c1, d1, e1, f1 = left
-    a2, b2, c2, d2, e2, f2 = right
-    return (
-        a1 * a2 + c1 * b2,
-        b1 * a2 + d1 * b2,
-        a1 * c2 + c1 * d2,
-        b1 * c2 + d1 * d2,
-        a1 * e2 + c1 * f2 + e1,
-        b1 * e2 + d1 * f2 + f1,
-    )
+    return shared_matrix_multiply(left, right)
 
 
 def _translate_matrix(tx: float, ty: float = 0.0) -> AffineMatrix:
@@ -192,37 +205,12 @@ def _rotate_matrix(angle_deg: float, cx: float | None = None, cy: float | None =
 
 def parse_transform_matrix(transform_str: str) -> AffineMatrix:
     """Parse an SVG transform list into one affine matrix."""
-    if not transform_str:
-        return IDENTITY_MATRIX
-
-    matrix = IDENTITY_MATRIX
-    for name, raw_args in _TRANSFORM_RE.findall(transform_str):
-        args = [float(n) for n in _NUMBER_RE.findall(raw_args)]
-        name = name.lower()
-        local = IDENTITY_MATRIX
-
-        if name == 'matrix' and len(args) >= 6:
-            local = (args[0], args[1], args[2], args[3], args[4], args[5])
-        elif name == 'translate' and args:
-            local = _translate_matrix(args[0], args[1] if len(args) > 1 else 0.0)
-        elif name == 'scale' and args:
-            local = _scale_matrix(args[0], args[1] if len(args) > 1 else None)
-        elif name == 'rotate' and args:
-            local = _rotate_matrix(
-                args[0],
-                args[1] if len(args) > 2 else None,
-                args[2] if len(args) > 2 else None,
-            )
-
-        matrix = matrix_multiply(matrix, local)
-
-    return matrix
+    return shared_parse_transform_matrix(transform_str)
 
 
 def transform_point(matrix: AffineMatrix, x: float, y: float) -> tuple[float, float]:
     """Apply an SVG affine matrix to a point."""
-    a, b, c, d, e, f = matrix
-    return a * x + c * y + e, b * x + d * y + f
+    return shared_transform_point(matrix, x, y)
 
 
 def rect_to_dml_xfrm(
@@ -426,34 +414,12 @@ def parse_font_family(font_family_str: str) -> dict[str, str]:
 
 def is_cjk_char(ch: str) -> bool:
     """Check if a character is CJK (Chinese/Japanese/Korean)."""
-    cp = ord(ch)
-    return (0x4E00 <= cp <= 0x9FFF or 0x3400 <= cp <= 0x4DBF or
-            0x2E80 <= cp <= 0x2EFF or 0x3000 <= cp <= 0x303F or
-            0xFF00 <= cp <= 0xFFEF or 0xF900 <= cp <= 0xFAFF or
-            0x20000 <= cp <= 0x2A6DF)
+    return shared_is_cjk_char(ch)
 
 
 def estimate_text_width(text: str, font_size: float, font_weight: str = '400') -> float:
     """Estimate text width in SVG pixels."""
-    width = 0.0
-    for ch in text:
-        if is_cjk_char(ch):
-            width += font_size
-        elif ch == ' ':
-            width += font_size * 0.3
-        elif ch.isdigit():
-            width += font_size * 0.55
-        elif ch in 'mMwWOQ':
-            width += font_size * 0.75
-        elif ch in 'iIlj!|':
-            width += font_size * 0.3
-        else:
-            width += font_size * 0.55
-
-    if font_weight in ('bold', '600', '700', '800', '900'):
-        width *= 1.05
-
-    return width
+    return estimate_text_width_px(text, font_size, font_weight)
 
 
 def _xml_escape(text: str) -> str:

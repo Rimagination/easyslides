@@ -425,7 +425,9 @@ class SVGQualityChecker:
         if re.search(r'<g[^>]*\sopacity\s*=', content_lower):
             result['errors'].append("Detected forbidden <g opacity> (set opacity on each child element individually)")
         if re.search(r'<image[^>]*\sopacity\s*=', content_lower):
-            result['errors'].append("Detected forbidden <image opacity> (use overlay mask approach)")
+            result['warnings'].append(
+                "Detected <image opacity>; native export maps this to DrawingML image alpha"
+            )
 
     def _check_fonts(self, content: str, result: Dict):
         """Check font usage.

@@ -9,18 +9,18 @@
     <path d="M1132 47 L1132 56 Q1148 63 1164 56 L1164 47" fill="none" stroke="#00A6D6" stroke-width="3" stroke-linecap="round"/>
     <path d="M1178 40 L1178 53" fill="none" stroke="#17A889" stroke-width="2.5" stroke-linecap="round"/>
     <circle cx="1178" cy="56" r="2.5" fill="#17A889"/>
-    <text x="1104" y="18" fill="#E8F2FF" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1">{{LOGO}}</text>
+    <text x="1104" y="18" fill="#E8F2FF" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1" data-pptx-textbox="true" data-pptx-box-x="1104" data-pptx-box-y="0" data-pptx-box-w="170" data-pptx-box-h="54">{{LOGO}}</text>
   </g>
   <rect x="70" y="108" width="1140" height="48" fill="#F1F6FF" stroke="#D6E4F5" stroke-width="1" rx="4"/>
   <rect x="70" y="108" width="6" height="48" fill="#17A889" rx="3"/>
   <text x="94" y="138" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="KEY_MESSAGE" data-pptx-textbox="true" data-pptx-box-x="94" data-pptx-box-y="116" data-pptx-box-w="1084" data-pptx-box-h="28" data-pptx-valign="middle">{{KEY_MESSAGE}}</text>
   <rect id="content-area" data-slot="CONTENT_AREA" x="70" y="176" width="1140" height="452" fill="none" stroke="none"/>
-  <text x="70" y="176" fill="#FFFFFF" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1">{{CONTENT_AREA}}</text>
+  <text x="70" y="176" fill="#FFFFFF" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1" data-pptx-textbox="true" data-pptx-box-x="70" data-pptx-box-y="176" data-pptx-box-w="1140" data-pptx-box-h="452">{{CONTENT_AREA}}</text>
   <rect x="70" y="176" width="1140" height="452" fill="#FFFFFF" stroke="#D6E4F5" stroke-width="1" rx="6"/>
   <text x="640" y="383" text-anchor="middle" fill="#94A3B8" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="CONTENT_BODY" data-pptx-textbox="true" data-pptx-box-x="110" data-pptx-box-y="220" data-pptx-box-w="1060" data-pptx-box-h="328" data-pptx-valign="middle">{{CONTENT_BODY}}</text>
   <line x1="70" y1="654" x2="1210" y2="654" stroke="#D6E4F5" stroke-width="1"/>
-  <text x="70" y="686" fill="#94A3B8" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" data-slot="SOURCE">{{SOURCE}}</text>
-  <text x="640" y="686" text-anchor="middle" fill="#64748B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" data-slot="SECTION_NAME">{{SECTION_NAME}}</text>
-  <text x="1210" y="686" text-anchor="end" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" data-slot="PAGE_NUM">{{PAGE_NUM}}</text>
+  <text x="70" y="686" fill="#94A3B8" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" data-slot="SOURCE" data-pptx-textbox="true" data-pptx-box-x="70" data-pptx-box-y="673.4" data-pptx-box-w="520" data-pptx-box-h="20">{{SOURCE}}</text>
+  <text x="640" y="686" text-anchor="middle" fill="#64748B" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" data-slot="SECTION_NAME" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="673.4" data-pptx-box-w="360" data-pptx-box-h="20">{{SECTION_NAME}}</text>
+  <text x="1210" y="686" text-anchor="end" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="700" data-slot="PAGE_NUM" data-pptx-textbox="true" data-pptx-box-x="1120" data-pptx-box-y="671.3" data-pptx-box-w="90" data-pptx-box-h="21.7">{{PAGE_NUM}}</text>
 </svg>
 

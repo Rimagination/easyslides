@@ -12,32 +12,62 @@
       "page_id": "cover",
       "svg_path": "templates/layouts/defense_topnav/01_cover.svg",
       "role": "cover",
-      "slots": ["TITLE", "SUBTITLE", "PRESENTER", "ADVISOR", "DATE"]
+      "slots": [
+        "TITLE",
+        "SUBTITLE",
+        "PRESENTER",
+        "ADVISOR",
+        "DATE"
+      ]
     },
     {
       "page_id": "toc",
       "svg_path": "templates/layouts/defense_topnav/02_toc.svg",
       "role": "toc",
-      "slots": ["SECTION_1", "SECTION_2", "SECTION_3", "SECTION_4", "SECTION_5", "SECTION_6"]
+      "slots": [
+        "SECTION_1",
+        "SECTION_2",
+        "SECTION_3",
+        "SECTION_4",
+        "SECTION_5",
+        "SECTION_6"
+      ]
     },
     {
       "page_id": "chapter",
       "svg_path": "templates/layouts/defense_topnav/02_chapter.svg",
       "role": "chapter",
-      "slots": ["CHAPTER_NUM", "CHAPTER_TITLE", "CHAPTER_DESC"]
+      "slots": [
+        "CHAPTER_NUM",
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC"
+      ]
     },
     {
       "page_id": "content",
       "svg_path": "templates/layouts/defense_topnav/03_content.svg",
       "role": "content",
-      "slots": ["ACTIVE_SECTION_LABEL", "PAGE_TITLE", "KEY_MESSAGE", "CONTENT_AREA", "CONTENT_BODY", "PAGE_NUM"],
+      "slots": [
+        "ACTIVE_SECTION_LABEL",
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "CONTENT_AREA",
+        "CONTENT_BODY",
+        "PAGE_NUM"
+      ],
       "body_variants": "body_variants.json"
     },
     {
       "page_id": "ending",
       "svg_path": "templates/layouts/defense_topnav/04_ending.svg",
       "role": "ending",
-      "slots": ["CLOSING_TITLE", "CLOSING_SUBTITLE", "PRESENTER", "ADVISOR", "CONTACT"]
+      "slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "PRESENTER",
+        "ADVISOR",
+        "CONTACT"
+      ]
     }
   ],
   "default_sections": [
@@ -52,6 +82,301 @@
     "base_shell": "templates/layouts/defense_topnav/03_content.svg",
     "state_file": "templates/layouts/defense_topnav/navigation_states.json",
     "active_section_slot": "ACTIVE_SECTION_LABEL",
-    "variants": ["D02-NAV-01", "D02-NAV-02", "D02-NAV-03", "D02-NAV-04", "D02-NAV-05", "D02-NAV-06"]
+    "variants": [
+      "D02-NAV-01",
+      "D02-NAV-02",
+      "D02-NAV-03",
+      "D02-NAV-04",
+      "D02-NAV-05",
+      "D02-NAV-06"
+    ]
+  },
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "compress_text_to_capacity",
+      "choose_lower_density_layout",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ],
+    "allowed_overflow_actions": [
+      "split",
+      "truncate"
+    ],
+    "role_defaults": {
+      "logo": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "cover_title": {
+        "default_font_size_px": 56,
+        "min_font_size_px": 42,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "title": {
+        "default_font_size_px": 36,
+        "min_font_size_px": 26,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 20,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "subtitle": {
+        "default_font_size_px": 28,
+        "min_font_size_px": 20,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "metadata": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "toc_desc": {
+        "default_font_size_px": 17,
+        "min_font_size_px": 13,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "overflow_action": "truncate",
+        "max_lines": 2
+      },
+      "chapter_number": {
+        "default_font_size_px": 48,
+        "min_font_size_px": 36,
+        "line_height": 1.1,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "chapter_title": {
+        "default_font_size_px": 56,
+        "min_font_size_px": 36,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_desc": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "page_title": {
+        "default_font_size_px": 30,
+        "min_font_size_px": 22,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 20,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "section_label": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 10,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "key_message": {
+        "default_font_size_px": 21,
+        "min_font_size_px": 16,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 34,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 16,
+        "line_height": 1.28,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 12
+      },
+      "source": {
+        "default_font_size_px": 14,
+        "min_font_size_px": 10,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 42,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "closing_title": {
+        "default_font_size_px": 64,
+        "min_font_size_px": 42,
+        "line_height": 1.1,
+        "max_chars_per_line_zh": 10,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "contact": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      }
+    }
+  },
+  "slot_models": {
+    "cover": [
+      {
+        "slot_id": "TITLE",
+        "role": "cover_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SUBTITLE",
+        "role": "subtitle",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "ADVISOR",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "DATE",
+        "role": "metadata",
+        "max_lines": 1
+      }
+    ],
+    "toc": [
+      {
+        "slot_id": "SECTION_1",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SECTION_2",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SECTION_3",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SECTION_4",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SECTION_5",
+        "role": "toc_item",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "SECTION_6",
+        "role": "toc_item",
+        "max_lines": 2
+      }
+    ],
+    "chapter": [
+      {
+        "slot_id": "CHAPTER_NUM",
+        "role": "chapter_number",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "CHAPTER_TITLE",
+        "role": "chapter_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "CHAPTER_DESC",
+        "role": "chapter_desc",
+        "max_lines": 2
+      }
+    ],
+    "content": [
+      {
+        "slot_id": "ACTIVE_SECTION_LABEL",
+        "role": "section_label",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "PAGE_TITLE",
+        "role": "page_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "KEY_MESSAGE",
+        "role": "key_message",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "CONTENT_AREA",
+        "role": "body",
+        "max_lines": 13
+      },
+      {
+        "slot_id": "CONTENT_BODY",
+        "role": "body",
+        "max_lines": 13
+      },
+      {
+        "slot_id": "PAGE_NUM",
+        "role": "page_number",
+        "fixed_geometry": true
+      }
+    ],
+    "ending": [
+      {
+        "slot_id": "CLOSING_TITLE",
+        "role": "closing_title",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "CLOSING_SUBTITLE",
+        "role": "subtitle",
+        "max_lines": 2
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "ADVISOR",
+        "role": "metadata",
+        "max_lines": 1
+      },
+      {
+        "slot_id": "CONTACT",
+        "role": "contact",
+        "max_lines": 1
+      }
+    ]
   }
 }

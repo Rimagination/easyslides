@@ -10,20 +10,20 @@
   <rect x="0" y="0" width="6" height="70" fill="#CC0000"/>
   
   <!-- 章节编号 + 页面标题 -->
-  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="bold">
+  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="40" data-pptx-box-y="16.6" data-pptx-box-w="110" data-pptx-box-h="43.4">
     {{SECTION_NUM}} {{PAGE_TITLE}}
   </text>
   
   <!-- 右上角 Logo -->
   <rect x="1100" y="20" width="140" height="30" fill="none"/>
-  <text x="1220" y="46" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="bold">
+  <text x="1220" y="46" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="1050" data-pptx-box-y="8.2" data-pptx-box-w="170" data-pptx-box-h="54">
     {{LOGO}}
   </text>
   
   <!-- ==================== 核心观点条（可选） ==================== -->
   <rect x="0" y="70" width="1280" height="50" fill="#E8F4FC"/>
   <rect x="0" y="70" width="6" height="50" fill="#0066CC"/>
-  <text x="40" y="102" fill="#333333" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">
+  <text x="40" y="102" fill="#333333" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-pptx-textbox="true" data-pptx-box-x="40" data-pptx-box-y="78" data-pptx-box-w="1050" data-pptx-box-h="36">
     {{KEY_MESSAGE}}
   </text>
   
@@ -35,7 +35,7 @@
   -->
   <rect x="40" y="135" width="1200" height="515" fill="#FFFFFF" rx="4"/>
   <rect x="40" y="135" width="1200" height="515" fill="none" stroke="#D0D7E0" stroke-width="1" rx="4" stroke-dasharray="8,4"/>
-  <text x="640" y="400" text-anchor="middle" fill="#CBD5E1" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16">
+  <text x="640" y="400" text-anchor="middle" fill="#CBD5E1" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" data-pptx-textbox="true" data-pptx-box-x="40" data-pptx-box-y="135" data-pptx-box-w="1200" data-pptx-box-h="515">
     {{CONTENT_AREA}}
   </text>
   
@@ -46,13 +46,13 @@
   
   <!-- ==================== 页脚区域 ==================== -->
   <line x1="40" y1="665" x2="1240" y2="665" stroke="#E8F4FC" stroke-width="1"/>
-  <text x="40" y="695" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">
+  <text x="40" y="695" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" data-pptx-textbox="true" data-pptx-box-x="40" data-pptx-box-y="682.4" data-pptx-box-w="520" data-pptx-box-h="20">
     数据来源：{{SOURCE}}
   </text>
-  <text x="640" y="695" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12">
+  <text x="640" y="695" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="12" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="682.4" data-pptx-box-w="360" data-pptx-box-h="20">
     {{SECTION_NAME}}
   </text>
-  <text x="1220" y="695" text-anchor="end" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14">
+  <text x="1220" y="695" text-anchor="end" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-box-x="1130" data-pptx-box-y="680.3" data-pptx-box-w="90" data-pptx-box-h="21.7">
     {{PAGE_NUM}}
   </text>
 </svg>

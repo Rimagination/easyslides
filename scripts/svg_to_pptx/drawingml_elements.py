@@ -1221,6 +1221,18 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
 
     shape_id = ctx.next_id()
     rot_attr = f' rot="{text_rot}"' if text_rot else ''
+    flip_attr = ''
+    # SVG groups imported from PPTX can express PowerPoint flips as negative
+    # scale. DrawingML requires positive extents; preserve the visual transform
+    # with flip attributes instead of writing invalid negative cx/cy.
+    if box_w < 0:
+        box_x += box_w
+        box_w = abs(box_w)
+        flip_attr += ' flipH="1"'
+    if box_h < 0:
+        box_y += box_h
+        box_h = abs(box_h)
+        flip_attr += ' flipV="1"'
 
     paragraphs_xml = '\n'.join(
         '<a:p>\n'
@@ -1252,7 +1264,7 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
 <p:cNvSpPr txBox="1"/><p:nvPr/>
 </p:nvSpPr>
 <p:spPr>
-<a:xfrm{rot_attr}><a:off x="{off_x}" y="{off_y}"/>
+<a:xfrm{flip_attr}{rot_attr}><a:off x="{off_x}" y="{off_y}"/>
 <a:ext cx="{ext_cx}" cy="{ext_cy}"/></a:xfrm>
 <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
 <a:noFill/>
@@ -1617,6 +1629,27 @@ def _resolve_image_meet_fit(
     return (dx, dy, fit_w, fit_h)
 
 
+def _image_opacity(
+    elem: ET.Element,
+    ctx: ConvertContext,
+    child_elem: ET.Element | None = None,
+) -> float | None:
+    """Resolve SVG image opacity, including inherited group opacity."""
+    opacity = 1.0
+    values = [ctx.inherited_styles.get('opacity'), elem.get('opacity')]
+    if child_elem is not None:
+        values.append(child_elem.get('opacity'))
+    for raw in values:
+        if raw is None:
+            continue
+        try:
+            opacity *= float(raw)
+        except ValueError:
+            continue
+    opacity = max(0.0, min(1.0, opacity))
+    return opacity if opacity < 1.0 else None
+
+
 def convert_image(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     """Convert SVG <image> to DrawingML picture element.
 
@@ -1722,6 +1755,16 @@ def convert_image(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     if rot_attr:
         xfrm_attr += rot_attr
 
+    opacity = _image_opacity(elem, ctx)
+    alpha_xml = ''
+    if opacity is not None:
+        alpha_xml = f'<a:alphaModFix amt="{int(round(opacity * 100000))}"/>'
+    blip_xml = (
+        f'<a:blip r:embed="{r_id}">{alpha_xml}</a:blip>'
+        if alpha_xml else
+        f'<a:blip r:embed="{r_id}"/>'
+    )
+
     return ShapeResult(xml=f'''<p:pic>
 <p:nvPicPr>
 <p:cNvPr id="{shape_id}" name="Image {shape_id}"/>
@@ -1729,7 +1772,7 @@ def convert_image(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
 <p:nvPr/>
 </p:nvPicPr>
 <p:blipFill>
-<a:blip r:embed="{r_id}"/>
+{blip_xml}
 {src_rect_xml}<a:stretch><a:fillRect/></a:stretch>
 </p:blipFill>
 <p:spPr>
@@ -1900,6 +1943,16 @@ def convert_nested_svg(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | N
         xfrm_attr += rot_attr
     clip_geom = _resolve_clip_geometry(elem, ctx, svg_x, svg_y, svg_w, svg_h)
 
+    opacity = _image_opacity(elem, ctx, image_elem)
+    alpha_xml = ''
+    if opacity is not None:
+        alpha_xml = f'<a:alphaModFix amt="{int(round(opacity * 100000))}"/>'
+    blip_xml = (
+        f'<a:blip r:embed="{r_id}">{alpha_xml}</a:blip>'
+        if alpha_xml else
+        f'<a:blip r:embed="{r_id}"/>'
+    )
+
     return ShapeResult(xml=f'''<p:pic>
 <p:nvPicPr>
 <p:cNvPr id="{shape_id}" name="Image {shape_id}"/>
@@ -1907,7 +1960,7 @@ def convert_nested_svg(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | N
 <p:nvPr/>
 </p:nvPicPr>
 <p:blipFill>
-<a:blip r:embed="{r_id}"/>
+{blip_xml}
 {src_rect_xml}<a:stretch><a:fillRect/></a:stretch>
 </p:blipFill>
 <p:spPr>

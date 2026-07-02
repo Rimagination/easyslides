@@ -3,7 +3,9 @@
 ## Directory Map
 
 - `layouts/`: page layout packs only.
+- `page_layouts/`: PPT Master-style whole-page layout recipes for SVG execution.
 - `style_packs/`: reusable visual systems and editable-PPT style migrations.
+- `cards/`: fixed-size card components with slot capacity contracts and an agent assembly manual.
 - `charts/`: chart, diagram, and framework SVG templates.
 - `icons/`: shared icon libraries.
 - `reference/`: reusable authoring references and generated lookup assets.
@@ -79,6 +81,41 @@ The `charts/` directory contains 71 standardized visualization templates. For ba
 
 - **Library index (single source of truth)**: [charts/charts_index.json](./charts/charts_index.json)
 - **Directory overview**: [charts/README.md](./charts/README.md)
+
+## PPT Master Page Layout Recipes
+
+The `page_layouts/` directory contains whole-page archetypes for the
+PPT Master-compatible route:
+
+- **Registry**: [page_layouts/ppt_master_page_recipes.json](./page_layouts/ppt_master_page_recipes.json)
+- **Agent manual**: [page_layouts/ppt-master-page-recipes-manual.md](./page_layouts/ppt-master-page-recipes-manual.md)
+- **Query, validate, and prompt**: `python scripts/page_recipe.py --help`
+- **Preview project generator**: `python scripts/page_recipe_preview.py --help`
+
+Use these recipes before card selection. They decide the page-level structure,
+visual hierarchy, text slots, and diversity pattern; card recipes are only
+nested inside a selected page region.
+
+## Card Components
+
+The `cards/` directory contains reusable fixed-size card styles for slide assembly:
+
+- **Registry**: [cards/card_library.json](./cards/card_library.json)
+- **Agent assembly manual**: [cards/assembly-manual.md](./cards/assembly-manual.md)
+- **PPT Master-style visual recipes**: [cards/visual_recipes.json](./cards/visual_recipes.json)
+- **Visual recipe manual**: [cards/visual-recipes-manual.md](./cards/visual-recipes-manual.md)
+- **Query, validate, and preview**: `python scripts/card_library.py --help`
+- **Recipe query and prompt contracts**: `python scripts/card_recipe.py --help`
+
+Use these cards when the content has a clear component shape such as metrics,
+parallel points, comparisons, processes, evidence stacks, method modules,
+literature notes, or one emphasized takeaway. Every card slot declares its text
+capacity; payloads should be validated before rendering.
+
+Use the visual recipes when the user wants PPT Master-like card composition:
+layered vector backgrounds, decorative geometry, fixed content slots, and
+prompt-ready SVG skeletons. The recipes are selected by content shape, density,
+and visual intent, then validated before SVG execution.
 
 ## Icon Library
 

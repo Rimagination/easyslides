@@ -12,17 +12,17 @@
   
   <!-- ==================== 章节信息区域 ==================== -->
   <!-- 章节编号：大号数字，半透明背景字 -->
-  <text x="120" y="480" fill="#FFFFFF" fill-opacity="0.08" font-family="Microsoft YaHei, Arial, sans-serif" font-size="280" font-weight="bold">
+  <text x="120" y="480" fill="#FFFFFF" fill-opacity="0.08" font-family="Microsoft YaHei, Arial, sans-serif" font-size="280" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="120" data-pptx-box-y="186" data-pptx-box-w="170" data-pptx-box-h="434">
     {{CHAPTER_NUM}}
   </text>
   
   <!-- 章节标题：醒目白色 -->
-  <text x="380" y="340" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="bold">
+  <text x="380" y="340" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="380" data-pptx-box-y="281.2" data-pptx-box-w="780" data-pptx-box-h="86.8">
     {{CHAPTER_TITLE}}
   </text>
   
   <!-- 章节描述/摘要：浅灰色 -->
-  <text x="380" y="410" fill="#E8F4FC" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24">
+  <text x="380" y="410" fill="#E8F4FC" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" data-pptx-textbox="true" data-pptx-box-x="380" data-pptx-box-y="384.8" data-pptx-box-w="900" data-pptx-box-h="37.2">
     {{CHAPTER_DESC}}
   </text>
   
@@ -30,7 +30,7 @@
   <line x1="380" y1="265" x2="500" y2="265" stroke="#CC0000" stroke-width="6"/>
   
   <!-- 底部信息 -->
-  <text x="1240" y="680" text-anchor="end" fill="#FFFFFF" fill-opacity="0.4" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18">
+  <text x="1240" y="680" text-anchor="end" fill="#FFFFFF" fill-opacity="0.4" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="661.1" data-pptx-box-w="780" data-pptx-box-h="36">
     {{TITLE}}
   </text>
 </svg>

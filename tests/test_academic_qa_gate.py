@@ -109,6 +109,26 @@ class AcademicQaGateTests(unittest.TestCase):
         self.assertIn("AQA-ACTION-TITLE", codes)
         self.assertIn("AQA-RESULT-EVIDENCE", codes)
 
+    def test_body_variant_contract_failures_stop_academic_qa(self):
+        from scripts.academic_qa_gate import run_academic_qa
+
+        plan = valid_academic_plan()
+        plan["template_id"] = "defense_topnav"
+        plan["slides"] = [plan["slides"][1]]
+        plan["slides"][0]["page"] = "P01"
+        plan["slides"][0]["layout_id"] = "defense_topnav/three_card_summary"
+        plan["slides"][0]["slot_payload"] = {
+            "CARD_1_TITLE": "Result",
+            "FREEFORM_SVG": "<rect />",
+        }
+
+        report = run_academic_qa(plan, repo_root=ROOT)
+        codes = {item["code"] for item in report["issues"]}
+
+        self.assertEqual(report["status"], "fail")
+        self.assertIn("AQA-BODY-VARIANT", codes)
+        self.assertEqual(report["body_variant_status"], "fail")
+
     def test_missing_references_and_non_conclusion_last_slide_warn(self):
         from scripts.academic_qa_gate import run_academic_qa
 

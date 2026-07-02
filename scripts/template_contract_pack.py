@@ -313,6 +313,7 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 
 
 def write_contract_pack(template_dir: Path) -> list[Path]:
+    template_dir = template_dir.resolve()
     pack = build_contract_pack(template_dir)
     written: list[Path] = []
     for key, filename in CONTRACT_FILES.items():
@@ -320,6 +321,14 @@ def write_contract_pack(template_dir: Path) -> list[Path]:
         write_json(path, pack[key])
         written.append(path)
     return written
+
+
+def display_path(path: Path) -> str:
+    path = path.resolve()
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
 
 
 def resolve_template_arg(value: str) -> Path:
@@ -346,7 +355,7 @@ def main(argv: list[str] | None = None) -> int:
             written = write_contract_pack(template_dir)
             print(f"Wrote {len(written)} contract sidecar(s) for {template_dir.name}:")
             for path in written:
-                print(f"- {path.relative_to(ROOT).as_posix()}")
+                print(f"- {display_path(path)}")
     except TemplateContractError as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 1

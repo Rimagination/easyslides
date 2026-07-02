@@ -1,0 +1,453 @@
+{
+  "schema_version": "easyslides.card_library.v1",
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "px"
+  },
+  "style_count": 13,
+  "selection_policy": {
+    "default": "Match the content shape first, then item count, then density. If any slot exceeds capacity, shorten, split, or choose a roomier card before rendering.",
+    "overflow_rule": "Card payloads must pass capacity validation before being rendered into PPTX."
+  },
+  "visual_skin": {
+    "default": "consulting_light",
+    "description": "PPT Master-inspired consulting cards: white body, subtle shadow, hairline border, accent top bar, numeric badge, icon well, section dividers, and capacity pill.",
+    "accent_cycle": ["#DC2626", "#F59E0B", "#0076A8", "#4A90A4", "#64748B"],
+    "background": "#FFFFFF",
+    "card_fill": "#FFFFFF",
+    "card_border": "#E2E8F0",
+    "shadow": "#DBE1E8",
+    "header_band": "#18345E",
+    "header_accent": "#38BDF8"
+  },
+  "styles": [
+    {
+      "card_id": "stat_card",
+      "name_zh": "单指标卡",
+      "family": "metric",
+      "origin_refs": ["templates/charts/kpi_cards.svg", "zouchenzhen__thesis-defense-pptx-skill"],
+      "selection": {
+        "content_shapes": ["single_metric", "key_number", "headline_result"],
+        "item_count_min": 1,
+        "item_count_max": 1,
+        "density": "low",
+        "best_for": "One quantitative result with a short label and optional context.",
+        "avoid_when": "The metric needs multiple caveats or long methodological explanation."
+      },
+      "layout": {
+        "padding": 22,
+        "boxes": [
+          {"id": "card", "x": 430, "y": 218, "width": 420, "height": 236}
+        ]
+      },
+      "slots": [
+        {"slot_id": "metric", "role": "metric", "font_size_px": 48, "min_font_size_px": 40, "line_height": 1.05, "max_chars_per_line_zh": 8, "max_lines": 1, "overflow_action": "shorten_or_use_kpi_row", "required": true},
+        {"slot_id": "label", "role": "title", "font_size_px": 21, "min_font_size_px": 18, "line_height": 1.18, "max_chars_per_line_zh": 14, "max_lines": 1, "overflow_action": "shorten", "required": true},
+        {"slot_id": "note", "role": "body", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.25, "max_chars_per_line_zh": 18, "max_lines": 2, "overflow_action": "split_to_note_card", "required": false}
+      ],
+      "preview_payload": {
+        "metric": "42%",
+        "label": "解释度提升",
+        "note": "相比基线模型，关键变量贡献更集中。"
+      }
+    },
+    {
+      "card_id": "kpi_row_3",
+      "name_zh": "三指标横排卡",
+      "family": "metric",
+      "origin_refs": ["templates/charts/kpi_cards.svg", "hugohe3__ppt-master"],
+      "selection": {
+        "content_shapes": ["metric_set", "three_numbers", "dashboard_summary"],
+        "item_count_min": 3,
+        "item_count_max": 3,
+        "density": "low",
+        "best_for": "Three sibling metrics that should be compared at a glance.",
+        "avoid_when": "Any metric needs a long paragraph or evidence table."
+      },
+      "layout": {
+        "padding": 18,
+        "boxes": [
+          {"id": "item_1", "x": 94, "y": 246, "width": 340, "height": 190},
+          {"id": "item_2", "x": 470, "y": 246, "width": 340, "height": 190},
+          {"id": "item_3", "x": 846, "y": 246, "width": 340, "height": 190}
+        ]
+      },
+      "slots": [
+        {"slot_id": "metric", "role": "metric", "font_size_px": 40, "min_font_size_px": 34, "line_height": 1.05, "max_chars_per_line_zh": 7, "max_lines": 1, "overflow_action": "shorten", "required": true},
+        {"slot_id": "label", "role": "title", "font_size_px": 18, "min_font_size_px": 16, "line_height": 1.2, "max_chars_per_line_zh": 12, "max_lines": 1, "overflow_action": "shorten", "required": true},
+        {"slot_id": "note", "role": "body", "font_size_px": 14, "min_font_size_px": 12, "line_height": 1.25, "max_chars_per_line_zh": 16, "max_lines": 2, "overflow_action": "drop_or_move_to_notes", "required": false}
+      ],
+      "preview_payload": {
+        "items": [
+          {"metric": "3.2x", "label": "计算效率", "note": "同等精度下耗时下降。"},
+          {"metric": "18", "label": "候选因子", "note": "筛选后进入解释模型。"},
+          {"metric": "0.87", "label": "验证相关", "note": "跨区域验证保持稳定。"}
+        ]
+      }
+    },
+    {
+      "card_id": "three_card_summary",
+      "name_zh": "三卡摘要",
+      "family": "parallel",
+      "origin_refs": ["templates/layouts/defense_topnav/body_variants.json", "tristan-mcinnis__pptx-from-layouts-skill"],
+      "selection": {
+        "content_shapes": ["parallel_points", "three_findings", "three_contributions", "risk_set"],
+        "item_count_min": 3,
+        "item_count_max": 3,
+        "density": "medium",
+        "best_for": "Three genuinely parallel ideas with comparable weight.",
+        "avoid_when": "The items form a sequence, hierarchy, or one item is much longer than the others."
+      },
+      "layout": {
+        "padding": 22,
+        "boxes": [
+          {"id": "item_1", "x": 54, "y": 188, "width": 372, "height": 486},
+          {"id": "item_2", "x": 454, "y": 188, "width": 372, "height": 486},
+          {"id": "item_3", "x": 854, "y": 188, "width": 372, "height": 486}
+        ]
+      },
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.16, "max_chars_per_line_zh": 10, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "body", "role": "body", "font_size_px": 18, "min_font_size_px": 16, "line_height": 1.28, "max_chars_per_line_zh": 16, "max_lines": 8, "overflow_action": "split_or_choose_flexible_canvas", "required": true}
+      ],
+      "preview_payload": {
+        "items": [
+          {"title": "机制清晰", "body": "变量之间存在稳定路径，适合用图示表达主链路。"},
+          {"title": "证据充分", "body": "多源数据给出一致方向，局部差异作为补充说明。"},
+          {"title": "应用可迁移", "body": "指标定义简单，后续可复用到相邻区域。"}
+        ]
+      }
+    },
+    {
+      "card_id": "four_quadrant_grid",
+      "name_zh": "四象限卡组",
+      "family": "parallel",
+      "origin_refs": ["templates/layouts/defense_topnav/body_variants.json"],
+      "selection": {
+        "content_shapes": ["four_questions", "four_modules", "taxonomy", "matrix_blocks"],
+        "item_count_min": 4,
+        "item_count_max": 4,
+        "density": "medium",
+        "best_for": "Four peer blocks where position helps scanning but axes are not the main story.",
+        "avoid_when": "The content needs numeric matrix values or long row labels."
+      },
+      "layout": {
+        "padding": 18,
+        "boxes": [
+          {"id": "item_1", "x": 78, "y": 190, "width": 536, "height": 220},
+          {"id": "item_2", "x": 666, "y": 190, "width": 536, "height": 220},
+          {"id": "item_3", "x": 78, "y": 450, "width": 536, "height": 220},
+          {"id": "item_4", "x": 666, "y": 450, "width": 536, "height": 220}
+        ]
+      },
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.16, "max_chars_per_line_zh": 16, "max_lines": 1, "overflow_action": "shorten", "required": true},
+        {"slot_id": "body", "role": "body", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.25, "max_chars_per_line_zh": 24, "max_lines": 4, "overflow_action": "split_or_use_table_matrix", "required": true}
+      ],
+      "preview_payload": {
+        "items": [
+          {"title": "数据来源", "body": "遥感、样地与气候再分析数据统一到相同网格。"},
+          {"title": "变量构建", "body": "将原始指标转成可比较的生态功能表征。"},
+          {"title": "模型解释", "body": "比较线性、树模型与可解释性贡献。"},
+          {"title": "情景迁移", "body": "验证不同区域和时间窗口下的稳定性。"}
+        ]
+      }
+    },
+    {
+      "card_id": "comparison_pair",
+      "name_zh": "左右对比卡",
+      "family": "comparison",
+      "origin_refs": ["templates/layouts/defense_topnav/body_variants.json", "templates/charts/comparison_columns.svg"],
+      "selection": {
+        "content_shapes": ["two_sides", "before_after", "method_comparison", "domestic_foreign"],
+        "item_count_min": 2,
+        "item_count_max": 2,
+        "density": "medium",
+        "best_for": "Two balanced alternatives or phases with a short synthesis.",
+        "avoid_when": "There are more than three comparable dimensions requiring a table."
+      },
+      "layout": {
+        "padding": 22,
+        "boxes": [
+          {"id": "left", "x": 82, "y": 198, "width": 520, "height": 398},
+          {"id": "right", "x": 678, "y": 198, "width": 520, "height": 398}
+        ]
+      },
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.16, "max_chars_per_line_zh": 14, "max_lines": 1, "overflow_action": "shorten", "required": true},
+        {"slot_id": "body", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.27, "max_chars_per_line_zh": 22, "max_lines": 6, "overflow_action": "split_or_use_comparison_table", "required": true},
+        {"slot_id": "synthesis", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.2, "max_chars_per_line_zh": 34, "max_lines": 2, "overflow_action": "move_to_speaker_notes", "required": false}
+      ],
+      "preview_payload": {
+        "items": [
+          {"title": "传统方案", "body": "依赖单一指标，解释直观但对区域差异敏感。"},
+          {"title": "改进方案", "body": "组合多源特征，并通过贡献分解保留可解释性。"}
+        ],
+        "synthesis": "适合用一句话说明为什么右侧更适合当前任务。"
+      }
+    },
+    {
+      "card_id": "pros_cons_pair",
+      "name_zh": "优劣势双卡",
+      "family": "comparison",
+      "origin_refs": ["templates/charts/pros_cons_chart.svg"],
+      "selection": {
+        "content_shapes": ["pros_cons", "tradeoff", "benefit_risk"],
+        "item_count_min": 2,
+        "item_count_max": 2,
+        "density": "medium",
+        "best_for": "A clear advantage/limitation or benefit/risk contrast.",
+        "avoid_when": "The two sides are not symmetrical or require many subcategories."
+      },
+      "layout": {
+        "padding": 22,
+        "boxes": [
+          {"id": "pros", "x": 92, "y": 212, "width": 512, "height": 362},
+          {"id": "cons", "x": 676, "y": 212, "width": 512, "height": 362}
+        ]
+      },
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.15, "max_chars_per_line_zh": 12, "max_lines": 1, "overflow_action": "shorten", "required": true},
+        {"slot_id": "bullets", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.28, "max_chars_per_line_zh": 20, "max_lines": 5, "overflow_action": "split_or_reduce_bullets", "required": true}
+      ],
+      "preview_payload": {
+        "items": [
+          {"title": "优势", "bullets": "可解释性强；变量贡献清楚；便于迁移"},
+          {"title": "限制", "bullets": "依赖数据质量；需要外部验证；极端区样本少"}
+        ]
+      }
+    },
+    {
+      "card_id": "process_steps_4",
+      "name_zh": "四步流程卡",
+      "family": "process",
+      "origin_refs": ["templates/charts/numbered_steps.svg", "templates/layouts/defense_topnav/body_variants.json"],
+      "selection": {
+        "content_shapes": ["workflow", "method_pipeline", "procedure"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "medium",
+        "best_for": "A linear method or work plan where order matters.",
+        "avoid_when": "The steps branch heavily or need nested substeps."
+      },
+      "layout": {
+        "padding": 16,
+        "boxes": [
+          {"id": "step_1", "x": 74, "y": 268, "width": 260, "height": 232},
+          {"id": "step_2", "x": 370, "y": 268, "width": 260, "height": 232},
+          {"id": "step_3", "x": 666, "y": 268, "width": 260, "height": 232},
+          {"id": "step_4", "x": 962, "y": 268, "width": 260, "height": 232}
+        ]
+      },
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 18, "min_font_size_px": 16, "line_height": 1.16, "max_chars_per_line_zh": 10, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "body", "role": "body", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.25, "max_chars_per_line_zh": 13, "max_lines": 4, "overflow_action": "split_or_use_timeline", "required": true}
+      ],
+      "preview_payload": {
+        "items": [
+          {"title": "采集数据", "body": "统一空间尺度与时间窗口。"},
+          {"title": "构建变量", "body": "提取候选因子并做标准化。"},
+          {"title": "训练模型", "body": "比较多个基线与稳健性。"},
+          {"title": "解释迁移", "body": "输出贡献和情景对比。"}
+        ]
+      }
+    },
+    {
+      "card_id": "timeline_milestones",
+      "name_zh": "里程碑时间卡",
+      "family": "process",
+      "origin_refs": ["templates/charts/timeline.svg", "hugohe3__ppt-master"],
+      "selection": {
+        "content_shapes": ["timeline", "milestones", "project_schedule"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "low",
+        "best_for": "Milestones with clear dates or phases.",
+        "avoid_when": "The schedule needs dependencies, resources, or many rows."
+      },
+      "layout": {
+        "padding": 16,
+        "boxes": [
+          {"id": "mile_1", "x": 88, "y": 300, "width": 210, "height": 188},
+          {"id": "mile_2", "x": 330, "y": 300, "width": 210, "height": 188},
+          {"id": "mile_3", "x": 572, "y": 300, "width": 210, "height": 188},
+          {"id": "mile_4", "x": 814, "y": 300, "width": 210, "height": 188},
+          {"id": "mile_5", "x": 1056, "y": 300, "width": 150, "height": 188}
+        ]
+      },
+      "slots": [
+        {"slot_id": "date", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.1, "max_chars_per_line_zh": 8, "max_lines": 1, "overflow_action": "shorten_date", "required": true},
+        {"slot_id": "title", "role": "title", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.16, "max_chars_per_line_zh": 9, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "body", "role": "body", "font_size_px": 13, "min_font_size_px": 12, "line_height": 1.2, "max_chars_per_line_zh": 11, "max_lines": 3, "overflow_action": "move_detail_to_notes", "required": false}
+      ],
+      "preview_payload": {
+        "items": [
+          {"date": "Q1", "title": "资料整理", "body": "完成数据清单"},
+          {"date": "Q2", "title": "模型训练", "body": "锁定基线方案"},
+          {"date": "Q3", "title": "解释分析", "body": "输出贡献排序"},
+          {"date": "Q4", "title": "论文撰写", "body": "形成完整图表"}
+        ]
+      }
+    },
+    {
+      "card_id": "figure_note_card",
+      "name_zh": "图旁注释卡",
+      "family": "evidence",
+      "origin_refs": ["templates/layouts/defense_topnav/body_variants.json", "zouchenzhen__thesis-defense-pptx-skill"],
+      "selection": {
+        "content_shapes": ["figure_with_notes", "single_exhibit", "result_interpretation"],
+        "item_count_min": 1,
+        "item_count_max": 3,
+        "density": "medium",
+        "best_for": "One figure carries the evidence and the text explains only the takeaway.",
+        "avoid_when": "There are multiple independent figures or a dense table."
+      },
+      "layout": {
+        "padding": 18,
+        "boxes": [
+          {"id": "figure", "x": 74, "y": 188, "width": 720, "height": 486},
+          {"id": "note", "x": 840, "y": 210, "width": 330, "height": 420}
+        ]
+      },
+      "slots": [
+        {"slot_id": "takeaway", "role": "title", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.16, "max_chars_per_line_zh": 12, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "bullets", "role": "body", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.28, "max_chars_per_line_zh": 15, "max_lines": 7, "overflow_action": "split_or_use_text_right", "required": true}
+      ],
+      "preview_payload": {
+        "takeaway": "结果主峰稳定",
+        "bullets": "空间格局与假设一致；异常区域集中在边缘带；需要补充外部验证"
+      }
+    },
+    {
+      "card_id": "evidence_stack",
+      "name_zh": "证据堆叠卡",
+      "family": "evidence",
+      "origin_refs": ["templates/charts/labeled_card.svg", "tristan-mcinnis__pptx-from-layouts-skill"],
+      "selection": {
+        "content_shapes": ["evidence_list", "supporting_points", "paper_findings"],
+        "item_count_min": 3,
+        "item_count_max": 5,
+        "density": "high",
+        "best_for": "Several short evidence snippets supporting one claim.",
+        "avoid_when": "The snippets are not comparable or require citations in full form."
+      },
+      "layout": {
+        "padding": 14,
+        "boxes": [
+          {"id": "claim", "x": 116, "y": 180, "width": 1048, "height": 86},
+          {"id": "evidence_1", "x": 116, "y": 298, "width": 1048, "height": 80},
+          {"id": "evidence_2", "x": 116, "y": 398, "width": 1048, "height": 80},
+          {"id": "evidence_3", "x": 116, "y": 498, "width": 1048, "height": 80}
+        ]
+      },
+      "slots": [
+        {"slot_id": "claim", "role": "title", "font_size_px": 22, "min_font_size_px": 18, "line_height": 1.15, "max_chars_per_line_zh": 34, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "evidence", "role": "body", "font_size_px": 16, "min_font_size_px": 14, "line_height": 1.22, "max_chars_per_line_zh": 42, "max_lines": 2, "overflow_action": "split_or_reduce_items", "required": true}
+      ],
+      "preview_payload": {
+        "claim": "多源证据共同支持核心结论",
+        "items": [
+          {"evidence": "长期序列表明趋势方向稳定，年份间波动不改变主结论。"},
+          {"evidence": "独立样点验证显示误差集中在少数边缘区域。"},
+          {"evidence": "敏感性分析排除了单一变量驱动的解释。"}
+        ]
+      }
+    },
+    {
+      "card_id": "method_module_card",
+      "name_zh": "方法模块卡",
+      "family": "method",
+      "origin_refs": ["templates/charts/module_composition.svg", "templates/charts/layered_architecture.svg"],
+      "selection": {
+        "content_shapes": ["module_overview", "architecture", "method_components"],
+        "item_count_min": 3,
+        "item_count_max": 4,
+        "density": "medium",
+        "best_for": "A method composed of a small number of functional modules.",
+        "avoid_when": "The architecture has many dependencies or needs code-level details."
+      },
+      "layout": {
+        "padding": 18,
+        "boxes": [
+          {"id": "module_1", "x": 122, "y": 214, "width": 300, "height": 296},
+          {"id": "module_2", "x": 490, "y": 214, "width": 300, "height": 296},
+          {"id": "module_3", "x": 858, "y": 214, "width": 300, "height": 296}
+        ]
+      },
+      "slots": [
+        {"slot_id": "title", "role": "title", "font_size_px": 20, "min_font_size_px": 17, "line_height": 1.16, "max_chars_per_line_zh": 10, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "body", "role": "body", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.25, "max_chars_per_line_zh": 14, "max_lines": 6, "overflow_action": "split_or_use_architecture_diagram", "required": true}
+      ],
+      "preview_payload": {
+        "items": [
+          {"title": "输入层", "body": "统一数据格式并记录来源质量。"},
+          {"title": "建模层", "body": "训练候选模型并比较稳健性。"},
+          {"title": "解释层", "body": "输出贡献排序和局部解释。"}
+        ]
+      }
+    },
+    {
+      "card_id": "citation_reading_card",
+      "name_zh": "文献速读卡",
+      "family": "literature",
+      "origin_refs": ["templates/layouts/literature_minimal/body_variants.json", "HKUDS__Paper2Slides"],
+      "selection": {
+        "content_shapes": ["paper_summary", "literature_note", "reading_card"],
+        "item_count_min": 1,
+        "item_count_max": 1,
+        "density": "high",
+        "best_for": "A compact paper-reading note: problem, method, result, limitation.",
+        "avoid_when": "The slide should reproduce a large source figure or table."
+      },
+      "layout": {
+        "padding": 20,
+        "boxes": [
+          {"id": "paper", "x": 126, "y": 176, "width": 1028, "height": 450}
+        ]
+      },
+      "slots": [
+        {"slot_id": "citation", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.15, "max_chars_per_line_zh": 46, "max_lines": 1, "overflow_action": "shorten_citation", "required": true},
+        {"slot_id": "problem", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 38, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "method", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 38, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "result", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 38, "max_lines": 2, "overflow_action": "shorten", "required": true},
+        {"slot_id": "limitation", "role": "body", "font_size_px": 17, "min_font_size_px": 15, "line_height": 1.25, "max_chars_per_line_zh": 38, "max_lines": 2, "overflow_action": "move_to_notes", "required": false}
+      ],
+      "preview_payload": {
+        "citation": "Author et al., 2025, Journal",
+        "problem": "研究问题：解释生态功能变化的关键驱动。",
+        "method": "方法：多源数据融合与可解释模型比较。",
+        "result": "发现：气候与土地利用贡献呈区域差异。",
+        "limitation": "限制：极端环境样点仍然不足。"
+      }
+    },
+    {
+      "card_id": "callout_quote_card",
+      "name_zh": "重点结论卡",
+      "family": "callout",
+      "origin_refs": ["hugohe3__ppt-master", "templates/charts/labeled_card.svg"],
+      "selection": {
+        "content_shapes": ["key_takeaway", "quote", "thesis_statement"],
+        "item_count_min": 1,
+        "item_count_max": 1,
+        "density": "low",
+        "best_for": "One sentence that deserves visual emphasis.",
+        "avoid_when": "The message needs evidence, multiple clauses, or caveats."
+      },
+      "layout": {
+        "padding": 28,
+        "boxes": [
+          {"id": "callout", "x": 178, "y": 220, "width": 924, "height": 250}
+        ]
+      },
+      "slots": [
+        {"slot_id": "statement", "role": "title", "font_size_px": 28, "min_font_size_px": 22, "line_height": 1.18, "max_chars_per_line_zh": 24, "max_lines": 3, "overflow_action": "shorten_or_split_slide", "required": true},
+        {"slot_id": "source", "role": "caption", "font_size_px": 15, "min_font_size_px": 13, "line_height": 1.15, "max_chars_per_line_zh": 28, "max_lines": 1, "overflow_action": "shorten_source", "required": false}
+      ],
+      "preview_payload": {
+        "statement": "真正重要的不是把内容塞满，而是让证据有清楚的落点。",
+        "source": "组装说明示例"
+      }
+    }
+  ]
+}

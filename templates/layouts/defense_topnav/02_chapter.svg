@@ -3,7 +3,7 @@
   <line x1="27.67" y1="111.15" x2="1252.33" y2="111.15" stroke="#183A6A" stroke-width="2.667"/>
   <rect x="0" y="0" width="545.07" height="720" fill="#183A6A"/>
   <circle cx="272.5" cy="360" r="216.9" fill="#FFFFFF" fill-opacity="0.08"/>
-  <text x="272.5" y="390" text-anchor="middle" font-family="Microsoft YaHei, Source Han Sans CN, Arial, sans-serif" font-size="138" font-weight="900" fill="#FFFFFF" data-slot="CHAPTER_NUM">{{CHAPTER_NUM}}</text>
+  <text x="272.5" y="390" text-anchor="middle" font-family="Microsoft YaHei, Source Han Sans CN, Arial, sans-serif" font-size="138" font-weight="900" fill="#FFFFFF" data-slot="CHAPTER_NUM" data-pptx-textbox="true" data-pptx-box-x="187.5" data-pptx-box-y="245.1" data-pptx-box-w="170" data-pptx-box-h="213.9">{{CHAPTER_NUM}}</text>
   <rect x="650" y="244" width="472" height="4" fill="#183A6A" fill-opacity="0.2"/>
   <text x="650" y="338" font-family="Microsoft YaHei, Source Han Sans CN, Arial, sans-serif" font-size="56" font-weight="bold" fill="#000000" data-slot="CHAPTER_TITLE" data-pptx-textbox="true" data-pptx-box-x="650" data-pptx-box-y="284" data-pptx-box-w="510" data-pptx-box-h="78">{{CHAPTER_TITLE}}</text>
   <text x="650" y="394" font-family="Microsoft YaHei, Source Han Sans CN, Arial, sans-serif" font-size="24" fill="#595959" data-slot="CHAPTER_DESC" data-pptx-textbox="true" data-pptx-box-x="650" data-pptx-box-y="370" data-pptx-box-w="510" data-pptx-box-h="70">{{CHAPTER_DESC}}</text>

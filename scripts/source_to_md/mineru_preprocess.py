@@ -7,6 +7,7 @@ Agent API returns: Markdown only (CDN link)
 """
 
 import json
+import http.client
 import os
 import shutil
 import tempfile
@@ -14,6 +15,7 @@ import time
 import zipfile
 from pathlib import Path
 from typing import Any, Dict, Optional
+from urllib.parse import urlsplit
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -104,15 +106,24 @@ def _json_request(url: str, method: str = "GET", data: Optional[dict] = None,
 def _put_file(file_path: Path, upload_url: str, timeout: int = 120) -> None:
     """Upload file bytes to a pre-signed URL via PUT."""
     data = file_path.read_bytes()
-    req = Request(upload_url, data=data, method="PUT")
-    req.add_header("Content-Length", str(len(data)))
+    parsed = urlsplit(upload_url)
+    if parsed.scheme not in {"http", "https"}:
+        raise MinerUError(f"Unsupported upload URL scheme: {parsed.scheme}")
+    connection_cls = http.client.HTTPSConnection if parsed.scheme == "https" else http.client.HTTPConnection
+    target = parsed.path or "/"
+    if parsed.query:
+        target = f"{target}?{parsed.query}"
+    conn = connection_cls(parsed.netloc, timeout=timeout)
     try:
-        with urlopen(req, timeout=timeout) as resp:
-            pass  # 200 OK
-    except HTTPError as e:
-        raise MinerUError(f"Upload HTTP {e.code}") from e
-    except URLError as e:
-        raise MinerUError(f"Upload network error: {e.reason}") from e
+        conn.request("PUT", target, body=data, headers={"Content-Length": str(len(data))})
+        resp = conn.getresponse()
+        detail = resp.read().decode("utf-8", errors="replace")
+        if resp.status not in {200, 201, 204}:
+            raise MinerUError(f"Upload HTTP {resp.status}: {detail}") from None
+    except OSError as e:
+        raise MinerUError(f"Upload network error: {e}") from e
+    finally:
+        conn.close()
 
 
 def _download(url: str, dest: Path, timeout: int = 120) -> Path:

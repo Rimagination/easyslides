@@ -16,8 +16,12 @@ from pathlib import Path
 from typing import Any
 
 try:
+    from scripts.body_variant_adapter import validate_deck_body_variants
+    from scripts.deck_execution_lock import build_deck_execution_lock
     from scripts.scenario_profiles import load_profiles, validate_profiles
 except ModuleNotFoundError:  # pragma: no cover - supports direct script execution
+    from body_variant_adapter import validate_deck_body_variants
+    from deck_execution_lock import build_deck_execution_lock
     from scenario_profiles import load_profiles, validate_profiles
 
 
@@ -111,7 +115,29 @@ def validate_deck_plan(plan: dict[str, Any], *, repo_root: Path | None = None) -
             pages.append(page)
         _validate_slide(slide, slide_path, issues, source_ids, seen_pages)
 
-    return _report(issues, pages, len(slides))
+    body_variant_report = validate_deck_body_variants(plan, repo_root=repo)
+    for item in body_variant_report["issues"]:
+        issues.append(
+            issue(
+                "DECK-PLAN-BODY-VARIANT",
+                f"{item['code']}: {item['message']}",
+                item.get("path"),
+            )
+        )
+
+    execution_lock = None
+    try:
+        execution_lock = build_deck_execution_lock(plan, repo_root=repo)
+    except Exception as exc:
+        issues.append(
+            issue(
+                "DECK-PLAN-EXECUTION-LOCK",
+                f"cannot build deck execution lock: {exc}",
+                "deck_execution_lock",
+            )
+        )
+
+    return _report(issues, pages, len(slides), body_variant_report, execution_lock)
 
 
 def _validate_source_map(value: Any, issues: list[dict[str, str]]) -> set[str]:
@@ -206,7 +232,33 @@ def _validate_slide(
             )
 
 
-def _report(issues: list[dict[str, str]], pages: list[str], slide_count: int) -> dict[str, Any]:
+def _empty_body_variant_report(slide_count: int) -> dict[str, Any]:
+    return {
+        "schema_version": "easyslides.deck_body_variant_report.v1",
+        "status": "skipped",
+        "issue_count": 0,
+        "issues": [],
+        "slide_count": slide_count,
+        "checked_slide_count": 0,
+        "slides": [],
+    }
+
+
+def _report(
+    issues: list[dict[str, str]],
+    pages: list[str],
+    slide_count: int,
+    body_variant_report: dict[str, Any] | None = None,
+    execution_lock: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    body_variant_report = body_variant_report or _empty_body_variant_report(slide_count)
+    execution_lock_status = (
+        "pass"
+        if isinstance(execution_lock, dict) and not issues
+        else "fail"
+        if isinstance(execution_lock, dict)
+        else "skipped"
+    )
     return {
         "schema_version": REPORT_SCHEMA_VERSION,
         "status": "pass" if not issues else "fail",
@@ -214,6 +266,10 @@ def _report(issues: list[dict[str, str]], pages: list[str], slide_count: int) ->
         "issues": issues,
         "slide_count": slide_count,
         "pages": pages,
+        "body_variant_status": body_variant_report["status"],
+        "body_variant_reports": body_variant_report["slides"],
+        "execution_lock_status": execution_lock_status,
+        "execution_lock": execution_lock,
     }
 
 

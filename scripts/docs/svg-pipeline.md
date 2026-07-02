@@ -9,9 +9,11 @@ These tools cover post-processing, SVG validation, speaker notes, recorded narra
 Run these steps in order:
 
 ```bash
+python3 scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed
 python3 scripts/total_md_split.py <project_path>
 python3 scripts/finalize_svg.py <project_path>
 python3 scripts/svg_to_pptx.py <project_path>
+python3 scripts/validate_pptx_text_layout.py <output.pptx> --report <project_path>/reports/text_layout_report.json
 ```
 
 ## `finalize_svg.py`
@@ -25,6 +27,22 @@ It aggregates:
 - `embed_images.py`
 - `flatten_tspan.py`
 - `svg_rect_to_path.py`
+
+## `validate_svg_text_slots.py`
+
+Validate authored SVG text before export. This catches the failure mode where
+a text element is technically a valid PowerPoint text box but visually escapes
+its intended card or page region.
+
+```bash
+python3 scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed \
+  --report <project_path>/reports/svg_text_slot_report.json
+```
+
+For PPT Master-compatible pages, meaningful text should use
+`data-pptx-textbox="true"` plus `data-pptx-box-x/y/w/h` and explicit `<tspan>`
+lines. If this gate fails, shorten content, split the page, or choose a larger
+page recipe before running `finalize_svg.py`.
 
 ## `svg_to_pptx.py`
 
@@ -95,17 +113,25 @@ Do not treat a successful `svg_to_pptx.py` run as the final gate. Before deliver
 python3 scripts/office/unpack.py <output.pptx> <tmp_unpacked>
 python3 scripts/office/pack.py <tmp_unpacked> <tmp_roundtrip.pptx> --original <output.pptx> --validate true
 python3 scripts/source_to_md/ppt_to_md.py <output.pptx> -o <project_path>/reports/pptx_text_check.md
+python3 scripts/validate_pptx_text_layout.py <output.pptx> --report <project_path>/reports/text_layout_report.json
+python3 scripts/render_pptx_png.py <output.pptx> --out <project_path>/reports/rendered_png --report <project_path>/reports/rendered_png_report.json
+python3 scripts/visual_measure_gate.py --pptx <output.pptx> --report <project_path>/reports/visual_measure_report.json
 ```
 
 Then run a placeholder scan over extracted slide text for `TODO`, `PLACEHOLDER`,
 `{{`, `xxxx`, `lorem`, `ipsum`, `占位`, `待补`, and `此处`.
 
+`text_layout_report.json` must have `blocking_count = 0`. Blocking text layout
+issues mean exported PowerPoint geometry is unsafe even if SVG validation
+passed.
+
 For visual QA, render the exported PPTX rather than relying only on SVG previews.
 Preferred route: LibreOffice/soffice -> PDF -> PNG. If `soffice` or `pdftoppm`
 is not on `PATH`, locate the executable explicitly; if `pdftoppm` is unavailable,
-render the PDF pages with PyMuPDF. Inspect full-size previews for dense cards,
-process steps, tables, references, and any page where text was shortened or
-ported from another template. Contact sheets are only a deck-rhythm overview.
+`scripts/render_pptx_png.py` renders the PDF pages with PyMuPDF. Inspect
+full-size previews for dense cards, process steps, tables, references, and any
+page where text was shortened or ported from another template. Contact sheets
+are only a deck-rhythm overview.
 
 ## `total_md_split.py`
 

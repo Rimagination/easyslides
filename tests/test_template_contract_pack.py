@@ -1,4 +1,6 @@
 import json
+import contextlib
+import io
 import tempfile
 import unittest
 from pathlib import Path
@@ -118,6 +120,18 @@ class TemplateContractPackTests(unittest.TestCase):
         self.assertFalse(template["source_policy"]["contains_local_paths"])
         self.assertNotIn("D:\\", slots_text)
         self.assertNotIn("private_asset_bank", slots_text)
+
+    def test_cli_prints_written_paths_for_external_template_directory(self):
+        from scripts.template_contract_pack import main
+
+        with tempfile.TemporaryDirectory() as tmp:
+            template_dir = make_slot_guided_fixture(Path(tmp))
+            stdout = io.StringIO()
+            with contextlib.redirect_stdout(stdout):
+                code = main([str(template_dir)])
+
+        self.assertEqual(code, 0)
+        self.assertIn("Wrote 4 contract sidecar", stdout.getvalue())
 
 
 if __name__ == "__main__":

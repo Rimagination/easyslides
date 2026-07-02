@@ -2,8 +2,9 @@
 """PPT Master project management helpers.
 
 Usage:
-    python3 scripts/project_manager.py init <project_name> [--format ppt169] [--dir projects]
-    python3 scripts/project_manager.py import-sources <project_path> <source1> [<source2> ...] [--move | --copy]
+    python3 scripts/project_manager.py init <project_name> [--format ppt169] [--kind deck|slide_image_reconstruction] [--dir projects]
+    python3 scripts/project_manager.py setup-pdf-tools [--install] [--skip-python] [--mineru-token TOKEN]
+    python3 scripts/project_manager.py import-sources <project_path> <source1> [<source2> ...] [--move | --copy] [--require-structured-pdf | --require-mineru]
     python3 scripts/project_manager.py validate <project_path>
     python3 scripts/project_manager.py info <project_path>
 """
@@ -42,6 +43,7 @@ TOOLS_DIR = Path(__file__).resolve().parent
 SKILL_DIR = TOOLS_DIR.parent
 REPO_ROOT = SKILL_DIR.parent.parent
 SOURCE_DIRNAME = "sources"
+PROJECT_KINDS = {"deck", "slide_image_reconstruction"}
 TEXT_SOURCE_SUFFIXES = {".md", ".markdown", ".txt"}
 TABLE_TEXT_SUFFIXES = {".csv", ".tsv"}
 PDF_SUFFIXES = {".pdf"}
@@ -115,8 +117,12 @@ class ProjectManager:
         project_name: str,
         canvas_format: str = "ppt169",
         base_dir: str | None = None,
+        project_kind: str = "deck",
     ) -> str:
         base_path = Path(base_dir) if base_dir else self.base_dir
+        if project_kind not in PROJECT_KINDS:
+            available_kinds = ", ".join(sorted(PROJECT_KINDS))
+            raise ValueError(f"Unsupported project kind: {project_kind} (available: {available_kinds})")
 
         normalized_format = normalize_canvas_format(canvas_format)
         if normalized_format not in self.CANVAS_FORMATS:
@@ -133,7 +139,7 @@ class ProjectManager:
         if project_path.exists():
             raise FileExistsError(f"Project directory already exists: {project_path}")
 
-        for rel_path in (
+        directories = [
             "svg_output",
             "svg_final",
             "images",
@@ -141,7 +147,18 @@ class ProjectManager:
             "templates",
             SOURCE_DIRNAME,
             "exports",
-        ):
+        ]
+        if project_kind == "slide_image_reconstruction":
+            directories.extend(
+                [
+                    "analysis",
+                    "pages/page_001/assets/split",
+                    "pptx",
+                    "reports",
+                ]
+            )
+
+        for rel_path in directories:
             (project_path / rel_path).mkdir(parents=True, exist_ok=True)
 
         canvas_info = self.CANVAS_FORMATS[normalized_format]
@@ -150,6 +167,7 @@ class ProjectManager:
             (
                 f"# {project_name}\n\n"
                 f"- Canvas format: {normalized_format}\n"
+                f"- Project kind: {project_kind}\n"
                 f"- Created: {date_str}\n\n"
                 "## Directories\n\n"
                 "- `svg_output/`: raw SVG output\n"
@@ -160,6 +178,10 @@ class ProjectManager:
                 "- `sources/`: source materials and normalized markdown\n"
                 "- `exports/`: main native pptx (timestamped)\n"
                 "- `backup/<timestamp>/`: SVG snapshot pptx + svg_output/ archive (auto-created on export; safe to delete old timestamps)\n"
+                "\n"
+                "For slide-image reconstruction projects, use `analysis/_analysis.json`, "
+                "`pages/page_001/manifest.json`, `pages/page_001/assets/split/`, "
+                "`pptx/`, and `reports/` as the image-to-editable handoff surface.\n"
             ),
             encoding="utf-8",
         )
@@ -234,8 +256,37 @@ class ProjectManager:
         if result.stdout.strip():
             print(result.stdout.strip())
 
-    def _import_pdf(self, pdf_path: Path, markdown_path: Path) -> None:
-        # Try MinerU structured extraction first, fall back to PyMuPDF
+    def _store_structured_pdf_result(
+        self,
+        result: dict,
+        pdf_path: Path,
+        markdown_path: Path,
+    ) -> None:
+        source_md = Path(result["markdown_path"])
+        if source_md != markdown_path:
+            shutil.copy2(str(source_md), str(markdown_path))
+
+        figures_dir = result.get("figures_dir")
+        if figures_dir and Path(figures_dir).is_dir():
+            project_dir = pdf_path.parent.parent  # sources/ -> project/
+            img_dir = project_dir / "images"
+            img_dir.mkdir(parents=True, exist_ok=True)
+            for fig in Path(figures_dir).iterdir():
+                if fig.is_file():
+                    dest = img_dir / fig.name
+                    if not dest.exists():
+                        shutil.copy2(str(fig), str(dest))
+
+    def _import_pdf(
+        self,
+        pdf_path: Path,
+        markdown_path: Path,
+        require_mineru: bool = False,
+        require_structured_pdf: bool = False,
+    ) -> None:
+        # Try structured scholarly extraction first, fall back to PyMuPDF only in quick-text mode.
+        require_structured_pdf = require_structured_pdf or require_mineru
+        structured_errors: list[str] = []
         mineru_mod = TOOLS_DIR / "source_to_md" / "mineru_preprocess.py"
         if mineru_mod.exists():
             try:
@@ -256,28 +307,32 @@ class ProjectManager:
                 try:
                     sources_dir = markdown_path.parent
                     result = mineru_extract(pdf_path, sources_dir)
-                    mineru_md = Path(result["markdown_path"])
-
-                    # Copy MinerU markdown to the canonical location
-                    if mineru_md != markdown_path:
-                        shutil.copy2(str(mineru_md), str(markdown_path))
-
-                    # Copy extracted figures into project images/ dir
-                    figures_dir = result.get("figures_dir")
-                    if figures_dir and Path(figures_dir).is_dir():
-                        project_dir = pdf_path.parent.parent  # sources/ -> project/
-                        img_dir = project_dir / "images"
-                        img_dir.mkdir(parents=True, exist_ok=True)
-                        for fig in Path(figures_dir).iterdir():
-                            if fig.is_file():
-                                dest = img_dir / fig.name
-                                if not dest.exists():
-                                    shutil.copy2(str(fig), str(dest))
-
+                    self._store_structured_pdf_result(result, pdf_path, markdown_path)
                     print(f"[MinerU] Used {result['method']} extraction")
                     return
                 except Exception as exc:
-                    print(f"[MinerU] Extraction failed ({exc}), using PyMuPDF fallback ...")
+                    structured_errors.append(f"MinerU failed: {exc}")
+                    if require_structured_pdf:
+                        print(f"[MinerU] Extraction failed ({exc}), trying PDFFigures2 fallback ...")
+                    else:
+                        print(f"[MinerU] Extraction failed ({exc}), using PyMuPDF fallback ...")
+        else:
+            structured_errors.append(f"MinerU module not found: {mineru_mod}")
+
+        if require_structured_pdf:
+            try:
+                from source_to_md.pdffigures2_preprocess import extract_pdf as pdffigures2_extract
+
+                result = pdffigures2_extract(pdf_path, markdown_path.parent)
+                self._store_structured_pdf_result(result, pdf_path, markdown_path)
+                print(f"[PDFFigures2] Used {result['method']} extraction")
+                return
+            except Exception as exc:
+                structured_errors.append(f"PDFFigures2 failed: {exc}")
+                details = "; ".join(structured_errors)
+                raise RuntimeError(
+                    f"Structured PDF extraction required but failed ({details})"
+                ) from exc
 
         # Fallback: PyMuPDF extraction
         self._run_tool(
@@ -445,6 +500,8 @@ class ProjectManager:
         source_items: list[str],
         move: bool = False,
         copy: bool = False,
+        require_structured_pdf: bool = False,
+        require_mineru: bool = False,
     ) -> dict[str, list[str]]:
         if move and copy:
             raise ValueError("--move and --copy are mutually exclusive")
@@ -554,9 +611,16 @@ class ProjectManager:
                     continue
                 markdown_path = canonical_markdown_path
                 try:
-                    self._import_pdf(archived_path, markdown_path)
+                    self._import_pdf(
+                        archived_path,
+                        markdown_path,
+                        require_mineru=require_mineru,
+                        require_structured_pdf=require_structured_pdf,
+                    )
                     summary["markdown"].append(str(markdown_path))
                 except Exception as exc:  # pragma: no cover - summary path
+                    if require_mineru or require_structured_pdf:
+                        raise
                     summary["skipped"].append(f"{item}: PDF conversion failed ({exc})")
             elif suffix in PRESENTATION_SUFFIXES:
                 canonical_markdown_path = sources_dir / f"{archived_path.stem}.md"
@@ -667,7 +731,7 @@ def print_usage() -> None:
     print(__doc__)
 
 
-def parse_init_args(argv: list[str]) -> tuple[str, str, str]:
+def parse_init_args(argv: list[str]) -> tuple[str, str, str, str]:
     """Parse arguments for the `init` subcommand."""
     if len(argv) < 3:
         raise ValueError("Project name is required")
@@ -675,6 +739,7 @@ def parse_init_args(argv: list[str]) -> tuple[str, str, str]:
     project_name = argv[2]
     canvas_format = "ppt169"
     base_dir = "projects"
+    project_kind = "deck"
 
     i = 3
     while i < len(argv):
@@ -684,13 +749,16 @@ def parse_init_args(argv: list[str]) -> tuple[str, str, str]:
         elif argv[i] == "--dir" and i + 1 < len(argv):
             base_dir = argv[i + 1]
             i += 2
+        elif argv[i] == "--kind" and i + 1 < len(argv):
+            project_kind = argv[i + 1]
+            i += 2
         else:
             i += 1
 
-    return project_name, canvas_format, base_dir
+    return project_name, canvas_format, base_dir, project_kind
 
 
-def parse_import_args(argv: list[str]) -> tuple[str, list[str], bool, bool]:
+def parse_import_args(argv: list[str]) -> tuple[str, list[str], bool, bool, bool, bool]:
     """Parse arguments for the `import-sources` subcommand."""
     if len(argv) < 4:
         raise ValueError("Project path and at least one source are required")
@@ -698,6 +766,8 @@ def parse_import_args(argv: list[str]) -> tuple[str, list[str], bool, bool]:
     project_path = argv[2]
     move = False
     copy = False
+    require_structured_pdf = False
+    require_mineru = False
     sources: list[str] = []
 
     for arg in argv[3:]:
@@ -705,13 +775,17 @@ def parse_import_args(argv: list[str]) -> tuple[str, list[str], bool, bool]:
             move = True
         elif arg == "--copy":
             copy = True
+        elif arg == "--require-structured-pdf":
+            require_structured_pdf = True
+        elif arg == "--require-mineru":
+            require_mineru = True
         else:
             sources.append(arg)
 
     if move and copy:
         raise ValueError("--move and --copy are mutually exclusive")
 
-    return project_path, sources, move, copy
+    return project_path, sources, move, copy, require_structured_pdf, require_mineru
 
 
 def main() -> None:
@@ -729,18 +803,46 @@ def main() -> None:
 
     try:
         if command == "init":
-            project_name, canvas_format, base_dir = parse_init_args(sys.argv)
-            project_path = manager.init_project(project_name, canvas_format, base_dir=base_dir)
+            project_name, canvas_format, base_dir, project_kind = parse_init_args(sys.argv)
+            project_path = manager.init_project(
+                project_name,
+                canvas_format,
+                base_dir=base_dir,
+                project_kind=project_kind,
+            )
             print(f"[OK] Project initialized: {project_path}")
             print("Next:")
-            print("1. Put source files into sources/ (or use import-sources)")
-            print("2. Save your design spec to the project root")
-            print("3. Generate SVG files into svg_output/")
+            if project_kind == "slide_image_reconstruction":
+                print("1. Put source slide images into sources/ or run image_reconstruction_pipeline.py init")
+                print("2. Fill analysis/_analysis.json with Layer A/B/C inventory")
+                print("3. Assemble pages/page_001/manifest.json through the EasySlides backend")
+                print("4. Run image_reconstruction_pipeline.py qa")
+            else:
+                print("1. Run setup-pdf-tools --install on first use")
+                print("2. Put source files into sources/ (or use import-sources)")
+                print("3. Save your design spec to the project root")
+                print("4. Generate SVG files into svg_output/")
+            return
+
+        if command == "setup-pdf-tools":
+            try:
+                from setup_pdf_tools import main as setup_pdf_tools_main
+            except ImportError:
+                from scripts.setup_pdf_tools import main as setup_pdf_tools_main  # type: ignore
+
+            setup_pdf_tools_main(sys.argv[2:])
             return
 
         if command == "import-sources":
-            project_path, sources, move, copy = parse_import_args(sys.argv)
-            summary = manager.import_sources(project_path, sources, move=move, copy=copy)
+            project_path, sources, move, copy, require_structured_pdf, require_mineru = parse_import_args(sys.argv)
+            summary = manager.import_sources(
+                project_path,
+                sources,
+                move=move,
+                copy=copy,
+                require_structured_pdf=require_structured_pdf,
+                require_mineru=require_mineru,
+            )
             print(f"[OK] Imported sources into: {project_path}")
             if summary["archived"]:
                 print("\nArchived originals / URL records:")

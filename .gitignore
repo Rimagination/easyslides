@@ -29,14 +29,39 @@ Thumbs.db
 # Disposable workspaces and downloads
 .codex_tmp/
 tmp/
+outputs/
 downloads/
+tools/pdffigures2/
 *.log
 *.tmp
 *.bak
 *.orig
+/*.pptx
+/*.pptm
+/*.ppsx
+/*.potx
+/*.pdf
+/*.docx
+/*.xlsx
+/svg_quality_report.txt
+/seedling.svg
 
-# Generated deck/project artifacts. Keep build scripts, ignore imported
-# source material, rendered decks, previews, unpacked OOXML, and reports.
+# Generated deck/project artifacts. Keep curated tracked project scripts,
+# ignore imported source material, rendered decks, previews, unpacked OOXML,
+# and reports.
+projects/*
+!projects/README.md
+!projects/PPT_PROMPTS.md
+!projects/degree_thesis/
+!projects/degree_thesis/defense01_deck/
+!projects/degree_thesis/defense01_deck/build_deck.py
+!projects/degree_thesis/defense01_deck/source_plan.py
+!projects/hothouse_earth_literature01/
+!projects/hothouse_earth_literature01/build_literature01_deck.py
+!projects/journal_paper/
+!projects/journal_paper/build_literature01_deck.py
+!projects/openclaw_hermes_agent_report_ppt169_20260520/
+!projects/openclaw_hermes_agent_report_ppt169_20260520/build_academic02_agent_report.py
 projects/README.md
 projects/PPT_PROMPTS.md
 projects/**/sources/
