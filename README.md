@@ -4,242 +4,140 @@
 
 ![EasySlides: Research to editable slides](assets/easyslides-github-hero.png)
 
-EasySlides is a **project-backed Codex skill**. `SKILL.md` is the agent
-entrypoint, but real PPTX generation, template reuse, slide-image
-reconstruction, and QA gates require the full repository.
-
-- Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
-- Installation: [INSTALL.md](INSTALL.md)
-- Skill entrypoint: [SKILL.md](SKILL.md)
-
----
-
 ## 中文
 
-EasySlides 是一个面向学术汇报与研究型演示文稿的本地 PPTX 生成工具链。它的核心目标是把论文、报告、网页、Markdown 等来源材料转换为结构清晰、风格一致、并且可以在 PowerPoint 中继续编辑的演示文稿。
+**EasySlides 是一个 AI Agent 插件，面向学术报告与研究型演讲稿的本地 PPTX 生成工具。**它的核心目标是将论文、网页、Markdown 等来源材料转换为结构清晰、风格一致，并且可以在 PowerPoint 中继续编辑的演讲稿。
 
-> 研究材料 -> 可追溯叙事 -> 模板与组件编排 -> 可编辑原生 PPTX
+你不需要学习代码、版式语法或复杂的制作流程。只要用自然语言说明你的汇报场景、提供已有材料，并在信息不够明确时回答 EasySlides 的追问，它会先理解研究问题、听众、叙事目标和版式约束，再完成内容组织、页面编排与可编辑 PPTX 的交付。
 
-核心流程：
+> 从研究材料出发，用自然语言协作，生成真正能继续修改和使用的学术 PPT。
 
-```text
-来源材料 -> 项目工作区 -> Deck Plan -> SVG/布局模板 -> 可编辑 PPTX
-```
+### 核心优势
 
-### 核心能力
+- **先理解材料，再开始排版**：论文、报告、网页和 Markdown 不会被粗暴地塞进固定页面。EasySlides 会梳理论点、证据、图表、引用和叙事顺序，把“资料”转成适合讲述的演讲稿结构。
+- **不清楚就先问，不靠猜**：当汇报对象、页数、研究重点、模板选择或素材用途不明确时，Agent 会通过可选择的问题确认关键信息，再继续制作。
+- **模板是设计能力，不是僵硬页数**：模板由设计语言、稳定页面壳、内容变体和可复用组件组成。它既保留统一风格，也能根据材料选择合适的图文、对比、流程、数据和结论表达方式。
+- **从现有 PPT 中提炼可复用风格**：可以把参考 PPT 蒸馏成可执行的模板，保留其内容组织、布局规律、组件表达与视觉秩序，而不是只截取几张不能复用的图片。
+- **交付的是原生可编辑 PPTX**：文字、形状、颜色、图表和页面结构都能在 PowerPoint 中继续修改。项目在本地工作区处理材料与生成结果，便于保留研究资料的控制权。
+- **把细节当作硬约束**：文字容量、容器中的垂直居中、对齐、几何关系、模板边界和视觉差异都经过质量检查，避免“大框里挤几行字”或“看起来像模板却不好讲”的页面。
 
-- **学术材料到叙事**：从论文、报告、数据、网页和 Markdown 建立可追溯的内容计划，优先保留用户提供的主张、图表、表格与引用。
-- **PPTX 蒸馏与模板化**：把参考 PPTX 分解为稳定页面壳、内容变体、组件、几何、设计令牌与来源证据，而不是把整套页面当作不可控的图片。
-- **模板受边界约束**：命名模板只能使用其声明的本地页面变体和组件；全局组件或其它模板资产不能被悄悄套用。
-- **组件资产体系**：提供模板组件、卡片、页面配方、图表和图标库；组件具有输入槽位、容量、渲染器和 QA 契约。
-- **原生可编辑交付**：生产链固定为 `SVG/shape IR -> DrawingML/OOXML -> PPTX`，文字、形状、颜色和图表保持可编辑。
-- **Fail-closed QA**：文本容量、垂直居中、几何、视觉差异、PPTX 可编辑性与跨材料测试均为交付门禁。
+### 与常见方案的区别
 
-### 项目结构
+| 关注点 | EasySlides | 常见云端 AI PPT 工具 | 传统模板与排版工具 | 代码型幻灯片工具 |
+| --- | --- | --- | --- | --- |
+| 使用方式 | 通过自然语言与 Agent 协作 | 通常由提示词生成后手动调整 | 主要靠人工拖拽与排版 | 需要编写代码或标记语言 |
+| 对研究材料的处理 | 从论点、证据、图表和引用出发组织叙事 | 更擅长快速概括与视觉初稿 | 依赖用户先整理好内容 | 依赖开发者自行准备内容与结构 |
+| 模板复用 | 蒸馏设计语言、页面壳、内容变体与组件 | 多为主题皮肤或固定版式 | 多为静态母版和单页素材 | 可复用组件强，但设计和内容规则需自行实现 |
+| 可编辑交付 | 原生 PPTX，便于在 PowerPoint 接力修改 | 取决于平台的导出能力 | 原生 PPTX | 取决于所选渲染链路 |
+| 质量控制 | 内容容量、对齐、模板边界和视觉检查进入交付门槛 | 通常以生成结果为主，需人工复核 | 主要靠人工检查 | 主要靠开发者自行测试 |
 
-- `SKILL.md`：学术 PPT 工作流的主说明。
-- `scripts/`：转换、项目管理、SVG 校验、模板导入、PPTX 导出等工具。
-- `templates/`：学术布局模板、风格包、图表模块与图标库。
-- `assets/`：README、品牌和产品级视觉资产。
-- `references/`：写作规范、设计规则、执行器/策略器参考。
-- `workflows/`：预览、音频、模板创建、图表验证、主题调研等扩展流程。
-- `tests/`：模板契约、CLI 入口与核心工具的回归测试。
+EasySlides 的重点不是取代所有演示工具，而是把“读懂研究材料、讲清研究故事、保持模板秩序、交付可编辑文件”连成一个完整的本地工作流。
 
 ### 快速开始
 
-```powershell
-python -m pip install -r requirements.txt
-python -m pytest -q
-python scripts/easyslides.py --help
-```
+在 Codex 或支持安装技能的 AI Agent 对话中，直接发送下面这句话：
 
-创建一个本地演示项目：
+> 请帮我安装这个插件：
+> [Rimagination/easyslides](https://github.com/Rimagination/easyslides)
 
-```powershell
-python scripts/project_manager.py init my_presentation --format ppt169
-python scripts/project_manager.py import-sources projects/my_presentation <source_files...> --copy
-python scripts/project_manager.py validate projects/my_presentation
-```
+安装完成后，直接像与研究助理沟通一样提出任务。例如：
 
-在完成 SVG 页面编排后导出 PPTX：
+- “把这篇论文做成 15 页的组会汇报，突出研究问题、方法和实验结论。”
+- “参考这份答辩 PPT 的风格，蒸馏出一个可复用模板，再用我的开题材料做一套新 PPT。”
+- “材料里缺少研究对象和汇报时长时，先问我，不要自行补全。”
 
-```powershell
-python scripts/finalize_svg.py projects/my_presentation
-python scripts/svg_to_pptx.py projects/my_presentation
-```
+### 应用案例：从论文到组会汇报
 
-### 常用工作流
+以经典论文 *Attention Is All You Need* 为例，用户只需说明“我要做一次面向实验室同学的论文精读汇报，重点讲 Transformer 为什么有效”。EasySlides 会先确认听众背景、页数与讲述重点，然后组织出问题背景、核心方法、关键结构、实验结果、局限与讨论等页面；需要时保留论文图表和引用来源，并为每一页选择最匹配的内容变体。
 
-```powershell
-# 将资料转换为 Markdown，并建立项目
-python scripts/easyslides.py source-to-md <source-file-or-url> -o <markdown-output>
-python scripts/project_manager.py init my_presentation --format ppt169
+最终得到的不是一份只能观看的长图，而是一套可以在 PowerPoint 中修改标题、替换图表、补充实验并继续演讲的 PPTX。案例站中已经展示了 Transformer 文献汇报、两种答辩版式及其真实页图。
 
-# 从参考 PPTX 蒸馏可复用模板资产
-python scripts/easyslides.py distill <template.pptx> --template-id <template_id>
+### 模板与案例展厅
 
-# 验证模板能力边界，并编译生产模板
-python scripts/easyslides.py template-capabilities validate --json
-python scripts/easyslides.py template-compile templates/layouts/nsfc_defense --write --json
+访问 [EasySlides 模板与案例展厅](http://easyslides.scansci.com/) 查看现有案例、模板名称、真实页图和可下载的 PPTX。
 
-# 生成组件选择、候选方案和 PPTX 预览
-python scripts/easyslides.py component-workflow deck_plan.json --out build/component_workflow
-```
+模板不是“封面加几张固定内容页”。在 EasySlides 中，一个模板包含：
 
-### 模板
+- **设计语言**：字体、色彩、留白、标题层级和视觉节奏。
+- **稳定页面壳**：如封面、目录、章节页、内容页和结束页；没有目录的参考 PPT 也不会被强行补上目录。
+- **内容变体**：根据材料选择图文并列、流程、对比、研究路径、数据洞察、方法拆解或结论聚焦等表达，而不是让所有内容页长得一样。
+- **组件资产**：标题栏、导航、卡片、图表、图标、标注和局部装饰都有明确的用途、容量和对齐规则。
 
-当前可发布的学术布局模板位于 `templates/layouts/`，索引文件为 `templates/layouts/layouts_index.json`。除了通用学术、SCQA、答辩和文献汇报页面壳外，`nsfc_defense` 提供了可执行内容变体与模板局部组件。
+### 隐私与交付
 
-每个模板目录都拥有 `capability_profile.json`。它定义模板是否可用于生成、允许哪些页面或组件粒度，以及是否存在局部组件包。命名模板默认拒绝未声明的全局资产；蒸馏中间目录与栅格保真目录被标记为不可直接生成。
+EasySlides 以本地项目工作区组织材料与生成结果。论文原文、参考 PPT、预览图、导出的演示文件和本地质量检查结果默认不提交到 Git。请只在明确授权后再发布包含私人研究材料的内容。
 
-常用维护命令：
+<details>
+<summary><strong>项目结构与开发信息</strong></summary>
 
-```powershell
-python scripts/easyslides.py template-capabilities validate --json
-python scripts/easyslides.py template-package rebuild --json
-python scripts/easyslides.py template-gate templates/layouts/nsfc_defense --json
-```
+<br>
 
-### 致谢
+日常使用不需要直接操作这些目录；它们用于让 Agent、模板和质量检查协同工作。
 
-EasySlides 在多个开源项目与公开实践的启发上继续扩展。为避免把不同层次的贡献混在一起，这里按项目所启发的能力层次致谢：
+| 目录或文件 | 用途 |
+| --- | --- |
+| `SKILL.md` | Agent 的主操作说明与任务路由。 |
+| `scripts/` | 材料转换、项目管理、模板蒸馏、渲染、PPTX 导出与检查工具。 |
+| `templates/` | 页面模板、内容变体、组件、图表与图标资产。 |
+| `assets/` | README 与产品视觉资源。 |
+| `references/` | 写作、叙事、设计与质量规则。 |
+| `workflows/` | 预览、模板创建、图表验证等扩展工作流。 |
+| `tests/` | 模板契约、命令入口与核心能力的回归测试。 |
 
-- **工程底座**：[hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 为可编辑 PPTX 生成提供了重要的工程框架、工作流组织方式与基础能力，EasySlides 在此基础上继续发展本地 SVG 到 DrawingML/PPTX 的生成链路。
-- **学术表达**：[Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill) 为结构化论证、学术表达、引用规范和沟通优先的设计原则提供了重要参考。
-- **叙事编排**：[LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt) 的 Audience-State-Transfer 思想提醒我们，PPT 不只是信息容器，更是观众状态转移的路径；这启发了 EasySlides 对通用学术模板、SCQA 叙事结构和页面级听众推进的规则设计。
-- **风格与模板治理**：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) 启发了本项目对风格约束包、可复用设计规范和模板治理方式的组织。
-- **论文与文献报告流程**：[xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill) 与 [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder) 为论文汇报、文献报告和 academic PPT skills 的构建提供了有价值的思路。
+EasySlides 参考并扩展了 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)、[Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill)、[LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt)、[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)、[xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill) 和 [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder) 的公开实践。上述致谢不代表这些项目对 EasySlides 的正式背书。
 
-本项目在上述开源工作的启发与基础上继续扩展，新增代码、模板、规则与项目组织由 EasySlides 维护；除非原项目另有说明，以上致谢不代表相关项目对 EasySlides 的正式背书。
+</details>
 
-### 发布与隐私
-
-`projects/` 下的生成物、论文原文、导出 PPT、预览图、解包 Office XML 和本地 QA 输出默认不会进入 Git。建议只提交可复用代码、模板、测试和文档。
-
-API Key 请放在环境变量或本地 `.env` 中，不要提交真实密钥。`.env.example` 仅用于说明支持的配置项。
-
-[Back to top](#easyslides)
+[回到顶部](#easyslides)
 
 ---
 
 ## English
 
-EasySlides is a local PPTX generation toolchain for academic talks and research presentations. Its goal is to turn papers, reports, web pages, Markdown, and other source materials into structured, visually consistent, and PowerPoint-editable decks.
+**EasySlides is an AI Agent plugin for creating local, editable PPTX decks for academic talks and research presentations.** It turns papers, web pages, Markdown, and other source material into presentations with a clear story, coherent visual language, and native PowerPoint editability.
 
-> Research material -> traceable narrative -> template and component composition -> editable native PPTX
+Users work in natural language. Describe the presentation, provide materials, and answer clarification questions when the brief is incomplete. EasySlides then identifies the research question, audience, narrative objective, and design constraints before building the deck.
 
-It is a project-backed skill: installing only `SKILL.md` gives an agent the
-routing guide, while installing the full repository provides the runtime,
-templates, workflows, and QA gates required for actual PPTX generation. See
-[ARCHITECTURE.md](ARCHITECTURE.md) and [INSTALL.md](INSTALL.md).
+### Why EasySlides
 
-Core pipeline:
+- **Material-aware storytelling**: it organizes claims, evidence, figures, citations, and narrative sequence before layout begins.
+- **Clarification by default**: ambiguous audience, timing, scope, template, or source usage is resolved through questions instead of silent guessing.
+- **Templates with range**: a template contains design language, stable page shells, body variants, and reusable components, rather than a small fixed set of pages.
+- **Reusable PPTX distillation**: reference decks can become reusable template assets that retain their visual hierarchy, content organization, and component language.
+- **Native editable delivery**: text, shapes, colors, charts, and page structure remain editable in PowerPoint.
+- **Quality gates**: capacity, vertical centering, alignment, geometry, template boundaries, and visual checks are treated as delivery requirements.
 
-```text
-source material -> project workspace -> deck plan -> SVG/layout templates -> editable PPTX
-```
+### How It Compares
 
-### What It Does
+| Focus | EasySlides | General cloud AI deck tools | Traditional templates | Code-first slide tools |
+| --- | --- | --- | --- | --- |
+| Interaction | Natural-language collaboration with an Agent | Generate, then manually adjust | Manual authoring | Code or markup |
+| Research material | Narratives built from claims, evidence, figures, and citations | Fast summaries and visual drafts | User prepares all structure | Developer prepares content and structure |
+| Template reuse | Distilled shells, variants, and components | Themes or fixed layouts | Static masters and page assets | Reusable components, implemented by the developer |
+| Delivery | Native editable PPTX | Export capability varies by platform | Native PPTX | Depends on the rendering path |
+| Review | Capacity, alignment, template, and visual gates | Usually a manual review step | Manual review | Developer-defined tests |
 
-- **Research material to narrative**: turns papers, reports, data, web pages, and Markdown into traceable deck plans while preserving supplied claims, figures, tables, and citations.
-- **PPTX distillation and templating**: extracts stable shells, body variants, components, geometry, design tokens, and provenance from reference decks instead of treating them as opaque page images.
-- **Bounded templates**: a named template can select only its declared local variants and components. Global or cross-template assets cannot silently leak into a deck.
-- **Component assets**: template components, cards, page recipes, charts, and icons carry slot, capacity, renderer, and QA contracts.
-- **Editable native delivery**: the production path is `SVG/shape IR -> DrawingML/OOXML -> PPTX`, keeping text, shapes, colors, and charts editable.
-- **Fail-closed QA**: content capacity, vertical alignment, geometry, visual difference, editability, and cross-material checks are delivery gates.
+### Get Started
 
-### Repository Layout
+In Codex or an AI Agent that supports skill installation, simply say:
 
-- `SKILL.md`: main operating guide for the academic PPT workflow.
-- `scripts/`: utilities for conversion, project management, SVG validation, template import, and PPTX export.
-- `templates/`: academic layout templates, style packs, chart modules, and icon libraries.
-- `assets/`: README, brand, and product-level visual assets.
-- `references/`: authoring standards, design rules, strategist/executor guidance.
-- `workflows/`: optional flows for preview, audio, template creation, chart verification, and topic research.
-- `tests/`: regression tests for template contracts, CLI entry points, and core tools.
+> Please install this plugin: [Rimagination/easyslides](https://github.com/Rimagination/easyslides)
 
-### Quick Start
+Then speak naturally, for example: “Turn this paper into a 15-slide journal-club deck and focus on the research question, method, and results.”
 
-```powershell
-python scripts/project_manager.py setup-pdf-tools --install
-python -m pytest -q
-python scripts/easyslides.py --help
-```
+### Gallery
 
-Create a local deck project:
+See real slide pages, templates, and downloadable examples in the [EasySlides gallery](http://easyslides.scansci.com/).
 
-```powershell
-python scripts/project_manager.py init my_presentation --format ppt169
-python scripts/project_manager.py import-sources projects/my_presentation <source_files...> --copy
-python scripts/project_manager.py validate projects/my_presentation
-```
+<details>
+<summary><strong>Repository structure and credits</strong></summary>
 
-For paper-PPT workflows that require structured figures/tables, add
-`--require-structured-pdf` to `import-sources`. The strict scholarly extraction
-chain is `MinerU -> PDFFigures2 -> fail fast`; it does not silently fall back to
-plain PyMuPDF text extraction. `--require-mineru` is kept as a compatibility
-alias for the same strict mode. On first use, run
-`python scripts/project_manager.py setup-pdf-tools --install`; it installs
-Python requirements, checks MinerU token configuration, builds PDFFigures2, and
-writes `PDFFIGURES2_JAR` to local `.env`. Configure PDFFigures2 manually with
-`PDFFIGURES2_CMD` (a command template using `{pdf}` and `{out}`) or
-`PDFFIGURES2_JAR`.
+<br>
 
-Export a PPTX after authoring SVG pages:
+`SKILL.md` routes Agent tasks; `scripts/` contains conversion, distillation, rendering, export, and QA utilities; `templates/` contains layouts, variants, components, charts, and icons; `references/` records authoring and design rules; and `tests/` protects the core contracts.
 
-```powershell
-python scripts/finalize_svg.py projects/my_presentation
-python scripts/svg_to_pptx.py projects/my_presentation
-```
+EasySlides builds on public practice and inspiration from [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master), [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill), [LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt), [op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill), [xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill), and [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder). These acknowledgements do not imply formal endorsement.
 
-### Common Workflows
-
-```powershell
-# Convert source material and create a project
-python scripts/easyslides.py source-to-md <source-file-or-url> -o <markdown-output>
-python scripts/project_manager.py init my_presentation --format ppt169
-
-# Distill reusable template assets from a reference PPTX
-python scripts/easyslides.py distill <template.pptx> --template-id <template_id>
-
-# Validate template boundaries and compile a production template
-python scripts/easyslides.py template-capabilities validate --json
-python scripts/easyslides.py template-compile templates/layouts/nsfc_defense --write --json
-
-# Produce component choices, review material, and a PPTX preview
-python scripts/easyslides.py component-workflow deck_plan.json --out build/component_workflow
-```
-
-### Templates
-
-Active academic layout templates live under `templates/layouts/` and are indexed in `templates/layouts/layouts_index.json`. Alongside general academic, SCQA, defense, and literature-report shells, `nsfc_defense` provides executable body variants and template-local components.
-
-Every template directory owns a `capability_profile.json`. It declares whether the directory can generate decks, which page/component granularities are permitted, and whether a local component pack exists. Named templates reject undeclared global assets by default; distilled and raster-faithful directories are source-scoped rather than direct generation templates.
-
-Useful maintenance commands:
-
-```powershell
-python scripts/easyslides.py template-capabilities validate --json
-python scripts/easyslides.py template-package rebuild --json
-python scripts/easyslides.py template-gate templates/layouts/nsfc_defense --json
-```
-
-### Acknowledgements
-
-EasySlides builds on several open-source projects and public practices. To keep the credits readable, we group them by the layer of capability they inspired:
-
-- **Engineering foundation**: [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) provided important engineering architecture, workflow organization, and foundational capabilities for editable PPTX generation. EasySlides extends that foundation with its local SVG-to-DrawingML/PPTX pipeline.
-- **Academic communication**: [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill) provided important references for structured argument, academic communication, citation standards, and communication-first design.
-- **Narrative orchestration**: [LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt) contributed an important Audience-State-Transfer perspective: a deck is not merely an information container, but a path for audience-state transfer. This influenced EasySlides' general academic templates, SCQA narrative structure, and page-level audience progression rules.
-- **Style and template governance**: [op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) inspired the way this project organizes style constraint packs, reusable design specifications, and template governance.
-- **Paper and literature report workflows**: [xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill) and [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder) offered valuable ideas for paper presentations, literature reports, and academic PPT skills.
-
-EasySlides extends these open-source inspirations with its own code, templates, rules, and project structure. Unless otherwise stated by the upstream projects, these acknowledgements do not imply formal endorsement of EasySlides by the referenced projects.
-
-### Publishing And Privacy
-
-Generated decks, source papers, exported PPTX files, rendered previews, unpacked Office XML, and local QA outputs under `projects/` are ignored by default. Commit reusable code, templates, tests, and documentation; keep private source material and generated artifacts local unless they are explicitly cleared for publication.
-
-API keys should live in environment variables or a local `.env`; never commit real credentials. Use `.env.example` only as a template for supported configuration values.
+</details>
 
 [Back to top](#easyslides)
