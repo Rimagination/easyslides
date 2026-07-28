@@ -6,7 +6,7 @@
 
 ## 中文
 
-EasySlides 是一个 AI Agent 插件，面向学术报告与研究型演讲稿的本地 PPTX 生成工具。它把论文、网页、Markdown 和已有 PPT 等来源材料，转换为结构清晰、风格一致，并且可以在 PowerPoint 中继续编辑的演讲稿。
+EasySlides 是一个面向学术报告与研究型演示的 AI Agent 插件。你只需用自然语言说明任务，并提供论文、网页、Markdown 或已有 PPT 等材料；它会在本地生成结构清晰、风格统一、可在 PowerPoint 中继续编辑的 PPTX。
 
 它的核心特点是：
 
@@ -33,15 +33,16 @@ EasySlides 是一个 AI Agent 插件，面向学术报告与研究型演讲稿�
 - **风格一致的页面**：根据模板和材料选择恰当的内容变体，避免所有页面套用同一个大文本框。
 - **原生 PPTX 文件**：可以在 PowerPoint 中改字、换图、增删页面和继续完善，而不是只能导出为图片或 PDF。
 
-## 与常见方案有什么不同
+## 与常见 AI 制作 PPT 方法有什么不同
 
-| 关注点 | EasySlides | 常见云端 AI PPT 工具 | 传统模板与排版工具 | 代码型幻灯片工具 |
-| --- | --- | --- | --- | --- |
-| 使用方式 | 用自然语言与 Agent 协作 | 生成后再手动调整 | 人工拖拽和排版 | 编写代码或标记语言 |
-| 对材料的处理 | 从论点、证据、图表和引用组织叙事 | 更适合快速概括和视觉初稿 | 依赖用户先整理内容 | 依赖开发者准备内容与结构 |
-| 模板复用 | 蒸馏页面壳、内容变体和组件资产 | 多为主题皮肤或固定版式 | 多为静态母版和单页素材 | 组件可复用，但需要自行实现设计规则 |
-| 交付结果 | 本地生成的原生可编辑 PPTX | 导出能力因平台而异 | 原生 PPTX | 取决于渲染链路 |
-| 质量检查 | 内容容量、对齐、模板边界与视觉检查进入交付门槛 | 通常需要人工复核 | 主要依赖人工检查 | 主要依赖开发者自行测试 |
+| 制作方法 | 擅长什么 | 常见限制 | EasySlides 的选择 |
+| --- | --- | --- | --- |
+| **让 AI 生成 HTML 或网页演示** | 视觉自由度高，适合网页展示、交互效果和技术演示 | 最终产物通常不是原生 PPTX；转回 PowerPoint 后常需要重新排版，编辑和复用成本较高 | 直接生成原生可编辑 PPTX，同时保留模板、组件与页面结构 |
+| **让 AI 直接生成一份 PPTX** | 很快得到一版可以浏览的初稿 | 往往更依赖通用版式；复杂研究材料、既有模板和页面细节仍需要人工反复校正 | 先理解材料和叙事，再在受约束的模板内选择页面变体与组件 |
+| **让 AI 写提纲或文案，再手工排版** | 人可以完全掌控版式，适合愿意投入排版时间的用户 | 从资料到页面的组织、找图、对齐和修改仍主要靠人工完成 | Agent 同时承担内容组织和页面编排，用户只需在关键选择处确认方向 |
+| **用代码或标记语言生成幻灯片** | 可复现、适合开发者批量生成和版本管理 | 普通用户需要学习代码；交付给 PowerPoint 使用者时，继续编辑往往不顺手 | 用自然语言协作，交付可在 PowerPoint 继续修改的文件 |
+
+EasySlides 并不把网页演示或代码型幻灯片视为替代品。它更适合这样的场景：你要用 AI 制作一套研究型 PPT，但最后仍要在 PowerPoint 中讲、改、协作和复用。
 
 ## 快速使用
 
@@ -116,7 +117,7 @@ EasySlides 参考并扩展了 [hugohe3/ppt-master](https://github.com/hugohe3/pp
 
 ## English
 
-EasySlides is an AI Agent plugin for creating local, editable PPTX decks for academic talks and research presentations. It turns papers, web pages, Markdown, and reference decks into presentations with a clear narrative, coherent visual language, and native PowerPoint editability.
+EasySlides is an AI Agent plugin for academic talks and research presentations. Describe the task in natural language and provide papers, web pages, Markdown, or reference decks; it creates a locally generated, coherent, and PowerPoint-editable PPTX.
 
 Its core characteristics are:
 
@@ -125,6 +126,15 @@ Its core characteristics are:
 - **Templates with range**: templates provide a visual language, stable page shells, body variants, and components instead of a small fixed page set.
 - **Reusable distillation**: a reference deck can become reusable template assets that preserve its organization, hierarchy, and visual rhythm.
 - **Editable, reviewed delivery**: text, shapes, colors, charts, and structure remain editable in PowerPoint, with capacity, alignment, geometry, and visual checks before delivery.
+
+### How It Differs From Common AI Slide Methods
+
+| Method | Best at | Common limitation | EasySlides approach |
+| --- | --- | --- | --- |
+| **AI-generated HTML or web slides** | Web display, interaction, and visual freedom | The result is usually not a native PPTX; returning to PowerPoint can make editing and reuse costly | Generates native editable PPTX while retaining template, component, and page structure |
+| **AI-generated PPTX** | Producing a fast visual first draft | Generic layouts often need extensive correction for research material, existing templates, and detail work | Understands the material and narrative before selecting controlled template variants and components |
+| **AI outline or copy, then manual layout** | Full human control of layout | Material organization, page composition, alignment, and iteration remain manual work | The Agent organizes content and composes pages, with the user confirming key choices |
+| **Code- or markup-generated slides** | Reproducibility and developer workflows | Requires technical fluency and may be awkward to continue editing in PowerPoint | Natural-language collaboration with a PowerPoint-editable deliverable |
 
 ### Best for
 
