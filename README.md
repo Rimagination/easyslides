@@ -4,6 +4,10 @@
 
 ![EasySlides: Research to editable slides](assets/easyslides-github-hero.png)
 
+![AI Agent Plugin](https://img.shields.io/badge/AI%20Agent-Plugin-2563EB?style=flat-square)
+![Output: Editable PPTX](https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-16A34A?style=flat-square)](LICENSE)
+
 ## 中文
 
 EasySlides 是一个面向学术报告与研究型演示的 AI Agent 插件。你只需用自然语言说明任务，并提供论文、网页、Markdown 或已有 PPT 等材料；它会在本地生成结构清晰、风格统一、可在 PowerPoint 中继续编辑的 PPTX。
