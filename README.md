@@ -103,6 +103,8 @@ EasySlides 在本地项目工作区组织材料与生成结果。论文原文、
 
 日常使用不需要直接操作这些目录；它们用于让 Agent、模板和质量检查协同工作。
 
+EasySlides 是一个由本地项目支撑的 **project-backed skill**：技能文件负责理解和路由自然语言任务，真正的 PPTX 生成依赖本仓库的模板、脚本和质量检查。安装方式见 [INSTALL.md](INSTALL.md)，分层设计见 [ARCHITECTURE.md](ARCHITECTURE.md)。
+
 | 目录或文件 | 用途 |
 | --- | --- |
 | `SKILL.md` | Agent 的主操作说明与任务路由。 |
@@ -113,7 +115,15 @@ EasySlides 在本地项目工作区组织材料与生成结果。论文原文、
 | `workflows/` | 预览、模板创建、图表验证等扩展工作流。 |
 | `tests/` | 模板契约、命令入口与核心能力的回归测试。 |
 
-EasySlides 参考并扩展了 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)、[Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill)、[LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt)、[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)、[xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill) 和 [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder) 的公开实践。上述致谢不代表这些项目对 EasySlides 的正式背书。
+EasySlides 的公开借鉴按能力分层记录如下：
+
+- **工程底座 / Engineering foundation**：[hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 与 [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill) 启发了可编辑 PPTX、模板约束和本地交付的工程实践。
+- **学术表达 / Academic communication**：[LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt) 及 Audience-State-Transfer（观众状态转移）帮助定义研究演示中的信息层级与表达目标。
+- **叙事编排 / Narrative orchestration**：[hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 的页面组织实践启发了“页面职责先于排版”的工作方式。
+- **风格与模板治理 / Style and template governance**：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) 促成了风格资产、模板包和质量门禁的分层管理。
+- **论文与文献报告流程 / Paper and literature report workflows**：[xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill) 与 [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder) 为论文材料到演示叙事的流程提供参考。
+
+上述致谢不代表这些项目对 EasySlides 的正式背书。
 
 </details>
 

@@ -94,6 +94,7 @@ REQUIRED_GATES = (
     "pptx_roundtrip",
     "validate_pptx_text_layout",
 )
+PAGE_MODULE_ROLES = {"cover", "toc", "chapter", "ending"}
 
 
 def resolve_template_dir(template: str | Path) -> Path:
@@ -394,6 +395,11 @@ def validate_deck_body_variants(
         if not isinstance(slide, dict):
             continue
         path = f"slides[{index}]"
+        # Page shells are validated by their template/page-module contracts.
+        # A body variant is only meaningful for a content page, unless a plan
+        # deliberately opts a shell into one with an explicit variant id.
+        if str(slide.get("role") or "").strip() in PAGE_MODULE_ROLES and not slide.get("body_variant_id"):
+            continue
         slide_template = slide.get("template_id")
         if not isinstance(slide_template, str) or not slide_template.strip():
             slide_template = _template_from_layout_id(slide.get("layout_id"), repo) or plan_template

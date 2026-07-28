@@ -1,0 +1,633 @@
+{
+  "schema_version": "easyslides.research_core.layouts.v1",
+  "template_id": "research_core",
+  "canvas": {
+    "format": "ppt169",
+    "width": 1280,
+    "height": 720
+  },
+  "shells": [
+    {
+      "shell_id": "cover",
+      "role": "cover",
+      "svg": "01_cover.svg",
+      "slots": [
+        {
+          "slot_id": "TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "title",
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 26,
+            "single_line_required": false,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 220,
+            "width": 1040,
+            "height": 92
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "kind": "text",
+          "required": true,
+          "role": "subtitle",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 334,
+            "width": 940,
+            "height": 42
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "PRESENTER",
+          "kind": "text",
+          "required": true,
+          "role": "presenter",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 570,
+            "width": 700,
+            "height": 32
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    },
+    {
+      "shell_id": "toc",
+      "role": "agenda",
+      "svg": "02_toc.svg",
+      "slots": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "page_title",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 30,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 70,
+            "y": 44,
+            "width": 760,
+            "height": 36
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SECTION_01",
+          "kind": "text",
+          "required": true,
+          "role": "section_01",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 150,
+            "y": 190,
+            "width": 850,
+            "height": 52
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SECTION_02",
+          "kind": "text",
+          "required": true,
+          "role": "section_02",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 150,
+            "y": 320,
+            "width": 850,
+            "height": 52
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SECTION_03",
+          "kind": "text",
+          "required": true,
+          "role": "section_03",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 150,
+            "y": 450,
+            "width": 850,
+            "height": 52
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    },
+    {
+      "shell_id": "chapter",
+      "role": "chapter",
+      "svg": "03_chapter.svg",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_NO",
+          "kind": "text",
+          "required": true,
+          "role": "chapter_no",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 190,
+            "width": 320,
+            "height": 50
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "chapter_title",
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 26,
+            "single_line_required": false,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 274,
+            "width": 920,
+            "height": 90
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    },
+    {
+      "shell_id": "content",
+      "role": "content",
+      "svg": "04_content.svg",
+      "slots": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "page_title",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 70,
+            "y": 41,
+            "width": 760,
+            "height": 36
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "role": "key_message",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 56,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 70,
+            "y": 78,
+            "width": 930,
+            "height": 22
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "PAGE_NUMBER",
+          "kind": "text",
+          "required": true,
+          "role": "page_number",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 4,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 1092,
+            "y": 660,
+            "width": 108,
+            "height": 24
+          },
+          "vertical_anchor": "middle",
+          "content_role": "navigation",
+          "value_policy": "automatic_slide_index"
+        }
+      ],
+      "body_canvas": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "content_shell_policy": "template_scene_variant_required"
+    },
+    {
+      "shell_id": "ending",
+      "role": "ending",
+      "svg": "05_ending.svg",
+      "slots": [
+        {
+          "slot_id": "CLOSING",
+          "kind": "text",
+          "required": true,
+          "role": "closing",
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 28,
+            "single_line_required": false,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 160,
+            "y": 276,
+            "width": 960,
+            "height": 76
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "kind": "text",
+          "required": false,
+          "role": "subtitle",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 240,
+            "y": 382,
+            "width": 800,
+            "height": 34
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "shell_id": "cover",
+      "role": "cover",
+      "svg": "01_cover.svg",
+      "slots": [
+        {
+          "slot_id": "TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "title",
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 26,
+            "single_line_required": false,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 220,
+            "width": 1040,
+            "height": 92
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "kind": "text",
+          "required": true,
+          "role": "subtitle",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 334,
+            "width": 940,
+            "height": 42
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "PRESENTER",
+          "kind": "text",
+          "required": true,
+          "role": "presenter",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 570,
+            "width": 700,
+            "height": 32
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    },
+    {
+      "shell_id": "toc",
+      "role": "agenda",
+      "svg": "02_toc.svg",
+      "slots": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "page_title",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 30,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 70,
+            "y": 44,
+            "width": 760,
+            "height": 36
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SECTION_01",
+          "kind": "text",
+          "required": true,
+          "role": "section_01",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 150,
+            "y": 190,
+            "width": 850,
+            "height": 52
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SECTION_02",
+          "kind": "text",
+          "required": true,
+          "role": "section_02",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 150,
+            "y": 320,
+            "width": 850,
+            "height": 52
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SECTION_03",
+          "kind": "text",
+          "required": true,
+          "role": "section_03",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 150,
+            "y": 450,
+            "width": 850,
+            "height": 52
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    },
+    {
+      "shell_id": "chapter",
+      "role": "chapter",
+      "svg": "03_chapter.svg",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_NO",
+          "kind": "text",
+          "required": true,
+          "role": "chapter_no",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 190,
+            "width": 320,
+            "height": 50
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "chapter_title",
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 26,
+            "single_line_required": false,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 96,
+            "y": 274,
+            "width": 920,
+            "height": 90
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    },
+    {
+      "shell_id": "content",
+      "role": "content",
+      "svg": "04_content.svg",
+      "slots": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "role": "page_title",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 70,
+            "y": 41,
+            "width": 760,
+            "height": 36
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "role": "key_message",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 56,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 70,
+            "y": 78,
+            "width": 930,
+            "height": 22
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "PAGE_NUMBER",
+          "kind": "text",
+          "required": true,
+          "role": "page_number",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 4,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 1092,
+            "y": 660,
+            "width": 108,
+            "height": 24
+          },
+          "vertical_anchor": "middle",
+          "content_role": "navigation",
+          "value_policy": "automatic_slide_index"
+        }
+      ],
+      "body_canvas": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "content_shell_policy": "template_scene_variant_required"
+    },
+    {
+      "shell_id": "ending",
+      "role": "ending",
+      "svg": "05_ending.svg",
+      "slots": [
+        {
+          "slot_id": "CLOSING",
+          "kind": "text",
+          "required": true,
+          "role": "closing",
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 28,
+            "single_line_required": false,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 160,
+            "y": 276,
+            "width": 960,
+            "height": 76
+          },
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "kind": "text",
+          "required": false,
+          "role": "subtitle",
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "single_line_required": true,
+            "overflow_action": "shorten_or_split"
+          },
+          "geometry": {
+            "x": 240,
+            "y": 382,
+            "width": 800,
+            "height": 34
+          },
+          "vertical_anchor": "middle"
+        }
+      ]
+    }
+  ]
+}

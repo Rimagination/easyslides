@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="104" viewBox="0 0 180 104" data-primitive="metric_tile">
-  <rect x="0" y="0" width="180" height="104" fill="#FFFFFF" stroke="#D5B2E0"/><rect x="0" y="0" width="180" height="6" fill="#751497" stroke="none"/>
-  <text x="90.00" y="46.10" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#751497" data-slot="VALUE" data-slot-id="VALUE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" data-pptx-box-x="14.00" data-pptx-box-y="18.00" data-pptx-box-w="152.00" data-pptx-box-h="38.00" data-pptx-valign="middle" data-center-lock="true" data-pptx-line-height-ratio="1.150" data-pptx-text-anchor="middle">VALUE</text>
-  <text x="90.00" y="82.25" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#060607" data-slot="LABEL" data-slot-id="LABEL" data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" data-pptx-box-x="14.00" data-pptx-box-y="64.00" data-pptx-box-w="152.00" data-pptx-box-h="26.00" data-pptx-valign="middle" data-center-lock="true" data-pptx-line-height-ratio="1.150" data-pptx-text-anchor="middle">LABEL</text>
-</svg>

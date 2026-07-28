@@ -1,0 +1,120 @@
+{
+  "schema_version": "easyslides.research_core.scene_roster.v1",
+  "template_id": "research_core",
+  "source": "templates/components/packages/research-core",
+  "scenes": [
+    {
+      "scene": "three_card_summary",
+      "variant_id": "three_card_summary",
+      "source_pack": "research-core",
+      "content_shapes": [
+        "parallel_points",
+        "three_findings",
+        "three_contributions",
+        "risk_set"
+      ],
+      "default_payload": {
+        "CARD_01_TITLE": "Need",
+        "CARD_02_TITLE": "Fit",
+        "CARD_03_TITLE": "Gate",
+        "CARD_01_BODY": "Readers need source-linked claims.",
+        "CARD_02_BODY": "Each card stays inside its capacity.",
+        "CARD_03_BODY": "Validate payloads before rendering."
+      }
+    },
+    {
+      "scene": "process_timeline",
+      "variant_id": "process_timeline",
+      "source_pack": "research-core",
+      "content_shapes": [
+        "workflow",
+        "method_pipeline",
+        "procedure",
+        "process",
+        "timeline"
+      ],
+      "default_payload": {
+        "STEP_01_TITLE": "Import",
+        "STEP_02_TITLE": "Plan",
+        "STEP_03_TITLE": "Render",
+        "STEP_04_TITLE": "Gate",
+        "STEP_01_BODY": "Archive sources and extract evidence.",
+        "STEP_02_BODY": "Map claims to verified slide contracts.",
+        "STEP_03_BODY": "Create native shapes and review output.",
+        "STEP_04_BODY": "Run capacity and visual checks."
+      }
+    },
+    {
+      "scene": "figure_with_notes",
+      "variant_id": "figure_with_notes",
+      "source_pack": "research-core",
+      "content_shapes": [
+        "figure_with_notes",
+        "single_exhibit",
+        "result_interpretation",
+        "image_evidence",
+        "figure_explanation"
+      ],
+      "default_payload": {
+        "FIGURE_TAKEAWAY": "Result exhibit",
+        "FIGURE_NOTES": "Trend direction is stable; edge cases remain visible; source locator is retained.",
+        "FIGURE_CAPTION": "Figure 1"
+      }
+    },
+    {
+      "scene": "kpi_row_3",
+      "variant_id": "kpi_row_3",
+      "source_pack": "research-core",
+      "content_shapes": [
+        "metric_set",
+        "three_numbers",
+        "dashboard_summary"
+      ],
+      "default_payload": {
+        "METRIC_01_METRIC": "42%",
+        "METRIC_02_METRIC": "18",
+        "METRIC_03_METRIC": "0.87",
+        "METRIC_01_LABEL": "Exposure",
+        "METRIC_02_LABEL": "Sites",
+        "METRIC_03_LABEL": "Fit",
+        "METRIC_01_NOTE": "Annual mean load.",
+        "METRIC_02_NOTE": "Validated samples.",
+        "METRIC_03_NOTE": "Stable across folds."
+      }
+    },
+    {
+      "scene": "comparison_pair",
+      "variant_id": "comparison_pair",
+      "source_pack": "research-core",
+      "content_shapes": [
+        "two_sides",
+        "before_after",
+        "method_comparison",
+        "domestic_foreign"
+      ],
+      "default_payload": {
+        "LEFT_TITLE": "Baseline",
+        "RIGHT_TITLE": "Improved",
+        "LEFT_BODY": "Uses one indicator. It is easy to explain, but misses regional variation.",
+        "RIGHT_BODY": "Combines multiple signals and keeps contribution analysis interpretable.",
+        "SYNTHESIS": "Use this layout when the two sides are genuinely balanced."
+      }
+    },
+    {
+      "scene": "evidence_stack",
+      "variant_id": "evidence_stack",
+      "source_pack": "research-core",
+      "content_shapes": [
+        "evidence_list",
+        "supporting_points",
+        "paper_findings"
+      ],
+      "default_payload": {
+        "EVIDENCE_CLAIM": "Multiple sources support the main conclusion.",
+        "EVIDENCE_01": "Long-term records show the same trend direction.",
+        "EVIDENCE_02": "Independent samples localize errors to edge cases.",
+        "EVIDENCE_03": "Sensitivity tests rule out a single-driver explanation."
+      }
+    }
+  ]
+}

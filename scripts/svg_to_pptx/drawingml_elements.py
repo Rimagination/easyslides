@@ -1265,8 +1265,18 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
         + '\n</a:p>'
         for paragraph in paragraphs
     )
-    wrap_mode = 'square' if keep_textbox else 'none'
-    autofit_xml = '<a:normAutofit/>' if keep_textbox else '<a:spAutoFit/>'
+    no_wrap = (
+        _is_truthy_attr(elem, 'data-pptx-no-wrap')
+        or str(elem.get('data-easyslides-single-line') or '').strip().lower() == 'required'
+    )
+    wrap_mode = 'none' if no_wrap or not keep_textbox else 'square'
+    autofit_xml = (
+        '<a:noAutofit/>'
+        if no_wrap
+        else '<a:normAutofit/>'
+        if keep_textbox
+        else '<a:spAutoFit/>'
+    )
     valign_raw = (_get_attr(elem, 'data-pptx-valign', ctx) or '').strip().lower()
     body_anchor = {
         'top': 't',

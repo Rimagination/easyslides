@@ -212,12 +212,30 @@
       ],
       "containers": [
         {
-          "x": 38.67,
+          "x": 72.0,
           "y": 6.94,
-          "width": 391.32,
+          "width": 600.0,
           "height": 67.86,
           "id": "PAGE_TITLE",
           "slot_id": "PAGE_TITLE",
+          "kind": "text"
+        },
+        {
+          "x": 72.0,
+          "y": 94.0,
+          "width": 1120.0,
+          "height": 92.0,
+          "id": "KEY_MESSAGE",
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text"
+        },
+        {
+          "x": 1152.0,
+          "y": 676.0,
+          "width": 64.0,
+          "height": 24.0,
+          "id": "PAGE_NUMBER",
+          "slot_id": "PAGE_NUMBER",
           "kind": "text"
         }
       ]
@@ -247,21 +265,12 @@
       ],
       "containers": [
         {
-          "x": 440.0,
-          "y": 115.45,
-          "width": 400.0,
-          "height": 152.529,
+          "x": 320.0,
+          "y": 180.0,
+          "width": 640.0,
+          "height": 120.0,
           "id": "CLOSING_TITLE",
           "slot_id": "CLOSING_TITLE",
-          "kind": "text"
-        },
-        {
-          "x": 440.0,
-          "y": 244.52000000000004,
-          "width": 400.0,
-          "height": 152.529,
-          "id": "CLOSING_SUBTITLE",
-          "slot_id": "CLOSING_SUBTITLE",
           "kind": "text"
         },
         {

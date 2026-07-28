@@ -25,31 +25,33 @@ class NsfcDefenseTemplateTests(unittest.TestCase):
 
         self.assertEqual(template["template_id"], "nsfc_defense")
         self.assertEqual(template["source_template_id"], "nsfc_defense_distilled")
-        self.assertEqual(template["content_organization"], ["national_need", "technical_innovation", "application_benefits"])
+        self.assertEqual(
+            template["content_organization"],
+            [
+                "significance_and_scientific_question",
+                "research_content_and_technical_route",
+                "innovation_feasibility_and_implementation",
+            ],
+        )
         self.assertEqual(len(layouts["layouts"]), 5)
         self.assertEqual(len(layouts["shells"]), 5)
         self.assertEqual(len(projection["pages"]), 5)
-        self.assertEqual(len(slots["slots"]), 17)
+        self.assertEqual(len(slots["slots"]), 18)
         self.assertEqual(template["layout_count"], 5)
-        self.assertEqual(template["variant_count"], 12)
-        self.assertEqual(len(variants["variants"]), 12)
-        self.assertEqual(primitives["tokens"]["grid"], 8)
-        self.assertEqual(len(primitives["primitives"]), 10)
-        for primitive in primitives["primitives"]:
-            asset = TEMPLATE / primitive["asset_path"]
-            self.assertTrue(asset.is_file(), primitive["primitive_id"])
-            root = ET.fromstring(asset.read_text(encoding="utf-8"))
-            slot_nodes = {
-                node.attrib.get("data-slot-id")
-                for node in root.iter()
-                if node.attrib.get("data-slot-id")
-            }
-            self.assertEqual(slot_nodes, {slot["slot_id"] for slot in primitive["slots"]})
-        self.assertEqual(len(recipes["recipes"]), 12)
-        self.assertTrue(all(recipe["primitives"] for recipe in recipes["recipes"]))
+        self.assertEqual(template["variant_count"], 9)
+        self.assertEqual(len(variants["variants"]), 9)
+        self.assertEqual(primitives["tokens"], {})
+        self.assertEqual(primitives["primitives"], [])
+        self.assertEqual(len(recipes["recipes"]), 9)
+        for recipe in recipes["recipes"]:
+            if recipe["variant_id"] == "grant_text_evidence_stack":
+                self.assertEqual(recipe["primitives"], [])
+                self.assertEqual(recipe["scene_component"], "grant_text_evidence_stack")
+            else:
+                self.assertTrue(recipe["primitives"])
         self.assertEqual(len(roster["pages"]), 17)
         self.assertEqual(roster["canonical_shell_count"], 5)
-        self.assertEqual(roster["body_variant_count"], 12)
+        self.assertEqual(roster["body_variant_count"], 9)
         self.assertIn("nsfc_defense", {row["template_id"] for row in registry["packages"]})
         self.assertIn("academic_general", {row["template_id"] for row in registry["templates"]})
         self.assertEqual(
@@ -75,31 +77,36 @@ class NsfcDefenseTemplateTests(unittest.TestCase):
         toc = next(row for row in layouts["layouts"] if row["page_id"] == "toc")
         self.assertEqual(toc["slots"], ["TOC_ITEM_01_TITLE", "TOC_ITEM_02_TITLE", "TOC_ITEM_03_TITLE"])
         content = next(row for row in layouts["layouts"] if row["page_id"] == "content")
-        self.assertEqual(content["slots"], ["PAGE_TITLE"])
+        self.assertEqual(content["slots"], ["PAGE_TITLE", "KEY_MESSAGE", "PAGE_NUMBER"])
         self.assertEqual(content["content_shell_policy"], "source_guided_body_variant_required")
-        self.assertEqual(content["body_canvas"], {"x": 64.0, "y": 116.0, "width": 1152.0, "height": 548.0})
+        self.assertEqual(content["body_canvas"], {"x": 64.0, "y": 204.0, "width": 1152.0, "height": 458.0})
         self.assertEqual(len(content["legacy_shadow_slots"]), 13)
-        self.assertEqual(layouts["content_shell_contract"]["public_slots"], ["PAGE_TITLE"])
+        self.assertEqual(
+            layouts["content_shell_contract"]["public_slots"],
+            ["PAGE_TITLE", "KEY_MESSAGE", "PAGE_NUMBER"],
+        )
+        content_svg = ET.parse(TEMPLATE / "04_content.svg").getroot()
+        self.assertFalse(
+            any(node.attrib.get("data-easyslides-open-body-canvas") for node in content_svg.iter()),
+            "body_canvas must remain a logical template constraint, not a visible SVG rectangle",
+        )
         ending = next(row for row in layouts["layouts"] if row["page_id"] == "ending")
         self.assertEqual(
             ending["slots"],
-            ["CLOSING_TITLE", "CLOSING_SUBTITLE", "AFFILIATION", "PRESENTER", "DATE"],
+            ["CLOSING_TITLE", "AFFILIATION", "PRESENTER", "DATE"],
         )
         self.assertEqual(
             {row["variant_id"] for row in variants["variants"]},
             {
-                "evidence_triptych",
-                "two_track_evidence",
-                "bottleneck_chain",
-                "hotspot_metrics",
-                "hotspot_panels",
-                "innovation_evidence",
-                "ann_snn_comparison",
-                "plasticity_training",
-                "network_architecture",
-                "sensor_application",
-                "literature_result",
-                "application_benefits",
+                "need_relationship_evidence",
+                "dual_track_evidence",
+                "evidence_chain",
+                "metric_dashboard",
+                "three_evidence_track",
+                "comparison_evidence",
+                "application_system",
+                "literature_transfer",
+                "grant_text_evidence_stack",
             },
         )
         for variant in variants["variants"]:
@@ -121,52 +128,148 @@ class NsfcDefenseTemplateTests(unittest.TestCase):
             self.assertTrue(variant["regions"])
             self.assertEqual(variant["coordinate_space"], "body_canvas")
             self.assertTrue(variant["composition_scene"])
-        self.assertEqual(len({variant["composition_scene"] for variant in variants["variants"]}), 12)
+        self.assertEqual(len({variant["composition_scene"] for variant in variants["variants"]}), 9)
         story = json.loads((TEMPLATE / "story_structure.json").read_text(encoding="utf-8"))
+        self.assertEqual(story["default_scenario"], "nsfc_grant_cn")
+        grant_profile = story["grant_cn_profile"]
+        self.assertEqual(grant_profile["scenario_label"], "中国国家自然科学基金申请答辩")
+        self.assertEqual(len(grant_profile["sections"]), 3)
+        self.assertIn("research_content_3", grant_profile["full_deck_roles"])
+        self.assertIn("work_plan_and_expected_outcomes", grant_profile["full_deck_roles"])
+        self.assertTrue(grant_profile["variant_bindings"])
         self.assertEqual(story["generation_contract"]["body_component_policy"], "forbidden")
-        self.assertEqual(len(story["canonical_content_sequence"]), 12)
+        self.assertEqual(len(story["canonical_content_sequence"]), 9)
         self.assertTrue((TEMPLATE / "compiled" / "template_ir.json").is_file())
         self.assertTrue((TEMPLATE / "compiled" / "template.lock.json").is_file())
 
-    def test_source_like_body_components_have_semantic_figure_slots_and_no_generic_body_box(self) -> None:
+    def test_source_derived_leaf_components_keep_the_source_style_locked(self) -> None:
         catalog = json.loads((TEMPLATE / "component_catalog.json").read_text(encoding="utf-8"))
         components = {row["component_id"]: row for row in catalog["components"]}
-        self.assertEqual(len(components), 12)
-        for component_id, component in components.items():
+        self.assertEqual(len(components), 14)
+        leaf_components = {
+            component_id: component
+            for component_id, component in components.items()
+            if component["classification"] == "template_scoped_source_derived_leaf"
+        }
+        self.assertEqual(len(leaf_components), 13)
+        for component_id, component in leaf_components.items():
             slot_ids = {slot["slot_id"] for slot in component["slots"]}
             self.assertNotIn("BODY", slot_ids, component_id)
-            self.assertFalse(any(slot_id.startswith("PRIMARY_") for slot_id in slot_ids), component_id)
-            self.assertGreaterEqual(
-                len([slot for slot in component["slots"] if slot["kind"] == "image"]),
-                2,
-                component_id,
+            self.assertEqual(component["classification"], "template_scoped_source_derived_leaf")
+            self.assertIn("source_derived", component["asset_path"])
+            self.assertEqual(
+                component["provenance"]["style_mutation_policy"],
+                "forbid_color_font_size_geometry_crop_and_layer_order_changes",
             )
             root = ET.fromstring((TEMPLATE / component["asset_path"]).read_text(encoding="utf-8"))
-            image_slots = {
+            declared_slots = {
                 node.attrib.get("data-slot-id")
                 for node in root.iter()
-                if node.tag.split("}")[-1] == "image"
+                if node.attrib.get("data-slot-id")
             }
             self.assertEqual(
-                image_slots,
-                {slot["slot_id"] for slot in component["slots"] if slot["kind"] == "image"},
+                declared_slots,
+                {slot["slot_id"] for slot in component["slots"]},
                 component_id,
             )
+            self.assertEqual(root.attrib.get("data-easyslides-style-policy"), "source_locked")
+            for node in root.iter():
+                if node.attrib.get("data-slot-kind") == "text":
+                    self.assertEqual(node.attrib.get("data-pptx-valign"), "middle")
+                    self.assertEqual(node.attrib.get("data-center-lock"), "true")
+
+        imported = components["grant_text_evidence_stack"]
+        self.assertEqual(imported["classification"], "template_scoped_imported_page_scene")
+        self.assertIn("assets/components/imported/", imported["asset_path"])
+        self.assertEqual(imported["provenance"]["source_component_id"], "component/research_core/evidence_stack")
+        self.assertEqual(
+            imported["provenance"]["style_mutation_policy"],
+            "preserve_source_structure_geometry_and_fonts_map_visual_tokens_to_nsfc_purple",
+        )
+        imported_root = ET.fromstring((TEMPLATE / imported["asset_path"]).read_text(encoding="utf-8"))
+        self.assertEqual(imported_root.attrib.get("data-easyslides-import-kind"), "adapted_page_scene_not_leaf_component")
+        self.assertEqual(imported_root.attrib.get("data-easyslides-style-policy"), "template_token_adapted")
+        imported_paints = {
+            value.upper()
+            for node in imported_root.iter()
+            for value in (node.attrib.get("fill"), node.attrib.get("stroke"))
+            if value
+        }
+        self.assertTrue({"#751497", "#F8EAFC", "#4A2C59"}.issubset(imported_paints))
+        self.assertTrue(imported_paints.isdisjoint({"#172033", "#1C75BC", "#4B5B6D"}))
+        self.assertEqual(
+            {
+                node.attrib.get("data-slot-id")
+                for node in imported_root.iter()
+                if node.attrib.get("data-slot-id")
+            },
+            {slot["slot_id"] for slot in imported["slots"]},
+        )
+
+        for component_id, expected_lines in {
+            "vertical_key_tag": 3,
+            "vertical_feature_image_panel": 4,
+        }.items():
+            component = components[component_id]
+            slot = next(row for row in component["slots"] if row["kind"] == "text")
+            self.assertEqual(slot["text_layout"], "balanced_cjk_stack")
+            self.assertEqual(slot["capacity"]["max_chars_per_line"], 2)
+            self.assertEqual(slot["capacity"]["max_lines"], expected_lines)
+            root = ET.parse(TEMPLATE / component["asset_path"]).getroot()
+            node = next(item for item in root.iter() if item.attrib.get("data-slot-id") == slot["slot_id"])
+            self.assertEqual(node.attrib.get("data-easyslides-layout"), "balanced_cjk_stack")
+            self.assertEqual(node.attrib.get("data-pptx-no-wrap"), "true")
+
+        feature = ET.parse(
+            TEMPLATE / "assets" / "components" / "source_derived" / "vertical_feature_image_panel.svg"
+        ).getroot()
+        vx, vy, width, height = [
+            float(value) for value in feature.attrib["viewBox"].replace(",", " ").split()
+        ]
+        feature_background = next(
+            node
+            for node in feature.iter()
+            if node.tag.rsplit("}", 1)[-1] == "rect"
+            and node.attrib.get("fill") == "#FFFFFF"
+            and float(node.attrib.get("width", "0")) > width * 0.9
+        )
+        self.assertGreaterEqual(float(feature_background.attrib["x"]), vx - 0.01)
+        self.assertLessEqual(
+            float(feature_background.attrib["x"]) + float(feature_background.attrib["width"]),
+            vx + width + 0.01,
+        )
+        self.assertGreaterEqual(float(feature_background.attrib["y"]), vy - 0.01)
+        self.assertLessEqual(
+            float(feature_background.attrib["y"]) + float(feature_background.attrib["height"]),
+            vy + height + 0.01,
+        )
+
+        from scripts.template_production_gate import validate_component_catalog
+
+        catalog_gate = validate_component_catalog(TEMPLATE)
+        self.assertEqual(catalog_gate["status"], "pass", catalog_gate["issues"])
 
         variants = json.loads((TEMPLATE / "body_variants.json").read_text(encoding="utf-8"))["variants"]
         for variant in variants:
-            self.assertEqual(len(variant["component_refs"]), 1, variant["variant_id"])
+            if variant["variant_id"] == "grant_text_evidence_stack":
+                self.assertEqual(len(variant["component_refs"]), 1)
+            else:
+                self.assertGreaterEqual(len(variant["component_refs"]), 2, variant["variant_id"])
             self.assertEqual(
                 set(variant["slots"][index]["slot_id"] for index in range(len(variant["slots"]))),
-                set(variant["component_refs"][0]["slot_bindings"].values()),
+                {
+                    target
+                    for component_ref in variant["component_refs"]
+                    for target in component_ref["slot_bindings"].values()
+                },
                 variant["variant_id"],
             )
 
     def test_shell_pages_have_named_slots_and_hard_vertical_alignment_metadata(self) -> None:
         slot_contract = json.loads((TEMPLATE / "slot_contracts.json").read_text(encoding="utf-8"))
         declared = {slot["slot_id"] for slot in slot_contract["slots"]}
-        self.assertEqual(len(slot_contract["slots"]), 17)
-        self.assertEqual(len(declared), 14)
+        self.assertEqual(len(slot_contract["slots"]), 18)
+        self.assertEqual(len(declared), 15)
         for svg_path in sorted(TEMPLATE.glob("*.svg")):
             root = ET.fromstring(svg_path.read_text(encoding="utf-8"))
             text_nodes = [node for node in root.iter() if node.tag.split("}")[-1] == "text"]
@@ -194,6 +297,45 @@ class NsfcDefenseTemplateTests(unittest.TestCase):
                 slot_id = node.attrib.get("data-slot-id")
                 if slot_id:
                     self.assertIn(slot_id, declared, svg_path.name)
+
+    def test_content_page_title_is_a_hard_single_line_slot(self) -> None:
+        contracts = json.loads((TEMPLATE / "slot_contracts.json").read_text(encoding="utf-8"))["slots"]
+        page_title = next(
+            slot
+            for slot in contracts
+            if slot["slot_id"] == "PAGE_TITLE" and slot["shell_id"] == "content"
+        )
+
+        self.assertEqual(page_title["capacity"]["max_lines"], 1)
+        self.assertEqual(page_title["capacity"]["max_chars_per_line"], 10)
+        self.assertTrue(page_title["capacity"]["single_line_required"])
+        self.assertEqual(page_title["capacity"]["overflow_action"], "shorten_title_required")
+
+        root = ET.fromstring((TEMPLATE / "04_content.svg").read_text(encoding="utf-8"))
+        title = next(node for node in root.iter() if node.attrib.get("data-slot-id") == "PAGE_TITLE")
+        self.assertEqual(title.attrib.get("data-easyslides-single-line"), "required")
+        self.assertEqual(title.attrib.get("data-pptx-no-wrap"), "true")
+
+    def test_content_shell_has_running_title_key_message_and_automatic_page_number(self) -> None:
+        contracts = json.loads((TEMPLATE / "slot_contracts.json").read_text(encoding="utf-8"))["slots"]
+        content_slots = {
+            slot["slot_id"]: slot
+            for slot in contracts
+            if slot["shell_id"] == "content"
+        }
+        self.assertEqual(set(content_slots), {"PAGE_TITLE", "KEY_MESSAGE", "PAGE_NUMBER"})
+        self.assertEqual(content_slots["PAGE_TITLE"]["role"], "running_title")
+        self.assertEqual(content_slots["KEY_MESSAGE"]["role"], "central_message")
+        self.assertEqual(content_slots["KEY_MESSAGE"]["capacity"]["max_lines"], 2)
+        self.assertEqual(content_slots["KEY_MESSAGE"]["rendering"], "square_bullets")
+        self.assertEqual(content_slots["PAGE_NUMBER"]["value_policy"], "automatic_slide_index")
+
+        root = ET.fromstring((TEMPLATE / "04_content.svg").read_text(encoding="utf-8"))
+        message = next(node for node in root.iter() if node.attrib.get("data-slot-id") == "KEY_MESSAGE")
+        page_number = next(node for node in root.iter() if node.attrib.get("data-slot-id") == "PAGE_NUMBER")
+        self.assertEqual(message.attrib.get("data-easyslides-layout"), "square_bullets")
+        self.assertEqual(message.attrib.get("data-pptx-no-wrap"), "true")
+        self.assertEqual(page_number.attrib.get("data-pptx-text-anchor"), "end")
 
     def test_cover_keeps_field_labels_static_and_exposes_only_their_values(self) -> None:
         root = ET.fromstring((TEMPLATE / "01_cover.svg").read_text(encoding="utf-8"))
@@ -243,25 +385,43 @@ class NsfcDefenseTemplateTests(unittest.TestCase):
             },
         )
 
+    def test_toc_and_chapter_corner_flourishes_use_one_exact_rotation_source(self) -> None:
+        for shell in ("02_toc.svg", "03_chapter.svg"):
+            root = ET.fromstring((TEMPLATE / shell).read_text(encoding="utf-8"))
+            groups = {node.attrib.get("id"): node for node in root.iter() if node.attrib.get("id")}
+            top_left = groups["chapter-corner-top-left"]
+            bottom_right = groups["chapter-corner-bottom-right"]
+            top_paths = [node for node in top_left if node.tag.split("}")[-1] == "path"]
+            bottom_paths = [node for node in bottom_right if node.tag.split("}")[-1] == "path"]
+
+            self.assertEqual(bottom_right.attrib.get("transform"), "rotate(180 640 360)", shell)
+            self.assertEqual(bottom_right.attrib.get("data-easyslides-symmetry-source"), "chapter-corner-top-left", shell)
+            self.assertEqual(
+                [node.attrib.get("d") for node in bottom_paths],
+                [node.attrib.get("d") for node in top_paths],
+                shell,
+            )
+
     def test_projection_exposes_only_content_chrome_and_requires_body_variant_for_body(self) -> None:
         from scripts.pptx_projection import project_slide
 
         contract = json.loads((TEMPLATE / "slot_contracts.json").read_text(encoding="utf-8"))
         page_slots = [slot for slot in contract["slots"] if slot["source_slide_id"] == "slide-03"]
-        self.assertEqual([slot["slot_id"] for slot in page_slots], ["PAGE_TITLE"])
-        text_slot = page_slots[0]
+        self.assertEqual([slot["slot_id"] for slot in page_slots], ["PAGE_TITLE", "KEY_MESSAGE", "PAGE_NUMBER"])
         with tempfile.TemporaryDirectory() as tmp:
             output = Path(tmp) / "projected.svg"
             result = project_slide(
                 source_workspace=TEMPLATE,
                 slide_id="content",
-                values={text_slot["slot_id"]: "Title"},
+                values={"PAGE_TITLE": "Title", "KEY_MESSAGE": "Point", "PAGE_NUMBER": "03"},
                 output_svg=output,
             )
             self.assertEqual(result["status"], "pass")
-            self.assertIn(text_slot["slot_id"], result["replaced_slots"])
+            self.assertEqual(set(result["replaced_slots"]), {"PAGE_TITLE", "KEY_MESSAGE", "PAGE_NUMBER"})
             rendered = output.read_text(encoding="utf-8")
             self.assertIn(">Title<", rendered)
+            self.assertIn(">Point<", rendered)
+            self.assertIn(">03<", rendered)
             self.assertIn('data-pptx-valign="middle"', rendered)
 
 

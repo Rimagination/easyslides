@@ -8,25 +8,9 @@
 <g id="shape-41">
 <path d="M 117.92 90.4 L 1161.79 90.4 A 18.26 18.26 0 0 1 1180.05 108.65 L 1180.05 624.86 A 10.67 10.67 0 0 1 1169.38 635.53 L 110.33 635.53 A 10.67 10.67 0 0 1 99.66 624.86 L 99.66 108.65 A 18.26 18.26 0 0 1 117.92 90.4 Z" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx1)" />
 </g>
-<g id="shape-4">
-<g id="shape-5">
-<path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 40.01 0 141.17 C 0 185.14 0 -1.11 0 -1.11 Z" fill="#751497" fill-opacity="0.2" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
-</g>
-<g id="shape-6">
-<path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 20.22 0 121.39 C 0 165.35 0 -1.11 0 -1.11 Z" fill="#751497" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx2)" />
-</g>
-</g>
-<g id="shape-7" transform="rotate(180 1157.6 644.18)">
-<g id="shape-8">
-<path d="M 1033.84 571 L 1281.35 571 C 1281.35 571 1110.7 612.12 1033.84 713.28 C 1033.84 757.25 1033.84 571 1033.84 571 Z" fill="#751497" fill-opacity="0.2" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
-</g>
-<g id="shape-9">
-<path d="M 1033.84 568.36 L 1281.35 568.36 C 1281.35 568.36 1110.7 589.69 1033.84 690.86 C 1033.84 734.82 1033.84 568.36 1033.84 568.36 Z" fill="#751497" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx3)" />
-</g>
-</g>
 <g id="shape-82">
 <g id="shape-14">
-<rect x="452.37" y="183.48" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" />
+<rect x="452.37" y="183.48" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" data-easyslides-container-id="toc-control-01" />
 </g>
 <g id="shape-15">
 <line x1="722.63" y1="183.48" x2="821.68" y2="183.48" stroke-width="3.333" stroke-linecap="round" stroke="#751497" fill="#751497" />
@@ -36,16 +20,16 @@
 </g>
 <g id="shape-18">
 <rect x="590.7" y="194.64" width="402.27" height="64.97" fill="none" />
-<text x="590.70" y="242.06" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.70" data-pptx-box-y="194.64" data-pptx-box-w="402.27" data-pptx-box-h="64.97" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#751497" data-slot="TOC_ITEM_01_TITLE" data-slot-id="TOC_ITEM_01_TITLE" data-slot-kind="text" data-slot-placeholder="{{TOC_ITEM_01_TITLE}}" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="start">章节标题</text>
+<text x="590.70" y="242.06" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.70" data-pptx-box-y="194.64" data-pptx-box-w="402.27" data-pptx-box-h="64.97" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#751497" data-slot="TOC_ITEM_01_TITLE" data-slot-id="TOC_ITEM_01_TITLE" data-slot-kind="text" data-slot-placeholder="{{TOC_ITEM_01_TITLE}}" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="start" data-easyslides-center-container="toc-control-01">章节标题</text>
 </g>
 <g id="shape-19">
 <rect x="489.02" y="190.05" width="65.63" height="72.14" fill="none" />
-<text x="521.84" y="244.79" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="489.02" data-pptx-box-y="190.05" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#751497" data-easyslides-static-text="true" data-easyslides-static-role="toc_item_index" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="middle">01</text>
+<text x="521.84" y="244.79" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="489.02" data-pptx-box-y="190.05" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#751497" data-easyslides-static-text="true" data-easyslides-static-role="toc_item_index" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="middle" data-easyslides-center-container="toc-control-01">01</text>
 </g>
 </g>
 <g id="shape-81">
 <g id="shape-20">
-<rect x="452.37" y="314.34" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" />
+<rect x="452.37" y="314.34" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" data-easyslides-container-id="toc-control-02" />
 </g>
 <g id="shape-21">
 <line x1="722.63" y1="314.34" x2="821.68" y2="314.34" stroke-width="3.333" stroke-linecap="round" stroke="#D9D9D9" fill="#751497" />
@@ -55,16 +39,16 @@
 </g>
 <g id="shape-24">
 <rect x="590.7" y="325.49" width="445.36" height="64.97" fill="none" />
-<text x="590.70" y="372.91" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.70" data-pptx-box-y="325.49" data-pptx-box-w="445.36" data-pptx-box-h="64.97" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#D9D9D9" data-slot="TOC_ITEM_02_TITLE" data-slot-id="TOC_ITEM_02_TITLE" data-slot-kind="text" data-slot-placeholder="{{TOC_ITEM_02_TITLE}}" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="start">章节标题</text>
+<text x="590.70" y="372.91" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.70" data-pptx-box-y="325.49" data-pptx-box-w="445.36" data-pptx-box-h="64.97" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#D9D9D9" data-slot="TOC_ITEM_02_TITLE" data-slot-id="TOC_ITEM_02_TITLE" data-slot-kind="text" data-slot-placeholder="{{TOC_ITEM_02_TITLE}}" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="start" data-easyslides-center-container="toc-control-02">章节标题</text>
 </g>
 <g id="shape-25">
 <rect x="488.61" y="320.91" width="65.63" height="72.14" fill="none" />
-<text x="521.42" y="375.65" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="488.61" data-pptx-box-y="320.91" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#D9D9D9" data-easyslides-static-text="true" data-easyslides-static-role="toc_item_index" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="middle">02</text>
+<text x="521.42" y="375.65" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="488.61" data-pptx-box-y="320.91" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#D9D9D9" data-easyslides-static-text="true" data-easyslides-static-role="toc_item_index" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="middle" data-easyslides-center-container="toc-control-02">02</text>
 </g>
 </g>
 <g id="shape-80">
 <g id="shape-26">
-<rect x="452.37" y="445.19" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" />
+<rect x="452.37" y="445.19" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" data-easyslides-container-id="toc-control-03" />
 </g>
 <g id="shape-27">
 <line x1="722.63" y1="445.19" x2="821.68" y2="445.19" stroke-width="3.333" stroke-linecap="round" stroke="#D9D9D9" fill="#751497" />
@@ -74,11 +58,11 @@
 </g>
 <g id="shape-30">
 <rect x="590.7" y="456.35" width="488.44" height="64.97" fill="none" />
-<text x="590.70" y="503.77" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.70" data-pptx-box-y="456.35" data-pptx-box-w="488.44" data-pptx-box-h="64.97" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#D9D9D9" data-slot="TOC_ITEM_03_TITLE" data-slot-id="TOC_ITEM_03_TITLE" data-slot-kind="text" data-slot-placeholder="{{TOC_ITEM_03_TITLE}}" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="start">章节标题</text>
+<text x="590.70" y="503.77" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.70" data-pptx-box-y="456.35" data-pptx-box-w="488.44" data-pptx-box-h="64.97" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#D9D9D9" data-slot="TOC_ITEM_03_TITLE" data-slot-id="TOC_ITEM_03_TITLE" data-slot-kind="text" data-slot-placeholder="{{TOC_ITEM_03_TITLE}}" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="start" data-easyslides-center-container="toc-control-03">章节标题</text>
 </g>
 <g id="shape-31">
 <rect x="488.61" y="451.76" width="65.63" height="72.14" fill="none" />
-<text x="521.42" y="506.50" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="488.61" data-pptx-box-y="451.76" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#D9D9D9" data-easyslides-static-text="true" data-easyslides-static-role="toc_item_index" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="middle">03</text>
+<text x="521.42" y="506.50" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="488.61" data-pptx-box-y="451.76" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#D9D9D9" data-easyslides-static-text="true" data-easyslides-static-role="toc_item_index" data-center-lock="true" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.250" data-pptx-text-anchor="middle" data-easyslides-center-container="toc-control-03">03</text>
 </g>
 </g>
 <g id="shape-67">
@@ -91,4 +75,4 @@
 <g id="shape-66-text">
 <text x="330.74" y="236.37" text-anchor="middle" xml:space="preserve" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="96" fill="#751497" data-easyslides-static-text="true" data-easyslides-static-role="toc_side_label" data-easyslides-static-geometry="source_fidelity" data-pptx-textbox="true" data-pptx-box-x="258.74" data-pptx-box-y="154.77" data-pptx-box-w="144.00" data-pptx-box-h="398.40" data-pptx-valign="top" data-pptx-measure-text="T" data-pptx-line-height-ratio="1.050" data-pptx-text-anchor="middle"><tspan fill="#751497" font-size="96">汇</tspan><tspan x="330.74" dy="100.8" fill="#751497" font-size="96">报</tspan><tspan x="330.74" dy="100.8" fill="#751497" font-size="96">答</tspan><tspan x="330.74" dy="100.8" fill="#751497" font-size="96">辩</tspan></text>
 </g>
-</g></svg>
+</g><g id="chapter-shell-corners"><g id="chapter-corner-top-left"><path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 40.01 0 141.17 C 0 185.14 0 -1.11 0 -1.11 Z" fill="#751497" fill-opacity="0.2" stroke="none" /><path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 20.22 0 121.39 C 0 165.35 0 -1.11 0 -1.11 Z" fill="#751497" stroke="none" /></g><g id="chapter-corner-bottom-right" transform="rotate(180 640 360)" data-easyslides-symmetry-source="chapter-corner-top-left"><path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 40.01 0 141.17 C 0 185.14 0 -1.11 0 -1.11 Z" fill="#751497" fill-opacity="0.2" stroke="none" /><path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 20.22 0 121.39 C 0 165.35 0 -1.11 0 -1.11 Z" fill="#751497" stroke="none" /></g></g></svg>

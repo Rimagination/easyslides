@@ -256,7 +256,7 @@ class ComponentPackTests(unittest.TestCase):
 
         self.assertEqual(install_report["status"], "pass", install_report)
         self.assertEqual(gallery["status"], "pass", gallery)
-        self.assertEqual(gallery["package_count"], 7)
+        self.assertEqual(gallery["package_count"], 1)
         self.assertEqual(pptx["status"], "pass", pptx)
         self.assertEqual(pptx["text_layout_status"], "pass")
 

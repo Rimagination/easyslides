@@ -46,38 +46,36 @@ class ComponentSelectorTests(unittest.TestCase):
         self.assertEqual(result["status"], "found")
         self.assertEqual(result["matches"][0]["asset_id"], "body_variant/defense_topnav/three_card_summary")
 
-    def test_component_package_can_be_selected_as_asset_granularity(self):
+    def test_research_core_selects_its_declared_body_variant(self):
         from scripts.component_registry import build_component_registry
         from scripts.component_selector import select_components
 
         result = select_components(
-            content_shape="parallel_points",
+            content_shape="three_findings",
             item_count=3,
-            preferred_granularity="component_package",
+            preferred_granularity="body_variant",
+            template_id="research_core",
             registry=build_component_registry(include_template_asset_bank=False),
         )
 
         self.assertEqual(result["status"], "found")
-        self.assertEqual(result["matches"][0]["asset_id"], "component_package/three_card_summary")
+        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/research_core/three_card_summary")
 
-    def test_evidence_type_and_complexity_help_rank_component_packages(self):
+    def test_research_core_evidence_variant_is_template_affine(self):
         from scripts.component_registry import build_component_registry
         from scripts.component_selector import select_components
 
         result = select_components(
             content_shape="supporting_points",
             item_count=3,
-            evidence_type="text_evidence",
-            editable_target="evidence_items",
-            visual_complexity="high",
-            preferred_granularity="component_package",
+            preferred_granularity="body_variant",
+            template_id="research_core",
             registry=build_component_registry(include_template_asset_bank=False),
         )
 
         self.assertEqual(result["status"], "found")
-        self.assertEqual(result["query"]["evidence_type"], "text_evidence")
-        self.assertEqual(result["matches"][0]["asset_id"], "component_package/evidence_stack")
-        self.assertIn("evidence type match", result["matches"][0]["reason"])
+        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/research_core/evidence_stack")
+        self.assertIn("template match", result["matches"][0]["reason"])
 
     def test_recent_asset_reuse_is_penalized_for_content_arrangement(self):
         from scripts.component_selector import select_components

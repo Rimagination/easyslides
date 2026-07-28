@@ -5,6 +5,7 @@ from __future__ import annotations
 import math
 import re
 from pathlib import Path
+from xml.sax.saxutils import escape as xml_escape
 from xml.etree import ElementTree as ET
 
 from .drawingml_context import ConvertContext, ShapeResult
@@ -146,7 +147,11 @@ def convert_g(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     style_overrides = _extract_inheritable_styles(elem)
 
     elem_id = elem.get('id')
+    component_instance = elem.get('data-easyslides-instance')
     should_animate_group = ctx.depth == 0 and elem_id and not _is_chrome_id(elem_id)
+    # Component frames are validated after native PPTX emission. Preserve this
+    # outer group even when it has one visible child so its bound is auditable.
+    preserve_component_group = bool(component_instance)
     visual_children = [
         child for child in elem
         if child.tag.replace(f'{{{SVG_NS}}}', '') not in _NON_VISUAL_TAGS
@@ -197,7 +202,7 @@ def convert_g(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     # Single-child non-semantic groups are flattened to reduce nesting. Top-level
     # semantic groups are preserved so animations target the group, not its
     # individual child shapes.
-    if len(child_results) == 1 and not should_animate_group:
+    if len(child_results) == 1 and not should_animate_group and not preserve_component_group:
         return child_results[0]
 
     # Multiple children, or a top-level semantic one-child group: wrap in
@@ -264,10 +269,15 @@ def convert_g(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
 
     rot_emu = 0 if matrix_supported else int(angle_deg * 60000)
     rot_attr = f' rot="{rot_emu}"' if rot_emu else ''
+    group_name = (
+        f"EasySlides Component: {component_instance}"
+        if component_instance
+        else f"Group {group_id}"
+    )
 
     return ShapeResult(xml=f'''<p:grpSp>
 <p:nvGrpSpPr>
-<p:cNvPr id="{group_id}" name="Group {group_id}"/>
+<p:cNvPr id="{group_id}" name="{xml_escape(group_name)}"/>
 <p:cNvGrpSpPr/>
 <p:nvPr/>
 </p:nvGrpSpPr>

@@ -9,6 +9,7 @@ cover treatment, header motif, and page-specific compositions are retained.
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import json
 import re
 import shutil
@@ -16,25 +17,34 @@ from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree as ET
 
-from nsfc_source_like_body_variants import (
-    BODY_VARIANTS as SOURCE_LIKE_BODY_VARIANTS,
-    COMPONENTS as SOURCE_LIKE_COMPONENTS,
-    COMPONENT_TOKENS,
-    COMPOSITION_PROFILES as SOURCE_LIKE_COMPOSITION_PROFILES,
-    PRIMITIVE_CATALOG,
-    VARIANT_RECIPES,
-    component_slots as source_like_component_slots,
-    primitive_asset_manifest,
-    render_component_svg as render_source_like_component_svg,
-    render_primitive_svg,
+from nsfc_component_first_body_variants import (
+    BODY_VARIANTS as SOURCE_COMPONENT_BODY_VARIANTS,
+    COMPONENTS as SOURCE_COMPONENTS,
+    COMPOSITION_PROFILES as SOURCE_COMPONENT_COMPOSITION_PROFILES,
+    component_slots as source_component_slots,
+    materialize_component_assets,
 )
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "templates" / "reference" / "template_asset_sources" / "nsfc_defense_distilled"
 OUT = ROOT / "templates" / "layouts" / "nsfc_defense"
+RESEARCH_CORE_EVIDENCE_STACK = (
+    ROOT
+    / "templates"
+    / "layouts"
+    / "research_core"
+    / "assets"
+    / "components"
+    / "scenes"
+    / "evidence_stack.svg"
+)
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
+PRESERVED_TEMPLATE_CONTRACTS = (
+    "design_tokens.json",
+    "human_review.json",
+)
 
 COMMON_SOURCE_ASSETS = {
     "image1_fx_1bd44e6e.webp",  # repeated neuron texture
@@ -103,7 +113,7 @@ SHELL_TEXT_SPECS: dict[int, dict[int, dict[str, Any]]] = {
     },
     17: {
         1: {"slot_id": "CLOSING_TITLE", "role": "closing_title", "required": True},
-        2: {"slot_id": "CLOSING_SUBTITLE", "role": "closing_subtitle"},
+        2: {"drop": True},
         3: {"static": True, "role": "affiliation_label"},
         4: {"slot_id": "AFFILIATION", "role": "affiliation"},
         5: {"static": True, "role": "presenter_label"},
@@ -113,11 +123,14 @@ SHELL_TEXT_SPECS: dict[int, dict[int, dict[str, Any]]] = {
     },
 }
 
-# The content shell owns only the NSFC chrome and the title. Every body variant
-# composes its own scene inside this neutral canvas instead of inheriting the
-# source slide's evidence grid.
-CONTENT_BODY_CANVAS = {"x": 64.0, "y": 116.0, "width": 1152.0, "height": 548.0}
-CONTENT_CLEAR_REGION = {"x": 0.0, "y": 100.0, "width": 1280.0, "height": 620.0}
+# Every content page has three stable layers: a running title in the source
+# header, one or two square-bullet key messages, then a source-derived body
+# scene. The body is vertically compacted at the component level so it still
+# uses the page width instead of shrinking into a small central island.
+CONTENT_KEY_MESSAGE_FRAME = {"x": 72.0, "y": 94.0, "width": 1120.0, "height": 92.0}
+CONTENT_BODY_CANVAS = {"x": 64.0, "y": 204.0, "width": 1152.0, "height": 458.0}
+CONTENT_PAGE_NUMBER_FRAME = {"x": 1152.0, "y": 676.0, "width": 64.0, "height": 24.0}
+CONTENT_CLEAR_REGION = {"x": 0.0, "y": 88.0, "width": 1280.0, "height": 632.0}
 
 
 LEGACY_COMPOSITION_PROFILES: dict[str, dict[str, Any]] = {
@@ -461,16 +474,166 @@ LEGACY_SMALL_COMPONENTS = {"key_point_bar", "image_caption_strip", "red_emphasis
 # scene per content variant. The legacy declarations above remain only as
 # provenance for the first distilled draft; all emitted assets use this
 # canonical evidence-first grammar.
-BODY_VARIANTS = SOURCE_LIKE_BODY_VARIANTS
-COMPONENTS = SOURCE_LIKE_COMPONENTS
-COMPOSITION_PROFILES = SOURCE_LIKE_COMPOSITION_PROFILES
+IMPORTED_GRANT_STACK_COMPONENT_ID = "grant_text_evidence_stack"
+# This scene is intentionally imported at page granularity rather than being
+# disguised as an NSFC leaf component. Its argument-stack grammar is retained,
+# while its visual tokens are mapped to the canonical NSFC purple system.
+IMPORTED_GRANT_STACK_SLOTS = [
+    {
+        "slot_id": "EVIDENCE_CLAIM",
+        "kind": "text",
+        "required": True,
+        "geometry": {"x": 156.0, "y": 50.0, "width": 968.0, "height": 58.0},
+        "capacity": {"max_lines": 2, "max_chars_per_line": 34, "overflow_action": "shorten_or_split"},
+        "vertical_anchor": "middle",
+        "style_policy": "template_token_adapted",
+    },
+    *[
+        {
+            "slot_id": f"EVIDENCE_{index:02d}",
+            "kind": "text",
+            "required": True,
+            "geometry": {"x": 198.0, "y": 168.0 + (index - 1) * 106.7, "width": 924.0, "height": 76.7},
+            "capacity": {"max_lines": 2, "max_chars_per_line": 42, "overflow_action": "split_or_reduce_items"},
+            "vertical_anchor": "middle",
+            "style_policy": "template_token_adapted",
+        }
+        for index in range(1, 4)
+    ],
+]
+IMPORTED_GRANT_STACK_VARIANT = {
+    "variant_id": "grant_text_evidence_stack",
+    "source_slides": [],
+    "section": "grant",
+    "story_roles": ["grant_significance", "grant_rigor_risk"],
+    "narrative_step": "Use a template-adapted argument stack when the grant logic needs text-rich evidence rather than a forced figure.",
+    "source_page_purpose": "Adapted from the reviewed research_core evidence-stack page scene; it carries a claim and three auditable supporting arguments in NSFC purple tokens.",
+    "composition_profile": "grant_text_evidence_stack",
+    "composition_mode": "ordered_component_refs",
+    "components": [IMPORTED_GRANT_STACK_COMPONENT_ID],
+    "component_instances": [
+        {
+            "instance_id": "grant_stack",
+            "component_id": IMPORTED_GRANT_STACK_COMPONENT_ID,
+            "region": "stack",
+            "slot_bindings": {
+                "EVIDENCE_CLAIM": "EVIDENCE_CLAIM",
+                "EVIDENCE_01": "EVIDENCE_01",
+                "EVIDENCE_02": "EVIDENCE_02",
+                "EVIDENCE_03": "EVIDENCE_03",
+            },
+            "role": "text_evidence",
+        }
+    ],
+    "density": "text_rich_grant",
+    "evidence_count": 3,
+}
+BODY_VARIANTS = [*SOURCE_COMPONENT_BODY_VARIANTS, IMPORTED_GRANT_STACK_VARIANT]
+
+# A source page's original section is provenance, not a permanent semantic
+# prison. These reviewed variants are allowed only in the NSFC sections where
+# their evidence grammar remains truthful; arbitrary section reuse stays
+# blocked by the source-guided compiler contract.
+NSFC_GRANT_VARIANT_SECTIONS = {
+    # ``grant`` keeps the reviewed standalone gallery/composition fixture
+    # valid. Production NSFC story bindings remain restricted to 01 and 03.
+    "grant_text_evidence_stack": ["01", "03", "grant"],
+    "three_evidence_track": ["01", "02", "03"],
+    "need_relationship_evidence": ["01", "02"],
+    "metric_dashboard": ["01", "02"],
+    "comparison_evidence": ["02", "03"],
+}
+for _variant in BODY_VARIANTS:
+    _variant.setdefault(
+        "sections",
+        NSFC_GRANT_VARIANT_SECTIONS.get(
+            str(_variant.get("variant_id") or ""),
+            [str(_variant.get("section") or "")],
+        ),
+    )
+
+# This is the default authoring grammar for Chinese NSFC proposal defenses.
+# The source deck supplies the visual language; this profile supplies the
+# reviewer-facing logic that an AI must preserve when selecting those scenes.
+CN_NSFC_GRANT_PROFILE = {
+    "scenario_id": "nsfc_grant_cn",
+    "scenario_label": "中国国家自然科学基金申请答辩",
+    "narrative_logic": [
+        "significance_and_scientific_question",
+        "research_content_and_technical_route",
+        "innovation_feasibility_and_implementation",
+    ],
+    "sections": [
+        {
+            "section": "01",
+            "title": "立项依据与科学问题",
+            "narrative": "需求或学科缺口 -> 关键科学问题 -> 总体目标与研究内容",
+        },
+        {
+            "section": "02",
+            "title": "研究内容与技术路线",
+            "narrative": "研究内容一 -> 研究内容二 -> 研究内容三 -> 技术路线与判定标准",
+        },
+        {
+            "section": "03",
+            "title": "创新性、研究基础与实施计划",
+            "narrative": "创新点 -> 前期基础与可行性 -> 年度计划、预期成果与风险控制",
+        },
+    ],
+    "full_deck_roles": [
+        "cover",
+        "toc",
+        "chapter_significance",
+        "background_significance",
+        "key_scientific_question_and_objective",
+        "chapter_research_content",
+        "research_content_1",
+        "research_content_2",
+        "research_content_3",
+        "chapter_innovation_foundation_plan",
+        "innovation_points",
+        "feasibility_basis",
+        "work_plan_and_expected_outcomes",
+        "ending",
+    ],
+    "optional_deck_roles": ["toc"],
+    "short_deck_merge_rules": [
+        "background_significance may merge with key_scientific_question_and_objective only when the scientific gap remains explicit.",
+        "innovation_points may merge with feasibility_basis, but work_plan_and_expected_outcomes must remain explicit.",
+        "research_content_1, research_content_2, and research_content_3 may share one overview page only when each keeps an independent question, method, and success criterion.",
+    ],
+    "variant_bindings": [
+        {"grant_role": "background_significance", "section": "01", "body_variant_id": "grant_text_evidence_stack", "story_role": "grant_significance"},
+        {"grant_role": "key_scientific_question_and_objective", "section": "01", "body_variant_id": "three_evidence_track", "story_role": "three_evidence_tracks"},
+        {"grant_role": "research_content_1", "section": "02", "body_variant_id": "need_relationship_evidence", "story_role": "national_need_evidence"},
+        {"grant_role": "research_content_2", "section": "02", "body_variant_id": "metric_dashboard", "story_role": "research_hotspot_metrics"},
+        {"grant_role": "research_content_3", "section": "02", "body_variant_id": "comparison_evidence", "story_role": "method_comparison"},
+        {"grant_role": "innovation_points", "section": "03", "body_variant_id": "three_evidence_track", "story_role": "innovation_evidence"},
+        {"grant_role": "feasibility_basis", "section": "03", "body_variant_id": "grant_text_evidence_stack", "story_role": "grant_rigor_risk"},
+        {"grant_role": "work_plan_and_expected_outcomes", "section": "03", "body_variant_id": "comparison_evidence", "story_role": "method_comparison"},
+    ],
+}
+COMPONENTS = {
+    **SOURCE_COMPONENTS,
+    IMPORTED_GRANT_STACK_COMPONENT_ID: (1280, 509, "Imported research_core evidence-stack page scene"),
+}
+COMPOSITION_PROFILES = {
+    **SOURCE_COMPONENT_COMPOSITION_PROFILES,
+    "grant_text_evidence_stack": {
+        "scene": "imported_research_core_evidence_stack",
+        "regions": [("stack", (0.0, 0.0, 1.0, 1.0), 20)],
+    },
+}
 SMALL_COMPONENTS: set[str] = set()
+SOURCE_COMPONENT_ROWS: list[dict[str, Any]] = []
 
 
 def _component_slots(component_id: str, width: int, height: int) -> list[dict[str, Any]]:
-    source_like_slots = source_like_component_slots(component_id)
-    if source_like_slots is not None:
-        return source_like_slots
+    if component_id == IMPORTED_GRANT_STACK_COMPONENT_ID:
+        return deepcopy(IMPORTED_GRANT_STACK_SLOTS)
+    source_component_models = source_component_slots(component_id)
+    if source_component_models is not None:
+        return source_component_models
     if component_id == "nsfc_header":
         return []
     if component_id in SMALL_COMPONENTS:
@@ -627,78 +790,67 @@ def _variant_slots_and_bindings(
     bindings: dict[str, dict[str, str]] = {}
     regions: dict[str, str] = {}
     profile = _composition_profile(variant)
-    large_index = 0
-    for component_id in variant.get("components", []):
+    instances = variant.get("component_instances")
+    if not isinstance(instances, list):
+        raise ValueError(f"body variant {variant.get('variant_id')!r} has no component_instances")
+    for instance in instances:
+        if not isinstance(instance, dict):
+            raise ValueError(f"body variant {variant.get('variant_id')!r} contains an invalid component instance")
+        component_id = str(instance.get("component_id") or "")
+        instance_id = str(instance.get("instance_id") or component_id)
         width, height, _description = COMPONENTS[component_id]
         component_slots = _component_slots(component_id, width, height)
-        if component_id == "key_point_bar":
-            prefix, region_id = "CLAIM", "claim"
-        elif component_id == "image_caption_strip":
-            prefix, region_id = "CAPTION", "caption"
-        elif component_id == "red_emphasis":
-            prefix, region_id = "EMPHASIS", "emphasis"
-        else:
-            large_index += 1
-            # A body variant now owns one complete source-like scene. Expose
-            # its semantic local names directly so a deck plan can express
-            # FIGURE_01, STEP_02, or METRIC_01_VALUE instead of opaque
-            # PRIMARY_* indirection.
-            prefix = "" if len([item for item in variant.get("components", []) if item not in SMALL_COMPONENTS]) == 1 else ("PRIMARY" if large_index == 1 else f"SECONDARY_{large_index - 1}")
-            region_id = "main" if len([item for item in variant.get("components", []) if item not in SMALL_COMPONENTS]) == 1 else ("primary" if large_index == 1 else "secondary")
-        profile_region = str(profile["component_regions"].get(component_id) or "")
-        if not profile_region:
+        region_id = str(instance.get("region") or "")
+        if not region_id:
             raise ValueError(
-                f"composition profile {variant.get('composition_profile')!r} does not place {component_id!r}"
+                f"component instance {instance_id!r} has no region in {variant.get('variant_id')!r}"
             )
-        region_id = profile_region
+        profile_regions = {str(item[0]) for item in profile["regions"]}
+        if region_id not in profile_regions:
+            raise ValueError(
+                f"composition profile {variant.get('composition_profile')!r} has no region {region_id!r}"
+            )
+        declared_bindings = instance.get("slot_bindings")
+        if not isinstance(declared_bindings, dict):
+            raise ValueError(f"component instance {instance_id!r} has no slot_bindings")
         instance_bindings: dict[str, str] = {}
         for component_slot in component_slots:
             component_slot_id = str(component_slot["slot_id"])
-            target_slot = (
-                component_slot_id
-                if not prefix
-                else prefix if component_slot_id == "TEXT" else f"{prefix}_{component_slot_id}"
-            )
-            slots.append(
-                {
-                    "slot_id": target_slot,
-                    "kind": component_slot.get("kind", "text"),
-                    "required": bool(component_slot.get("required", True)),
-                    "capacity": component_slot.get("capacity", {}),
-                }
-            )
+            target_slot = str(declared_bindings.get(component_slot_id) or "")
+            if not target_slot:
+                raise ValueError(f"component instance {instance_id!r} does not bind {component_slot_id!r}")
+            slot_contract = {
+                "slot_id": target_slot,
+                "kind": component_slot.get("kind", "text"),
+                "required": bool(component_slot.get("required", True)),
+                "capacity": component_slot.get("capacity", {}),
+            }
+            # Component-owned text layout is part of the public variant
+            # contract, not renderer-only metadata. Runtime planning and
+            # promotion probes must know when a short label has a controlled
+            # stacking rule.
+            if component_slot.get("text_layout"):
+                slot_contract["text_layout"] = component_slot["text_layout"]
+            slots.append(slot_contract)
             instance_bindings[component_slot_id] = target_slot
-        bindings[component_id] = instance_bindings
-        regions[component_id] = region_id
+        bindings[instance_id] = instance_bindings
+        regions[instance_id] = region_id
     return slots, bindings, regions
-
-
-def _component_role(component_id: str, variant_id: str) -> str:
-    if component_id == variant_id:
-        return "primary_body"
-    return {
-        "key_point_bar": "claim",
-        "image_caption_strip": "caption",
-        "red_emphasis": "emphasis",
-        "application_metrics": "metrics",
-        "architecture_flow": "primary_body",
-        "two_track_evidence": "primary_body",
-    }.get(component_id, "supporting_evidence")
 
 
 def _variant_component_refs(variant: dict[str, Any]) -> list[dict[str, Any]]:
     _slots, bindings, regions = _variant_slots_and_bindings(variant)
     return [
         {
-            "asset_id": f"component/nsfc_defense/{component_id}",
-            "instance_id": component_id,
-            "role": _component_role(component_id, str(variant["variant_id"])),
+            "asset_id": f"component/nsfc_defense/{instance['component_id']}",
+            "instance_id": str(instance["instance_id"]),
+            "role": str(instance.get("role") or "supporting_evidence"),
             "order": index,
             "required": True,
-            "region": regions[component_id],
-            "slot_bindings": bindings[component_id],
+            "region": regions[str(instance["instance_id"])],
+            "slot_bindings": bindings[str(instance["instance_id"])],
         }
-        for index, component_id in enumerate(variant.get("components", []), start=1)
+        for index, instance in enumerate(variant.get("component_instances", []), start=1)
     ]
 
 
@@ -774,7 +926,21 @@ def _page_candidates(distilled: dict[str, Any], index: int, kind: str) -> list[d
 def _capacity(name: str, candidate: dict[str, Any] | None) -> dict[str, Any]:
     source = candidate.get("capacity") if isinstance(candidate, dict) else {}
     source = source if isinstance(source, dict) else {}
-    if name in {"TITLE", "CLOSING_TITLE", "CHAPTER_TITLE"}:
+    if name == "PAGE_TITLE":
+        # The source header title box is 391 px wide at 48 px type. Its
+        # practical capacity is ten full-width glyphs, not the generic
+        # source-derived estimate. A content page title must be shortened,
+        # never silently wrapped or shrunk into a second line.
+        return {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "single_line_required": True,
+            "overflow_action": "shorten_title_required",
+            "measurement": "full_width_equivalent_chars",
+        }
+    if name == "CLOSING_TITLE":
+        default_lines, default_chars = 1, 8
+    elif name in {"TITLE", "CHAPTER_TITLE"}:
         default_lines, default_chars = 2, 28
     elif name in {"PROJECT_TYPE", "SUBTITLE"}:
         default_lines, default_chars = 2, 28
@@ -782,8 +948,6 @@ def _capacity(name: str, candidate: dict[str, Any] | None) -> dict[str, Any]:
         default_lines, default_chars = 1, 16
     elif name.startswith("TOC_ITEM_"):
         default_lines, default_chars = 1, 22
-    elif name.startswith("PAGE_TITLE"):
-        default_lines, default_chars = 1, 24
     elif name.startswith("KEY_MESSAGE") or name.startswith("BODY_TEXT"):
         default_lines, default_chars = 3, 32
     else:
@@ -844,9 +1008,7 @@ def _placeholder_text(node: ET.Element, slot_id: str, box: dict[str, float]) -> 
     elif slot_id == "CHAPTER_DESC":
         label = "章节说明"
     elif slot_id == "CLOSING_TITLE":
-        label = "致谢"
-    elif slot_id == "CLOSING_SUBTITLE":
-        label = "致意"
+        label = "敬请批评指正"
     elif slot_id.startswith("PAGE_TITLE"):
         label = "页面标题"
     elif slot_id.startswith("BODY_TEXT_"):
@@ -948,11 +1110,14 @@ def _svg_vertical_bounds(node: ET.Element) -> tuple[float, float] | None:
     values: list[float] = []
     for child in node.iter():
         tag = _local(child.tag)
-        if tag in {"rect", "image"}:
+        if tag in {"rect", "image", "svg"}:
             y = _float(child.get("y"))
             values.extend([y, y + _float(child.get("height"))])
         elif tag == "line":
             values.extend([_float(child.get("y1")), _float(child.get("y2"))])
+        elif tag in {"polygon", "polyline"}:
+            coordinates = re.findall(r"[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?", child.get("points") or "")
+            values.extend(_float(value) for value in coordinates[1::2])
         elif tag == "text":
             y = _float(child.get("data-pptx-box-y"), _float(child.get("y")))
             values.extend([y, y + _float(child.get("data-pptx-box-h"), _float(child.get("font-size"), 24.0))])
@@ -985,6 +1150,11 @@ def _write_clean_page(index: int, source_svg: Path, destination: Path, distilled
     for position, node in enumerate(text_nodes, start=1):
         candidate = text_candidates[position - 1] if position <= len(text_candidates) else None
         spec = SHELL_TEXT_SPECS.get(index, {}).get(position)
+        if spec and spec.get("drop"):
+            parent = parents.get(node)
+            if parent is not None:
+                parent.remove(node)
+            continue
         box = _box(node, parents.get(node))
         if spec and spec.get("static"):
             role = str(spec.get("role") or "fixed_label")
@@ -1018,13 +1188,21 @@ def _write_clean_page(index: int, source_svg: Path, destination: Path, distilled
             # subtitle are all title-level content and must share the same
             # horizontal centerline, independent of their source alignment.
             node.set("text-anchor", "middle")
-        if index == 17 and slot_id in {"CLOSING_TITLE", "CLOSING_SUBTITLE"}:
-            # The source artwork uses short Chinese closing words. Reserve a
-            # wider centered box so the same shell accepts common English
-            # closings without violating the text-fit contract.
-            box["x"] = 440.0
-            box["width"] = 400.0
+        if index == 17 and slot_id == "CLOSING_TITLE":
+            # The ending is a single, fixed-purpose line. It must remain
+            # readable in one line rather than turning a subtitle into a
+            # second oversized headline.
+            box.update({"x": 320.0, "y": 180.0, "width": 640.0, "height": 120.0})
+            node.set("font-size", "76")
+        if slot_id == "PAGE_TITLE":
+            # The whole header band is available. Keeping the source's narrow
+            # 391 px text box caused ordinary research titles to wrap despite
+            # ample empty header space.
+            box.update({"x": 72.0, "width": 600.0})
         _placeholder_text(node, slot_id, box)
+        if slot_id == "PAGE_TITLE":
+            node.set("data-easyslides-single-line", "required")
+            node.set("data-pptx-no-wrap", "true")
         slots.append(
             {
                 "slot_id": slot_id,
@@ -1081,8 +1259,71 @@ def _write_clean_page(index: int, source_svg: Path, destination: Path, distilled
     return slots
 
 
+def _add_content_chrome_slots(root: ET.Element) -> None:
+    """Install the template-owned key-message and page-number slots."""
+    message = ET.SubElement(
+        root,
+        f"{{{SVG_NS}}}text",
+        {
+            "x": "72.00",
+            "y": "145.80",
+            "text-anchor": "start",
+            "font-family": "Arial, sans-serif",
+            "font-size": "28",
+            "fill": "#060607",
+            "data-slot": "KEY_MESSAGE",
+            "data-slot-id": "KEY_MESSAGE",
+            "data-slot-kind": "text",
+            "data-slot-placeholder": "{{KEY_MESSAGE}}",
+            "data-easyslides-layout": "square_bullets",
+            "data-center-lock": "true",
+            "data-pptx-textbox": "true",
+            "data-pptx-measure-text": "T",
+            "data-pptx-box-x": f"{CONTENT_KEY_MESSAGE_FRAME['x']:.2f}",
+            "data-pptx-box-y": f"{CONTENT_KEY_MESSAGE_FRAME['y']:.2f}",
+            "data-pptx-box-w": f"{CONTENT_KEY_MESSAGE_FRAME['width']:.2f}",
+            "data-pptx-box-h": f"{CONTENT_KEY_MESSAGE_FRAME['height']:.2f}",
+            "data-pptx-valign": "middle",
+            "data-pptx-line-height-ratio": "1.100",
+            "data-pptx-text-anchor": "start",
+            "data-pptx-no-wrap": "true",
+        },
+    )
+    message.text = "■ 中心句"
+
+    page_number = ET.SubElement(
+        root,
+        f"{{{SVG_NS}}}text",
+        {
+            "x": f"{CONTENT_PAGE_NUMBER_FRAME['x'] + CONTENT_PAGE_NUMBER_FRAME['width']:.2f}",
+            "y": "694.20",
+            "text-anchor": "end",
+            "font-family": "Arial, sans-serif",
+            "font-size": "16",
+            "font-weight": "700",
+            "fill": "#751497",
+            "data-slot": "PAGE_NUMBER",
+            "data-slot-id": "PAGE_NUMBER",
+            "data-slot-kind": "text",
+            "data-slot-placeholder": "{{PAGE_NUMBER}}",
+            "data-center-lock": "true",
+            "data-pptx-textbox": "true",
+            "data-pptx-measure-text": "T",
+            "data-pptx-box-x": f"{CONTENT_PAGE_NUMBER_FRAME['x']:.2f}",
+            "data-pptx-box-y": f"{CONTENT_PAGE_NUMBER_FRAME['y']:.2f}",
+            "data-pptx-box-w": f"{CONTENT_PAGE_NUMBER_FRAME['width']:.2f}",
+            "data-pptx-box-h": f"{CONTENT_PAGE_NUMBER_FRAME['height']:.2f}",
+            "data-pptx-valign": "middle",
+            "data-pptx-line-height-ratio": "1.000",
+            "data-pptx-text-anchor": "end",
+            "data-pptx-no-wrap": "true",
+        },
+    )
+    page_number.text = "00"
+
+
 def _open_content_shell(path: Path, source_slots: list[dict[str, Any]]) -> None:
-    """Remove source-body placeholders so the content shell is chrome plus title only."""
+    """Remove source body and add the reusable running-title information layer."""
     public_slots = {"PAGE_TITLE"}
     shadow_slots = {
         str(slot.get("slot_id") or "")
@@ -1106,25 +1347,94 @@ def _open_content_shell(path: Path, source_slots: list[dict[str, Any]]) -> None:
         bounds = _svg_vertical_bounds(child)
         if bounds is not None and bounds[1] >= CONTENT_CLEAR_REGION["y"] - 0.5:
             root.remove(child)
-    # Source body geometry is not reliably attached to a text/image slot. Keep
-    # it as provenance only and cover it with the open composition surface.
-    root.append(
-        ET.Element(
-            f"{{{SVG_NS}}}rect",
-            {
-                "x": str(CONTENT_CLEAR_REGION["x"]),
-                "y": str(CONTENT_CLEAR_REGION["y"]),
-                "width": str(CONTENT_CLEAR_REGION["width"]),
-                "height": str(CONTENT_CLEAR_REGION["height"]),
-                "fill": "#FFFFFF",
-                "data-easyslides-open-body-canvas": "true",
-            },
-        )
-    )
+    _add_content_chrome_slots(root)
+    # CONTENT_BODY_CANVAS and CONTENT_CLEAR_REGION remain in the layout
+    # contract as invisible planning constraints. They must never become a
+    # white cover rectangle in a rendered slide.
     root.set("data-easyslides-shell-policy", "open_body_canvas_body_variant_required")
     ET.register_namespace("", SVG_NS)
     ET.register_namespace("xlink", XLINK_NS)
     ET.ElementTree(root).write(path, encoding="utf-8", xml_declaration=True)
+
+
+def _install_symmetric_corner_flourishes(root: ET.Element) -> None:
+    """Replace source corner artwork with one exact 180-degree pair."""
+    removable_ids = {"shape-4", "shape-7", "chapter-shell-corners"}
+    for parent in root.iter():
+        for child in list(parent):
+            if child.get("id") in removable_ids:
+                parent.remove(child)
+
+    corner_paths = (
+        {
+            "d": "M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 40.01 0 141.17 C 0 185.14 0 -1.11 0 -1.11 Z",
+            "fill": "#751497", "fill-opacity": "0.2", "stroke": "none",
+        },
+        {
+            "d": "M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 20.22 0 121.39 C 0 165.35 0 -1.11 0 -1.11 Z",
+            # A directional drop shadow survives the 180-degree transform
+            # unchanged in PowerPoint and makes otherwise identical corners
+            # look asymmetric. Keep the mirrored pair purely geometric.
+            "fill": "#751497", "stroke": "none",
+        },
+    )
+    corners = ET.Element(f"{{{SVG_NS}}}g", {"id": "chapter-shell-corners"})
+    top_left = ET.SubElement(corners, f"{{{SVG_NS}}}g", {"id": "chapter-corner-top-left"})
+    for attributes in corner_paths:
+        ET.SubElement(top_left, f"{{{SVG_NS}}}path", attributes)
+    bottom_right = ET.SubElement(
+        corners,
+        f"{{{SVG_NS}}}g",
+        {
+            "id": "chapter-corner-bottom-right",
+            "transform": "rotate(180 640 360)",
+            "data-easyslides-symmetry-source": "chapter-corner-top-left",
+        },
+    )
+    for attributes in corner_paths:
+        ET.SubElement(bottom_right, f"{{{SVG_NS}}}path", attributes)
+    root.append(corners)
+
+
+def _write_symmetric_corner_flourishes(path: Path) -> None:
+    """Apply the shared TOC/chapter corner geometry to a shell SVG."""
+    root = ET.parse(path).getroot()
+    _install_symmetric_corner_flourishes(root)
+    _annotate_toc_control_containers(root)
+    ET.register_namespace("", SVG_NS)
+    ET.register_namespace("xlink", XLINK_NS)
+    ET.ElementTree(root).write(path, encoding="utf-8", xml_declaration=True)
+
+
+def _annotate_toc_control_containers(root: ET.Element) -> None:
+    """Bind TOC labels to their exact pill containers for generic visual QA."""
+    pills = sorted(
+        (
+            node
+            for node in root.iter()
+            if _local(node.tag) == "rect"
+            and _float(node.get("rx")) >= 20.0
+            and _float(node.get("width")) > 300.0
+        ),
+        key=lambda node: _float(node.get("y")),
+    )
+    titles = [
+        node
+        for node in root.iter()
+        if str(node.get("data-slot-id") or "").startswith("TOC_ITEM_")
+    ]
+    indices = [
+        node
+        for node in root.iter()
+        if node.get("data-easyslides-static-role") == "toc_item_index"
+    ]
+    if len(pills) != 3 or len(titles) != 3 or len(indices) != 3:
+        raise ValueError("TOC controls must expose three pill containers, titles, and indexes")
+    for index, pill in enumerate(pills, start=1):
+        container_id = f"toc-control-{index:02d}"
+        pill.set("data-easyslides-container-id", container_id)
+        titles[index - 1].set("data-easyslides-center-container", container_id)
+        indices[index - 1].set("data-easyslides-center-container", container_id)
 
 
 def _write_chapter_shell(path: Path) -> list[dict[str, Any]]:
@@ -1152,6 +1462,8 @@ def _write_chapter_shell(path: Path) -> list[dict[str, Any]]:
             for char in "报答辩":
                 tspan = ET.SubElement(node, f"{{{SVG_NS}}}tspan", {"x": node.get("x", "330.74"), "dy": "100.8"})
                 tspan.text = char
+
+    _install_symmetric_corner_flourishes(root)
 
     group = ET.Element(f"{{{SVG_NS}}}g", {"id": "chapter-shell-title"})
     ET.SubElement(group, f"{{{SVG_NS}}}line", {
@@ -1261,7 +1573,83 @@ def _write_component_svg(path: Path, width: int, height: int, component_id: str)
     path.write_text(body, encoding="utf-8")
 
 
+def _materialize_imported_grant_stack(assets: Path) -> dict[str, Any]:
+    """Install a research_core argument grammar in the NSFC purple token system."""
+    if not RESEARCH_CORE_EVIDENCE_STACK.is_file():
+        raise FileNotFoundError(
+            f"missing imported grant text scene: {RESEARCH_CORE_EVIDENCE_STACK}"
+        )
+    root = ET.parse(RESEARCH_CORE_EVIDENCE_STACK).getroot()
+    # The visible scene occupies y=162..592. Crop only its empty margins, keep
+    # its structural geometry, then map the foreign blue/navy tokens into the
+    # canonical NSFC purple palette.
+    root.set("viewBox", "0 126 1280 509")
+    root.set("width", "1280")
+    root.set("height", "509")
+    root.set("data-easyslides-asset-status", "template_adapted_page_scene_editable")
+    root.set("data-easyslides-style-policy", "template_token_adapted")
+    root.set("data-easyslides-import-kind", "adapted_page_scene_not_leaf_component")
+    token_map = {
+        "#172033": "#751497",  # source navy claim bar -> NSFC primary purple
+        "#CDD6E0": "#DEC4E8",  # source cool-gray border -> NSFC light purple
+        "#EAF3FA": "#F8EAFC",  # source blue-tint number surface -> NSFC soft purple
+        "#C9DFF0": "#D9B5E7",  # source blue-tint number border -> NSFC lavender
+        "#1C75BC": "#751497",  # source blue number -> NSFC primary purple
+        "#4B5B6D": "#4A2C59",  # source blue-gray body copy -> NSFC deep purple
+    }
+    for node in root.iter():
+        for paint_key in ("fill", "stroke"):
+            current = str(node.attrib.get(paint_key) or "").upper()
+            replacement = token_map.get(current)
+            if replacement:
+                node.set(paint_key, replacement)
+        slot_id = str(node.attrib.get("data-slot") or "")
+        if slot_id:
+            # The source uses semantic aliases in data-slot-id. Normalizing
+            # metadata preserves visible geometry while keeping the imported
+            # scene auditable against its public slot contract.
+            node.set("data-slot-id", slot_id)
+    target = assets / "components" / "imported" / f"{IMPORTED_GRANT_STACK_COMPONENT_ID}.svg"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    ET.register_namespace("", SVG_NS)
+    ET.ElementTree(root).write(target, encoding="utf-8", xml_declaration=True)
+    return {
+        "asset_id": f"component/nsfc_defense/{IMPORTED_GRANT_STACK_COMPONENT_ID}",
+        "component_id": IMPORTED_GRANT_STACK_COMPONENT_ID,
+        "asset_path": f"assets/components/imported/{IMPORTED_GRANT_STACK_COMPONENT_ID}.svg",
+        "asset_status": "renderable_svg",
+        "render_backend": "template_svg_component",
+        "renderer_id": "svg_fragment",
+        "classification": "template_scoped_imported_page_scene",
+        "reuse_policy": "nsfc_defense_grant_text_evidence_stack_only",
+        "category": "text_rich_argument_scene",
+        "description": "NSFC-purple adapted high-density evidence page derived from the reviewed research_core argument-stack scene; use only through its reviewed grant body variant.",
+        "slots": deepcopy(IMPORTED_GRANT_STACK_SLOTS),
+        "selection": {
+            "page_roles": ["content"],
+            "story_roles": ["grant_significance", "grant_rigor_risk"],
+            "density": "text_rich_grant",
+        },
+        "geometry": {"width": 1280, "height": 509},
+        "provenance": {
+            "source_asset": RESEARCH_CORE_EVIDENCE_STACK.relative_to(ROOT).as_posix(),
+            "source_component_id": "component/research_core/evidence_stack",
+            "import_mode": "reviewed_page_scene",
+            "style_mutation_policy": "preserve_source_structure_geometry_and_fonts_map_visual_tokens_to_nsfc_purple",
+        },
+        "qa": {
+            "required_gates": [
+                "asset_manifest",
+                "component_geometry",
+                "vertical_center_alignment",
+                "cross_material_smoke",
+            ],
+        },
+    }
+
+
 def _copy_assets() -> None:
+    global SOURCE_COMPONENT_ROWS
     assets = OUT / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     for name in COMMON_SOURCE_ASSETS:
@@ -1276,15 +1664,10 @@ def _copy_assets() -> None:
         '<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220"><rect x="1" y="1" width="318" height="218" fill="#F8EAFC" stroke="#751497" stroke-opacity="0.35" stroke-dasharray="8 6"/><path d="M40 170 L100 110 L145 150 L200 82 L280 170" fill="none" stroke="#751497" stroke-width="4" opacity="0.45"/></svg>\n',
         encoding="utf-8",
     )
-    components = assets / "components"
-    components.mkdir(parents=True, exist_ok=True)
-    for component_id, (width, height, _description) in COMPONENTS.items():
-        _write_component_svg(components / f"{component_id}.svg", width, height, component_id)
-    primitives = assets / "primitives"
-    primitives.mkdir(parents=True, exist_ok=True)
-    for primitive in primitive_asset_manifest():
-        primitive_id = str(primitive["primitive_id"])
-        (primitives / f"{primitive_id}.svg").write_text(render_primitive_svg(primitive_id), encoding="utf-8")
+    # Component visuals are direct source-derived fragments.  The materializer
+    # only adds named replacement slots; it must never redraw their style.
+    SOURCE_COMPONENT_ROWS = materialize_component_assets(assets / "components" / "source_derived")
+    SOURCE_COMPONENT_ROWS.append(_materialize_imported_grant_stack(assets))
 
 
 def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) -> None:
@@ -1298,11 +1681,25 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
             [
                 {"region_id": "title", "frame": {"x": 0.0, "y": 0.0, "width": 1280.0, "height": 100.0}, "z_index": 0},
                 {
+                    "region_id": "key_message",
+                    "frame": CONTENT_KEY_MESSAGE_FRAME,
+                    "z_index": 1,
+                    "fit": "contain",
+                    "purpose": "central_message_only",
+                },
+                {
                     "region_id": "body_canvas",
                     "frame": CONTENT_BODY_CANVAS,
                     "z_index": 10,
                     "fit": "contain",
                     "purpose": "body_variant_composition_only",
+                },
+                {
+                    "region_id": "page_number",
+                    "frame": CONTENT_PAGE_NUMBER_FRAME,
+                    "z_index": 1,
+                    "fit": "contain",
+                    "purpose": "automatic_navigation_only",
                 },
             ]
             if slide["shell_id"] == "content"
@@ -1315,6 +1712,54 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
             public_slots = [slot for slot in source_slots if slot["slot_id"] == "PAGE_TITLE"]
             if len(public_slots) != 1:
                 raise ValueError("content shell must expose exactly one PAGE_TITLE public slot")
+            public_slots[0] = {
+                **public_slots[0],
+                "role": "running_title",
+                "content_role": "running_title",
+            }
+            public_slots.extend(
+                [
+                    {
+                        "slot_id": "KEY_MESSAGE",
+                        "kind": "text",
+                        "role": "central_message",
+                        "content_role": "central_message",
+                        "required": True,
+                        "geometry": CONTENT_KEY_MESSAGE_FRAME,
+                        "capacity": {
+                            "max_lines": 2,
+                            "max_chars_per_line": 38,
+                            "single_line_per_bullet": True,
+                            "overflow_action": "shorten_or_split_key_message_required",
+                            "measurement": "full_width_equivalent_chars",
+                        },
+                        "line_height_ratio": 1.1,
+                        "text_anchor": "start",
+                        "vertical_anchor": "middle",
+                        "rendering": "square_bullets",
+                        "source_position": 2,
+                    },
+                    {
+                        "slot_id": "PAGE_NUMBER",
+                        "kind": "text",
+                        "role": "page_number",
+                        "content_role": "navigation",
+                        "required": True,
+                        "geometry": CONTENT_PAGE_NUMBER_FRAME,
+                        "capacity": {
+                            "max_lines": 1,
+                            "max_chars_per_line": 3,
+                            "single_line_required": True,
+                            "overflow_action": "template_owned_automatic",
+                        },
+                        "line_height_ratio": 1.0,
+                        "text_anchor": "end",
+                        "vertical_anchor": "middle",
+                        "source_position": 3,
+                        "value_policy": "automatic_slide_index",
+                    },
+                ]
+            )
             shadow_slots = [slot for slot in source_slots if slot["slot_id"] != "PAGE_TITLE"]
         public_slot_models[slide["shell_id"]] = public_slots
         page_rows.append(
@@ -1416,7 +1861,7 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
         "replication_mode": "slot_guided_mirror",
         "global_contract": {
             "source_geometry_policy": "preserve_source_chrome_compose_source_guided_body_variants",
-            "content_organization": "claim_evidence_consequence",
+            "content_organization": "nsfc_grant_cn_three_chapter_argument",
             "visual_density": "dense_research_defense",
             "canonical_shell_policy": "evidence_driven_three_to_five_stable_shells",
             "canonical_shell_minimum": 3,
@@ -1443,7 +1888,12 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
         "content_shell_contract": {
             "shell_id": "content",
             "policy": "source_guided_body_variant_required",
-            "public_slots": ["PAGE_TITLE"],
+            "public_slots": ["PAGE_TITLE", "KEY_MESSAGE", "PAGE_NUMBER"],
+            "information_hierarchy": {
+                "PAGE_TITLE": "running_title",
+                "KEY_MESSAGE": "central_message_square_bullets",
+                "PAGE_NUMBER": "automatic_navigation",
+            },
             "body_canvas": CONTENT_BODY_CANVAS,
             "clear_region": CONTENT_CLEAR_REGION,
             "legacy_source_slots": "shadow_metadata_only",
@@ -1493,9 +1943,9 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
             {
                 "schema_version": "easyslides.nsfc_defense.component_primitives.v1",
                 "template_id": "nsfc_defense",
-                "tokens": COMPONENT_TOKENS,
-                "primitives": primitive_asset_manifest(),
-                "rule": "Body scenes may compose declared primitives only; private card styles are forbidden.",
+                "tokens": {},
+                "primitives": [],
+                "rule": "This template has no synthetic visual primitives. Body scenes may compose declared source-derived leaf components only.",
             },
             ensure_ascii=False,
             indent=2,
@@ -1511,8 +1961,11 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
                 "recipes": [
                     {
                         "variant_id": variant["variant_id"],
-                        "scene_component": variant["components"][0],
-                        "primitives": VARIANT_RECIPES[variant["variant_id"]],
+                        "scene_component": variant["component_instances"][0]["component_id"],
+                        "primitives": [
+                            item["component_id"]
+                            for item in variant["component_instances"][1:]
+                        ],
                         "source_slides": variant["source_slides"],
                     }
                     for variant in BODY_VARIANTS
@@ -1560,36 +2013,14 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
     story = {
         "schema_version": "easyslides.story_structure.v1",
         "template_id": "nsfc_defense",
-        "default_scenario": "national_natural_science_foundation_defense",
-        "narrative_logic": [
-            "national_need_and_problem",
-            "innovation_and_technical_content",
-            "application_and_social_benefits",
-        ],
+        "default_scenario": "nsfc_grant_cn",
+        "narrative_logic": CN_NSFC_GRANT_PROFILE["narrative_logic"],
+        "grant_cn_profile": CN_NSFC_GRANT_PROFILE,
         "recommended_flow": [
             {"page_id": key, "svg": value["id"] + ".svg", "story_role": value["role"], "archetype": value["archetype"]}
             for key, value in SHELLS.items()
         ],
-        "sections": [
-            {
-                "section": "01",
-                "title": "立项背景和研究思路",
-                "narrative": "national need -> two research tracks -> bottleneck -> hotspot metrics -> hotspot synthesis",
-                "source_slides": [3, 4, 5, 6, 7],
-            },
-            {
-                "section": "02",
-                "title": "创新点和主要技术内容",
-                "narrative": "innovation overview -> method comparison -> device mechanism and training -> system architecture -> application pipeline -> external validation",
-                "source_slides": [9, 10, 11, 12, 13, 14],
-            },
-            {
-                "section": "03",
-                "title": "应用推广和经济社会效益",
-                "narrative": "application metrics -> technology transfer evidence -> societal benefit",
-                "source_slides": [16],
-            },
-        ],
+        "sections": CN_NSFC_GRANT_PROFILE["sections"],
         "canonical_content_sequence": [
             {
                 "section": variant["section"],
@@ -1604,7 +2035,7 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
         "generation_contract": {
             "content_page_requires": ["section", "story_role", "body_variant_id", "PAGE_TITLE", "slot_payload"],
             "body_component_policy": "forbidden",
-            "selection_rule": "story_role and section must match the selected source-derived body variant",
+            "selection_rule": "select a reviewed body variant through grant_cn_profile.variant_bindings; its source story_role and section must match",
             "new_layout_rule": "A new content composition requires a reviewed source-page evidence record and a registered body variant; it cannot be assembled ad hoc.",
         },
         "default_body_variant_sequence": [variant["variant_id"] for variant in BODY_VARIANTS],
@@ -1741,28 +2172,46 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
         + "\n",
         encoding="utf-8",
     )
-    component_rows = []
-    archetypes = {shell["archetype"] for shell in SHELLS.values()} | {variant["variant_id"] for variant in BODY_VARIANTS}
-    for component_id, (width, height, description) in COMPONENTS.items():
-        component_rows.append(
-            {
-                "asset_id": f"component/nsfc_defense/{component_id}",
-                "component_id": component_id,
-                "asset_path": f"assets/components/{component_id}.svg",
-                "asset_status": "renderable_svg",
-                "render_backend": "template_svg_component",
-                "renderer_id": "svg_fragment",
-                "classification": "template_scoped",
-                "reuse_policy": "nsfc_defense_shell_or_body_variant",
-                "description": description,
-                "slots": _component_slots(component_id, width, height),
-                "selection": {"page_roles": ["content", "agenda", "chapter"], "archetypes": sorted(archetypes), "density": "dense_research_defense"},
-                "geometry": {"width": width, "height": height},
-                "qa": {"required_gates": ["asset_manifest", "component_geometry", "vertical_center_alignment"]},
-            }
-        )
     (OUT / "component_catalog.json").write_text(
-        json.dumps({"schema_version": "easyslides.nsfc_defense.component_catalog.v1", "template_id": "nsfc_defense", "selection_policy": "body_variant_recipe_then_declared_slot_capacity", "primitive_manifest": "component_primitives.json", "recipe_manifest": "body_variant_recipes.json", "components": component_rows, "symbols": [], "unknown_component_count": 0}, ensure_ascii=False, indent=2) + "\n",
+        json.dumps({"schema_version": "easyslides.nsfc_defense.component_catalog.v1", "template_id": "nsfc_defense", "selection_policy": "body_variant_recipe_then_source_derived_leaf_capacity", "primitive_manifest": "component_primitives.json", "recipe_manifest": "body_variant_recipes.json", "components": SOURCE_COMPONENT_ROWS, "symbols": [], "unknown_component_count": 0}, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (OUT / "component_pack.json").write_text(
+        json.dumps(
+            {
+                "schema_version": "easyslides.template_component_pack.v1",
+                "pack_id": "template/nsfc_defense/components",
+                "template_id": "nsfc_defense",
+                "version": "1.1.0",
+                "display_name": "NSFC Defense Source Components",
+                "description": "Source-derived NSFC defense leaf components plus reviewed imported text-rich page scenes.",
+                "license": "source-derived-internal-use",
+                "scope": "template",
+                "dependencies": {"component_packs": []},
+                "design_tokens": {"source": "design_tokens.json", "required": ["color.primary", "color.emphasis", "surface.panel", "text.primary", "typography.title.font_size_px", "layout.grid_px"]},
+                "entrypoints": {"catalog": "component_catalog.json", "primitives": "component_primitives.json", "recipes": "body_variant_recipes.json"},
+                "qa": {"required_gates": ["template_component_pack_contract", "component_catalog", "body_variant_component_contract", "vertical_center_alignment", "source_style_lock"]},
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    (OUT / "design_tokens.json").write_text(
+        json.dumps(
+            {
+                "schema_version": "easyslides.template_design_tokens.v1",
+                "color": {"primary": "#751497", "emphasis": "#C00000", "ink": "#060607", "inverse": "#FFFFFF"},
+                "surface": {"canvas": "#FFFFFF", "panel": "#F8EAFC", "soft": "#F8EAFC", "caption": "#751497"},
+                "text": {"primary": "#060607", "inverse": "#FFFFFF"},
+                "typography": {"title": {"font_size_px": 23, "line_height": 1.16}, "body": {"font_size_px": 17, "line_height": 1.25}, "caption": {"font_size_px": 16, "line_height": 1.2}},
+                "layout": {"grid_px": 8, "rail_height_px": 100, "border_px": 1},
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
         encoding="utf-8",
     )
     template = {
@@ -1785,15 +2234,81 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
         "component_asset_model": {
             "primitive_manifest": "component_primitives.json",
             "recipe_manifest": "body_variant_recipes.json",
-            "policy": "standard_primitives_composed_by_source_like_scene_recipes",
+            "policy": "source_derived_leaf_components_and_reviewed_imported_page_scenes_composed_by_registered_variants",
         },
         "primary_color": "#751497",
         "emphasis_color": "#C00000",
-        "content_organization": ["national_need", "technical_innovation", "application_benefits"],
+        "content_organization": CN_NSFC_GRANT_PROFILE["narrative_logic"],
+        "grant_cn_profile": "story_structure.json#grant_cn_profile",
+        "content_information_hierarchy": ["running_title", "central_message", "body_variant", "page_number"],
         "page_selection_inputs": ["canonical_shell", "body_variant", "section", "density", "evidence_count"],
         "forbidden_selection_inputs": ["dom_order_only"],
+        "feedback_contract": "feedback_contract.json",
     }
     (OUT / "template.json").write_text(json.dumps(template, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (OUT / "feedback_contract.json").write_text(
+        json.dumps(
+            {
+                "schema_version": "easyslides.template_feedback_contract.v1",
+                "template_id": "nsfc_defense",
+                "purpose": "Fail closed when previously reviewed NSFC defense-template decisions regress.",
+                "checks": {
+                    "content_title": {
+                        "shell_id": "content",
+                        "slot_id": "PAGE_TITLE",
+                        "svg": "04_content.svg",
+                        "geometry": {"x": 72, "width": 600},
+                        "capacity": {
+                            "max_lines": 1,
+                            "max_chars_per_line": 10,
+                            "single_line_required": True,
+                            "overflow_action": "shorten_title_required",
+                        },
+                    },
+                    "content_canvas": {
+                        "svg": "04_content.svg",
+                        "forbidden_frame": CONTENT_BODY_CANVAS,
+                    },
+                    "key_message": {
+                        "shell_id": "content",
+                        "slot_id": "KEY_MESSAGE",
+                        "svg": "04_content.svg",
+                        "layout": "square_bullets",
+                        "geometry": CONTENT_KEY_MESSAGE_FRAME,
+                        "capacity": {
+                            "max_lines": 2,
+                            "max_chars_per_line": 38,
+                            "single_line_per_bullet": True,
+                            "overflow_action": "shorten_or_split_key_message_required",
+                        },
+                    },
+                    "page_number": {
+                        "shell_id": "content",
+                        "slot_id": "PAGE_NUMBER",
+                        "svg": "04_content.svg",
+                        "geometry": CONTENT_PAGE_NUMBER_FRAME,
+                        "text_anchor": "end",
+                    },
+                    "toc_controls": {
+                        "svg": "02_toc.svg",
+                        "center_tolerance_px": 1.0,
+                    },
+                    "component_chrome": {
+                        "component_dir": "assets/components",
+                        "conclusion_style_policy": "source_preserved",
+                        "conclusion_fill": "#751497",
+                        "conclusion_weight": "700",
+                    },
+                    "ending": {"svg": "05_ending.svg", "default_text": "敬请批评指正"},
+                    "symmetric_corners": {"svgs": ["02_toc.svg", "03_chapter.svg"]},
+                },
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     (OUT / "qa_policy.json").write_text(
         json.dumps(
             {
@@ -1804,16 +2319,18 @@ def _write_contracts(slides: list[dict[str, Any]], distilled: dict[str, Any]) ->
                     "text_center_y_matches_container_center_y",
                     "declared_slots_stay_inside_canvas",
                     "component_regions_stay_inside_canvas",
-                    "content_shell_public_slots_are_title_only",
+                    "content_shell_owns_running_title_key_message_and_page_number",
                     "body_variant_regions_stay_inside_body_canvas",
                 ],
                 "required_gates": [
                     "template_compile",
+                    "feedback_contract",
                     "slide_composition",
                     "body_variant_component_contract",
                     "svg_quality",
                     "svg_text_slots",
                     "template_geometry_svg",
+                    "template_visual_invariants",
                     "asset_manifest",
                     "template_geometry_pptx",
                     "pptx_text_layout",
@@ -1850,8 +2367,8 @@ replication_mode: slot_guided_mirror
 
 `nsfc_defense` is the canonical template for National Natural Science Foundation
 defense decks. It preserves the source deck's purple chrome, title treatment,
-and scientific visual grammar while rebuilding each source-derived content
-composition inside a controlled body canvas.
+and scientific visual grammar. Its content layer is organized as locked,
+source-derived leaf components placed only through reviewed body scenes.
 
 ## Narrative organization
 
@@ -1864,11 +2381,11 @@ composition inside a controlled body canvas.
    international results, metrics, and technology transfer outcomes.
 
 Each content page follows `claim -> evidence -> consequence`. Dense pages are
-intentional: keep five stable shells and choose a body variant with the right
+intentional: keep five stable shells and choose a reviewed scene with the right
 evidence shape instead of creating a new shell for every source page. Every
-body variant is tied to a source slide, a section, a narrative role, and an
-ordered component composition. Content pages are not a free-form component
-stage: a plan must name the matching `section`, `story_role`, and
+scene is tied to source slides, a section, a narrative role, and an ordered
+composition of declared leaf components. Content pages are not a free-form
+component stage: a plan must name the matching `section`, `story_role`, and
 `body_variant_id`.
 
 ## Visual grammar
@@ -1880,28 +2397,38 @@ stage: a plan must name the matching `section`, `story_role`, and
 - Source-style Chinese bold/medium typography, large section titles, compact
   image captions, purple arrows, bordered white panels, and multi-panel exhibits.
 - Cover, agenda, chapter divider, content, and ending are the five stable shells.
-- The content shell preserves only the page title and fixed chrome. Its
-  `body_canvas` is cleared before a body variant places its components.
+- The content shell has a fixed information hierarchy: a one-line running
+  title, one or two square-bullet central messages, a source-derived body
+  scene, and an automatic lower-right page number. Its `body_canvas` is
+  cleared before a body variant places its components.
 - The source deck's dense evidence forms live in `body_variants.json`. Each
-  variant declares a distinct `composition_scene`, regions, and component map.
+  reviewed scene declares regions and an ordered map of locked source-derived
+  leaf components. Header chrome and page-local helpers are not components.
 
 ## Page archetypes
 
 See `layouts.json`, `body_variants.json`, `source_page_roster.json`,
 `page_catalog.json`, and `story_structure.json`. The roster contains five
-stable shells and twelve source-derived body variants, including research-
-hotspot KPI pages, ANN/SNN comparison, equation/network architecture,
-literature result, and application-benefit pages.
+stable shells, thirteen source-derived editable leaf components, one
+research_core-derived text-rich page scene, and nine reviewed body scenes. The
+imported scene remains page-level rather than being treated as a reusable leaf
+component; raw extraction fragments remain provenance-only and are never
+offered as selectable components.
 
 ## Slot policy
 
-Use `slot_contracts.json`. The content shell exposes `PAGE_TITLE` only; body
-material enters through the selected body's variant slots and component-local
-bindings. Source-page body slots are retained as provenance-only shadow
-metadata, never as direct generation targets. Text is vertically center-locked
-to its declared box. Direct `body_components` are forbidden. A composition
-outside this catalog requires a reviewed source-page evidence record and a new
-registered body variant; it is not an ad hoc page assembly operation.
+Use `slot_contracts.json`. The content shell exposes `PAGE_TITLE` as the
+running title, `KEY_MESSAGE` as the central message, and template-owned
+`PAGE_NUMBER`. `KEY_MESSAGE` contains one or two square-bullet lines and must
+state the page's smallest defensible point. Body material enters through the
+selected body's variant slots and component-local bindings, where it must act
+as evidence heading, figure caption, data label, method step, or supporting
+takeaway rather than repeating the central message. Source-page body slots are
+retained as provenance-only shadow metadata, never as direct generation
+targets. Text is vertically center-locked to its declared box. Direct
+`body_components` are forbidden. A composition outside this catalog requires
+a reviewed source-page evidence record and a new registered body variant; it is
+not an ad hoc page assembly operation.
 """,
         encoding="utf-8",
     )
@@ -1909,7 +2436,7 @@ registered body variant; it is not an ad hoc page assembly operation.
         """# NSFC Defense Rules
 
 - Select one of the five canonical shells, then choose a source-derived body
-  variant by section, story role, density, evidence count, and source archetype.
+scene by section, story role, density, evidence count, and source archetype.
 - Preserve header treatment, chapter navigation, purple identity, and red
   emphasis semantics. The content shell owns chrome, not a fixed body grid.
 - Build content as `claim -> evidence -> consequence`.
@@ -1917,16 +2444,29 @@ registered body variant; it is not an ad hoc page assembly operation.
   on a dense content page; do not collapse scientific evidence into body text.
 - Red is for decisive conclusions, warnings, and measured outcomes; it is not a
   general accent color.
-- The content shell exposes `PAGE_TITLE` only. All body material must enter
-  through a selected body variant and stay inside its `body_canvas` regions.
+- The content shell exposes `PAGE_TITLE` (running title), `KEY_MESSAGE`
+  (one or two square-bullet central-message lines), and automatic
+  `PAGE_NUMBER`. All body material must enter through a selected body variant
+  and stay inside its `body_canvas` regions.
+- `KEY_MESSAGE` is the only page-level conclusion. It must be a concise,
+  non-repeating claim; body copy must serve evidence, captions, data labels,
+  method steps, or supporting takeaways instead. Do not type the square bullet
+  yourself: the template owns it.
+- `PAGE_TITLE` is a hard single-line title slot with a ten full-width-
+  character budget. Shorten the wording before generation; do not insert a
+  line break or rely on automatic fitting.
 - Every content-page plan must provide `section`, `story_role`, and
   `body_variant_id`; they must match the variant's source narrative contract.
 - Direct `body_components` are forbidden. New compositions require source-page
-  evidence and a reviewed `body_variants.json` entry.
+  evidence, declared leaf components, and a reviewed `body_variants.json`
+  entry. Do not recolor, resize, crop, change fonts, or reorder layers inside a
+  source-derived component.
 - Moving or resizing source chrome requires a new reviewed shell; routine
   content variation belongs in `body_variants.json` and its composition scene.
 - Text boxes must declare geometry and vertical alignment. Their center Y must
   match their container center Y within geometry QA tolerance.
+- The ending shell uses one closing line only. Its default is `敬请批评指正`;
+  do not use `聆听` in ending copy or place a subtitle in the title region.
 - Overflow action order: choose a lower-density body variant, split evidence,
   then shrink within the declared font floor.
 - Run SVG, native PPTX, visual, and cross-material checks before promotion.
@@ -1938,16 +2478,21 @@ registered body variant; it is not an ad hoc page assembly operation.
 
 - Template id: `nsfc_defense`
 - Source family: `nsfc_defense_distilled`
-- Runtime binding: source chrome plus body-variant component slots
+- Runtime binding: source chrome plus reviewed body-scene component slots
 - Canvas: 1280 x 720, `ppt169`
 - Fixed identity: purple research-defense chrome, neuron texture, circuit header,
   red conclusion emphasis, dense white evidence panels, and source page roster.
-- Allowed edits: page-title replacement and source-guided body-variant
-  composition inside the controlled content body canvas.
+- Allowed edits: page-title replacement and source-guided selection of a
+  reviewed body scene inside the controlled content body canvas. The approved
+  argument scene preserves the reviewed source structure while using the NSFC
+  purple token system, and can only be selected through
+  `grant_text_evidence_stack`.
 - Forbidden edits: direct replacement of legacy body slots, DOM-order-only
   replacement, arbitrary chrome geometry changes, generic card substitution for
-  scientific exhibits, direct body-component placement, and unreviewed new
-  source-derived variants or shells.
+  scientific exhibits, direct body-component placement, component color/font/
+  geometry/crop/layer-order changes, and unreviewed new source-derived scenes
+  or shells. The adapted argument scene may only use its declared NSFC token
+  mapping; its structural geometry and type scale remain locked.
 - Hard text rule: text center Y equals its declared container center Y.
 """,
         encoding="utf-8",
@@ -1965,6 +2510,11 @@ registered body variant; it is not an ad hoc page assembly operation.
 def build() -> dict[str, Any]:
     manifest = json.loads((SOURCE / "manifest.json").read_text(encoding="utf-8-sig"))
     distilled = json.loads((SOURCE / "distilled_spec.json").read_text(encoding="utf-8-sig"))
+    preserved_contracts = {
+        name: (OUT / name).read_bytes()
+        for name in PRESERVED_TEMPLATE_CONTRACTS
+        if (OUT / name).is_file()
+    }
     if OUT.exists():
         for child in OUT.iterdir():
             if child.is_dir():
@@ -1982,13 +2532,25 @@ def build() -> dict[str, Any]:
         slots = _write_clean_page(index, source_svg, target_svg, distilled)
         final_svg = OUT / f"{shell['id']}.svg"
         target_svg.rename(final_svg)
-        if shell_id == "chapter":
+        if shell_id == "toc":
+            _write_symmetric_corner_flourishes(final_svg)
+        elif shell_id == "chapter":
             slots = _write_chapter_shell(final_svg)
         elif shell_id == "content":
             _open_content_shell(final_svg, slots)
         slides.append({"shell_id": shell_id, "source_slide": index, "slots": slots, "best_for": meta["archetype"], "avoid": "sparse content that leaves the source-derived evidence grid empty" if meta["role"] == "content" else "content that requires moving fixed source chrome"})
     _write_contracts(slides, distilled)
     _write_docs()
+    for name, content in preserved_contracts.items():
+        (OUT / name).write_bytes(content)
+    try:
+        from scripts.template_capabilities import derive_capability_profile
+    except ImportError:
+        from template_capabilities import derive_capability_profile
+    (OUT / "capability_profile.json").write_text(
+        json.dumps(derive_capability_profile(OUT), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     try:
         from scripts.component_asset_manifest import materialize_asset_manifest
         materialize_asset_manifest(OUT, namespace="nsfc_defense")
@@ -1999,11 +2561,17 @@ def build() -> dict[str, Any]:
         from scripts.template_package import build_package_manifest
     except ImportError:
         from template_package import build_package_manifest
-    package = build_package_manifest(OUT, version="0.2.0", status="review", examples=["templates/layouts/nsfc_defense/04_content.svg"])
+    package = build_package_manifest(OUT, version="0.4.0", status="review", examples=["templates/layouts/nsfc_defense/04_content.svg"])
     package["capability_level"] = "production"
     package["production_eligible"] = False
     package["runtime_contract"] = "compiled/template_ir.json"
     package["dependency_lock"] = "compiled/template.lock.json"
+    package.setdefault("entrypoints", {})["feedback_contract"] = "feedback_contract.json"
+    package.setdefault("entrypoints", {})["story"] = "story_structure.json"
+    package.setdefault("source_of_truth", {})["feedback_contract"] = "feedback_contract.json"
+    package.setdefault("source_of_truth", {})["story"] = "story_structure.json"
+    package.setdefault("capabilities", []).append("feedback_contract")
+    package.setdefault("capabilities", []).append("scenario_story_contract")
     (OUT / "template_package.json").write_text(json.dumps(package, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     try:
         from scripts.template_compiler import compile_template

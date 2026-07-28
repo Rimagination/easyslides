@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="210" viewBox="0 0 320 210" data-primitive="evidence_figure">
-  <rect x="10" y="14" width="300" height="176" fill="#FFFFFF" stroke="#D5B2E0"/><rect x="10" y="14" width="300" height="6" fill="#751497" stroke="none"/><rect x="10" y="190" width="300" height="20" fill="#751497" stroke="none"/>
-  <image x="10.00" y="14.00" width="300.00" height="176.00" preserveAspectRatio="xMidYMid meet" href="../transparent.svg" data-slot="FIGURE" data-slot-id="FIGURE" data-slot-kind="image"/>
-  <text x="160.00" y="204.90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" data-slot="CAPTION" data-slot-id="CAPTION" data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" data-pptx-box-x="10.00" data-pptx-box-y="190.00" data-pptx-box-w="300.00" data-pptx-box-h="20.00" data-pptx-valign="middle" data-center-lock="true" data-pptx-line-height-ratio="1.150" data-pptx-text-anchor="middle">CAPTION</text>
-</svg>

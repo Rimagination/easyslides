@@ -34,10 +34,10 @@ class BodyVariantComponentContractTests(unittest.TestCase):
         report = validate_body_variant_contract(NSFC)
 
         self.assertEqual(report["status"], "pass", report["issues"])
-        self.assertEqual(report["variant_count"], 12)
-        self.assertEqual(report["component_ref_count"], 12)
-        self.assertEqual(report["resolved_component_count"], 12)
-        self.assertGreater(report["component_dependency_count"], report["component_ref_count"])
+        self.assertEqual(report["variant_count"], 9)
+        self.assertEqual(report["component_ref_count"], 38)
+        self.assertEqual(report["resolved_component_count"], 38)
+        self.assertGreater(report["component_dependency_count"], 0)
         self.assertEqual(report["warning_count"], 0)
 
     def test_body_canvas_variant_cannot_escape_declared_content_area(self):
@@ -112,7 +112,7 @@ class BodyVariantComponentContractTests(unittest.TestCase):
                     {
                         "page": "P01",
                         "role": "content",
-                        "layout_id": "nsfc_defense/evidence_triptych",
+                        "layout_id": "nsfc_defense/need_relationship_evidence",
                         "slot_payload": {},
                     }
                 ],
@@ -122,10 +122,10 @@ class BodyVariantComponentContractTests(unittest.TestCase):
         selected = plan["slides"][0]["selected_assets"][0]
         report = validate_component_plan(plan, registry=registry)
 
-        self.assertEqual(selected["asset_id"], "body_variant/nsfc_defense/evidence_triptych")
+        self.assertEqual(selected["asset_id"], "body_variant/nsfc_defense/need_relationship_evidence")
         self.assertEqual(selected["composition_mode"], "ordered_component_refs")
-        self.assertEqual(len(selected["component_refs"]), 1)
-        self.assertEqual(len(selected["component_dependency_asset_ids"]), 7)
+        self.assertEqual(len(selected["component_refs"]), 5)
+        self.assertEqual(len(selected["component_dependency_asset_ids"]), 5)
         self.assertIn("template_component_pack_contract", selected["required_gates"])
         self.assertIn("body_variant_component_contract", selected["required_gates"])
         self.assertEqual(report["status"], "pass", report["issues"])

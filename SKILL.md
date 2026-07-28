@@ -314,6 +314,28 @@ deck is an academic scenario outside these seeds, keep the nearest profile as
 the rule base and record a `scenario_variant` rather than squeezing the deck
 into defense or literature-report wording.
 
+### Chinese NSFC Proposal Defense
+
+When the user asks for a Chinese National Natural Science Foundation proposal
+defense and selects `nsfc_defense`, activate `scenario_id: nsfc_grant_cn`.
+This is a user-facing intent, not a request for the user to learn plan fields:
+the agent records the scenario contract internally and keeps the conversation
+in natural language.
+
+For a full deck, organize the argument as: (1) rationale and scientific
+question, (2) three research contents and their technical route, and (3)
+innovation, feasibility, and implementation plan. Every page must have one
+declared narrative responsibility, and the template binds that responsibility
+to a reviewed content variant. A table-of-contents page is optional; never add
+one merely because the template has a TOC shell.
+
+Ask with explicit choices before generation only when the request leaves a
+result-affecting decision unresolved, such as whether this is a project
+application or a progress defense, whether the user wants a full or concise
+deck, or whether supplied material may be supplemented by external research.
+Do not ask the user for `grant_role`, `body_variant_id`, coordinates, or other
+implementation details.
+
 Apply rule layers in this order:
 - `hard_rules`: always enforce; source faithfulness, traceability, citations,
   text fit, template geometry integrity, and PPTX deliverability.
@@ -515,6 +537,13 @@ the PPTX text subreport. Repair any `SLOT-CONTRACT-*`, `TEXT-OVERFLOW`,
 overlap, or visual diff threshold issue before delivery. Fix by shortening
 copy, splitting slides, choosing a lower-density layout, preserving locked
 template geometry, or rasterizing complex styling before shrinking body text.
+
+For production templates, `template_visual_invariants.py` is also mandatory:
+every `data-center-lock="true"` text box must be a native middle-aligned text
+frame, and any declared container relation must share the same vertical centre.
+Mirrored decoration pairs must be literal 180-degree copies without SVG filters
+that could introduce directional rendering differences. Never mark an unboxed,
+source-faithful label as centre-locked merely to satisfy this gate.
 
 Render the final PPTX itself, not just the source SVGs. On Windows the wrapper
 `scripts/render_pptx_png.py` automatically prefers the installed Microsoft

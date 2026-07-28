@@ -16,9 +16,10 @@ class TemplateComponentPackTests(unittest.TestCase):
 
         self.assertEqual(report["status"], "pass", report["issues"])
         self.assertEqual(report["pack_id"], "template/nsfc_defense/components")
-        self.assertEqual(report["primitive_count"], 10)
-        self.assertEqual(report["recipe_count"], 12)
-        self.assertEqual(report["dependencies"][0]["pack_id"], "research-core")
+        self.assertEqual(report["component_count"], 14)
+        self.assertEqual(report["primitive_count"], 0)
+        self.assertEqual(report["recipe_count"], 9)
+        self.assertEqual(report["dependencies"], [])
 
     def test_missing_required_token_blocks_the_pack(self) -> None:
         from scripts.template_component_pack import validate_template_component_pack

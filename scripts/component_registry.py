@@ -33,14 +33,14 @@ PPTX_DESIGN_SYSTEM_ROOT = ROOT / "templates" / "reference" / "template_asset_sou
 
 try:
     from scripts.body_variant_contract import canonical_component_asset_id, normalize_component_refs
-    from scripts.component_package import INSTALLED_PACKAGES_ROOT, load_component_packages
+    from scripts.component_package import INSTALLED_PACKAGES_ROOT, is_public_component_package, load_component_packages
     from scripts.component_asset_manifest import build_asset_manifest
     from scripts.chart_library import CHART_INDEX_PATH, load_chart_library
     from scripts.icon_library import MANIFEST_PATH, load_icon_library
     from scripts.template_component_pack import body_variant_recipe_map, expanded_catalog_components, recipe_component_asset_ids
 except ModuleNotFoundError:  # pragma: no cover
     from body_variant_contract import canonical_component_asset_id, normalize_component_refs
-    from component_package import INSTALLED_PACKAGES_ROOT, load_component_packages
+    from component_package import INSTALLED_PACKAGES_ROOT, is_public_component_package, load_component_packages
     from component_asset_manifest import build_asset_manifest
     from chart_library import CHART_INDEX_PATH, load_chart_library
     from icon_library import MANIFEST_PATH, load_icon_library
@@ -182,6 +182,8 @@ def _component_pack_metadata(package_dir: Path, packages_root: Path) -> dict[str
                     "version": manifest.get("version", ""),
                     "display_name": manifest.get("display_name", ""),
                     "license": manifest.get("license", ""),
+                    "visibility": manifest.get("visibility", "public"),
+                    "replacement_template_id": manifest.get("replacement_template_id", ""),
                     "dependencies": (manifest.get("dependencies") if isinstance(manifest.get("dependencies"), dict) else {}).get("component_packs", []),
                     "design_tokens": manifest.get("design_tokens", {}),
                     "manifest_path": rel(manifest_path),
@@ -512,6 +514,8 @@ def assets_from_component_packages(packages_root: Path = COMPONENT_PACKAGES_ROOT
     for package_dir, package in load_component_packages(packages_root):
         if not isinstance(package, dict) or not package.get("asset_id"):
             continue
+        if not is_public_component_package(package_dir):
+            continue
         qa = package.get("qa") if isinstance(package.get("qa"), dict) else {}
         required_gates = qa.get("required_gates") if isinstance(qa.get("required_gates"), list) else []
         pack_metadata = _component_pack_metadata(package_dir, packages_root)
@@ -598,13 +602,19 @@ def _body_variant_selection(template_id: str, variant: dict[str, Any]) -> dict[s
     variant_id = str(variant.get("variant_id") or "")
     hints = BODY_VARIANT_HINTS.get(variant_id, {})
     inferred = infer_content_shapes(variant_id, variant.get("best_for"), variant.get("layout"), variant)
-    content_shapes = sorted(dict.fromkeys(_strings(hints.get("content_shapes")) + inferred))
+    # Managed template packages already declare their semantic selection
+    # vocabulary. Preserve it verbatim; name-based hints only keep legacy
+    # body_variants.json files discoverable during migration.
+    declared_shapes = _strings(variant.get("content_shapes"))
+    content_shapes = sorted(
+        dict.fromkeys(declared_shapes or (_strings(hints.get("content_shapes")) + inferred))
+    )
     return selection_from_source(
         content_shapes=content_shapes,
-        page_roles=[],
-        item_count_min=hints.get("item_count_min", 1),
-        item_count_max=hints.get("item_count_max", 8),
-        density=str(hints.get("density") or "medium"),
+        page_roles=_strings(variant.get("story_roles")),
+        item_count_min=variant.get("min_items", hints.get("item_count_min", 1)),
+        item_count_max=variant.get("max_items", hints.get("item_count_max", 8)),
+        density=str(variant.get("density") or hints.get("density") or "medium"),
         best_for=str(variant.get("best_for") or f"{template_id} body variant {variant_id}"),
     )
 

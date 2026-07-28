@@ -8,17 +8,23 @@
       "role": "content",
       "section": "01",
       "story_role": "national_need_evidence",
-      "body_variant_id": "evidence_triptych",
+      "body_variant_id": "need_relationship_evidence",
       "shell_payload": {
-        "PAGE_TITLE": "环境健康风险"
+        "PAGE_TITLE": "环境健康风险",
+        "KEY_MESSAGE": "热暴露的空间差异会转化为不均等的健康风险。\n风险判断需要连接环境监测、个体脆弱性与行动响应。"
       },
       "slot_payload": {
-        "CLAIM": "多源证据共同支持环境健康风险判断",
-        "RELATION_LEFT": "环境暴露\n多源数据",
-        "RELATION_RIGHT": "健康风险\n闭环决策",
+        "STATEMENT": "多源证据共同支持环境健康风险判断",
+        "FOUNDATION_LABEL": "环境暴露",
+        "APPLICATION_LABEL": "健康风险与闭环决策",
+        "CONNECTOR_LABEL": "联系",
+        "TRACK_01_IMAGE": "../../../../../reference/template_asset_sources/nsfc_defense_distilled/assets/image10.jpg",
+        "TRACK_01_CAPTION": "暴露模式",
+        "TRACK_02_IMAGE": "../../../../../reference/template_asset_sources/nsfc_defense_distilled/assets/image12.jpg",
+        "TRACK_02_CAPTION": "风险识别",
         "CALLOUT_TITLE": "关键挑战",
-        "CALLOUT_BODY": "复杂暴露条件下，需要同时解释时空变化、个体差异和干预窗口。",
-        "SYNTHESIS": "用可追溯的证据链连接环境监测、机制研究与人群健康结果。"
+        "CALLOUT_DETAIL": "复杂暴露条件下，需要同时解释时空变化、个体差异和干预窗口。",
+        "CALLOUT_IMAGE": "../../../../../reference/template_asset_sources/nsfc_defense_distilled/assets/image11.webp"
       }
     }
   ]

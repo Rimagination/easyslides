@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect x="82" y="156" width="690" height="452" rx="14" fill="#E9EEF3" stroke="#C4CDD8" />
+  <rect x="122" y="198" width="610" height="322" rx="8" fill="#F8FAFC" stroke="#D7DDE5" stroke-dasharray="12 10" />
+  <image x="122" y="198" width="610" height="322" preserveAspectRatio="xMidYMid meet" data-slot="FIGURE_IMAGE" data-slot-kind="image" /><rect x="824" y="156" width="374" height="452" rx="14" fill="#FFFFFF" stroke="#CDD6E0" />
+  <rect x="824" y="156" width="374" height="10" rx="5" fill="#1C75BC" />
+  <text data-pptx-textbox="true" data-pptx-box-x="858.0" data-pptx-box-y="206.0" data-pptx-box-w="306.0" data-pptx-box-h="84.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="takeaway" x="1011.0" y="248.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#172033" data-slot="FIGURE_TAKEAWAY" data-slot-kind="text"><tspan x="1011.0" y="248.0">Result exhibit</tspan></text>
+  <line x1="858" y1="318" x2="1164" y2="318" stroke="#D7DDE5" />
+  <text data-pptx-textbox="true" data-pptx-box-x="858.0" data-pptx-box-y="350.0" data-pptx-box-w="306.0" data-pptx-box-h="148.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="bullets" x="1011.0" y="424.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="17" font-weight="500" fill="#4B5B6D" data-slot="FIGURE_NOTES" data-slot-kind="text"><tspan x="1011.0" y="392.1">Trend direction is stable;</tspan><tspan x="1011.0" y="413.4">edge cases remain visible;</tspan><tspan x="1011.0" y="434.6">source locator is</tspan><tspan x="1011.0" y="455.9">retained.</tspan></text>
+  <text x="858" y="560" font-family="Aptos, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#69788A" data-slot="FIGURE_CAPTION" data-slot-kind="text" data-pptx-textbox="true" data-pptx-valign="middle" data-center-lock="true" data-pptx-box-x="858" data-pptx-box-y="540" data-pptx-box-w="306" data-pptx-box-h="28">Figure 1</text>
+</svg>

@@ -16,9 +16,11 @@ try:
     from scripts import pptx_distill_promotion_gate, pptx_visual_diff, template_component_pack, template_geometry_qa, visual_measure_gate
     from scripts.component_asset_manifest import validate_asset_manifest
     from scripts.body_variant_contract import validate_body_variant_contract
-    from scripts.slide_compiler import compile_slides, render_slide_ir_to_svg
+    from scripts.slide_compiler import compile_slides, render_slide_ir_to_svg, validate_native_component_bounds
     from scripts.template_compiler import compile_template
     from scripts.template_capabilities import validate_capability_profile
+    from scripts.template_feedback_contract import validate_template_feedback_contract
+    from scripts.template_visual_invariants import validate_template_visual_invariants
     from scripts.svg_quality_checker import SVGQualityChecker
     from scripts.validate_pptx_text_layout import validate_pptx_text_layout
     from scripts.validate_svg_text_slots import validate_svg_text_slots
@@ -30,9 +32,11 @@ except (ModuleNotFoundError, ImportError):  # pragma: no cover
     import visual_measure_gate
     from component_asset_manifest import validate_asset_manifest
     from body_variant_contract import validate_body_variant_contract
-    from slide_compiler import compile_slides, render_slide_ir_to_svg
+    from slide_compiler import compile_slides, render_slide_ir_to_svg, validate_native_component_bounds
     from template_compiler import compile_template
     from template_capabilities import validate_capability_profile
+    from template_feedback_contract import validate_template_feedback_contract
+    from template_visual_invariants import validate_template_visual_invariants
     from svg_quality_checker import SVGQualityChecker
     from validate_pptx_text_layout import validate_pptx_text_layout
     from validate_svg_text_slots import validate_svg_text_slots
@@ -142,12 +146,24 @@ def validate_compiled_contract(template_dir: Path) -> dict[str, Any]:
     }
 
 
-def _sample_slot_value(slot: dict[str, Any], index: int) -> Any:
+def _sample_slot_value(
+    slot: dict[str, Any],
+    index: int,
+    *,
+    image_placeholder: str = "",
+) -> Any:
     kind = str(slot.get("kind") or "text")
     if kind == "list":
         return [f"Item {index}"]
     if kind == "image":
-        return ""
+        return image_placeholder
+    if str(slot.get("text_layout") or "") == "balanced_cjk_stack":
+        capacity = slot.get("capacity") if isinstance(slot.get("capacity"), dict) else {}
+        max_chars = max(1, int(capacity.get("max_chars_per_line") or 1))
+        # This is a compact label, not a location for the gate's descriptive
+        # sample sentence. Keep the runtime probe inside the exact component
+        # contract so it exercises deterministic wrapping rather than overflow.
+        return "示例标签"[:max_chars]
     return f"Sample {index}"
 
 
@@ -198,18 +214,38 @@ def validate_composition_runtime(
             for component in template_ir.get("components", [])
             if isinstance(component, dict) and component.get("asset_id") and component.get("slots")
         ]
+        image_placeholder = str((template_dir / "assets" / "figure_placeholder.svg").resolve())
+        if not Path(image_placeholder).is_file():
+            raise ValueError("composition runtime needs assets/figure_placeholder.svg for required image slots")
         slides = []
         for index, variant in enumerate(variants, start=1):
             payload = {
-                str(slot["slot_id"]): _sample_slot_value(slot, index)
+                str(slot["slot_id"]): _sample_slot_value(
+                    slot, index, image_placeholder=image_placeholder
+                )
                 for slot in variant.get("slots", [])
                 if isinstance(slot, dict) and slot.get("slot_id")
             }
+            shell_payload: dict[str, Any] = {}
+            for slot in content_shell.get("slots", []) if isinstance(content_shell, dict) else []:
+                if not isinstance(slot, dict) or not slot.get("slot_id"):
+                    continue
+                slot_id = str(slot["slot_id"])
+                if slot.get("value_policy") == "automatic_slide_index":
+                    continue
+                if slot_id in {"PAGE_TITLE", "TITLE"}:
+                    shell_payload[slot_id] = f"Variant {index}"
+                elif slot_id == "KEY_MESSAGE":
+                    shell_payload[slot_id] = f"Composition check for variant {index}."
+                elif bool(slot.get("required", True)):
+                    shell_payload[slot_id] = _sample_slot_value(
+                        slot, index, image_placeholder=image_placeholder
+                    )
             slide = {
                 "page": f"V{index:02d}",
                 "role": "content",
                 "body_variant_id": variant["variant_id"],
-                "shell_payload": {"PAGE_TITLE": f"Variant {index}"},
+                "shell_payload": shell_payload,
                 "slot_payload": payload,
             }
             selection = variant.get("selection") if isinstance(variant.get("selection"), dict) else {}
@@ -224,7 +260,9 @@ def validate_composition_runtime(
                     raise ValueError("open component composition requires a content body canvas and a registered component")
                 component = component_assets[0]
                 component_payload = {
-                    str(slot["slot_id"]): _sample_slot_value(slot, index)
+                    str(slot["slot_id"]): _sample_slot_value(
+                        slot, index, image_placeholder=image_placeholder
+                    )
                     for slot in component.get("slots", [])
                     if isinstance(slot, dict) and slot.get("slot_id")
                 }
@@ -495,6 +533,92 @@ def validate_component_catalog(template_dir: Path) -> dict[str, Any]:
             materialized = template_dir / relative
             if not materialized.is_file():
                 issues.append(issue("COMPONENT-CATALOG-ASSET-MISSING", "Catalogued asset is missing.", id=item_id, asset_path=asset_path))
+            elif materialized.suffix.lower() == ".svg":
+                try:
+                    root = ET.parse(materialized).getroot()
+                    if root.attrib.get("overflow", "visible").lower() == "hidden":
+                        values = [float(value) for value in root.attrib.get("viewBox", "").replace(",", " ").split()]
+                        if len(values) != 4:
+                            raise ValueError("overflow-hidden SVG needs a four-value viewBox")
+                        vx, vy, width, height = values
+                        for node in root.iter():
+                            if node.tag.rsplit("}", 1)[-1] != "rect":
+                                continue
+                            x = float(node.attrib.get("x", "0"))
+                            y = float(node.attrib.get("y", "0"))
+                            rect_width = float(node.attrib.get("width", "0"))
+                            rect_height = float(node.attrib.get("height", "0"))
+                            tolerance = 0.01
+                            if (
+                                x < vx - tolerance
+                                or y < vy - tolerance
+                                or x + rect_width > vx + width + tolerance
+                                or y + rect_height > vy + height + tolerance
+                            ):
+                                issues.append(
+                                    issue(
+                                        "COMPONENT-CATALOG-VIEWPORT-OVERFLOW",
+                                        "An overflow-hidden component has a rectangle outside its visible SVG viewport.",
+                                        id=item_id,
+                                        asset_path=asset_path,
+                                    )
+                                )
+                                break
+                    slots = item.get("slots") if isinstance(item.get("slots"), list) else []
+                    for slot in slots:
+                        if not isinstance(slot, dict):
+                            continue
+                        layout = str(slot.get("text_layout") or "").strip()
+                        if not layout:
+                            continue
+                        if layout != "balanced_cjk_stack":
+                            issues.append(
+                                issue(
+                                    "COMPONENT-CATALOG-TEXT-LAYOUT",
+                                    "Component declares an unsupported text layout policy.",
+                                    id=item_id,
+                                    slot_id=slot.get("slot_id"),
+                                    text_layout=layout,
+                                )
+                            )
+                            continue
+                        slot_id = str(slot.get("slot_id") or "")
+                        capacity = slot.get("capacity") if isinstance(slot.get("capacity"), dict) else {}
+                        expected_chars = str(int(capacity.get("max_chars_per_line") or 1))
+                        expected_lines = str(int(capacity.get("max_lines") or 1))
+                        text_node = next(
+                            (
+                                node
+                                for node in root.iter()
+                                if node.attrib.get("data-slot-id") == slot_id
+                            ),
+                            None,
+                        )
+                        if text_node is None or (
+                            text_node.attrib.get("data-easyslides-layout") != layout
+                            or text_node.attrib.get("data-pptx-no-wrap") != "true"
+                            or text_node.attrib.get("data-easyslides-wrap-max-chars") != expected_chars
+                            or text_node.attrib.get("data-easyslides-wrap-max-lines") != expected_lines
+                        ):
+                            issues.append(
+                                issue(
+                                    "COMPONENT-CATALOG-TEXT-LAYOUT",
+                                    "Component text layout policy is not fully materialized in its SVG asset.",
+                                    id=item_id,
+                                    slot_id=slot_id,
+                                    text_layout=layout,
+                                )
+                            )
+                except (OSError, ET.ParseError, TypeError, ValueError) as exc:
+                    issues.append(
+                        issue(
+                            "COMPONENT-CATALOG-SVG-GEOMETRY",
+                            "Component SVG viewport geometry cannot be audited.",
+                            id=item_id,
+                            asset_path=asset_path,
+                            error=str(exc),
+                        )
+                    )
             if asset_path in seen_paths:
                 issues.append(issue("COMPONENT-CATALOG-ASSET-DUPLICATE", "Multiple catalog entries point to the same asset path.", asset_path=asset_path))
             seen_paths.add(asset_path)
@@ -663,11 +787,13 @@ def run_gate(
         {"id": "contract", **validate_contract(template_dir)},
         {"id": "slide_composition", **validate_composition_runtime(template_dir, report_dir=report_dir)},
         {"id": "template_slot_contract", **validate_slot_contract(template_dir)},
+        {"id": "feedback_contract", **validate_template_feedback_contract(template_dir)},
         {"id": "template_component_pack", **validate_template_component_pack_gate(template_dir)},
         {"id": "component_catalog", **validate_component_catalog(template_dir)},
         {"id": "svg_quality", **validate_svg_quality(template_dir)},
         {"id": "svg_text_slots", **validate_svg_text_slots_gate(template_dir)},
         {"id": "template_geometry_svg", **validate_geometry_svg(template_dir)},
+        {"id": "template_visual_invariants", **validate_template_visual_invariants(template_dir)},
         {"id": "asset_manifest", **validate_assets(template_dir)},
     ]
     if pptx_path is None:
@@ -714,6 +840,36 @@ def run_gate(
         )
         text_layout = validate_pptx_text_layout(pptx_path)
         gates.append({"id": "pptx_text_layout", "status": text_layout.get("status", "fail"), "issues": text_layout.get("issues", []), "report": text_layout})
+        if resolved_slide_ir is not None:
+            try:
+                native_component_bounds = validate_native_component_bounds(
+                    pptx_path,
+                    read_json(resolved_slide_ir),
+                )
+                gates.append(
+                    {
+                        "id": "native_component_bounds",
+                        "status": native_component_bounds.get("status", "fail"),
+                        "issues": native_component_bounds.get("issues", []),
+                        "report": native_component_bounds,
+                    }
+                )
+            except (OSError, ValueError, json.JSONDecodeError) as exc:
+                gates.append(
+                    {
+                        "id": "native_component_bounds",
+                        "status": "fail",
+                        "issues": [issue("PPTX-COMPONENT-BOUNDS-IR", "Slide IR could not be read for native component bounds.", error=str(exc))],
+                    }
+                )
+        else:
+            gates.append(
+                {
+                    "id": "native_component_bounds",
+                    "status": "review_required",
+                    "issues": [issue("PPTX-COMPONENT-BOUNDS-IR-MISSING", "Compiled Slide IR is required for native component-bound checks.", severity="review")],
+                }
+            )
         gates.append({"id": "placeholder_scan", **scan_pptx_placeholders(pptx_path)})
     gates.append({"id": "human_visual_review", **validate_human_review(template_dir)})
 

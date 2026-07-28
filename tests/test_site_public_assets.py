@@ -52,6 +52,19 @@ class SitePublicAssetsTests(unittest.TestCase):
         self.assertIn('type="image/webp"', text)
         self.assertIn("image-set(", text)
 
+    def test_gallery_guide_matches_natural_language_workflow(self):
+        text = (ROOT / "site" / "guide.html").read_text(encoding="utf-8")
+
+        self.assertIn("你不需要学代码", text)
+        self.assertIn("请帮我安装这个插件：", text)
+        self.assertIn("Rimagination/easyslides", text)
+        self.assertIn("如果时长、模板或内容重点仍不明确，请先问我并给出选项", text)
+        self.assertIn("从参考 PPT 蒸馏模板", text)
+        self.assertIn("模板不会把内容锁死", text)
+        self.assertIn("assets/slides/work-04/slide-01.jpg", text)
+        self.assertNotIn("有道龙虾路线", text)
+        self.assertNotIn("准备模型 API Key", text)
+
     def test_public_case_uses_attention_transformer_deck_images(self):
         site = ROOT / "site"
         text = (site / "index.html").read_text(encoding="utf-8")
@@ -89,6 +102,26 @@ class SitePublicAssetsTests(unittest.TestCase):
             self.assertIn(asset, text)
             self.assertTrue((site / asset).exists(), asset)
 
+    def test_public_case_uses_nsfc_grant_deck_images(self):
+        site = ROOT / "site"
+        text = (site / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn("社会学习促进听觉学习", text)
+        self.assertIn("Social Learning Facilitates Auditory Learning", text)
+        self.assertIn("14 slides", text)
+        self.assertIn("nsfc_defense", text)
+        self.assertIn(
+            "assets/decks/nih-r01-social-learning-nsfc-defense.pptx",
+            text,
+        )
+        self.assertTrue(
+            (site / "assets/decks/nih-r01-social-learning-nsfc-defense.pptx").exists()
+        )
+        for index in range(1, 15):
+            asset = f"assets/slides/work-04/slide-{index:02d}.jpg"
+            self.assertIn(asset, text)
+            self.assertTrue((site / asset).exists(), asset)
+
     def test_journal_and_defense_detail_pages_use_meeting_room_scene(self):
         text = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
 
@@ -102,6 +135,7 @@ class SitePublicAssetsTests(unittest.TestCase):
 
         self.assertIn('type === "defense"', body)
         self.assertIn('type === "journal"', body)
+        self.assertIn('type === "grant"', body)
         self.assertRegex(
             body,
             r'if \(type === "defense" \|\| type === "journal"\) return "meeting";',

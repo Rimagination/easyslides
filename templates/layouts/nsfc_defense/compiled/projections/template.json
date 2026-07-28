@@ -4,8 +4,8 @@
   "template_id": "nsfc_defense",
   "display_name": "NSFC Defense",
   "description": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
-  "version": "0.3.0",
-  "status": "production",
+  "version": "0.4.0",
+  "status": "review",
   "capability_level": "production",
   "roles": [
     "cover",
@@ -15,5 +15,9 @@
     "ending"
   ],
   "layout_count": 5,
-  "variant_count": 12
+  "variant_count": 9,
+  "default_scenario": "nsfc_grant_cn",
+  "scenario_ids": [
+    "nsfc_grant_cn"
+  ]
 }

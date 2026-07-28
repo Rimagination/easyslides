@@ -5,7 +5,7 @@
   "replication_mode": "slot_guided_mirror",
   "global_contract": {
     "source_geometry_policy": "preserve_source_chrome_compose_source_guided_body_variants",
-    "content_organization": "claim_evidence_consequence",
+    "content_organization": "nsfc_grant_cn_three_chapter_argument",
     "visual_density": "dense_research_defense",
     "canonical_shell_policy": "evidence_driven_three_to_five_stable_shells",
     "canonical_shell_minimum": 3,
@@ -171,7 +171,9 @@
       "page_archetype": "evidence_triptych_default",
       "density_score": 4,
       "slots": [
-        "PAGE_TITLE"
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "PAGE_NUMBER"
       ],
       "role_fit": [
         "content",
@@ -180,18 +182,15 @@
       "best_for": "national_need_evidence_triptych",
       "avoid": "direct body payload; select a body variant",
       "body_variants": [
-        "evidence_triptych",
-        "two_track_evidence",
-        "bottleneck_chain",
-        "hotspot_metrics",
-        "hotspot_panels",
-        "innovation_evidence",
-        "ann_snn_comparison",
-        "plasticity_training",
-        "network_architecture",
-        "sensor_application",
-        "literature_result",
-        "application_benefits"
+        "need_relationship_evidence",
+        "dual_track_evidence",
+        "evidence_chain",
+        "metric_dashboard",
+        "three_evidence_track",
+        "comparison_evidence",
+        "application_system",
+        "literature_transfer",
+        "grant_text_evidence_stack"
       ],
       "regions": [
         {
@@ -205,23 +204,47 @@
           "z_index": 0
         },
         {
+          "region_id": "key_message",
+          "frame": {
+            "x": 72.0,
+            "y": 94.0,
+            "width": 1120.0,
+            "height": 92.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "purpose": "central_message_only"
+        },
+        {
           "region_id": "body_canvas",
           "frame": {
             "x": 64.0,
-            "y": 116.0,
+            "y": 204.0,
             "width": 1152.0,
-            "height": 548.0
+            "height": 458.0
           },
           "z_index": 10,
           "fit": "contain",
           "purpose": "body_variant_composition_only"
+        },
+        {
+          "region_id": "page_number",
+          "frame": {
+            "x": 1152.0,
+            "y": 676.0,
+            "width": 64.0,
+            "height": 24.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "purpose": "automatic_navigation_only"
         }
       ],
       "body_canvas": {
         "x": 64.0,
-        "y": 116.0,
+        "y": 204.0,
         "width": 1152.0,
-        "height": 548.0
+        "height": 458.0
       },
       "content_shell_policy": "source_guided_body_variant_required",
       "legacy_shadow_slots": [
@@ -482,7 +505,6 @@
       "density_score": 2,
       "slots": [
         "CLOSING_TITLE",
-        "CLOSING_SUBTITLE",
         "AFFILIATION",
         "PRESENTER",
         "DATE"
@@ -643,7 +665,9 @@
       "page_archetype": "evidence_triptych_default",
       "density_score": 4,
       "slots": [
-        "PAGE_TITLE"
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "PAGE_NUMBER"
       ],
       "role_fit": [
         "content",
@@ -652,18 +676,15 @@
       "best_for": "national_need_evidence_triptych",
       "avoid": "direct body payload; select a body variant",
       "body_variants": [
-        "evidence_triptych",
-        "two_track_evidence",
-        "bottleneck_chain",
-        "hotspot_metrics",
-        "hotspot_panels",
-        "innovation_evidence",
-        "ann_snn_comparison",
-        "plasticity_training",
-        "network_architecture",
-        "sensor_application",
-        "literature_result",
-        "application_benefits"
+        "need_relationship_evidence",
+        "dual_track_evidence",
+        "evidence_chain",
+        "metric_dashboard",
+        "three_evidence_track",
+        "comparison_evidence",
+        "application_system",
+        "literature_transfer",
+        "grant_text_evidence_stack"
       ],
       "regions": [
         {
@@ -677,23 +698,47 @@
           "z_index": 0
         },
         {
+          "region_id": "key_message",
+          "frame": {
+            "x": 72.0,
+            "y": 94.0,
+            "width": 1120.0,
+            "height": 92.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "purpose": "central_message_only"
+        },
+        {
           "region_id": "body_canvas",
           "frame": {
             "x": 64.0,
-            "y": 116.0,
+            "y": 204.0,
             "width": 1152.0,
-            "height": 548.0
+            "height": 458.0
           },
           "z_index": 10,
           "fit": "contain",
           "purpose": "body_variant_composition_only"
+        },
+        {
+          "region_id": "page_number",
+          "frame": {
+            "x": 1152.0,
+            "y": 676.0,
+            "width": 64.0,
+            "height": 24.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "purpose": "automatic_navigation_only"
         }
       ],
       "body_canvas": {
         "x": 64.0,
-        "y": 116.0,
+        "y": 204.0,
         "width": 1152.0,
-        "height": 548.0
+        "height": 458.0
       },
       "content_shell_policy": "source_guided_body_variant_required",
       "legacy_shadow_slots": [
@@ -954,7 +999,6 @@
       "density_score": 2,
       "slots": [
         "CLOSING_TITLE",
-        "CLOSING_SUBTITLE",
         "AFFILIATION",
         "PRESENTER",
         "DATE"
@@ -1115,7 +1159,9 @@
       "page_archetype": "evidence_triptych_default",
       "density_score": 4,
       "slots": [
-        "PAGE_TITLE"
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "PAGE_NUMBER"
       ],
       "role_fit": [
         "content",
@@ -1124,18 +1170,15 @@
       "best_for": "national_need_evidence_triptych",
       "avoid": "direct body payload; select a body variant",
       "body_variants": [
-        "evidence_triptych",
-        "two_track_evidence",
-        "bottleneck_chain",
-        "hotspot_metrics",
-        "hotspot_panels",
-        "innovation_evidence",
-        "ann_snn_comparison",
-        "plasticity_training",
-        "network_architecture",
-        "sensor_application",
-        "literature_result",
-        "application_benefits"
+        "need_relationship_evidence",
+        "dual_track_evidence",
+        "evidence_chain",
+        "metric_dashboard",
+        "three_evidence_track",
+        "comparison_evidence",
+        "application_system",
+        "literature_transfer",
+        "grant_text_evidence_stack"
       ],
       "regions": [
         {
@@ -1149,23 +1192,47 @@
           "z_index": 0
         },
         {
+          "region_id": "key_message",
+          "frame": {
+            "x": 72.0,
+            "y": 94.0,
+            "width": 1120.0,
+            "height": 92.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "purpose": "central_message_only"
+        },
+        {
           "region_id": "body_canvas",
           "frame": {
             "x": 64.0,
-            "y": 116.0,
+            "y": 204.0,
             "width": 1152.0,
-            "height": 548.0
+            "height": 458.0
           },
           "z_index": 10,
           "fit": "contain",
           "purpose": "body_variant_composition_only"
+        },
+        {
+          "region_id": "page_number",
+          "frame": {
+            "x": 1152.0,
+            "y": 676.0,
+            "width": 64.0,
+            "height": 24.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "purpose": "automatic_navigation_only"
         }
       ],
       "body_canvas": {
         "x": 64.0,
-        "y": 116.0,
+        "y": 204.0,
         "width": 1152.0,
-        "height": 548.0
+        "height": 458.0
       },
       "content_shell_policy": "source_guided_body_variant_required",
       "legacy_shadow_slots": [
@@ -1426,7 +1493,6 @@
       "density_score": 2,
       "slots": [
         "CLOSING_TITLE",
-        "CLOSING_SUBTITLE",
         "AFFILIATION",
         "PRESENTER",
         "DATE"
@@ -1463,19 +1529,26 @@
     "shell_id": "content",
     "policy": "source_guided_body_variant_required",
     "public_slots": [
-      "PAGE_TITLE"
+      "PAGE_TITLE",
+      "KEY_MESSAGE",
+      "PAGE_NUMBER"
     ],
+    "information_hierarchy": {
+      "PAGE_TITLE": "running_title",
+      "KEY_MESSAGE": "central_message_square_bullets",
+      "PAGE_NUMBER": "automatic_navigation"
+    },
     "body_canvas": {
       "x": 64.0,
-      "y": 116.0,
+      "y": 204.0,
       "width": 1152.0,
-      "height": 548.0
+      "height": 458.0
     },
     "clear_region": {
       "x": 0.0,
-      "y": 100.0,
+      "y": 88.0,
       "width": 1280.0,
-      "height": 620.0
+      "height": 632.0
     },
     "legacy_source_slots": "shadow_metadata_only",
     "body_component_policy": "forbidden"
@@ -1731,22 +1804,74 @@
       {
         "slot_id": "PAGE_TITLE",
         "kind": "text",
-        "role": "page_title",
+        "role": "running_title",
         "required": true,
         "geometry": {
-          "x": 38.67,
+          "x": 72.0,
           "y": 6.94,
-          "width": 391.32,
+          "width": 600.0,
           "height": 67.86
         },
         "capacity": {
           "max_lines": 1,
-          "max_chars_per_line": 16,
-          "overflow_action": "split_or_choose_page_variant"
+          "max_chars_per_line": 10,
+          "single_line_required": true,
+          "overflow_action": "shorten_title_required",
+          "measurement": "full_width_equivalent_chars"
         },
         "line_height_ratio": 0.75,
         "text_anchor": "start",
-        "source_position": 1
+        "source_position": 1,
+        "content_role": "running_title"
+      },
+      {
+        "slot_id": "KEY_MESSAGE",
+        "kind": "text",
+        "role": "central_message",
+        "content_role": "central_message",
+        "required": true,
+        "geometry": {
+          "x": 72.0,
+          "y": 94.0,
+          "width": 1120.0,
+          "height": 92.0
+        },
+        "capacity": {
+          "max_lines": 2,
+          "max_chars_per_line": 38,
+          "single_line_per_bullet": true,
+          "overflow_action": "shorten_or_split_key_message_required",
+          "measurement": "full_width_equivalent_chars"
+        },
+        "line_height_ratio": 1.1,
+        "text_anchor": "start",
+        "vertical_anchor": "middle",
+        "rendering": "square_bullets",
+        "source_position": 2
+      },
+      {
+        "slot_id": "PAGE_NUMBER",
+        "kind": "text",
+        "role": "page_number",
+        "content_role": "navigation",
+        "required": true,
+        "geometry": {
+          "x": 1152.0,
+          "y": 676.0,
+          "width": 64.0,
+          "height": 24.0
+        },
+        "capacity": {
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "single_line_required": true,
+          "overflow_action": "template_owned_automatic"
+        },
+        "line_height_ratio": 1.0,
+        "text_anchor": "end",
+        "vertical_anchor": "middle",
+        "source_position": 3,
+        "value_policy": "automatic_slide_index"
       }
     ],
     "ending": [
@@ -1756,10 +1881,10 @@
         "role": "closing_title",
         "required": true,
         "geometry": {
-          "x": 440.0,
-          "y": 115.45,
-          "width": 400.0,
-          "height": 152.529
+          "x": 320.0,
+          "y": 180.0,
+          "width": 640.0,
+          "height": 120.0
         },
         "capacity": {
           "max_lines": 1,
@@ -1769,26 +1894,6 @@
         "line_height_ratio": 1.25,
         "text_anchor": "middle",
         "source_position": 1
-      },
-      {
-        "slot_id": "CLOSING_SUBTITLE",
-        "kind": "text",
-        "role": "closing_subtitle",
-        "required": false,
-        "geometry": {
-          "x": 440.0,
-          "y": 244.52000000000004,
-          "width": 400.0,
-          "height": 152.529
-        },
-        "capacity": {
-          "max_lines": 1,
-          "max_chars_per_line": 16,
-          "overflow_action": "split_or_choose_page_variant"
-        },
-        "line_height_ratio": 1.25,
-        "text_anchor": "middle",
-        "source_position": 2
       },
       {
         "slot_id": "AFFILIATION",

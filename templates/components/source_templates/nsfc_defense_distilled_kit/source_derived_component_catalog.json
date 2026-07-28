@@ -1,0 +1,54 @@
+{
+  "schema_version": "easyslides.source_derived_component_catalog.v1",
+  "template_id": "nsfc_defense_distilled",
+  "status": "pass",
+  "component_count": 1,
+  "components": [
+    {
+      "asset_id": "source_derived/nsfc_defense_distilled/image_footer_card_placeholder",
+      "component_id": "image_footer_card_placeholder",
+      "display_name": "图像脚注卡（占位版）",
+      "description": "保留原图卡的版式、底栏、配色与文字格式；图片和底栏文字改为声明式槽位。",
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/abstracted/image_footer_card_placeholder.svg",
+      "source_component": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/image_footer_card.svg",
+      "asset_status": "source_derived_editable_candidate",
+      "slots": [
+        {
+          "slot_id": "IMAGE",
+          "kind": "image",
+          "required": true,
+          "source_node": "image"
+        },
+        {
+          "slot_id": "CAPTION",
+          "kind": "text",
+          "required": true,
+          "source_node": "text"
+        }
+      ],
+      "allowed_mutations": [
+        "replace IMAGE source only",
+        "replace CAPTION text only"
+      ],
+      "forbidden_mutations": [
+        "change color",
+        "change font",
+        "change font size",
+        "change geometry",
+        "change border",
+        "change crop",
+        "change layer order"
+      ],
+      "fidelity": {
+        "fixed_visual_signature": "11c23994abeb7b902c4d0d979dbf8884422988fc1d9d19fc3a43ce2c11429450",
+        "image_format_signature": "f812bf20e0e9199bb9ae2415eaaed0db93edc9a4787ffc8b30df1f21d8a2905e",
+        "caption_style_signature": "7e1dd8875cca76f0c29f06b651bedfa798d70a1f69efb22feb21afe12f137607",
+        "caption_alignment": {
+          "horizontal": "center",
+          "center_x": 239.78
+        },
+        "fixed_visual_mutation_count": 0
+      }
+    }
+  ]
+}

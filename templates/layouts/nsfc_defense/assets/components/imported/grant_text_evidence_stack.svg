@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 126 1280 509" width="1280" height="509" data-easyslides-asset-status="template_adapted_page_scene_editable" data-easyslides-style-policy="template_token_adapted" data-easyslides-import-kind="adapted_page_scene_not_leaf_component">
+  <rect x="116" y="162" width="1048" height="86" rx="14" fill="#751497" stroke="#751497" />
+  <text data-pptx-textbox="true" data-pptx-box-x="156.0" data-pptx-box-y="176.0" data-pptx-box-w="968.0" data-pptx-box-h="58.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="EVIDENCE_CLAIM" x="640.0" y="205.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="850" fill="#FFFFFF" data-slot="EVIDENCE_CLAIM" data-slot-kind="text"><tspan x="640.0" y="190.0">Multiple sources support the main</tspan><tspan x="640.0" y="220.0">conclusion.</tspan></text>
+  <rect x="116" y="286.0" width="1048" height="92.7" rx="12" fill="#FFFFFF" stroke="#DEC4E8" />
+  <rect x="138" y="314.3" width="36" height="36" rx="18" fill="#F8EAFC" stroke="#D9B5E7" />
+  <text x="156" y="338.3" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#751497">1</text>
+  <text data-pptx-textbox="true" data-pptx-box-x="198.0" data-pptx-box-y="294.0" data-pptx-box-w="924.0" data-pptx-box-h="76.7" data-pptx-valign="middle" data-center-lock="true" data-slot-id="EVIDENCE_01" x="660.0" y="332.3" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="600" fill="#4A2C59" data-slot="EVIDENCE_01" data-slot-kind="text"><tspan x="660.0" y="332.3">Long-term records show the same trend direction.</tspan></text>
+  <rect x="116" y="392.7" width="1048" height="92.7" rx="12" fill="#FFFFFF" stroke="#DEC4E8" />
+  <rect x="138" y="421.0" width="36" height="36" rx="18" fill="#F8EAFC" stroke="#D9B5E7" />
+  <text x="156" y="445.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#751497">2</text>
+  <text data-pptx-textbox="true" data-pptx-box-x="198.0" data-pptx-box-y="400.7" data-pptx-box-w="924.0" data-pptx-box-h="76.7" data-pptx-valign="middle" data-center-lock="true" data-slot-id="EVIDENCE_02" x="660.0" y="439.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="600" fill="#4A2C59" data-slot="EVIDENCE_02" data-slot-kind="text"><tspan x="660.0" y="439.0">Independent samples localize errors to edge cases.</tspan></text>
+  <rect x="116" y="499.3" width="1048" height="92.7" rx="12" fill="#FFFFFF" stroke="#DEC4E8" />
+  <rect x="138" y="527.7" width="36" height="36" rx="18" fill="#F8EAFC" stroke="#D9B5E7" />
+  <text x="156" y="551.7" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#751497">3</text>
+  <text data-pptx-textbox="true" data-pptx-box-x="198.0" data-pptx-box-y="507.3" data-pptx-box-w="924.0" data-pptx-box-h="76.7" data-pptx-valign="middle" data-center-lock="true" data-slot-id="EVIDENCE_03" x="660.0" y="545.7" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="600" fill="#4A2C59" data-slot="EVIDENCE_03" data-slot-kind="text"><tspan x="660.0" y="545.7">Sensitivity tests rule out a single-driver explanation.</tspan></text>
+</svg>

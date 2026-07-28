@@ -150,6 +150,12 @@ class CliEntrypointTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("Validate component preview SVG center-alignment gates", result.stdout)
 
+    def test_template_visual_invariants_help_is_printable(self):
+        result = run_cli("scripts/template_visual_invariants.py", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Validate explicit EasySlides template visual invariants", result.stdout)
+
     def test_component_pptx_renderer_help_is_printable(self):
         result = run_cli("scripts/component_pptx_renderer.py", "--help")
 

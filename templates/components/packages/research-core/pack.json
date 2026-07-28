@@ -5,6 +5,8 @@
   "display_name": "Research Core",
   "description": "Production-ready, editable scientific presentation components for claims, evidence, metrics, comparisons, figures, and timelines.",
   "license": "MIT",
+  "visibility": "template_migration_source",
+  "replacement_template_id": "research_core",
   "trust": {
     "mode": "declarative_only",
     "permissions": [],

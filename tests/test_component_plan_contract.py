@@ -27,13 +27,40 @@ def valid_component_plan() -> dict:
     }
 
 
+def legacy_component_package_registry() -> dict:
+    """Keep validating the legacy source schema without publishing its pack."""
+    component_path = (
+        Path(__file__).resolve().parents[1]
+        / "templates"
+        / "components"
+        / "packages"
+        / "research-core"
+        / "components"
+        / "three_card_summary"
+        / "component.json"
+    )
+    component = json.loads(component_path.read_text(encoding="utf-8"))
+    return {
+        "assets": [
+            {
+                "asset_id": component["asset_id"],
+                "granularity": component["granularity"],
+                "metadata": {
+                    "source_asset_id": component["source_asset_id"],
+                    "input_schema": component["input_schema"],
+                },
+                "required_gates": component["qa"]["required_gates"],
+            }
+        ]
+    }
+
+
 class ComponentPlanContractTests(unittest.TestCase):
 
     def test_component_package_input_schema_blocks_unknown_payload_fields(self):
         from scripts.component_plan_contract import validate_component_plan
-        from scripts.component_registry import build_component_registry
 
-        registry = build_component_registry(include_template_asset_bank=False)
+        registry = legacy_component_package_registry()
         plan = {
             "schema_version": "easyslides.component_plan.v1",
             "slides": [
@@ -119,7 +146,6 @@ class ComponentPlanContractTests(unittest.TestCase):
 
     def test_component_package_payload_uses_source_asset_capacity(self):
         from scripts.component_plan_contract import validate_component_plan
-        from scripts.component_registry import build_component_registry
 
         plan = valid_component_plan()
         plan["slides"][0]["selected_assets"][0]["asset_id"] = "component_package/three_card_summary"
@@ -127,7 +153,7 @@ class ComponentPlanContractTests(unittest.TestCase):
 
         report = validate_component_plan(
             plan,
-            registry=build_component_registry(include_template_asset_bank=False),
+            registry=legacy_component_package_registry(),
         )
 
         self.assertEqual(report["status"], "fail")

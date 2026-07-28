@@ -124,7 +124,7 @@ def run_component_workflow(
         selection_review["status"],
         renderer_governance["status"],
     ]
-    blocking_statuses = [status for status in statuses if status != "skipped"]
+    blocking_statuses = [status for status in statuses if status not in {"skipped", "not_applicable"}]
     report = {
         "schema_version": SCHEMA_VERSION,
         "status": "pass" if all(status == "pass" for status in blocking_statuses) else "fail",

@@ -1,0 +1,26 @@
+{
+  "schema_version": "easyslides.template_qa_policy.v1",
+  "template_id": "research_core",
+  "promotion_policy": "fail_closed",
+  "alignment_invariants": [
+    "text_center_y_matches_container_center_y",
+    "declared_slots_stay_inside_canvas",
+    "component_regions_stay_inside_canvas",
+    "content_shell_owns_running_title_key_message_and_page_number"
+  ],
+  "required_gates": [
+    "template_compile",
+    "slide_composition",
+    "body_variant_component_contract",
+    "svg_quality",
+    "svg_text_slots",
+    "template_geometry_svg",
+    "template_visual_invariants",
+    "asset_manifest",
+    "template_geometry_pptx",
+    "pptx_text_layout",
+    "cross_material_smoke",
+    "human_visual_review"
+  ],
+  "vertical_center_tolerance_px": 1.0
+}

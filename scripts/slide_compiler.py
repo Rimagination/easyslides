@@ -12,9 +12,12 @@ import argparse
 from copy import deepcopy
 import json
 from pathlib import Path
+import re
 import shutil
 from typing import Any
+import unicodedata
 from xml.etree import ElementTree as ET
+from zipfile import ZipFile
 
 try:
     from scripts.template_compiler import ROOT, TemplateCompileError, compile_template, read_json, write_json
@@ -24,8 +27,15 @@ except ModuleNotFoundError:  # pragma: no cover
 
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
+PPTX_P_NS = "http://schemas.openxmlformats.org/presentationml/2006/main"
+PPTX_A_NS = "http://schemas.openxmlformats.org/drawingml/2006/main"
+PPTX_NS = {"p": PPTX_P_NS, "a": PPTX_A_NS}
+EMU_PER_PX = 9525.0
+COMPONENT_GROUP_PREFIX = "EasySlides Component: "
 SLIDE_IR_SCHEMA = "easyslides.slide_ir.v1"
 SLIDE_COMPILE_REPORT_SCHEMA = "easyslides.slide_compile_report.v1"
+NSFC_ENDING_DEFAULT = "敬请批评指正"
+NSFC_ENDING_FORBIDDEN_TERMS = ("聆听",)
 ET.register_namespace("", SVG_NS)
 ET.register_namespace("xlink", XLINK_NS)
 
@@ -58,6 +68,185 @@ def _frame(value: object) -> dict[str, float] | None:
 def _role_alias(value: object) -> str:
     role = str(value or "content").strip().lower()
     return {"agenda": "toc", "section": "chapter", "closing": "ending"}.get(role, role)
+
+
+def _apply_template_text_policy(template_id: str, role: str, payload: dict[str, Any]) -> dict[str, Any]:
+    """Apply template-owned copy rules before generic slot validation."""
+    if template_id != "nsfc_defense" or role != "ending":
+        return payload
+
+    normalized = dict(payload)
+    subtitle = normalized.get("CLOSING_SUBTITLE")
+    if subtitle not in (None, "", []):
+        raise SlideCompileError(
+            "nsfc_defense ending accepts one closing line only; do not use CLOSING_SUBTITLE"
+        )
+    normalized.pop("CLOSING_SUBTITLE", None)
+    title = str(normalized.get("CLOSING_TITLE") or "").strip()
+    if not title:
+        title = NSFC_ENDING_DEFAULT
+    if any(term in title for term in NSFC_ENDING_FORBIDDEN_TERMS):
+        raise SlideCompileError(
+            "nsfc_defense ending copy may not contain '聆听'; use '敬请批评指正'"
+        )
+    if "\n" in title or len(title) > 8:
+        raise SlideCompileError(
+            "nsfc_defense ending copy must be one line with at most 8 Chinese characters"
+        )
+    normalized["CLOSING_TITLE"] = title
+    return normalized
+
+
+def _scenario_profiles(story_structure: object) -> dict[str, dict[str, Any]]:
+    """Return published, named story profiles from a template sidecar."""
+    if not isinstance(story_structure, dict):
+        return {}
+    profiles: dict[str, dict[str, Any]] = {}
+    declared = story_structure.get("scenario_profiles")
+    if isinstance(declared, dict):
+        candidates = declared.values()
+    elif isinstance(declared, list):
+        candidates = declared
+    else:
+        candidates = story_structure.values()
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            continue
+        scenario_id = str(candidate.get("scenario_id") or "").strip()
+        if scenario_id:
+            profiles[scenario_id] = candidate
+    return profiles
+
+
+def _scenario_role(raw: dict[str, Any], role: str) -> str:
+    explicit = str(raw.get("grant_role") or raw.get("scenario_role") or "").strip()
+    if explicit:
+        return explicit
+    return role if role in {"cover", "toc", "ending"} else ""
+
+
+def validate_scenario_contract(deck_plan: dict[str, Any], template_ir: dict[str, Any]) -> dict[str, Any]:
+    """Validate a scenario-specific deck grammar before layout compilation.
+
+    Templates own their visual system; a scenario profile owns the reviewer
+    narrative. The check stays dormant for legacy plans without ``scenario_id``
+    so partial galleries and component fixtures can still compile in isolation.
+    """
+    scenario_id = str(deck_plan.get("scenario_id") or "").strip()
+    if not scenario_id:
+        return {"status": "skipped", "reason": "scenario_id_not_declared"}
+
+    profiles = _scenario_profiles(template_ir.get("story_structure"))
+    profile = profiles.get(scenario_id)
+    if profile is None:
+        available = ", ".join(sorted(profiles)) or "none"
+        raise SlideCompileError(
+            f"template {template_ir.get('template_id')!r} does not publish scenario_id {scenario_id!r}; "
+            f"available: {available}"
+        )
+
+    mode = str(deck_plan.get("scenario_mode") or "full").strip().lower()
+    if mode not in {"full", "short"}:
+        raise SlideCompileError("scenario_mode must be 'full' or 'short'")
+    slides = deck_plan.get("slides")
+    if not isinstance(slides, list):
+        raise SlideCompileError("scenario contract requires slides to be a list")
+
+    profile_roles = [str(value) for value in profile.get("full_deck_roles", []) if str(value)]
+    allowed_roles = set(profile_roles)
+    optional_roles = {
+        str(value)
+        for value in profile.get("optional_deck_roles", [])
+        if str(value)
+    }
+    bindings = {
+        str(row.get("grant_role")): row
+        for row in profile.get("variant_bindings", [])
+        if isinstance(row, dict) and str(row.get("grant_role") or "")
+    }
+    seen: dict[str, int] = {}
+    declared: list[dict[str, str]] = []
+
+    for index, raw in enumerate(slides, start=1):
+        if not isinstance(raw, dict):
+            raise SlideCompileError(f"scenario slide {index} must be an object")
+        role = _role_alias(raw.get("role"))
+        grant_role = _scenario_role(raw, role)
+        if not grant_role:
+            raise SlideCompileError(
+                f"scenario {scenario_id!r} requires grant_role on slide {index}; "
+                "declare the page's NSFC narrative responsibility"
+            )
+        if grant_role not in allowed_roles:
+            raise SlideCompileError(
+                f"scenario {scenario_id!r} does not recognize grant_role {grant_role!r} on slide {index}"
+            )
+        if grant_role in seen:
+            raise SlideCompileError(
+                f"scenario {scenario_id!r} duplicates grant_role {grant_role!r} on slides "
+                f"{seen[grant_role]} and {index}"
+            )
+        seen[grant_role] = index
+
+        expected_shell_role = (
+            grant_role
+            if grant_role in {"cover", "toc", "ending"}
+            else "chapter"
+            if grant_role.startswith("chapter_")
+            else "content"
+        )
+        if role != expected_shell_role:
+            raise SlideCompileError(
+                f"grant_role {grant_role!r} requires shell role {expected_shell_role!r}, got {role!r}"
+            )
+
+        binding = bindings.get(grant_role)
+        if binding is not None:
+            expected_variant = str(binding.get("body_variant_id") or "")
+            expected_story_role = str(binding.get("story_role") or "")
+            expected_section = str(binding.get("section") or "")
+            actual_variant = str(raw.get("body_variant_id") or "")
+            actual_story_role = str(raw.get("story_role") or raw.get("narrative_role") or "")
+            actual_section = str(raw.get("section") or "")
+            if expected_variant and actual_variant != expected_variant:
+                raise SlideCompileError(
+                    f"grant_role {grant_role!r} requires body_variant_id {expected_variant!r}, "
+                    f"got {actual_variant!r}"
+                )
+            if expected_story_role and actual_story_role != expected_story_role:
+                raise SlideCompileError(
+                    f"grant_role {grant_role!r} requires story_role {expected_story_role!r}, "
+                    f"got {actual_story_role!r}"
+                )
+            if expected_section and actual_section != expected_section:
+                raise SlideCompileError(
+                    f"grant_role {grant_role!r} requires section {expected_section!r}, got {actual_section!r}"
+                )
+        declared.append({"page": str(raw.get("page") or f"P{index:02d}"), "grant_role": grant_role})
+
+    if mode == "full":
+        missing = [
+            grant_role
+            for grant_role in profile_roles
+            if grant_role not in optional_roles and grant_role not in seen
+        ]
+        if missing:
+            raise SlideCompileError(
+                f"scenario {scenario_id!r} full deck is missing grant_role(s): {', '.join(missing)}"
+            )
+    elif not {"cover", "ending"}.issubset(seen):
+        raise SlideCompileError(
+            f"scenario {scenario_id!r} short deck must still declare cover and ending grant_role pages"
+        )
+
+    return {
+        "status": "pass",
+        "scenario_id": scenario_id,
+        "scenario_label": str(profile.get("scenario_label") or scenario_id),
+        "mode": mode,
+        "optional_roles": sorted(optional_roles),
+        "declared_roles": declared,
+    }
 
 
 def _shell_map(template_ir: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -228,6 +417,204 @@ def _validate_payload(slots: object, payload: dict[str, Any], *, context: str) -
         raise SlideCompileError(f"{context} contains undeclared slot payload: {', '.join(extra)}")
 
 
+def _full_width_equivalent_characters(value: str) -> float:
+    """Estimate an unwrapped title's visual width in full-width glyphs."""
+    units = 0.0
+    for character in value:
+        if character.isspace():
+            units += 0.25
+        elif unicodedata.east_asian_width(character) in {"W", "F"}:
+            units += 1.0
+        elif character.isalnum():
+            units += 0.55
+        else:
+            units += 0.5
+    return units
+
+
+def _enforce_single_line_slot_contracts(
+    slots: object,
+    payload: dict[str, Any],
+    *,
+    context: str,
+) -> dict[str, Any]:
+    """Apply hard no-wrap contracts declared by a template slot."""
+    normalized = dict(payload)
+    for slot_id, contract in _slot_contract_map(slots).items():
+        capacity = contract.get("capacity")
+        if not isinstance(capacity, dict) or not capacity.get("single_line_required"):
+            continue
+        value = normalized.get(slot_id)
+        if value in (None, "", []):
+            continue
+        if isinstance(value, list):
+            raise SlideCompileError(
+                f"{context} slot {slot_id!r} must be one text value on one visual line"
+            )
+        text = str(value).strip()
+        if "\n" in text or "\r" in text:
+            raise SlideCompileError(
+                f"{context} slot {slot_id!r} must be one visual line; remove line breaks and shorten the title"
+            )
+        max_units = float(capacity.get("max_chars_per_line") or 0)
+        if max_units and _full_width_equivalent_characters(text) > max_units:
+            raise SlideCompileError(
+                f"{context} slot {slot_id!r} exceeds its {max_units:g}-character single-line budget; "
+                "shorten the title instead of wrapping it"
+            )
+        normalized[slot_id] = text
+    return normalized
+
+
+def _balanced_cjk_stack_lines(
+    value: object,
+    *,
+    max_chars_per_line: int,
+    max_lines: int,
+    context: str,
+    slot_id: str,
+) -> list[str]:
+    """Plan narrow CJK labels before Office can apply glyph-level wrapping."""
+    if isinstance(value, list):
+        raw_lines = [str(item).strip() for item in value if str(item).strip()]
+        explicit = True
+    else:
+        text = str(value or "").strip()
+        explicit = "\n" in text or "\r" in text
+        raw_lines = [line.strip() for line in text.splitlines() if line.strip()]
+    if not raw_lines:
+        return [""]
+
+    if not explicit:
+        # Stack CJK labels in fixed, readable semantic units. These labels are
+        # intentionally compact; any whitespace is merely source formatting.
+        text = "".join(raw_lines)
+        raw_lines = [
+            text[start : start + max_chars_per_line]
+            for start in range(0, len(text), max_chars_per_line)
+        ]
+
+    if len(raw_lines) > max_lines or any(len(line) > max_chars_per_line for line in raw_lines):
+        raise SlideCompileError(
+            f"{context} slot {slot_id!r} exceeds its {max_lines}-line x "
+            f"{max_chars_per_line}-character stacked-label budget; shorten the label"
+        )
+    return raw_lines
+
+
+def _enforce_component_text_layout_contracts(
+    slots: object,
+    payload: dict[str, Any],
+    *,
+    context: str,
+) -> dict[str, Any]:
+    """Normalize component-owned text layouts before creating Slide IR."""
+    normalized = dict(payload)
+    for slot_id, contract in _slot_contract_map(slots).items():
+        if str(contract.get("text_layout") or "") != "balanced_cjk_stack":
+            continue
+        value = normalized.get(slot_id)
+        if value in (None, "", []):
+            continue
+        capacity = contract.get("capacity") if isinstance(contract.get("capacity"), dict) else {}
+        max_chars = int(capacity.get("max_chars_per_line") or 1)
+        max_lines = int(capacity.get("max_lines") or 1)
+        normalized[slot_id] = "\n".join(
+            _balanced_cjk_stack_lines(
+                value,
+                max_chars_per_line=max_chars,
+                max_lines=max_lines,
+                context=context,
+                slot_id=slot_id,
+            )
+        )
+    return normalized
+
+
+def _normalized_copy(value: object) -> str:
+    """Compare visible copy without punctuation or presentation-only spacing."""
+    return "".join(
+        character.casefold()
+        for character in str(value or "")
+        if character.isalnum() or unicodedata.east_asian_width(character) in {"W", "F"}
+    )
+
+
+def _enforce_nsfc_content_hierarchy(
+    shell_payload: dict[str, Any],
+    body_payload: dict[str, Any],
+    *,
+    slide_index: int,
+) -> dict[str, Any]:
+    """Keep the central message distinct from evidence-level component copy."""
+    normalized = dict(shell_payload)
+    value = normalized.get("KEY_MESSAGE")
+    lines = _text_lines(value)
+    if not 1 <= len(lines) <= 2:
+        raise SlideCompileError(
+            "nsfc_defense content requires KEY_MESSAGE with one or two square-bullet lines"
+        )
+    cleaned: list[str] = []
+    for line in lines:
+        text = line.strip()
+        if text.startswith("■"):
+            raise SlideCompileError(
+                "nsfc_defense KEY_MESSAGE must not include the square bullet; the template renders it"
+            )
+        if _full_width_equivalent_characters(text) > 38:
+            raise SlideCompileError(
+                "nsfc_defense KEY_MESSAGE exceeds the 38-character line budget; shorten or split it"
+            )
+        cleaned.append(text)
+    title = _normalized_copy(normalized.get("PAGE_TITLE") or normalized.get("TITLE"))
+    for line in cleaned:
+        key_copy = _normalized_copy(line)
+        if key_copy and key_copy == title:
+            raise SlideCompileError(
+                "nsfc_defense KEY_MESSAGE repeats PAGE_TITLE; state the page's smallest defensible point instead"
+            )
+        for slot_id, candidate in body_payload.items():
+            if not isinstance(candidate, str) or candidate.lower().endswith((".png", ".jpg", ".jpeg", ".svg", ".webp")):
+                continue
+            if len(key_copy) >= 8 and key_copy == _normalized_copy(candidate):
+                raise SlideCompileError(
+                    f"nsfc_defense KEY_MESSAGE repeats body slot {slot_id}; make body copy evidence-level instead"
+                )
+    normalized["KEY_MESSAGE"] = "\n".join(cleaned)
+    expected_page_number = f"{slide_index:02d}"
+    supplied_page_number = normalized.get("PAGE_NUMBER")
+    if supplied_page_number not in (None, "", expected_page_number):
+        raise SlideCompileError(
+            f"nsfc_defense PAGE_NUMBER is template-owned and must be {expected_page_number}"
+        )
+    normalized["PAGE_NUMBER"] = expected_page_number
+    return normalized
+
+
+def _enforce_template_owned_slot_policies(
+    shell: dict[str, Any],
+    shell_payload: dict[str, Any],
+    *,
+    slide_index: int,
+) -> dict[str, Any]:
+    """Populate slot values owned by a template instead of the caller."""
+    normalized = dict(shell_payload)
+    for slot in shell.get("slots", []):
+        if not isinstance(slot, dict) or slot.get("value_policy") != "automatic_slide_index":
+            continue
+        slot_id = str(slot.get("slot_id") or "")
+        if not slot_id:
+            continue
+        expected = f"{slide_index:02d}"
+        supplied = normalized.get(slot_id)
+        if supplied not in (None, "", expected):
+            raise SlideCompileError(
+                f"{slot_id} is template-owned and must be {expected}"
+            )
+        normalized[slot_id] = expected
+    return normalized
+
+
 def _frame_inside_canvas(frame: dict[str, float], canvas: dict[str, Any]) -> bool:
     width = float(canvas.get("width") or 1280)
     height = float(canvas.get("height") or 720)
@@ -291,8 +678,18 @@ def _validate_source_guided_content(
         )
     guidance = _as_dict(variant.get("source_guidance"))
     expected_section = str(guidance.get("section") or "").strip()
+    allowed_sections = {
+        str(value).strip()
+        for value in guidance.get("sections", [])
+        if str(value).strip()
+    }
     section = str(slide.get("section") or "").strip()
-    if expected_section and section != expected_section:
+    if allowed_sections and section not in allowed_sections:
+        raise SlideCompileError(
+            f"body variant {variant.get('variant_id')!r} permits section(s) {', '.join(sorted(allowed_sections))}; "
+            f"received {section or '<missing>'!r}"
+        )
+    if not allowed_sections and expected_section and section != expected_section:
         raise SlideCompileError(
             f"body variant {variant.get('variant_id')!r} belongs to section {expected_section!r}; "
             f"received {section or '<missing>'!r}"
@@ -344,6 +741,9 @@ def _compile_explicit_content_layers(
         existing_instance_ids.add(instance_id)
         payload = _as_dict(raw.get("slot_payload") or raw.get("payload"))
         _validate_payload(component.get("slots"), payload, context=f"component {instance_id}")
+        payload = _enforce_component_text_layout_contracts(
+            component.get("slots"), payload, context=f"component {instance_id}"
+        )
         fit = str(raw.get("fit") or "contain")
         if fit not in {"contain", "stretch"}:
             raise SlideCompileError(f"{context} fit must be 'contain' or 'stretch'")
@@ -378,6 +778,8 @@ def _compile_content_layers(
     template_ir: dict[str, Any],
     variant: dict[str, Any],
     payload: dict[str, Any],
+    *,
+    body_canvas: dict[str, float],
 ) -> list[dict[str, Any]]:
     components = _component_map(template_ir)
     regions = {
@@ -407,6 +809,10 @@ def _compile_content_layers(
             raise SlideCompileError(
                 f"component instance {ref.get('instance_id')!r} falls outside the slide canvas"
             )
+        if not _frame_contains(body_canvas, frame):
+            raise SlideCompileError(
+                f"component instance {ref.get('instance_id')!r} falls outside the content body_canvas"
+            )
         bindings = _as_dict(ref.get("slot_bindings"))
         component_payload = {
             str(component_slot): payload.get(str(variant_slot))
@@ -414,6 +820,11 @@ def _compile_content_layers(
             if str(variant_slot) in payload
         }
         _validate_payload(
+            component.get("slots"),
+            component_payload,
+            context=f"component {ref.get('instance_id')}",
+        )
+        component_payload = _enforce_component_text_layout_contracts(
             component.get("slots"),
             component_payload,
             context=f"component {ref.get('instance_id')}",
@@ -449,6 +860,7 @@ def compile_slides(
     slides = deck_plan.get("slides")
     if not isinstance(slides, list) or not slides:
         raise SlideCompileError("deck_plan.json must define a non-empty slides list")
+    scenario_audit = validate_scenario_contract(deck_plan, template_ir)
     compiled: list[dict[str, Any]] = []
     for index, raw in enumerate(slides, start=1):
         if not isinstance(raw, dict):
@@ -457,7 +869,22 @@ def compile_slides(
         shell = _resolve_shell(template_ir, raw)
         role = _role_alias(raw.get("role") or shell.get("role"))
         shell_payload = _as_dict(raw.get("shell_payload"))
+        shell_payload = _apply_template_text_policy(
+            str(template_ir.get("template_id") or ""),
+            role,
+            shell_payload,
+        )
         body_payload = _as_dict(raw.get("slot_payload") or raw.get("body_payload"))
+        if role == "content" and "KEY_MESSAGE" in body_payload:
+            if shell_payload.get("KEY_MESSAGE") not in (None, ""):
+                raise SlideCompileError(
+                    "KEY_MESSAGE belongs in content shell_payload, not both shell_payload and slot_payload"
+                )
+            shell_payload["KEY_MESSAGE"] = body_payload.pop("KEY_MESSAGE")
+        if role == "content" and shell_payload.get("KEY_MESSAGE") in (None, ""):
+            candidate = raw.get("key_message") or raw.get("central_message")
+            if candidate not in (None, ""):
+                shell_payload["KEY_MESSAGE"] = candidate
         variant: dict[str, Any] | None = None
         variant_reason = ""
         layers: list[dict[str, Any]] = [
@@ -476,12 +903,42 @@ def compile_slides(
                 component_plan=component_plan,
             )
             _validate_source_guided_content(shell, variant, raw)
-            _validate_payload(variant.get("slots"), body_payload, context=f"body variant {variant['variant_id']}")
-            variant_layers = _compile_content_layers(template_ir, variant, body_payload)
-            layers.extend(variant_layers)
+            # Validate template-owned content chrome before checking a large
+            # component payload. This keeps title/key-message failures legible
+            # instead of burying them under dozens of evidence-slot errors.
+            shell_contracts = _slot_contract_map(shell.get("slots"))
+            for key in ("PAGE_TITLE", "TITLE", "KEY_MESSAGE"):
+                if key in shell_contracts and key not in shell_payload:
+                    candidate = body_payload.get(key) if key == "KEY_MESSAGE" else raw.get("title") or body_payload.get(key)
+                    if candidate not in (None, ""):
+                        shell_payload[key] = candidate
+            shell_payload = _enforce_template_owned_slot_policies(
+                shell,
+                shell_payload,
+                slide_index=index,
+            )
+            if str(template_ir.get("template_id") or "") == "nsfc_defense":
+                shell_payload = _enforce_nsfc_content_hierarchy(
+                    shell_payload,
+                    body_payload,
+                    slide_index=index,
+                )
+            shell_payload = _enforce_single_line_slot_contracts(
+                shell.get("slots"),
+                shell_payload,
+                context=f"content shell {shell['shell_id']}",
+            )
             body_canvas = _content_body_canvas(shell)
             if body_canvas is None:
                 raise SlideCompileError("content shell must declare a positive body_canvas")
+            _validate_payload(variant.get("slots"), body_payload, context=f"body variant {variant['variant_id']}")
+            variant_layers = _compile_content_layers(
+                template_ir,
+                variant,
+                body_payload,
+                body_canvas=body_canvas,
+            )
+            layers.extend(variant_layers)
             explicit_layers = _compile_explicit_content_layers(
                 template_ir,
                 raw.get("body_components"),
@@ -503,15 +960,26 @@ def compile_slides(
         else:
             if not shell_payload:
                 shell_payload = body_payload
+            shell_payload = _enforce_single_line_slot_contracts(
+                shell.get("slots"),
+                shell_payload,
+                context=f"shell {shell['shell_id']}",
+            )
             _validate_payload(shell.get("slots"), shell_payload, context=f"shell {shell['shell_id']}")
 
         if role == "content":
             shell_contracts = _slot_contract_map(shell.get("slots"))
-            for key in ("PAGE_TITLE", "TITLE"):
+            for key in ("PAGE_TITLE", "TITLE", "KEY_MESSAGE"):
                 if key in shell_contracts and key not in shell_payload:
-                    candidate = raw.get("title") or body_payload.get(key)
+                    candidate = body_payload.get(key) if key == "KEY_MESSAGE" else raw.get("title") or body_payload.get(key)
                     if candidate not in (None, ""):
                         shell_payload[key] = candidate
+            if str(template_ir.get("template_id") or "") == "nsfc_defense":
+                shell_payload = _enforce_nsfc_content_hierarchy(
+                    shell_payload,
+                    body_payload,
+                    slide_index=index,
+                )
             missing_shell_required = [
                 slot_id
                 for slot_id, slot in shell_contracts.items()
@@ -519,17 +987,29 @@ def compile_slides(
             ]
             # Content shells may retain optional source-derived slots underneath
             # the clear region; only the page-title contract remains required.
-            required_visible = [slot_id for slot_id in missing_shell_required if slot_id in {"PAGE_TITLE", "TITLE"}]
+            required_visible = [
+                slot_id
+                for slot_id in missing_shell_required
+                if slot_id in {"PAGE_TITLE", "TITLE", "KEY_MESSAGE", "PAGE_NUMBER"}
+            ]
             if required_visible:
                 raise SlideCompileError(
                     f"content shell is missing required payload: {', '.join(required_visible)}"
                 )
+            shell_payload = _enforce_single_line_slot_contracts(
+                shell.get("slots"),
+                shell_payload,
+                context=f"content shell {shell['shell_id']}",
+            )
 
         compiled.append(
             {
                 "page": page,
                 "slide_index": index,
                 "role": role,
+                "grant_role": _scenario_role(raw, role),
+                "section": str(raw.get("section") or ""),
+                "story_role": str(raw.get("story_role") or raw.get("narrative_role") or ""),
                 "shell_id": shell["shell_id"],
                 "shell": shell,
                 "shell_payload": shell_payload,
@@ -547,6 +1027,7 @@ def compile_slides(
         "template_source_digest": template_ir["source_digest"],
         "canvas": template_ir["canvas"],
         "slide_count": len(compiled),
+        "scenario_audit": scenario_audit,
         "slides": compiled,
     }
 
@@ -633,6 +1114,80 @@ def _set_centered_text(node: ET.Element, value: object) -> None:
         tspan.text = line
     node.set("data-pptx-valign", "middle")
     node.set("data-center-lock", "true")
+
+
+def _set_square_bullets(root: ET.Element, node: ET.Element, value: object) -> None:
+    """Render the content-page central message with template-owned square bullets."""
+    lines = _text_lines(value)
+    parents = {child: parent for parent in root.iter() for child in list(parent)}
+    parent = parents.get(node)
+    if parent is None or not lines:
+        _set_centered_text(node, value)
+        return
+
+    box_x = float(node.attrib.get("data-pptx-box-x") or 0)
+    box_y = float(node.attrib.get("data-pptx-box-y") or 0)
+    box_w = float(node.attrib.get("data-pptx-box-w") or 0)
+    box_h = float(node.attrib.get("data-pptx-box-h") or 0)
+    if box_w <= 0 or box_h <= 0:
+        _set_centered_text(node, value)
+        return
+
+    font_size = float(node.attrib.get("font-size") or 28)
+    line_height = min(40.0, max(34.0, font_size * 1.2))
+    line_gap = 8.0 if len(lines) == 2 else 0.0
+    block_height = line_height * len(lines) + line_gap * (len(lines) - 1)
+    first_y = box_y + (box_h - block_height) / 2
+    text_x = box_x + 36.0
+    bullet_size = 16.0
+    group = ET.Element(
+        f"{{{SVG_NS}}}g",
+        {"data-easyslides-generated": "square_bullets", "data-easyslides-slot": "KEY_MESSAGE"},
+    )
+    text_font = node.attrib.get("font-family") or "Arial, sans-serif"
+    text_fill = node.attrib.get("fill") or "#060607"
+    for index, line in enumerate(lines):
+        row_y = first_y + index * (line_height + line_gap)
+        group.append(
+            ET.Element(
+                f"{{{SVG_NS}}}rect",
+                {
+                    "x": f"{box_x + 4.0:.2f}",
+                    "y": f"{row_y + (line_height - bullet_size) / 2:.2f}",
+                    "width": f"{bullet_size:.2f}",
+                    "height": f"{bullet_size:.2f}",
+                    "fill": "#060607",
+                },
+            )
+        )
+        text = ET.Element(
+            f"{{{SVG_NS}}}text",
+            {
+                "x": f"{text_x:.2f}",
+                "y": f"{row_y + line_height / 2 + font_size * 0.35:.2f}",
+                "text-anchor": "start",
+                "font-family": text_font,
+                "font-size": f"{font_size:.2f}",
+                "fill": text_fill,
+                "data-pptx-textbox": "true",
+                "data-pptx-measure-text": "T",
+                "data-pptx-box-x": f"{text_x:.2f}",
+                "data-pptx-box-y": f"{row_y:.2f}",
+                "data-pptx-box-w": f"{box_w - 42.0:.2f}",
+                "data-pptx-box-h": f"{line_height:.2f}",
+                "data-pptx-valign": "middle",
+                "data-center-lock": "true",
+                "data-pptx-line-height-ratio": "1.100",
+                "data-pptx-text-anchor": "start",
+                "data-pptx-no-wrap": "true",
+            },
+        )
+        text.text = line
+        group.append(text)
+
+    position = list(parent).index(node)
+    parent.insert(position, group)
+    parent.remove(node)
 
 
 def _set_evidence_rows(root: ET.Element, node: ET.Element, value: object) -> None:
@@ -769,8 +1324,22 @@ def _apply_payload(
             continue
         kind = str(contract.get("kind") or node.attrib.get("data-slot-kind") or "text")
         if kind in {"text", "list"}:
-            if node.attrib.get("data-easyslides-layout") == "evidence_rows":
+            if node.attrib.get("data-easyslides-layout") == "square_bullets":
+                _set_square_bullets(root, node, value)
+            elif node.attrib.get("data-easyslides-layout") == "evidence_rows":
                 _set_evidence_rows(root, node, value)
+            elif node.attrib.get("data-easyslides-layout") == "balanced_cjk_stack":
+                max_chars = int(node.attrib.get("data-easyslides-wrap-max-chars") or 1)
+                max_lines = int(node.attrib.get("data-easyslides-wrap-max-lines") or 1)
+                lines = _balanced_cjk_stack_lines(
+                    value,
+                    max_chars_per_line=max_chars,
+                    max_lines=max_lines,
+                    context="materialized component",
+                    slot_id=str(slot_id),
+                )
+                node.set("data-pptx-no-wrap", "true")
+                _set_centered_text(node, lines)
             else:
                 _set_centered_text(node, value)
         elif kind == "image":
@@ -798,6 +1367,44 @@ def _component_source(component: dict[str, Any]) -> Path:
     return path
 
 
+_SVG_URL_REFERENCE = re.compile(r"url\(\s*#([A-Za-z_][A-Za-z0-9_.:-]*)\s*\)")
+
+
+def _namespace_component_svg_ids(component_root: ET.Element, instance_id: str) -> None:
+    """Make every embedded component's internal defs private to its instance.
+
+    Source-derived component SVGs legitimately reuse export-time names such as
+    ``ggrad2`` and ``fx1``. Once multiple fragments share a slide those names
+    live in one SVG document, so an unrelated component can hijack the shell's
+    header fill or filter. Namespace both IDs and their ``url(#...)`` / href
+    references before embedding; visual geometry and source styling stay intact.
+    """
+    safe_instance = re.sub(r"[^A-Za-z0-9_.-]+", "_", str(instance_id)).strip("_") or "component"
+    id_map: dict[str, str] = {}
+    for node in component_root.iter():
+        original = node.attrib.get("id")
+        if original:
+            id_map[original] = f"es_{safe_instance}_{original}"
+    if not id_map:
+        return
+
+    for node in component_root.iter():
+        original = node.attrib.get("id")
+        if original in id_map:
+            node.set("id", id_map[original])
+        for key, raw_value in tuple(node.attrib.items()):
+            value = str(raw_value)
+            if value in {f"#{source_id}" for source_id in id_map}:
+                node.set(key, f"#{id_map[value[1:]]}")
+                continue
+            rewritten = _SVG_URL_REFERENCE.sub(
+                lambda match: f"url(#{id_map.get(match.group(1), match.group(1))})",
+                value,
+            )
+            if rewritten != value:
+                node.set(key, rewritten)
+
+
 def _append_component(
     slide_root: ET.Element,
     layer: dict[str, Any],
@@ -815,6 +1422,7 @@ def _append_component(
         assets_dir=assets_dir,
         remove_unbound=True,
     )
+    _namespace_component_svg_ids(component_root, str(layer["instance_id"]))
     frame = layer["frame"]
     view_box = component_root.attrib.get(
         "viewBox",
@@ -835,9 +1443,13 @@ def _append_component(
     group = ET.Element(
         f"{{{SVG_NS}}}g",
         {
-            "transform": f"translate({offset_x:.6f} {offset_y:.6f}) scale({scale_x:.8f} {scale_y:.8f})",
+            # Source-derived fragments retain their original non-zero viewBox
+            # origins. Compensate here so their internal source coordinates
+            # land exactly in the declared component frame.
+            "transform": f"translate({offset_x - _vx * scale_x:.6f} {offset_y - _vy * scale_y:.6f}) scale({scale_x:.8f} {scale_y:.8f})",
             "data-easyslides-instance": str(layer["instance_id"]),
             "data-easyslides-asset-id": str(layer["asset_id"]),
+            "data-easyslides-id-namespace": f"es_{str(layer['instance_id'])}",
         },
     )
     for child in list(component_root):
@@ -872,21 +1484,8 @@ def render_slide_ir_to_svg(
             assets_dir=assets_dir,
             remove_unbound=True,
         )
-        clear_region = _frame(slide.get("clear_region"))
-        if clear_region:
-            root.append(
-                ET.Element(
-                    f"{{{SVG_NS}}}rect",
-                    {
-                        "x": str(clear_region["x"]),
-                        "y": str(clear_region["y"]),
-                        "width": str(clear_region["width"]),
-                        "height": str(clear_region["height"]),
-                        "fill": "#FFFFFF",
-                        "data-easyslides-clear-region": str(slide.get("body_variant_id") or ""),
-                    },
-                )
-            )
+        # clear_region is a layout-only constraint. Rendering it as a white
+        # rectangle leaves an accidental visible container in the native PPTX.
         for layer in slide.get("layers", []):
             if isinstance(layer, dict) and layer.get("layer_type") == "component":
                 _append_component(root, layer, assets_dir=assets_dir)
@@ -899,6 +1498,140 @@ def render_slide_ir_to_svg(
         "output_dir": str(target),
         "slide_count": len(outputs),
         "svg_files": outputs,
+    }
+
+
+def validate_native_component_bounds(
+    pptx_path: str | Path,
+    slide_ir: dict[str, Any],
+    *,
+    tolerance_px: float = 1.5,
+) -> dict[str, Any]:
+    """Fail when a native component group expands beyond its declared frame.
+
+    SVG roots can hide overflow through a viewBox while DrawingML cannot clip a
+    group in the same way. Each appended component is named during conversion,
+    so the emitted PPTX can be checked against the resolved Slide IR rather
+    than trusting the SVG preview.
+    """
+    path = Path(pptx_path).resolve()
+    if not path.is_file():
+        return {
+            "status": "fail",
+            "checked_component_count": 0,
+            "issues": [{"code": "PPTX-COMPONENT-BOUNDS-MISSING", "message": "Native PPTX is missing."}],
+        }
+
+    expected_by_slide: dict[int, dict[str, dict[str, float]]] = {}
+    for slide in slide_ir.get("slides", []):
+        if not isinstance(slide, dict):
+            continue
+        slide_index = int(slide.get("slide_index") or 0)
+        expected: dict[str, dict[str, float]] = {}
+        for layer in slide.get("layers", []):
+            if not isinstance(layer, dict) or layer.get("layer_type") != "component":
+                continue
+            instance_id = str(layer.get("instance_id") or "").strip()
+            frame = _frame(layer.get("frame"))
+            if instance_id and frame:
+                expected[instance_id] = frame
+        if expected:
+            expected_by_slide[slide_index] = expected
+
+    issues: list[dict[str, Any]] = []
+    checked = 0
+    tolerance_emu = int(round(tolerance_px * EMU_PER_PX))
+    try:
+        with ZipFile(path) as archive:
+            for slide_index, expected in expected_by_slide.items():
+                member = f"ppt/slides/slide{slide_index}.xml"
+                if member not in archive.namelist():
+                    issues.append(
+                        {
+                            "code": "PPTX-COMPONENT-BOUNDS-SLIDE-MISSING",
+                            "message": "Native PPTX is missing a compiled component slide.",
+                            "slide_index": slide_index,
+                        }
+                    )
+                    continue
+                root = ET.fromstring(archive.read(member))
+                actual: dict[str, tuple[int, int, int, int]] = {}
+                for group in root.findall(".//p:grpSp", PPTX_NS):
+                    name = group.find("p:nvGrpSpPr/p:cNvPr", PPTX_NS)
+                    group_name = str(name.attrib.get("name") or "") if name is not None else ""
+                    if not group_name.startswith(COMPONENT_GROUP_PREFIX):
+                        continue
+                    instance_id = group_name[len(COMPONENT_GROUP_PREFIX):]
+                    xfrm = group.find("p:grpSpPr/a:xfrm", PPTX_NS)
+                    off = xfrm.find("a:off", PPTX_NS) if xfrm is not None else None
+                    ext = xfrm.find("a:ext", PPTX_NS) if xfrm is not None else None
+                    if off is None or ext is None:
+                        issues.append(
+                            {
+                                "code": "PPTX-COMPONENT-BOUNDS-GEOMETRY",
+                                "message": "Native component group has no drawable bounds.",
+                                "slide_index": slide_index,
+                                "instance_id": instance_id,
+                            }
+                        )
+                        continue
+                    try:
+                        actual[instance_id] = (
+                            int(off.attrib["x"]),
+                            int(off.attrib["y"]),
+                            int(ext.attrib["cx"]),
+                            int(ext.attrib["cy"]),
+                        )
+                    except (KeyError, TypeError, ValueError):
+                        issues.append(
+                            {
+                                "code": "PPTX-COMPONENT-BOUNDS-GEOMETRY",
+                                "message": "Native component group contains invalid bounds.",
+                                "slide_index": slide_index,
+                                "instance_id": instance_id,
+                            }
+                        )
+
+                for instance_id, frame in expected.items():
+                    bounds = actual.get(instance_id)
+                    if bounds is None:
+                        issues.append(
+                            {
+                                "code": "PPTX-COMPONENT-BOUNDS-MISSING",
+                                "message": "Native PPTX did not preserve a component boundary group.",
+                                "slide_index": slide_index,
+                                "instance_id": instance_id,
+                            }
+                        )
+                        continue
+                    checked += 1
+                    x, y, width, height = bounds
+                    left = int(round(frame["x"] * EMU_PER_PX))
+                    top = int(round(frame["y"] * EMU_PER_PX))
+                    right = int(round((frame["x"] + frame["width"]) * EMU_PER_PX))
+                    bottom = int(round((frame["y"] + frame["height"]) * EMU_PER_PX))
+                    if x < left - tolerance_emu or y < top - tolerance_emu or x + width > right + tolerance_emu or y + height > bottom + tolerance_emu:
+                        issues.append(
+                            {
+                                "code": "PPTX-COMPONENT-BOUNDS-OVERFLOW",
+                                "message": "Native component geometry exceeds its declared Slide IR frame.",
+                                "slide_index": slide_index,
+                                "instance_id": instance_id,
+                                "frame": frame,
+                                "native_bounds_emu": {"x": x, "y": y, "width": width, "height": height},
+                            }
+                        )
+    except (OSError, ET.ParseError) as exc:
+        return {
+            "status": "fail",
+            "checked_component_count": checked,
+            "issues": [{"code": "PPTX-COMPONENT-BOUNDS-READ", "message": str(exc)}],
+        }
+
+    return {
+        "status": "fail" if issues else "pass",
+        "checked_component_count": checked,
+        "issues": issues,
     }
 
 
@@ -925,12 +1658,14 @@ def render_slide_ir_to_pptx(
         use_native_shapes=True,
         enable_notes=False,
     )
+    native_component_bounds = validate_native_component_bounds(output, slide_ir)
     return {
         "schema_version": "easyslides.slide_ir_pptx_render.v1",
-        "status": "pass" if ok and output.is_file() else "fail",
+        "status": "pass" if ok and output.is_file() and native_component_bounds["status"] == "pass" else "fail",
         "output": str(output),
         "slide_count": slide_ir.get("slide_count", 0),
         "svg_render": svg_report,
+        "native_component_bounds": native_component_bounds,
     }
 
 

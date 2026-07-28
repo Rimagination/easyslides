@@ -2,8 +2,8 @@
   "schema_version": "easyslides.template_package.v1",
   "package_id": "template/nsfc_defense",
   "template_id": "nsfc_defense",
-  "version": "0.3.0",
-  "status": "production",
+  "version": "0.4.0",
+  "status": "review",
   "display_name": "NSFC Defense",
   "description": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
   "installability": "repo_relative_template_package",
@@ -14,23 +14,23 @@
     "slots": "slot_contracts.json",
     "geometry": "geometry_contract.json",
     "components": "component_catalog.json",
-    "component_pack": "component_pack.json",
-    "design_tokens": "design_tokens.json",
     "assets": "assets/asset_manifest.json",
     "qa": "qa_policy.json",
     "provenance": "source_page_roster.json",
     "design_spec": "design_spec.md",
-    "rules": "rules.md"
+    "rules": "rules.md",
+    "feedback_contract": "feedback_contract.json",
+    "story": "story_structure.json"
   },
   "source_of_truth": {
     "package": "template_package.json",
     "shells": "layouts.json",
     "body_variants": "body_variants.json",
     "components": "component_catalog.json",
-    "component_pack": "component_pack.json",
-    "design_tokens": "design_tokens.json",
     "qa": "qa_policy.json",
-    "provenance": "source_page_roster.json"
+    "provenance": "source_page_roster.json",
+    "feedback_contract": "feedback_contract.json",
+    "story": "story_structure.json"
   },
   "derived_outputs": {
     "template_ir": "compiled/template_ir.json",
@@ -54,7 +54,9 @@
     "editable_native_pptx",
     "component_asset_catalog",
     "geometry_contract",
-    "text_capacity_contract"
+    "text_capacity_contract",
+    "feedback_contract",
+    "scenario_story_contract"
   ],
   "scenarios": [
     "national_natural_science_foundation_defense",
@@ -66,9 +68,7 @@
   ],
   "layout_count": 5,
   "source_template_id": "nsfc_defense_distilled",
-  "production_eligible": true,
+  "production_eligible": false,
   "runtime_contract": "compiled/template_ir.json",
-  "dependency_lock": "compiled/template.lock.json",
-  "last_gate_schema": "easyslides.template_production_gate.v1",
-  "last_gate_status": "pass"
+  "dependency_lock": "compiled/template.lock.json"
 }

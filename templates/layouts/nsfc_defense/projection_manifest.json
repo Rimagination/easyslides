@@ -70,7 +70,9 @@
       "source_svg_exists": true,
       "status": "ready",
       "slots": [
-        "PAGE_TITLE"
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "PAGE_NUMBER"
       ],
       "hard_geometry_invariants": [
         "text_center_y_matches_container_center_y",
@@ -87,7 +89,6 @@
       "status": "ready",
       "slots": [
         "CLOSING_TITLE",
-        "CLOSING_SUBTITLE",
         "AFFILIATION",
         "PRESENTER",
         "DATE"

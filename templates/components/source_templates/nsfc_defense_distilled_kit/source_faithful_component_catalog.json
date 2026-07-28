@@ -1,0 +1,644 @@
+{
+  "schema_version": "easyslides.source_faithful_component_catalog.v1",
+  "template_id": "nsfc_defense_distilled",
+  "extraction_mode": "verbatim_source_svg_nodes",
+  "status": "pass",
+  "component_count": 16,
+  "source": {
+    "pptx": "D:\\scansci\\easyslides\\国自然答辩.pptx",
+    "source_workspace": "templates/reference/template_asset_sources/nsfc_defense_distilled",
+    "source_svg_dir": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat"
+  },
+  "fidelity_constraints": [
+    "copy source SVG nodes without recoloring, resizing, font substitution, or geometry normalization",
+    "preserve source text as review samples; generic slot replacement is deferred until its source style contract is approved",
+    "embed byte-identical source media so extracted SVG fragments preserve original image crops without relative-link drift",
+    "do not register review-only source fragments as planner-selectable runtime components"
+  ],
+  "components": [
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/content_header_chrome",
+      "component_id": "content_header_chrome",
+      "display_name": "内容页标题栏",
+      "category": "chrome",
+      "description": "紫色渐变标题栏、右上图片纹理、页标题和左侧高光装饰。",
+      "source_slide": "slide_03",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_03.svg",
+      "source_node_ids": [
+        "shape-10",
+        "shape-3",
+        "shape-4",
+        "shape-6"
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 92
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/content_header_chrome.svg",
+      "preview_path": "faithful_previews/content_header_chrome.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 4,
+        "source_node_sha256": "a0bf5b438cbb578e456c958a30b80de9cb201e3f0489dee87338deca92a99950",
+        "source_visual_node_sha256": "1cc35864fb60ccd9ed3542d0e5d8a32c36a0bf8bb9c06100eddb62e78b76ca9e",
+        "fragment_visual_node_sha256": "1cc35864fb60ccd9ed3542d0e5d8a32c36a0bf8bb9c06100eddb62e78b76ca9e",
+        "source_text_count": 1,
+        "source_text_sha256": "067310bb8e3304483cdb3dec7c968ca88d9185c751df5ec5a1a858dc3a8c3256",
+        "fragment_text_sha256": "067310bb8e3304483cdb3dec7c968ca88d9185c751df5ec5a1a858dc3a8c3256",
+        "embedded_media": [
+          {
+            "source_href": "../assets/image9.jpg",
+            "source_file": "image9.jpg",
+            "byte_count": 41158,
+            "sha256": "e213a2ea00fb6fd5e7e33d58f90630d886e9ec6a412fcdf089dde041c1baa9b3"
+          }
+        ],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/statement_panel",
+      "component_id": "statement_panel",
+      "display_name": "主张陈述面板",
+      "category": "text_surface",
+      "description": "带描边与阴影的宽幅主张面板。",
+      "source_slide": "slide_03",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_03.svg",
+      "source_node_ids": [
+        "shape-100",
+        "shape-106"
+      ],
+      "bounds": {
+        "x": 51,
+        "y": 104,
+        "width": 1178,
+        "height": 81
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/statement_panel.svg",
+      "preview_path": "faithful_previews/statement_panel.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 2,
+        "source_node_sha256": "dc5f87a06a1e9f6629cebb5f384fe56ee9de8d60bd0643d5b8ff1dd7dafb7f76",
+        "source_visual_node_sha256": "dc5f87a06a1e9f6629cebb5f384fe56ee9de8d60bd0643d5b8ff1dd7dafb7f76",
+        "fragment_visual_node_sha256": "dc5f87a06a1e9f6629cebb5f384fe56ee9de8d60bd0643d5b8ff1dd7dafb7f76",
+        "source_text_count": 1,
+        "source_text_sha256": "f7d784561c78509fad482ec928012cd94ee6b4d9e0d764da0f4841c5bbe05950",
+        "fragment_text_sha256": "f7d784561c78509fad482ec928012cd94ee6b4d9e0d764da0f4841c5bbe05950",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/vertical_key_tag",
+      "component_id": "vertical_key_tag",
+      "display_name": "纵向关键点标签",
+      "category": "label",
+      "description": "旋转的紫色关键点标签。",
+      "source_slide": "slide_03",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_03.svg",
+      "source_node_ids": [
+        "shape-29",
+        "shape-30"
+      ],
+      "bounds": {
+        "x": 59,
+        "y": 88,
+        "width": 97,
+        "height": 113
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/vertical_key_tag.svg",
+      "preview_path": "faithful_previews/vertical_key_tag.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 2,
+        "source_node_sha256": "0ab32026e6a89e23e0ec3526c060449128f4ac9a8af222c6f7d7ac73998a69a3",
+        "source_visual_node_sha256": "0ab32026e6a89e23e0ec3526c060449128f4ac9a8af222c6f7d7ac73998a69a3",
+        "fragment_visual_node_sha256": "0ab32026e6a89e23e0ec3526c060449128f4ac9a8af222c6f7d7ac73998a69a3",
+        "source_text_count": 1,
+        "source_text_sha256": "4d2c76af9fb99b0f78ecfb52a2a4c73bcdbe0bfd4a5501c9c0bf7039f8a87654",
+        "fragment_text_sha256": "4d2c76af9fb99b0f78ecfb52a2a4c73bcdbe0bfd4a5501c9c0bf7039f8a87654",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/relationship_arrow_label",
+      "component_id": "relationship_arrow_label",
+      "display_name": "关系箭头标签",
+      "category": "connector",
+      "description": "两个关系标签与中间箭头的原始组合。",
+      "source_slide": "slide_03",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_03.svg",
+      "source_node_ids": [
+        "shape-17"
+      ],
+      "bounds": {
+        "x": 75,
+        "y": 324,
+        "width": 733,
+        "height": 52
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/relationship_arrow_label.svg",
+      "preview_path": "faithful_previews/relationship_arrow_label.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 1,
+        "source_node_sha256": "5ac19a80408bf619e475b6056c58b9ab362ec6c1bd0f2738849865b414959a06",
+        "source_visual_node_sha256": "5ac19a80408bf619e475b6056c58b9ab362ec6c1bd0f2738849865b414959a06",
+        "fragment_visual_node_sha256": "5ac19a80408bf619e475b6056c58b9ab362ec6c1bd0f2738849865b414959a06",
+        "source_text_count": 3,
+        "source_text_sha256": "be2c261f6bdf25366390640c2728d2bc0d6076c7d60c6d72f0e4081ad6899720",
+        "fragment_text_sha256": "be2c261f6bdf25366390640c2728d2bc0d6076c7d60c6d72f0e4081ad6899720",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/image_footer_card",
+      "component_id": "image_footer_card",
+      "display_name": "图像脚注卡",
+      "category": "media_card",
+      "description": "淡紫渐变图像容器与紫色底部标签。",
+      "source_slide": "slide_03",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_03.svg",
+      "source_node_ids": [
+        "shape-80",
+        "shape-108",
+        "shape-72",
+        "shape-116"
+      ],
+      "bounds": {
+        "x": 51,
+        "y": 411,
+        "width": 378,
+        "height": 265
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/image_footer_card.svg",
+      "preview_path": "faithful_previews/image_footer_card.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 4,
+        "source_node_sha256": "bcc48a29241ac696b7d9e3dbc81e843263880ecab1baa054a6597298122f610a",
+        "source_visual_node_sha256": "12adda2305c603cd854c39ad742f4a92a1629dcd9fec2c58a139148eb6ffa0e3",
+        "fragment_visual_node_sha256": "12adda2305c603cd854c39ad742f4a92a1629dcd9fec2c58a139148eb6ffa0e3",
+        "source_text_count": 1,
+        "source_text_sha256": "f1c97276f77c2b4e6a8645318e9861e26dcd9ad90daaa5377ef9cfcb890347e0",
+        "fragment_text_sha256": "f1c97276f77c2b4e6a8645318e9861e26dcd9ad90daaa5377ef9cfcb890347e0",
+        "embedded_media": [
+          {
+            "source_href": "../assets/image10.jpg",
+            "source_file": "image10.jpg",
+            "byte_count": 92245,
+            "sha256": "15dc3c3772d1a6be0e93e15d2fa82f23aadb4a10389cea3b3494b19df155585e"
+          }
+        ],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/research_track_card",
+      "component_id": "research_track_card",
+      "display_name": "研究方向图卡",
+      "category": "media_card",
+      "description": "源文件中的研究方向图卡组合。",
+      "source_slide": "slide_03",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_03.svg",
+      "source_node_ids": [
+        "shape-2"
+      ],
+      "bounds": {
+        "x": 454,
+        "y": 411,
+        "width": 378,
+        "height": 265
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/research_track_card.svg",
+      "preview_path": "faithful_previews/research_track_card.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 1,
+        "source_node_sha256": "af4495d93f6eec075a38eeff6b6daa22c5610746b794eb4a6c810c8d81644745",
+        "source_visual_node_sha256": "b6c6c35d1b7a74c4afc048f876d5574575cb3e970823ad1bcd9205978e45418b",
+        "fragment_visual_node_sha256": "b6c6c35d1b7a74c4afc048f876d5574575cb3e970823ad1bcd9205978e45418b",
+        "source_text_count": 1,
+        "source_text_sha256": "07c86cf35b226208da9f26de749bf10b6e393b2656e0557939ffba9cd1bd4b32",
+        "fragment_text_sha256": "07c86cf35b226208da9f26de749bf10b6e393b2656e0557939ffba9cd1bd4b32",
+        "embedded_media": [
+          {
+            "source_href": "../assets/image12.jpg",
+            "source_file": "image12.jpg",
+            "byte_count": 259595,
+            "sha256": "14d19810d56173e47ca16f49a9847c3ed792311a06ea2a9aef9337b123a8103a"
+          }
+        ],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/callout_media_panel",
+      "component_id": "callout_media_panel",
+      "display_name": "强调媒体面板",
+      "category": "callout",
+      "description": "尖角白底面板、紫色标题条、说明文字与图像。",
+      "source_slide": "slide_03",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_03.svg",
+      "source_node_ids": [
+        "shape-103",
+        "shape-159",
+        "shape-112",
+        "shape-132",
+        "shape-142"
+      ],
+      "bounds": {
+        "x": 856,
+        "y": 208,
+        "width": 372,
+        "height": 468
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/callout_media_panel.svg",
+      "preview_path": "faithful_previews/callout_media_panel.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 5,
+        "source_node_sha256": "a05de76c1fb46f147ebfc6b441005cd0642b23fee7173a1c4efc5c453746f17b",
+        "source_visual_node_sha256": "36b9c3bccb230d93c942d058a47f33c7c945525d480232e6d830b88b2f0558fb",
+        "fragment_visual_node_sha256": "36b9c3bccb230d93c942d058a47f33c7c945525d480232e6d830b88b2f0558fb",
+        "source_text_count": 2,
+        "source_text_sha256": "55c7ed9b3ef208a8ab7791332b07aed8d207213ac0fc8cd879be5c6dadeb3ad8",
+        "fragment_text_sha256": "55c7ed9b3ef208a8ab7791332b07aed8d207213ac0fc8cd879be5c6dadeb3ad8",
+        "embedded_media": [
+          {
+            "source_href": "../assets/image11.webp",
+            "source_file": "image11.webp",
+            "byte_count": 158676,
+            "sha256": "1bb0f55643be42b943f7e54e23b4462e5ca7ca0c7be830a6127673437a708959"
+          }
+        ],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/evidence_tile",
+      "component_id": "evidence_tile",
+      "display_name": "证据图块",
+      "category": "media_card",
+      "description": "图像与紫色圆顶角标签组成的单个证据图块。",
+      "source_slide": "slide_05",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_05.svg",
+      "source_node_ids": [
+        "shape-10",
+        "shape-28",
+        "shape-29"
+      ],
+      "bounds": {
+        "x": 64,
+        "y": 328,
+        "width": 246,
+        "height": 272
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/evidence_tile.svg",
+      "preview_path": "faithful_previews/evidence_tile.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 3,
+        "source_node_sha256": "bc2fbe6980eeda5eef5b81923d767e3be0148ced7e92c89412d7fccd1b1ffe94",
+        "source_visual_node_sha256": "95df9813b78acd7cff0c43cb4c4fb88d1050ec8aad103fbf9f0e4731e604727d",
+        "fragment_visual_node_sha256": "95df9813b78acd7cff0c43cb4c4fb88d1050ec8aad103fbf9f0e4731e604727d",
+        "source_text_count": 1,
+        "source_text_sha256": "3e90dc527423215cdba7da15821292e90651fd73a24409f6746f57512b7cc95c",
+        "fragment_text_sha256": "3e90dc527423215cdba7da15821292e90651fd73a24409f6746f57512b7cc95c",
+        "embedded_media": [
+          {
+            "source_href": "../assets/image15.png",
+            "source_file": "image15.png",
+            "byte_count": 232461,
+            "sha256": "f4c2c5c44b2e9171ecb83ceb1470fd190f47a5d566f131f44c01b238c32e8c02"
+          }
+        ],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/metric_tile",
+      "component_id": "metric_tile",
+      "display_name": "指标卡",
+      "category": "metric",
+      "description": "白底圆角指标卡与原始数字排版。",
+      "source_slide": "slide_06",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_06.svg",
+      "source_node_ids": [
+        "shape-9",
+        "shape-10"
+      ],
+      "bounds": {
+        "x": 779,
+        "y": 418,
+        "width": 195,
+        "height": 115
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/metric_tile.svg",
+      "preview_path": "faithful_previews/metric_tile.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 2,
+        "source_node_sha256": "6c064d21743b7f630673fd92f27f82f99c3d5832203ef55abd1d040b4383770e",
+        "source_visual_node_sha256": "6c064d21743b7f630673fd92f27f82f99c3d5832203ef55abd1d040b4383770e",
+        "fragment_visual_node_sha256": "6c064d21743b7f630673fd92f27f82f99c3d5832203ef55abd1d040b4383770e",
+        "source_text_count": 2,
+        "source_text_sha256": "db4e7c1b6cea80f1123ebf8ccab31c34dd5783307ce27987d87369e54fe16a8a",
+        "fragment_text_sha256": "db4e7c1b6cea80f1123ebf8ccab31c34dd5783307ce27987d87369e54fe16a8a",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/metric_group_header",
+      "component_id": "metric_group_header",
+      "display_name": "指标组标题",
+      "category": "label",
+      "description": "指标区的紫色圆角组标题。",
+      "source_slide": "slide_06",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_06.svg",
+      "source_node_ids": [
+        "shape-17",
+        "shape-18"
+      ],
+      "bounds": {
+        "x": 779,
+        "y": 342,
+        "width": 416,
+        "height": 60
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/metric_group_header.svg",
+      "preview_path": "faithful_previews/metric_group_header.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 2,
+        "source_node_sha256": "496ce62a46ff537535a63a8f39fa8e5728ca72960b8b86c4eac2763fbc9d7372",
+        "source_visual_node_sha256": "496ce62a46ff537535a63a8f39fa8e5728ca72960b8b86c4eac2763fbc9d7372",
+        "fragment_visual_node_sha256": "496ce62a46ff537535a63a8f39fa8e5728ca72960b8b86c4eac2763fbc9d7372",
+        "source_text_count": 1,
+        "source_text_sha256": "1b9fdcdc252a0773ff3392d5ab676c3561dd8abb4e3921687194087c5e67d890",
+        "fragment_text_sha256": "1b9fdcdc252a0773ff3392d5ab676c3561dd8abb4e3921687194087c5e67d890",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/comparison_matrix",
+      "component_id": "comparison_matrix",
+      "display_name": "三列对比矩阵",
+      "category": "matrix",
+      "description": "带紫色渐变表头、交替行底色与原始文本排版的对比表。",
+      "source_slide": "slide_10",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_10.svg",
+      "source_node_ids": [
+        "shape-15"
+      ],
+      "bounds": {
+        "x": 51,
+        "y": 104,
+        "width": 1178,
+        "height": 288
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/comparison_matrix.svg",
+      "preview_path": "faithful_previews/comparison_matrix.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 1,
+        "source_node_sha256": "46b2e4b6c42b30e39c6a8d46af13ccad724ef81cfe7524b9a72388da386e2436",
+        "source_visual_node_sha256": "46b2e4b6c42b30e39c6a8d46af13ccad724ef81cfe7524b9a72388da386e2436",
+        "fragment_visual_node_sha256": "46b2e4b6c42b30e39c6a8d46af13ccad724ef81cfe7524b9a72388da386e2436",
+        "source_text_count": 14,
+        "source_text_sha256": "577ff5bc477ef207e5c03f1c47a8db28a57ef1191b35e510dd2649979e94d19a",
+        "fragment_text_sha256": "577ff5bc477ef207e5c03f1c47a8db28a57ef1191b35e510dd2649979e94d19a",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/side_statement_panel",
+      "component_id": "side_statement_panel",
+      "display_name": "侧标陈述面板",
+      "category": "callout",
+      "description": "纵向紫色侧标与大面积正文陈述区。",
+      "source_slide": "slide_10",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_10.svg",
+      "source_node_ids": [
+        "shape-17",
+        "shape-29",
+        "shape-20",
+        "shape-22"
+      ],
+      "bounds": {
+        "x": 51,
+        "y": 412,
+        "width": 699,
+        "height": 264
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/side_statement_panel.svg",
+      "preview_path": "faithful_previews/side_statement_panel.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 4,
+        "source_node_sha256": "dc15c61b3a1b144c4468720c5cb36dead7168161994023bdc58d097c1fde479f",
+        "source_visual_node_sha256": "dc15c61b3a1b144c4468720c5cb36dead7168161994023bdc58d097c1fde479f",
+        "fragment_visual_node_sha256": "dc15c61b3a1b144c4468720c5cb36dead7168161994023bdc58d097c1fde479f",
+        "source_text_count": 2,
+        "source_text_sha256": "01a2b347e1c2231307fae9b6f171cee56264d5a31d55fe31b626add32456cb45",
+        "fragment_text_sha256": "01a2b347e1c2231307fae9b6f171cee56264d5a31d55fe31b626add32456cb45",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/numbered_insight",
+      "component_id": "numbered_insight",
+      "display_name": "编号洞见条",
+      "category": "text_surface",
+      "description": "编号、标题、渐变强调线与正文说明的原始组合。",
+      "source_slide": "slide_10",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_10.svg",
+      "source_node_ids": [
+        "shape-55",
+        "shape-56",
+        "shape-57",
+        "shape-38"
+      ],
+      "bounds": {
+        "x": 164,
+        "y": 469,
+        "width": 569,
+        "height": 110
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/numbered_insight.svg",
+      "preview_path": "faithful_previews/numbered_insight.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 4,
+        "source_node_sha256": "ef68192fdcce08258b2b062e2b82ba35c1f076afafce5cd143c7595d1bfbb5f1",
+        "source_visual_node_sha256": "ef68192fdcce08258b2b062e2b82ba35c1f076afafce5cd143c7595d1bfbb5f1",
+        "fragment_visual_node_sha256": "ef68192fdcce08258b2b062e2b82ba35c1f076afafce5cd143c7595d1bfbb5f1",
+        "source_text_count": 3,
+        "source_text_sha256": "c1740409a16f05e50f37c58c06989d3fa6b69370ce0dc40c060f53446d897b7c",
+        "fragment_text_sha256": "c1740409a16f05e50f37c58c06989d3fa6b69370ce0dc40c060f53446d897b7c",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/media_caption_card",
+      "component_id": "media_caption_card",
+      "display_name": "媒体标题卡",
+      "category": "media_card",
+      "description": "竖向媒体图与底部渐变标题条。",
+      "source_slide": "slide_10",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_10.svg",
+      "source_node_ids": [
+        "shape-33",
+        "shape-24",
+        "shape-25"
+      ],
+      "bounds": {
+        "x": 1006,
+        "y": 412,
+        "width": 222,
+        "height": 264
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/media_caption_card.svg",
+      "preview_path": "faithful_previews/media_caption_card.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 3,
+        "source_node_sha256": "76695e3dc121f975c128afba5ce172ae5775030026179207ee1b93d5206e4255",
+        "source_visual_node_sha256": "6f055be7fb8a14e53b8498fa6c0655d45565890b4f485f6e6307473f6c1c1477",
+        "fragment_visual_node_sha256": "6f055be7fb8a14e53b8498fa6c0655d45565890b4f485f6e6307473f6c1c1477",
+        "source_text_count": 1,
+        "source_text_sha256": "e9f75e13de65dfc61fe7122e3adc0d8432b50bc6c056d57e01189744cda51474",
+        "fragment_text_sha256": "e9f75e13de65dfc61fe7122e3adc0d8432b50bc6c056d57e01189744cda51474",
+        "embedded_media": [
+          {
+            "source_href": "../assets/image25.jpg",
+            "source_file": "image25.jpg",
+            "byte_count": 51151,
+            "sha256": "c96a2c54c8b740883b579e5f404891234dfb80d74ccb340e93940339662f6dd8"
+          }
+        ],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/application_metric_card",
+      "component_id": "application_metric_card",
+      "display_name": "应用结果指标卡",
+      "category": "metric",
+      "description": "紫色顶部标签、红色数值和说明文字的应用指标卡。",
+      "source_slide": "slide_16",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_16.svg",
+      "source_node_ids": [
+        "shape-9",
+        "shape-24",
+        "shape-26",
+        "shape-39",
+        "shape-11"
+      ],
+      "bounds": {
+        "x": 51,
+        "y": 326,
+        "width": 484,
+        "height": 162
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/application_metric_card.svg",
+      "preview_path": "faithful_previews/application_metric_card.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 5,
+        "source_node_sha256": "5d49dd2200196f978c2c047ed2c755ead1beb8491aafab8fa95f98a91a3ad2a0",
+        "source_visual_node_sha256": "5d49dd2200196f978c2c047ed2c755ead1beb8491aafab8fa95f98a91a3ad2a0",
+        "fragment_visual_node_sha256": "5d49dd2200196f978c2c047ed2c755ead1beb8491aafab8fa95f98a91a3ad2a0",
+        "source_text_count": 3,
+        "source_text_sha256": "23834433df499f4f775cc5b4a9d64cf4395da7db86b4f78142bdcf64c9cf6e2c",
+        "fragment_text_sha256": "23834433df499f4f775cc5b4a9d64cf4395da7db86b4f78142bdcf64c9cf6e2c",
+        "embedded_media": [],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    },
+    {
+      "asset_id": "source_faithful/nsfc_defense_distilled/vertical_feature_image_panel",
+      "component_id": "vertical_feature_image_panel",
+      "display_name": "纵向特征图面板",
+      "category": "media_card",
+      "description": "纵向紫色标签、图像与带圆角的白色内容表面。",
+      "source_slide": "slide_16",
+      "source_svg": "templates/reference/template_asset_sources/nsfc_defense_distilled/svg-flat/slide_16.svg",
+      "source_node_ids": [
+        "shape-52",
+        "shape-63",
+        "shape-64",
+        "shape-68"
+      ],
+      "bounds": {
+        "x": 51,
+        "y": 104,
+        "width": 582,
+        "height": 202
+      },
+      "asset_path": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/vertical_feature_image_panel.svg",
+      "preview_path": "faithful_previews/vertical_feature_image_panel.png",
+      "asset_status": "source_faithful_review_only",
+      "editable_slots": [],
+      "fidelity": {
+        "source_node_count": 4,
+        "source_node_sha256": "3ea9314cdc895b3d15b31bde130b2dfd9f2b8d225b703a08a770150420f758bd",
+        "source_visual_node_sha256": "ae94e2291fc97d7fac11db9473fb4c27f49fb67e12e7dde574514142e3ec2af7",
+        "fragment_visual_node_sha256": "ae94e2291fc97d7fac11db9473fb4c27f49fb67e12e7dde574514142e3ec2af7",
+        "source_text_count": 1,
+        "source_text_sha256": "a4c8b2e674aa9b7f51a6545230cf319a73abd04cb849d935803e9fac42ed56e9",
+        "fragment_text_sha256": "a4c8b2e674aa9b7f51a6545230cf319a73abd04cb849d935803e9fac42ed56e9",
+        "embedded_media": [
+          {
+            "source_href": "../assets/image40.jpeg",
+            "source_file": "image40.jpeg",
+            "byte_count": 1248287,
+            "sha256": "ba0213e27258c603a9b5e173b06305875022fbe107039557b0ac4f7873b85fc9"
+          }
+        ],
+        "style_mutation_count": 0,
+        "text_mutation_count": 0
+      }
+    }
+  ]
+}

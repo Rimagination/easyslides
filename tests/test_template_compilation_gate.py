@@ -26,9 +26,9 @@ class TemplateCompilationGateTests(unittest.TestCase):
         self.assertEqual(compiled["status"], "pass", compiled["issues"])
         self.assertEqual(compiled["capability_level"], "production")
         self.assertEqual(composition["status"], "pass", composition["issues"])
-        self.assertEqual(composition["variant_count"], 12)
-        self.assertEqual(composition["rendered_slide_count"], 12)
-        self.assertEqual(composition["component_instance_count"], 12)
+        self.assertEqual(composition["variant_count"], 9)
+        self.assertEqual(composition["rendered_slide_count"], 9)
+        self.assertEqual(composition["component_instance_count"], 38)
 
 
 if __name__ == "__main__":

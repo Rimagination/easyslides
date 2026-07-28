@@ -1,0 +1,39 @@
+{
+  "schema_version": "easyslides.research_core.geometry_contract.v1",
+  "template_id": "research_core",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "hard_invariants": [
+    "text_center_y_matches_container_center_y",
+    "declared_slots_stay_inside_canvas"
+  ],
+  "pages": [
+    {
+      "page_id": "cover",
+      "svg": "01_cover.svg",
+      "regions": []
+    },
+    {
+      "page_id": "toc",
+      "svg": "02_toc.svg",
+      "regions": []
+    },
+    {
+      "page_id": "chapter",
+      "svg": "03_chapter.svg",
+      "regions": []
+    },
+    {
+      "page_id": "content",
+      "svg": "04_content.svg",
+      "regions": []
+    },
+    {
+      "page_id": "ending",
+      "svg": "05_ending.svg",
+      "regions": []
+    }
+  ]
+}

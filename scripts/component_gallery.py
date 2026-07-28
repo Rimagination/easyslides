@@ -21,6 +21,7 @@ try:
         INSTALLED_PACKAGES_ROOT,
         PACKAGES_ROOT,
         STORY_SCHEMA_VERSION,
+        is_public_component_package,
         load_component_packages_from_roots,
         validate_component_package,
         validate_component_story_payload,
@@ -32,6 +33,7 @@ except ModuleNotFoundError:  # pragma: no cover
         INSTALLED_PACKAGES_ROOT,
         PACKAGES_ROOT,
         STORY_SCHEMA_VERSION,
+        is_public_component_package,
         load_component_packages_from_roots,
         validate_component_package,
         validate_component_story_payload,
@@ -620,6 +622,8 @@ def build_component_gallery(
     if installed_root and Path(installed_root).resolve() != Path(packages_root).resolve():
         package_roots.append(Path(installed_root))
     for package_dir, package in load_component_packages_from_roots(package_roots):
+        if not is_public_component_package(package_dir):
+            continue
         package_report = validate_component_package(package_dir, package)
         component_id = str(package.get("component_id") or package_dir.name)
         stories = []
@@ -660,11 +664,25 @@ def build_component_gallery(
             }
         )
 
-    preview_gate_report = validate_component_preview_dir(svg_dir)
+    if package_rows:
+        preview_gate_report = validate_component_preview_dir(svg_dir)
+    else:
+        preview_gate_report = {
+            "schema_version": "easyslides.component_preview_gate_report.v1",
+            "status": "not_applicable",
+            "issue_count": 0,
+            "issues": [],
+            "preview_root": str(svg_dir),
+            "svg_count": 0,
+            "checked_text_count": 0,
+            "tolerance_px": 2.0,
+            "svgs": [],
+            "reason": "no_public_component_packages",
+        }
     package_status = "pass" if all(row["status"] == "pass" for row in package_rows) else "fail"
     manifest = {
         "schema_version": SCHEMA_VERSION,
-        "status": "pass" if package_status == "pass" and preview_gate_report["status"] == "pass" else "fail",
+        "status": "pass" if package_status == "pass" and preview_gate_report["status"] in {"pass", "not_applicable"} else "fail",
         "output_dir": str(output_dir),
         "html": "component_gallery.html",
         "preview_gate_status": preview_gate_report["status"],

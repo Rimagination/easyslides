@@ -21,6 +21,7 @@ DELEGATED_COMMANDS = {
     "distill": "pptx_template_distill.py",
     "semantic-render": "semantic_template_renderer.py",
     "template-gate": "template_production_gate.py",
+    "template-visual-invariants": "template_visual_invariants.py",
     "template-fill": "template_fill_pptx.py",
     "enhance": "native_enhance_pptx.py",
     "beautify": "beautify_pptx.py",
@@ -58,6 +59,7 @@ def build_parser() -> argparse.ArgumentParser:
             "  distill       Distill PPTX evidence and gated template assets\n"
             "  semantic-render Render a named-slot semantic template\n"
             "  template-gate Fail-closed semantic template production gate\n"
+            "  template-visual-invariants Validate declared text-centre and mirror invariants\n"
             "  template-fill Native PPTX template library fill\n"
             "  enhance       Native append-only PPTX notes/audio/timing enhancement\n"
             "  beautify      Conservative 1:1 PPTX beautification\n"

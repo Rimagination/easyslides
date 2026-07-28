@@ -164,7 +164,7 @@
     {
       "package_id": "template/nsfc_defense",
       "template_id": "nsfc_defense",
-      "version": "0.2.0",
+      "version": "0.4.0",
       "status": "review",
       "display_name": "NSFC Defense",
       "description": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
@@ -248,13 +248,29 @@
       "managed_package": true,
       "keywords": [],
       "compiled_ir": "compiled/template_ir.json"
+    },
+    {
+      "package_id": "template/research_core",
+      "template_id": "research_core",
+      "version": "1.0.0",
+      "status": "review",
+      "display_name": "General Research Briefing",
+      "description": "A general research-report template with six controlled evidence and analysis scenes.",
+      "path": "templates/layouts/research_core",
+      "canvas_format": "ppt169",
+      "layout_count": 5,
+      "capability_level": "production",
+      "production_eligible": false,
+      "managed_package": true,
+      "keywords": [],
+      "compiled_ir": "compiled/template_ir.json"
     }
   ],
   "packages": [
     {
       "package_id": "template/nsfc_defense",
       "template_id": "nsfc_defense",
-      "version": "0.2.0",
+      "version": "0.4.0",
       "status": "review",
       "display_name": "NSFC Defense",
       "description": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
@@ -290,8 +306,24 @@
       "managed_package": true,
       "keywords": [],
       "compiled_ir": "compiled/template_ir.json"
+    },
+    {
+      "package_id": "template/research_core",
+      "template_id": "research_core",
+      "version": "1.0.0",
+      "status": "review",
+      "display_name": "General Research Briefing",
+      "description": "A general research-report template with six controlled evidence and analysis scenes.",
+      "path": "templates/layouts/research_core",
+      "canvas_format": "ppt169",
+      "layout_count": 5,
+      "capability_level": "production",
+      "production_eligible": false,
+      "managed_package": true,
+      "keywords": [],
+      "compiled_ir": "compiled/template_ir.json"
     }
   ],
-  "template_count": 13,
-  "package_count": 2
+  "template_count": 14,
+  "package_count": 3
 }

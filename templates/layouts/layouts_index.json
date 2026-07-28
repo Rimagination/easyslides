@@ -73,5 +73,11 @@
     ],
     "capability_level": "production",
     "status": "review"
+  },
+  "research_core": {
+    "summary": "A general research-report template with six controlled evidence and analysis scenes.",
+    "keywords": [],
+    "capability_level": "production",
+    "status": "review"
   }
 }

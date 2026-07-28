@@ -2,8 +2,8 @@
   "schema_version": "easyslides.template_status.v2",
   "derived_from": "template_package.json+qa_policy.json+compiled/template_ir.json",
   "template_id": "nsfc_defense",
-  "status": "production",
+  "status": "review",
   "capability_level": "production",
-  "production_eligible": true,
-  "source_digest": "a2876b54dba03dae55624d17e66a76e327a9ed6a9626494f0db346a707058bbc"
+  "production_eligible": false,
+  "source_digest": "4787c5b11b07125d28a2d1d3a7c1e13ca1003e9626f8adc4c479a8ac3a171881"
 }

@@ -20,6 +20,7 @@ try:
         INSTALLED_PACKAGES_ROOT,
         PACKAGES_ROOT,
         STORY_SCHEMA_VERSION,
+        is_public_component_package,
         load_component_packages_from_roots,
         validate_component_story_payload,
     )
@@ -28,6 +29,7 @@ except ModuleNotFoundError:  # pragma: no cover
         INSTALLED_PACKAGES_ROOT,
         PACKAGES_ROOT,
         STORY_SCHEMA_VERSION,
+        is_public_component_package,
         load_component_packages_from_roots,
         validate_component_story_payload,
     )
@@ -102,6 +104,29 @@ def build_component_pptx(
     from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
     from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
     from pptx.util import Inches, Pt
+
+    package_roots = [packages_root]
+    if installed_root and Path(installed_root).resolve() != Path(packages_root).resolve():
+        package_roots.append(Path(installed_root))
+    public_packages = [
+        (package_dir, package)
+        for package_dir, package in load_component_packages_from_roots(package_roots)
+        if is_public_component_package(package_dir)
+    ]
+    if not public_packages:
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "status": "not_applicable",
+            "output": "",
+            "package_count": 0,
+            "story_count": 0,
+            "slide_count": 0,
+            "center_anchor_textbox_count": 0,
+            "text_layout_status": "not_applicable",
+            "text_layout_report": None,
+            "packages": [],
+            "reason": "no_public_component_packages",
+        }
 
     prs = Presentation()
     prs.slide_width = Inches(13.333333)
@@ -503,10 +528,7 @@ def build_component_pptx(
 
     story_count = 0
     package_rows: list[dict[str, Any]] = []
-    package_roots = [packages_root]
-    if installed_root and Path(installed_root).resolve() != Path(packages_root).resolve():
-        package_roots.append(Path(installed_root))
-    for package_dir, package in load_component_packages_from_roots(package_roots):
+    for package_dir, package in public_packages:
         component_id = str(package.get("component_id") or package_dir.name)
         renderer_id = str(package.get("renderer_id") or component_id)
         stories = []
@@ -582,7 +604,7 @@ def main(argv: list[str] | None = None) -> int:
         if isinstance(text_layout_report, dict) and text_layout_report.get("status") == "fail":
             for item in text_layout_report.get("issues", []):
                 print(f"- {item.get('code')}: {item.get('message')}")
-    return 0 if report["status"] == "pass" else 1
+    return 0 if report["status"] in {"pass", "not_applicable"} else 1
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@
     "text_center_y_matches_container_center_y",
     "declared_slots_stay_inside_canvas",
     "component_regions_stay_inside_canvas",
-    "content_shell_public_slots_are_title_only",
+    "content_shell_owns_running_title_key_message_and_page_number",
     "body_variant_regions_stay_inside_body_canvas"
   ],
   "pages": [
@@ -180,26 +180,68 @@
           "allow_overlap": false
         },
         {
+          "region_id": "key_message",
+          "frame": {
+            "x": 72.0,
+            "y": 94.0,
+            "width": 1120.0,
+            "height": 92.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "allow_overlap": false,
+          "purpose": "central_message_only"
+        },
+        {
           "region_id": "body_canvas",
           "frame": {
             "x": 64.0,
-            "y": 116.0,
+            "y": 204.0,
             "width": 1152.0,
-            "height": 548.0
+            "height": 458.0
           },
           "z_index": 10,
           "fit": "contain",
           "allow_overlap": false,
           "purpose": "body_variant_composition_only"
+        },
+        {
+          "region_id": "page_number",
+          "frame": {
+            "x": 1152.0,
+            "y": 676.0,
+            "width": 64.0,
+            "height": 24.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "allow_overlap": false,
+          "purpose": "automatic_navigation_only"
         }
       ],
       "containers": [
         {
-          "x": 38.67,
+          "x": 72.0,
           "y": 6.94,
-          "width": 391.32,
+          "width": 600.0,
           "height": 67.86,
           "id": "PAGE_TITLE",
+          "kind": "text"
+        },
+        {
+          "x": 72.0,
+          "y": 94.0,
+          "width": 1120.0,
+          "height": 92.0,
+          "id": "KEY_MESSAGE",
+          "kind": "text"
+        },
+        {
+          "x": 1152.0,
+          "y": 676.0,
+          "width": 64.0,
+          "height": 24.0,
+          "id": "PAGE_NUMBER",
           "kind": "text"
         }
       ]
@@ -223,19 +265,11 @@
       ],
       "containers": [
         {
-          "x": 440.0,
-          "y": 115.45,
-          "width": 400.0,
-          "height": 152.529,
+          "x": 320.0,
+          "y": 180.0,
+          "width": 640.0,
+          "height": 120.0,
           "id": "CLOSING_TITLE",
-          "kind": "text"
-        },
-        {
-          "x": 440.0,
-          "y": 244.52000000000004,
-          "width": 400.0,
-          "height": 152.529,
-          "id": "CLOSING_SUBTITLE",
           "kind": "text"
         },
         {

@@ -24,20 +24,25 @@
     "ending"
   ],
   "layout_count": 5,
-  "variant_count": 12,
+  "variant_count": 9,
   "component_asset_model": {
-    "component_pack_manifest": "component_pack.json",
-    "design_token_manifest": "design_tokens.json",
     "primitive_manifest": "component_primitives.json",
     "recipe_manifest": "body_variant_recipes.json",
-    "policy": "standard_primitives_composed_by_source_like_scene_recipes"
+    "policy": "source_derived_leaf_components_and_reviewed_imported_page_scenes_composed_by_registered_variants"
   },
   "primary_color": "#751497",
   "emphasis_color": "#C00000",
   "content_organization": [
-    "national_need",
-    "technical_innovation",
-    "application_benefits"
+    "significance_and_scientific_question",
+    "research_content_and_technical_route",
+    "innovation_feasibility_and_implementation"
+  ],
+  "grant_cn_profile": "story_structure.json#grant_cn_profile",
+  "content_information_hierarchy": [
+    "running_title",
+    "central_message",
+    "body_variant",
+    "page_number"
   ],
   "page_selection_inputs": [
     "canonical_shell",
@@ -48,5 +53,6 @@
   ],
   "forbidden_selection_inputs": [
     "dom_order_only"
-  ]
+  ],
+  "feedback_contract": "feedback_contract.json"
 }

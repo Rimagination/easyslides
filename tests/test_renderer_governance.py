@@ -9,7 +9,10 @@ class RendererGovernanceTests(unittest.TestCase):
         report = validate_renderer_governance(build_component_registry(include_template_asset_bank=False))
 
         self.assertEqual(report["status"], "pass", report)
-        self.assertEqual(report["checked_component_count"], 6)
+        # The former research-core packages are migration sources, not
+        # installable executable components. Runtime-governance now applies
+        # only when a public component package is installed.
+        self.assertEqual(report["checked_component_count"], 0)
         self.assertTrue(all(row["targets"] for row in report["components"]))
 
 

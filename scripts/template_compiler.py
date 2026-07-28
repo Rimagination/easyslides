@@ -55,6 +55,7 @@ DEFAULT_SOURCE_OF_TRUTH = {
     "design_tokens": "design_tokens.json",
     "qa": "qa_policy.json",
     "provenance": "source_page_roster.json",
+    "story": "story_structure.json",
 }
 
 
@@ -429,6 +430,7 @@ def _variant_rows(
                 "coordinate_space": str(source.get("coordinate_space") or ""),
                 "source_guidance": {
                     "section": str(source.get("section") or ""),
+                    "sections": [str(value) for value in source.get("sections", []) if str(value)],
                     "narrative_step": source.get("narrative_step"),
                     "source_page_purpose": str(source.get("source_page_purpose") or ""),
                 },
@@ -468,7 +470,12 @@ def _derived_projections(template_ir: dict[str, Any]) -> dict[str, dict[str, Any
             }
             capacity = slot.get("capacity")
             if isinstance(capacity, dict):
-                for key in ("max_lines", "max_chars_per_line", "overflow_action"):
+                for key in (
+                    "max_lines",
+                    "max_chars_per_line",
+                    "single_line_required",
+                    "overflow_action",
+                ):
                     if capacity.get(key) is not None:
                         detail[key] = capacity[key]
             if slot.get("vertical_anchor"):
@@ -522,6 +529,19 @@ def _derived_projections(template_ir: dict[str, Any]) -> dict[str, dict[str, Any
         "layout_count": len(shells),
         "variant_count": len(variants),
     }
+    story_structure = template_ir.get("story_structure")
+    if isinstance(story_structure, dict) and story_structure:
+        scenario_ids = sorted(
+            {
+                str(value.get("scenario_id"))
+                for value in story_structure.values()
+                if isinstance(value, dict) and value.get("scenario_id")
+            }
+        )
+        if story_structure.get("default_scenario"):
+            template_view["default_scenario"] = str(story_structure["default_scenario"])
+        if scenario_ids:
+            template_view["scenario_ids"] = scenario_ids
     return {
         "template.json": template_view,
         "page_catalog.json": {
@@ -607,6 +627,8 @@ def compile_template(
     design_tokens_path = _safe_source_path(directory, sources["design_tokens"], required=False)
     qa_path = _safe_source_path(directory, sources["qa"], required=False)
     provenance_path = _safe_source_path(directory, sources["provenance"], required=False)
+    story_path = _safe_source_path(directory, sources.get("story"), required=False)
+    feedback_contract_path = _safe_source_path(directory, sources.get("feedback_contract"), required=False)
 
     layouts = read_json(layouts_path)
     body_variants = read_json(variants_path, required=False) if variants_path else {}
@@ -625,6 +647,8 @@ def compile_template(
     }
     component_design_tokens = read_json(design_tokens_path, required=False) if design_tokens_path else {}
     qa_policy = read_json(qa_path, required=False) if qa_path else {}
+    story_structure = read_json(story_path, required=False) if story_path else {}
+    feedback_contract = read_json(feedback_contract_path, required=False) if feedback_contract_path else {}
     level = _infer_capability_level(
         package,
         has_variants=variants_path is not None,
@@ -669,6 +693,8 @@ def compile_template(
             "design_tokens": design_tokens_path,
             "qa": qa_path,
             "provenance": provenance_path,
+            "story": story_path,
+            "feedback_contract": feedback_contract_path,
             "capability_profile": directory / "capability_profile.json",
         }.items()
         if path is not None
@@ -730,12 +756,15 @@ def compile_template(
         body_variants=variants,
         components=component_records,
         qa_policy=qa_policy,
+        story_structure=story_structure,
         provenance={
             "path": source_hashes.get("provenance", {}).get("path", ""),
             "source_template_id": str(package.get("source_template_id") or ""),
         },
         source_hashes=source_hashes,
     )
+    if feedback_contract_path is not None:
+        template_ir["feedback_contract"] = feedback_contract
     template_ir["source_digest"] = _json_sha256(source_hashes)
     lock = {
         "schema_version": TEMPLATE_LOCK_SCHEMA,

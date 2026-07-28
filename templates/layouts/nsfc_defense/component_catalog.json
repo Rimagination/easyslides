@@ -1,280 +1,56 @@
 {
   "schema_version": "easyslides.nsfc_defense.component_catalog.v1",
   "template_id": "nsfc_defense",
-  "selection_policy": "body_variant_recipe_then_declared_slot_capacity",
+  "selection_policy": "body_variant_recipe_then_source_derived_leaf_capacity",
   "primitive_manifest": "component_primitives.json",
   "recipe_manifest": "body_variant_recipes.json",
   "components": [
     {
-      "asset_id": "component/nsfc_defense/evidence_triptych",
-      "component_id": "evidence_triptych",
-      "asset_path": "assets/components/evidence_triptych.svg",
+      "asset_id": "component/nsfc_defense/statement_panel",
+      "component_id": "statement_panel",
+      "asset_path": "assets/components/source_derived/statement_panel.svg",
       "asset_status": "renderable_svg",
       "render_backend": "template_svg_component",
       "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "national-need claim, relationship, and three evidence exhibits",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "statement",
+      "description": "Source statement panel for a short evidence heading.",
       "slots": [
         {
-          "slot_id": "CLAIM",
+          "slot_id": "STATEMENT",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 32,
-            "y": 22,
-            "width": 650,
-            "height": 44
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 32,
+            "max_chars_per_line": 34,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 23,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RELATION_LEFT",
-          "kind": "text",
-          "required": true,
           "geometry": {
-            "x": 48,
-            "y": 118,
-            "width": 192,
-            "height": 70
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 13,
-            "overflow_action": "choose_variant_or_split"
+            "x": 133.55,
+            "y": 12.81,
+            "width": 1037.23,
+            "height": 54.93
           },
           "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RELATION_RIGHT",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 276,
-            "y": 118,
-            "width": 192,
-            "height": 70
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 13,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_01",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 28,
-            "y": 280,
-            "width": 220,
-            "height": 136
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_01_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 28,
-            "y": 424,
-            "width": 220,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_02",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 270,
-            "y": 280,
-            "width": 220,
-            "height": 136
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_02_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 270,
-            "y": 424,
-            "width": 220,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_03",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 530,
-            "y": 98,
-            "width": 300,
-            "height": 196
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_03_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 530,
-            "y": 302,
-            "width": 300,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CALLOUT_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 862,
-            "y": 105,
-            "width": 224,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 15,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CALLOUT_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 862,
-            "y": 166,
-            "width": 224,
-            "height": 96
-          },
-          "capacity": {
-            "max_lines": 4,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 17,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "CALLOUT_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 862,
-            "y": 294,
-            "width": 224,
-            "height": 146
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "SYNTHESIS",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 530,
-            "y": 372,
-            "width": 556,
-            "height": 70
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 35,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#751497",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         }
       ],
       "selection": {
         "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
+          "content"
         ],
         "density": "dense_research_defense"
       },
       "geometry": {
-        "width": 1120,
-        "height": 520
+        "width": 1178.0,
+        "height": 81.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/statement_panel.svg",
+        "source_component_id": "statement_panel",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
       },
       "qa": {
         "required_gates": [
@@ -285,1104 +61,52 @@
       }
     },
     {
-      "asset_id": "component/nsfc_defense/two_track_evidence",
-      "component_id": "two_track_evidence",
-      "asset_path": "assets/components/two_track_evidence.svg",
+      "asset_id": "component/nsfc_defense/vertical_key_tag",
+      "component_id": "vertical_key_tag",
+      "asset_path": "assets/components/source_derived/vertical_key_tag.svg",
       "asset_status": "renderable_svg",
       "render_backend": "template_svg_component",
       "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "two strategic tracks with evidence and an application callout",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "label",
+      "description": "Source vertical key-point tag.",
       "slots": [
         {
-          "slot_id": "TRACK_01_TITLE",
+          "slot_id": "TAG",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 22,
-            "width": 492,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 22,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "TRACK_01_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 86,
-            "width": 260,
-            "height": 162
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "TRACK_01_POINT_01",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 310,
-            "y": 86,
-            "width": 212,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 14,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "TRACK_01_POINT_02",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 310,
-            "y": 145,
-            "width": 212,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 14,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "TRACK_01_POINT_03",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 310,
-            "y": 204,
-            "width": 212,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 14,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "TRACK_02_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 598,
-            "y": 22,
-            "width": 492,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 22,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "TRACK_02_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 598,
-            "y": 86,
-            "width": 330,
-            "height": 246
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "TRACK_02_CALLOUT_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 948,
-            "y": 88,
-            "width": 142,
-            "height": 48
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 17,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "TRACK_02_CALLOUT_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 948,
-            "y": 154,
-            "width": 142,
-            "height": 128
-          },
-          "capacity": {
-            "max_lines": 5,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "TRACK_01_TAKEAWAY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 372,
-            "width": 492,
-            "height": 68
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 30,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "TRACK_02_TAKEAWAY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 598,
-            "y": 372,
-            "width": 492,
-            "height": 68
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 30,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CONCLUSION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 180,
-            "y": 462,
-            "width": 760,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 42,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        }
-      ],
-      "selection": {
-        "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
-        ],
-        "density": "dense_research_defense"
-      },
-      "geometry": {
-        "width": 1120,
-        "height": 520
-      },
-      "qa": {
-        "required_gates": [
-          "asset_manifest",
-          "component_geometry",
-          "vertical_center_alignment"
-        ]
-      }
-    },
-    {
-      "asset_id": "component/nsfc_defense/bottleneck_chain",
-      "component_id": "bottleneck_chain",
-      "asset_path": "assets/components/bottleneck_chain.svg",
-      "asset_status": "renderable_svg",
-      "render_backend": "template_svg_component",
-      "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "claim, bottleneck, four connected scientific exhibits, and conclusion",
-      "slots": [
-        {
-          "slot_id": "CLAIM",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 28,
-            "y": 20,
-            "width": 1064,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 42,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 22,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "BOTTLENECK",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 270,
-            "y": 84,
-            "width": 580,
-            "height": 50
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 28,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_01",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 24,
-            "y": 184,
-            "width": 238,
-            "height": 142
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "NODE_01",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 24,
-            "y": 338,
-            "width": 238,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 17,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_02",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 300,
-            "y": 184,
-            "width": 238,
-            "height": 142
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "NODE_02",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 300,
-            "y": 338,
-            "width": 238,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 17,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_03",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 576,
-            "y": 184,
-            "width": 238,
-            "height": 142
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "NODE_03",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 576,
-            "y": 338,
-            "width": 238,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 17,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_04",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 852,
-            "y": 184,
-            "width": 238,
-            "height": 142
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "NODE_04",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 852,
-            "y": 338,
-            "width": 238,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 17,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CONCLUSION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 110,
-            "y": 430,
-            "width": 900,
-            "height": 52
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 48,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 22,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        }
-      ],
-      "selection": {
-        "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
-        ],
-        "density": "dense_research_defense"
-      },
-      "geometry": {
-        "width": 1120,
-        "height": 520
-      },
-      "qa": {
-        "required_gates": [
-          "asset_manifest",
-          "component_geometry",
-          "vertical_center_alignment"
-        ]
-      }
-    },
-    {
-      "asset_id": "component/nsfc_defense/hotspot_metrics",
-      "component_id": "hotspot_metrics",
-      "asset_path": "assets/components/hotspot_metrics.svg",
-      "asset_status": "renderable_svg",
-      "render_backend": "template_svg_component",
-      "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "research hotspot with hero evidence, supporting figures, and four metrics",
-      "slots": [
-        {
-          "slot_id": "THEME_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 20,
-            "width": 390,
-            "height": 48
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 22,
-          "fill": "#751497",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "THEME_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 78,
-            "width": 390,
-            "height": 86
-          },
-          "capacity": {
-            "max_lines": 4,
-            "max_chars_per_line": 25,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "HERO_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 452,
-            "y": 20,
-            "width": 278,
-            "height": 174
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "TRANSITION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 206,
-            "width": 700,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 38,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_01",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 268,
-            "width": 318,
-            "height": 160
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_01_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 436,
-            "width": 318,
-            "height": 32
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_02",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 374,
-            "y": 268,
-            "width": 318,
-            "height": 160
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_02_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 374,
-            "y": 436,
-            "width": 318,
-            "height": 32
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_01_VALUE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 770,
-            "y": 40,
-            "width": 136,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 24,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_01_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 770,
-            "y": 84,
-            "width": 136,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 11,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_02_VALUE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 936,
-            "y": 40,
-            "width": 136,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 24,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_02_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 936,
-            "y": 84,
-            "width": 136,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 11,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_03_VALUE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 770,
-            "y": 142,
-            "width": 136,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 24,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_03_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 770,
-            "y": 186,
-            "width": 136,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 11,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_04_VALUE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 936,
-            "y": 142,
-            "width": 136,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 24,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_04_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 936,
-            "y": 186,
-            "width": 136,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 11,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CONCLUSION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 748,
-            "y": 278,
-            "width": 340,
-            "height": 142
-          },
-          "capacity": {
-            "max_lines": 4,
-            "max_chars_per_line": 21,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        }
-      ],
-      "selection": {
-        "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
-        ],
-        "density": "dense_research_defense"
-      },
-      "geometry": {
-        "width": 1120,
-        "height": 520
-      },
-      "qa": {
-        "required_gates": [
-          "asset_manifest",
-          "component_geometry",
-          "vertical_center_alignment"
-        ]
-      }
-    },
-    {
-      "asset_id": "component/nsfc_defense/hotspot_panels",
-      "component_id": "hotspot_panels",
-      "asset_path": "assets/components/hotspot_panels.svg",
-      "asset_status": "renderable_svg",
-      "render_backend": "template_svg_component",
-      "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "three linked research hotspot panels with a synthesis",
-      "slots": [
-        {
-          "slot_id": "PANEL_01_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 24,
-            "width": 320,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 17,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "PANEL_01_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 84,
-            "width": 320,
-            "height": 68
-          },
           "capacity": {
             "max_lines": 3,
-            "max_chars_per_line": 20,
+            "max_chars_per_line": 2,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "PANEL_01_FIGURE",
-          "kind": "image",
-          "required": false,
+          "text_layout": "balanced_cjk_stack",
           "geometry": {
-            "x": 30,
-            "y": 170,
-            "width": 320,
-            "height": 184
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "PANEL_02_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 400,
-            "y": 24,
-            "width": 320,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 17,
-            "overflow_action": "choose_variant_or_split"
+            "x": 0.21,
+            "y": 36.89,
+            "width": 96.94,
+            "height": 38.78
           },
           "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "PANEL_02_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 400,
-            "y": 84,
-            "width": 320,
-            "height": 68
-          },
-          "capacity": {
-            "max_lines": 3,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "PANEL_02_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 400,
-            "y": 170,
-            "width": 320,
-            "height": 184
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "PANEL_03_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 770,
-            "y": 24,
-            "width": 320,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 17,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "PANEL_03_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 770,
-            "y": 84,
-            "width": 320,
-            "height": 68
-          },
-          "capacity": {
-            "max_lines": 3,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "PANEL_03_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 770,
-            "y": 170,
-            "width": 320,
-            "height": 184
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "SYNTHESIS",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 150,
-            "y": 400,
-            "width": 820,
-            "height": 60
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 46,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#751497",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         }
       ],
       "selection": {
         "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
+          "content"
         ],
         "density": "dense_research_defense"
       },
       "geometry": {
-        "width": 1120,
-        "height": 520
+        "width": 97.0,
+        "height": 113.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/vertical_key_tag.svg",
+        "source_component_id": "vertical_key_tag",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
       },
       "qa": {
         "required_gates": [
@@ -1393,263 +117,87 @@
       }
     },
     {
-      "asset_id": "component/nsfc_defense/innovation_evidence",
-      "component_id": "innovation_evidence",
-      "asset_path": "assets/components/innovation_evidence.svg",
+      "asset_id": "component/nsfc_defense/relationship_arrow_label",
+      "component_id": "relationship_arrow_label",
+      "asset_path": "assets/components/source_derived/relationship_arrow_label.svg",
       "asset_status": "renderable_svg",
       "render_backend": "template_svg_component",
       "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "innovation claim, four-step route, and three supporting exhibits",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "connector",
+      "description": "Source relationship arrow with two endpoint labels.",
       "slots": [
         {
-          "slot_id": "INNOVATION_CLAIM",
+          "slot_id": "LEFT_LABEL",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 20,
-            "width": 1060,
-            "height": 48
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 48,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 22,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "STEP_01",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 42,
-            "y": 106,
-            "width": 214,
-            "height": 54
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 14,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "STEP_02",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 310,
-            "y": 106,
-            "width": 214,
-            "height": 54
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 14,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "STEP_03",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 578,
-            "y": 106,
-            "width": 214,
-            "height": 54
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 14,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "STEP_04",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 846,
-            "y": 106,
-            "width": 214,
-            "height": 54
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 14,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "SUPPORTING_LINE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 184,
-            "y": 184,
-            "width": 752,
-            "height": 44
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 42,
+            "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 15.85,
+            "y": 9.99,
+            "width": 188.49,
+            "height": 32.31
+          },
           "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#751497",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "FIGURE_01",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 38,
-            "y": 258,
-            "width": 318,
-            "height": 152
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_01_CAPTION",
+          "slot_id": "RIGHT_LABEL",
           "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 38,
-            "y": 418,
-            "width": 318,
-            "height": 34
-          },
+          "required": true,
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 20,
+            "max_chars_per_line": 18,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 337.45,
+            "y": 9.99,
+            "width": 376.98,
+            "height": 32.31
+          },
           "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "FIGURE_02",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 401,
-            "y": 258,
-            "width": 318,
-            "height": 152
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_02_CAPTION",
+          "slot_id": "CONNECTOR_LABEL",
           "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 401,
-            "y": 418,
-            "width": 318,
-            "height": 34
-          },
+          "required": true,
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 20,
+            "max_chars_per_line": 4,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_03",
-          "kind": "image",
-          "required": false,
           "geometry": {
-            "x": 764,
-            "y": 258,
-            "width": 318,
-            "height": 152
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_03_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 764,
-            "y": 418,
-            "width": 318,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
+            "x": 244.17,
+            "y": 11.2,
+            "width": 48.47,
+            "height": 29.08
           },
           "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         }
       ],
       "selection": {
         "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
+          "content"
         ],
         "density": "dense_research_defense"
       },
       "geometry": {
-        "width": 1120,
-        "height": 520
+        "width": 733.0,
+        "height": 52.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/relationship_arrow_label.svg",
+        "source_component_id": "relationship_arrow_label",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
       },
       "qa": {
         "required_gates": [
@@ -1660,718 +208,699 @@
       }
     },
     {
-      "asset_id": "component/nsfc_defense/ann_snn_comparison",
-      "component_id": "ann_snn_comparison",
-      "asset_path": "assets/components/ann_snn_comparison.svg",
+      "asset_id": "component/nsfc_defense/image_footer_card",
+      "component_id": "image_footer_card",
+      "asset_path": "assets/components/source_derived/image_footer_card.svg",
       "asset_status": "renderable_svg",
       "render_backend": "template_svg_component",
       "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "ANN/SNN comparison matrix, method objective, and two evidence figures",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "media_card",
+      "description": "Source image card with a centered footer caption.",
       "slots": [
         {
-          "slot_id": "TABLE_TITLE",
-          "kind": "text",
+          "slot_id": "IMAGE",
+          "kind": "image",
           "required": true,
           "geometry": {
-            "x": 30,
-            "y": 20,
-            "width": 690,
-            "height": 40
+            "x": 16.39,
+            "y": 19.29,
+            "width": 344.78,
+            "height": 229.71
           },
+          "image_fit": "source_locked"
+        },
+        {
+          "slot_id": "CAPTION",
+          "kind": "text",
+          "required": true,
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 32,
+            "max_chars_per_line": 12,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 82.15,
+            "y": 211.21,
+            "width": 213.26,
+            "height": 48.47
+          },
           "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 378.0,
+        "height": 265.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/image_footer_card.svg",
+        "source_component_id": "image_footer_card",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/research_track_card",
+      "component_id": "research_track_card",
+      "asset_path": "assets/components/source_derived/research_track_card.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "media_card",
+      "description": "Source research-track image card with a centered caption.",
+      "slots": [
+        {
+          "slot_id": "IMAGE",
+          "kind": "image",
+          "required": true,
+          "geometry": {
+            "x": 16.7,
+            "y": 16.31,
+            "width": 344.78,
+            "height": 229.71
+          },
+          "image_fit": "source_locked"
         },
+        {
+          "slot_id": "CAPTION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "geometry": {
+            "x": 98.61,
+            "y": 211.21,
+            "width": 180.95,
+            "height": 48.47
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 378.0,
+        "height": 265.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/research_track_card.svg",
+        "source_component_id": "research_track_card",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/callout_media_panel",
+      "component_id": "callout_media_panel",
+      "asset_path": "assets/components/source_derived/callout_media_panel.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "callout",
+      "description": "Source callout panel with title, short note, and media.",
+      "slots": [
+        {
+          "slot_id": "TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "geometry": {
+            "x": 89.23,
+            "y": 28.19,
+            "width": 193.87,
+            "height": 38.78
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        },
+        {
+          "slot_id": "DETAIL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "geometry": {
+            "x": 11.74,
+            "y": 92.73,
+            "width": 348.85,
+            "height": 113.68
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        },
+        {
+          "slot_id": "IMAGE",
+          "kind": "image",
+          "required": true,
+          "geometry": {
+            "x": 13.78,
+            "y": 219.31,
+            "width": 344.78,
+            "height": 238.18
+          },
+          "image_fit": "source_locked"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 372.0,
+        "height": 468.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/callout_media_panel.svg",
+        "source_component_id": "callout_media_panel",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/evidence_tile",
+      "component_id": "evidence_tile",
+      "asset_path": "assets/components/source_derived/evidence_tile.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "evidence",
+      "description": "Source evidence tile with image and label.",
+      "slots": [
+        {
+          "slot_id": "IMAGE",
+          "kind": "image",
+          "required": true,
+          "geometry": {
+            "x": 1.45,
+            "y": 0.0,
+            "width": 235.8,
+            "height": 199.6
+          },
+          "image_fit": "source_locked"
+        },
+        {
+          "slot_id": "LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "geometry": {
+            "x": 42.57,
+            "y": 227.8,
+            "width": 161.56,
+            "height": 38.78
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 246.0,
+        "height": 272.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/evidence_tile.svg",
+        "source_component_id": "evidence_tile",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/metric_tile",
+      "component_id": "metric_tile",
+      "asset_path": "assets/components/source_derived/metric_tile.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "metric",
+      "description": "Source metric tile for one measured result.",
+      "slots": [
+        {
+          "slot_id": "VALUE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 8,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "geometry": {
+            "x": 34.58,
+            "y": 14.01,
+            "width": 127.06,
+            "height": 46.0
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        },
+        {
+          "slot_id": "LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "geometry": {
+            "x": 34.58,
+            "y": 62.0,
+            "width": 127.06,
+            "height": 39.25
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 195.0,
+        "height": 115.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/metric_tile.svg",
+        "source_component_id": "metric_tile",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/metric_group_header",
+      "component_id": "metric_group_header",
+      "asset_path": "assets/components/source_derived/metric_group_header.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "label",
+      "description": "Source metric-group header.",
+      "slots": [
+        {
+          "slot_id": "TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "geometry": {
+            "x": 85.64,
+            "y": 5.22,
+            "width": 245.58,
+            "height": 48.47
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 416.0,
+        "height": 60.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/metric_group_header.svg",
+        "source_component_id": "metric_group_header",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/comparison_matrix",
+      "component_id": "comparison_matrix",
+      "asset_path": "assets/components/source_derived/comparison_matrix.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "matrix",
+      "description": "Source three-column comparison matrix.",
+      "slots": [
         {
           "slot_id": "COLUMN_01",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 78,
-            "width": 154,
-            "height": 36
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 10,
+            "max_chars_per_line": 8,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": -0.33,
+            "y": 0.2,
+            "width": 177.45,
+            "height": 48.49
+          },
           "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
           "slot_id": "COLUMN_02",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 184,
-            "y": 78,
-            "width": 268,
-            "height": 36
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 12,
+            "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 177.12,
+            "y": 0.2,
+            "width": 559.77,
+            "height": 48.49
+          },
           "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
           "slot_id": "COLUMN_03",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 452,
-            "y": 78,
-            "width": 268,
-            "height": 36
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 12,
+            "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 736.89,
+            "y": 0.2,
+            "width": 440.24,
+            "height": 48.49
+          },
           "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
           "slot_id": "ROW_01_LABEL",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 114,
-            "width": 154,
-            "height": 38
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 8,
+            "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": -0.33,
+            "y": 48.69,
+            "width": 177.45,
+            "height": 59.73
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        },
+        {
+          "slot_id": "ROW_01_LEFT",
+          "kind": "text",
+          "required": true,
           "capacity": {
             "max_lines": 1,
             "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 177.12,
+            "y": 48.69,
+            "width": 559.77,
+            "height": 59.73
+          },
           "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "ROW_01_ANN",
+          "slot_id": "ROW_01_RIGHT",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 184,
-            "y": 114,
-            "width": 268,
-            "height": 38
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 18,
+            "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "ROW_01_SNN",
-          "kind": "text",
-          "required": true,
           "geometry": {
-            "x": 452,
-            "y": 114,
-            "width": 268,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
+            "x": 736.89,
+            "y": 48.69,
+            "width": 440.24,
+            "height": 59.73
           },
           "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
           "slot_id": "ROW_02_LABEL",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 152,
-            "width": 154,
-            "height": 38
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 8,
+            "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": -0.33,
+            "y": 108.42,
+            "width": 177.45,
+            "height": 59.73
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        },
+        {
+          "slot_id": "ROW_02_LEFT",
+          "kind": "text",
+          "required": true,
           "capacity": {
             "max_lines": 1,
             "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 177.12,
+            "y": 108.42,
+            "width": 559.77,
+            "height": 59.73
+          },
           "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "ROW_02_ANN",
+          "slot_id": "ROW_02_RIGHT",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 184,
-            "y": 152,
-            "width": 268,
-            "height": 38
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 18,
+            "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "ROW_02_SNN",
-          "kind": "text",
-          "required": true,
           "geometry": {
-            "x": 452,
-            "y": 152,
-            "width": 268,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
+            "x": 736.89,
+            "y": 108.42,
+            "width": 440.24,
+            "height": 59.73
           },
           "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
           "slot_id": "ROW_03_LABEL",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 190,
-            "width": 154,
-            "height": 38
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 8,
+            "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": -0.33,
+            "y": 168.16,
+            "width": 177.45,
+            "height": 59.73
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        },
+        {
+          "slot_id": "ROW_03_LEFT",
+          "kind": "text",
+          "required": true,
           "capacity": {
             "max_lines": 1,
             "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "ROW_03_ANN",
-          "kind": "text",
-          "required": true,
           "geometry": {
-            "x": 184,
-            "y": 190,
-            "width": 268,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
+            "x": 177.12,
+            "y": 168.16,
+            "width": 559.77,
+            "height": 59.73
           },
           "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "ROW_03_SNN",
+          "slot_id": "ROW_03_RIGHT",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 452,
-            "y": 190,
-            "width": 268,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "ROW_04_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 228,
-            "width": 154,
-            "height": 38
-          },
           "capacity": {
             "max_lines": 1,
             "max_chars_per_line": 10,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 736.89,
+            "y": 168.16,
+            "width": 440.24,
+            "height": 59.73
+          },
           "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "ROW_04_ANN",
+          "slot_id": "CONCLUSION_LABEL",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 184,
-            "y": 228,
-            "width": 268,
-            "height": 38
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 18,
+            "max_chars_per_line": 8,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "ROW_04_SNN",
-          "kind": "text",
-          "required": true,
           "geometry": {
-            "x": 452,
-            "y": 228,
-            "width": 268,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
+            "x": -0.33,
+            "y": 227.89,
+            "width": 177.45,
+            "height": 59.73
           },
           "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "OBJECTIVE_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 764,
-            "y": 29,
-            "width": 324,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "OBJECTIVE_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 764,
-            "y": 88,
-            "width": 324,
-            "height": 96
-          },
-          "capacity": {
-            "max_lines": 4,
-            "max_chars_per_line": 22,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "FIGURE_01",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 48,
-            "y": 328,
-            "width": 310,
-            "height": 118
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_01_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 48,
-            "y": 454,
-            "width": 310,
-            "height": 30
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_02",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 402,
-            "y": 328,
-            "width": 310,
-            "height": 118
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "FIGURE_02_CAPTION",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 402,
-            "y": 454,
-            "width": 310,
-            "height": 30
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "SYNTHESIS",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 764,
-            "y": 244,
-            "width": 324,
-            "height": 184
-          },
-          "capacity": {
-            "max_lines": 5,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 18,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        }
-      ],
-      "selection": {
-        "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
-        ],
-        "density": "dense_research_defense"
-      },
-      "geometry": {
-        "width": 1120,
-        "height": 520
-      },
-      "qa": {
-        "required_gates": [
-          "asset_manifest",
-          "component_geometry",
-          "vertical_center_alignment"
-        ]
-      }
-    },
-    {
-      "asset_id": "component/nsfc_defense/plasticity_training",
-      "component_id": "plasticity_training",
-      "asset_path": "assets/components/plasticity_training.svg",
-      "asset_status": "renderable_svg",
-      "render_backend": "template_svg_component",
-      "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "training mechanism comparison, callout, and device evidence",
-      "slots": [
-        {
-          "slot_id": "POINT_01",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 20,
-            "width": 514,
-            "height": 48
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 29,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "POINT_02",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 576,
-            "y": 20,
-            "width": 514,
-            "height": 48
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 29,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "ANN_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 94,
-            "width": 300,
-            "height": 36
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "ANN_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 138,
-            "width": 300,
-            "height": 188
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "SNN_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 386,
-            "y": 94,
-            "width": 300,
-            "height": 36
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "SNN_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 386,
-            "y": 138,
-            "width": 300,
-            "height": 188
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "CALLOUT_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 748,
-            "y": 94,
-            "width": 340,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CALLOUT_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 748,
-            "y": 148,
-            "width": 340,
-            "height": 96
-          },
-          "capacity": {
-            "max_lines": 4,
-            "max_chars_per_line": 22,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "SUPPORT_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 748,
-            "y": 270,
-            "width": 340,
-            "height": 110
-          },
-          "image_fit": "contain"
+          "style_policy": "source_locked"
         },
         {
           "slot_id": "CONCLUSION",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 80,
-            "y": 422,
-            "width": 960,
-            "height": 52
-          },
           "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 55,
+            "max_lines": 1,
+            "max_chars_per_line": 8,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 177.12,
+            "y": 227.89,
+            "width": 1000.01,
+            "height": 59.73
+          },
           "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         }
       ],
       "selection": {
         "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
+          "content"
         ],
         "density": "dense_research_defense"
       },
       "geometry": {
-        "width": 1120,
-        "height": 520
+        "width": 1178.0,
+        "height": 288.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/comparison_matrix.svg",
+        "source_component_id": "comparison_matrix",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
       },
       "qa": {
         "required_gates": [
@@ -2382,263 +911,63 @@
       }
     },
     {
-      "asset_id": "component/nsfc_defense/network_architecture",
-      "component_id": "network_architecture",
-      "asset_path": "assets/components/network_architecture.svg",
+      "asset_id": "component/nsfc_defense/media_caption_card",
+      "component_id": "media_caption_card",
+      "asset_path": "assets/components/source_derived/media_caption_card.svg",
       "asset_status": "renderable_svg",
       "render_backend": "template_svg_component",
       "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "formula, network architecture, module evidence, and hardware flow",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "media_card",
+      "description": "Source tall media card with centered caption.",
       "slots": [
         {
-          "slot_id": "ARCHITECTURE_CLAIM",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 20,
-            "width": 470,
-            "height": 52
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 25,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FORMULA",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 92,
-            "width": 220,
-            "height": 54
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_01",
+          "slot_id": "IMAGE",
           "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 276,
-            "y": 84,
-            "width": 240,
-            "height": 142
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "STAGE_01",
-          "kind": "text",
           "required": true,
           "geometry": {
-            "x": 534,
-            "y": 96,
-            "width": 170,
-            "height": 42
+            "x": 0.43,
+            "y": 0.02,
+            "width": 221.69,
+            "height": 263.61
           },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "image_fit": "source_locked"
         },
         {
-          "slot_id": "STAGE_02",
+          "slot_id": "CAPTION",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 732,
-            "y": 96,
-            "width": 170,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "STAGE_03",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 930,
-            "y": 96,
-            "width": 160,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "MODULE_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 258,
-            "width": 330,
-            "height": 40
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 20,
+            "max_chars_per_line": 8,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_02",
-          "kind": "image",
-          "required": false,
           "geometry": {
-            "x": 30,
-            "y": 310,
-            "width": 330,
-            "height": 132
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "MODULE_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 378,
-            "y": 310,
-            "width": 280,
-            "height": 132
-          },
-          "capacity": {
-            "max_lines": 5,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
+            "x": 30.5,
+            "y": 216.11,
+            "width": 161.56,
+            "height": 38.78
           },
           "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "HARDWARE_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 704,
-            "y": 258,
-            "width": 386,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 20,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "FIGURE_03",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 704,
-            "y": 310,
-            "width": 386,
-            "height": 132
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "CONCLUSION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 162,
-            "y": 466,
-            "width": 796,
-            "height": 34
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 43,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         }
       ],
       "selection": {
         "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
+          "content"
         ],
         "density": "dense_research_defense"
       },
       "geometry": {
-        "width": 1120,
-        "height": 520
+        "width": 222.0,
+        "height": 264.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/media_caption_card.svg",
+        "source_component_id": "media_caption_card",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
       },
       "qa": {
         "required_gates": [
@@ -2649,871 +978,275 @@
       }
     },
     {
-      "asset_id": "component/nsfc_defense/sensor_application",
-      "component_id": "sensor_application",
-      "asset_path": "assets/components/sensor_application.svg",
+      "asset_id": "component/nsfc_defense/application_metric_card",
+      "component_id": "application_metric_card",
+      "asset_path": "assets/components/source_derived/application_metric_card.svg",
       "asset_status": "renderable_svg",
       "render_backend": "template_svg_component",
       "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "dual application evidence: calibrated sensor and downstream system",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "metric",
+      "description": "Source application outcome card.",
       "slots": [
         {
-          "slot_id": "APPLICATION_CLAIM",
+          "slot_id": "LABEL",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 18,
-            "width": 1060,
-            "height": 46
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 50,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "LEFT_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 94,
-            "width": 476,
-            "height": 230
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "LEFT_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 334,
-            "width": 476,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 25,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "LEFT_NODE_01",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 30,
-            "y": 390,
-            "width": 142,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "LEFT_NODE_02",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 194,
-            "y": 390,
-            "width": 142,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "LEFT_NODE_03",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 358,
-            "y": 390,
-            "width": 142,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RIGHT_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 614,
-            "y": 94,
-            "width": 476,
-            "height": 230
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "RIGHT_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 614,
-            "y": 334,
-            "width": 476,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 25,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 19,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RIGHT_NODE_01",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 614,
-            "y": 390,
-            "width": 142,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RIGHT_NODE_02",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 778,
-            "y": 390,
-            "width": 142,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RIGHT_NODE_03",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 942,
-            "y": 390,
-            "width": 142,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 15,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CONCLUSION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 150,
-            "y": 458,
-            "width": 820,
-            "height": 38
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 46,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        }
-      ],
-      "selection": {
-        "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
-        ],
-        "density": "dense_research_defense"
-      },
-      "geometry": {
-        "width": 1120,
-        "height": 520
-      },
-      "qa": {
-        "required_gates": [
-          "asset_manifest",
-          "component_geometry",
-          "vertical_center_alignment"
-        ]
-      }
-    },
-    {
-      "asset_id": "component/nsfc_defense/literature_result",
-      "component_id": "literature_result",
-      "asset_path": "assets/components/literature_result.svg",
-      "asset_status": "renderable_svg",
-      "render_backend": "template_svg_component",
-      "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "researcher profile, publication collage, and external validation",
-      "slots": [
-        {
-          "slot_id": "PROFILE_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 54,
-            "width": 164,
-            "height": 164
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "PROFILE_NAME",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 216,
-            "y": 58,
-            "width": 284,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 16,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 22,
-          "fill": "#751497",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "PROFILE_CREDENTIAL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 216,
-            "y": 108,
-            "width": 284,
-            "height": 48
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "PROFILE_QUOTE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 216,
-            "y": 170,
-            "width": 284,
-            "height": 54
-          },
-          "capacity": {
-            "max_lines": 3,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "PAPER_FIGURE_01",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 536,
-            "y": 50,
-            "width": 248,
-            "height": 150
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "PAPER_FIGURE_02",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 810,
-            "y": 50,
-            "width": 280,
-            "height": 150
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "PAPER_FIGURE_03",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 276,
-            "width": 328,
-            "height": 144
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "VALIDATION_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 390,
-            "y": 274,
-            "width": 286,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "VALIDATION_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 390,
-            "y": 330,
-            "width": 286,
-            "height": 100
-          },
-          "capacity": {
-            "max_lines": 5,
-            "max_chars_per_line": 18,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "RESULT_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 720,
-            "y": 274,
-            "width": 370,
-            "height": 44
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 22,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RESULT_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 720,
-            "y": 330,
-            "width": 370,
-            "height": 100
-          },
-          "capacity": {
-            "max_lines": 5,
-            "max_chars_per_line": 24,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "CONCLUSION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 136,
-            "y": 462,
-            "width": 848,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 46,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        }
-      ],
-      "selection": {
-        "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
-        ],
-        "density": "dense_research_defense"
-      },
-      "geometry": {
-        "width": 1120,
-        "height": 520
-      },
-      "qa": {
-        "required_gates": [
-          "asset_manifest",
-          "component_geometry",
-          "vertical_center_alignment"
-        ]
-      }
-    },
-    {
-      "asset_id": "component/nsfc_defense/application_benefits",
-      "component_id": "application_benefits",
-      "asset_path": "assets/components/application_benefits.svg",
-      "asset_status": "renderable_svg",
-      "render_backend": "template_svg_component",
-      "renderer_id": "svg_fragment",
-      "classification": "template_scoped",
-      "reuse_policy": "nsfc_defense_shell_or_body_variant",
-      "description": "transfer evidence, quantitative benefits, and application result",
-      "slots": [
-        {
-          "slot_id": "HERO_FIGURE",
-          "kind": "image",
-          "required": false,
-          "geometry": {
-            "x": 30,
-            "y": 26,
-            "width": 340,
-            "height": 184
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "TRANSFER_CLAIM",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 400,
-            "y": 26,
-            "width": 690,
-            "height": 48
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 38,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 21,
-          "fill": "#751497",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "TRANSFER_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 400,
-            "y": 88,
-            "width": 690,
-            "height": 72
-          },
-          "capacity": {
-            "max_lines": 3,
-            "max_chars_per_line": 44,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "start"
-        },
-        {
-          "slot_id": "TAG_01",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 400,
-            "y": 176,
-            "width": 146,
-            "height": 32
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 9,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 14,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "TAG_02",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 558,
-            "y": 176,
-            "width": 146,
-            "height": 32
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 9,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 14,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "TAG_03",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 716,
-            "y": 176,
-            "width": 146,
-            "height": 32
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 9,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 14,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "TAG_04",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 874,
-            "y": 176,
-            "width": 146,
-            "height": 32
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 9,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 14,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_01_VALUE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 40,
-            "y": 276,
-            "width": 220,
-            "height": 56
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 10,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 31,
-          "fill": "#751497",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "METRIC_01_LABEL",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 40,
-            "y": 338,
-            "width": 220,
-            "height": 34
-          },
           "capacity": {
             "max_lines": 1,
             "max_chars_per_line": 14,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 121.33,
+            "y": 126.41,
+            "width": 242.34,
+            "height": 29.08
+          },
           "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "METRIC_02_VALUE",
+          "slot_id": "VALUE",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 286,
-            "y": 276,
-            "width": 220,
-            "height": 56
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 10,
+            "max_chars_per_line": 8,
             "overflow_action": "choose_variant_or_split"
           },
+          "geometry": {
+            "x": 176.7,
+            "y": 68.38,
+            "width": 131.61,
+            "height": 51.7
+          },
           "vertical_anchor": "middle",
-          "font_size": 31,
-          "fill": "#751497",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         },
         {
-          "slot_id": "METRIC_02_LABEL",
+          "slot_id": "TITLE",
           "kind": "text",
           "required": true,
-          "geometry": {
-            "x": 286,
-            "y": 338,
-            "width": 220,
-            "height": 34
-          },
           "capacity": {
             "max_lines": 1,
-            "max_chars_per_line": 14,
+            "max_chars_per_line": 12,
             "overflow_action": "choose_variant_or_split"
           },
-          "vertical_anchor": "middle",
-          "font_size": 16,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RESULT_FIGURE",
-          "kind": "image",
-          "required": false,
           "geometry": {
-            "x": 658,
-            "y": 258,
-            "width": 432,
-            "height": 142
-          },
-          "image_fit": "contain"
-        },
-        {
-          "slot_id": "RESULT_TITLE",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 532,
-            "y": 278,
-            "width": 106,
-            "height": 40
-          },
-          "capacity": {
-            "max_lines": 2,
-            "max_chars_per_line": 7,
-            "overflow_action": "choose_variant_or_split"
+            "x": 71.24,
+            "y": 6.36,
+            "width": 342.51,
+            "height": 42.01
           },
           "vertical_anchor": "middle",
-          "font_size": 17,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "RESULT_BODY",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 532,
-            "y": 328,
-            "width": 106,
-            "height": 62
-          },
-          "capacity": {
-            "max_lines": 3,
-            "max_chars_per_line": 7,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 14,
-          "fill": "#060607",
-          "text_anchor": "middle"
-        },
-        {
-          "slot_id": "CONCLUSION",
-          "kind": "text",
-          "required": true,
-          "geometry": {
-            "x": 120,
-            "y": 448,
-            "width": 880,
-            "height": 42
-          },
-          "capacity": {
-            "max_lines": 1,
-            "max_chars_per_line": 48,
-            "overflow_action": "choose_variant_or_split"
-          },
-          "vertical_anchor": "middle",
-          "font_size": 20,
-          "fill": "#FFFFFF",
-          "text_anchor": "middle"
+          "style_policy": "source_locked"
         }
       ],
       "selection": {
         "page_roles": [
-          "content",
-          "agenda",
-          "chapter"
-        ],
-        "archetypes": [
-          "ann_snn_comparison",
-          "application_benefits",
-          "bottleneck_chain",
-          "chapter_divider",
-          "cover",
-          "ending",
-          "evidence_triptych",
-          "evidence_triptych_default",
-          "hotspot_metrics",
-          "hotspot_panels",
-          "innovation_evidence",
-          "literature_result",
-          "network_architecture",
-          "plasticity_training",
-          "section_roadmap",
-          "sensor_application",
-          "two_track_evidence"
+          "content"
         ],
         "density": "dense_research_defense"
       },
       "geometry": {
-        "width": 1120,
-        "height": 520
+        "width": 484.0,
+        "height": 162.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/application_metric_card.svg",
+        "source_component_id": "application_metric_card",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
       },
       "qa": {
         "required_gates": [
           "asset_manifest",
           "component_geometry",
           "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/vertical_feature_image_panel",
+      "component_id": "vertical_feature_image_panel",
+      "asset_path": "assets/components/source_derived/vertical_feature_image_panel.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_source_derived_leaf",
+      "reuse_policy": "nsfc_defense_body_variant_only",
+      "category": "media_panel",
+      "description": "Source feature image panel with an identity label.",
+      "slots": [
+        {
+          "slot_id": "LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 2,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "text_layout": "balanced_cjk_stack",
+          "geometry": {
+            "x": 12.79,
+            "y": 23.68,
+            "width": 68.59,
+            "height": 155.1
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "source_locked"
+        },
+        {
+          "slot_id": "IMAGE",
+          "kind": "image",
+          "required": true,
+          "geometry": {
+            "x": 107.0,
+            "y": 9.36,
+            "width": 475.16,
+            "height": 184.18
+          },
+          "image_fit": "source_locked"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 582.0,
+        "height": 202.0
+      },
+      "provenance": {
+        "source_asset": "templates/components/source_templates/nsfc_defense_distilled_kit/components/source_faithful/vertical_feature_image_panel.svg",
+        "source_component_id": "vertical_feature_image_panel",
+        "style_mutation_policy": "forbid_color_font_size_geometry_crop_and_layer_order_changes",
+        "native_viewport_policy": "clip_only_previously_hidden_rectangle_extents"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/grant_text_evidence_stack",
+      "component_id": "grant_text_evidence_stack",
+      "asset_path": "assets/components/imported/grant_text_evidence_stack.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped_imported_page_scene",
+      "reuse_policy": "nsfc_defense_grant_text_evidence_stack_only",
+      "category": "text_rich_argument_scene",
+      "description": "NSFC-purple adapted high-density evidence page derived from the reviewed research_core argument-stack scene; use only through its reviewed grant body variant.",
+      "slots": [
+        {
+          "slot_id": "EVIDENCE_CLAIM",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 156.0,
+            "y": 50.0,
+            "width": 968.0,
+            "height": 58.0
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 34,
+            "overflow_action": "shorten_or_split"
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "template_token_adapted"
+        },
+        {
+          "slot_id": "EVIDENCE_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 198.0,
+            "y": 168.0,
+            "width": 924.0,
+            "height": 76.7
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 42,
+            "overflow_action": "split_or_reduce_items"
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "template_token_adapted"
+        },
+        {
+          "slot_id": "EVIDENCE_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 198.0,
+            "y": 274.7,
+            "width": 924.0,
+            "height": 76.7
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 42,
+            "overflow_action": "split_or_reduce_items"
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "template_token_adapted"
+        },
+        {
+          "slot_id": "EVIDENCE_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 198.0,
+            "y": 381.4,
+            "width": 924.0,
+            "height": 76.7
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 42,
+            "overflow_action": "split_or_reduce_items"
+          },
+          "vertical_anchor": "middle",
+          "style_policy": "template_token_adapted"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content"
+        ],
+        "story_roles": [
+          "grant_significance",
+          "grant_rigor_risk"
+        ],
+        "density": "text_rich_grant"
+      },
+      "geometry": {
+        "width": 1280,
+        "height": 509
+      },
+      "provenance": {
+        "source_asset": "templates/layouts/research_core/assets/components/scenes/evidence_stack.svg",
+        "source_component_id": "component/research_core/evidence_stack",
+        "import_mode": "reviewed_page_scene",
+        "style_mutation_policy": "preserve_source_structure_geometry_and_fonts_map_visual_tokens_to_nsfc_purple"
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment",
+          "cross_material_smoke"
         ]
       }
     }

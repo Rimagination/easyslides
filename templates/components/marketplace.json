@@ -7,23 +7,5 @@
     "install_rule": "validate_pack_and_dependencies_before_activation",
     "execution": "no_pack_supplied_code"
   },
-  "packs": [
-    {
-      "pack_id": "research-core",
-      "version": "1.0.0",
-      "display_name": "Research Core",
-      "description": "Evidence, comparison, metric, process, figure, and parallel-summary components for research slides.",
-      "license": "MIT",
-      "tags": ["research", "academic", "evidence", "native-pptx"],
-      "source": {
-        "kind": "local",
-        "path": "templates/components/packages/research-core"
-      },
-      "capabilities": ["svg_preview", "native_pptx", "input_schema", "capacity_contract"],
-      "verification": {
-        "required_gates": ["component_pack_contract", "component_preview_gate", "renderer_governance"],
-        "status": "verified"
-      }
-    }
-  ]
+  "packs": []
 }

@@ -25,6 +25,11 @@ assets/slides/work-03/slide-01.jpg  defense_topnav
 assets/slides/work-03/slide-02.jpg
 ...
 assets/slides/work-03/slide-29.jpg
+
+assets/slides/work-04/slide-01.jpg  nsfc_defense
+assets/slides/work-04/slide-02.jpg
+...
+assets/slides/work-04/slide-14.jpg
 ```
 
 Then register those paths in `slideAssets` inside `index.html`, and add the template id as the final field of the matching `copy.*.works` item. The detail page will place the selected image exactly inside the photo screen area and use the current mock slide only as a fallback.

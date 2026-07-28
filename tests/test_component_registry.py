@@ -14,7 +14,7 @@ class ComponentRegistryTests(unittest.TestCase):
         self.assertEqual(registry["schema_version"], "easyslides.component_registry.v1")
         self.assertEqual(report["status"], "pass", report["issues"])
         self.assertIn("card_component", registry["counts_by_granularity"])
-        self.assertIn("component_package", registry["counts_by_granularity"])
+        self.assertNotIn("component_package", registry["counts_by_granularity"])
         self.assertIn("page_recipe", registry["counts_by_granularity"])
         self.assertIn("body_variant", registry["counts_by_granularity"])
         self.assertIn("template_component", registry["counts_by_granularity"])
@@ -28,11 +28,13 @@ class ComponentRegistryTests(unittest.TestCase):
         asset_ids = {asset["asset_id"] for asset in registry["assets"]}
 
         self.assertIn("card/three_card_summary", asset_ids)
-        self.assertIn("component_package/three_card_summary", asset_ids)
+        self.assertNotIn("component_package/three_card_summary", asset_ids)
+        self.assertIn("body_variant/research_core/three_card_summary", asset_ids)
+        self.assertIn("component/research_core/three_card_summary", asset_ids)
         self.assertIn("visual_recipe/pm_flow_strip", asset_ids)
         self.assertIn("page_recipe/pm_causal_map", asset_ids)
         self.assertIn("body_variant/defense_topnav/three_card_summary", asset_ids)
-        self.assertIn("component/nsfc_defense/claim_bar", asset_ids)
+        self.assertIn("component/nsfc_defense/statement_panel", asset_ids)
         self.assertIn("chart/bar_chart", asset_ids)
         self.assertIn("icon_family/tabler-outline", asset_ids)
 
@@ -43,7 +45,7 @@ class ComponentRegistryTests(unittest.TestCase):
         variant = next(
             asset
             for asset in registry["assets"]
-            if asset["asset_id"] == "body_variant/nsfc_defense/evidence_triptych"
+            if asset["asset_id"] == "body_variant/nsfc_defense/evidence_chain"
         )
 
         refs = variant["metadata"]["component_refs"]
@@ -51,18 +53,21 @@ class ComponentRegistryTests(unittest.TestCase):
         self.assertEqual(variant["metadata"]["composition_mode"], "ordered_component_refs")
         self.assertEqual(
             [ref["asset_id"] for ref in refs],
-            ["component/nsfc_defense/evidence_triptych"],
+            [
+                "component/nsfc_defense/statement_panel",
+                "component/nsfc_defense/vertical_key_tag",
+                "component/nsfc_defense/evidence_tile",
+                "component/nsfc_defense/evidence_tile",
+                "component/nsfc_defense/evidence_tile",
+                "component/nsfc_defense/evidence_tile",
+            ],
         )
         self.assertEqual(
             dependencies,
             [
-                "component/nsfc_defense/evidence_triptych",
-                "component/nsfc_defense/claim_bar",
-                "component/nsfc_defense/info_panel",
-                "component/nsfc_defense/evidence_figure",
-                "component/nsfc_defense/caption_bar",
-                "component/nsfc_defense/callout_panel",
-                "component/nsfc_defense/synthesis_bar",
+                "component/nsfc_defense/statement_panel",
+                "component/nsfc_defense/vertical_key_tag",
+                "component/nsfc_defense/evidence_tile",
             ],
         )
 
@@ -80,19 +85,18 @@ class ComponentRegistryTests(unittest.TestCase):
         self.assertIn("chart/bar_chart", {asset["asset_id"] for asset in registry["assets"]})
         self.assertEqual(registry["counts_by_granularity"]["chart_asset"], 71)
 
-    def test_component_package_assets_preserve_story_and_alignment_metadata(self):
+    def test_migrated_research_core_scene_preserves_alignment_metadata(self):
         from scripts.component_registry import build_component_registry
 
         registry = build_component_registry(include_template_asset_bank=False)
         package_asset = next(
             asset
             for asset in registry["assets"]
-            if asset["asset_id"] == "component_package/three_card_summary"
+            if asset["asset_id"] == "component/research_core/three_card_summary"
         )
         invariants = package_asset["metadata"]["qa"]["alignment_invariants"]
 
-        self.assertEqual(package_asset["metadata"]["source_asset_id"], "card/three_card_summary")
-        self.assertTrue(package_asset["metadata"]["stories"])
+        self.assertEqual(package_asset["metadata"]["template_id"], "research_core")
         self.assertEqual(invariants[0]["rule"], "text_center_y_matches_container_center_y")
         self.assertEqual(package_asset["slots"][0]["alignment"]["vertical"], "middle")
 

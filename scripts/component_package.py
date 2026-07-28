@@ -40,6 +40,23 @@ def _read_json(path: Path) -> dict[str, Any]:
     return payload
 
 
+def component_package_visibility(package_dir: Path) -> str:
+    """Return the owning pack's publication visibility for one component."""
+    manifest_path = Path(package_dir).parents[1] / "pack.json"
+    if not manifest_path.is_file():
+        return "public"
+    try:
+        manifest = _read_json(manifest_path)
+    except (OSError, json.JSONDecodeError, ValueError):
+        return "public"
+    return str(manifest.get("visibility") or "public")
+
+
+def is_public_component_package(package_dir: Path) -> bool:
+    """Exclude packages retained solely as template migration provenance."""
+    return component_package_visibility(package_dir) != "template_migration_source"
+
+
 def _is_nonempty_string(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 

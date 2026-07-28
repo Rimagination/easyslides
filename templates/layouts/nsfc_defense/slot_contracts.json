@@ -259,28 +259,64 @@
       "slot_model": "content",
       "source_slide_id": "slide-03",
       "slots": [
-        "PAGE_TITLE"
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "PAGE_NUMBER"
       ],
       "text_slots": [
-        "PAGE_TITLE"
+        "PAGE_TITLE",
+        "KEY_MESSAGE",
+        "PAGE_NUMBER"
       ],
       "image_slots": [],
       "replacement": "replace_declared_slots_preserve_template_geometry",
       "slot_details": [
         {
           "slot_id": "PAGE_TITLE",
-          "role": "page_title",
+          "role": "running_title",
           "kind": "text",
           "required": true,
           "geometry": {
-            "x": 38.67,
+            "x": 72.0,
             "y": 6.94,
-            "width": 391.32,
+            "width": 600.0,
             "height": 67.86
           },
           "max_lines": 1,
-          "max_chars_per_line": 16,
-          "overflow_action": "split_or_choose_page_variant"
+          "max_chars_per_line": 10,
+          "overflow_action": "shorten_title_required"
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "central_message",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 72.0,
+            "y": 94.0,
+            "width": 1120.0,
+            "height": 92.0
+          },
+          "max_lines": 2,
+          "max_chars_per_line": 38,
+          "overflow_action": "shorten_or_split_key_message_required",
+          "vertical_anchor": "middle"
+        },
+        {
+          "slot_id": "PAGE_NUMBER",
+          "role": "page_number",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 1152.0,
+            "y": 676.0,
+            "width": 64.0,
+            "height": 24.0
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_action": "template_owned_automatic",
+          "vertical_anchor": "middle"
         }
       ]
     },
@@ -292,14 +328,12 @@
       "source_slide_id": "slide-17",
       "slots": [
         "CLOSING_TITLE",
-        "CLOSING_SUBTITLE",
         "AFFILIATION",
         "PRESENTER",
         "DATE"
       ],
       "text_slots": [
         "CLOSING_TITLE",
-        "CLOSING_SUBTITLE",
         "AFFILIATION",
         "PRESENTER",
         "DATE"
@@ -313,25 +347,10 @@
           "kind": "text",
           "required": true,
           "geometry": {
-            "x": 440.0,
-            "y": 115.45,
-            "width": 400.0,
-            "height": 152.529
-          },
-          "max_lines": 1,
-          "max_chars_per_line": 16,
-          "overflow_action": "split_or_choose_page_variant"
-        },
-        {
-          "slot_id": "CLOSING_SUBTITLE",
-          "role": "closing_subtitle",
-          "kind": "text",
-          "required": false,
-          "geometry": {
-            "x": 440.0,
-            "y": 244.52000000000004,
-            "width": 400.0,
-            "height": 152.529
+            "x": 320.0,
+            "y": 180.0,
+            "width": 640.0,
+            "height": 120.0
           },
           "max_lines": 1,
           "max_chars_per_line": 16,
@@ -671,22 +690,86 @@
     {
       "slot_id": "PAGE_TITLE",
       "kind": "text",
-      "role": "page_title",
+      "role": "running_title",
       "required": true,
       "geometry": {
-        "x": 38.67,
+        "x": 72.0,
         "y": 6.94,
-        "width": 391.32,
+        "width": 600.0,
         "height": 67.86
       },
       "capacity": {
         "max_lines": 1,
-        "max_chars_per_line": 16,
-        "overflow_action": "split_or_choose_page_variant"
+        "max_chars_per_line": 10,
+        "single_line_required": true,
+        "overflow_action": "shorten_title_required",
+        "measurement": "full_width_equivalent_chars"
       },
       "line_height_ratio": 0.75,
       "text_anchor": "start",
       "source_position": 1,
+      "content_role": "running_title",
+      "shell_id": "content",
+      "source_slide_id": "slide-03",
+      "replacement": {
+        "preserve_geometry": true,
+        "preserve_layer_order": true
+      }
+    },
+    {
+      "slot_id": "KEY_MESSAGE",
+      "kind": "text",
+      "role": "central_message",
+      "content_role": "central_message",
+      "required": true,
+      "geometry": {
+        "x": 72.0,
+        "y": 94.0,
+        "width": 1120.0,
+        "height": 92.0
+      },
+      "capacity": {
+        "max_lines": 2,
+        "max_chars_per_line": 38,
+        "single_line_per_bullet": true,
+        "overflow_action": "shorten_or_split_key_message_required",
+        "measurement": "full_width_equivalent_chars"
+      },
+      "line_height_ratio": 1.1,
+      "text_anchor": "start",
+      "vertical_anchor": "middle",
+      "rendering": "square_bullets",
+      "source_position": 2,
+      "shell_id": "content",
+      "source_slide_id": "slide-03",
+      "replacement": {
+        "preserve_geometry": true,
+        "preserve_layer_order": true
+      }
+    },
+    {
+      "slot_id": "PAGE_NUMBER",
+      "kind": "text",
+      "role": "page_number",
+      "content_role": "navigation",
+      "required": true,
+      "geometry": {
+        "x": 1152.0,
+        "y": 676.0,
+        "width": 64.0,
+        "height": 24.0
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 3,
+        "single_line_required": true,
+        "overflow_action": "template_owned_automatic"
+      },
+      "line_height_ratio": 1.0,
+      "text_anchor": "end",
+      "vertical_anchor": "middle",
+      "source_position": 3,
+      "value_policy": "automatic_slide_index",
       "shell_id": "content",
       "source_slide_id": "slide-03",
       "replacement": {
@@ -700,10 +783,10 @@
       "role": "closing_title",
       "required": true,
       "geometry": {
-        "x": 440.0,
-        "y": 115.45,
-        "width": 400.0,
-        "height": 152.529
+        "x": 320.0,
+        "y": 180.0,
+        "width": 640.0,
+        "height": 120.0
       },
       "capacity": {
         "max_lines": 1,
@@ -713,32 +796,6 @@
       "line_height_ratio": 1.25,
       "text_anchor": "middle",
       "source_position": 1,
-      "shell_id": "ending",
-      "source_slide_id": "slide-17",
-      "replacement": {
-        "preserve_geometry": true,
-        "preserve_layer_order": true
-      }
-    },
-    {
-      "slot_id": "CLOSING_SUBTITLE",
-      "kind": "text",
-      "role": "closing_subtitle",
-      "required": false,
-      "geometry": {
-        "x": 440.0,
-        "y": 244.52000000000004,
-        "width": 400.0,
-        "height": 152.529
-      },
-      "capacity": {
-        "max_lines": 1,
-        "max_chars_per_line": 16,
-        "overflow_action": "split_or_choose_page_variant"
-      },
-      "line_height_ratio": 1.25,
-      "text_anchor": "middle",
-      "source_position": 2,
       "shell_id": "ending",
       "source_slide_id": "slide-17",
       "replacement": {

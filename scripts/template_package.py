@@ -23,6 +23,7 @@ ACTIVE_LAYOUT_IDS = frozenset(
         "defense_topnav",
         "literature_minimal",
         "nsfc_defense",
+        "research_core",
     }
 )
 

@@ -3,172 +3,115 @@
   "template_id": "nsfc_defense",
   "recipes": [
     {
-      "variant_id": "evidence_triptych",
-      "scene_component": "evidence_triptych",
+      "variant_id": "need_relationship_evidence",
+      "scene_component": "statement_panel",
       "primitives": [
-        "claim_bar",
-        "info_panel",
-        "evidence_figure",
-        "caption_bar",
-        "callout_panel",
-        "synthesis_bar"
+        "relationship_arrow_label",
+        "image_footer_card",
+        "research_track_card",
+        "callout_media_panel"
       ],
       "source_slides": [
         3
       ]
     },
     {
-      "variant_id": "two_track_evidence",
-      "scene_component": "two_track_evidence",
+      "variant_id": "dual_track_evidence",
+      "scene_component": "statement_panel",
       "primitives": [
-        "claim_bar",
-        "evidence_figure",
-        "info_panel",
-        "callout_panel",
-        "synthesis_bar",
-        "conclusion_bar"
+        "image_footer_card",
+        "research_track_card",
+        "vertical_key_tag"
       ],
       "source_slides": [
         4
       ]
     },
     {
-      "variant_id": "bottleneck_chain",
-      "scene_component": "bottleneck_chain",
+      "variant_id": "evidence_chain",
+      "scene_component": "statement_panel",
       "primitives": [
-        "claim_bar",
-        "conclusion_bar",
-        "evidence_figure",
-        "caption_bar",
-        "process_step"
+        "vertical_key_tag",
+        "evidence_tile",
+        "evidence_tile",
+        "evidence_tile",
+        "evidence_tile"
       ],
       "source_slides": [
         5
       ]
     },
     {
-      "variant_id": "hotspot_metrics",
-      "scene_component": "hotspot_metrics",
+      "variant_id": "metric_dashboard",
+      "scene_component": "metric_group_header",
       "primitives": [
-        "info_panel",
-        "evidence_figure",
-        "caption_bar",
         "metric_tile",
-        "callout_panel"
+        "metric_tile",
+        "metric_tile",
+        "metric_tile",
+        "vertical_feature_image_panel"
       ],
       "source_slides": [
         6
       ]
     },
     {
-      "variant_id": "hotspot_panels",
-      "scene_component": "hotspot_panels",
+      "variant_id": "three_evidence_track",
+      "scene_component": "statement_panel",
       "primitives": [
-        "claim_bar",
-        "info_panel",
-        "evidence_figure",
-        "synthesis_bar"
+        "relationship_arrow_label",
+        "image_footer_card",
+        "image_footer_card",
+        "image_footer_card"
       ],
       "source_slides": [
-        7
-      ]
-    },
-    {
-      "variant_id": "innovation_evidence",
-      "scene_component": "innovation_evidence",
-      "primitives": [
-        "conclusion_bar",
-        "process_step",
-        "synthesis_bar",
-        "evidence_figure",
-        "caption_bar"
-      ],
-      "source_slides": [
+        7,
         9
       ]
     },
     {
-      "variant_id": "ann_snn_comparison",
-      "scene_component": "ann_snn_comparison",
+      "variant_id": "comparison_evidence",
+      "scene_component": "statement_panel",
       "primitives": [
-        "comparison_matrix",
-        "callout_panel",
-        "evidence_figure",
-        "caption_bar"
+        "comparison_matrix"
       ],
       "source_slides": [
-        10
-      ]
-    },
-    {
-      "variant_id": "plasticity_training",
-      "scene_component": "plasticity_training",
-      "primitives": [
-        "claim_bar",
-        "conclusion_bar",
-        "info_panel",
-        "evidence_figure",
-        "callout_panel"
-      ],
-      "source_slides": [
+        10,
         11
       ]
     },
     {
-      "variant_id": "network_architecture",
-      "scene_component": "network_architecture",
+      "variant_id": "application_system",
+      "scene_component": "application_metric_card",
       "primitives": [
-        "claim_bar",
-        "info_panel",
-        "evidence_figure",
-        "process_step",
-        "synthesis_bar"
+        "vertical_feature_image_panel",
+        "callout_media_panel",
+        "media_caption_card",
+        "research_track_card"
       ],
       "source_slides": [
-        12
-      ]
-    },
-    {
-      "variant_id": "sensor_application",
-      "scene_component": "sensor_application",
-      "primitives": [
-        "claim_bar",
-        "evidence_figure",
-        "info_panel",
-        "process_step",
-        "conclusion_bar"
-      ],
-      "source_slides": [
+        12,
         13
       ]
     },
     {
-      "variant_id": "literature_result",
-      "scene_component": "literature_result",
+      "variant_id": "literature_transfer",
+      "scene_component": "statement_panel",
       "primitives": [
-        "info_panel",
-        "evidence_figure",
-        "callout_panel",
-        "synthesis_bar"
+        "research_track_card",
+        "media_caption_card",
+        "callout_media_panel"
       ],
       "source_slides": [
-        14
+        14,
+        16
       ]
     },
     {
-      "variant_id": "application_benefits",
-      "scene_component": "application_benefits",
-      "primitives": [
-        "evidence_figure",
-        "info_panel",
-        "process_step",
-        "metric_tile",
-        "callout_panel",
-        "conclusion_bar"
-      ],
-      "source_slides": [
-        16
-      ]
+      "variant_id": "grant_text_evidence_stack",
+      "scene_component": "grant_text_evidence_stack",
+      "primitives": [],
+      "source_slides": []
     }
   ]
 }

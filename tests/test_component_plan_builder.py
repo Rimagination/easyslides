@@ -169,7 +169,7 @@ class ComponentPlanBuilderTests(unittest.TestCase):
         self.assertEqual(plan["slides"][0]["selected_assets"][0]["asset_id"], "icon_family/lucide")
         self.assertEqual(report["status"], "pass", report["issues"])
 
-    def test_default_granularity_prefers_matching_component_package(self):
+    def test_untemplated_plan_uses_generic_card_not_migrated_template_scene(self):
         from scripts.component_plan_builder import build_component_plan
         from scripts.component_registry import build_component_registry
 
@@ -194,10 +194,10 @@ class ComponentPlanBuilderTests(unittest.TestCase):
 
         plan = build_component_plan(deck_plan, registry=registry, limit=1)
 
-        self.assertEqual(plan["slides"][0]["selection_query"]["preferred_granularity"], "component_package")
+        self.assertEqual(plan["slides"][0]["selection_query"]["preferred_granularity"], "card_component")
         self.assertEqual(
             plan["slides"][0]["selected_assets"][0]["asset_id"],
-            "component_package/three_card_summary",
+            "card/three_card_summary",
         )
 
     def test_builder_passes_evidence_selection_metadata(self):
@@ -235,10 +235,7 @@ class ComponentPlanBuilderTests(unittest.TestCase):
         self.assertEqual(plan["slides"][0]["selection_query"]["evidence_type"], "text_evidence")
         self.assertEqual(plan["slides"][0]["selection_query"]["editable_target"], "evidence_items")
         self.assertEqual(plan["slides"][0]["selection_query"]["visual_complexity"], "high")
-        self.assertEqual(
-            plan["slides"][0]["selected_assets"][0]["asset_id"],
-            "component_package/evidence_stack",
-        )
+        self.assertFalse(plan["slides"][0]["selected_assets"][0]["asset_id"].startswith("component_package/"))
 
     def test_untemplated_selection_does_not_borrow_template_assets(self):
         from scripts.component_plan_builder import build_component_plan

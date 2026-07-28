@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasySlides 使用教程</title>
-  <meta name="description" content="EasySlides 新手教程：从 AI Agent、模型 API Key、材料准备到生成可编辑学术 PPTX。">
+  <meta name="description" content="用自然语言将论文、网页、Markdown 或已有 PPT 制作成可编辑学术 PPTX 的 EasySlides 使用教程。">
   <style>
     :root {
       --ink: #24160e;
       --muted: #755b3b;
       --quiet: #9b815f;
       --paper: #fffdf7;
-      --parchment: #fff4dc;
-      --parchment-2: #f3dfb7;
+      --paper-soft: #fff7e6;
       --line: rgba(101, 66, 30, 0.18);
       --line-strong: rgba(101, 66, 30, 0.32);
       --gold: #c79a45;
@@ -20,15 +19,14 @@
       --walnut: #2b1d14;
       --red: #990018;
       --green: #315149;
+      --purple: #78149a;
       --shadow: 0 28px 74px rgba(74, 45, 18, 0.13);
       --font-sans: "HarmonyOS Sans SC", "MiSans", "PingFang SC", "Alibaba PuHuiTi", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", sans-serif;
       --font-serif: "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", "Songti SC", "SimSun", serif;
       --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -39,8 +37,7 @@
       margin: 0;
       color: var(--ink);
       font-family: var(--font-sans);
-      background:
-        linear-gradient(180deg, #c9964a 0, #e1bd7b 176px, #fbfaf6 392px, #fbfaf6 100%);
+      background: #fbfaf6;
       text-rendering: geometricPrecision;
       -webkit-font-smoothing: antialiased;
     }
@@ -49,13 +46,9 @@
       color: #7c0014;
       text-decoration-color: rgba(124, 0, 20, 0.28);
       text-underline-offset: 4px;
-      transition: color 160ms ease, text-decoration-color 160ms ease;
     }
 
-    a:hover {
-      color: #b00822;
-      text-decoration-color: rgba(176, 8, 34, 0.7);
-    }
+    a:hover { color: #b00822; }
 
     .topbar {
       position: sticky;
@@ -66,10 +59,9 @@
       justify-content: space-between;
       gap: 16px;
       padding: 18px clamp(20px, 5vw, 72px);
-      background: linear-gradient(180deg, rgba(55, 34, 20, 0.91), rgba(44, 28, 18, 0.76));
+      background: rgba(43, 29, 20, 0.96);
       border-bottom: 1px solid rgba(233, 190, 105, 0.42);
-      box-shadow: 0 16px 42px rgba(48, 29, 14, 0.16);
-      backdrop-filter: blur(18px) saturate(1.1);
+      box-shadow: 0 12px 34px rgba(48, 29, 14, 0.16);
     }
 
     .brand-cluster {
@@ -93,9 +85,8 @@
     .brand-logo {
       width: 30px;
       height: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 0 1px rgba(231, 188, 97, 0.38), 0 8px 20px rgba(25, 13, 5, 0.22);
-      background: rgba(255, 238, 194, 0.1);
+      border-radius: 7px;
+      box-shadow: 0 0 0 1px rgba(231, 188, 97, 0.38);
     }
 
     .brand-divider {
@@ -126,72 +117,62 @@
       text-decoration: none;
     }
 
+    .nav a[aria-current="page"] { color: #fff3d0; }
+
     .guide-hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 360px;
-      padding: 64px clamp(20px, 6vw, 92px) 72px;
       color: #fff5d8;
       background:
-        radial-gradient(circle at 12% 16%, rgba(255, 237, 185, 0.44), transparent 24%),
-        linear-gradient(135deg, rgba(42, 29, 20, 0.94), rgba(114, 75, 31, 0.84) 47%, rgba(201, 153, 70, 0.78)),
-        linear-gradient(180deg, #c9964a, #a66f2b);
-    }
-
-    .guide-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.34;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(90deg, transparent, #000 24%, #000 72%, transparent);
+        linear-gradient(110deg, rgba(44, 29, 20, 0.98), rgba(88, 56, 28, 0.93) 58%, rgba(166, 111, 43, 0.9));
     }
 
     .guide-hero-inner {
-      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
-      gap: clamp(34px, 5vw, 72px);
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
+      gap: clamp(34px, 5vw, 76px);
       align-items: center;
       max-width: 1400px;
+      min-height: 390px;
       margin: 0 auto;
+      padding: 64px 24px 74px;
     }
 
     .eyebrow {
       margin: 0 0 18px;
       color: rgba(255, 238, 193, 0.76);
+      font-family: var(--font-mono);
       font-size: 12px;
-      letter-spacing: 0.24em;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
+    h1,
+    h2,
+    h3,
+    h4 { margin: 0; }
+
     h1 {
-      margin: 0;
-      max-width: 880px;
+      max-width: 860px;
       font-family: var(--font-serif);
-      font-size: clamp(44px, 6.2vw, 86px);
+      font-size: clamp(43px, 5.6vw, 78px);
       font-weight: 800;
-      line-height: 1.04;
+      line-height: 1.1;
       letter-spacing: 0;
     }
 
     .hero-lead {
+      max-width: 760px;
       margin: 24px 0 0;
-      max-width: 820px;
       color: rgba(255, 248, 227, 0.82);
-      font-size: clamp(18px, 2vw, 25px);
+      font-size: clamp(17px, 1.8vw, 23px);
       line-height: 1.75;
     }
 
     .hero-panel {
+      padding: 24px;
       border: 1px solid rgba(255, 230, 170, 0.32);
-      border-radius: 6px;
-      padding: 20px;
-      background: rgba(43, 29, 20, 0.3);
+      border-radius: 7px;
+      background: rgba(255, 246, 220, 0.1);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
     }
 
@@ -200,21 +181,21 @@
       margin-bottom: 12px;
       color: #fff2ce;
       font-family: var(--font-serif);
-      font-size: 22px;
+      font-size: 23px;
     }
 
     .hero-panel p {
       margin: 0;
-      color: rgba(255, 244, 218, 0.76);
-      font-size: 14px;
-      line-height: 1.8;
+      color: rgba(255, 244, 218, 0.78);
+      font-size: 15px;
+      line-height: 1.85;
     }
 
     .quick-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+      gap: 9px;
+      margin-top: 20px;
     }
 
     .quick-links a,
@@ -222,36 +203,33 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border: 1px solid rgba(255, 230, 170, 0.34);
-      border-radius: 999px;
+      min-height: 36px;
+      padding: 0 13px;
+      border: 1px solid rgba(255, 230, 170, 0.38);
+      border-radius: 4px;
       color: #fff3d1;
       background: rgba(255, 244, 218, 0.08);
+      font-family: inherit;
+      font-size: 13px;
       text-decoration: none;
       cursor: pointer;
     }
 
     .page-shell {
       display: grid;
-      grid-template-columns: 196px minmax(0, 1fr);
-      gap: clamp(26px, 3.4vw, 52px);
+      grid-template-columns: 208px minmax(0, 1fr);
+      gap: clamp(28px, 4vw, 60px);
       align-items: start;
-      max-width: 1420px;
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 54px 24px 96px;
-      position: relative;
-      z-index: 2;
+      padding: 56px 24px 96px;
     }
 
     .toc {
       position: sticky;
       top: 92px;
-      max-height: calc(100vh - 116px);
-      overflow: auto;
       padding: 6px 0 6px 16px;
       border-left: 2px solid rgba(143, 95, 34, 0.26);
-      background: transparent;
     }
 
     .toc strong {
@@ -263,67 +241,61 @@
 
     .toc a {
       display: block;
-      padding: 6px 0;
+      padding: 7px 0;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.38;
       text-decoration: none;
-      border-top: 0;
     }
 
     .article {
-      position: relative;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background:
-        linear-gradient(90deg, rgba(153, 0, 24, 0.08), transparent 86px),
-        linear-gradient(180deg, var(--paper), #fffaf0 58%, #fffefb);
-      box-shadow: 0 18px 52px rgba(74, 45, 18, 0.1);
+      background: var(--paper);
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
 
-    .article::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 14% 0%, rgba(195, 142, 58, 0.16), transparent 30%),
-        linear-gradient(90deg, rgba(115, 70, 28, 0.035) 0 1px, transparent 1px 100%);
-      background-size: auto, 28px 28px;
-      opacity: 0.64;
+    .article-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: clamp(34px, 4.5vw, 68px);
     }
 
-    .article-inner {
-      position: relative;
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: clamp(34px, 4.5vw, 66px);
+    section + section {
+      margin-top: 78px;
+      padding-top: 62px;
+      border-top: 1px solid var(--line);
+    }
+
+    .chapter-kicker {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--red);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .article h2 {
-      margin: 58px 0 18px;
+      margin-bottom: 20px;
       font-family: var(--font-serif);
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.18;
-      letter-spacing: 0;
-    }
-
-    .article h2:first-child {
-      margin-top: 0;
+      font-size: clamp(29px, 3.4vw, 45px);
+      line-height: 1.2;
     }
 
     .article h3 {
-      margin: 28px 0 10px;
+      margin: 34px 0 12px;
       color: #3a2718;
-      font-size: 20px;
-      line-height: 1.35;
+      font-size: 21px;
+      line-height: 1.4;
     }
 
     .article h4 {
-      margin: 0 0 8px;
       color: #3a2718;
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.45;
     }
 
@@ -331,57 +303,34 @@
     .article li {
       color: #4e3b2a;
       font-size: 17px;
-      line-height: 2;
+      line-height: 1.95;
     }
 
-    .article p {
-      margin: 0 0 18px;
-    }
+    .article p { margin: 0 0 18px; }
 
-    .article ul,
-    .article ol {
+    .article ul {
       margin: 0 0 22px;
       padding-left: 1.3em;
     }
 
-    .article li + li {
-      margin-top: 8px;
-    }
+    .article li + li { margin-top: 8px; }
 
-    .chapter-kicker {
-      display: inline-flex;
-      margin-bottom: 10px;
-      color: var(--red);
+    code {
+      padding: 0.08em 0.32em;
+      border-radius: 4px;
+      color: #7c0014;
+      background: rgba(153, 0, 24, 0.06);
       font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .note,
-    .warning,
-    .prompt-box,
-    .link-rail {
-      margin: 24px 0;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: rgba(255, 246, 225, 0.68);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.58);
+      font-size: 0.9em;
     }
 
     .note,
     .warning {
-      padding: 18px 20px;
-    }
-
-    .note strong,
-    .warning strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--ink);
-      font-family: var(--font-serif);
-      font-size: 20px;
+      margin: 24px 0;
+      padding: 19px 21px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--paper-soft);
     }
 
     .warning {
@@ -389,19 +338,62 @@
       background: rgba(255, 239, 228, 0.72);
     }
 
-    code {
+    .note strong,
+    .warning strong {
+      display: block;
+      margin-bottom: 7px;
+      font-family: var(--font-serif);
+      font-size: 20px;
+    }
+
+    .note p:last-child,
+    .warning p:last-child { margin-bottom: 0; }
+
+    .step-list {
+      counter-reset: step;
+      display: grid;
+      gap: 11px;
+      margin: 25px 0;
+    }
+
+    .step-list > div {
+      counter-increment: step;
+      position: relative;
+      padding: 19px 20px 19px 66px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255, 253, 247, 0.76);
+    }
+
+    .step-list > div::before {
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      top: 20px;
+      left: 19px;
+      color: var(--red);
       font-family: var(--font-mono);
-      font-size: 0.92em;
-      color: #7c0014;
-      background: rgba(153, 0, 24, 0.06);
-      border-radius: 4px;
-      padding: 0.08em 0.32em;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .step-list p:last-child { margin-bottom: 0; }
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 25px 0;
     }
 
     .prompt-box {
       overflow: hidden;
+      border: 1px solid rgba(199, 154, 69, 0.38);
+      border-radius: 6px;
       background: #2a1d14;
-      border-color: rgba(199, 154, 69, 0.38);
+    }
+
+    .prompt-grid .prompt-box:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
     }
 
     .prompt-head {
@@ -409,72 +401,39 @@
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      padding: 14px 18px;
+      padding: 13px 16px;
       color: #fff1cb;
       border-bottom: 1px solid rgba(255, 230, 170, 0.18);
     }
 
     .prompt-head strong {
       font-family: var(--font-serif);
-      font-size: 18px;
+      font-size: 17px;
     }
 
     .copy-button {
-      min-height: 32px;
+      min-height: 31px;
       color: #2a1d14;
       border-color: rgba(255, 230, 170, 0.6);
-      background: linear-gradient(180deg, #fff6dc, #dfb869);
-      font-size: 13px;
+      background: #f1cf8a;
     }
 
     pre {
       margin: 0;
-      padding: 20px;
+      padding: 18px;
       overflow-x: auto;
       color: #fff4d6;
       font-family: var(--font-mono);
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.75;
       white-space: pre-wrap;
     }
 
     pre code {
-      display: block;
       padding: 0;
       color: inherit;
       background: transparent;
-      border-radius: 0;
-    }
-
-    .link-rail {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
-      padding: 1px;
-      background: var(--line);
-      overflow: hidden;
-    }
-
-    .link-rail a {
-      display: grid;
-      min-height: 88px;
-      align-content: center;
-      padding: 16px;
-      background: rgba(255, 253, 247, 0.86);
-      text-decoration: none;
-    }
-
-    .link-rail span {
-      color: var(--quiet);
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .link-rail strong {
-      margin-top: 6px;
-      color: var(--ink);
-      font-size: 17px;
+      font-size: inherit;
     }
 
     .example-strip {
@@ -486,318 +445,110 @@
 
     .example-strip figure {
       margin: 0;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 6px;
-      overflow: hidden;
       background: #fff;
-      box-shadow: 0 16px 34px rgba(74, 45, 18, 0.08);
     }
 
     .example-strip img {
       display: block;
       width: 100%;
       aspect-ratio: 16 / 9;
-      object-fit: cover;
+      object-fit: contain;
       background: #fff;
     }
 
     .example-strip figcaption {
-      padding: 12px 14px;
+      padding: 13px 14px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .example-strip.single {
-      grid-template-columns: 1fr;
-    }
-
-    .example-strip.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .source-links {
+    .scenario-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
-      margin: 24px 0;
+      margin: 25px 0;
     }
 
-    .source-links a,
-    .tool-card {
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: rgba(255, 253, 247, 0.76);
-      box-shadow: 0 14px 34px rgba(74, 45, 18, 0.08);
+    .scenario {
+      min-height: 172px;
+      padding: 19px;
+      border-top: 3px solid var(--gold);
+      background: rgba(255, 249, 237, 0.72);
     }
 
-    .source-links a {
-      display: block;
-      min-height: 112px;
-      padding: 18px;
-      text-decoration: none;
-    }
+    .scenario:nth-child(2) { border-color: var(--purple); }
+    .scenario:nth-child(3) { border-color: var(--green); }
 
-    .source-links span,
-    .tool-card span {
+    .scenario span {
       color: var(--quiet);
+      font-family: var(--font-mono);
       font-size: 12px;
-      letter-spacing: 0.13em;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    .source-links strong,
-    .tool-card strong {
+    .scenario strong {
       display: block;
-      margin-top: 8px;
-      color: var(--ink);
+      margin-top: 9px;
       font-family: var(--font-serif);
       font-size: 20px;
       line-height: 1.35;
     }
 
-    .tool-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin: 24px 0;
-    }
-
-    .tool-card {
-      padding: 18px;
-    }
-
-    .tool-card p {
-      margin: 12px 0 0;
+    .scenario p {
+      margin: 10px 0 0;
       font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .step-list {
-      counter-reset: step;
-      display: grid;
-      gap: 12px;
-      margin: 22px 0;
-    }
-
-    .step-list > div {
-      counter-increment: step;
-      position: relative;
-      padding: 18px 18px 18px 62px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: rgba(255, 253, 247, 0.74);
-    }
-
-    .step-list > div::before {
-      content: counter(step, decimal-leading-zero);
-      position: absolute;
-      left: 18px;
-      top: 19px;
-      color: var(--red);
-      font-family: var(--font-mono);
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .step-list h4 {
-      margin-top: 0;
-    }
-
-    .step-list p:last-child {
-      margin-bottom: 0;
-    }
-
-    .mini-checklist {
-      display: grid;
-      gap: 10px;
-      margin: 20px 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .mini-checklist li {
-      position: relative;
-      margin: 0;
-      padding: 13px 16px 13px 40px;
-      border: 1px solid rgba(101, 66, 30, 0.12);
-      border-radius: 6px;
-      background: rgba(255, 253, 247, 0.66);
-      font-size: 16px;
-      line-height: 1.75;
-    }
-
-    .mini-checklist li::before {
-      content: "";
-      position: absolute;
-      left: 16px;
-      top: 22px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 4px rgba(199, 154, 69, 0.16);
-    }
-
-    .folder-tree {
-      margin: 22px 0;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: #fffdf7;
-      overflow: hidden;
-    }
-
-    .folder-tree pre {
-      color: #392719;
-      background: transparent;
-    }
-
-    .flow {
-      display: grid;
-      gap: 10px;
-      margin: 22px 0;
-    }
-
-    .flow-row {
-      display: grid;
-      grid-template-columns: 82px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: rgba(255, 253, 247, 0.72);
-    }
-
-    .flow-row span {
-      color: var(--red);
-      font-family: var(--font-mono);
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .flow-row p {
-      margin: 0;
+      line-height: 1.7;
     }
 
     .footer {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 20px 52px;
-      color: var(--quiet);
-      font-size: 13px;
+      padding: 30px 24px 44px;
+      color: var(--muted);
       text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
     }
 
     @media (max-width: 980px) {
-      .guide-hero {
-        padding-top: 54px;
-      }
-
       .guide-hero-inner,
-      .page-shell {
-        grid-template-columns: 1fr;
-      }
+      .page-shell { grid-template-columns: 1fr; }
 
-      .page-shell {
-        padding-top: 34px;
-      }
+      .guide-hero-inner { min-height: auto; }
 
       .toc {
-        position: relative;
-        top: auto;
-        max-height: none;
-        order: 2;
+        position: static;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2px 18px;
         padding: 16px 0 0;
-        border-left: 0;
         border-top: 1px solid var(--line);
+        border-left: 0;
       }
 
-      .toc strong {
-        grid-column: 1 / -1;
-      }
-
-      .article {
-        order: 1;
-      }
+      .toc strong { grid-column: 1 / -1; }
+      .scenario-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 640px) {
-      .topbar {
-        padding: 14px 18px;
-        flex-wrap: wrap;
-      }
-
-      .nav {
-        gap: 12px;
-      }
-
-      .brand-cluster {
-        gap: 8px;
-      }
-
-      .brand {
-        font-size: 12px;
-        letter-spacing: 0.06em;
-        gap: 8px;
-      }
-
-      .brand-logo {
-        width: 24px;
-        height: 24px;
-        flex: 0 0 auto;
-      }
-
-      .brand-divider {
-        height: 20px;
-      }
-
-      .product-brand {
-        font-size: 16px;
-      }
-
-      .nav a {
-        font-size: 12px;
-      }
-
-      .guide-hero {
-        min-height: auto;
-        padding: 44px 18px 56px;
-      }
-
-      .hero-panel {
-        padding: 18px;
-      }
-
-      .page-shell {
-        padding: 24px 14px 68px;
-      }
-
-      .toc {
-        grid-template-columns: 1fr;
-      }
-
-      .article-inner {
-        padding: 26px 20px;
-      }
-
-      .article p,
-      .article li {
-        font-size: 16px;
-        line-height: 1.9;
-      }
-
-      .link-rail,
+    @media (max-width: 680px) {
+      .topbar { padding: 14px 16px; }
+      .brand { gap: 8px; font-size: 12px; }
+      .brand-divider { display: none; }
+      .nav { gap: 13px; font-size: 12px; }
+      .nav a:last-child { display: none; }
+      .guide-hero-inner { padding: 48px 20px 54px; }
+      .hero-panel { padding: 20px; }
+      .page-shell { padding: 34px 14px 64px; }
+      .article-inner { padding: 28px 20px; }
+      section + section { margin-top: 56px; padding-top: 48px; }
+      .prompt-grid,
       .example-strip,
-      .example-strip.three,
-      .source-links,
-      .tool-grid,
-      .flow-row {
-        grid-template-columns: 1fr;
-      }
+      .toc { grid-template-columns: 1fr; }
+      .prompt-grid .prompt-box:last-child:nth-child(odd) { grid-column: auto; }
     }
   </style>
 </head>
@@ -813,7 +564,7 @@
     </div>
     <nav class="nav" aria-label="Main navigation">
       <a href="index.html#catalog">实例</a>
-      <a href="guide.html">使用教程</a>
+      <a href="guide.html" aria-current="page">使用教程</a>
       <a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
   </header>
@@ -822,16 +573,16 @@
     <div class="guide-hero-inner">
       <div>
         <p class="eyebrow">EasySlides Guide</p>
-        <h1>从论文到可编辑学术 PPTX</h1>
-        <p class="hero-lead">这是一篇给新手看的上手教程。你不需要先理解所有工程细节，只要准备一个 AI Agent、一把模型钥匙和一份科研材料，就可以让 EasySlides 帮你生成能继续修改的学术 PPT。</p>
+        <h1>把材料交给 Agent，说清你要讲的故事</h1>
+        <p class="hero-lead">安装一次后，你只需在对话中上传材料、说明汇报目的。EasySlides 会先读懂内容，再组织叙事、选择合适页面，并交付一份能在 PowerPoint 中继续修改的 PPTX。</p>
       </div>
       <aside class="hero-panel">
-        <strong>先记住一句话</strong>
-        <p>EasySlides 不是把论文摘要成几页图片，而是把论文、报告或网页材料整理成有主张、有证据、有引用来源，并且可以在 PowerPoint 里继续编辑的 PPTX。</p>
+        <strong>你不需要学代码</strong>
+        <p>论文、网页、Markdown、已有 PPT 和几句需求都可以成为起点。若听众、时长、模板或表达重点会影响成品，Agent 会先用问题和选项向你确认，而不是替你猜。</p>
         <div class="quick-links">
-          <a href="#copy-prompt">复制指令</a>
-          <a href="#install">安装步骤</a>
-          <a href="#qa">生成后检查</a>
+          <a href="#install">安装一次</a>
+          <a href="#first-deck">做第一份 PPT</a>
+          <a href="#iterate">查看与迭代</a>
         </div>
       </aside>
     </div>
@@ -839,411 +590,207 @@
 
   <main class="page-shell">
     <aside class="toc">
-      <strong>文章目录</strong>
-      <a href="#what">1. EasySlides 是什么</a>
-      <a href="#route">2. 选择 AI Agent</a>
-      <a href="#key">3. 准备 API Key</a>
-      <a href="#lobster">4. 有道龙虾路线</a>
-      <a href="#opencode">5. OpenCode 路线</a>
-      <a href="#zcode">6. ZCode 路线</a>
-      <a href="#install">7. 安装 EasySlides</a>
-      <a href="#material">8. 一个 PDF + 一句话</a>
-      <a href="#prompt">9. 进阶优化</a>
-      <a href="#qa">10. 检查与导出</a>
-      <a href="#faq">11. 常见问题</a>
+      <strong>使用路径</strong>
+      <a href="#start">1. 开始前，只做三件事</a>
+      <a href="#install">2. 安装 EasySlides</a>
+      <a href="#first-deck">3. 用一句话启动</a>
+      <a href="#materials">4. 提供什么材料</a>
+      <a href="#clarify">5. 为什么会先提问</a>
+      <a href="#scenarios">6. 常用任务怎么说</a>
+      <a href="#iterate">7. 查看、修改与蒸馏</a>
+      <a href="#faq">8. 常见问题</a>
     </aside>
 
     <article class="article">
       <div class="article-inner">
-        <section id="what">
+        <section id="start">
           <span class="chapter-kicker">Section 01</span>
-          <h2>1. 先搞清楚：EasySlides 解决什么问题</h2>
-          <p>EasySlides 是给科研 PPT 用的，不是给商业发布会用的。它面向的场景是组会、文献汇报、开题、中期、答辩、课程展示和基金汇报。你真正需要的是一份能讲清楚、能修改、能交给导师看、能在 PowerPoint 里继续编辑的 <code>.pptx</code>。</p>
-          <p>这也是它和“生成一张漂亮图片”的路线不一样的地方。科研 PPT 经常要被追问：这一页结论凭什么讲？图表来自哪里？引用有没有保留？如果整页都是图片，后期改标题、图注和结论句会非常痛苦。</p>
-
-          <div class="source-links">
-            <a href="https://mp.weixin.qq.com/s/9ghDdZymf43TNTGAlsG4nQ" target="_blank" rel="noreferrer">
-              <span>Source article</span>
-              <strong>easyslides：解放科研人的PPT skill</strong>
-            </a>
-            <a href="https://mp.weixin.qq.com/s/M_8_JRf6MmcWQwPw4Nj8PQ" target="_blank" rel="noreferrer">
-              <span>Source article</span>
-              <strong>新手攻略：AI Agent 选择与安装指南</strong>
-            </a>
-          </div>
-
-          <div class="flow" aria-label="EasySlides workflow">
-            <div class="flow-row">
-              <span>01</span>
-              <p><strong>材料到证据库。</strong>优先用 <a href="https://mineru.net" target="_blank" rel="noreferrer">MinerU</a> 解析 PDF，尽量保留图表、caption、版面和引用位置；没有条件时再退回基础 PDF 解析。</p>
-            </div>
-            <div class="flow-row">
-              <span>02</span>
-              <p><strong>证据库到论证结构。</strong>为每一页确定角色、主张、证据和引用来源，避免做成“看起来都对但没有信息量”的摘要。</p>
-            </div>
-            <div class="flow-row">
-              <span>03</span>
-              <p><strong>论证结构到可编辑页面。</strong>按场景绑定模板，生成 PPTX，并检查文字溢出、图表变形、证据链和引用缺失。</p>
-            </div>
-          </div>
-
-          <div class="example-strip">
-            <figure>
-              <img src="assets/guide/easyslides-04.jpg?v=20260523" alt="EasySlides 内置模板概览" loading="lazy" decoding="async">
-              <figcaption>模板不是第一步，它是最后被看见的一层。真正重要的是先把科研材料组织成可审查的表达规则。</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/guide/easyslides-05.png?v=20260523" alt="学术答辩模板配色示意" loading="lazy" decoding="async">
-              <figcaption>答辩模板可以根据校徽和学院视觉调整配色，但仍然要保留章节结构和证据密度。</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="route">
-          <span class="chapter-kicker">Section 02</span>
-          <h2>2. 你该选哪个 AI Agent</h2>
-          <p>AI Agent 可以理解成“能操作电脑的 AI”。普通网页聊天只会回答问题；Agent 能读文件、改文件、运行命令、生成 PPTX。EasySlides 需要的就是这种能力。</p>
-          <p>如果你已经会用 Codex 或 Claude Code，可以直接跳到安装 EasySlides。完全新手可以按下面的三条路线选一个，不必全装。</p>
-
-          <div class="tool-grid">
-            <div class="tool-card">
-              <span>Route A</span>
-              <strong>想省心，用有道龙虾</strong>
-              <p>适合日常任务和微信入口。你只管派活，它在背后执行，适合不想碰复杂界面的用户。</p>
-            </div>
-            <div class="tool-card">
-              <span>Route B</span>
-              <strong>想先免费试，用 OpenCode</strong>
-              <p>有桌面版，能看到每一步操作。适合第一次体验 AI 写代码和操作项目文件。</p>
-            </div>
-            <div class="tool-card">
-              <span>Route C</span>
-              <strong>想干活能力强，用 ZCode</strong>
-              <p>图形界面里集成多种 Agent CLI，适合已经有 API Key、希望控制力更强的用户。</p>
-            </div>
-          </div>
-
-          <div class="example-strip three">
-            <figure>
-              <img src="assets/guide/agent-03.png?v=20260523" alt="有道龙虾下载页面" loading="lazy" decoding="async">
-              <figcaption>有道龙虾：下载 Windows 或 Mac 版本，安装后配置模型。</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/guide/agent-11.png?v=20260523" alt="OpenCode 下载页面" loading="lazy" decoding="async">
-              <figcaption>OpenCode：选择桌面版，适合先低成本体验 Agent。</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/guide/agent-14.png?v=20260523" alt="ZCode 工作界面" loading="lazy" decoding="async">
-              <figcaption>ZCode：图形界面里使用 Claude、Codex、Gemini 等 Agent CLI。</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="key">
-          <span class="chapter-kicker">Section 03</span>
-          <h2>3. 第一件事：准备模型 API Key</h2>
-          <p>不管你用哪个 Agent，通常都要先给它接上一个“大脑”。这个大脑就是大模型，比如 DeepSeek、Qwen、Kimi、MiniMax、Claude 或 GPT。连接大脑需要一串钥匙，也就是 API Key。</p>
-          <h3>3.1 创建并保护 API Key</h3>
+          <h2>1. 开始前，只做三件事</h2>
+          <p>EasySlides 的重点不是把一段文字塞进固定版式，而是把研究材料变成可讲述、可审查、可继续编辑的演示。你只要完成下面三件事，剩下的由 Agent 组织。</p>
           <div class="step-list">
             <div>
-              <h4>3.1.1 注册模型平台</h4>
-              <p>新手可以先用 <a href="https://platform.deepseek.com/" target="_blank" rel="noreferrer">DeepSeek 开放平台</a>。注册并登录后，进入 API Keys 页面。</p>
+              <h4>给材料</h4>
+              <p>把论文 PDF、网页链接、Markdown、数据说明、已有 PPT 或需要保留的图片放进对话。材料越接近原始研究证据，最终页面越可靠。</p>
             </div>
             <div>
-              <h4>3.1.2 创建并保存 Key</h4>
-              <p>创建一个新的 Key，它一般长得像 <code>sk-xxxxxxxx</code>。只复制一次，保存在自己的密码管理器或本地私密笔记里。</p>
+              <h4>说目的</h4>
+              <p>像和研究助理沟通一样说清楚用途：组会、文献汇报、基金申请、答辩还是课程展示；再补一句你最希望听众记住什么。</p>
             </div>
             <div>
-              <h4>3.1.3 充值或选择套餐</h4>
-              <p>按量付费通常几块钱就能试很久。只是跑通 EasySlides 的话，先小额充值测试即可。</p>
+              <h4>确认关键选择</h4>
+              <p>当信息会改变成品时，Agent 会请你选择听众、时长、重点或风格。确认后，它才开始真正编排，而不是把假设写进幻灯片。</p>
             </div>
           </div>
-          <div class="warning">
-            <strong>别把 API Key 发给别人</strong>
-            <p>API Key 就像门钥匙。不要截图发朋友圈，不要贴到公开 GitHub，不要放进网页源码。泄露后请立刻去平台后台删除旧 Key 并重新生成。</p>
-          </div>
-        </section>
-
-        <section id="lobster">
-          <span class="chapter-kicker">Route A</span>
-          <h2>4. 路线 A：有道龙虾，适合想省心的新手</h2>
-          <p>有道龙虾更像一个通用型 AI Agent。你不用太关心它背后怎么操作文件，只要告诉它目标，它会执行并汇报结果。它还支持微信入口，适合想在手机或微信里派任务的人。</p>
-          <h3>4.1 从桌面端安装到微信入口</h3>
-          <div class="step-list">
-            <div>
-              <h4>4.1.1 下载安装</h4>
-              <p>打开 <a href="https://lobsterai.youdao.com/#/index" target="_blank" rel="noreferrer">有道龙虾官网</a>，选择 Windows 或 Mac 版本，下载后一路安装。</p>
-            </div>
-            <div>
-              <h4>4.1.2 配置模型</h4>
-              <p>第一次打开时进入设置，找到模型配置。选择 DeepSeek 或你自己的模型供应商，把 API Key 粘进去并保存。官方的 <a href="https://lobsterai.youdao.com/#/docs/lobsterai_model_config_guide" target="_blank" rel="noreferrer">模型配置指南</a> 对 DeepSeek、智谱、通义千问、Kimi、MiniMax 都有分步说明。</p>
-            </div>
-            <div>
-              <h4>4.1.3 测试一句话</h4>
-              <p>先问它“请读取当前目录并告诉我有哪些文件”。如果它能读到文件，说明 Agent 的本地操作能力已经通了。</p>
-            </div>
-            <div>
-              <h4>4.1.4 需要微信入口再扫码</h4>
-              <p>如果你想在微信里派任务，再按 <a href="https://lobsterai.youdao.com/#/docs/lobsterai_im_bot_config_guide" target="_blank" rel="noreferrer">龙虾机器人配置指南</a> 扫码接入。</p>
-            </div>
-          </div>
-          <div class="example-strip three">
-            <figure>
-              <img src="assets/guide/lobster-model/model-15.png?v=20260523" alt="有道龙虾开始协作界面" loading="lazy" decoding="async">
-              <figcaption>官方模型教程截图：从左下角设置进入模型配置，配好后回到聊天界面开始协作。</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/guide/lobster-official/lobster-02.png?v=20260523" alt="有道龙虾微信 IM 配置界面" loading="lazy" decoding="async">
-              <figcaption>官方 IM 教程截图：设置 -> IM 配置 -> 微信，进入微信连接入口。</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/guide/lobster-official/lobster-03.png?v=20260523" alt="有道龙虾扫码连接微信二维码" loading="lazy" decoding="async">
-              <figcaption>需要微信派任务时，再按官方教程扫码连接；先把桌面端跑通更稳。</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="opencode">
-          <span class="chapter-kicker">Route B</span>
-          <h2>5. 路线 B：OpenCode，适合先低成本体验</h2>
-          <p>OpenCode 的好处是上手成本低，可以先体验 AI Agent 如何读项目、改文件、运行命令。它更适合“我想看着它一步步干活”的用户。</p>
-          <h3>5.1 用桌面版跑通项目目录</h3>
-          <div class="step-list">
-            <div>
-              <h4>5.1.1 下载桌面版</h4>
-              <p>打开 <a href="https://opencode.ai/zh/download" target="_blank" rel="noreferrer">OpenCode 下载页</a>，选择桌面版和你的系统。新手先不要选终端版。</p>
-            </div>
-            <div>
-              <h4>5.1.2 登录或选择免费模型</h4>
-              <p>OpenCode 支持多种模型供应商，也可能提供免费额度。先选能跑通的模型，不要一开始就纠结最强模型。</p>
-            </div>
-            <div>
-              <h4>5.1.3 打开 EasySlides 项目目录</h4>
-              <p>等你安装 EasySlides 后，在 OpenCode 里打开项目目录，让它能看到文件树，再让它按教程指令生成 PPT。</p>
-            </div>
-          </div>
-          <div class="example-strip">
-            <figure>
-              <img src="assets/guide/agent-12.png?v=20260523" alt="OpenCode 侧边栏选择 Agent" loading="lazy" decoding="async">
-              <figcaption>OpenCode 可以看到文件树和执行过程，适合新手理解 Agent 在做什么。</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/guide/agent-10.png?v=20260523" alt="OpenCode 模型列表" loading="lazy" decoding="async">
-              <figcaption>先选可用模型跑通流程，再追求更强模型。</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="zcode">
-          <span class="chapter-kicker">Route C</span>
-          <h2>6. 路线 C：ZCode，适合想要更强控制力</h2>
-          <p>ZCode 把多种 Agent CLI 放进图形界面里。你可以用 Claude、Codex、Gemini、GLM、OpenCode 等不同后端，但不用一直面对黑色终端窗口。</p>
-          <h3>6.1 在图形界面里调用 Agent CLI</h3>
-          <div class="step-list">
-            <div>
-              <h4>6.1.1 安装 ZCode</h4>
-              <p>打开 <a href="https://zcode-ai.com/" target="_blank" rel="noreferrer">ZCode 官网</a>，下载对应系统版本并安装。</p>
-            </div>
-            <div>
-              <h4>6.1.2 选择 Agent CLI</h4>
-              <p>如果你有 Claude 或 Codex 的使用条件，可以优先选它们；如果没有，就先选你已经配置好的国产模型供应商。</p>
-            </div>
-            <div>
-              <h4>6.1.3 选择权限模式</h4>
-              <p>新手建议用计划模式或需要确认的模式。让 AI 先列计划，你确认后再让它动手，这样不容易误改文件。</p>
-            </div>
-            <div>
-              <h4>6.1.4 打开项目并执行</h4>
-              <p>把 EasySlides 项目目录作为工作区打开，然后复制本文后面的指令。</p>
-            </div>
-          </div>
-          <div class="example-strip single">
-            <figure>
-              <img src="assets/guide/agent-15.jpg?v=20260523" alt="ZCode 微信和远程入口" loading="lazy" decoding="async">
-              <figcaption>ZCode 也可以做远程和微信入口，但新手第一目标仍然是：在桌面端打开目录，把第一份 PPTX 跑出来。</figcaption>
-            </figure>
+          <div class="note">
+            <strong>不需要指定模板代码或页面类型</strong>
+            <p>你可以直接说“做成国自然基金答辩风格”或“像我的参考 PPT 一样”。模板负责视觉语言、稳定页面壳和组件规则；内容页会根据图、表、流程、对比或结论自动选择合适的组织方式。</p>
           </div>
         </section>
 
         <section id="install">
-          <span class="chapter-kicker">Section 07</span>
-          <h2>7. 安装 EasySlides</h2>
-          <p>Agent 已经能工作之后，再安装 EasySlides。最简单的方式，是把下面这句话发给 Agent：</p>
-          <h3>7.1 让 Agent 自动安装 skill</h3>
-          <div class="prompt-box" id="copy-prompt">
+          <span class="chapter-kicker">Section 02</span>
+          <h2>2. 安装一次，然后只用自然语言交互</h2>
+          <p>在 Codex 或支持安装插件的 AI Agent 中，把下面这句话发出去即可。安装完成后，不需要进入项目目录，也不需要手动运行命令。</p>
+          <div class="prompt-box">
             <div class="prompt-head">
               <strong>安装指令</strong>
               <button class="copy-button" type="button" data-copy-target="installPrompt">复制</button>
             </div>
-            <pre><code id="installPrompt">帮我安装这个 skill：https://github.com/Rimagination/easyslides</code></pre>
+            <pre><code id="installPrompt">请帮我安装这个插件：
+Rimagination/easyslides</code></pre>
           </div>
-          <h3>7.2 手动下载项目</h3>
-          <p>如果你的 Agent 不支持 skill 自动安装，就去 <a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer">EasySlides GitHub 仓库</a> 下载项目压缩包，解压后让 Agent 打开这个目录。你可以这样说：</p>
-          <div class="prompt-box">
-            <div class="prompt-head">
-              <strong>手动下载后的指令</strong>
-              <button class="copy-button" type="button" data-copy-target="manualInstallPrompt">复制</button>
-            </div>
-            <pre><code id="manualInstallPrompt">我已经把 EasySlides 项目下载并解压到当前目录。
-请阅读项目说明，检查依赖是否可用，然后告诉我如何用它生成一份学术 PPTX。</code></pre>
-          </div>
-          <h3>7.3 判断是否安装成功</h3>
-          <div class="note">
-            <strong>看它能不能说出模板和工作流</strong>
-            <p>让 Agent 列出 EasySlides 支持的模板和工作流。如果它能说出 <code>literature_minimal</code>、<code>defense_leftnav</code>、<code>academic_general</code> 这类模板，基本就说明它已经读到项目了。</p>
-          </div>
+          <p>Agent 完成安装后，你可以直接上传材料并开始描述任务。需要了解项目背景或查看开源仓库时，再访问 <a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer">Rimagination/easyslides</a>。</p>
         </section>
 
-        <section id="material">
-          <span class="chapter-kicker">Section 08</span>
-          <h2>8. 新手主路径：一个 PDF + 一句话</h2>
-          <p>新手不需要先整理复杂文件夹。最简单的路径就是：把论文 PDF 拖进 Agent 对话框，然后告诉它用 EasySlides 的某个模板生成 PPT。通常这样就可以开始制作。</p>
-          <h3>8.1 最短启动方式</h3>
+        <section id="first-deck">
+          <span class="chapter-kicker">Section 03</span>
+          <h2>3. 第一次制作：上传材料，再说一句话</h2>
+          <p>把一篇 PDF 拖进 Agent 对话，然后说明你要面对谁讲、想讲多长、最看重哪部分。下面这条可以直接作为第一份文献汇报的起点。</p>
           <div class="prompt-box">
             <div class="prompt-head">
-              <strong>最短启动指令</strong>
-              <button class="copy-button" type="button" data-copy-target="quickStartPrompt">复制</button>
+              <strong>论文到组会汇报</strong>
+              <button class="copy-button" type="button" data-copy-target="paperPrompt">复制</button>
             </div>
-            <pre><code id="quickStartPrompt">使用 easyslides 的 literature_minimal 模板帮我把这篇论文制作成 PPT</code></pre>
+            <pre><code id="paperPrompt">请用 EasySlides 把这篇论文做成一份 15 页左右的组会汇报。
+听众是本方向的实验室同学，重点讲清研究问题、方法、关键结果和局限性。
+优先保留原论文中最有解释力的图表；如果时长、模板或内容重点仍不明确，请先问我并给出选项，确认后再制作。</code></pre>
           </div>
-          <p>这句就够跑通第一版。Agent 会读取这篇论文，按 <code>literature_minimal</code> 模板生成文献汇报 PPT，并在完成后给出导出的 <code>.pptx</code> 文件路径。</p>
-          <h3>8.2 先跑出来，再逐步细化</h3>
-          <div class="example-strip single">
+          <div class="example-strip">
             <figure>
-              <img src="assets/guide/easyslides-one-pdf.svg?v=20260523" alt="拖入一个 PDF 后用一句话生成 EasySlides PPT 的示例" loading="lazy" decoding="async">
-              <figcaption>新手第一步：一个 PDF 加一句话。先跑出来，再决定要不要继续细化页数、结构和视觉。</figcaption>
+              <img src="assets/slides/work-01/slide-01.jpg" alt="Transformer 文献汇报示例封面" loading="lazy" decoding="async">
+              <figcaption>文献汇报示例：从论文的研究问题、方法和结果出发组织，而不是把摘要逐句搬到页面上。</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/slides/work-04/slide-01.jpg" alt="国自然基金申请答辩示例封面" loading="lazy" decoding="async">
+              <figcaption>基金申请示例：同一套系统会根据汇报场景改变叙事重点和页面组织。更多真实页面可在<a href="index.html#catalog">展示画廊</a>查看。</figcaption>
             </figure>
           </div>
         </section>
 
-        <section id="prompt">
-          <span class="chapter-kicker">Section 09</span>
-          <h2>9. 进阶优化：让结果更稳定</h2>
-          <p>只丢一个 PDF 可以开始制作，但如果你希望结果更接近真实汇报需求，可以再补充页数、场景、听众和检查要求。下面这些不是新手必需项，而是进阶优化项。</p>
-          <h3>9.1 进阶材料整理</h3>
-          <p>当你已经跑通第一版后，可以新建一个文件夹，把论文、补充材料、特别想保留的图片和要求说明放在一起。</p>
-          <div class="folder-tree">
-            <pre><code>my_first_easyslides_deck/
-  paper.pdf                  # 主论文
-  supplementary.pdf          # 可选：补充材料
-  figures/                   # 可选：你特别想保留的图
-  notes.txt                  # 可选：场景、页数、听众要求
-  school_logo.png            # 可选：答辩模板需要校徽时再放</code></pre>
-          </div>
-          <h3>9.2 <code>notes.txt</code> 可以写什么</h3>
-          <ul class="mini-checklist">
-            <li>这份 PPT 用于什么场景：组会、答辩、课程展示、基金汇报。</li>
-            <li>听众是谁：导师、同门、评委、课程老师、跨学科听众。</li>
-            <li>希望多少页：比如文献汇报 12-16 页，答辩 25-35 页。</li>
-            <li>必须保留哪些图表：比如 Figure 2、Figure 4、研究框架图。</li>
-            <li>不希望出现什么：比如不要过度美化，不要改动原图含义。</li>
+        <section id="materials">
+          <span class="chapter-kicker">Section 04</span>
+          <h2>4. 什么材料最有用</h2>
+          <p>不必先整理成完美文件夹。先把你手头最接近事实和证据的材料给出来，随后再补充要求。EasySlides 会优先使用原始图表、关键数据和已有叙事，而不是用空泛文字替代它们。</p>
+          <ul>
+            <li><strong>论文或报告：</strong>PDF、补充材料、附录和图表说明。</li>
+            <li><strong>已有内容：</strong>Markdown、Word、网页链接、提纲或实验记录。</li>
+            <li><strong>参考风格：</strong>已有 PPT、学校或课题组模板、希望延续的视觉表达。</li>
+            <li><strong>你的判断：</strong>必须保留的图、不能改动的表述、想弱化或避免的内容。</li>
           </ul>
-          <p>如果你想让页面更稳定、证据链更清楚、导出路径也明确，可以使用下面这版更完整的文献汇报指令：</p>
-          <h3>9.3 进阶文献汇报指令</h3>
-          <div class="prompt-box">
-            <div class="prompt-head">
-              <strong>文献汇报 prompt</strong>
-              <button class="copy-button" type="button" data-copy-target="deckPrompt">复制</button>
-            </div>
-            <pre><code id="deckPrompt">请用 EasySlides 把当前文件夹里的论文做成一份可编辑 PPTX。
-场景：组会文献汇报
-页数：12-16 页
-模板：literature_minimal
-要求：
-1. 先提取研究问题、方法、关键结果、重要图表和主要结论。
-2. 每页要有一个明确主张，并保留支撑该主张的证据来源。
-3. 优先使用论文中的关键图表，不要只做空泛文字总结。
-4. 导出前检查文字溢出、图片变形、引用缺失和页面逻辑。
-5. 最后告诉我生成的 .pptx 文件路径。</code></pre>
-          </div>
-
-          <p>如果你要做学位论文答辩，用下面这版：</p>
-          <h3>9.4 答辩 PPT 指令</h3>
-          <div class="prompt-box">
-            <div class="prompt-head">
-              <strong>答辩 prompt</strong>
-              <button class="copy-button" type="button" data-copy-target="defensePrompt">复制</button>
-            </div>
-            <pre><code id="defensePrompt">请用 EasySlides 把当前文件夹里的学位论文做成答辩 PPT。
-场景：硕士/博士学位答辩
-页数：25-35 页
-模板：defense_leftnav
-要求：
-1. 保留研究背景、目的意义、材料方法、结果分析、结论讨论。
-2. 每个结果页都要有图表或数据支撑，不能只有结论句。
-3. 章节导航要清楚，评委能快速知道现在讲到哪里。
-4. 如果有校徽或学院配色，请尽量适配模板。
-5. 导出为可编辑 .pptx，并渲染预览图检查版面。</code></pre>
+          <div class="warning">
+            <strong>没有材料，也可以先说主题</strong>
+            <p>例如“做一份面向本科生的环境领域课程展示”。Agent 会先提出需要确认的范围和角度；在你确认后，再补充可核验的资料并开始制作。涉及私人研究材料时，请只上传你有权使用的文件。</p>
           </div>
         </section>
 
-        <section id="qa">
-          <span class="chapter-kicker">Section 10</span>
-          <h2>10. 生成后一定要检查：别只看第一页</h2>
-          <p>学术 PPT 的检查分两层：一层是视觉有没有出错，另一层是学术逻辑能不能被追问。EasySlides 会尽量做自动检查，但第一份 PPT 你最好亲自过一遍。</p>
-          <h3>10.1 人工检查清单</h3>
+        <section id="clarify">
+          <span class="chapter-kicker">Section 05</span>
+          <h2>5. 为什么 Agent 有时会先问你</h2>
+          <p>“做一份 PPT”通常还不足以确定成品。面对模糊任务，直接生成往往会造成页数、重点、模板或听众不对。EasySlides 会把这些会改变结果的问题提前问清楚。</p>
           <div class="step-list">
             <div>
-              <h4>10.1.1 先看文件是否真的可编辑</h4>
-              <p>打开导出的 <code>.pptx</code>，试着改一个标题和一段正文。如果只能选中整页图片，那就不是你想要的结果。</p>
+              <h4>它会问什么</h4>
+              <p>常见问题包括：给谁讲、预计多长时间、是讲研究过程还是申请逻辑、有没有必须沿用的参考风格、是否要保留原始图表。</p>
             </div>
             <div>
-              <h4>10.1.2 逐页检查主张和证据</h4>
-              <p>每一页都问自己：这一页到底想让听众相信什么？证据来自哪张图、哪段原文、哪个数据？</p>
+              <h4>你怎么回答</h4>
+              <p>直接选择它给出的选项，或用一句自己的话补充即可。你不必知道“内容变体”或“组件”这些内部概念。</p>
             </div>
             <div>
-              <h4>10.1.3 检查图表和引用</h4>
-              <p>图表不能拉伸变形，caption 不能丢关键条件。引用、页码、论文来源要能追溯。</p>
-            </div>
-            <div>
-              <h4>10.1.4 检查版式和导出路径</h4>
-              <p>确认没有文字溢出、图片变形、封面信息错误，并记下最终 <code>.pptx</code> 文件位置。</p>
+              <h4>什么时候不会打断你</h4>
+              <p>当目的、材料和场景已经足够明确时，它会直接开始，并在完成后说明生成了什么、放在哪里以及还需要你确认什么。</p>
             </div>
           </div>
+        </section>
 
-          <h3>10.2 让 Agent 做二次审查</h3>
-          <p>人工看完之后，可以把下面的检查指令发给 Agent，让它逐页给你列问题。</p>
-          <div class="prompt-box">
-            <div class="prompt-head">
-              <strong>逐页检查指令</strong>
-              <button class="copy-button" type="button" data-copy-target="qaPrompt">复制</button>
+        <section id="scenarios">
+          <span class="chapter-kicker">Section 06</span>
+          <h2>6. 常用任务，可以这样说</h2>
+          <p>下面的指令不是格式要求，只是让你更容易开始。把其中的材料、页数和对象换成自己的即可。</p>
+          <div class="scenario-grid" aria-label="Common EasySlides scenarios">
+            <div class="scenario">
+              <span>Paper</span>
+              <strong>文献精读</strong>
+              <p>讲清一个研究问题、方法的关键假设，以及结果是否真正支持结论。</p>
             </div>
-            <pre><code id="qaPrompt">请逐页检查刚刚生成的 PPT。
-对每一页输出：
-1. 这一页的主张是什么；
-2. 支撑证据来自哪里；
-3. 有没有引用缺失、图表不清、文字溢出或逻辑跳跃；
-4. 如果导师追问，最可能追问什么。</code></pre>
+            <div class="scenario">
+              <span>Grant</span>
+              <strong>基金申请</strong>
+              <p>把科学问题、立项依据、研究内容、技术路线和预期产出串成申请叙事。</p>
+            </div>
+            <div class="scenario">
+              <span>Template</span>
+              <strong>复用既有 PPT</strong>
+              <p>把内容组织和视觉节奏沉淀为模板，供后续不同材料复用。</p>
+            </div>
           </div>
+          <div class="prompt-grid">
+            <div class="prompt-box">
+              <div class="prompt-head">
+                <strong>国自然基金申请答辩</strong>
+                <button class="copy-button" type="button" data-copy-target="grantPrompt">复制</button>
+              </div>
+              <pre><code id="grantPrompt">请用 EasySlides 根据我的项目申请材料制作一份国自然基金答辩 PPT。
+重点组织立项依据、科学问题、研究内容、技术路线、创新点、基础与预期产出；整体采用严谨、清晰、证据密度较高的答辩表达。
+如果需要选择汇报时长、章节重点或风格，请先问我。</code></pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-head">
+                <strong>从参考 PPT 蒸馏模板</strong>
+                <button class="copy-button" type="button" data-copy-target="distillPrompt">复制</button>
+              </div>
+              <pre><code id="distillPrompt">请分析这份参考 PPT，并蒸馏为一个可复用的 EasySlides 模板。
+保留它的内容组织、页面层级、组件语言和视觉节奏；不要把原页面简单变成截图或固定页数的复制品。
+完成后，再用我的新材料按这个模板制作一份可编辑 PPTX。</code></pre>
+            </div>
+          </div>
+        </section>
 
-          <div class="example-strip single">
-            <figure>
-              <img src="assets/guide/easyslides-03.png?v=20260523" alt="EasySlides 质量审查示意" loading="lazy" decoding="async">
-              <figcaption>审查不是最后随便看一眼，而是检查每页有没有角色、主张、证据来源和视觉问题。</figcaption>
-            </figure>
+        <section id="iterate">
+          <span class="chapter-kicker">Section 07</span>
+          <h2>7. 查看、修改与继续迭代</h2>
+          <p>完成后得到的是可编辑的 PPTX，而不是一张张合成图片。先看完整预览，再在 PowerPoint 中改标题、替换图表或调整内容；需要回到 Agent 继续优化时，直接指出具体页面和问题即可。</p>
+          <div class="step-list">
+            <div>
+              <h4>先看整套，不只看封面</h4>
+              <p>检查叙事是否完整、重点是否足够、图表有没有被保留、页数是否适合你的汇报时长。</p>
+            </div>
+            <div>
+              <h4>把反馈说到页面和对象</h4>
+              <p>例如：“第 6 页的中心句和图注重复”“第 9 页需要更多原始实验图”“这组文字应该在容器中垂直居中”。具体反馈会被转化为可验证的修改条件。</p>
+            </div>
+            <div>
+              <h4>确认后继续使用</h4>
+              <p>可以继续让 Agent 补页、换图、调整叙事或导出新版本。若你提供的是长期要复用的参考 PPT，也可以把它沉淀为独立模板。</p>
+            </div>
+          </div>
+          <div class="note">
+            <strong>模板不会把内容锁死</strong>
+            <p>模板定义的是设计语言、稳定页面壳、内容组织变体和组件规则，不是“只能做固定几页”。同一个模板可以根据材料选择图文、流程、比较、表格、数据或结论等页面表达，仍保持整体一致。</p>
           </div>
         </section>
 
         <section id="faq">
-          <span class="chapter-kicker">Section 11</span>
-          <h2>11. 常见问题</h2>
-          <h3>11.1 我完全不会命令行，可以用吗？</h3>
-          <p>可以。你可以用龙虾、OpenCode 或 ZCode 的桌面界面。关键不是会不会命令行，而是 Agent 能不能打开项目目录、读写文件、运行必要步骤。</p>
-          <h3>11.2 我应该先装哪个 Agent？</h3>
-          <p>只想省心，先用有道龙虾；想免费体验，先用 OpenCode；已经有 API Key 且想要更强控制力，用 ZCode。已经会 Codex 或 Claude Code 的用户，直接用现有工具即可。</p>
-          <h3>11.3 生成效果不满意怎么办？</h3>
-          <p>不要只说“帮我优化”。请指出具体问题：第几页主张不清楚、哪张图不该放、哪个结论缺证据、哪个模板不合适。Agent 得到的问题越具体，下一轮越稳定。</p>
-          <h3>11.4 可以直接做答辩吗？</h3>
-          <p>可以，但第一轮建议先用文献汇报跑通流程。答辩材料长、结构复杂、评委追问多，最好等你熟悉 EasySlides 的工作方式后再做。</p>
-          <h3>11.5 为什么我下载了软件还不能用？</h3>
-          <p>多数情况是模型没有配置好。检查 API Key 是否填对、余额是否足够、模型供应商是否启用、本地目录权限是否允许 Agent 读写。</p>
+          <span class="chapter-kicker">Section 08</span>
+          <h2>8. 常见问题</h2>
+          <h3>我需要会 PowerPoint 或写代码吗？</h3>
+          <p>不需要会代码。你只要能在对话里说明材料和要求即可。输出文件仍是普通的 PPTX，后续可以照常在 PowerPoint 中编辑。</p>
+
+          <h3>为什么它不立刻开始，而是问我几个问题？</h3>
+          <p>因为听众、时长、汇报场景和参考风格会实质改变页面。先确认比做完一整套再返工更快，也能避免 Agent 自行假设。</p>
+
+          <h3>论文里没有图片怎么办？</h3>
+          <p>Agent 会先判断哪些页面应由文本、结构、表格或流程承担信息，不会为了填满版面随意堆装饰。如果任务允许补充公开资料，它会先和你确认资料范围与用途。</p>
+
+          <h3>我能用自己的学校或课题组 PPT 吗？</h3>
+          <p>可以。你可以让 Agent 参考它制作一次性 PPT，也可以要求蒸馏成今后可复用的模板。请确认自己有权使用和分享其中的内容与视觉资产。</p>
         </section>
       </div>
     </article>
   </main>
 
   <footer class="footer">
-    EasySlides 生成最懂学术的 AI PPT。返回 <a href="index.html">首页案例</a> 或查看 <a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer">GitHub 仓库</a>。
+    EasySlides 让学术材料更容易被讲清楚。<a href="index.html#catalog">查看真实案例</a>，或访问 <a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer">GitHub 仓库</a>。
   </footer>
 
   <script>

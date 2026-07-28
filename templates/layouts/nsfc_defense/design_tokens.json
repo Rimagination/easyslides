@@ -17,9 +17,18 @@
     "inverse": "#FFFFFF"
   },
   "typography": {
-    "title": {"font_size_px": 23, "line_height": 1.16},
-    "body": {"font_size_px": 17, "line_height": 1.25},
-    "caption": {"font_size_px": 16, "line_height": 1.2}
+    "title": {
+      "font_size_px": 23,
+      "line_height": 1.16
+    },
+    "body": {
+      "font_size_px": 17,
+      "line_height": 1.25
+    },
+    "caption": {
+      "font_size_px": 16,
+      "line_height": 1.2
+    }
   },
   "layout": {
     "grid_px": 8,

@@ -1,0 +1,166 @@
+{
+  "schema_version": "easyslides.source_faithful_component_plan.v1",
+  "template_id": "nsfc_defense_distilled",
+  "source": {
+    "pptx": "D:\\scansci\\easyslides\\国自然答辩.pptx",
+    "workspace": "templates/reference/template_asset_sources/nsfc_defense_distilled",
+    "svg_dir": "svg-flat",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "extraction_mode": "verbatim_source_svg_nodes",
+  "fidelity_constraints": [
+    "copy source SVG nodes without recoloring, resizing, font substitution, or geometry normalization",
+    "preserve source text as review samples; generic slot replacement is deferred until its source style contract is approved",
+    "embed byte-identical source media so extracted SVG fragments preserve original image crops without relative-link drift",
+    "do not register review-only source fragments as planner-selectable runtime components"
+  ],
+  "components": [
+    {
+      "component_id": "content_header_chrome",
+      "display_name": "内容页标题栏",
+      "category": "chrome",
+      "source_slide": "slide_03",
+      "source_node_ids": ["shape-10", "shape-3", "shape-4", "shape-6"],
+      "bounds": {"x": 0, "y": 0, "width": 1280, "height": 92},
+      "description": "紫色渐变标题栏、右上图片纹理、页标题和左侧高光装饰。"
+    },
+    {
+      "component_id": "statement_panel",
+      "display_name": "主张陈述面板",
+      "category": "text_surface",
+      "source_slide": "slide_03",
+      "source_node_ids": ["shape-100", "shape-106"],
+      "bounds": {"x": 51, "y": 104, "width": 1178, "height": 81},
+      "description": "带描边与阴影的宽幅主张面板。"
+    },
+    {
+      "component_id": "vertical_key_tag",
+      "display_name": "纵向关键点标签",
+      "category": "label",
+      "source_slide": "slide_03",
+      "source_node_ids": ["shape-29", "shape-30"],
+      "bounds": {"x": 59, "y": 88, "width": 97, "height": 113},
+      "description": "旋转的紫色关键点标签。"
+    },
+    {
+      "component_id": "relationship_arrow_label",
+      "display_name": "关系箭头标签",
+      "category": "connector",
+      "source_slide": "slide_03",
+      "source_node_ids": ["shape-17"],
+      "bounds": {"x": 75, "y": 324, "width": 733, "height": 52},
+      "description": "两个关系标签与中间箭头的原始组合。"
+    },
+    {
+      "component_id": "image_footer_card",
+      "display_name": "图像脚注卡",
+      "category": "media_card",
+      "source_slide": "slide_03",
+      "source_node_ids": ["shape-80", "shape-108", "shape-72", "shape-116"],
+      "bounds": {"x": 51, "y": 411, "width": 378, "height": 265},
+      "description": "淡紫渐变图像容器与紫色底部标签。"
+    },
+    {
+      "component_id": "research_track_card",
+      "display_name": "研究方向图卡",
+      "category": "media_card",
+      "source_slide": "slide_03",
+      "source_node_ids": ["shape-2"],
+      "bounds": {"x": 454, "y": 411, "width": 378, "height": 265},
+      "description": "源文件中的研究方向图卡组合。"
+    },
+    {
+      "component_id": "callout_media_panel",
+      "display_name": "强调媒体面板",
+      "category": "callout",
+      "source_slide": "slide_03",
+      "source_node_ids": ["shape-103", "shape-159", "shape-112", "shape-132", "shape-142"],
+      "bounds": {"x": 856, "y": 208, "width": 372, "height": 468},
+      "description": "尖角白底面板、紫色标题条、说明文字与图像。"
+    },
+    {
+      "component_id": "evidence_tile",
+      "display_name": "证据图块",
+      "category": "media_card",
+      "source_slide": "slide_05",
+      "source_node_ids": ["shape-10", "shape-28", "shape-29"],
+      "bounds": {"x": 64, "y": 328, "width": 246, "height": 272},
+      "description": "图像与紫色圆顶角标签组成的单个证据图块。"
+    },
+    {
+      "component_id": "metric_tile",
+      "display_name": "指标卡",
+      "category": "metric",
+      "source_slide": "slide_06",
+      "source_node_ids": ["shape-9", "shape-10"],
+      "bounds": {"x": 779, "y": 418, "width": 195, "height": 115},
+      "description": "白底圆角指标卡与原始数字排版。"
+    },
+    {
+      "component_id": "metric_group_header",
+      "display_name": "指标组标题",
+      "category": "label",
+      "source_slide": "slide_06",
+      "source_node_ids": ["shape-17", "shape-18"],
+      "bounds": {"x": 779, "y": 342, "width": 416, "height": 60},
+      "description": "指标区的紫色圆角组标题。"
+    },
+    {
+      "component_id": "comparison_matrix",
+      "display_name": "三列对比矩阵",
+      "category": "matrix",
+      "source_slide": "slide_10",
+      "source_node_ids": ["shape-15"],
+      "bounds": {"x": 51, "y": 104, "width": 1178, "height": 288},
+      "description": "带紫色渐变表头、交替行底色与原始文本排版的对比表。"
+    },
+    {
+      "component_id": "side_statement_panel",
+      "display_name": "侧标陈述面板",
+      "category": "callout",
+      "source_slide": "slide_10",
+      "source_node_ids": ["shape-17", "shape-29", "shape-20", "shape-22"],
+      "bounds": {"x": 51, "y": 412, "width": 699, "height": 264},
+      "description": "纵向紫色侧标与大面积正文陈述区。"
+    },
+    {
+      "component_id": "numbered_insight",
+      "display_name": "编号洞见条",
+      "category": "text_surface",
+      "source_slide": "slide_10",
+      "source_node_ids": ["shape-55", "shape-56", "shape-57", "shape-38"],
+      "bounds": {"x": 164, "y": 469, "width": 569, "height": 110},
+      "description": "编号、标题、渐变强调线与正文说明的原始组合。"
+    },
+    {
+      "component_id": "media_caption_card",
+      "display_name": "媒体标题卡",
+      "category": "media_card",
+      "source_slide": "slide_10",
+      "source_node_ids": ["shape-33", "shape-24", "shape-25"],
+      "bounds": {"x": 1006, "y": 412, "width": 222, "height": 264},
+      "description": "竖向媒体图与底部渐变标题条。"
+    },
+    {
+      "component_id": "application_metric_card",
+      "display_name": "应用结果指标卡",
+      "category": "metric",
+      "source_slide": "slide_16",
+      "source_node_ids": ["shape-9", "shape-24", "shape-26", "shape-39", "shape-11"],
+      "bounds": {"x": 51, "y": 326, "width": 484, "height": 162},
+      "description": "紫色顶部标签、红色数值和说明文字的应用指标卡。"
+    },
+    {
+      "component_id": "vertical_feature_image_panel",
+      "display_name": "纵向特征图面板",
+      "category": "media_card",
+      "source_slide": "slide_16",
+      "source_node_ids": ["shape-52", "shape-63", "shape-64", "shape-68"],
+      "bounds": {"x": 51, "y": 104, "width": 582, "height": 202},
+      "description": "纵向紫色标签、图像与带圆角的白色内容表面。"
+    }
+  ]
+}

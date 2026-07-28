@@ -1,12 +1,112 @@
 {
   "schema_version": "easyslides.story_structure.v1",
   "template_id": "nsfc_defense",
-  "default_scenario": "national_natural_science_foundation_defense",
+  "default_scenario": "nsfc_grant_cn",
   "narrative_logic": [
-    "national_need_and_problem",
-    "innovation_and_technical_content",
-    "application_and_social_benefits"
+    "significance_and_scientific_question",
+    "research_content_and_technical_route",
+    "innovation_feasibility_and_implementation"
   ],
+  "grant_cn_profile": {
+    "scenario_id": "nsfc_grant_cn",
+    "scenario_label": "中国国家自然科学基金申请答辩",
+    "narrative_logic": [
+      "significance_and_scientific_question",
+      "research_content_and_technical_route",
+      "innovation_feasibility_and_implementation"
+    ],
+    "sections": [
+      {
+        "section": "01",
+        "title": "立项依据与科学问题",
+        "narrative": "需求或学科缺口 -> 关键科学问题 -> 总体目标与研究内容"
+      },
+      {
+        "section": "02",
+        "title": "研究内容与技术路线",
+        "narrative": "研究内容一 -> 研究内容二 -> 研究内容三 -> 技术路线与判定标准"
+      },
+      {
+        "section": "03",
+        "title": "创新性、研究基础与实施计划",
+        "narrative": "创新点 -> 前期基础与可行性 -> 年度计划、预期成果与风险控制"
+      }
+    ],
+    "full_deck_roles": [
+      "cover",
+      "toc",
+      "chapter_significance",
+      "background_significance",
+      "key_scientific_question_and_objective",
+      "chapter_research_content",
+      "research_content_1",
+      "research_content_2",
+      "research_content_3",
+      "chapter_innovation_foundation_plan",
+      "innovation_points",
+      "feasibility_basis",
+      "work_plan_and_expected_outcomes",
+      "ending"
+    ],
+    "optional_deck_roles": [
+      "toc"
+    ],
+    "short_deck_merge_rules": [
+      "background_significance may merge with key_scientific_question_and_objective only when the scientific gap remains explicit.",
+      "innovation_points may merge with feasibility_basis, but work_plan_and_expected_outcomes must remain explicit.",
+      "research_content_1, research_content_2, and research_content_3 may share one overview page only when each keeps an independent question, method, and success criterion."
+    ],
+    "variant_bindings": [
+      {
+        "grant_role": "background_significance",
+        "section": "01",
+        "body_variant_id": "grant_text_evidence_stack",
+        "story_role": "grant_significance"
+      },
+      {
+        "grant_role": "key_scientific_question_and_objective",
+        "section": "01",
+        "body_variant_id": "three_evidence_track",
+        "story_role": "three_evidence_tracks"
+      },
+      {
+        "grant_role": "research_content_1",
+        "section": "02",
+        "body_variant_id": "need_relationship_evidence",
+        "story_role": "national_need_evidence"
+      },
+      {
+        "grant_role": "research_content_2",
+        "section": "02",
+        "body_variant_id": "metric_dashboard",
+        "story_role": "research_hotspot_metrics"
+      },
+      {
+        "grant_role": "research_content_3",
+        "section": "02",
+        "body_variant_id": "comparison_evidence",
+        "story_role": "method_comparison"
+      },
+      {
+        "grant_role": "innovation_points",
+        "section": "03",
+        "body_variant_id": "three_evidence_track",
+        "story_role": "innovation_evidence"
+      },
+      {
+        "grant_role": "feasibility_basis",
+        "section": "03",
+        "body_variant_id": "grant_text_evidence_stack",
+        "story_role": "grant_rigor_risk"
+      },
+      {
+        "grant_role": "work_plan_and_expected_outcomes",
+        "section": "03",
+        "body_variant_id": "comparison_evidence",
+        "story_role": "method_comparison"
+      }
+    ]
+  },
   "recommended_flow": [
     {
       "page_id": "cover",
@@ -42,181 +142,150 @@
   "sections": [
     {
       "section": "01",
-      "title": "立项背景和研究思路",
-      "narrative": "national need -> two research tracks -> bottleneck -> hotspot metrics -> hotspot synthesis",
-      "source_slides": [
-        3,
-        4,
-        5,
-        6,
-        7
-      ]
+      "title": "立项依据与科学问题",
+      "narrative": "需求或学科缺口 -> 关键科学问题 -> 总体目标与研究内容"
     },
     {
       "section": "02",
-      "title": "创新点和主要技术内容",
-      "narrative": "innovation overview -> method comparison -> device mechanism and training -> system architecture -> application pipeline -> external validation",
-      "source_slides": [
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ]
+      "title": "研究内容与技术路线",
+      "narrative": "研究内容一 -> 研究内容二 -> 研究内容三 -> 技术路线与判定标准"
     },
     {
       "section": "03",
-      "title": "应用推广和经济社会效益",
-      "narrative": "application metrics -> technology transfer evidence -> societal benefit",
-      "source_slides": [
-        16
-      ]
+      "title": "创新性、研究基础与实施计划",
+      "narrative": "创新点 -> 前期基础与可行性 -> 年度计划、预期成果与风险控制"
     }
   ],
   "canonical_content_sequence": [
     {
       "section": "01",
       "story_role": "national_need_evidence",
-      "body_variant_id": "evidence_triptych",
+      "body_variant_id": "need_relationship_evidence",
       "source_slides": [
         3
       ],
-      "source_page_purpose": "Establish the need with a claim, relationship, and three converging exhibits.",
+      "source_page_purpose": "State the need, show its relationship, then ground it in two research tracks.",
       "required_components": [
-        "evidence_triptych"
+        "statement_panel",
+        "relationship_arrow_label",
+        "image_footer_card",
+        "research_track_card",
+        "callout_media_panel"
       ]
     },
     {
       "section": "01",
-      "story_role": "strategic_need_two_track",
-      "body_variant_id": "two_track_evidence",
+      "story_role": "two_research_tracks",
+      "body_variant_id": "dual_track_evidence",
       "source_slides": [
         4
       ],
-      "source_page_purpose": "Connect the need to complementary scientific and application tracks.",
+      "source_page_purpose": "Compare two parallel tracks without losing their visual evidence.",
       "required_components": [
-        "two_track_evidence"
+        "statement_panel",
+        "image_footer_card",
+        "research_track_card",
+        "vertical_key_tag"
       ]
     },
     {
       "section": "01",
-      "story_role": "scientific_bottleneck",
-      "body_variant_id": "bottleneck_chain",
+      "story_role": "bottleneck_chain",
+      "body_variant_id": "evidence_chain",
       "source_slides": [
         5
       ],
-      "source_page_purpose": "Explain the bottleneck through four linked observations before stating the intervention.",
+      "source_page_purpose": "Use a compact evidence chain to make one bottleneck visible.",
       "required_components": [
-        "bottleneck_chain"
+        "statement_panel",
+        "vertical_key_tag",
+        "evidence_tile"
       ]
     },
     {
       "section": "01",
       "story_role": "research_hotspot_metrics",
-      "body_variant_id": "hotspot_metrics",
+      "body_variant_id": "metric_dashboard",
       "source_slides": [
         6
       ],
-      "source_page_purpose": "Locate the research hotspot using performance evidence and quantitative indicators.",
+      "source_page_purpose": "Combine source metric tiles with one source-sized feature exhibit.",
       "required_components": [
-        "hotspot_metrics"
-      ]
-    },
-    {
-      "section": "01",
-      "story_role": "research_hotspot_synthesis",
-      "body_variant_id": "hotspot_panels",
-      "source_slides": [
-        7
-      ],
-      "source_page_purpose": "Synthesize three hotspot directions as linked research panels.",
-      "required_components": [
-        "hotspot_panels"
+        "metric_group_header",
+        "metric_tile",
+        "vertical_feature_image_panel"
       ]
     },
     {
       "section": "02",
-      "story_role": "innovation_overview",
-      "body_variant_id": "innovation_evidence",
+      "story_role": "innovation_evidence",
+      "body_variant_id": "three_evidence_track",
       "source_slides": [
+        7,
         9
       ],
-      "source_page_purpose": "State the innovation package as a four-step route backed by three exhibits.",
+      "source_page_purpose": "Show one innovation through three visual evidence tracks.",
       "required_components": [
-        "innovation_evidence"
+        "statement_panel",
+        "relationship_arrow_label",
+        "image_footer_card"
       ]
     },
     {
       "section": "02",
       "story_role": "method_comparison",
-      "body_variant_id": "ann_snn_comparison",
+      "body_variant_id": "comparison_evidence",
       "source_slides": [
-        10
-      ],
-      "source_page_purpose": "Contrast baseline and event-driven methods in a decision table, then show the selection rationale.",
-      "required_components": [
-        "ann_snn_comparison"
-      ]
-    },
-    {
-      "section": "02",
-      "story_role": "device_mechanism_training",
-      "body_variant_id": "plasticity_training",
-      "source_slides": [
+        10,
         11
       ],
-      "source_page_purpose": "Relate training behavior to device plasticity through paired mechanism evidence.",
+      "source_page_purpose": "Use the source comparison matrix for a bounded technical contrast.",
       "required_components": [
-        "plasticity_training"
+        "statement_panel",
+        "comparison_matrix"
       ]
     },
     {
       "section": "02",
       "story_role": "system_architecture",
-      "body_variant_id": "network_architecture",
+      "body_variant_id": "application_system",
       "source_slides": [
-        12
-      ],
-      "source_page_purpose": "Show formula-to-network-to-hardware architecture as one technical scene.",
-      "required_components": [
-        "network_architecture"
-      ]
-    },
-    {
-      "section": "02",
-      "story_role": "application_pipeline",
-      "body_variant_id": "sensor_application",
-      "source_slides": [
+        12,
         13
       ],
-      "source_page_purpose": "Demonstrate the calibrated sensing path and the downstream system path together.",
+      "source_page_purpose": "Connect quantified performance, system evidence, and an application use case.",
       "required_components": [
-        "sensor_application"
-      ]
-    },
-    {
-      "section": "02",
-      "story_role": "external_validation",
-      "body_variant_id": "literature_result",
-      "source_slides": [
-        14
-      ],
-      "source_page_purpose": "Anchor the contribution in researcher, paper, and external validation evidence.",
-      "required_components": [
-        "literature_result"
+        "application_metric_card",
+        "vertical_feature_image_panel",
+        "callout_media_panel",
+        "media_caption_card",
+        "research_track_card"
       ]
     },
     {
       "section": "03",
-      "story_role": "impact_and_benefits",
-      "body_variant_id": "application_benefits",
+      "story_role": "external_validation",
+      "body_variant_id": "literature_transfer",
       "source_slides": [
+        14,
         16
       ],
-      "source_page_purpose": "Close with transfer evidence, performance metrics, and practical application outcome.",
+      "source_page_purpose": "Close with external evidence and a concrete transfer result.",
       "required_components": [
-        "application_benefits"
+        "statement_panel",
+        "research_track_card",
+        "media_caption_card",
+        "callout_media_panel"
+      ]
+    },
+    {
+      "section": "grant",
+      "story_role": "grant_significance",
+      "body_variant_id": "grant_text_evidence_stack",
+      "source_slides": [],
+      "source_page_purpose": "Adapted from the reviewed research_core evidence-stack page scene; it carries a claim and three auditable supporting arguments in NSFC purple tokens.",
+      "required_components": [
+        "grant_text_evidence_stack"
       ]
     }
   ],
@@ -229,21 +298,18 @@
       "slot_payload"
     ],
     "body_component_policy": "forbidden",
-    "selection_rule": "story_role and section must match the selected source-derived body variant",
+    "selection_rule": "select a reviewed body variant through grant_cn_profile.variant_bindings; its source story_role and section must match",
     "new_layout_rule": "A new content composition requires a reviewed source-page evidence record and a registered body variant; it cannot be assembled ad hoc."
   },
   "default_body_variant_sequence": [
-    "evidence_triptych",
-    "two_track_evidence",
-    "bottleneck_chain",
-    "hotspot_metrics",
-    "hotspot_panels",
-    "innovation_evidence",
-    "ann_snn_comparison",
-    "plasticity_training",
-    "network_architecture",
-    "sensor_application",
-    "literature_result",
-    "application_benefits"
+    "need_relationship_evidence",
+    "dual_track_evidence",
+    "evidence_chain",
+    "metric_dashboard",
+    "three_evidence_track",
+    "comparison_evidence",
+    "application_system",
+    "literature_transfer",
+    "grant_text_evidence_stack"
   ]
 }

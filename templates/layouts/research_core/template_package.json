@@ -1,0 +1,75 @@
+{
+  "schema_version": "easyslides.template_package.v1",
+  "package_id": "template/research_core",
+  "template_id": "research_core",
+  "version": "1.0.0",
+  "status": "review",
+  "display_name": "General Research Briefing",
+  "description": "A general research-report template with six controlled evidence and analysis scenes.",
+  "installability": "repo_relative_template_package",
+  "entrypoints": {
+    "template": "template.json",
+    "layouts": "layouts.json",
+    "body_variants": "body_variants.json",
+    "slots": "slot_contracts.json",
+    "geometry": "geometry_contract.json",
+    "components": "component_catalog.json",
+    "assets": "assets/asset_manifest.json",
+    "qa": "qa_policy.json",
+    "provenance": "source_page_roster.json",
+    "design_spec": "design_spec.md",
+    "rules": "rules.md"
+  },
+  "source_of_truth": {
+    "package": "template_package.json",
+    "shells": "layouts.json",
+    "body_variants": "body_variants.json",
+    "components": "component_catalog.json",
+    "qa": "qa_policy.json",
+    "provenance": "source_page_roster.json"
+  },
+  "derived_outputs": {
+    "template_ir": "compiled/template_ir.json",
+    "lock": "compiled/template.lock.json",
+    "projections": "compiled/projections",
+    "registry": "templates/template_registry.json"
+  },
+  "capability_level": "production",
+  "compatibility": {
+    "canvas_format": "ppt169",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "output_contract": "editable-native-pptx",
+    "layout_mode": "template_scene_composition",
+    "required_renderer": "svg_to_pptx"
+  },
+  "capabilities": [
+    "named_slots",
+    "editable_native_pptx",
+    "component_asset_catalog",
+    "geometry_contract",
+    "text_capacity_contract"
+  ],
+  "scenarios": [
+    "single_paper_report",
+    "lab_progress",
+    "technical_report",
+    "conference_talk",
+    "workshop_training"
+  ],
+  "examples": [
+    "templates/layouts/research_core/04_content.svg"
+  ],
+  "layout_count": 5,
+  "source_template_id": "",
+  "production_eligible": false,
+  "runtime_contract": "compiled/template_ir.json",
+  "selection": {
+    "user_selectable": true,
+    "selection_mode": "explicit_or_clarified",
+    "display_category": "general_research",
+    "forbid_implicit_global_component_mix": true
+  }
+}

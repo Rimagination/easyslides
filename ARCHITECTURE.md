@@ -76,8 +76,8 @@ renderer.
 PPTX distillation emits `component_candidates.json` in addition to its factual
 component catalog. It separates replaceable slots, repeated template primitives,
 candidate template components, and unresolved source-only references. A
-candidate is never a global asset merely because it repeats: geometry, text
-center alignment, visual difference, cross-material, renderer governance, and
+candidate is never a global asset merely because it repeats: geometry, explicit
+text-centre/container alignment, mirror-safe decoration symmetry, visual difference, cross-material, renderer governance, and
 cross-renderer regression evidence must all pass before promotion.
 
 `scripts/cross_renderer_visual_regression.py` renders the same native PPTX with
@@ -234,7 +234,13 @@ Canonical ownership is fail-closed:
   component instances.
 - `component_catalog.json` or component packages: reusable modules, local
   slots, renderer metadata, geometry, and QA.
-- `qa_policy.json`: alignment invariants and promotion requirements.
+- `qa_policy.json`: alignment invariants and promotion requirements. Explicit
+  `data-center-lock` text boxes and declared mirror pairs are checked by
+  `template_visual_invariants.py`; text only receives a container-centre rule
+  when it names that container, so source-faithful unboxed labels are preserved.
+- `story_structure.json`: scenario profiles, page responsibilities, and reviewed
+  narrative-to-variant bindings; it is compiled into Template IR and checked
+  before Slide IR is created when a deck selects a scenario.
 - `source_page_roster.json`: provenance only; source pages are evidence, not
   runtime layouts.
 

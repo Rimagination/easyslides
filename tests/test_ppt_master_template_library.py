@@ -33,6 +33,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
             "defense_topnav",
             "literature_minimal",
             "nsfc_defense",
+            "research_core",
         }
         retired_template_ids = {
             "academic01",
@@ -57,7 +58,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
         self.assertTrue(index_path.exists(), "layouts_index.json is required")
         layouts_index = json.loads(index_path.read_text(encoding="utf-8"))
         self.assertEqual(set(layouts_index), expected_templates)
-        self.assertEqual(len(layouts_index), 6)
+        self.assertEqual(len(layouts_index), 7)
 
         aliases = json.loads((layouts_root / "aliases.json").read_text(encoding="utf-8"))
         self.assertEqual(aliases["academic01"], "academic_general")

@@ -33,15 +33,15 @@ COMPONENT_TOKENS = {
 
 PRIMITIVE_CATALOG: list[dict[str, Any]] = [
     {"primitive_id": "claim_bar", "role": "page_claim", "style": "solid_primary_band"},
-    {"primitive_id": "evidence_figure", "role": "visual_evidence", "style": "framed_visual_with_top_rail"},
-    {"primitive_id": "caption_bar", "role": "figure_caption", "style": "solid_primary_caption"},
+    {"primitive_id": "evidence_figure", "role": "visual_evidence", "style": "plain_visual_evidence"},
+    {"primitive_id": "caption_bar", "role": "figure_caption", "style": "plain_figure_caption"},
     {"primitive_id": "info_panel", "role": "supporting_text", "style": "soft_panel_with_top_rail"},
     {"primitive_id": "callout_panel", "role": "named_insight", "style": "primary_header_plus_soft_body"},
-    {"primitive_id": "metric_tile", "role": "quantitative_evidence", "style": "framed_metric_with_top_rail"},
+    {"primitive_id": "metric_tile", "role": "quantitative_evidence", "style": "quiet_metric_tile"},
     {"primitive_id": "process_step", "role": "process_or_tag", "style": "solid_primary_step"},
     {"primitive_id": "comparison_matrix", "role": "structured_comparison", "style": "primary_header_grid"},
     {"primitive_id": "synthesis_bar", "role": "interpretation", "style": "soft_panel_with_primary_rail"},
-    {"primitive_id": "conclusion_bar", "role": "page_conclusion", "style": "solid_emphasis_band"},
+    {"primitive_id": "conclusion_bar", "role": "page_conclusion", "style": "bold_plain_conclusion"},
 ]
 
 VARIANT_RECIPES: dict[str, list[str]] = {
@@ -73,6 +73,7 @@ def _text(
     size: int = 20,
     fill: str = INK,
     anchor: str = "middle",
+    weight: str = "400",
 ) -> dict[str, Any]:
     return {
         "slot_id": slot_id,
@@ -88,6 +89,7 @@ def _text(
         "font_size": size,
         "fill": fill,
         "text_anchor": anchor,
+        "font_weight": weight,
     }
 
 
@@ -116,11 +118,11 @@ PRIMITIVE_ASSET_SPECS: dict[str, dict[str, Any]] = {
     },
     "evidence_figure": {
         "width": 320, "height": 210,
-        "slots": [_image("FIGURE", 10, 14, 300, 176), _text("CAPTION", 10, 190, 300, 20, required=False, chars=20, size=14, fill="#FFFFFF")],
+        "slots": [_image("FIGURE", 10, 14, 300, 176), _text("CAPTION", 10, 190, 300, 20, required=False, chars=20, size=14, fill=PURPLE)],
     },
     "caption_bar": {
         "width": 320, "height": 38,
-        "slots": [_text("TEXT", 12, 4, 296, 30, chars=20, size=16, fill="#FFFFFF")],
+        "slots": [_text("TEXT", 12, 4, 296, 30, chars=20, size=16, fill=PURPLE)],
     },
     "info_panel": {
         "width": 360, "height": 150,
@@ -148,24 +150,29 @@ PRIMITIVE_ASSET_SPECS: dict[str, dict[str, Any]] = {
     },
     "conclusion_bar": {
         "width": 640, "height": 56,
-        "slots": [_text("TEXT", 18, 8, 604, 40, chars=42, size=20, fill="#FFFFFF")],
+        "slots": [_text("TEXT", 18, 8, 604, 40, chars=42, size=20, fill=PURPLE, weight="700")],
     },
 }
 
 
+SOURCE_COMPONENT_HEIGHT = 520
+CONTENT_COMPONENT_HEIGHT = 448
+CONTENT_VERTICAL_COMPRESSION = CONTENT_COMPONENT_HEIGHT / SOURCE_COMPONENT_HEIGHT
+
+
 COMPONENTS: dict[str, tuple[int, int, str]] = {
-    "evidence_triptych": (1120, 520, "national-need claim, relationship, and three evidence exhibits"),
-    "two_track_evidence": (1120, 520, "two strategic tracks with evidence and an application callout"),
-    "bottleneck_chain": (1120, 520, "claim, bottleneck, four connected scientific exhibits, and conclusion"),
-    "hotspot_metrics": (1120, 520, "research hotspot with hero evidence, supporting figures, and four metrics"),
-    "hotspot_panels": (1120, 520, "three linked research hotspot panels with a synthesis"),
-    "innovation_evidence": (1120, 520, "innovation claim, four-step route, and three supporting exhibits"),
-    "ann_snn_comparison": (1120, 520, "ANN/SNN comparison matrix, method objective, and two evidence figures"),
-    "plasticity_training": (1120, 520, "training mechanism comparison, callout, and device evidence"),
-    "network_architecture": (1120, 520, "formula, network architecture, module evidence, and hardware flow"),
-    "sensor_application": (1120, 520, "dual application evidence: calibrated sensor and downstream system"),
-    "literature_result": (1120, 520, "researcher profile, publication collage, and external validation"),
-    "application_benefits": (1120, 520, "transfer evidence, quantitative benefits, and application result"),
+    "evidence_triptych": (1120, CONTENT_COMPONENT_HEIGHT, "national-need claim, relationship, and three evidence exhibits"),
+    "two_track_evidence": (1120, CONTENT_COMPONENT_HEIGHT, "two strategic tracks with evidence and an application callout"),
+    "bottleneck_chain": (1120, CONTENT_COMPONENT_HEIGHT, "claim, bottleneck, four connected scientific exhibits, and conclusion"),
+    "hotspot_metrics": (1120, CONTENT_COMPONENT_HEIGHT, "research hotspot with hero evidence, supporting figures, and four metrics"),
+    "hotspot_panels": (1120, CONTENT_COMPONENT_HEIGHT, "three linked research hotspot panels with a synthesis"),
+    "innovation_evidence": (1120, CONTENT_COMPONENT_HEIGHT, "innovation claim, four-step route, and three supporting exhibits"),
+    "ann_snn_comparison": (1120, CONTENT_COMPONENT_HEIGHT, "ANN/SNN comparison matrix, method objective, and two evidence figures"),
+    "plasticity_training": (1120, CONTENT_COMPONENT_HEIGHT, "training mechanism comparison, callout, and device evidence"),
+    "network_architecture": (1120, CONTENT_COMPONENT_HEIGHT, "formula, network architecture, module evidence, and hardware flow"),
+    "sensor_application": (1120, CONTENT_COMPONENT_HEIGHT, "dual application evidence: calibrated sensor and downstream system"),
+    "literature_result": (1120, CONTENT_COMPONENT_HEIGHT, "researcher profile, publication collage, and external validation"),
+    "application_benefits": (1120, CONTENT_COMPONENT_HEIGHT, "transfer evidence, quantitative benefits, and application result"),
 }
 
 
@@ -201,7 +208,7 @@ COMPONENT_SLOT_MODELS: dict[str, list[dict[str, Any]]] = {
     ],
     "bottleneck_chain": [
         _text("CLAIM", 28, 20, 1064, 44, chars=42, size=22, fill="#FFFFFF"),
-        _text("BOTTLENECK", 270, 84, 580, 50, chars=28, size=21, fill="#FFFFFF"),
+        _text("BOTTLENECK", 270, 84, 580, 50, chars=28, size=21, fill=PURPLE, weight="700"),
         _image("FIGURE_01", 24, 184, 238, 142),
         _text("NODE_01", 24, 338, 238, 44, lines=2, chars=16, size=17, fill="#FFFFFF"),
         _image("FIGURE_02", 300, 184, 238, 142),
@@ -244,7 +251,7 @@ COMPONENT_SLOT_MODELS: dict[str, list[dict[str, Any]]] = {
         _text("SYNTHESIS", 150, 400, 820, 60, lines=2, chars=46, size=21, fill=PURPLE),
     ],
     "innovation_evidence": [
-        _text("INNOVATION_CLAIM", 30, 20, 1060, 48, lines=2, chars=48, size=22, fill="#FFFFFF"),
+        _text("INNOVATION_CLAIM", 30, 20, 1060, 48, lines=2, chars=48, size=22, fill=PURPLE, weight="700"),
         _text("STEP_01", 42, 106, 214, 54, lines=2, chars=14, size=18, fill="#FFFFFF"),
         _text("STEP_02", 310, 106, 214, 54, lines=2, chars=14, size=18, fill="#FFFFFF"),
         _text("STEP_03", 578, 106, 214, 54, lines=2, chars=14, size=18, fill="#FFFFFF"),
@@ -280,11 +287,11 @@ COMPONENT_SLOT_MODELS: dict[str, list[dict[str, Any]]] = {
         _text("FIGURE_01_CAPTION", 48, 454, 310, 30, required=False, chars=20, size=15, fill="#FFFFFF"),
         _image("FIGURE_02", 402, 328, 310, 118),
         _text("FIGURE_02_CAPTION", 402, 454, 310, 30, required=False, chars=20, size=15, fill="#FFFFFF"),
-        _text("SYNTHESIS", 764, 244, 324, 184, lines=5, chars=20, size=18, fill="#FFFFFF"),
+        _text("SYNTHESIS", 764, 244, 324, 54, lines=2, chars=24, size=20, fill=PURPLE, weight="700"),
     ],
     "plasticity_training": [
         _text("POINT_01", 30, 20, 514, 48, lines=2, chars=29, size=20, fill="#FFFFFF"),
-        _text("POINT_02", 576, 20, 514, 48, lines=2, chars=29, size=20, fill="#FFFFFF"),
+        _text("POINT_02", 576, 20, 514, 48, lines=2, chars=29, size=20, fill=PURPLE, weight="700"),
         _text("ANN_LABEL", 30, 94, 300, 36, chars=16, size=19, fill=PURPLE),
         _image("ANN_FIGURE", 30, 138, 300, 188),
         _text("SNN_LABEL", 386, 94, 300, 36, chars=16, size=19, fill=PURPLE),
@@ -409,7 +416,33 @@ COMPOSITION_PROFILES: dict[str, dict[str, Any]] = {
 
 def component_slots(component_id: str) -> list[dict[str, Any]] | None:
     slots = COMPONENT_SLOT_MODELS.get(component_id)
-    return deepcopy(slots) if slots is not None else None
+    if slots is None:
+        return None
+    normalized = deepcopy(slots)
+    for slot in normalized:
+        slot_id = str(slot.get("slot_id") or "")
+        geometry = slot.get("geometry")
+        if isinstance(geometry, dict):
+            geometry["y"] = round(float(geometry["y"]) * CONTENT_VERTICAL_COMPRESSION, 3)
+            geometry["height"] = round(float(geometry["height"]) * CONTENT_VERTICAL_COMPRESSION, 3)
+        if slot_id.endswith("CAPTION") or slot_id.startswith("NODE_"):
+            slot["fill"] = PURPLE
+        if slot_id == "CONCLUSION":
+            slot["fill"] = PURPLE
+            slot["font_weight"] = "700"
+        if slot.get("kind") == "image":
+            slot["content_role"] = "evidence_figure"
+        elif slot_id.endswith("CAPTION"):
+            slot["content_role"] = "figure_caption"
+        elif slot_id in {"CONCLUSION", "SYNTHESIS", "SUPPORTING_LINE"}:
+            slot["content_role"] = "supporting_takeaway"
+        elif slot_id.endswith("TITLE") or "CLAIM" in slot_id or slot_id in {"BOTTLENECK", "FORMULA"}:
+            slot["content_role"] = "evidence_heading"
+        elif "BODY" in slot_id or slot_id.startswith(("POINT_", "NODE_", "STEP_", "STAGE_", "ROW_")):
+            slot["content_role"] = "evidence_detail"
+        else:
+            slot["content_role"] = "data_label"
+    return normalized
 
 
 def _rect(x: float, y: float, w: float, h: float, fill: str, *, stroke: str = "none", opacity: float | None = None) -> str:
@@ -430,7 +463,9 @@ def _arrow(x1: float, y1: float, x2: float, y2: float, *, color: str = PURPLE) -
 
 
 def _frame(x: float, y: float, w: float, h: float) -> str:
-    return _rect(x, y, w, h, COMPONENT_TOKENS["panel_fill"], stroke=COMPONENT_TOKENS["border"]) + _rect(x, y, w, COMPONENT_TOKENS["rail_height"], PURPLE)
+    # A figure's visual language comes from the evidence itself. Do not wrap
+    # it in decorative rails, outlines, or backing rectangles.
+    return ""
 
 
 def _info_panel(x: float, y: float, w: float, h: float) -> str:
@@ -442,7 +477,8 @@ def _claim_bar(x: float, y: float, w: float, h: float, *, emphasis: bool = False
 
 
 def _caption_bar(x: float, y: float, w: float, h: float = 34) -> str:
-    return _rect(x, y, w, h, COMPONENT_TOKENS["caption_fill"])
+    # Figure captions are semantic labels, not a second decorative panel.
+    return ""
 
 
 def _callout_panel(x: float, y: float, w: float, h: float, *, header_height: float = 56) -> str:
@@ -461,15 +497,18 @@ def _synthesis_bar(x: float, y: float, w: float, h: float) -> str:
 
 
 def _conclusion_bar(x: float, y: float, w: float, h: float) -> str:
-    return _rect(x, y, w, h, COMPONENT_TOKENS["conclusion_fill"])
+    # Conclusions are typographic anchors, not colored containers.
+    return ""
 
 
 def _metric_cell(x: float, y: float) -> str:
-    return _frame(x, y, 136, 82)
+    return _rect(x, y, 136, 82, COMPONENT_TOKENS["panel_fill"], stroke=COMPONENT_TOKENS["border"])
 
 
 def _base() -> list[str]:
-    return [_rect(0, 0, 1120, 520, "#FFFFFF", stroke="#B68BC8"), _line(18, 504, 1102, 504, color="#E2C7EC")]
+    # The source 1120 x 520 composition is vertically compacted so the content
+    # shell can reserve a stable key-message zone without wasting page area.
+    return []
 
 
 def _surface(component_id: str) -> list[str]:
@@ -481,21 +520,21 @@ def _surface(component_id: str) -> list[str]:
     elif component_id == "bottleneck_chain":
         s += [_claim_bar(18, 12, 1084, 60), _conclusion_bar(260, 84, 600, 50), *[_frame(x, 184, 238, 142) for x in (24, 300, 576, 852)], *[_caption_bar(x, 338, 238, 44) for x in (24, 300, 576, 852)], _arrow(264, 255, 288, 255), _arrow(540, 255, 564, 255), _arrow(816, 255, 840, 255), _conclusion_bar(100, 430, 920, 52)]
     elif component_id == "hotspot_metrics":
-        s += [_info_panel(20, 12, 410, 170), _frame(452, 20, 278, 174), _claim_bar(20, 202, 720, 48), _frame(30, 268, 318, 160), _frame(374, 268, 318, 160), _caption_bar(30, 436, 318, 32), _caption_bar(374, 436, 318, 32), *[_metric_cell(x, y) for y in (30, 132) for x in (770, 936)], _claim_bar(748, 266, 350, 166)]
+        s += [_info_panel(20, 12, 410, 170), _frame(452, 20, 278, 174), _claim_bar(20, 202, 720, 48), _frame(30, 268, 318, 160), _frame(374, 268, 318, 160), _caption_bar(30, 436, 318, 32), _caption_bar(374, 436, 318, 32), *[_metric_cell(x, y) for y in (30, 132) for x in (770, 936)], _conclusion_bar(748, 266, 350, 166)]
     elif component_id == "hotspot_panels":
         s += [*[_claim_bar(x, 14, 340, 58) for x in (20, 390, 760)], *[_info_panel(x, 76, 340, 82) for x in (20, 390, 760)], *[_frame(x, 170, 320, 184) for x in (30, 400, 770)], _arrow(352, 262, 380, 262), _arrow(722, 262, 750, 262), _synthesis_bar(140, 394, 840, 72)]
     elif component_id == "innovation_evidence":
         s += [_conclusion_bar(18, 12, 1084, 66), *[_step_node(x, 102, 224, 62) for x in (36, 304, 572, 840)], _arrow(264, 133, 292, 133), _arrow(532, 133, 560, 133), _arrow(800, 133, 828, 133), _synthesis_bar(174, 180, 772, 52), *[_frame(x, 258, 318, 152) for x in (38, 401, 764)], *[_caption_bar(x, 418, 318) for x in (38, 401, 764)]]
     elif component_id == "ann_snn_comparison":
-        s += [_claim_bar(20, 12, 710, 54), _claim_bar(30, 76, 690, 38), *[_rect(30, y, 690, 38, "#FFFFFF", stroke=COMPONENT_TOKENS["border"]) for y in (114, 152, 190, 228)], _line(184, 76, 184, 266), _line(452, 76, 452, 266), _callout_panel(754, 22, 344, 178), _frame(48, 328, 310, 118), _caption_bar(48, 454, 310, 30), _frame(402, 328, 310, 118), _caption_bar(402, 454, 310, 30), _claim_bar(754, 232, 344, 206)]
+        s += [_claim_bar(20, 12, 710, 54), _claim_bar(30, 76, 690, 38), *[_rect(30, y, 690, 38, "#FFFFFF", stroke=COMPONENT_TOKENS["border"]) for y in (114, 152, 190, 228)], _line(184, 76, 184, 266), _line(452, 76, 452, 266), _callout_panel(754, 22, 344, 178), _frame(48, 328, 310, 118), _caption_bar(48, 454, 310, 30), _frame(402, 328, 310, 118), _caption_bar(402, 454, 310, 30), _conclusion_bar(754, 232, 344, 206)]
     elif component_id == "plasticity_training":
         s += [_claim_bar(20, 12, 534, 60), _conclusion_bar(566, 12, 534, 60), _info_panel(20, 88, 320, 46), _frame(30, 138, 300, 188), _info_panel(376, 88, 320, 46), _frame(386, 138, 300, 188), _arrow(342, 232, 372, 232), _callout_panel(738, 88, 360, 170, header_height=62), _frame(748, 270, 340, 110), _conclusion_bar(70, 414, 980, 68)]
     elif component_id == "network_architecture":
-        s += [_claim_bar(20, 12, 490, 66), _info_panel(20, 84, 240, 70), _frame(276, 84, 240, 142), *[_step_node(x, 90, w, 54) for x, w in ((524, 190), (722, 190), (920, 180))], _line(714, 117, 722, 117, color=PURPLE, width=3), _line(912, 117, 920, 117, color=PURPLE, width=3), _info_panel(20, 250, 350, 54), _frame(30, 310, 330, 132), _info_panel(368, 300, 300, 152), _info_panel(694, 250, 406, 54), _frame(704, 310, 386, 132), _claim_bar(152, 462, 816, 42)]
+        s += [_claim_bar(20, 12, 490, 66), _info_panel(20, 84, 240, 70), _frame(276, 84, 240, 142), *[_step_node(x, 90, w, 54) for x, w in ((524, 190), (722, 190), (920, 180))], _line(714, 117, 722, 117, color=PURPLE, width=3), _line(912, 117, 920, 117, color=PURPLE, width=3), _info_panel(20, 250, 350, 54), _frame(30, 310, 330, 132), _info_panel(368, 300, 300, 152), _info_panel(694, 250, 406, 54), _frame(704, 310, 386, 132), _conclusion_bar(152, 462, 816, 42)]
     elif component_id == "sensor_application":
         s += [_claim_bar(18, 12, 1084, 62), _frame(30, 94, 476, 230), _info_panel(30, 330, 476, 46), *[_step_node(x, 386, 142, 48) for x in (30, 194, 358)], _frame(614, 94, 476, 230), _info_panel(614, 330, 476, 46), *[_step_node(x, 386, 142, 48) for x in (614, 778, 942)], _conclusion_bar(140, 450, 840, 48)]
     elif component_id == "literature_result":
-        s += [_info_panel(20, 42, 490, 194), _frame(30, 54, 164, 164), _claim_bar(206, 162, 304, 70), _frame(536, 50, 248, 150), _frame(810, 50, 280, 150), _frame(30, 276, 328, 144), _callout_panel(380, 264, 306, 178, header_height=56), _callout_panel(710, 264, 390, 178, header_height=56), _claim_bar(126, 454, 868, 48)]
+        s += [_info_panel(20, 42, 490, 194), _frame(30, 54, 164, 164), _claim_bar(206, 162, 304, 70), _frame(536, 50, 248, 150), _frame(810, 50, 280, 150), _frame(30, 276, 328, 144), _callout_panel(380, 264, 306, 178, header_height=56), _callout_panel(710, 264, 390, 178, header_height=56), _conclusion_bar(126, 454, 868, 48)]
     elif component_id == "application_benefits":
         s += [_frame(30, 26, 340, 184), _info_panel(390, 16, 710, 150), *[_step_node(x, 176, 146, 32) for x in (400, 558, 716, 874)], _frame(30, 258, 240, 126), _frame(276, 258, 240, 126), _arrow(528, 324, 638, 324, color=RED), _callout_panel(522, 268, 126, 132, header_height=50), _frame(658, 258, 432, 142), _conclusion_bar(110, 438, 900, 58)]
     return s
@@ -519,21 +558,26 @@ def render_component_svg(component_id: str, width: int, height: int) -> str | No
         size = int(slot.get("font_size") or 20)
         fill = str(slot.get("fill") or INK)
         anchor = str(slot.get("text_anchor") or "middle")
+        weight = str(slot.get("font_weight") or "400")
         x = box["x"] + box["width"] / 2 if anchor == "middle" else box["x"] + 8
         y = box["y"] + box["height"] / 2 + size * 0.35
         nodes.append(
             f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="{anchor}" font-family="Arial, sans-serif" '
-            f'font-size="{size}" fill="{fill}" data-slot="{slot_id}" data-slot-id="{slot_id}" '
+            f'font-size="{size}" font-weight="{weight}" fill="{fill}" data-slot="{slot_id}" data-slot-id="{slot_id}" '
             f'data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" '
             f'data-pptx-box-x="{box["x"]:.2f}" data-pptx-box-y="{box["y"]:.2f}" '
             f'data-pptx-box-w="{box["width"]:.2f}" data-pptx-box-h="{box["height"]:.2f}" '
             f'data-pptx-valign="middle" data-center-lock="true" data-pptx-line-height-ratio="1.150" '
             f'data-pptx-text-anchor="{anchor}">{slot_id}</text>'
         )
-    surface = "\n  ".join(_surface(component_id))
+    surface = "\n    ".join(_surface(component_id))
+    compressed_surface = (
+        f'<g data-easyslides-layout="compressed_body_scene" '
+        f'transform="scale(1 {CONTENT_VERTICAL_COMPRESSION:.8f})">\n    {surface}\n  </g>'
+    )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" data-component="{component_id}">\n  {surface}\n  '
+        f'viewBox="0 0 {width} {height}" data-component="{component_id}">\n  {compressed_surface}\n  '
         + "\n  ".join(nodes)
         + "\n</svg>\n"
     )
@@ -567,7 +611,7 @@ def _primitive_surface(primitive_id: str, width: int, height: int) -> str:
     if primitive_id == "callout_panel":
         return _callout_panel(0, 0, width, height)
     if primitive_id == "metric_tile":
-        return _frame(0, 0, width, height)
+        return _rect(0, 0, width, height, COMPONENT_TOKENS["panel_fill"], stroke=COMPONENT_TOKENS["border"])
     if primitive_id == "process_step":
         return _step_node(0, 0, width, height)
     if primitive_id == "comparison_matrix":
@@ -601,11 +645,12 @@ def render_primitive_svg(primitive_id: str) -> str:
         size = int(slot.get("font_size") or 20)
         fill = str(slot.get("fill") or INK)
         anchor = str(slot.get("text_anchor") or "middle")
+        weight = str(slot.get("font_weight") or "400")
         x = box["x"] + box["width"] / 2 if anchor == "middle" else box["x"] + 8
         y = box["y"] + box["height"] / 2 + size * 0.35
         nodes.append(
             f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="{anchor}" font-family="Arial, sans-serif" '
-            f'font-size="{size}" fill="{fill}" data-slot="{slot_id}" data-slot-id="{slot_id}" '
+            f'font-size="{size}" font-weight="{weight}" fill="{fill}" data-slot="{slot_id}" data-slot-id="{slot_id}" '
             f'data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" '
             f'data-pptx-box-x="{box["x"]:.2f}" data-pptx-box-y="{box["y"]:.2f}" '
             f'data-pptx-box-w="{box["width"]:.2f}" data-pptx-box-h="{box["height"]:.2f}" '

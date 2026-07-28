@@ -11,18 +11,26 @@ GATE = ROOT / "scripts" / "component_preview_gate.py"
 
 
 class ComponentPreviewGateTests(unittest.TestCase):
-    def test_generated_gallery_previews_pass_center_gate(self):
-        from scripts.component_gallery import build_component_gallery
+    def test_center_locked_preview_passes_gate(self):
         from scripts.component_preview_gate import validate_component_preview_dir
 
         with tempfile.TemporaryDirectory() as tmp:
-            output = Path(tmp) / "gallery"
-            build_component_gallery(output_dir=output)
-            report = validate_component_preview_dir(output / "previews")
+            preview_root = Path(tmp) / "previews"
+            preview_root.mkdir()
+            (preview_root / "ok.svg").write_text(
+                """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <text data-pptx-textbox="true" data-pptx-box-y="20" data-pptx-box-h="40"
+        data-pptx-valign="middle" data-center-lock="true" data-slot-id="title"
+        x="100" y="40"><tspan x="100" y="40">OK</tspan></text>
+</svg>
+""",
+                encoding="utf-8",
+            )
+            report = validate_component_preview_dir(preview_root)
 
         self.assertEqual(report["schema_version"], "easyslides.component_preview_gate_report.v1")
         self.assertEqual(report["status"], "pass", report["issues"])
-        self.assertEqual(report["svg_count"], 18)
+        self.assertEqual(report["svg_count"], 1)
         self.assertGreater(report["checked_text_count"], 0)
 
     def test_off_center_text_fails(self):
