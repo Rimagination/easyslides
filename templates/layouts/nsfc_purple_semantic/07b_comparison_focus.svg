@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720">
+
+  <defs>
+    <linearGradient id="purpleGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#751497"/>
+      <stop offset="1" stop-color="#4B0D65"/>
+    </linearGradient>
+    <linearGradient id="softBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8EAFC"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+
+  <rect x="0" y="0" width="1280" height="72" fill="#751497"/>
+  <rect x="0" y="68" width="1280" height="4" fill="#BF4BE7"/>
+  <path d="M1080 0H1280V72H1140L1080 0Z" fill="#4B0D65" opacity="0.8"/>
+  <text data-slot="PAGE_TITLE" data-slot-kind="text" x="52" y="48" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" data-pptx-textbox="true" data-pptx-box-x="52" data-pptx-box-y="18" data-pptx-box-w="900" data-pptx-box-h="46" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{PAGE_TITLE}}</text>
+  <text data-slot="SECTION" data-slot-kind="text" x="1220" y="44" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="normal" fill="#FFFFFF" data-pptx-textbox="true" data-pptx-box-x="1030" data-pptx-box-y="29" data-pptx-box-w="190" data-pptx-box-h="30" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{SECTION}}</text>
+
+  <rect x="60" y="112" width="1160" height="70" rx="10" fill="#F8EAFC" stroke="#E6D5EC"/>
+  <text data-slot="KEY_MESSAGE" data-slot-kind="text" x="84" y="157" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="84" data-pptx-box-y="135" data-pptx-box-w="1100" data-pptx-box-h="44" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{KEY_MESSAGE}}</text>
+  <rect x="60" y="212" width="560" height="420" rx="16" fill="#FFFFFF" stroke="#E6D5EC" stroke-width="2"/>
+  <rect x="660" y="212" width="560" height="420" rx="16" fill="#FFFFFF" stroke="#E6D5EC" stroke-width="2"/>
+  <rect x="88" y="238" width="120" height="58" rx="29" fill="#F8EAFC" stroke="#BF4BE7" stroke-width="2"/>
+  <rect x="688" y="238" width="120" height="58" rx="29" fill="#F8EAFC" stroke="#BF4BE7" stroke-width="2"/>
+  <text data-slot="LEFT_BADGE" data-slot-kind="text" x="148" y="278"
+        text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="25" font-weight="bold"
+        fill="#751497" data-pptx-textbox="true" data-pptx-box-x="98"
+        data-pptx-box-y="246" data-pptx-box-w="100" data-pptx-box-h="42"
+        data-pptx-valign="middle" data-pptx-measure-text="A">{{LEFT_BADGE}}</text>
+  <text data-slot="RIGHT_BADGE" data-slot-kind="text" x="748" y="278"
+        text-anchor="middle" font-family="Microsoft YaHei, Arial, sans-serif" font-size="25" font-weight="bold"
+        fill="#751497" data-pptx-textbox="true" data-pptx-box-x="698"
+        data-pptx-box-y="246" data-pptx-box-w="100" data-pptx-box-h="42"
+        data-pptx-valign="middle" data-pptx-measure-text="A">{{RIGHT_BADGE}}</text>
+  <text data-slot="LEFT_TITLE" data-slot-kind="text" x="232" y="276" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="232" data-pptx-box-y="254" data-pptx-box-w="340" data-pptx-box-h="44" data-pptx-valign="middle" data-pptx-measure-text="Sample title" data-line-height="32">{{LEFT_TITLE}}</text>
+  <text data-slot="RIGHT_TITLE" data-slot-kind="text" x="832" y="276" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="832" data-pptx-box-y="254" data-pptx-box-w="340" data-pptx-box-h="44" data-pptx-valign="middle" data-pptx-measure-text="Sample title" data-line-height="32">{{RIGHT_TITLE}}</text>
+  <text data-slot="LEFT_BODY" data-slot-kind="list" x="96" y="356" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="96" data-pptx-box-y="335" data-pptx-box-w="476" data-pptx-box-h="220" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="48">{{LEFT_BODY}}</text>
+  <text data-slot="RIGHT_BODY" data-slot-kind="list" x="696" y="356" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="696" data-pptx-box-y="335" data-pptx-box-w="476" data-pptx-box-h="220" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="48">{{RIGHT_BODY}}</text>
+
+  <line x1="52" y1="682" x2="1228" y2="682" stroke="#E6D5EC" stroke-width="1"/>
+  <text data-slot="SOURCE" data-slot-kind="text" x="52" y="707" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="normal" fill="#6F6275" data-pptx-textbox="true" data-pptx-box-x="52" data-pptx-box-y="694" data-pptx-box-w="900" data-pptx-box-h="24" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="32">{{SOURCE}}</text>
+  <text data-slot="PAGE_NUM" data-slot-kind="text" x="1228" y="707" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="bold" fill="#751497" data-pptx-textbox="true" data-pptx-box-x="1132" data-pptx-box-y="693" data-pptx-box-w="96" data-pptx-box-h="24" data-pptx-valign="top" data-pptx-measure-text="99" data-line-height="32">{{PAGE_NUM}}</text>
+
+
+</svg>

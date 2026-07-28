@@ -1,0 +1,154 @@
+{
+  "schema_version": "easyslides.component_package.v1",
+  "component_id": "kpi_row_3",
+  "asset_id": "component_package/kpi_row_3",
+  "display_name": "KPI Row 3",
+  "source_asset_id": "card/kpi_row_3",
+  "granularity": "component_package",
+  "render_backend": "component_package",
+  "render_targets": ["svg", "native_pptx", "template_body_variant"],
+  "selection": {
+    "content_shapes": ["metric_set", "three_numbers", "dashboard_summary"],
+    "page_roles": ["overview", "result", "dashboard"],
+    "item_count_min": 3,
+    "item_count_max": 3,
+    "density": "low",
+    "evidence_types": ["metric", "quantitative", "kpi"],
+    "editable_targets": ["numbers", "labels", "notes"],
+    "visual_complexity": "low",
+    "best_for": "Three sibling metrics that should be compared at a glance.",
+    "avoid_when": "Any metric needs a long paragraph, chart, or evidence table."
+  },
+  "input_schema": {
+    "schema_version": "easyslides.component_input_schema.v1",
+    "type": "object",
+    "required": ["items"],
+    "additional_properties": false,
+    "properties": {
+      "items": {
+        "type": "array",
+        "min_items": 3,
+        "max_items": 3,
+        "items": {
+          "type": "object",
+          "required": ["metric", "label"],
+          "additional_properties": false,
+          "properties": {
+            "metric": {"type": "string", "min_length": 1, "max_length": 24},
+            "label": {"type": "string", "min_length": 1, "max_length": 44},
+            "note": {"type": "string", "max_length": 60},
+            "delta": {"type": "string", "max_length": 24}
+          }
+        }
+      }
+    }
+  },
+  "payload_contract": {
+    "shape": "items[]",
+    "item_count_min": 3,
+    "item_count_max": 3,
+    "item_schema": {
+      "required": ["metric", "label"],
+      "optional": ["note", "delta"]
+    }
+  },
+  "slots": [
+    {
+      "slot_id": "metric",
+      "kind": "text",
+      "role": "metric",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 40,
+        "min_font_size_px": 34,
+        "line_height": 1.05,
+        "max_chars_per_line_zh": 7,
+        "max_lines": 1,
+        "overflow_action": "shorten"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "label",
+      "kind": "text",
+      "role": "title",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 18,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "max_lines": 1,
+        "overflow_action": "shorten"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "note",
+      "kind": "text",
+      "role": "body",
+      "repeated": true,
+      "required": false,
+      "capacity": {
+        "font_size_px": 14,
+        "min_font_size_px": 12,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 16,
+        "max_lines": 2,
+        "overflow_action": "drop_or_move_to_notes"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    }
+  ],
+  "qa": {
+    "required_gates": [
+      "component_package_contract",
+      "component_plan_contract",
+      "card_payload_capacity",
+      "visual_measure_gate",
+      "validate_pptx_text_layout",
+      "renderer_governance"
+    ],
+    "alignment_invariants": [
+      {
+        "id": "kpi_text_vertical_center",
+        "scope": "text_in_container",
+        "rule": "text_center_y_matches_container_center_y",
+        "tolerance_px": 2,
+        "severity": "error"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "story_id": "default",
+      "payload": "stories/default.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "dense",
+      "payload": "stories/dense.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "overflow",
+      "payload": "stories/overflow.json",
+      "expected_status": "fail"
+    }
+  ],
+  "preview": {
+    "review_status": "pending",
+    "expected_files": ["preview/default.png", "preview/dense.png", "preview/overflow.png"]
+  }
+}

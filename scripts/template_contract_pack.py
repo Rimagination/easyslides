@@ -40,6 +40,11 @@ IMAGE_SLOT_HINTS = (
     "visual",
     "icon",
 )
+CANONICAL_SHELL_LIMIT = 5
+CANONICAL_SHELL_MINIMUM = 3
+REQUIRED_SHELL_ROLES = {"cover", "content", "ending"}
+OPTIONAL_SHELL_ROLES = {"toc", "chapter"}
+CANONICAL_SHELL_ROLES = REQUIRED_SHELL_ROLES | OPTIONAL_SHELL_ROLES
 
 class TemplateContractError(RuntimeError):
     """Raised when a template folder cannot be compiled into contracts."""
@@ -264,6 +269,8 @@ def build_links(template_dir: Path, template_id: str) -> OrderedDict[str, Any]:
         layouts=maybe("layouts.json"),
         page_catalog=maybe("page_catalog.json"),
         story_structure=maybe("story_structure.json"),
+        body_variants=maybe("body_variants.json"),
+        component_catalog=maybe("component_catalog.json"),
         rules=maybe("rules.md"),
         template=rel_template_path(template_dir, CONTRACT_FILES["template"]),
         layout_roster=rel_template_path(template_dir, CONTRACT_FILES["layout_roster"]),
@@ -285,6 +292,92 @@ def build_contract_pack(template_dir: Path) -> dict[str, OrderedDict[str, Any]]:
         raise TemplateContractError(
             f"template_id {template_id!r} does not match directory {template_dir.name!r}"
         )
+
+    package = read_optional_json(template_dir / "template_package.json")
+    if isinstance(package.get("source_of_truth"), dict):
+        try:
+            from scripts.template_compiler import compile_template
+        except ModuleNotFoundError:  # pragma: no cover
+            from template_compiler import compile_template
+
+        compiled = compile_template(template_dir)
+        template_ir = compiled["template_ir"]
+        roster_rows = []
+        for index, shell in enumerate(template_ir.get("shells", []), start=1):
+            roster_rows.append(
+                OrderedDict(
+                    layout_id=shell["shell_id"],
+                    source_slide=index,
+                    page_id=Path(shell["svg_path"]).stem,
+                    name=shell["shell_id"].replace("_", " "),
+                    role_fit=[shell["role"]],
+                    page_archetype=shell.get("archetype", shell["role"]),
+                    density_score=None,
+                    slot_model=shell["role"],
+                    svg_path=shell["svg_path"],
+                    layout_contract=f"{template_id}/{shell['shell_id']}",
+                    best_for=shell["role"],
+                    avoid="",
+                )
+            )
+        roster = OrderedDict(
+            schema_version="easyslides.template_layout_roster.v1",
+            template_id=template_id,
+            source="derived_from_compiled_template_ir",
+            layouts=roster_rows,
+        )
+        projections = compiled["projections"]
+        return {
+            "template": OrderedDict(projections["template.json"]),
+            "layout_roster": roster,
+            "slot_contracts": OrderedDict(projections["slot_contracts.json"]),
+            "links": build_links(template_dir, template_id),
+        }
+
+    global_contract = layouts.get("global_contract") if isinstance(layouts.get("global_contract"), dict) else {}
+    policy = global_contract.get("canonical_shell_policy")
+    if policy in {
+        "evidence_driven_three_to_five_stable_shells",
+        "exactly_five_stable_shells_with_body_variants",
+    }:
+        pages = layouts.get("pages") if isinstance(layouts.get("pages"), list) else []
+        roles = {
+            str(page.get("shell_id") or page.get("page_id") or page.get("story_role") or page.get("page_type") or "")
+            for page in pages
+            if isinstance(page, dict)
+        }
+        if policy == "exactly_five_stable_shells_with_body_variants":
+            valid_shell_count = len(pages) == CANONICAL_SHELL_LIMIT
+            valid_roles = roles == CANONICAL_SHELL_ROLES
+        else:
+            valid_shell_count = CANONICAL_SHELL_MINIMUM <= len(pages) <= CANONICAL_SHELL_LIMIT
+            valid_roles = REQUIRED_SHELL_ROLES <= roles <= CANONICAL_SHELL_ROLES
+        if not valid_shell_count or not valid_roles:
+            raise TemplateContractError(
+                "canonical shell policy requires 3-5 public pages with required roles "
+                "cover/content/ending and optional roles toc/chapter"
+            )
+        variants_ref = str(layouts.get("body_variants") or "body_variants.json")
+        if not (template_dir / variants_ref).is_file():
+            raise TemplateContractError(f"canonical shell policy requires {variants_ref}")
+        roster_ref = str(layouts.get("source_page_roster") or "source_page_roster.json")
+        if not (template_dir / roster_ref).is_file():
+            raise TemplateContractError(f"canonical shell policy requires {roster_ref}")
+
+    body_variants_path = template_dir / str(layouts.get("body_variants") or "body_variants.json")
+    if body_variants_path.is_file():
+        try:
+            from scripts.body_variant_contract import validate_body_variant_contract
+        except ModuleNotFoundError:  # pragma: no cover
+            from body_variant_contract import validate_body_variant_contract
+
+        component_report = validate_body_variant_contract(template_dir)
+        if component_report["status"] != "pass":
+            first = component_report["issues"][0]
+            raise TemplateContractError(
+                "body variant component contract failed: "
+                f"{first.get('code')} at {first.get('path')}: {first.get('message')}"
+            )
 
     catalog_pages = catalog.get("archetypes") or catalog.get("pages", [])
     if not isinstance(catalog_pages, list):

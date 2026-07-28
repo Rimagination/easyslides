@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#F7F8FA"/>
+  <rect x="38" y="30" width="1204" height="660" rx="18" fill="#FFFFFF" stroke="#D7DDE5"/>
+  <rect x="38" y="30" width="1204" height="86" rx="18" fill="#172033"/>
+  <rect x="38" y="98" width="1204" height="18" fill="#172033"/>
+  <text x="70" y="68" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">kpi_row_3</text>
+  <text x="70" y="94" font-family="Aptos, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#B7C3D3">story: dense | center-locked text slots</text>
+  <rect x="1040" y="54" width="128" height="34" rx="17" fill="#0F7B55"/><text x="1104" y="77" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">PASS</text>
+  <rect x="94" y="246" width="340" height="190" rx="16" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="94" y="246" width="340" height="9" rx="4.5" fill="#0F766E"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="128.0" data-pptx-box-y="274.0" data-pptx-box-w="272.0" data-pptx-box-h="58.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="metric" x="264.0" y="303.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="34" font-weight="850" fill="#0F766E"><tspan x="264.0" y="303.0">3.2x</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="128.0" data-pptx-box-y="338.0" data-pptx-box-w="272.0" data-pptx-box-h="34.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="label" x="264.0" y="355.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#172033"><tspan x="264.0" y="355.0">Efficiency</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="128.0" data-pptx-box-y="380.0" data-pptx-box-w="272.0" data-pptx-box-h="42.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="note" x="264.0" y="401.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#617083"><tspan x="264.0" y="392.2">Same accuracy, less</tspan><tspan x="264.0" y="409.8">time.</tspan></text>
+  <rect x="470" y="246" width="340" height="190" rx="16" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="470" y="246" width="340" height="9" rx="4.5" fill="#0F766E"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="504.0" data-pptx-box-y="274.0" data-pptx-box-w="272.0" data-pptx-box-h="58.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="metric" x="640.0" y="303.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="34" font-weight="850" fill="#0F766E"><tspan x="640.0" y="303.0">124</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="504.0" data-pptx-box-y="338.0" data-pptx-box-w="272.0" data-pptx-box-h="34.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="label" x="640.0" y="355.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#172033"><tspan x="640.0" y="355.0">Records</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="504.0" data-pptx-box-y="380.0" data-pptx-box-w="272.0" data-pptx-box-h="42.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="note" x="640.0" y="401.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#617083"><tspan x="640.0" y="401.0">After quality screening.</tspan></text>
+  <rect x="846" y="246" width="340" height="190" rx="16" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="846" y="246" width="340" height="9" rx="4.5" fill="#0F766E"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="880.0" data-pptx-box-y="274.0" data-pptx-box-w="272.0" data-pptx-box-h="58.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="metric" x="1016.0" y="303.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="34" font-weight="850" fill="#0F766E"><tspan x="1016.0" y="303.0">-16%</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="880.0" data-pptx-box-y="338.0" data-pptx-box-w="272.0" data-pptx-box-h="34.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="label" x="1016.0" y="355.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#172033"><tspan x="1016.0" y="355.0">Unclear</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="880.0" data-pptx-box-y="380.0" data-pptx-box-w="272.0" data-pptx-box-h="42.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="note" x="1016.0" y="401.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#617083"><tspan x="1016.0" y="401.0">Ambiguous cases reduced.</tspan></text>
+</svg>

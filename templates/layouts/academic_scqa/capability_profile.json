@@ -1,0 +1,35 @@
+{
+  "schema_version": "easyslides.template_capability_profile.v1",
+  "template_id": "academic_scqa",
+  "lifecycle": "legacy",
+  "generation_enabled": true,
+  "composition": {
+    "mode": "body_variant_only",
+    "allowed_granularities": [
+      "body_variant",
+      "page_module"
+    ],
+    "allow_global_component_fallback": false,
+    "allowed_component_packs": [],
+    "requires_declared_body_variant": true
+  },
+  "contracts": {
+    "layouts": true,
+    "body_variants": true,
+    "component_catalog": false,
+    "component_pack": false,
+    "design_tokens": false
+  },
+  "selection_policy": {
+    "template_affinity": "required",
+    "undeclared_assets": "reject",
+    "manual_selection": "must_be_declared",
+    "missing_profile": "block_named_template_component_selection"
+  },
+  "required_gates": [
+    "template_capability_profile",
+    "component_plan_contract",
+    "visual_measure_gate"
+  ],
+  "derived_from": "template_directory_contracts"
+}

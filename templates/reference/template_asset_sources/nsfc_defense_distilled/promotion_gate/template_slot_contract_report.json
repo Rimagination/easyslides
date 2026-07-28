@@ -1,0 +1,10 @@
+{
+  "schema_version": "easyslides.template_slot_contract_report.v1",
+  "contract_schema_version": "easyslides.template_slot_contracts.v1",
+  "template_dir": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense_distilled",
+  "status": "pass",
+  "layout_count": 17,
+  "blocking_count": 0,
+  "warning_count": 0,
+  "issues": []
+}

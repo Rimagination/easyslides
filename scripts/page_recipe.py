@@ -14,7 +14,10 @@ DEFAULT_RECIPES = REPO_ROOT / "templates" / "page_layouts" / "ppt_master_page_re
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.text_capacity import SlotCapacity, fit_text_to_capacity
+try:
+    from scripts.text_capacity import SlotCapacity, fit_text_to_capacity
+except ModuleNotFoundError:  # pragma: no cover - supports direct script execution
+    from text_capacity import SlotCapacity, fit_text_to_capacity
 
 
 def load_page_recipes(path: str | Path | None = None) -> dict[str, Any]:
@@ -225,7 +228,7 @@ def build_page_prompt(recipe_id: str, registry: dict[str, Any] | None = None) ->
             "- Use <tspan> lines inside each fixed slot; do not rely on PowerPoint auto-fit.",
             "- Shorten, split, or choose another page recipe when text does not fit.",
             "After authoring, run:",
-            "python scripts/validate_svg_text_slots.py <project>/svg_output --strict-unboxed --report <project>/reports/svg_text_slot_report.json",
+            "python scripts/validate_svg_text_slots.py <project>/svg_output --strict-unboxed --require-valign --check-canvas --report <project>/reports/svg_text_slot_report.json",
             "Only output SVG markup for the full page.",
         ]
     )

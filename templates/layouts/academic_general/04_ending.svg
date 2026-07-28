@@ -8,18 +8,18 @@
   <rect x="0" y="0" width="6" height="100" fill="#CC0000"/>
   
   <!-- 右上角 Logo -->
-  <text x="1200" y="58" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="1030" data-pptx-box-y="20.2" data-pptx-box-w="170" data-pptx-box-h="54">
+  <text x="1200" y="58" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="1030" data-pptx-box-y="20.2" data-pptx-box-w="170" data-pptx-box-h="54">
     {{LOGO}}
   </text>
   
   <!-- ==================== 主内容区域 ==================== -->
   <!-- 感谢语 -->
-  <text x="640" y="300" text-anchor="middle" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="bold" data-pptx-textbox="true" data-pptx-box-x="120" data-pptx-box-y="241.2" data-pptx-box-w="1040" data-pptx-box-h="86.8">
+  <text x="640" y="300" text-anchor="middle" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="120" data-pptx-box-y="241.2" data-pptx-box-w="1040" data-pptx-box-h="86.8">
     {{THANK_YOU}}
   </text>
   
   <!-- 副标语 -->
-  <text x="640" y="365" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" data-pptx-textbox="true" data-pptx-box-x="190" data-pptx-box-y="339.8" data-pptx-box-w="900" data-pptx-box-h="37.2">
+  <text x="640" y="365" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="190" data-pptx-box-y="339.8" data-pptx-box-w="900" data-pptx-box-h="37.2">
     {{ENDING_SUBTITLE}}
   </text>
   
@@ -31,22 +31,22 @@
   <rect x="360" y="445" width="560" height="130" fill="#F5F7FA" rx="8"/>
   
   <!-- 联系方式 -->
-  <text x="640" y="490" text-anchor="middle" fill="#333333" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-pptx-textbox="true" data-pptx-box-x="380" data-pptx-box-y="471.1" data-pptx-box-w="520" data-pptx-box-h="27.9">
+  <text x="640" y="490" text-anchor="middle" fill="#333333" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="380" data-pptx-box-y="471.1" data-pptx-box-w="520" data-pptx-box-h="27.9">
     {{CONTACT_INFO}}
   </text>
-  <text x="640" y="525" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="508.2" data-pptx-box-w="360" data-pptx-box-h="24.8">
+  <text x="640" y="525" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="460" data-pptx-box-y="508.2" data-pptx-box-w="360" data-pptx-box-h="24.8">
     {{EMAIL}}
   </text>
-  <text x="640" y="555" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" data-pptx-textbox="true" data-pptx-box-x="380" data-pptx-box-y="538.2" data-pptx-box-w="520" data-pptx-box-h="24.8">
+  <text x="640" y="555" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="380" data-pptx-box-y="538.2" data-pptx-box-w="520" data-pptx-box-h="24.8">
     {{INSTITUTION}}
   </text>
   
   <!-- ==================== 底部信息 ==================== -->
   <rect x="0" y="665" width="1280" height="55" fill="#F5F7FA"/>
-  <text x="640" y="698" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-box-x="380" data-pptx-box-y="683.3" data-pptx-box-w="520" data-pptx-box-h="21.7">
+  <text x="640" y="698" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="380" data-pptx-box-y="683.3" data-pptx-box-w="520" data-pptx-box-h="21.7">
     {{COPYRIGHT}}
   </text>
-  <text x="1220" y="698" text-anchor="end" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-box-x="1130" data-pptx-box-y="683.3" data-pptx-box-w="90" data-pptx-box-h="21.7">
+  <text x="1220" y="698" text-anchor="end" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="1130" data-pptx-box-y="683.3" data-pptx-box-w="90" data-pptx-box-h="21.7">
     {{PAGE_NUM}}
   </text>
 </svg>

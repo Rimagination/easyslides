@@ -1,0 +1,3919 @@
+{
+  "schema_version": "easyslides.university_emblems.v1",
+  "generated_at": "2026-05-22T12:37:21+00:00",
+  "source": {
+    "copied_pptx": "D:/easyslides/.codex_tmp/university_logos/source.pptx",
+    "original_pptx_note": "D:/PPT skill/PPT??/??????/????.pptx"
+  },
+  "export": {
+    "asset_count": 125,
+    "picture_occurrence_count": 141,
+    "format": "png",
+    "transparency": "RGBA preserved",
+    "ordering": "first visual occurrence by slide and recursive shape order"
+  },
+  "assets": [
+    {
+      "id": "university_emblem_001",
+      "file": "png/university_emblem_001.png",
+      "width_px": 226,
+      "height_px": 68,
+      "mode": "RGBA",
+      "sha256": "7918c79df17a640a8c17e662aa491fc9c2d78d6d6771d24ce491dd2dac8950b2",
+      "source_media": "ppt/media/image1.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "2",
+        "shape_name": "图片 4"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_002",
+      "file": "png/university_emblem_002.png",
+      "width_px": 210,
+      "height_px": 44,
+      "mode": "RGBA",
+      "sha256": "cc9240e92bd9722fba9ff7941350c905678d09fdc221c2027f8ca5caa313ce1b",
+      "source_media": "ppt/media/image2.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "3",
+        "shape_name": "图片 5"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_003",
+      "file": "png/university_emblem_003.png",
+      "width_px": 202,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "1cc8afdc4ae18ce8a2b681302220d0cdb73a423a76af23210964821f797fc8bf",
+      "source_media": "ppt/media/image3.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "4",
+        "shape_name": "图片 6"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_004",
+      "file": "png/university_emblem_004.png",
+      "width_px": 227,
+      "height_px": 70,
+      "mode": "RGBA",
+      "sha256": "d1805e6d649fd3739c3b936fe2dda31425f49a0c9cc6f36e4e734a6ef06df5b2",
+      "source_media": "ppt/media/image4.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "5",
+        "shape_name": "图片 7"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_005",
+      "file": "png/university_emblem_005.png",
+      "width_px": 241,
+      "height_px": 56,
+      "mode": "RGBA",
+      "sha256": "62305647b3d07cc0039e79342691e4827fadb492de704016f8d84548a9ccba36",
+      "source_media": "ppt/media/image5.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "6",
+        "shape_name": "图片 8"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_006",
+      "file": "png/university_emblem_006.png",
+      "width_px": 242,
+      "height_px": 65,
+      "mode": "RGBA",
+      "sha256": "b3fdac70eabcc711a8926e28dd38b3cf824c7ebbd25c5a4d7b1ee98a4e5961f1",
+      "source_media": "ppt/media/image6.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "7",
+        "shape_name": "图片 9"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_007",
+      "file": "png/university_emblem_007.png",
+      "width_px": 232,
+      "height_px": 55,
+      "mode": "RGBA",
+      "sha256": "3b7a6e27b1219cab2137b7375035581e870fd1341e83f4ed3a8cedff45e63a60",
+      "source_media": "ppt/media/image7.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "8",
+        "shape_name": "图片 11"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_008",
+      "file": "png/university_emblem_008.png",
+      "width_px": 250,
+      "height_px": 66,
+      "mode": "RGBA",
+      "sha256": "28f07d51b59ee8354ba8aec95278a95b4acaab925f7c67937509d8c5477a73c4",
+      "source_media": "ppt/media/image8.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "9",
+        "shape_name": "图片 12"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_009",
+      "file": "png/university_emblem_009.png",
+      "width_px": 268,
+      "height_px": 55,
+      "mode": "RGBA",
+      "sha256": "c95111008467566645be838ac8e62fca8474a39a1ba1b5aea15ba4cc5c5c159f",
+      "source_media": "ppt/media/image9.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "10",
+        "shape_name": "图片 13"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_010",
+      "file": "png/university_emblem_010.png",
+      "width_px": 254,
+      "height_px": 75,
+      "mode": "RGBA",
+      "sha256": "714e34b1b0fa2819873bc6353b3e00d0de1182f1fabf6c2eaffcd2537373cc0c",
+      "source_media": "ppt/media/image10.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "11",
+        "shape_name": "图片 14"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_011",
+      "file": "png/university_emblem_011.png",
+      "width_px": 225,
+      "height_px": 46,
+      "mode": "RGBA",
+      "sha256": "4b8887f9d3a55d4ddd3540d1a51c3689d9aab1aee765e70dc4b495a43a6dca97",
+      "source_media": "ppt/media/image11.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "12",
+        "shape_name": "图片 15"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_012",
+      "file": "png/university_emblem_012.png",
+      "width_px": 163,
+      "height_px": 59,
+      "mode": "RGBA",
+      "sha256": "cbcea8bfa701caf8990aac178d6aacc405c4f35cb4428555207b4d0d59d02d8b",
+      "source_media": "ppt/media/image12.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "13",
+        "shape_name": "图片 16"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_013",
+      "file": "png/university_emblem_013.png",
+      "width_px": 289,
+      "height_px": 73,
+      "mode": "RGBA",
+      "sha256": "68f74734b975de19203ed19df8be2b248c42f5ccaa49f3e8b28d3726e4b96e35",
+      "source_media": "ppt/media/image13.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "14",
+        "shape_name": "图片 17"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_014",
+      "file": "png/university_emblem_014.png",
+      "width_px": 184,
+      "height_px": 58,
+      "mode": "RGBA",
+      "sha256": "94847f210b31bb0c128497e1b14615ef1fb56831c986a2c98031d8db84a6178c",
+      "source_media": "ppt/media/image14.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "15",
+        "shape_name": "图片 18"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_015",
+      "file": "png/university_emblem_015.png",
+      "width_px": 224,
+      "height_px": 69,
+      "mode": "RGBA",
+      "sha256": "e4571e2a363594c2e3067430880105c7032894b9b2033be3454d3ecd4c1c4636",
+      "source_media": "ppt/media/image15.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "16",
+        "shape_name": "图片 19"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_016",
+      "file": "png/university_emblem_016.png",
+      "width_px": 210,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "609987f9d3ebdb2684db60723a7cb767886e9e95d9c3a8bffa6fdd144f27a8e6",
+      "source_media": "ppt/media/image16.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "17",
+        "shape_name": "图片 20"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_017",
+      "file": "png/university_emblem_017.png",
+      "width_px": 198,
+      "height_px": 57,
+      "mode": "RGBA",
+      "sha256": "ec195ece7de269c09bfa65618044eb1716ee91ec1afa0d6cd4b42a252e457440",
+      "source_media": "ppt/media/image17.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "18",
+        "shape_name": "图片 21"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_018",
+      "file": "png/university_emblem_018.png",
+      "width_px": 190,
+      "height_px": 70,
+      "mode": "RGBA",
+      "sha256": "efbe40931d96546e4d0b7e1ff62326a70c4c50c887839c42cb59a2cf6f2fbc5f",
+      "source_media": "ppt/media/image18.png",
+      "first_occurrence": {
+        "slide": 1,
+        "shape_path": "19",
+        "shape_name": "图片 22"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_019",
+      "file": "png/university_emblem_019.png",
+      "width_px": 262,
+      "height_px": 55,
+      "mode": "RGBA",
+      "sha256": "27480ed2cfa0b7bd44dfc322552361177e073030087a2ccf2c308c72c8739f01",
+      "source_media": "ppt/media/image19.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "2",
+        "shape_name": "图片 4"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_020",
+      "file": "png/university_emblem_020.png",
+      "width_px": 270,
+      "height_px": 60,
+      "mode": "RGBA",
+      "sha256": "1bd02ea9be6922e423b3f8e6b43ef67a464f98e3f6eabf58a6103bc04ec3c52e",
+      "source_media": "ppt/media/image20.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "3",
+        "shape_name": "图片 5"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_021",
+      "file": "png/university_emblem_021.png",
+      "width_px": 156,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "39d670d9b3540853c10a46638e6467dc9d00b9379d3d0afaa83a5a65fca877fe",
+      "source_media": "ppt/media/image21.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "4",
+        "shape_name": "图片 6"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_022",
+      "file": "png/university_emblem_022.png",
+      "width_px": 291,
+      "height_px": 57,
+      "mode": "RGBA",
+      "sha256": "0782878c80c644170480687d1ad5fe3472375b151cd540a7d8f017ae04910233",
+      "source_media": "ppt/media/image22.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "5",
+        "shape_name": "图片 7"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_023",
+      "file": "png/university_emblem_023.png",
+      "width_px": 213,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "f48bd17f54d023d874ee695b12d1dc897a657df8249adee8bb537744ba4edfad",
+      "source_media": "ppt/media/image23.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "6",
+        "shape_name": "图片 8"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_024",
+      "file": "png/university_emblem_024.png",
+      "width_px": 237,
+      "height_px": 55,
+      "mode": "RGBA",
+      "sha256": "4d52a8025fe96b83cf2503d7445ae26ed117d4ff1186ac9d2775ede402269b60",
+      "source_media": "ppt/media/image24.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "7",
+        "shape_name": "图片 9"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_025",
+      "file": "png/university_emblem_025.png",
+      "width_px": 186,
+      "height_px": 50,
+      "mode": "RGBA",
+      "sha256": "b46bbfcb5cc952cb1b3f9638d42a3cfa7bc9209ddfb8d31f5f9dedbe1889c466",
+      "source_media": "ppt/media/image25.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "8",
+        "shape_name": "图片 11"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_026",
+      "file": "png/university_emblem_026.png",
+      "width_px": 219,
+      "height_px": 48,
+      "mode": "RGBA",
+      "sha256": "5612b9494d6bfb38495002e47d8883ae4403fcdab62090a59325184d23fd630d",
+      "source_media": "ppt/media/image26.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "9",
+        "shape_name": "图片 12"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_027",
+      "file": "png/university_emblem_027.png",
+      "width_px": 242,
+      "height_px": 71,
+      "mode": "RGBA",
+      "sha256": "2ef6160742aa50f80eb0427f2f3f10e08b5a62bcfed4ab73aa92da71c8233dd4",
+      "source_media": "ppt/media/image27.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "10",
+        "shape_name": "图片 13"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_028",
+      "file": "png/university_emblem_028.png",
+      "width_px": 320,
+      "height_px": 65,
+      "mode": "RGBA",
+      "sha256": "b90135b686a32a9a6aaf3e5bc436fb5c98fc6bf16d8626ed874045ab60715ac3",
+      "source_media": "ppt/media/image28.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "11",
+        "shape_name": "图片 14"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_029",
+      "file": "png/university_emblem_029.png",
+      "width_px": 269,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "82cc4a2632bc172080aaa25e865fb9ecc7c5bb76973a2f19d0ee32c2306ed257",
+      "source_media": "ppt/media/image29.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "12",
+        "shape_name": "图片 15"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_030",
+      "file": "png/university_emblem_030.png",
+      "width_px": 261,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "361c7e5481f6e1dd8020b6e12084171874fcef027f6bce176f11bc13572c4236",
+      "source_media": "ppt/media/image30.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "13",
+        "shape_name": "图片 16"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_031",
+      "file": "png/university_emblem_031.png",
+      "width_px": 234,
+      "height_px": 66,
+      "mode": "RGBA",
+      "sha256": "73fdbc192d6b0d1197fd1f76edde4f79bf4ebf03dea059d2272ecc91a463cb26",
+      "source_media": "ppt/media/image31.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "14",
+        "shape_name": "图片 17"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_032",
+      "file": "png/university_emblem_032.png",
+      "width_px": 254,
+      "height_px": 48,
+      "mode": "RGBA",
+      "sha256": "57c82150238d87067b93c149401d9b26fc03a68b81f83b156f59e79e13e5d2d7",
+      "source_media": "ppt/media/image32.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "15",
+        "shape_name": "图片 18"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_033",
+      "file": "png/university_emblem_033.png",
+      "width_px": 200,
+      "height_px": 66,
+      "mode": "RGBA",
+      "sha256": "931e793b982756cece848c0dfaa6ddbf709fea0e08196815391017a70ed39e50",
+      "source_media": "ppt/media/image33.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "16",
+        "shape_name": "图片 19"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_034",
+      "file": "png/university_emblem_034.png",
+      "width_px": 214,
+      "height_px": 61,
+      "mode": "RGBA",
+      "sha256": "2ab6a5cc0ace574c8838fa62a7ed7cdf4ae5cd8aed44f0e389117296c8d7ffa6",
+      "source_media": "ppt/media/image34.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "17",
+        "shape_name": "图片 20"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_035",
+      "file": "png/university_emblem_035.png",
+      "width_px": 224,
+      "height_px": 63,
+      "mode": "RGBA",
+      "sha256": "89cccaee0ceb1ba09992bb9cc690d38765510ec2b169b428cc315ec2e2053380",
+      "source_media": "ppt/media/image35.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "18",
+        "shape_name": "图片 21"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_036",
+      "file": "png/university_emblem_036.png",
+      "width_px": 285,
+      "height_px": 74,
+      "mode": "RGBA",
+      "sha256": "0320ce9b26cc3cf32b874d9d40f68ecbe0406f642fd0e13ad6603eb522e1d5d7",
+      "source_media": "ppt/media/image36.png",
+      "first_occurrence": {
+        "slide": 2,
+        "shape_path": "19",
+        "shape_name": "图片 22"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_037",
+      "file": "png/university_emblem_037.png",
+      "width_px": 232,
+      "height_px": 56,
+      "mode": "RGBA",
+      "sha256": "b2333fc1593478a02c7eb66f0c112e5dbe09a7024fc9a5f99654dc28961f8a87",
+      "source_media": "ppt/media/image37.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "2",
+        "shape_name": "Picture 6"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_038",
+      "file": "png/university_emblem_038.png",
+      "width_px": 241,
+      "height_px": 56,
+      "mode": "RGBA",
+      "sha256": "218033846cab6bd2d2a40121bd692a15a24c0dd713d1dc53f58f18207e2a1a2b",
+      "source_media": "ppt/media/image38.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "3",
+        "shape_name": "Picture 16"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_039",
+      "file": "png/university_emblem_039.png",
+      "width_px": 190,
+      "height_px": 56,
+      "mode": "RGBA",
+      "sha256": "e74bcb19b068085713a657f8df7402f8594563fd3fa2959072d3cac52f5575e4",
+      "source_media": "ppt/media/image39.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "4",
+        "shape_name": "Picture 7"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_040",
+      "file": "png/university_emblem_040.png",
+      "width_px": 600,
+      "height_px": 174,
+      "mode": "RGBA",
+      "sha256": "43ffeda42f4f14fb196158253a740d8c53ef1f2adaf9fd00dfc6d20aa39b67e5",
+      "source_media": "ppt/media/image40.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "5",
+        "shape_name": "图片 22"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_041",
+      "file": "png/university_emblem_041.png",
+      "width_px": 475,
+      "height_px": 159,
+      "mode": "RGBA",
+      "sha256": "40f8b4904a14a2ee0d1360067db8a041dabd9c37183b47e5fb11bc1f5d44a782",
+      "source_media": "ppt/media/image41.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "6",
+        "shape_name": "图片 24"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_042",
+      "file": "png/university_emblem_042.png",
+      "width_px": 1104,
+      "height_px": 250,
+      "mode": "RGBA",
+      "sha256": "6625a27e3a0cb87eda9ed9267c2b9f02e3cc6b5e8f08ba1e326ed5c4911fcbed",
+      "source_media": "ppt/media/image42.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "7",
+        "shape_name": "图片 26"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_043",
+      "file": "png/university_emblem_043.png",
+      "width_px": 856,
+      "height_px": 618,
+      "mode": "RGBA",
+      "sha256": "5104fa971d290587c256ea8a9e2b2d3883a146bef3e9d2019321bbbecee9f3e4",
+      "source_media": "ppt/media/image43.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "8",
+        "shape_name": "图片 28"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_044",
+      "file": "png/university_emblem_044.png",
+      "width_px": 852,
+      "height_px": 618,
+      "mode": "RGBA",
+      "sha256": "32abb158fb1b95f5099a06ee81328ace40e4df8ae18c47cb92f84ba714149f54",
+      "source_media": "ppt/media/image44.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "9",
+        "shape_name": "图片 29"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_045",
+      "file": "png/university_emblem_045.png",
+      "width_px": 1033,
+      "height_px": 282,
+      "mode": "RGBA",
+      "sha256": "6a2824b473731b731ae91ee9733de96e2101dd0880ec50deae2389e0da55c6c3",
+      "source_media": "ppt/media/image45.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "10",
+        "shape_name": "图片 31"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_046",
+      "file": "png/university_emblem_046.png",
+      "width_px": 841,
+      "height_px": 225,
+      "mode": "RGBA",
+      "sha256": "69817d7f493bd80a3df461412cead71dbb474f05c38cf491f66a4825e2f97e1f",
+      "source_media": "ppt/media/image46.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "11",
+        "shape_name": "图片 35"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_047",
+      "file": "png/university_emblem_047.png",
+      "width_px": 400,
+      "height_px": 300,
+      "mode": "RGBA",
+      "sha256": "791a0e3387f4d49f2147b37aefbb623d407e8d5430c44fb8fa85a12d425c0ba6",
+      "source_media": "ppt/media/image47.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "12",
+        "shape_name": "图片 37"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_048",
+      "file": "png/university_emblem_048.png",
+      "width_px": 820,
+      "height_px": 224,
+      "mode": "RGBA",
+      "sha256": "ed9c67bca4c2a2735919f83eddb412b988b0262492d52e869251db23baf552cc",
+      "source_media": "ppt/media/image48.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "13",
+        "shape_name": "图片 39"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_049",
+      "file": "png/university_emblem_049.png",
+      "width_px": 640,
+      "height_px": 180,
+      "mode": "RGBA",
+      "sha256": "6c5a953d82b317845d7db13617763d92ee7f0c0f2f829b7a3a7117fb45c0e615",
+      "source_media": "ppt/media/image49.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "14",
+        "shape_name": "图片 41"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_050",
+      "file": "png/university_emblem_050.png",
+      "width_px": 757,
+      "height_px": 239,
+      "mode": "RGBA",
+      "sha256": "9ec07a878f654de87a9a1c0c07bfc453ade2f80854c6569d183a46115356c7c5",
+      "source_media": "ppt/media/image50.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "15",
+        "shape_name": "图片 43"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_051",
+      "file": "png/university_emblem_051.png",
+      "width_px": 770,
+      "height_px": 195,
+      "mode": "RGBA",
+      "sha256": "c1178cad611ff1d3ccc6e0615e5688f2a20463d5ba20ec824c62fac6c00e4c47",
+      "source_media": "ppt/media/image51.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "16",
+        "shape_name": "图片 45"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_052",
+      "file": "png/university_emblem_052.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "458dac249e607b13070badb6df405da31d40f2df8542ea7fba6120bb41052c54",
+      "source_media": "ppt/media/image52.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "17.1",
+        "shape_name": "图片 49"
+      },
+      "occurrence_count": 4
+    },
+    {
+      "id": "university_emblem_053",
+      "file": "png/university_emblem_053.png",
+      "width_px": 542,
+      "height_px": 407,
+      "mode": "RGBA",
+      "sha256": "17332d4a9890689578eb8ead84addeba54879c21ab944ca0de08a9bc69549460",
+      "source_media": "ppt/media/image53.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "18.1",
+        "shape_name": "图片 52"
+      },
+      "occurrence_count": 4
+    },
+    {
+      "id": "university_emblem_054",
+      "file": "png/university_emblem_054.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "206621f2fdaa43edbc4e5752e5f3ad26c832bb087c424260278b821f33823168",
+      "source_media": "ppt/media/image54.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "19.1",
+        "shape_name": "图片 55"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_055",
+      "file": "png/university_emblem_055.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "3cdf621c9f28e1e0e85b171a56960d537708124d7e29fd6d3a3fd9a9d2baadeb",
+      "source_media": "ppt/media/image55.png",
+      "first_occurrence": {
+        "slide": 3,
+        "shape_path": "20",
+        "shape_name": "图片 58"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_056",
+      "file": "png/university_emblem_056.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "b4c438ff6788e1dec5349d3ff3b547425ac8b199ffaad521feb020b1e90d99ce",
+      "source_media": "ppt/media/image56.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "2",
+        "shape_name": "图片 3"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_057",
+      "file": "png/university_emblem_057.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "decb18fd31e0ae0cfc0a177ea31fa7603308786a6b47f6c9a671672a322b742d",
+      "source_media": "ppt/media/image57.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "3",
+        "shape_name": "图片 5"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_058",
+      "file": "png/university_emblem_058.png",
+      "width_px": 915,
+      "height_px": 305,
+      "mode": "RGBA",
+      "sha256": "70bd0ad68d85e36869aedfa6bf1168b8a534257477f85b1bcd59c0ddef614f24",
+      "source_media": "ppt/media/image58.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "4",
+        "shape_name": "图片 7"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_059",
+      "file": "png/university_emblem_059.png",
+      "width_px": 765,
+      "height_px": 541,
+      "mode": "RGBA",
+      "sha256": "b0ed5f86f6e28068fbe2b87b16669fce05952dc152994f3a22c6941a5eca2c68",
+      "source_media": "ppt/media/image59.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "5",
+        "shape_name": "图片 9"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_060",
+      "file": "png/university_emblem_060.png",
+      "width_px": 400,
+      "height_px": 321,
+      "mode": "RGBA",
+      "sha256": "112bfd7f0984dcdb20f5fb97a92cb29efc08dab21f42d56a9324f2f4d3b90f04",
+      "source_media": "ppt/media/image60.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "6",
+        "shape_name": "图片 11"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_061",
+      "file": "png/university_emblem_061.png",
+      "width_px": 1050,
+      "height_px": 758,
+      "mode": "RGBA",
+      "sha256": "bcd90fc863fb620f07b529dfafd0264669852a87087c829bdf6d63c57bc90ebe",
+      "source_media": "ppt/media/image61.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "7.1",
+        "shape_name": "图片 13"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_062",
+      "file": "png/university_emblem_062.png",
+      "width_px": 400,
+      "height_px": 110,
+      "mode": "RGBA",
+      "sha256": "85f374d67b276aa1dd5c69b1463b9ec0fdafc0dbd6647c3e17f273da94375b77",
+      "source_media": "ppt/media/image62.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "8",
+        "shape_name": "图片 16"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_063",
+      "file": "png/university_emblem_063.png",
+      "width_px": 604,
+      "height_px": 407,
+      "mode": "RGBA",
+      "sha256": "155b7530ce5c2aff7d8cac90138b25989ca3300faa49d9b9f5ffc64997f351c1",
+      "source_media": "ppt/media/image63.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "9.1",
+        "shape_name": "图片 18"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_064",
+      "file": "png/university_emblem_064.png",
+      "width_px": 399,
+      "height_px": 130,
+      "mode": "RGBA",
+      "sha256": "93b5d44c9688218f2ba99447e3bbeec0fe342920eda7fde299b7fe94e6e319cd",
+      "source_media": "ppt/media/image64.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "10",
+        "shape_name": "图片 21"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_065",
+      "file": "png/university_emblem_065.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "f7e653419906c77e7b326fcb6c0b80de98b6b5888037c78ace871375941bba66",
+      "source_media": "ppt/media/image65.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "11",
+        "shape_name": "图片 23"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_066",
+      "file": "png/university_emblem_066.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "099edabc6c6909f3e4e071febe88da6178923d9a27e3475eb96c3247b6a23189",
+      "source_media": "ppt/media/image66.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "13.1",
+        "shape_name": "图片 26"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_067",
+      "file": "png/university_emblem_067.png",
+      "width_px": 479,
+      "height_px": 678,
+      "mode": "RGBA",
+      "sha256": "29ec57eead6db014afaffed6b3b97ba7a9abda52460fdd32ae5d3335c430482d",
+      "source_media": "ppt/media/image67.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "14.1",
+        "shape_name": "图片 29"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_068",
+      "file": "png/university_emblem_068.png",
+      "width_px": 460,
+      "height_px": 412,
+      "mode": "RGBA",
+      "sha256": "84f6a526a384e7dc81d8f72b5c0a5f82e2f3b60068cda18f05fb320d7a5404ee",
+      "source_media": "ppt/media/image68.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "15.1",
+        "shape_name": "图片 32"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_069",
+      "file": "png/university_emblem_069.png",
+      "width_px": 1089,
+      "height_px": 770,
+      "mode": "RGBA",
+      "sha256": "237d9cb27dba7e90318c8bffc69beb83a142456a389880445a27658adaca0bf8",
+      "source_media": "ppt/media/image69.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "16",
+        "shape_name": "图片 35"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_070",
+      "file": "png/university_emblem_070.png",
+      "width_px": 1085,
+      "height_px": 770,
+      "mode": "RGBA",
+      "sha256": "c75ab5b28b8fb86f98c14780bbd416b6048d5942d50a420d98a26144f441cfbd",
+      "source_media": "ppt/media/image70.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "17",
+        "shape_name": "图片 37"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_071",
+      "file": "png/university_emblem_071.png",
+      "width_px": 400,
+      "height_px": 103,
+      "mode": "RGBA",
+      "sha256": "37f0110db3c994d97a2d336f35aa9b0d7bf463028744bbf87aa461166d196fd6",
+      "source_media": "ppt/media/image71.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "18",
+        "shape_name": "图片 39"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Kept horizontal Central China Normal University mark only; removed stacked variant.",
+      "original_backup": "_originals/png/university_emblem_071.png"
+    },
+    {
+      "id": "university_emblem_072",
+      "file": "png/university_emblem_072.png",
+      "width_px": 742,
+      "height_px": 242,
+      "mode": "RGBA",
+      "sha256": "4dc973c6cdc7bf4ec78412d5c4f705811bacbbecd60d22aecf2c64f2e814101c",
+      "source_media": "ppt/media/image72.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "19",
+        "shape_name": "图片 43"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_073",
+      "file": "png/university_emblem_073.png",
+      "width_px": 400,
+      "height_px": 333,
+      "mode": "RGBA",
+      "sha256": "6fced07d98b226aa4b12c6d15aff53e4adae9630820acaf44a00cdd0976fc759",
+      "source_media": "ppt/media/image73.png",
+      "first_occurrence": {
+        "slide": 4,
+        "shape_path": "20",
+        "shape_name": "图片 45"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_074",
+      "file": "png/university_emblem_074.png",
+      "width_px": 778,
+      "height_px": 232,
+      "mode": "RGBA",
+      "sha256": "a8c88d0f6f1354a6df250c2d1a280689b3cc6b0ee0260ebd6052d5b9f32fc1af",
+      "source_media": "ppt/media/image74.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "2",
+        "shape_name": "图片 3"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Kept Jiangsu University mark only; removed School of Electrical and Information Engineering variant.",
+      "original_backup": "_originals/png/university_emblem_074.png"
+    },
+    {
+      "id": "university_emblem_075",
+      "file": "png/university_emblem_075.png",
+      "width_px": 399,
+      "height_px": 256,
+      "mode": "RGBA",
+      "sha256": "202845507fba561fe6067a998804029f336fe94f6ea7d0109521284f020ce5cb",
+      "source_media": "ppt/media/image75.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "3",
+        "shape_name": "图片 5"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_076",
+      "file": "png/university_emblem_076.png",
+      "width_px": 400,
+      "height_px": 240,
+      "mode": "RGBA",
+      "sha256": "afe8e09b5e9809d228861f713ed46c03e459ba4669d9e60536bba184905d38c3",
+      "source_media": "ppt/media/image76.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "4",
+        "shape_name": "图片 9"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_077",
+      "file": "png/university_emblem_077.png",
+      "width_px": 1181,
+      "height_px": 394,
+      "mode": "RGBA",
+      "sha256": "4ac7b6aeb4b32bbbacb2ae5461bd4c91ca9fa5e789f1afe510543b5337227e98",
+      "source_media": "ppt/media/image77.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "5",
+        "shape_name": "图片 11"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_078",
+      "file": "png/university_emblem_078.png",
+      "width_px": 1015,
+      "height_px": 340,
+      "mode": "RGBA",
+      "sha256": "b277a4c139b4a9ca48dabe5f87f23d92f4337042984d9fc94d9288a459231f63",
+      "source_media": "ppt/media/image78.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "6",
+        "shape_name": "图片 13"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_079",
+      "file": "png/university_emblem_079.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "0d999988241660ba202af9d6f62eb58d4bbacd42999831f9741f64aceb0c2844",
+      "source_media": "ppt/media/image79.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "7.1",
+        "shape_name": "图片 15"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_080",
+      "file": "png/university_emblem_080.png",
+      "width_px": 400,
+      "height_px": 200,
+      "mode": "RGBA",
+      "sha256": "bdada2d9c3b949c54efc50ca0143968facdd63178274177c6b0d2c27fc4a8516",
+      "source_media": "ppt/media/image80.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "8",
+        "shape_name": "图片 19"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_081",
+      "file": "png/university_emblem_081.png",
+      "width_px": 356,
+      "height_px": 102,
+      "mode": "RGBA",
+      "sha256": "a71a42528e22dc99c0dd74cb073a289193aa50cf22be33b747603082809c7f0f",
+      "source_media": "ppt/media/image81.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "9",
+        "shape_name": "图片 21"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Kept horizontal Qinghai University mark only; removed stacked variant and stray text from the upper variant.",
+      "original_backup": "_originals/png/university_emblem_081.png"
+    },
+    {
+      "id": "university_emblem_082",
+      "file": "png/university_emblem_082.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "1617a4f832e148e3f4958d6203d2a2ff724f697803fd7726594faee7831088d0",
+      "source_media": "ppt/media/image82.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "10",
+        "shape_name": "图片 23"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_083",
+      "file": "png/university_emblem_083.png",
+      "width_px": 999,
+      "height_px": 332,
+      "mode": "RGBA",
+      "sha256": "a7545eea290601d7fb5286385aa63dd0c6523bd76cfbc4498726677e7cfe3e4a",
+      "source_media": "ppt/media/image83.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "11",
+        "shape_name": "图片 25"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_084",
+      "file": "png/university_emblem_084.png",
+      "width_px": 394,
+      "height_px": 128,
+      "mode": "RGBA",
+      "sha256": "5c8688d8bbaf25de48cd9a43080b9454793691814627ce6ce1d3f970645b8a59",
+      "source_media": "ppt/media/image84.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "12",
+        "shape_name": "图片 27"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Kept horizontal Shandong University mark only; removed stacked variant.",
+      "original_backup": "_originals/png/university_emblem_084.png"
+    },
+    {
+      "id": "university_emblem_085",
+      "file": "png/university_emblem_085.png",
+      "width_px": 374,
+      "height_px": 109,
+      "mode": "RGBA",
+      "sha256": "384f1a936581f78824cd78d6f4f2d1bcf03db65b3241a846a99577bf23460dbb",
+      "source_media": "ppt/media/image85.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "13",
+        "shape_name": "图片 29"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Kept horizontal Shanxi University mark only; removed stacked variant.",
+      "original_backup": "_originals/png/university_emblem_085.png"
+    },
+    {
+      "id": "university_emblem_086",
+      "file": "png/university_emblem_086.png",
+      "width_px": 400,
+      "height_px": 293,
+      "mode": "RGBA",
+      "sha256": "a67f7b725c056ad8eb75fc427f9eaad99578cb13ce21d8de3777d1add63a0b2e",
+      "source_media": "ppt/media/image86.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "14",
+        "shape_name": "图片 31"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_087",
+      "file": "png/university_emblem_087.png",
+      "width_px": 1225,
+      "height_px": 805,
+      "mode": "RGBA",
+      "sha256": "0df5e67b52f75e040f8a7fd4b4423c66cc5afc196c54380334ba87b82ebd227e",
+      "source_media": "ppt/media/image87.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "15",
+        "shape_name": "图片 33"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_088",
+      "file": "png/university_emblem_088.png",
+      "width_px": 880,
+      "height_px": 288,
+      "mode": "RGBA",
+      "sha256": "bf8ffe2ef435c127358d84d9ca0e3d55c95701e7287ccfa35952326d9cfaa621",
+      "source_media": "ppt/media/image88.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "16",
+        "shape_name": "图片 35"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_089",
+      "file": "png/university_emblem_089.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "6bbd217bd0231c89bd1cec9594ec85bde76e4d96128f46735246f3928c53064e",
+      "source_media": "ppt/media/image89.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "17",
+        "shape_name": "图片 37"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_090",
+      "file": "png/university_emblem_090.png",
+      "width_px": 982,
+      "height_px": 694,
+      "mode": "RGBA",
+      "sha256": "bc78fe55bb921f3dd274b8b158d12ed649d0ab97c861967d64817182661bf818",
+      "source_media": "ppt/media/image90.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "18",
+        "shape_name": "图片 43"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_091",
+      "file": "png/university_emblem_091.png",
+      "width_px": 967,
+      "height_px": 967,
+      "mode": "RGBA",
+      "sha256": "d231ce5311ca01770b9f74a71fb520cae52961752f0b4bddf856bf1b362829ce",
+      "source_media": "ppt/media/image91.png",
+      "first_occurrence": {
+        "slide": 5,
+        "shape_path": "19",
+        "shape_name": "图片 45"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_092",
+      "file": "png/university_emblem_092.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "9d75e228d46087481ec6ca5722368d8680863e45e405e4b22d558fd88f9725dd",
+      "source_media": "ppt/media/image92.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "2.1",
+        "shape_name": "图片 3"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_093",
+      "file": "png/university_emblem_093.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "b5da6c3f18412e9da2ab5c5b783400a9b6f82b9a3bf6302307bc18c7cfbdcf06",
+      "source_media": "ppt/media/image93.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "3",
+        "shape_name": "图片 7"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_094",
+      "file": "png/university_emblem_094.png",
+      "width_px": 600,
+      "height_px": 189,
+      "mode": "RGBA",
+      "sha256": "c96d3903da33237c65a6ac211ac88a9ea07202d050f6e701e49cd43eb466720a",
+      "source_media": "ppt/media/image94.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "4",
+        "shape_name": "图片 9"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_095",
+      "file": "png/university_emblem_095.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "8106e55c142a08d7d7583c1d66ee84e86beb4f272bd28907c1ce5303fc822cf8",
+      "source_media": "ppt/media/image95.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "6.1",
+        "shape_name": "图片 16"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_096",
+      "file": "png/university_emblem_096.png",
+      "width_px": 400,
+      "height_px": 300,
+      "mode": "RGBA",
+      "sha256": "92bc844c8b693102168c29b5a77aa119f43fe3586a05bf792e6b39ab40483c98",
+      "source_media": "ppt/media/image96.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "7",
+        "shape_name": "图片 20"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_097",
+      "file": "png/university_emblem_097.png",
+      "width_px": 1132,
+      "height_px": 905,
+      "mode": "RGBA",
+      "sha256": "a8ba8fd096afab8301c0ab0e633d24e4a98ca8de1852fdbd1817abcaeda79312",
+      "source_media": "ppt/media/image97.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "8",
+        "shape_name": "图片 22"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_098",
+      "file": "png/university_emblem_098.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "156d43b0e20b0886b6b68cfd98fb48678146940b9b7ae07b77a6063499b2a4b8",
+      "source_media": "ppt/media/image98.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "9",
+        "shape_name": "图片 24"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_099",
+      "file": "png/university_emblem_099.png",
+      "width_px": 873,
+      "height_px": 873,
+      "mode": "RGBA",
+      "sha256": "2a3bd12d1210387585d3a7e9927222998106d3b91bf9ae673bb8afa52b25e46e",
+      "source_media": "ppt/media/image99.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "10",
+        "shape_name": "图片 26"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_100",
+      "file": "png/university_emblem_100.png",
+      "width_px": 400,
+      "height_px": 209,
+      "mode": "RGBA",
+      "sha256": "c1be3f45dd27d4b298c5d532b49bf28f39c1801fa4c9b3b2f8a013e994b5907b",
+      "source_media": "ppt/media/image100.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "11",
+        "shape_name": "图片 28"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_101",
+      "file": "png/university_emblem_101.png",
+      "width_px": 400,
+      "height_px": 312,
+      "mode": "RGBA",
+      "sha256": "1aa439bce462f7af9c81f6061ba0dcd6dfadf6308a61990b006344374e8fe09b",
+      "source_media": "ppt/media/image101.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "12",
+        "shape_name": "图片 32"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_102",
+      "file": "png/university_emblem_102.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "66ce1c5a671a4b23ff5c9fb26f15a3c50f6879e7f788d1bd16f43b8e72678f83",
+      "source_media": "ppt/media/image102.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "13.1",
+        "shape_name": "图片 34"
+      },
+      "occurrence_count": 2
+    },
+    {
+      "id": "university_emblem_103",
+      "file": "png/university_emblem_103.png",
+      "width_px": 503,
+      "height_px": 148,
+      "mode": "RGBA",
+      "sha256": "e4d0729d1781efb57d6fd2375400899bdf2f5766eb6d4a3a1b42ab69ee15a7db",
+      "source_media": "ppt/media/image103.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "14.1",
+        "shape_name": "图片 38"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Recomposed as a horizontal Ocean University of China mark; removed bottom slogan.",
+      "original_backup": "_originals/png/university_emblem_103.png"
+    },
+    {
+      "id": "university_emblem_104",
+      "file": "png/university_emblem_104.png",
+      "width_px": 895,
+      "height_px": 748,
+      "mode": "RGBA",
+      "sha256": "192d02058e1cd0c2fa2443179067a9677df286380bda297b7440d403015bdfc6",
+      "source_media": "ppt/media/image104.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "14.2",
+        "shape_name": "图片 39"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_105",
+      "file": "png/university_emblem_105.png",
+      "width_px": 400,
+      "height_px": 400,
+      "mode": "RGBA",
+      "sha256": "9f3ed61791fbd1710d9742719034339da746c8f36e47466b460fec037366e8cc",
+      "source_media": "ppt/media/image105.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "15",
+        "shape_name": "图片 42"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_106",
+      "file": "png/university_emblem_106.png",
+      "width_px": 1160,
+      "height_px": 805,
+      "mode": "RGBA",
+      "sha256": "abe697c4e009effda80064c761f7cff6f256271ba4750915a7666a6c933f6b3a",
+      "source_media": "ppt/media/image106.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "16",
+        "shape_name": "图片 44"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_107",
+      "file": "png/university_emblem_107.png",
+      "width_px": 486,
+      "height_px": 401,
+      "mode": "RGBA",
+      "sha256": "9304307be39dd37e215faffdf1d60587e3bb6d5541469872f68aa92343dd9086",
+      "source_media": "ppt/media/image107.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "17.1",
+        "shape_name": "图片 46"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_108",
+      "file": "png/university_emblem_108.png",
+      "width_px": 532,
+      "height_px": 439,
+      "mode": "RGBA",
+      "sha256": "baed163e61e2c0c67d9d64d5a04333baf079fb7a26c71d3b2723f925dcc6f298",
+      "source_media": "ppt/media/image108.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "17.2",
+        "shape_name": "图片 47"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_109",
+      "file": "png/university_emblem_109.png",
+      "width_px": 708,
+      "height_px": 224,
+      "mode": "RGBA",
+      "sha256": "e2125895398649c30874237993d01d15c5e59772d8c673ef24be3a6adbfcf361",
+      "source_media": "ppt/media/image109.png",
+      "first_occurrence": {
+        "slide": 6,
+        "shape_path": "18",
+        "shape_name": "图片 50"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_110",
+      "file": "png/university_emblem_110.png",
+      "width_px": 292,
+      "height_px": 52,
+      "mode": "RGBA",
+      "sha256": "3ed46712aa3b0ec498b1160613a0dc24a970ad40eea7e599ee7158ed58dca79e",
+      "source_media": "ppt/media/image110.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "2",
+        "shape_name": "图片 4"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_111",
+      "file": "png/university_emblem_111.png",
+      "width_px": 229,
+      "height_px": 45,
+      "mode": "RGBA",
+      "sha256": "0b62a90b0c9562e5e75a5564f00ef86528fd1e8f648c51bee56c49ced0e20c74",
+      "source_media": "ppt/media/image111.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "3",
+        "shape_name": "图片 5"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_112",
+      "file": "png/university_emblem_112.png",
+      "width_px": 207,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "dd0904dc108c27b375b12e4b85b9b5311b6d81bb2a2967b4f44e6de497ff4860",
+      "source_media": "ppt/media/image112.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "4",
+        "shape_name": "图片 6"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_113",
+      "file": "png/university_emblem_113.png",
+      "width_px": 252,
+      "height_px": 61,
+      "mode": "RGBA",
+      "sha256": "f9cd0eb2dd1498954cccdf1435ddfb2d8eb57329d3d5e5d537bdb98e663ec32a",
+      "source_media": "ppt/media/image113.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "5",
+        "shape_name": "图片 7"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_114",
+      "file": "png/university_emblem_114.png",
+      "width_px": 245,
+      "height_px": 54,
+      "mode": "RGBA",
+      "sha256": "7a47d95b0786f297ff8cd3a2f4f5660cee79ec815399c66a25c75bf8cf2ed198",
+      "source_media": "ppt/media/image114.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "6",
+        "shape_name": "图片 8"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_115",
+      "file": "png/university_emblem_115.png",
+      "width_px": 199,
+      "height_px": 54,
+      "mode": "RGBA",
+      "sha256": "e7522e00a6d2bb7e49bf62cccb23fc2ba41500ead4722c7d1d1de1bbdb0cae56",
+      "source_media": "ppt/media/image115.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "7",
+        "shape_name": "图片 9"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_116",
+      "file": "png/university_emblem_116.png",
+      "width_px": 186,
+      "height_px": 61,
+      "mode": "RGBA",
+      "sha256": "fdcad41bc49b7a6dd50d4457d8b925fd0ab4ef9f7c0bd8817ca110027181f69d",
+      "source_media": "ppt/media/image116.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "8",
+        "shape_name": "图片 10"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_117",
+      "file": "png/university_emblem_117.png",
+      "width_px": 260,
+      "height_px": 80,
+      "mode": "RGBA",
+      "sha256": "6c72d7f4bc3d9856df6697d45f2557e3e27286369563eebb7db0fea2d7135819",
+      "source_media": "ppt/media/image117.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "9",
+        "shape_name": "图片 11"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_118",
+      "file": "png/university_emblem_118.png",
+      "width_px": 245,
+      "height_px": 66,
+      "mode": "RGBA",
+      "sha256": "4b735b364ac563f4c271f209eddd5cb757d23383ef192e73d2660cc8077ace67",
+      "source_media": "ppt/media/image118.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "10",
+        "shape_name": "图片 12"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_119",
+      "file": "png/university_emblem_119.png",
+      "width_px": 202,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "8ff93c992ee655d8949a3d9a95192d0df8aeed6854ca275c8f485e717da725f9",
+      "source_media": "ppt/media/image119.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "11",
+        "shape_name": "图片 13"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_120",
+      "file": "png/university_emblem_120.png",
+      "width_px": 269,
+      "height_px": 69,
+      "mode": "RGBA",
+      "sha256": "0dfdd307e769c1051f4f09d23ef0fa8b264b1efc5f21ecf84e7dc77ae5917d13",
+      "source_media": "ppt/media/image120.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "12",
+        "shape_name": "图片 14"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_121",
+      "file": "png/university_emblem_121.png",
+      "width_px": 266,
+      "height_px": 62,
+      "mode": "RGBA",
+      "sha256": "6bdae096296db39d2b8dc06d49900ae61db57db515b28c03f083d220aadb768c",
+      "source_media": "ppt/media/image121.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "13",
+        "shape_name": "图片 15"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_122",
+      "file": "png/university_emblem_122.png",
+      "width_px": 226,
+      "height_px": 64,
+      "mode": "RGBA",
+      "sha256": "7d06d56895c1b3448c20d1a78e6b9a6dcee8d8352bd92867a5bf8df867703f17",
+      "source_media": "ppt/media/image122.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "14",
+        "shape_name": "图片 16"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_123",
+      "file": "png/university_emblem_123.png",
+      "width_px": 232,
+      "height_px": 56,
+      "mode": "RGBA",
+      "sha256": "0fa6aa51b3771e8d54e4523443f4c19ff9cefbe153b5b7e430ce136bd9cf274c",
+      "source_media": "ppt/media/image123.png",
+      "first_occurrence": {
+        "slide": 7,
+        "shape_path": "15",
+        "shape_name": "图片 17"
+      },
+      "occurrence_count": 1
+    },
+    {
+      "id": "university_emblem_124",
+      "file": "png/university_emblem_124.png",
+      "width_px": 96,
+      "height_px": 96,
+      "mode": "RGBA",
+      "sha256": "04964bf3a9b9cb7c9fc400d1b66c5de102b05893f5fcf2252c972bb1ffb8f9ba",
+      "source_media": "web/urongda/ecnu_logo_urongda.png",
+      "source_url": "https://www.urongda.com/logos/4131010269",
+      "source_note": "Downloaded as transparent fallback after no exact East China Normal University match was found in the local emblem index.",
+      "first_occurrence": {
+        "slide": null,
+        "shape_path": null,
+        "shape_name": "web_fallback_ecnu_logo"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Downsampled to 96x96 transparent PNG for small PPT brand placement."
+    },
+    {
+      "id": "ecnu_logo_wordmark",
+      "file": "svg/ecnu_logo_wordmark.svg",
+      "preview_png": "png/ecnu_logo_wordmark.png",
+      "width_px": 1200,
+      "height_px": 217,
+      "mode": "RGBA",
+      "sha256": "d1c96f6c53065a0fc410d5e5ef53708195ff2aa64ff30adde5922bf9bc3e1df8",
+      "preview_sha256": "938ba575f1086e9038b66a0b688831635a2f5df210a8c1698623a9e5a8e63cc1",
+      "source_media": "user/C:/Users/Liang/Downloads/logo3.svg",
+      "source_note": "User-supplied East China Normal University horizontal SVG wordmark; replaces the earlier urongda web fallback for defense deck branding.",
+      "first_occurrence": {
+        "slide": null,
+        "shape_path": null,
+        "shape_name": "user_supplied_ecnu_wordmark"
+      },
+      "occurrence_count": 1,
+      "processed": true,
+      "processing_note": "Copied SVG into the local emblem library and rendered a transparent PNG preview/PPT asset at 1200px width."
+    }
+  ],
+  "occurrences": [
+    {
+      "asset_id": "university_emblem_001",
+      "file": "png/university_emblem_001.png",
+      "slide": 1,
+      "shape_path": "2",
+      "shape_name": "图片 4",
+      "source_media": "ppt/media/image1.png",
+      "position_in": {
+        "left": 9.4972,
+        "top": 1.4147,
+        "width": 3.1385,
+        "height": 0.9443
+      }
+    },
+    {
+      "asset_id": "university_emblem_002",
+      "file": "png/university_emblem_002.png",
+      "slide": 1,
+      "shape_path": "3",
+      "shape_name": "图片 5",
+      "source_media": "ppt/media/image2.png",
+      "position_in": {
+        "left": 5.3196,
+        "top": 1.5348,
+        "width": 2.9163,
+        "height": 0.611
+      }
+    },
+    {
+      "asset_id": "university_emblem_003",
+      "file": "png/university_emblem_003.png",
+      "slide": 1,
+      "shape_path": "4",
+      "shape_name": "图片 6",
+      "source_media": "ppt/media/image3.png",
+      "position_in": {
+        "left": 0.7896,
+        "top": 1.4147,
+        "width": 2.8052,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_004",
+      "file": "png/university_emblem_004.png",
+      "slide": 1,
+      "shape_path": "5",
+      "shape_name": "图片 7",
+      "source_media": "ppt/media/image4.png",
+      "position_in": {
+        "left": 9.4833,
+        "top": 0.1408,
+        "width": 3.1524,
+        "height": 0.9721
+      }
+    },
+    {
+      "asset_id": "university_emblem_005",
+      "file": "png/university_emblem_005.png",
+      "slide": 1,
+      "shape_path": "6",
+      "shape_name": "图片 8",
+      "source_media": "ppt/media/image5.png",
+      "position_in": {
+        "left": 4.8961,
+        "top": 0.2361,
+        "width": 3.3468,
+        "height": 0.7777
+      }
+    },
+    {
+      "asset_id": "university_emblem_006",
+      "file": "png/university_emblem_006.png",
+      "slide": 1,
+      "shape_path": "7",
+      "shape_name": "图片 9",
+      "source_media": "ppt/media/image6.png",
+      "position_in": {
+        "left": 0.5119,
+        "top": 0.1765,
+        "width": 3.3607,
+        "height": 0.9027
+      }
+    },
+    {
+      "asset_id": "university_emblem_007",
+      "file": "png/university_emblem_007.png",
+      "slide": 1,
+      "shape_path": "8",
+      "shape_name": "图片 11",
+      "source_media": "ppt/media/image7.png",
+      "position_in": {
+        "left": 4.9585,
+        "top": 6.4414,
+        "width": 3.2218,
+        "height": 0.7638
+      }
+    },
+    {
+      "asset_id": "university_emblem_008",
+      "file": "png/university_emblem_008.png",
+      "slide": 1,
+      "shape_path": "9",
+      "shape_name": "图片 12",
+      "source_media": "ppt/media/image8.png",
+      "position_in": {
+        "left": 0.4494,
+        "top": 6.3651,
+        "width": 3.4718,
+        "height": 0.9166
+      }
+    },
+    {
+      "asset_id": "university_emblem_009",
+      "file": "png/university_emblem_009.png",
+      "slide": 1,
+      "shape_path": "10",
+      "shape_name": "图片 13",
+      "source_media": "ppt/media/image9.png",
+      "position_in": {
+        "left": 0.4494,
+        "top": 5.2362,
+        "width": 3.7218,
+        "height": 0.7638
+      }
+    },
+    {
+      "asset_id": "university_emblem_010",
+      "file": "png/university_emblem_010.png",
+      "slide": 1,
+      "shape_path": "11",
+      "shape_name": "图片 14",
+      "source_media": "ppt/media/image10.png",
+      "position_in": {
+        "left": 0.5466,
+        "top": 4.0069,
+        "width": 3.5273,
+        "height": 1.0415
+      }
+    },
+    {
+      "asset_id": "university_emblem_011",
+      "file": "png/university_emblem_011.png",
+      "slide": 1,
+      "shape_path": "12",
+      "shape_name": "图片 15",
+      "source_media": "ppt/media/image11.png",
+      "position_in": {
+        "left": 0.748,
+        "top": 2.7985,
+        "width": 3.1246,
+        "height": 0.6388
+      }
+    },
+    {
+      "asset_id": "university_emblem_012",
+      "file": "png/university_emblem_012.png",
+      "slide": 1,
+      "shape_path": "13",
+      "shape_name": "图片 16",
+      "source_media": "ppt/media/image12.png",
+      "position_in": {
+        "left": 5.3196,
+        "top": 2.6668,
+        "width": 2.2636,
+        "height": 0.8193
+      }
+    },
+    {
+      "asset_id": "university_emblem_013",
+      "file": "png/university_emblem_013.png",
+      "slide": 1,
+      "shape_path": "14",
+      "shape_name": "图片 17",
+      "source_media": "ppt/media/image13.png",
+      "position_in": {
+        "left": 4.5628,
+        "top": 3.8958,
+        "width": 4.0134,
+        "height": 1.0138
+      }
+    },
+    {
+      "asset_id": "university_emblem_014",
+      "file": "png/university_emblem_014.png",
+      "slide": 1,
+      "shape_path": "15",
+      "shape_name": "图片 18",
+      "source_media": "ppt/media/image14.png",
+      "position_in": {
+        "left": 5.264,
+        "top": 5.2141,
+        "width": 2.5552,
+        "height": 0.8055
+      }
+    },
+    {
+      "asset_id": "university_emblem_015",
+      "file": "png/university_emblem_015.png",
+      "slide": 1,
+      "shape_path": "16",
+      "shape_name": "图片 19",
+      "source_media": "ppt/media/image15.png",
+      "position_in": {
+        "left": 9.4833,
+        "top": 6.3846,
+        "width": 3.1107,
+        "height": 0.9582
+      }
+    },
+    {
+      "asset_id": "university_emblem_016",
+      "file": "png/university_emblem_016.png",
+      "slide": 1,
+      "shape_path": "17",
+      "shape_name": "图片 20",
+      "source_media": "ppt/media/image16.png",
+      "position_in": {
+        "left": 9.6234,
+        "top": 5.2362,
+        "width": 2.9163,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_017",
+      "file": "png/university_emblem_017.png",
+      "slide": 1,
+      "shape_path": "18",
+      "shape_name": "图片 21",
+      "source_media": "ppt/media/image17.png",
+      "position_in": {
+        "left": 9.6234,
+        "top": 4.0069,
+        "width": 2.7497,
+        "height": 0.7916
+      }
+    },
+    {
+      "asset_id": "university_emblem_018",
+      "file": "png/university_emblem_018.png",
+      "slide": 1,
+      "shape_path": "19",
+      "shape_name": "图片 22",
+      "source_media": "ppt/media/image18.png",
+      "position_in": {
+        "left": 9.6789,
+        "top": 2.6318,
+        "width": 2.6386,
+        "height": 0.9721
+      }
+    },
+    {
+      "asset_id": "university_emblem_019",
+      "file": "png/university_emblem_019.png",
+      "slide": 2,
+      "shape_path": "2",
+      "shape_name": "图片 4",
+      "source_media": "ppt/media/image19.png",
+      "position_in": {
+        "left": 0.3474,
+        "top": 6.4539,
+        "width": 3.6384,
+        "height": 0.7638
+      }
+    },
+    {
+      "asset_id": "university_emblem_020",
+      "file": "png/university_emblem_020.png",
+      "slide": 2,
+      "shape_path": "3",
+      "shape_name": "图片 5",
+      "source_media": "ppt/media/image20.png",
+      "position_in": {
+        "left": 0.2919,
+        "top": 3.9425,
+        "width": 3.7495,
+        "height": 0.8332
+      }
+    },
+    {
+      "asset_id": "university_emblem_021",
+      "file": "png/university_emblem_021.png",
+      "slide": 2,
+      "shape_path": "4",
+      "shape_name": "图片 6",
+      "source_media": "ppt/media/image21.png",
+      "position_in": {
+        "left": 1.0835,
+        "top": 5.1843,
+        "width": 2.1664,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_022",
+      "file": "png/university_emblem_022.png",
+      "slide": 2,
+      "shape_path": "5",
+      "shape_name": "图片 7",
+      "source_media": "ppt/media/image22.png",
+      "position_in": {
+        "left": 0.1461,
+        "top": 2.7133,
+        "width": 4.0412,
+        "height": 0.7916
+      }
+    },
+    {
+      "asset_id": "university_emblem_023",
+      "file": "png/university_emblem_023.png",
+      "slide": 2,
+      "shape_path": "6",
+      "shape_name": "图片 8",
+      "source_media": "ppt/media/image23.png",
+      "position_in": {
+        "left": 0.6877,
+        "top": 1.4147,
+        "width": 2.958,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_024",
+      "file": "png/university_emblem_024.png",
+      "slide": 2,
+      "shape_path": "7",
+      "shape_name": "图片 9",
+      "source_media": "ppt/media/image24.png",
+      "position_in": {
+        "left": 0.521,
+        "top": 0.2133,
+        "width": 3.2913,
+        "height": 0.7638
+      }
+    },
+    {
+      "asset_id": "university_emblem_025",
+      "file": "png/university_emblem_025.png",
+      "slide": 2,
+      "shape_path": "8",
+      "shape_name": "图片 11",
+      "source_media": "ppt/media/image25.png",
+      "position_in": {
+        "left": 9.8404,
+        "top": 5.2676,
+        "width": 2.583,
+        "height": 0.6944
+      }
+    },
+    {
+      "asset_id": "university_emblem_026",
+      "file": "png/university_emblem_026.png",
+      "slide": 2,
+      "shape_path": "9",
+      "shape_name": "图片 12",
+      "source_media": "ppt/media/image26.png",
+      "position_in": {
+        "left": 9.6113,
+        "top": 4.002,
+        "width": 3.0413,
+        "height": 0.6666
+      }
+    },
+    {
+      "asset_id": "university_emblem_027",
+      "file": "png/university_emblem_027.png",
+      "slide": 2,
+      "shape_path": "10",
+      "shape_name": "图片 13",
+      "source_media": "ppt/media/image27.png",
+      "position_in": {
+        "left": 9.2919,
+        "top": 2.6161,
+        "width": 3.3607,
+        "height": 0.986
+      }
+    },
+    {
+      "asset_id": "university_emblem_028",
+      "file": "png/university_emblem_028.png",
+      "slide": 2,
+      "shape_path": "11",
+      "shape_name": "图片 14",
+      "source_media": "ppt/media/image28.png",
+      "position_in": {
+        "left": 8.8376,
+        "top": 1.4147,
+        "width": 4.4439,
+        "height": 0.9027
+      }
+    },
+    {
+      "asset_id": "university_emblem_029",
+      "file": "png/university_emblem_029.png",
+      "slide": 2,
+      "shape_path": "12",
+      "shape_name": "图片 15",
+      "source_media": "ppt/media/image29.png",
+      "position_in": {
+        "left": 9.1917,
+        "top": 0.1647,
+        "width": 3.7356,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_030",
+      "file": "png/university_emblem_030.png",
+      "slide": 2,
+      "shape_path": "13",
+      "shape_name": "图片 16",
+      "source_media": "ppt/media/image30.png",
+      "position_in": {
+        "left": 4.8544,
+        "top": 0.1549,
+        "width": 3.6245,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_031",
+      "file": "png/university_emblem_031.png",
+      "slide": 2,
+      "shape_path": "14",
+      "shape_name": "图片 17",
+      "source_media": "ppt/media/image31.png",
+      "position_in": {
+        "left": 5.0419,
+        "top": 2.7065,
+        "width": 3.2496,
+        "height": 0.9166
+      }
+    },
+    {
+      "asset_id": "university_emblem_032",
+      "file": "png/university_emblem_032.png",
+      "slide": 2,
+      "shape_path": "15",
+      "shape_name": "图片 18",
+      "source_media": "ppt/media/image32.png",
+      "position_in": {
+        "left": 4.903,
+        "top": 4.0515,
+        "width": 3.5273,
+        "height": 0.6666
+      }
+    },
+    {
+      "asset_id": "university_emblem_033",
+      "file": "png/university_emblem_033.png",
+      "slide": 2,
+      "shape_path": "16",
+      "shape_name": "图片 19",
+      "source_media": "ppt/media/image33.png",
+      "position_in": {
+        "left": 5.1564,
+        "top": 5.1843,
+        "width": 2.7774,
+        "height": 0.9166
+      }
+    },
+    {
+      "asset_id": "university_emblem_034",
+      "file": "png/university_emblem_034.png",
+      "slide": 2,
+      "shape_path": "17",
+      "shape_name": "图片 20",
+      "source_media": "ppt/media/image34.png",
+      "position_in": {
+        "left": 9.6807,
+        "top": 6.4123,
+        "width": 2.9719,
+        "height": 0.8471
+      }
+    },
+    {
+      "asset_id": "university_emblem_035",
+      "file": "png/university_emblem_035.png",
+      "slide": 2,
+      "shape_path": "18",
+      "shape_name": "图片 21",
+      "source_media": "ppt/media/image35.png",
+      "position_in": {
+        "left": 4.903,
+        "top": 6.4539,
+        "width": 3.1107,
+        "height": 0.8749
+      }
+    },
+    {
+      "asset_id": "university_emblem_036",
+      "file": "png/university_emblem_036.png",
+      "slide": 2,
+      "shape_path": "19",
+      "shape_name": "图片 22",
+      "source_media": "ppt/media/image36.png",
+      "position_in": {
+        "left": 4.6877,
+        "top": 1.4147,
+        "width": 3.9578,
+        "height": 1.0276
+      }
+    },
+    {
+      "asset_id": "university_emblem_037",
+      "file": "png/university_emblem_037.png",
+      "slide": 3,
+      "shape_path": "2",
+      "shape_name": "Picture 6",
+      "source_media": "ppt/media/image37.png",
+      "position_in": {
+        "left": 0.4051,
+        "top": 0.1998,
+        "width": 3.2222,
+        "height": 0.7778
+      }
+    },
+    {
+      "asset_id": "university_emblem_038",
+      "file": "png/university_emblem_038.png",
+      "slide": 3,
+      "shape_path": "3",
+      "shape_name": "Picture 16",
+      "source_media": "ppt/media/image38.png",
+      "position_in": {
+        "left": 4.9128,
+        "top": 0.1998,
+        "width": 3.3472,
+        "height": 0.7778
+      }
+    },
+    {
+      "asset_id": "university_emblem_039",
+      "file": "png/university_emblem_039.png",
+      "slide": 3,
+      "shape_path": "4",
+      "shape_name": "Picture 7",
+      "source_media": "ppt/media/image39.png",
+      "position_in": {
+        "left": 9.8656,
+        "top": 0.2149,
+        "width": 2.6389,
+        "height": 0.7778
+      }
+    },
+    {
+      "asset_id": "university_emblem_040",
+      "file": "png/university_emblem_040.png",
+      "slide": 3,
+      "shape_path": "5",
+      "shape_name": "图片 22",
+      "source_media": "ppt/media/image40.png",
+      "position_in": {
+        "left": 0.2185,
+        "top": 1.3622,
+        "width": 3.4338,
+        "height": 0.9958
+      }
+    },
+    {
+      "asset_id": "university_emblem_041",
+      "file": "png/university_emblem_041.png",
+      "slide": 3,
+      "shape_path": "6",
+      "shape_name": "图片 24",
+      "source_media": "ppt/media/image41.png",
+      "position_in": {
+        "left": 4.9128,
+        "top": 1.3937,
+        "width": 2.9573,
+        "height": 0.9899
+      }
+    },
+    {
+      "asset_id": "university_emblem_042",
+      "file": "png/university_emblem_042.png",
+      "slide": 3,
+      "shape_path": "7",
+      "shape_name": "图片 26",
+      "source_media": "ppt/media/image42.png",
+      "position_in": {
+        "left": 9.1933,
+        "top": 1.3937,
+        "width": 3.9833,
+        "height": 0.902
+      }
+    },
+    {
+      "asset_id": "university_emblem_043",
+      "file": "png/university_emblem_043.png",
+      "slide": 3,
+      "shape_path": "8",
+      "shape_name": "图片 28",
+      "source_media": "ppt/media/image43.png",
+      "position_in": {
+        "left": 0.2917,
+        "top": 2.588,
+        "width": 1.1979,
+        "height": 1.1318
+      }
+    },
+    {
+      "asset_id": "university_emblem_044",
+      "file": "png/university_emblem_044.png",
+      "slide": 3,
+      "shape_path": "9",
+      "shape_name": "图片 29",
+      "source_media": "ppt/media/image44.png",
+      "position_in": {
+        "left": 1.4115,
+        "top": 2.7062,
+        "width": 2.6354,
+        "height": 0.9771
+      }
+    },
+    {
+      "asset_id": "university_emblem_045",
+      "file": "png/university_emblem_045.png",
+      "slide": 3,
+      "shape_path": "10",
+      "shape_name": "图片 31",
+      "source_media": "ppt/media/image45.png",
+      "position_in": {
+        "left": 4.5917,
+        "top": 2.588,
+        "width": 4.2167,
+        "height": 1.0785
+      }
+    },
+    {
+      "asset_id": "university_emblem_046",
+      "file": "png/university_emblem_046.png",
+      "slide": 3,
+      "shape_path": "11",
+      "shape_name": "图片 35",
+      "source_media": "ppt/media/image46.png",
+      "position_in": {
+        "left": 9.2181,
+        "top": 2.6147,
+        "width": 3.8236,
+        "height": 1.024
+      }
+    },
+    {
+      "asset_id": "university_emblem_047",
+      "file": "png/university_emblem_047.png",
+      "slide": 3,
+      "shape_path": "12",
+      "shape_name": "图片 37",
+      "source_media": "ppt/media/image47.png",
+      "position_in": {
+        "left": 0.1342,
+        "top": 3.8015,
+        "width": 4.1667,
+        "height": 1.1318
+      }
+    },
+    {
+      "asset_id": "university_emblem_048",
+      "file": "png/university_emblem_048.png",
+      "slide": 3,
+      "shape_path": "13",
+      "shape_name": "图片 39",
+      "source_media": "ppt/media/image48.png",
+      "position_in": {
+        "left": 4.7913,
+        "top": 3.8986,
+        "width": 3.6458,
+        "height": 0.9959
+      }
+    },
+    {
+      "asset_id": "university_emblem_049",
+      "file": "png/university_emblem_049.png",
+      "slide": 3,
+      "shape_path": "14",
+      "shape_name": "图片 41",
+      "source_media": "ppt/media/image49.png",
+      "position_in": {
+        "left": 9.1933,
+        "top": 3.8705,
+        "width": 3.6407,
+        "height": 1.024
+      }
+    },
+    {
+      "asset_id": "university_emblem_050",
+      "file": "png/university_emblem_050.png",
+      "slide": 3,
+      "shape_path": "15",
+      "shape_name": "图片 43",
+      "source_media": "ppt/media/image50.png",
+      "position_in": {
+        "left": 0.4039,
+        "top": 5.0516,
+        "width": 3.6273,
+        "height": 1.1452
+      }
+    },
+    {
+      "asset_id": "university_emblem_051",
+      "file": "png/university_emblem_051.png",
+      "slide": 3,
+      "shape_path": "16",
+      "shape_name": "图片 45",
+      "source_media": "ppt/media/image51.png",
+      "position_in": {
+        "left": 4.5639,
+        "top": 5.0793,
+        "width": 4.0763,
+        "height": 1.0877
+      }
+    },
+    {
+      "asset_id": "university_emblem_052",
+      "file": "png/university_emblem_052.png",
+      "slide": 3,
+      "shape_path": "17.1",
+      "shape_name": "图片 49",
+      "source_media": "ppt/media/image52.png",
+      "position_in": {
+        "left": 0.5604,
+        "top": 6.4419,
+        "width": 0.9292,
+        "height": 0.9236
+      }
+    },
+    {
+      "asset_id": "university_emblem_052",
+      "file": "png/university_emblem_052.png",
+      "slide": 3,
+      "shape_path": "17.2",
+      "shape_name": "图片 50",
+      "source_media": "ppt/media/image52.png",
+      "position_in": {
+        "left": 1.5535,
+        "top": 6.5946,
+        "width": 2.1806,
+        "height": 0.6849
+      }
+    },
+    {
+      "asset_id": "university_emblem_053",
+      "file": "png/university_emblem_053.png",
+      "slide": 3,
+      "shape_path": "18.1",
+      "shape_name": "图片 52",
+      "source_media": "ppt/media/image53.png",
+      "position_in": {
+        "left": 9.6155,
+        "top": 5.1719,
+        "width": 0.9819,
+        "height": 0.9579
+      }
+    },
+    {
+      "asset_id": "university_emblem_053",
+      "file": "png/university_emblem_053.png",
+      "slide": 3,
+      "shape_path": "18.2",
+      "shape_name": "图片 53",
+      "source_media": "ppt/media/image53.png",
+      "position_in": {
+        "left": 10.651,
+        "top": 5.3722,
+        "width": 2.0885,
+        "height": 0.5573
+      }
+    },
+    {
+      "asset_id": "university_emblem_054",
+      "file": "png/university_emblem_054.png",
+      "slide": 3,
+      "shape_path": "19.1",
+      "shape_name": "图片 55",
+      "source_media": "ppt/media/image54.png",
+      "position_in": {
+        "left": 4.6924,
+        "top": 6.3691,
+        "width": 1.0281,
+        "height": 1.0136
+      }
+    },
+    {
+      "asset_id": "university_emblem_054",
+      "file": "png/university_emblem_054.png",
+      "slide": 3,
+      "shape_path": "19.2",
+      "shape_name": "图片 56",
+      "source_media": "ppt/media/image54.png",
+      "position_in": {
+        "left": 5.7788,
+        "top": 6.5741,
+        "width": 2.7747,
+        "height": 0.6037
+      }
+    },
+    {
+      "asset_id": "university_emblem_055",
+      "file": "png/university_emblem_055.png",
+      "slide": 3,
+      "shape_path": "20",
+      "shape_name": "图片 58",
+      "source_media": "ppt/media/image55.png",
+      "position_in": {
+        "left": 9.3593,
+        "top": 6.3412,
+        "width": 3.4748,
+        "height": 1.0701
+      }
+    },
+    {
+      "asset_id": "university_emblem_056",
+      "file": "png/university_emblem_056.png",
+      "slide": 4,
+      "shape_path": "2",
+      "shape_name": "图片 3",
+      "source_media": "ppt/media/image56.png",
+      "position_in": {
+        "left": 0.1208,
+        "top": 0.0,
+        "width": 3.8292,
+        "height": 1.2521
+      }
+    },
+    {
+      "asset_id": "university_emblem_057",
+      "file": "png/university_emblem_057.png",
+      "slide": 4,
+      "shape_path": "3",
+      "shape_name": "图片 5",
+      "source_media": "ppt/media/image57.png",
+      "position_in": {
+        "left": 4.5879,
+        "top": 0.0229,
+        "width": 3.94,
+        "height": 1.2293
+      }
+    },
+    {
+      "asset_id": "university_emblem_058",
+      "file": "png/university_emblem_058.png",
+      "slide": 4,
+      "shape_path": "4",
+      "shape_name": "图片 7",
+      "source_media": "ppt/media/image58.png",
+      "position_in": {
+        "left": 9.0549,
+        "top": -0.0674,
+        "width": 4.1576,
+        "height": 1.387
+      }
+    },
+    {
+      "asset_id": "university_emblem_059",
+      "file": "png/university_emblem_059.png",
+      "slide": 4,
+      "shape_path": "5",
+      "shape_name": "图片 9",
+      "source_media": "ppt/media/image59.png",
+      "position_in": {
+        "left": 0.3719,
+        "top": 1.2521,
+        "width": 3.477,
+        "height": 1.168
+      }
+    },
+    {
+      "asset_id": "university_emblem_060",
+      "file": "png/university_emblem_060.png",
+      "slide": 4,
+      "shape_path": "6",
+      "shape_name": "图片 11",
+      "source_media": "ppt/media/image60.png",
+      "position_in": {
+        "left": 4.5833,
+        "top": 1.2675,
+        "width": 4.1667,
+        "height": 1.2292
+      }
+    },
+    {
+      "asset_id": "university_emblem_061",
+      "file": "png/university_emblem_061.png",
+      "slide": 4,
+      "shape_path": "7.1",
+      "shape_name": "图片 13",
+      "source_media": "ppt/media/image61.png",
+      "position_in": {
+        "left": 9.1244,
+        "top": 1.3029,
+        "width": 1.2321,
+        "height": 1.1632
+      }
+    },
+    {
+      "asset_id": "university_emblem_061",
+      "file": "png/university_emblem_061.png",
+      "slide": 4,
+      "shape_path": "7.2",
+      "shape_name": "图片 14",
+      "source_media": "ppt/media/image61.png",
+      "position_in": {
+        "left": 10.1337,
+        "top": 1.459,
+        "width": 2.9774,
+        "height": 0.8676
+      }
+    },
+    {
+      "asset_id": "university_emblem_062",
+      "file": "png/university_emblem_062.png",
+      "slide": 4,
+      "shape_path": "8",
+      "shape_name": "图片 16",
+      "source_media": "ppt/media/image62.png",
+      "position_in": {
+        "left": 0.3693,
+        "top": 2.6173,
+        "width": 3.7247,
+        "height": 1.0243
+      }
+    },
+    {
+      "asset_id": "university_emblem_063",
+      "file": "png/university_emblem_063.png",
+      "slide": 4,
+      "shape_path": "9.1",
+      "shape_name": "图片 18",
+      "source_media": "ppt/media/image63.png",
+      "position_in": {
+        "left": 4.6927,
+        "top": 2.6184,
+        "width": 1.2441,
+        "height": 1.0379
+      }
+    },
+    {
+      "asset_id": "university_emblem_063",
+      "file": "png/university_emblem_063.png",
+      "slide": 4,
+      "shape_path": "9.2",
+      "shape_name": "图片 19",
+      "source_media": "ppt/media/image63.png",
+      "position_in": {
+        "left": 5.8587,
+        "top": 2.9062,
+        "width": 2.7559,
+        "height": 0.6615
+      }
+    },
+    {
+      "asset_id": "university_emblem_064",
+      "file": "png/university_emblem_064.png",
+      "slide": 4,
+      "shape_path": "10",
+      "shape_name": "图片 21",
+      "source_media": "ppt/media/image64.png",
+      "position_in": {
+        "left": 9.2133,
+        "top": 2.499,
+        "width": 3.7912,
+        "height": 1.2352
+      }
+    },
+    {
+      "asset_id": "university_emblem_065",
+      "file": "png/university_emblem_065.png",
+      "slide": 4,
+      "shape_path": "11",
+      "shape_name": "图片 23",
+      "source_media": "ppt/media/image65.png",
+      "position_in": {
+        "left": 4.6653,
+        "top": 3.7779,
+        "width": 1.1934,
+        "height": 1.1928
+      }
+    },
+    {
+      "asset_id": "university_emblem_065",
+      "file": "png/university_emblem_065.png",
+      "slide": 4,
+      "shape_path": "12",
+      "shape_name": "图片 24",
+      "source_media": "ppt/media/image65.png",
+      "position_in": {
+        "left": 5.8125,
+        "top": 3.9517,
+        "width": 2.9323,
+        "height": 0.9331
+      }
+    },
+    {
+      "asset_id": "university_emblem_066",
+      "file": "png/university_emblem_066.png",
+      "slide": 4,
+      "shape_path": "13.1",
+      "shape_name": "图片 26",
+      "source_media": "ppt/media/image66.png",
+      "position_in": {
+        "left": 0.3693,
+        "top": 3.8689,
+        "width": 1.0908,
+        "height": 1.0243
+      }
+    },
+    {
+      "asset_id": "university_emblem_066",
+      "file": "png/university_emblem_066.png",
+      "slide": 4,
+      "shape_path": "13.2",
+      "shape_name": "图片 27",
+      "source_media": "ppt/media/image66.png",
+      "position_in": {
+        "left": 1.3898,
+        "top": 3.8993,
+        "width": 2.5625,
+        "height": 0.9939
+      }
+    },
+    {
+      "asset_id": "university_emblem_067",
+      "file": "png/university_emblem_067.png",
+      "slide": 4,
+      "shape_path": "14.1",
+      "shape_name": "图片 29",
+      "source_media": "ppt/media/image67.png",
+      "position_in": {
+        "left": 9.8068,
+        "top": 3.8147,
+        "width": 1.0995,
+        "height": 1.1053
+      }
+    },
+    {
+      "asset_id": "university_emblem_067",
+      "file": "png/university_emblem_067.png",
+      "slide": 4,
+      "shape_path": "14.2",
+      "shape_name": "图片 30",
+      "source_media": "ppt/media/image67.png",
+      "position_in": {
+        "left": 10.8648,
+        "top": 4.048,
+        "width": 1.5451,
+        "height": 0.6528
+      }
+    },
+    {
+      "asset_id": "university_emblem_068",
+      "file": "png/university_emblem_068.png",
+      "slide": 4,
+      "shape_path": "15.1",
+      "shape_name": "图片 32",
+      "source_media": "ppt/media/image68.png",
+      "position_in": {
+        "left": 0.4248,
+        "top": 5.0846,
+        "width": 1.1361,
+        "height": 1.0862
+      }
+    },
+    {
+      "asset_id": "university_emblem_068",
+      "file": "png/university_emblem_068.png",
+      "slide": 4,
+      "shape_path": "15.2",
+      "shape_name": "图片 33",
+      "source_media": "ppt/media/image68.png",
+      "position_in": {
+        "left": 1.5852,
+        "top": 5.2171,
+        "width": 2.1719,
+        "height": 0.8714
+      }
+    },
+    {
+      "asset_id": "university_emblem_069",
+      "file": "png/university_emblem_069.png",
+      "slide": 4,
+      "shape_path": "16",
+      "shape_name": "图片 35",
+      "source_media": "ppt/media/image69.png",
+      "position_in": {
+        "left": 9.3542,
+        "top": 5.009,
+        "width": 3.5095,
+        "height": 1.2261
+      }
+    },
+    {
+      "asset_id": "university_emblem_070",
+      "file": "png/university_emblem_070.png",
+      "slide": 4,
+      "shape_path": "17",
+      "shape_name": "图片 37",
+      "source_media": "ppt/media/image70.png",
+      "position_in": {
+        "left": 4.5833,
+        "top": 5.1113,
+        "width": 4.2039,
+        "height": 1.0389
+      }
+    },
+    {
+      "asset_id": "university_emblem_071",
+      "file": "png/university_emblem_071.png",
+      "slide": 4,
+      "shape_path": "18",
+      "shape_name": "图片 39",
+      "source_media": "ppt/media/image71.png",
+      "position_in": {
+        "left": 4.5951,
+        "top": 6.3766,
+        "width": 4.0195,
+        "height": 1.0389
+      }
+    },
+    {
+      "asset_id": "university_emblem_072",
+      "file": "png/university_emblem_072.png",
+      "slide": 4,
+      "shape_path": "19",
+      "shape_name": "图片 43",
+      "source_media": "ppt/media/image72.png",
+      "position_in": {
+        "left": 0.3693,
+        "top": 6.3097,
+        "width": 3.374,
+        "height": 1.1007
+      }
+    },
+    {
+      "asset_id": "university_emblem_073",
+      "file": "png/university_emblem_073.png",
+      "slide": 4,
+      "shape_path": "20",
+      "shape_name": "图片 45",
+      "source_media": "ppt/media/image73.png",
+      "position_in": {
+        "left": 9.2392,
+        "top": 6.2736,
+        "width": 3.9028,
+        "height": 1.1949
+      }
+    },
+    {
+      "asset_id": "university_emblem_074",
+      "file": "png/university_emblem_074.png",
+      "slide": 5,
+      "shape_path": "2",
+      "shape_name": "图片 3",
+      "source_media": "ppt/media/image74.png",
+      "position_in": {
+        "left": 0.3267,
+        "top": 0.0942,
+        "width": 3.5358,
+        "height": 1.0735
+      }
+    },
+    {
+      "asset_id": "university_emblem_075",
+      "file": "png/university_emblem_075.png",
+      "slide": 5,
+      "shape_path": "3",
+      "shape_name": "图片 5",
+      "source_media": "ppt/media/image75.png",
+      "position_in": {
+        "left": 4.6944,
+        "top": 0.0942,
+        "width": 3.9444,
+        "height": 1.0735
+      }
+    },
+    {
+      "asset_id": "university_emblem_076",
+      "file": "png/university_emblem_076.png",
+      "slide": 5,
+      "shape_path": "4",
+      "shape_name": "图片 9",
+      "source_media": "ppt/media/image76.png",
+      "position_in": {
+        "left": 9.216,
+        "top": 0.0567,
+        "width": 3.7868,
+        "height": 1.136
+      }
+    },
+    {
+      "asset_id": "university_emblem_077",
+      "file": "png/university_emblem_077.png",
+      "slide": 5,
+      "shape_path": "5",
+      "shape_name": "图片 11",
+      "source_media": "ppt/media/image77.png",
+      "position_in": {
+        "left": 0.3017,
+        "top": 1.2989,
+        "width": 3.8625,
+        "height": 1.1505
+      }
+    },
+    {
+      "asset_id": "university_emblem_078",
+      "file": "png/university_emblem_078.png",
+      "slide": 5,
+      "shape_path": "6",
+      "shape_name": "图片 13",
+      "source_media": "ppt/media/image78.png",
+      "position_in": {
+        "left": 4.6944,
+        "top": 1.2921,
+        "width": 3.8625,
+        "height": 1.1822
+      }
+    },
+    {
+      "asset_id": "university_emblem_079",
+      "file": "png/university_emblem_079.png",
+      "slide": 5,
+      "shape_path": "7.1",
+      "shape_name": "图片 15",
+      "source_media": "ppt/media/image79.png",
+      "position_in": {
+        "left": 8.9935,
+        "top": 1.3661,
+        "width": 1.0727,
+        "height": 1.0516
+      }
+    },
+    {
+      "asset_id": "university_emblem_079",
+      "file": "png/university_emblem_079.png",
+      "slide": 5,
+      "shape_path": "7.2",
+      "shape_name": "图片 16",
+      "source_media": "ppt/media/image79.png",
+      "position_in": {
+        "left": 10.0245,
+        "top": 1.526,
+        "width": 3.0632,
+        "height": 0.7083
+      }
+    },
+    {
+      "asset_id": "university_emblem_080",
+      "file": "png/university_emblem_080.png",
+      "slide": 5,
+      "shape_path": "8",
+      "shape_name": "图片 19",
+      "source_media": "ppt/media/image80.png",
+      "position_in": {
+        "left": 0.3762,
+        "top": 2.5436,
+        "width": 3.4863,
+        "height": 1.1697
+      }
+    },
+    {
+      "asset_id": "university_emblem_081",
+      "file": "png/university_emblem_081.png",
+      "slide": 5,
+      "shape_path": "9",
+      "shape_name": "图片 21",
+      "source_media": "ppt/media/image81.png",
+      "position_in": {
+        "left": 4.8354,
+        "top": 2.5969,
+        "width": 3.5805,
+        "height": 1.063
+      }
+    },
+    {
+      "asset_id": "university_emblem_082",
+      "file": "png/university_emblem_082.png",
+      "slide": 5,
+      "shape_path": "10",
+      "shape_name": "图片 23",
+      "source_media": "ppt/media/image82.png",
+      "position_in": {
+        "left": 9.2616,
+        "top": 2.5436,
+        "width": 3.6955,
+        "height": 1.1697
+      }
+    },
+    {
+      "asset_id": "university_emblem_083",
+      "file": "png/university_emblem_083.png",
+      "slide": 5,
+      "shape_path": "11",
+      "shape_name": "图片 25",
+      "source_media": "ppt/media/image83.png",
+      "position_in": {
+        "left": 0.2494,
+        "top": 3.8075,
+        "width": 3.74,
+        "height": 1.1206
+      }
+    },
+    {
+      "asset_id": "university_emblem_084",
+      "file": "png/university_emblem_084.png",
+      "slide": 5,
+      "shape_path": "12",
+      "shape_name": "图片 27",
+      "source_media": "ppt/media/image84.png",
+      "position_in": {
+        "left": 4.8897,
+        "top": 3.8401,
+        "width": 3.4719,
+        "height": 1.088
+      }
+    },
+    {
+      "asset_id": "university_emblem_085",
+      "file": "png/university_emblem_085.png",
+      "slide": 5,
+      "shape_path": "13",
+      "shape_name": "图片 29",
+      "source_media": "ppt/media/image85.png",
+      "position_in": {
+        "left": 9.0252,
+        "top": 3.8238,
+        "width": 4.1667,
+        "height": 1.088
+      }
+    },
+    {
+      "asset_id": "university_emblem_086",
+      "file": "png/university_emblem_086.png",
+      "slide": 5,
+      "shape_path": "14",
+      "shape_name": "图片 31",
+      "source_media": "ppt/media/image86.png",
+      "position_in": {
+        "left": 0.3267,
+        "top": 5.061,
+        "width": 3.4848,
+        "height": 1.1051
+      }
+    },
+    {
+      "asset_id": "university_emblem_087",
+      "file": "png/university_emblem_087.png",
+      "slide": 5,
+      "shape_path": "15",
+      "shape_name": "图片 33",
+      "source_media": "ppt/media/image87.png",
+      "position_in": {
+        "left": 4.4059,
+        "top": 5.1083,
+        "width": 4.5215,
+        "height": 1.0028
+      }
+    },
+    {
+      "asset_id": "university_emblem_088",
+      "file": "png/university_emblem_088.png",
+      "slide": 5,
+      "shape_path": "16",
+      "shape_name": "图片 35",
+      "source_media": "ppt/media/image88.png",
+      "position_in": {
+        "left": 9.1726,
+        "top": 5.061,
+        "width": 3.8301,
+        "height": 1.0975
+      }
+    },
+    {
+      "asset_id": "university_emblem_089",
+      "file": "png/university_emblem_089.png",
+      "slide": 5,
+      "shape_path": "17",
+      "shape_name": "图片 37",
+      "source_media": "ppt/media/image89.png",
+      "position_in": {
+        "left": 0.1012,
+        "top": 6.2563,
+        "width": 4.1667,
+        "height": 1.2317
+      }
+    },
+    {
+      "asset_id": "university_emblem_090",
+      "file": "png/university_emblem_090.png",
+      "slide": 5,
+      "shape_path": "18",
+      "shape_name": "图片 43",
+      "source_media": "ppt/media/image90.png",
+      "position_in": {
+        "left": 4.8739,
+        "top": 6.3034,
+        "width": 3.6317,
+        "height": 1.1308
+      }
+    },
+    {
+      "asset_id": "university_emblem_091",
+      "file": "png/university_emblem_091.png",
+      "slide": 5,
+      "shape_path": "19",
+      "shape_name": "图片 45",
+      "source_media": "ppt/media/image91.png",
+      "position_in": {
+        "left": 8.8888,
+        "top": 6.2854,
+        "width": 4.3979,
+        "height": 1.21
+      }
+    },
+    {
+      "asset_id": "university_emblem_092",
+      "file": "png/university_emblem_092.png",
+      "slide": 6,
+      "shape_path": "2.1",
+      "shape_name": "图片 3",
+      "source_media": "ppt/media/image92.png",
+      "position_in": {
+        "left": 0.2064,
+        "top": 0.0603,
+        "width": 1.1566,
+        "height": 1.1341
+      }
+    },
+    {
+      "asset_id": "university_emblem_092",
+      "file": "png/university_emblem_092.png",
+      "slide": 6,
+      "shape_path": "2.2",
+      "shape_name": "图片 4",
+      "source_media": "ppt/media/image92.png",
+      "position_in": {
+        "left": 1.363,
+        "top": 0.1957,
+        "width": 2.0328,
+        "height": 0.8685
+      }
+    },
+    {
+      "asset_id": "university_emblem_093",
+      "file": "png/university_emblem_093.png",
+      "slide": 6,
+      "shape_path": "3",
+      "shape_name": "图片 7",
+      "source_media": "ppt/media/image93.png",
+      "position_in": {
+        "left": 4.6708,
+        "top": 0.0728,
+        "width": 3.9167,
+        "height": 1.1045
+      }
+    },
+    {
+      "asset_id": "university_emblem_094",
+      "file": "png/university_emblem_094.png",
+      "slide": 6,
+      "shape_path": "4",
+      "shape_name": "图片 9",
+      "source_media": "ppt/media/image94.png",
+      "position_in": {
+        "left": 9.3753,
+        "top": 0.0978,
+        "width": 3.3157,
+        "height": 1.0444
+      }
+    },
+    {
+      "asset_id": "university_emblem_052",
+      "file": "png/university_emblem_052.png",
+      "slide": 6,
+      "shape_path": "5.1",
+      "shape_name": "图片 11",
+      "source_media": "ppt/media/image52.png",
+      "position_in": {
+        "left": 0.3399,
+        "top": 1.3299,
+        "width": 1.166,
+        "height": 1.1441
+      }
+    },
+    {
+      "asset_id": "university_emblem_052",
+      "file": "png/university_emblem_052.png",
+      "slide": 6,
+      "shape_path": "5.2",
+      "shape_name": "图片 13",
+      "source_media": "ppt/media/image52.png",
+      "position_in": {
+        "left": 1.5059,
+        "top": 1.6055,
+        "width": 2.3646,
+        "height": 0.6237
+      }
+    },
+    {
+      "asset_id": "university_emblem_095",
+      "file": "png/university_emblem_095.png",
+      "slide": 6,
+      "shape_path": "6.1",
+      "shape_name": "图片 16",
+      "source_media": "ppt/media/image95.png",
+      "position_in": {
+        "left": 4.5795,
+        "top": 1.3299,
+        "width": 1.1142,
+        "height": 1.1045
+      }
+    },
+    {
+      "asset_id": "university_emblem_095",
+      "file": "png/university_emblem_095.png",
+      "slide": 6,
+      "shape_path": "6.2",
+      "shape_name": "图片 17",
+      "source_media": "ppt/media/image95.png",
+      "position_in": {
+        "left": 5.6937,
+        "top": 1.5556,
+        "width": 3.1389,
+        "height": 0.7017
+      }
+    },
+    {
+      "asset_id": "university_emblem_096",
+      "file": "png/university_emblem_096.png",
+      "slide": 6,
+      "shape_path": "7",
+      "shape_name": "图片 20",
+      "source_media": "ppt/media/image96.png",
+      "position_in": {
+        "left": 9.3753,
+        "top": 1.2807,
+        "width": 3.3157,
+        "height": 1.2102
+      }
+    },
+    {
+      "asset_id": "university_emblem_097",
+      "file": "png/university_emblem_097.png",
+      "slide": 6,
+      "shape_path": "8",
+      "shape_name": "图片 22",
+      "source_media": "ppt/media/image97.png",
+      "position_in": {
+        "left": 0.0879,
+        "top": 2.6031,
+        "width": 4.2746,
+        "height": 1.0618
+      }
+    },
+    {
+      "asset_id": "university_emblem_098",
+      "file": "png/university_emblem_098.png",
+      "slide": 6,
+      "shape_path": "9",
+      "shape_name": "图片 24",
+      "source_media": "ppt/media/image98.png",
+      "position_in": {
+        "left": 4.8309,
+        "top": 2.549,
+        "width": 3.6466,
+        "height": 1.1158
+      }
+    },
+    {
+      "asset_id": "university_emblem_099",
+      "file": "png/university_emblem_099.png",
+      "slide": 6,
+      "shape_path": "10",
+      "shape_name": "图片 26",
+      "source_media": "ppt/media/image99.png",
+      "position_in": {
+        "left": 9.0787,
+        "top": 2.5761,
+        "width": 3.909,
+        "height": 1.0618
+      }
+    },
+    {
+      "asset_id": "university_emblem_100",
+      "file": "png/university_emblem_100.png",
+      "slide": 6,
+      "shape_path": "11",
+      "shape_name": "图片 28",
+      "source_media": "ppt/media/image100.png",
+      "position_in": {
+        "left": 0.4583,
+        "top": 3.8033,
+        "width": 3.3333,
+        "height": 1.1096
+      }
+    },
+    {
+      "asset_id": "university_emblem_101",
+      "file": "png/university_emblem_101.png",
+      "slide": 6,
+      "shape_path": "12",
+      "shape_name": "图片 32",
+      "source_media": "ppt/media/image101.png",
+      "position_in": {
+        "left": 5.0,
+        "top": 3.8123,
+        "width": 3.3333,
+        "height": 1.0659
+      }
+    },
+    {
+      "asset_id": "university_emblem_102",
+      "file": "png/university_emblem_102.png",
+      "slide": 6,
+      "shape_path": "13.1",
+      "shape_name": "图片 34",
+      "source_media": "ppt/media/image102.png",
+      "position_in": {
+        "left": 9.2632,
+        "top": 3.8175,
+        "width": 1.1746,
+        "height": 1.1191
+      }
+    },
+    {
+      "asset_id": "university_emblem_102",
+      "file": "png/university_emblem_102.png",
+      "slide": 6,
+      "shape_path": "13.2",
+      "shape_name": "图片 35",
+      "source_media": "ppt/media/image102.png",
+      "position_in": {
+        "left": 10.4378,
+        "top": 3.8994,
+        "width": 1.8539,
+        "height": 0.9554
+      }
+    },
+    {
+      "asset_id": "university_emblem_103",
+      "file": "png/university_emblem_103.png",
+      "slide": 6,
+      "shape_path": "14.1",
+      "shape_name": "图片 38",
+      "source_media": "ppt/media/image103.png",
+      "position_in": {
+        "left": 0.2008,
+        "top": 5.0692,
+        "width": 1.1746,
+        "height": 1.137
+      }
+    },
+    {
+      "asset_id": "university_emblem_104",
+      "file": "png/university_emblem_104.png",
+      "slide": 6,
+      "shape_path": "14.2",
+      "shape_name": "图片 39",
+      "source_media": "ppt/media/image104.png",
+      "position_in": {
+        "left": 1.3754,
+        "top": 5.3403,
+        "width": 2.6973,
+        "height": 0.5949
+      }
+    },
+    {
+      "asset_id": "university_emblem_105",
+      "file": "png/university_emblem_105.png",
+      "slide": 6,
+      "shape_path": "15",
+      "shape_name": "图片 42",
+      "source_media": "ppt/media/image105.png",
+      "position_in": {
+        "left": 4.7095,
+        "top": 5.1023,
+        "width": 3.9936,
+        "height": 0.9848
+      }
+    },
+    {
+      "asset_id": "university_emblem_106",
+      "file": "png/university_emblem_106.png",
+      "slide": 6,
+      "shape_path": "16",
+      "shape_name": "图片 44",
+      "source_media": "ppt/media/image106.png",
+      "position_in": {
+        "left": 9.2326,
+        "top": 5.0613,
+        "width": 3.7868,
+        "height": 1.1132
+      }
+    },
+    {
+      "asset_id": "university_emblem_107",
+      "file": "png/university_emblem_107.png",
+      "slide": 6,
+      "shape_path": "17.1",
+      "shape_name": "图片 46",
+      "source_media": "ppt/media/image107.png",
+      "position_in": {
+        "left": 0.215,
+        "top": 6.2895,
+        "width": 1.1971,
+        "height": 1.1823
+      }
+    },
+    {
+      "asset_id": "university_emblem_108",
+      "file": "png/university_emblem_108.png",
+      "slide": 6,
+      "shape_path": "17.2",
+      "shape_name": "图片 47",
+      "source_media": "ppt/media/image108.png",
+      "position_in": {
+        "left": 1.5059,
+        "top": 6.5927,
+        "width": 2.4664,
+        "height": 0.5966
+      }
+    },
+    {
+      "asset_id": "university_emblem_109",
+      "file": "png/university_emblem_109.png",
+      "slide": 6,
+      "shape_path": "18",
+      "shape_name": "图片 50",
+      "source_media": "ppt/media/image109.png",
+      "position_in": {
+        "left": 5.0,
+        "top": 6.3587,
+        "width": 3.2181,
+        "height": 1.0164
+      }
+    },
+    {
+      "asset_id": "university_emblem_053",
+      "file": "png/university_emblem_053.png",
+      "slide": 6,
+      "shape_path": "19.1",
+      "shape_name": "图片 52",
+      "source_media": "ppt/media/image53.png",
+      "position_in": {
+        "left": 9.0133,
+        "top": 6.294,
+        "width": 1.1746,
+        "height": 1.1871
+      }
+    },
+    {
+      "asset_id": "university_emblem_053",
+      "file": "png/university_emblem_053.png",
+      "slide": 6,
+      "shape_path": "19.2",
+      "shape_name": "图片 53",
+      "source_media": "ppt/media/image53.png",
+      "position_in": {
+        "left": 10.166,
+        "top": 6.5276,
+        "width": 2.525,
+        "height": 0.7156
+      }
+    },
+    {
+      "asset_id": "university_emblem_110",
+      "file": "png/university_emblem_110.png",
+      "slide": 7,
+      "shape_path": "2",
+      "shape_name": "图片 4",
+      "source_media": "ppt/media/image110.png",
+      "position_in": {
+        "left": 9.0201,
+        "top": 1.5417,
+        "width": 4.055,
+        "height": 0.7221
+      }
+    },
+    {
+      "asset_id": "university_emblem_111",
+      "file": "png/university_emblem_111.png",
+      "slide": 7,
+      "shape_path": "3",
+      "shape_name": "图片 5",
+      "source_media": "ppt/media/image111.png",
+      "position_in": {
+        "left": 5.0766,
+        "top": 1.5209,
+        "width": 3.1802,
+        "height": 0.6249
+      }
+    },
+    {
+      "asset_id": "university_emblem_112",
+      "file": "png/university_emblem_112.png",
+      "slide": 7,
+      "shape_path": "4",
+      "shape_name": "图片 6",
+      "source_media": "ppt/media/image112.png",
+      "position_in": {
+        "left": 0.7373,
+        "top": 1.4028,
+        "width": 2.8746,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_113",
+      "file": "png/university_emblem_113.png",
+      "slide": 7,
+      "shape_path": "5",
+      "shape_name": "图片 7",
+      "source_media": "ppt/media/image113.png",
+      "position_in": {
+        "left": 9.2978,
+        "top": 0.1717,
+        "width": 3.4996,
+        "height": 0.8471
+      }
+    },
+    {
+      "asset_id": "university_emblem_114",
+      "file": "png/university_emblem_114.png",
+      "slide": 7,
+      "shape_path": "6",
+      "shape_name": "图片 8",
+      "source_media": "ppt/media/image114.png",
+      "position_in": {
+        "left": 5.0141,
+        "top": 0.2203,
+        "width": 3.4024,
+        "height": 0.7499
+      }
+    },
+    {
+      "asset_id": "university_emblem_115",
+      "file": "png/university_emblem_115.png",
+      "slide": 7,
+      "shape_path": "7",
+      "shape_name": "图片 9",
+      "source_media": "ppt/media/image115.png",
+      "position_in": {
+        "left": 0.7373,
+        "top": 0.2203,
+        "width": 2.7635,
+        "height": 0.7499
+      }
+    },
+    {
+      "asset_id": "university_emblem_116",
+      "file": "png/university_emblem_116.png",
+      "slide": 7,
+      "shape_path": "8",
+      "shape_name": "图片 10",
+      "source_media": "ppt/media/image116.png",
+      "position_in": {
+        "left": 5.3752,
+        "top": 2.7009,
+        "width": 2.583,
+        "height": 0.8471
+      }
+    },
+    {
+      "asset_id": "university_emblem_117",
+      "file": "png/university_emblem_117.png",
+      "slide": 7,
+      "shape_path": "9",
+      "shape_name": "图片 11",
+      "source_media": "ppt/media/image117.png",
+      "position_in": {
+        "left": 9.4645,
+        "top": 2.5621,
+        "width": 3.6107,
+        "height": 1.111
+      }
+    },
+    {
+      "asset_id": "university_emblem_118",
+      "file": "png/university_emblem_118.png",
+      "slide": 7,
+      "shape_path": "10",
+      "shape_name": "图片 12",
+      "source_media": "ppt/media/image118.png",
+      "position_in": {
+        "left": 0.4387,
+        "top": 6.3914,
+        "width": 3.4024,
+        "height": 0.9166
+      }
+    },
+    {
+      "asset_id": "university_emblem_119",
+      "file": "png/university_emblem_119.png",
+      "slide": 7,
+      "shape_path": "11",
+      "shape_name": "图片 13",
+      "source_media": "ppt/media/image119.png",
+      "position_in": {
+        "left": 0.7373,
+        "top": 5.2121,
+        "width": 2.8052,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_120",
+      "file": "png/university_emblem_120.png",
+      "slide": 7,
+      "shape_path": "12",
+      "shape_name": "图片 14",
+      "source_media": "ppt/media/image120.png",
+      "position_in": {
+        "left": 0.4982,
+        "top": 3.9541,
+        "width": 3.7356,
+        "height": 0.9582
+      }
+    },
+    {
+      "asset_id": "university_emblem_121",
+      "file": "png/university_emblem_121.png",
+      "slide": 7,
+      "shape_path": "13",
+      "shape_name": "图片 15",
+      "source_media": "ppt/media/image121.png",
+      "position_in": {
+        "left": 0.4982,
+        "top": 2.687,
+        "width": 3.694,
+        "height": 0.861
+      }
+    },
+    {
+      "asset_id": "university_emblem_122",
+      "file": "png/university_emblem_122.png",
+      "slide": 7,
+      "shape_path": "14",
+      "shape_name": "图片 16",
+      "source_media": "ppt/media/image122.png",
+      "position_in": {
+        "left": 5.146,
+        "top": 3.9013,
+        "width": 3.1385,
+        "height": 0.8888
+      }
+    },
+    {
+      "asset_id": "university_emblem_123",
+      "file": "png/university_emblem_123.png",
+      "slide": 7,
+      "shape_path": "15",
+      "shape_name": "图片 17",
+      "source_media": "ppt/media/image123.png",
+      "position_in": {
+        "left": 9.4645,
+        "top": 3.9713,
+        "width": 3.2218,
+        "height": 0.7777
+      }
+    },
+    {
+      "asset_id": "university_emblem_124",
+      "file": "png/university_emblem_124.png",
+      "slide": null,
+      "shape_path": null,
+      "shape_name": "web_fallback_ecnu_logo",
+      "source_media": "web/urongda/ecnu_logo_urongda.png",
+      "source_url": "https://www.urongda.com/logos/4131010269",
+      "position_in": null
+    }
+  ],
+  "processing_history": [
+    {
+      "processed_at": "2026-05-22T12:52:19+00:00",
+      "asset_ids": [
+        "university_emblem_071",
+        "university_emblem_074",
+        "university_emblem_081",
+        "university_emblem_084",
+        "university_emblem_085",
+        "university_emblem_103"
+      ],
+      "reason": "User requested keeping horizontal variants and removing secondary marks/slogans."
+    },
+    {
+      "processed_at": "2026-05-22T12:53:57+00:00",
+      "asset_ids": [
+        "university_emblem_081"
+      ],
+      "reason": "Adjusted crop to remove stray text from upper Qinghai University variant."
+    },
+    {
+      "processed_at": "2026-05-22T18:51:46+00:00",
+      "asset_ids": [
+        "university_emblem_124"
+      ],
+      "reason": "Added East China Normal University emblem from a transparent web fallback for source-driven defense deck branding."
+    }
+  ]
+}

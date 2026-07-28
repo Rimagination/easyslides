@@ -1,0 +1,163 @@
+{
+  "schema_version": "easyslides.thu_env_2025.layouts.v1",
+  "template_id": "thu_env_2025",
+  "style_system": "slot_guided_distillation",
+  "colors": {
+    "brand_blue": "#1971D3",
+    "deep_blue": "#114B8D",
+    "soft_blue": "#68A4C6",
+    "header_rule": "#5B84D8",
+    "body_text": "#262626",
+    "surface": "#FFFFFF",
+    "surface_border": "#1971D3"
+  },
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "compress_text_to_capacity",
+      "choose_lower_density_layout",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ],
+    "allowed_overflow_actions": [
+      "within_capacity",
+      "compressed_or_split_before_render"
+    ],
+    "role_defaults": {
+      "cover_kicker": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 20,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "cover_title": {
+        "default_font_size_px": 48,
+        "min_font_size_px": 36,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 18,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "page_title": {
+        "default_font_size_px": 36,
+        "min_font_size_px": 28,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 18,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "section_label": {
+        "default_font_size_px": 28,
+        "min_font_size_px": 22,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 10,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "toc_item": {
+        "default_font_size_px": 28,
+        "min_font_size_px": 22,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 10,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "body_line": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 18,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 34,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "bullet_line": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "timeline_label": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 18,
+        "line_height": 1.1,
+        "max_chars_per_line_zh": 8,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "card_body": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 13,
+        "max_lines": 6,
+        "overflow_action": "compressed_or_split_before_render"
+      },
+      "caption": {
+        "default_font_size_px": 16,
+        "min_font_size_px": 13,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 18,
+        "max_lines": 1,
+        "overflow_action": "compressed_or_split_before_render"
+      }
+    }
+  },
+  "slot_models": {
+    "academic_open_canvas": [
+      {"slot_id": "PAGE_TITLE", "role": "page_title", "max_lines": 1},
+      {"slot_id": "KEY_MESSAGE", "role": "body_line", "max_lines": 2},
+      {"slot_id": "CONTENT_BODY", "role": "body_line", "max_lines": 12}
+    ],
+    "stacked_evidence_blocks": [
+      {"slot_id": "PAGE_TITLE", "role": "page_title", "max_lines": 1},
+      {"slot_id": "BLOCK_1_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "BLOCK_1_BODY", "role": "body_line", "max_lines": 5},
+      {"slot_id": "BLOCK_2_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "BLOCK_2_BODY", "role": "body_line", "max_lines": 3}
+    ],
+    "three_phase_photo_timeline": [
+      {"slot_id": "PAGE_TITLE", "role": "page_title", "max_lines": 1},
+      {"slot_id": "STEP_1_TITLE", "role": "timeline_label", "max_lines": 1},
+      {"slot_id": "STEP_1_DATE", "role": "timeline_label", "max_lines": 1},
+      {"slot_id": "STEP_1_BULLETS", "role": "bullet_line", "max_lines": 2},
+      {"slot_id": "STEP_2_TITLE", "role": "timeline_label", "max_lines": 1},
+      {"slot_id": "STEP_2_DATE", "role": "timeline_label", "max_lines": 1},
+      {"slot_id": "STEP_2_BULLETS", "role": "bullet_line", "max_lines": 2},
+      {"slot_id": "STEP_3_TITLE", "role": "timeline_label", "max_lines": 1},
+      {"slot_id": "STEP_3_DATE", "role": "timeline_label", "max_lines": 1},
+      {"slot_id": "STEP_3_BULLETS", "role": "bullet_line", "max_lines": 2}
+    ],
+    "three_card_with_image_strip": [
+      {"slot_id": "PAGE_TITLE", "role": "page_title", "max_lines": 1},
+      {"slot_id": "CARD_1_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "CARD_1_BODY", "role": "card_body", "max_lines": 6},
+      {"slot_id": "CARD_2_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "CARD_2_BODY", "role": "card_body", "max_lines": 6},
+      {"slot_id": "CARD_3_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "CARD_3_BODY", "role": "card_body", "max_lines": 6}
+    ],
+    "dense_multi_block_matrix": [
+      {"slot_id": "PAGE_TITLE", "role": "page_title", "max_lines": 1},
+      {"slot_id": "BLOCK_1_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "BLOCK_1_BODY", "role": "bullet_line", "max_lines": 5},
+      {"slot_id": "BLOCK_2_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "BLOCK_2_BODY", "role": "bullet_line", "max_lines": 5},
+      {"slot_id": "BLOCK_3_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "BLOCK_3_BODY", "role": "bullet_line", "max_lines": 5},
+      {"slot_id": "BLOCK_4_TITLE", "role": "section_label", "max_lines": 1},
+      {"slot_id": "BLOCK_4_BODY", "role": "bullet_line", "max_lines": 5}
+    ],
+    "photo_gallery_narrative": [
+      {"slot_id": "PAGE_TITLE", "role": "page_title", "max_lines": 1},
+      {"slot_id": "SUMMARY", "role": "body_line", "max_lines": 3},
+      {"slot_id": "CAPTION_1", "role": "caption", "max_lines": 1},
+      {"slot_id": "CAPTION_2", "role": "caption", "max_lines": 1},
+      {"slot_id": "CAPTION_3", "role": "caption", "max_lines": 1},
+      {"slot_id": "CAPTION_4", "role": "caption", "max_lines": 1}
+    ]
+  }
+}

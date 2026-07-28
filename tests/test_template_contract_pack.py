@@ -6,6 +6,9 @@ import unittest
 from pathlib import Path
 
 
+ROOT = Path(__file__).resolve().parents[1]
+
+
 def write_json(path: Path, payload: dict) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -73,6 +76,73 @@ def make_slot_guided_fixture(root: Path) -> Path:
 
 
 class TemplateContractPackTests(unittest.TestCase):
+    def test_managed_template_sidecars_are_projected_from_template_ir(self):
+        from scripts.template_contract_pack import build_contract_pack
+
+        pack = build_contract_pack(ROOT / "templates" / "layouts" / "nsfc_defense")
+
+        self.assertEqual(
+            pack["template"]["schema_version"],
+            "easyslides.template_projection.v1",
+        )
+        self.assertEqual(
+            pack["layout_roster"]["source"],
+            "derived_from_compiled_template_ir",
+        )
+        self.assertEqual(
+            pack["slot_contracts"]["schema_version"],
+            "easyslides.template_slot_contracts.v1",
+        )
+        self.assertEqual(len(pack["slot_contracts"]["layouts"]), 5)
+
+    def test_rejects_unresolved_required_body_variant_component(self):
+        from scripts.template_contract_pack import TemplateContractError, build_contract_pack
+
+        with tempfile.TemporaryDirectory() as tmp:
+            template_dir = make_slot_guided_fixture(Path(tmp))
+            layouts = json.loads((template_dir / "layouts.json").read_text(encoding="utf-8"))
+            layouts["body_variants"] = "body_variants.json"
+            write_json(template_dir / "layouts.json", layouts)
+            write_json(
+                template_dir / "body_variants.json",
+                {
+                    "template_id": "fixture_slot",
+                    "variants": [
+                        {
+                            "variant_id": "evidence",
+                            "component_refs": [
+                                {
+                                    "asset_id": "component/fixture_slot/missing",
+                                    "instance_id": "missing",
+                                    "role": "evidence",
+                                    "order": 1,
+                                    "required": True,
+                                    "slot_bindings": {},
+                                }
+                            ],
+                        }
+                    ],
+                },
+            )
+
+            with self.assertRaises(TemplateContractError):
+                build_contract_pack(template_dir)
+
+    def test_canonical_shell_policy_rejects_source_page_mirrors(self):
+        from scripts.template_contract_pack import TemplateContractError, build_contract_pack
+
+        with tempfile.TemporaryDirectory() as tmp:
+            template_dir = make_slot_guided_fixture(Path(tmp))
+            layouts = json.loads((template_dir / "layouts.json").read_text(encoding="utf-8"))
+            layouts["global_contract"] = {
+                "replication_mode": "slot_guided_mirror",
+                "canonical_shell_policy": "evidence_driven_three_to_five_stable_shells",
+                "canonical_shell_limit": 5,
+            }
+            (template_dir / "layouts.json").write_text(json.dumps(layouts), encoding="utf-8")
+            with self.assertRaises(TemplateContractError):
+                build_contract_pack(template_dir)
+
     def test_builds_contract_pack_from_slot_guided_template_sidecars(self):
         from scripts.template_contract_pack import build_contract_pack
 

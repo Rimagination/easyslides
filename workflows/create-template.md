@@ -43,7 +43,7 @@ Branch by the type of reference source the user supplied. This step produces ana
 Run the unified preparation helper:
 
 ```bash
-python3 skills/ppt-master/scripts/pptx_template_import.py "<reference_template.pptx>"
+python3 scripts/pptx_template_import.py "<reference_template.pptx>"
 ```
 
 This produces, in one workspace:
@@ -198,10 +198,10 @@ Step 4 MUST NOT run until `[TEMPLATE_BRIEF_CONFIRMED]` has been emitted in the c
 Create the final template directory:
 
 ```bash
-mkdir -p "skills/ppt-master/templates/layouts/<template_id>"
+mkdir -p "templates/layouts/<template_id>"
 ```
 
-> **Output location**: Global templates go to `skills/ppt-master/templates/layouts/`; project templates go to `projects/<project>/templates/`
+> **Output location**: Global templates go to `templates/layouts/`; project templates go to `projects/<project>/templates/`
 >
 > The generated directory name must match the final template ID used in `layouts_index.json`.
 
@@ -253,13 +253,13 @@ Mirror mode does **not** invoke the "reconstruct into clean SVG" pathway. The sp
 ## Step 5: Validate Template Assets
 
 ```bash
-ls -la "skills/ppt-master/templates/layouts/<template_id>"
+ls -la "templates/layouts/<template_id>"
 ```
 
 Run SVG validation on the template directory:
 
 ```bash
-python3 skills/ppt-master/scripts/svg_quality_checker.py "skills/ppt-master/templates/layouts/<template_id>" --template-mode --format <canvas_format>
+python3 scripts/svg_quality_checker.py "templates/layouts/<template_id>" --template-mode --format <canvas_format>
 ```
 
 `--template-mode` makes the checker:
@@ -290,13 +290,13 @@ This step is a **hard gate**. Do not register the template into the library inde
 Run the unified registrar; it derives the `layouts_index.json` entry and refreshes the `README.md` Quick Index from `design_spec.md` (frontmatter when present, prose fallback otherwise) plus the actual SVG file list:
 
 ```bash
-python3 skills/ppt-master/scripts/register_template.py <template_id>
+python3 scripts/register_template.py <template_id>
 ```
 
 Outputs:
 
-- updates `skills/ppt-master/templates/layouts/layouts_index.json` — the flat `template_id → { summary, keywords }` map
-- refreshes the auto-managed Quick Index inside `skills/ppt-master/templates/layouts/README.md` (the surrounding category sections stay hand-edited)
+- updates `templates/layouts/layouts_index.json` — the flat `template_id → { summary, keywords }` map
+- refreshes the auto-managed Quick Index inside `templates/layouts/README.md` (the surrounding category sections stay hand-edited)
 - prints a "Template Creation Complete" card you can use directly for Step 7
 
 The completion card's file roster is collected by globbing `*.svg` in the template directory, so `fidelity`-mode templates that include variant pages such as `03a_content_two_col` are listed automatically.
@@ -330,7 +330,7 @@ The completion card's file roster is collected by globbing `*.svg` in the templa
 > To rebuild every entry at once (e.g. after editing many specs), run:
 >
 > ```bash
-> python3 skills/ppt-master/scripts/register_template.py --rebuild-all
+> python3 scripts/register_template.py --rebuild-all
 > ```
 
 If you need to update the categorized sections lower in `README.md` (Brand Style Templates / General Style Templates / etc.), edit those by hand — the registrar deliberately leaves them alone so curated descriptions are preserved.

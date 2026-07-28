@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EasySlides Component Gallery</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #657386;
+      --line: #D8DEE7;
+      --paper: #F4F5F7;
+      --accent: #1C75BC;
+      --pass: #0F7B55;
+      --fail: #B42318;
+      --amber: #B7791F;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(23,32,51,.045) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(23,32,51,.045) 1px, transparent 1px),
+        var(--paper);
+      background-size: 24px 24px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 28px 34px 22px;
+      background: rgba(244,245,247,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 34px; letter-spacing: 0; }
+    header p { margin: 8px 0 0; color: var(--muted); max-width: 820px; }
+    .metrics { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .metric { min-width: 112px; padding: 10px 12px; background: #fff; border: 1px solid var(--line); }
+    .metric strong { display: block; font-size: 24px; }
+    .metric span { color: var(--muted); font-size: 12px; text-transform: uppercase; }
+    main { padding: 28px 34px 54px; display: grid; gap: 24px; }
+    .package { background: rgba(255,255,255,.94); border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(23,32,51,.08); }
+    .package-title { display: flex; justify-content: space-between; gap: 18px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .package-title p { margin: 0 0 4px; color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .package-title h2 { margin: 0; font-size: 25px; letter-spacing: 0; }
+    .package-title small { color: var(--muted); }
+    .package-title b { align-self: start; padding: 8px 13px; background: var(--pass); color: white; font-size: 13px; }
+    .gates { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 22px; border-bottom: 1px solid var(--line); }
+    .gates span { border: 1px solid #C9D6E3; color: #344255; padding: 5px 8px; font-size: 12px; background: #F8FAFC; }
+    .stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 18px; }
+    .story { border: 1px solid var(--line); background: #fff; min-width: 0; }
+    .story-head { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+    .story-head span { font-weight: 800; }
+    .story.pass .story-head strong { color: var(--pass); }
+    .story.fail .story-head strong { color: var(--fail); }
+    .story img { width: 100%; display: block; aspect-ratio: 16 / 9; background: #E8EDF3; }
+    .story ul { margin: 0; padding: 11px 14px 14px 28px; color: var(--muted); min-height: 62px; font-size: 13px; }
+    footer { color: var(--muted); padding: 0 34px 30px; font-size: 13px; }
+    @media (max-width: 980px) {
+      header { grid-template-columns: 1fr; }
+      .metrics { justify-content: flex-start; }
+      .stories { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>EasySlides Component Gallery</h1>
+      <p>Generated review surface for component packages. Every story is rendered from package payloads and checked against the source asset capacity contract.</p>
+    </div>
+    <div class="metrics">
+      <div class="metric"><strong>6</strong><span>packages</span></div>
+      <div class="metric"><strong>18</strong><span>stories</span></div>
+      <div class="metric"><strong>6</strong><span>expected fails</span></div>
+    </div>
+  </header>
+  <main>
+
+            <section class="package" id="comparison_pair">
+              <div class="package-title">
+                <div>
+                  <p>component package</p>
+                  <h2>comparison_pair</h2>
+                  <small>source: card/comparison_pair</small>
+                </div>
+                <b>PASS</b>
+              </div>
+              <div class="gates"><span>component_package_contract</span><span>component_plan_contract</span><span>card_payload_capacity</span><span>visual_measure_gate</span><span>validate_pptx_text_layout</span><span>renderer_governance</span></div>
+              <div class="stories">
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>default</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/comparison_pair__default.svg" alt="comparison_pair default preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>dense</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/comparison_pair__dense.svg" alt="comparison_pair dense preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story fail">
+                  <div class="story-head">
+                    <span>overflow</span>
+                    <strong>FAIL</strong>
+                  </div>
+                  <img src="previews/comparison_pair__overflow.svg" alt="comparison_pair overflow preview">
+                  <ul><li>title: shorten</li><li>body: split_or_use_comparison_table</li><li>synthesis: move_to_speaker_notes</li></ul>
+                </article>
+
+              </div>
+            </section>
+
+            <section class="package" id="evidence_stack">
+              <div class="package-title">
+                <div>
+                  <p>component package</p>
+                  <h2>evidence_stack</h2>
+                  <small>source: card/evidence_stack</small>
+                </div>
+                <b>PASS</b>
+              </div>
+              <div class="gates"><span>component_package_contract</span><span>component_plan_contract</span><span>card_payload_capacity</span><span>visual_measure_gate</span><span>validate_pptx_text_layout</span><span>renderer_governance</span></div>
+              <div class="stories">
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>default</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/evidence_stack__default.svg" alt="evidence_stack default preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>dense</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/evidence_stack__dense.svg" alt="evidence_stack dense preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story fail">
+                  <div class="story-head">
+                    <span>overflow</span>
+                    <strong>FAIL</strong>
+                  </div>
+                  <img src="previews/evidence_stack__overflow.svg" alt="evidence_stack overflow preview">
+                  <ul><li>claim: shorten</li><li>evidence: split_or_reduce_items</li></ul>
+                </article>
+
+              </div>
+            </section>
+
+            <section class="package" id="figure_with_notes">
+              <div class="package-title">
+                <div>
+                  <p>component package</p>
+                  <h2>figure_with_notes</h2>
+                  <small>source: card/figure_note_card</small>
+                </div>
+                <b>PASS</b>
+              </div>
+              <div class="gates"><span>component_package_contract</span><span>component_plan_contract</span><span>card_payload_capacity</span><span>visual_measure_gate</span><span>validate_pptx_text_layout</span><span>renderer_governance</span></div>
+              <div class="stories">
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>default</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/figure_with_notes__default.svg" alt="figure_with_notes default preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>dense</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/figure_with_notes__dense.svg" alt="figure_with_notes dense preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story fail">
+                  <div class="story-head">
+                    <span>overflow</span>
+                    <strong>FAIL</strong>
+                  </div>
+                  <img src="previews/figure_with_notes__overflow.svg" alt="figure_with_notes overflow preview">
+                  <ul><li>takeaway: shorten</li><li>bullets: split_or_use_text_right</li></ul>
+                </article>
+
+              </div>
+            </section>
+
+            <section class="package" id="kpi_row_3">
+              <div class="package-title">
+                <div>
+                  <p>component package</p>
+                  <h2>kpi_row_3</h2>
+                  <small>source: card/kpi_row_3</small>
+                </div>
+                <b>PASS</b>
+              </div>
+              <div class="gates"><span>component_package_contract</span><span>component_plan_contract</span><span>card_payload_capacity</span><span>visual_measure_gate</span><span>validate_pptx_text_layout</span><span>renderer_governance</span></div>
+              <div class="stories">
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>default</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/kpi_row_3__default.svg" alt="kpi_row_3 default preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>dense</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/kpi_row_3__dense.svg" alt="kpi_row_3 dense preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story fail">
+                  <div class="story-head">
+                    <span>overflow</span>
+                    <strong>FAIL</strong>
+                  </div>
+                  <img src="previews/kpi_row_3__overflow.svg" alt="kpi_row_3 overflow preview">
+                  <ul><li>metric: shorten</li><li>label: shorten</li><li>note: drop_or_move_to_notes</li></ul>
+                </article>
+
+              </div>
+            </section>
+
+            <section class="package" id="process_timeline">
+              <div class="package-title">
+                <div>
+                  <p>component package</p>
+                  <h2>process_timeline</h2>
+                  <small>source: card/process_steps_4</small>
+                </div>
+                <b>PASS</b>
+              </div>
+              <div class="gates"><span>component_package_contract</span><span>component_plan_contract</span><span>card_payload_capacity</span><span>visual_measure_gate</span><span>validate_pptx_text_layout</span><span>renderer_governance</span></div>
+              <div class="stories">
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>default</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/process_timeline__default.svg" alt="process_timeline default preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>dense</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/process_timeline__dense.svg" alt="process_timeline dense preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story fail">
+                  <div class="story-head">
+                    <span>overflow</span>
+                    <strong>FAIL</strong>
+                  </div>
+                  <img src="previews/process_timeline__overflow.svg" alt="process_timeline overflow preview">
+                  <ul><li>title: shorten</li><li>body: split_or_use_timeline</li><li>body: split_or_use_timeline</li></ul>
+                </article>
+
+              </div>
+            </section>
+
+            <section class="package" id="three_card_summary">
+              <div class="package-title">
+                <div>
+                  <p>component package</p>
+                  <h2>three_card_summary</h2>
+                  <small>source: card/three_card_summary</small>
+                </div>
+                <b>PASS</b>
+              </div>
+              <div class="gates"><span>component_package_contract</span><span>component_plan_contract</span><span>card_payload_capacity</span><span>visual_measure_gate</span><span>validate_pptx_text_layout</span><span>renderer_governance</span></div>
+              <div class="stories">
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>default</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/three_card_summary__default.svg" alt="three_card_summary default preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story pass">
+                  <div class="story-head">
+                    <span>dense</span>
+                    <strong>PASS</strong>
+                  </div>
+                  <img src="previews/three_card_summary__dense.svg" alt="three_card_summary dense preview">
+                  <ul><li>payload fits source asset capacity</li></ul>
+                </article>
+
+                <article class="story fail">
+                  <div class="story-head">
+                    <span>overflow</span>
+                    <strong>FAIL</strong>
+                  </div>
+                  <img src="previews/three_card_summary__overflow.svg" alt="three_card_summary overflow preview">
+                  <ul><li>body: split_or_choose_flexible_canvas</li></ul>
+                </article>
+
+              </div>
+            </section>
+
+  </main>
+  <footer>Schema easyslides.component_gallery.v1. Output generated by scripts/component_gallery.py.</footer>
+</body>
+</html>

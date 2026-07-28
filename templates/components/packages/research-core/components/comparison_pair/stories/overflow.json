@@ -1,0 +1,17 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "overflow",
+  "payload": {
+    "items": [
+      {
+        "title": "Overly long left-side comparison title",
+        "body": "This paragraph is intentionally far too long for a balanced two-column comparison card. It includes several separate criteria, multiple caveats, and enough explanatory material that it should be split into a comparison table or a multi-page discussion instead of being squeezed into one side of a pair layout."
+      },
+      {
+        "title": "Improved",
+        "body": "Combines multiple signals and keeps contribution analysis interpretable."
+      }
+    ],
+    "synthesis": "This synthesis is intentionally long enough to overflow the caption region because it tries to explain multiple decision criteria, caveats, and downstream consequences in a single small line."
+  }
+}

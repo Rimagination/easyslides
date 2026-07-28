@@ -1,0 +1,23 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "dense",
+  "payload": {
+    "items": [
+      {
+        "metric": "3.2x",
+        "label": "Efficiency",
+        "note": "Same accuracy, less time."
+      },
+      {
+        "metric": "124",
+        "label": "Records",
+        "note": "After quality screening."
+      },
+      {
+        "metric": "-16%",
+        "label": "Unclear",
+        "note": "Ambiguous cases reduced."
+      }
+    ]
+  }
+}

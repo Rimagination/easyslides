@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://easyslides.local/schema/design_system_pack.v1.json",
+  "title": "EasySlides PPTX declarative design-system pack",
+  "type": "object",
+  "required": ["schema_version", "pack_id", "version", "source", "installability", "components", "slots", "qa"],
+  "properties": {
+    "schema_version": {"const": "easyslides.pptx_design_system_pack.v1"},
+    "pack_id": {"type": "string"},
+    "version": {"type": "string"},
+    "source": {"type": "object", "required": ["template_id", "workspace", "source_graph"]},
+    "installability": {"const": "source_template_only"},
+    "components": {"type": "array"},
+    "slots": {"type": "array"},
+    "qa": {"type": "object", "required": ["review_required_before_promotion"]}
+  }
+}

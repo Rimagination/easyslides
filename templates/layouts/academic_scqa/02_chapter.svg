@@ -2,20 +2,20 @@
   <rect x="0" y="0" width="1280" height="720" fill="#0046A5"/>
   <rect x="0" y="0" width="12" height="720" fill="#00A6D6"/>
   <rect x="92" y="118" width="8" height="422" fill="#17A889"/>
-  <text x="1048" y="180" text-anchor="middle" fill="#2B67B8" font-family="Microsoft YaHei, Arial, sans-serif" font-size="154" font-weight="700" data-slot="CHAPTER_NUM" data-pptx-textbox="true" data-pptx-box-x="963" data-pptx-box-y="18.3" data-pptx-box-w="170" data-pptx-box-h="238.7">{{CHAPTER_NUM}}</text>
-  <text x="140" y="180" fill="#17A889" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" data-slot="SCQA_LABEL" data-pptx-textbox="true" data-pptx-box-x="140" data-pptx-box-y="159" data-pptx-box-w="170" data-pptx-box-h="36">{{SCQA_LABEL}}</text>
+  <text x="1048" y="180" text-anchor="middle" fill="#2B67B8" font-family="Microsoft YaHei, Arial, sans-serif" font-size="154" font-weight="700" data-slot="CHAPTER_NUM" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="963" data-pptx-box-y="18.3" data-pptx-box-w="170" data-pptx-box-h="238.7">{{CHAPTER_NUM}}</text>
+  <text x="140" y="180" fill="#17A889" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="700" data-slot="SCQA_LABEL" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="140" data-pptx-box-y="159" data-pptx-box-w="170" data-pptx-box-h="36">{{SCQA_LABEL}}</text>
   <text x="140" y="284" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="50" font-weight="700" data-slot="CHAPTER_TITLE" data-pptx-textbox="true" data-pptx-box-x="140" data-pptx-box-y="226" data-pptx-box-w="780" data-pptx-box-h="88" data-pptx-valign="middle">{{CHAPTER_TITLE}}</text>
   <rect x="140" y="330" width="360" height="4" fill="#00A6D6"/>
   <text x="140" y="386" fill="#E8F2FF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" data-slot="CHAPTER_DESC" data-pptx-textbox="true" data-pptx-box-x="140" data-pptx-box-y="354" data-pptx-box-w="820" data-pptx-box-h="48" data-pptx-valign="middle">{{CHAPTER_DESC}}</text>
   <rect x="140" y="450" width="790" height="72" fill="#0B2F6B" stroke="#2B67B8" stroke-width="1" rx="6"/>
-  <text x="172" y="494" fill="#F7FAFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-slot="SECTION_STATEMENT" data-pptx-textbox="true" data-pptx-box-x="94" data-pptx-box-y="116" data-pptx-box-w="1084" data-pptx-box-h="28">{{SECTION_STATEMENT}}</text>
+  <text x="172" y="494" fill="#F7FAFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-slot="SECTION_STATEMENT" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="94" data-pptx-box-y="116" data-pptx-box-w="1084" data-pptx-box-h="28">{{SECTION_STATEMENT}}</text>
   <g id="chapter-logo" data-slot="LOGO" data-slot-type="image" data-logo-fallback="degree-cap-icon" data-pptx-box-x="1096" data-pptx-box-y="626" data-pptx-box-w="102" data-pptx-box-h="50">
     <rect x="1096" y="626" width="102" height="50" fill="none" stroke="none"/>
     <path d="M1112 650 L1147 634 L1182 650 L1147 665 Z" fill="#E8F2FF"/>
     <path d="M1128 658 L1128 669 Q1147 678 1166 669 L1166 658" fill="none" stroke="#00A6D6" stroke-width="4" stroke-linecap="round"/>
     <path d="M1182 650 L1182 665" fill="none" stroke="#17A889" stroke-width="3" stroke-linecap="round"/>
     <circle cx="1182" cy="668" r="3" fill="#17A889"/>
-    <text x="1096" y="626" fill="#E8F2FF" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1" data-pptx-textbox="true" data-pptx-box-x="1096" data-pptx-box-y="588.2" data-pptx-box-w="170" data-pptx-box-h="54">{{LOGO}}</text>
+    <text x="1096" y="626" fill="#E8F2FF" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="1096" data-pptx-box-y="588.2" data-pptx-box-w="170" data-pptx-box-h="54">{{LOGO}}</text>
   </g>
 </svg>
 

@@ -1,0 +1,6 @@
+interface:
+  display_name: "EasySlides PPTX Distill"
+  short_description: "Distill PPTX into semantic templates and assets"
+  default_prompt: "Use $easyslides-distill to extract a content-free semantic template, components, and symbols from this PPTX."
+policy:
+  allow_implicit_invocation: true

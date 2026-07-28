@@ -1,0 +1,66 @@
+{
+  "schema_version": "easyslides.distill_manifest.v1",
+  "stage": "phase_5_qa_and_promotion",
+  "status": "ready",
+  "template_id": "nsfc_defense_distilled",
+  "source": {
+    "pptx": "D:\\scansci\\easyslides\\国自然答辩.pptx",
+    "workspace": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled",
+    "sha256": "6ccf8f53ebe42567ac3e6975064c6b58a8fdd5dc054533918f02ff2198f99484"
+  },
+  "artifacts": {
+    "source_graph": "source_graph.json",
+    "source_manifest": "manifest.json",
+    "distilled_spec_compatibility_view": "distilled_spec.json",
+    "identity_spec": "identity_spec.json",
+    "layout_spec": "layout_spec.json",
+    "component_catalog": "component_catalog.json",
+    "slot_contracts": "slot_contracts.json",
+    "asset_provenance": "asset_provenance.json",
+    "adaptation_policy": "adaptation_policy.json",
+    "review_queue": "review_queue.json",
+    "design_system_pack": "design_system_pack.json",
+    "component_registry_fragment": "component_registry_fragment.json",
+    "projection_manifest": "projection_manifest.json",
+    "promotion_report": "promotion_report.json"
+  },
+  "supported_modes": [
+    "mirror",
+    "layout",
+    "design-system"
+  ],
+  "classification_states": [
+    "fixed",
+    "replaceable",
+    "hybrid",
+    "unknown"
+  ],
+  "invariants": {
+    "graph_is_factual": true,
+    "semantic_inference": "deferred_to_phase_2",
+    "classification_states": [
+      "fixed",
+      "replaceable",
+      "hybrid",
+      "unknown"
+    ],
+    "supported_modes": [
+      "mirror",
+      "layout",
+      "design-system"
+    ],
+    "vertical_alignment": {
+      "rule": "hard",
+      "eligible_text_center_y_equals_container_center_y": true,
+      "optical_exceptions_require_explicit_flag": true
+    }
+  },
+  "counts": {
+    "masters": 1,
+    "layouts": 11,
+    "slides": 17,
+    "nodes": 652,
+    "assets": 43
+  },
+  "next_phase": "phase_6_human_review_and_promotion"
+}

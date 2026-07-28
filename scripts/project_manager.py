@@ -42,6 +42,8 @@ except ImportError:
 TOOLS_DIR = Path(__file__).resolve().parent
 SKILL_DIR = TOOLS_DIR.parent
 REPO_ROOT = SKILL_DIR.parent.parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
 SOURCE_DIRNAME = "sources"
 PROJECT_KINDS = {"deck", "slide_image_reconstruction"}
 TEXT_SOURCE_SUFFIXES = {".md", ".markdown", ".txt"}
@@ -133,7 +135,13 @@ class ProjectManager:
             )
 
         date_str = datetime.now().strftime("%Y%m%d")
-        project_dir_name = f"{project_name}_{normalized_format}_{date_str}"
+        # Rebuilds often paste an existing project directory name back into
+        # init. Keep same-format dated names intact instead of producing
+        # name_ppt169_20260703_ppt169_20260703.
+        if re.search(rf"_{re.escape(normalized_format)}_\d{{8}}$", project_name):
+            project_dir_name = project_name
+        else:
+            project_dir_name = f"{project_name}_{normalized_format}_{date_str}"
         project_path = base_path / project_dir_name
 
         if project_path.exists():

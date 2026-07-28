@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><clipPath id="clip1" clipPathUnits="userSpaceOnUse"><path d="M 433.02 163.18 L 433.02 365.68 C 315.83 367.96 205.85 372.16 106.29 378.01 L 106.29 150.85 C 205.85 156.7 315.83 160.89 433.02 163.18 Z" /></clipPath><clipPath id="clip2" clipPathUnits="userSpaceOnUse"><path d="M 1174.75 151.82 L 1174.75 377.35 C 1075.19 371.54 965.01 367.37 848.01 365.1 L 848.01 164.07 C 965.21 161.8 1075.19 157.63 1174.75 151.82 Z" /></clipPath></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-name="图片 6">
+<image href="assets/image3.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+</g>
+<g id="shape-9" data-name="图片 8">
+<svg x="475.86" y="164.47" width="326.39" height="201.18" viewBox="0 0.06572 1 0.93428" preserveAspectRatio="none"><image href="assets/image24.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-11" data-name="任意形状 10">
+<image clip-path="url(#clip1)" href="assets/image25.jpeg" x="106.29" y="150.85" width="326.74" height="227.15" preserveAspectRatio="none" />
+<path d="M 433.02 163.18 L 433.02 365.68 C 315.83 367.96 205.85 372.16 106.29 378.01 L 106.29 150.85 C 205.85 156.7 315.83 160.89 433.02 163.18 Z" fill="none" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-13" data-name="任意形状 12">
+<image clip-path="url(#clip2)" href="assets/image26.jpeg" x="848.01" y="151.82" width="326.74" height="225.52" preserveAspectRatio="none" />
+<path d="M 1174.75 151.82 L 1174.75 377.35 C 1075.19 371.54 965.01 367.37 848.01 365.1 L 848.01 164.07 C 965.21 161.8 1075.19 157.63 1174.75 151.82 Z" fill="none" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-15" data-name="任意形状 14">
+<path d="M 1179.89 421.7 C 1069.06 410.59 869.11 403.13 641 403.13 C 412.89 403.13 212.94 410.59 102.11 421.7" fill="none" stroke-width="2" stroke-linecap="butt" stroke="#E6E6E6" stroke-dasharray="4 4" stroke-linejoin="miter" />
+</g>
+<g id="shape-2" data-name="组合 1">
+<g id="shape-59" data-name="任意形状 58">
+<path d="M 1023.7 410.86 C 1023.7 417.64 1018.21 423.13 1011.43 423.13 C 1004.66 423.13 999.17 417.64 999.17 410.86 C 999.17 404.09 1004.66 398.6 1011.43 398.6 C 1018.21 398.6 1023.7 404.09 1023.7 410.86 Z" fill="#68A4C6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-60" data-name="任意形状 59">
+<path d="M 1018.28 410.86 C 1018.28 414.38 1015.43 417.22 1011.92 417.22 C 1008.4 417.22 1005.56 414.38 1005.56 410.86 C 1005.56 407.35 1008.4 404.5 1011.92 404.5 C 1015.43 404.5 1018.28 407.35 1018.28 410.86 Z" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+</g>
+<g id="shape-7" data-name="组合 6">
+<g id="shape-61" data-name="任意形状 60">
+<path d="M 654.17 401.06 C 654.17 407.83 648.68 413.33 641.91 413.33 C 635.13 413.33 629.64 407.83 629.64 401.06 C 629.64 394.28 635.13 388.79 641.91 388.79 C 648.68 388.79 654.17 394.28 654.17 401.06 Z" fill="#7561D6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-62" data-name="任意形状 61">
+<path d="M 648.27 401.06 C 648.27 404.57 645.42 407.42 641.91 407.42 C 638.39 407.42 635.55 404.57 635.55 401.06 C 635.55 397.55 638.39 394.7 641.91 394.7 C 645.42 394.7 648.27 397.55 648.27 401.06 Z" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+</g>
+<g id="shape-52" data-name="文本框 51">
+<rect x="136.67" y="437.54" width="264.08" height="111.48" fill="none" stroke="none" />
+<text x="146.27" y="458.21" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="136.67" data-pptx-box-y="437.54" data-pptx-box-w="264.08" data-pptx-box-h="111.48" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626"><tspan fill="#262626" font-size="18.67">添加正文内容添加正文内容，</tspan><tspan x="146.27" dy="28" fill="#262626" font-size="18.67">添加正文内容添加正文内容，</tspan><tspan x="146.27" dy="28" fill="#262626" font-size="18.67">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-54" data-name="任意形状 34">
+<path d="M 278.17 578.81 L 269.56 565.39 L 260.94 578.81 L 106.29 578.81 L 106.29 633.67 L 433.02 633.67 L 433.02 578.81 Z" fill="#912C8D" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-6" data-name="组合 5">
+<g id="shape-58" data-name="任意形状 62">
+<path d="M 281.45 410.93 C 281.45 417.71 275.96 423.2 269.19 423.2 C 262.41 423.2 256.92 417.71 256.92 410.93 C 256.92 404.16 262.41 398.67 269.19 398.67 C 275.96 398.67 281.45 404.16 281.45 410.93 Z" fill="#912C8D" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-67" data-name="任意形状 63">
+<path d="M 275.55 410.93 C 275.55 414.45 272.7 417.29 269.19 417.29 C 265.67 417.29 262.83 414.45 262.83 410.93 C 262.83 407.42 265.67 404.57 269.19 404.57 C 272.7 404.57 275.55 407.42 275.55 410.93 Z" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+</g>
+<g id="shape-75" data-name="矩形 74">
+<rect x="101.25" y="586.23" width="336.92" height="38.78" fill="none" />
+<text x="269.71" y="611.43" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="101.25" data-pptx-box-y="586.23" data-pptx-box-w="336.92" data-pptx-box-h="38.78" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="24" font-weight="bold">请在此添加关键词</tspan></text>
+</g>
+<g id="shape-34" data-name="小李PPT1">
+<rect x="38.2" y="25.71" width="471.76" height="54.93" fill="none" />
+<text x="47.8" y="62.24" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.2" data-pptx-box-y="25.71" data-pptx-box-w="471.76" data-pptx-box-h="54.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="37.33" fill="#6C2280" font-weight="bold"><tspan fill="#6C2280" font-size="37.33" font-weight="bold">添加标题文字（图文排版）</tspan></text>
+</g>
+<g id="shape-35" data-name="直线连接符 3">
+<line x1="47.74" y1="88.76" x2="1232.26" y2="88.76" stroke="#6C2280" fill="#912C8D" stroke-width="1" />
+</g>
+<g id="shape-36" data-name="图片 35">
+<svg x="1076.56" y="17.35" width="155.26" height="60.06" viewBox="0 0.20586 1 0.51594" preserveAspectRatio="none"><image href="assets/image20.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-39" data-name="任意形状 34">
+<path d="M 1018.26 578.35 L 1009.55 564.92 L 1000.85 578.35 L 844.56 578.35 L 844.56 633.2 L 1174.75 633.2 L 1174.75 578.35 Z" fill="#68A4C6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-40" data-name="矩形 39">
+<rect x="842.98" y="585.77" width="336.92" height="38.78" fill="none" />
+<text x="1011.43" y="610.97" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="842.98" data-pptx-box-y="585.77" data-pptx-box-w="336.92" data-pptx-box-h="38.78" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="24" font-weight="bold">请</tspan><tspan fill="#FFFFFF" font-size="24" font-weight="bold">在此添加关键词</tspan></text>
+</g>
+<g id="shape-44" data-name="任意形状 34">
+<path d="M 647.56 578.35 L 638.96 564.92 L 630.35 578.35 L 475.86 578.35 L 475.86 633.2 L 802.25 633.2 L 802.25 578.35 Z" fill="#7561D6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-45" data-name="矩形 44">
+<rect x="469.94" y="585.77" width="336.92" height="38.78" fill="none" />
+<text x="638.4" y="610.97" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="469.94" data-pptx-box-y="585.77" data-pptx-box-w="336.92" data-pptx-box-h="38.78" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="24" font-weight="bold">请在此添加关键词</tspan></text>
+</g>
+<g id="shape-49" data-name="文本框 48">
+<rect x="505.68" y="437.08" width="263.44" height="111.48" fill="none" stroke="none" />
+<text x="515.28" y="457.74" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="505.68" data-pptx-box-y="437.08" data-pptx-box-w="263.44" data-pptx-box-h="111.48" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626"><tspan fill="#262626" font-size="18.67">添加正文内容添加正文内容，</tspan><tspan x="515.28" dy="28" fill="#262626" font-size="18.67">添加正文内容添加正文内容，</tspan><tspan x="515.28" dy="28" fill="#262626" font-size="18.67">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-50" data-name="文本框 49">
+<rect x="878" y="437.08" width="262.84" height="111.48" fill="none" stroke="none" />
+<text x="887.6" y="457.74" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="878" data-pptx-box-y="437.08" data-pptx-box-w="262.84" data-pptx-box-h="111.48" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626"><tspan fill="#262626" font-size="18.67">添加正文内容添加正文内容，</tspan><tspan x="887.6" dy="28" fill="#262626" font-size="18.67">添加正文内容添加正文内容，</tspan><tspan x="887.6" dy="28" fill="#262626" font-size="18.67">添加正文内容添加正文内容。</tspan></text>
+</g></svg>

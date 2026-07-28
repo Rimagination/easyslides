@@ -1,0 +1,19 @@
+{
+  "schema_version": "easyslides.template_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "nsfc_defense",
+  "display_name": "NSFC Defense",
+  "description": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
+  "version": "0.3.0",
+  "status": "production",
+  "capability_level": "production",
+  "roles": [
+    "cover",
+    "toc",
+    "chapter",
+    "content",
+    "ending"
+  ],
+  "layout_count": 5,
+  "variant_count": 12
+}

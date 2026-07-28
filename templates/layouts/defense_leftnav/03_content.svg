@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720">
   <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
 
   <g id="page-number">
@@ -58,6 +58,6 @@
 
   <g id="body-region">
     <rect id="content-area" data-slot="CONTENT_AREA" x="310" y="210" width="910" height="440" rx="12" ry="12" fill="none" stroke="none"/>
-    <text x="334" y="252" text-anchor="start" xml:space="preserve" font-family="微软雅黑 Light, Microsoft YaHei, sans-serif" font-size="23" fill="#000000" data-slot="CONTENT_BODY" data-pptx-box-x="334" data-pptx-box-y="230" data-pptx-box-w="862" data-pptx-box-h="390" data-pptx-textbox="true"><tspan>{{CONTENT_BODY}}</tspan></text>
+    <text x="334" y="252" text-anchor="start" xml:space="preserve" font-family="微软雅黑 Light, Microsoft YaHei, sans-serif" font-size="23" fill="#000000" data-slot="CONTENT_BODY" data-pptx-box-x="334" data-pptx-box-y="230" data-pptx-box-w="862" data-pptx-box-h="390" data-pptx-textbox="true" data-pptx-valign="top"><tspan>{{CONTENT_BODY}}</tspan></text>
   </g>
 </svg>

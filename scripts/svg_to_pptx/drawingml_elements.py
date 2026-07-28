@@ -37,16 +37,18 @@ def _wrap_shape(
     geom_xml: str, fill_xml: str, stroke_xml: str,
     effect_xml: str = '', extra_xml: str = '',
     rot: int = 0,
+    xfrm_attrs: str = '',
 ) -> str:
     """Wrap DrawingML content into a <p:sp> shape element."""
     rot_attr = f' rot="{rot}"' if rot else ''
+    xfrm_prefix = f'<a:xfrm{xfrm_attrs}>' if xfrm_attrs else f'<a:xfrm{rot_attr}>'
     return f'''<p:sp>
 <p:nvSpPr>
 <p:cNvPr id="{shape_id}" name="{_xml_escape(name)}"/>
 <p:cNvSpPr/><p:nvPr/>
 </p:nvSpPr>
 <p:spPr>
-<a:xfrm{rot_attr}><a:off x="{off_x}" y="{off_y}"/><a:ext cx="{ext_cx}" cy="{ext_cy}"/></a:xfrm>
+{xfrm_prefix}<a:off x="{off_x}" y="{off_y}"/><a:ext cx="{ext_cx}" cy="{ext_cy}"/></a:xfrm>
 {geom_xml}
 {fill_xml}
 {stroke_xml}
@@ -193,10 +195,14 @@ def convert_rect(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     for now — current corpora contain none, but the branch keeps callers from
     silently producing distorted custom geometry if one ever appears.
     """
-    x = ctx_x(_f(elem.get('x')), ctx)
-    y = ctx_y(_f(elem.get('y')), ctx)
-    w = ctx_w(_f(elem.get('width')), ctx)
-    h = ctx_h(_f(elem.get('height')), ctx)
+    raw_x = _f(elem.get('x'))
+    raw_y = _f(elem.get('y'))
+    raw_w = _f(elem.get('width'))
+    raw_h = _f(elem.get('height'))
+    x = ctx_x(raw_x, ctx)
+    y = ctx_y(raw_y, ctx)
+    w = ctx_w(raw_w, ctx)
+    h = ctx_h(raw_h, ctx)
 
     if w <= 0 or h <= 0:
         return None
@@ -257,17 +263,24 @@ def convert_rect(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
         geom = '<a:prstGeom prst="rect"><a:avLst/></a:prstGeom>'
 
     shape_id = ctx.next_id()
-    off_x = px_to_emu(x)
-    off_y = px_to_emu(y)
-    ext_cx = px_to_emu(w)
-    ext_cy = px_to_emu(h)
+    xfrm_attrs = ''
+    if ctx.use_transform_matrix:
+        xfrm_attrs, off_x, off_y, ext_cx, ext_cy, bounds = rect_to_dml_xfrm(
+            raw_x, raw_y, raw_w, raw_h, ctx.transform_matrix
+        )
+    else:
+        off_x = px_to_emu(x)
+        off_y = px_to_emu(y)
+        ext_cx = px_to_emu(w)
+        ext_cy = px_to_emu(h)
+        bounds = (off_x, off_y, off_x + ext_cx, off_y + ext_cy)
     return ShapeResult(
         xml=_wrap_shape(
             shape_id, f'Rectangle {shape_id}',
             off_x, off_y, ext_cx, ext_cy,
-            geom, fill, stroke, effect, rot=rot,
+            geom, fill, stroke, effect, rot=rot, xfrm_attrs=xfrm_attrs,
         ),
-        bounds_emu=(off_x, off_y, off_x + ext_cx, off_y + ext_cy),
+        bounds_emu=bounds,
     )
 
 
@@ -1148,10 +1161,21 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     padding = font_size * 0.1
 
     if keep_textbox and elem.get('data-pptx-box-x') is not None:
-        box_x = ctx_x(_f(elem.get('data-pptx-box-x')), ctx)
-        box_y = ctx_y(_f(elem.get('data-pptx-box-y')), ctx)
-        box_w = ctx_w(_f(elem.get('data-pptx-box-w')), ctx)
-        box_h = ctx_h(_f(elem.get('data-pptx-box-h')), ctx)
+        raw_box_x = _f(elem.get('data-pptx-box-x'))
+        raw_box_y = _f(elem.get('data-pptx-box-y'))
+        raw_box_w = _f(elem.get('data-pptx-box-w'))
+        raw_box_h = _f(elem.get('data-pptx-box-h'))
+        if ctx.use_transform_matrix:
+            # The affine path applies the complete group transform below.
+            # Feeding ctx-resolved values into it would translate/scale an
+            # explicit text box twice and collapse its intended geometry.
+            box_x, box_y = raw_box_x, raw_box_y
+            box_w, box_h = raw_box_w, raw_box_h
+        else:
+            box_x = ctx_x(raw_box_x, ctx)
+            box_y = ctx_y(raw_box_y, ctx)
+            box_w = ctx_w(raw_box_w, ctx)
+            box_h = ctx_h(raw_box_h, ctx)
     else:
         # Adjust position based on text-anchor
         if text_anchor == 'middle':
@@ -1253,10 +1277,20 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
         'bottom': 'b',
         'b': 'b',
     }.get(valign_raw, 't')
-    off_x = px_to_emu(box_x)
-    off_y = px_to_emu(box_y)
-    ext_cx = px_to_emu(box_w)
-    ext_cy = px_to_emu(box_h)
+    xfrm_attrs = ''
+    if ctx.use_transform_matrix:
+        xfrm_attrs, off_x, off_y, ext_cx, ext_cy, bounds = rect_to_dml_xfrm(
+            box_x, box_y, box_w, box_h, ctx.transform_matrix
+        )
+    else:
+        off_x = px_to_emu(box_x)
+        off_y = px_to_emu(box_y)
+        ext_cx = px_to_emu(box_w)
+        ext_cy = px_to_emu(box_h)
+        bounds = (off_x, off_y, off_x + ext_cx, off_y + ext_cy)
+
+    if not xfrm_attrs:
+        xfrm_attrs = f'{flip_attr}{rot_attr}'
 
     return ShapeResult(xml=f'''<p:sp>
 <p:nvSpPr>
@@ -1264,7 +1298,7 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
 <p:cNvSpPr txBox="1"/><p:nvPr/>
 </p:nvSpPr>
 <p:spPr>
-<a:xfrm{flip_attr}{rot_attr}><a:off x="{off_x}" y="{off_y}"/>
+<a:xfrm{xfrm_attrs}><a:off x="{off_x}" y="{off_y}"/>
 <a:ext cx="{ext_cx}" cy="{ext_cy}"/></a:xfrm>
 <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
 <a:noFill/>
@@ -1278,7 +1312,7 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
 <a:lstStyle/>
 {paragraphs_xml}
 </p:txBody>
-</p:sp>''', bounds_emu=(off_x, off_y, off_x + ext_cx, off_y + ext_cy))
+</p:sp>''', bounds_emu=bounds)
 
 
 # ---------------------------------------------------------------------------

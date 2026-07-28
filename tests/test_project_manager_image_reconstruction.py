@@ -4,6 +4,15 @@ from pathlib import Path
 
 
 class ProjectManagerImageReconstructionTests(unittest.TestCase):
+    def test_init_project_keeps_existing_same_format_suffix(self):
+        from scripts.project_manager import ProjectManager
+
+        with tempfile.TemporaryDirectory() as tmp:
+            manager = ProjectManager(base_dir=tmp)
+            project_path = Path(manager.init_project("existing_ppt169_20260703", "ppt169"))
+
+            self.assertEqual(project_path.name, "existing_ppt169_20260703")
+
     def test_slide_image_reconstruction_kind_creates_extra_dirs(self):
         from scripts.project_manager import ProjectManager
 

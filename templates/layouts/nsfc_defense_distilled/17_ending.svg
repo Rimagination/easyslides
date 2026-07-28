@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.65" stop-color="#751497" /><stop offset="1" stop-color="#751497" stop-opacity="0" /></linearGradient><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.2" /></filter><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.4" /></filter><linearGradient id="ggrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#BF4BE7" /><stop offset="0.45" stop-color="#751497" /></linearGradient><filter id="fx3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.4" /></filter><filter id="fx4" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.4" /></filter><linearGradient id="ggrad3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#BF4BE7" /><stop offset="0.45" stop-color="#751497" /></linearGradient><filter id="fx5" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.4" /></filter><filter id="fx6" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.4" /></filter><linearGradient id="ggrad4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#BF4BE7" /><stop offset="0.45" stop-color="#751497" /></linearGradient><filter id="fx7" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.4" /></filter></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-name="图片 6">
+<image href="assets/image1_fx_1bd44e6e.webp" x="0.33" y="0" width="1279.34" height="720" preserveAspectRatio="none" opacity="0.07" />
+</g>
+<g id="shape-6" data-name="图片 5">
+<svg x="0.33" y="270.3" width="1279.34" height="449.7" viewBox="0 0 0.99963 0.93826" preserveAspectRatio="none"><image href="assets/image2.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-5" data-name="矩形: 圆角 4">
+<rect x="0.33" y="-4" width="1279.34" height="723.44" rx="0" ry="0" fill="url(#ggrad1)" stroke-width="2" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx1)" />
+</g>
+<g id="shape-3" data-name="图片 2">
+<svg x="0" y="0" width="1280" height="720" viewBox="0.20549 0 0.79451 0.78572" preserveAspectRatio="none" opacity="0.22"><image href="assets/image3_fx_5b7698dc.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-9" data-name="Picture 2" transform="translate(1192.15 104.42) scale(-1 1) translate(-1192.15 -104.42)">
+<image href="assets/image4.png" x="1113.01" y="35.08" width="158.29" height="138.68" preserveAspectRatio="none" />
+</g>
+<g id="shape-8" data-name="Picture 2">
+<svg x="65.88" y="185.58" width="66.63" height="49.38" viewBox="0.44795 0.17124 0.48471 0.41007" preserveAspectRatio="none"><image href="assets/image5.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none" /></svg>
+</g>
+<g id="shape-62" data-name="图片 61">
+<image href="assets/image6.png" x="0" y="0" width="494.11" height="720.13" preserveAspectRatio="none" />
+</g>
+<g id="shape-57" data-name="组合 56" transform="rotate(355.14 640 674.49)">
+<g id="shape-58" data-name="图片 57" transform="rotate(14.22 811.1 715.26)">
+<image href="assets/image7.png" x="338.89" y="495.39" width="944.41" height="439.74" preserveAspectRatio="none" />
+</g>
+<g id="shape-59" data-name="图片 58" transform="rotate(15.32 153.11 618.94)">
+<image href="assets/image8.png" x="-383.16" y="413.85" width="1072.54" height="410.18" preserveAspectRatio="none" />
+</g>
+<g id="shape-60" data-name="图片 59" transform="rotate(4.88 1190.95 700.29)">
+<image href="assets/image7.png" x="718.75" y="534.7" width="944.41" height="331.18" preserveAspectRatio="none" />
+</g>
+</g>
+<g id="shape-7" data-name="文本框 6">
+<rect x="150.88" y="128.25" width="978.24" height="294.04" fill="none" />
+<text x="640" y="232.78" text-anchor="middle" xml:space="preserve" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="117.33" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="117.33" font-weight="bold">感谢各位领导专家</tspan></text>
+<text x="640" y="361.85" text-anchor="middle" xml:space="preserve" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="117.33" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="117.33" font-weight="bold">  敬请批评指正！</tspan></text>
+</g>
+<g id="shape-2" data-name="组合 1">
+<g id="shape-4" data-name="组合 3">
+<g id="shape-22" data-name="矩形: 圆角 21">
+<rect x="226.27" y="462.27" width="180.28" height="44.32" rx="22.16" ry="22.16" fill="#FFFFFF" stroke="#751497" stroke-width="1" filter="url(#fx2)" />
+</g>
+<g id="shape-23" data-name="组合 22">
+<g id="shape-25" data-name="矩形: 圆角 24">
+<rect x="150.52" y="462.27" width="127.14" height="44.32" rx="22.16" ry="22.16" fill="url(#ggrad2)" stroke="#FFFFFF" stroke-width="1" filter="url(#fx3)" />
+</g>
+<g id="shape-26" data-name="文本框 25">
+<rect x="160.04" y="466.65" width="108.1" height="35.54" fill="none" />
+<text x="214.09" y="491.9" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="160.04" data-pptx-box-y="462.27" data-pptx-box-w="108.1" data-pptx-box-h="44.32" data-pptx-valign="middle" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="21.33" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="21.33">汇报单位</tspan></text>
+</g>
+</g>
+<g id="shape-24" data-name="文本框 23">
+<rect x="279.29" y="465.04" width="116.03" height="40.57" fill="none" />
+<text x="337.3" y="492.83" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="279.29" data-pptx-box-y="462.27" data-pptx-box-w="116.03" data-pptx-box-h="44.32" data-pptx-valign="middle" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">科研大学</tspan></text>
+</g>
+</g>
+<g id="shape-10" data-name="组合 9">
+<g id="shape-17" data-name="矩形: 圆角 16">
+<rect x="587.73" y="462.27" width="180.28" height="44.32" rx="22.16" ry="22.16" fill="#FFFFFF" stroke="#751497" stroke-width="1" filter="url(#fx4)" />
+</g>
+<g id="shape-18" data-name="组合 17">
+<g id="shape-20" data-name="矩形: 圆角 19">
+<rect x="511.99" y="462.27" width="127.14" height="44.32" rx="22.16" ry="22.16" fill="url(#ggrad3)" stroke="#FFFFFF" stroke-width="1" filter="url(#fx5)" />
+</g>
+<g id="shape-21" data-name="文本框 20">
+<rect x="521.51" y="466.65" width="108.1" height="35.54" fill="none" />
+<text x="575.56" y="491.9" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="521.51" data-pptx-box-y="462.27" data-pptx-box-w="108.1" data-pptx-box-h="44.32" data-pptx-valign="middle" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="21.33" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="21.33">汇报人</tspan></text>
+</g>
+</g>
+<g id="shape-19" data-name="文本框 18">
+<rect x="640.76" y="465.04" width="116.03" height="38.78" fill="none" />
+<text x="698.77" y="492.83" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="640.76" data-pptx-box-y="462.27" data-pptx-box-w="116.03" data-pptx-box-h="44.32" data-pptx-valign="middle" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">半刻不晚</tspan></text>
+</g>
+</g>
+<g id="shape-11" data-name="组合 10">
+<g id="shape-12" data-name="矩形: 圆角 11">
+<rect x="949.2" y="462.27" width="180.28" height="44.32" rx="22.16" ry="22.16" fill="#FFFFFF" stroke="#751497" stroke-width="1" filter="url(#fx6)" />
+</g>
+<g id="shape-13" data-name="组合 12">
+<g id="shape-15" data-name="矩形: 圆角 14">
+<rect x="873.46" y="462.27" width="127.14" height="44.32" rx="22.16" ry="22.16" fill="url(#ggrad4)" stroke="#FFFFFF" stroke-width="1" filter="url(#fx7)" />
+</g>
+<g id="shape-16" data-name="文本框 15">
+<rect x="882.98" y="466.65" width="108.1" height="35.54" fill="none" />
+<text x="937.03" y="491.9" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="882.98" data-pptx-box-y="462.27" data-pptx-box-w="108.1" data-pptx-box-h="44.32" data-pptx-valign="middle" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="21.33" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="21.33">汇报时间</tspan></text>
+</g>
+</g>
+<g id="shape-14" data-name="文本框 13">
+<rect x="1002.23" y="465.04" width="116.03" height="38.78" fill="none" />
+<text x="1060.24" y="492.83" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="1002.23" data-pptx-box-y="462.27" data-pptx-box-w="116.03" data-pptx-box-h="44.32" data-pptx-valign="middle" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">XXX</tspan></text>
+</g>
+</g>
+</g></svg>

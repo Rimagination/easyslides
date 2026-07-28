@@ -1,0 +1,2916 @@
+{
+  "schema_version": "easyslides.template_slot_contracts.v1",
+  "template_id": "nsfc_purple_semantic",
+  "source": "derived_from_semantic_layouts_and_named_svg_slots",
+  "replacement_rule": "replace_declared_slots_preserve_template_geometry",
+  "private_clone_required": false,
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "use_declared_capacity",
+      "choose_lower_density_variant",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ]
+  },
+  "layouts": [
+    {
+      "layout_id": "cover",
+      "page_id": "01_cover",
+      "svg_path": "01_cover.svg",
+      "slot_model": "cover",
+      "slots": [
+        "TITLE",
+        "SUBTITLE",
+        "AUTHOR",
+        "DATE",
+        "HERO_IMAGE"
+      ],
+      "text_slots": [
+        "TITLE",
+        "SUBTITLE",
+        "AUTHOR",
+        "DATE"
+      ],
+      "image_slots": [
+        "HERO_IMAGE"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "TITLE",
+          "role": "title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 64.0,
+            "y": 182.0,
+            "width": 650.0,
+            "height": 150.0
+          }
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "role": "subtitle",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 30,
+          "geometry": {
+            "x": 66.0,
+            "y": 328.0,
+            "width": 620.0,
+            "height": 74.0
+          }
+        },
+        {
+          "slot_id": "AUTHOR",
+          "role": "author",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "geometry": {
+            "x": 66.0,
+            "y": 554.0,
+            "width": 340.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "DATE",
+          "role": "date",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 66.0,
+            "y": 605.0,
+            "width": 260.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "HERO_IMAGE",
+          "role": "image",
+          "kind": "image",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 1,
+          "geometry": {
+            "x": 825.0,
+            "y": 178.0,
+            "width": 390.0,
+            "height": 330.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "toc",
+      "page_id": "02_toc",
+      "svg_path": "02_toc.svg",
+      "slot_model": "toc",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "AGENDA",
+        "AGENDA_COUNT",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "AGENDA",
+        "AGENDA_COUNT",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "AGENDA",
+          "role": "agenda",
+          "kind": "list",
+          "required": true,
+          "max_lines": 6,
+          "max_chars_per_line": 28,
+          "geometry": {
+            "x": 126.0,
+            "y": 165.0,
+            "width": 1010.0,
+            "height": 360.0
+          }
+        },
+        {
+          "slot_id": "AGENDA_COUNT",
+          "role": "agenda_count",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 2,
+          "geometry": {
+            "x": 1070.0,
+            "y": 162.0,
+            "width": 80.0,
+            "height": 48.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 60,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "chapter",
+      "page_id": "03_chapter",
+      "svg_path": "03_chapter.svg",
+      "slot_model": "chapter",
+      "slots": [
+        "CHAPTER_NUM",
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC"
+      ],
+      "text_slots": [
+        "CHAPTER_NUM",
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "CHAPTER_NUM",
+          "role": "chapter_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 70.0,
+            "y": 134.0,
+            "width": 300.0,
+            "height": 110.0
+          }
+        },
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "role": "chapter_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 560.0,
+            "y": 240.0,
+            "width": 610.0,
+            "height": 120.0
+          }
+        },
+        {
+          "slot_id": "CHAPTER_DESC",
+          "role": "chapter_desc",
+          "kind": "text",
+          "required": false,
+          "max_lines": 3,
+          "max_chars_per_line": 34,
+          "geometry": {
+            "x": 564.0,
+            "y": 387.0,
+            "width": 570.0,
+            "height": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "text_focus",
+      "page_id": "04_text_focus",
+      "svg_path": "04_text_focus.svg",
+      "slot_model": "text_focus",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "geometry": {
+            "x": 88.0,
+            "y": 142.0,
+            "width": 1090.0,
+            "height": 54.0
+          }
+        },
+        {
+          "slot_id": "BODY",
+          "role": "body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 7,
+          "max_chars_per_line": 42,
+          "geometry": {
+            "x": 96.0,
+            "y": 268.0,
+            "width": 1080.0,
+            "height": 310.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "figure_left",
+      "page_id": "05_figure_left",
+      "svg_path": "05_figure_left.svg",
+      "slot_model": "figure_left",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "FIGURE",
+        "CAPTION",
+        "BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "CAPTION",
+        "BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [
+        "FIGURE"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "FIGURE",
+          "role": "image",
+          "kind": "image",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 1,
+          "geometry": {
+            "x": 82.0,
+            "y": 232.0,
+            "width": 644.0,
+            "height": 338.0
+          }
+        },
+        {
+          "slot_id": "CAPTION",
+          "role": "caption",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 82.0,
+            "y": 594.0,
+            "width": 644.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "BODY",
+          "role": "body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 7,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 816.0,
+            "y": 250.0,
+            "width": 368.0,
+            "height": 320.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "figure_right",
+      "page_id": "06_figure_right",
+      "svg_path": "06_figure_right.svg",
+      "slot_model": "figure_right",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "BODY",
+        "FIGURE",
+        "CAPTION",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "BODY",
+        "CAPTION",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [
+        "FIGURE"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "BODY",
+          "role": "body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 7,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 96.0,
+            "y": 250.0,
+            "width": 368.0,
+            "height": 320.0
+          }
+        },
+        {
+          "slot_id": "FIGURE",
+          "role": "image",
+          "kind": "image",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 1,
+          "geometry": {
+            "x": 554.0,
+            "y": 232.0,
+            "width": 644.0,
+            "height": 338.0
+          }
+        },
+        {
+          "slot_id": "CAPTION",
+          "role": "caption",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 554.0,
+            "y": 594.0,
+            "width": 644.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "two_column",
+      "page_id": "07_two_column",
+      "svg_path": "07_two_column.svg",
+      "slot_model": "two_column",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "LEFT_TITLE",
+        "RIGHT_TITLE",
+        "LEFT_BODY",
+        "RIGHT_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "LEFT_TITLE",
+        "RIGHT_TITLE",
+        "LEFT_BODY",
+        "RIGHT_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "LEFT_TITLE",
+          "role": "left_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "geometry": {
+            "x": 92.0,
+            "y": 135.0,
+            "width": 480.0,
+            "height": 38.0
+          }
+        },
+        {
+          "slot_id": "RIGHT_TITLE",
+          "role": "right_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "geometry": {
+            "x": 697.0,
+            "y": 135.0,
+            "width": 480.0,
+            "height": 38.0
+          }
+        },
+        {
+          "slot_id": "LEFT_BODY",
+          "role": "left_body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 7,
+          "max_chars_per_line": 29,
+          "geometry": {
+            "x": 92.0,
+            "y": 216.0,
+            "width": 480.0,
+            "height": 340.0
+          }
+        },
+        {
+          "slot_id": "RIGHT_BODY",
+          "role": "right_body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 7,
+          "max_chars_per_line": 29,
+          "geometry": {
+            "x": 697.0,
+            "y": 216.0,
+            "width": 480.0,
+            "height": 340.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "comparison_focus",
+      "page_id": "07b_comparison_focus",
+      "svg_path": "07b_comparison_focus.svg",
+      "slot_model": "comparison_focus",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "LEFT_BADGE",
+        "LEFT_TITLE",
+        "LEFT_BODY",
+        "RIGHT_BADGE",
+        "RIGHT_TITLE",
+        "RIGHT_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "LEFT_BADGE",
+        "LEFT_TITLE",
+        "LEFT_BODY",
+        "RIGHT_BADGE",
+        "RIGHT_TITLE",
+        "RIGHT_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "LEFT_BADGE",
+          "role": "left_badge",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "geometry": {
+            "x": 98.0,
+            "y": 246.0,
+            "width": 100.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "LEFT_TITLE",
+          "role": "left_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 232.0,
+            "y": 254.0,
+            "width": 340.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "LEFT_BODY",
+          "role": "left_body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 5,
+          "max_chars_per_line": 29,
+          "geometry": {
+            "x": 96.0,
+            "y": 335.0,
+            "width": 476.0,
+            "height": 220.0
+          }
+        },
+        {
+          "slot_id": "RIGHT_BADGE",
+          "role": "right_badge",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "geometry": {
+            "x": 698.0,
+            "y": 246.0,
+            "width": 100.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "RIGHT_TITLE",
+          "role": "right_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 832.0,
+            "y": 254.0,
+            "width": 340.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "RIGHT_BODY",
+          "role": "right_body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 5,
+          "max_chars_per_line": 29,
+          "geometry": {
+            "x": 696.0,
+            "y": 335.0,
+            "width": 476.0,
+            "height": 220.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "three_cards",
+      "page_id": "08_three_cards",
+      "svg_path": "08_three_cards.svg",
+      "slot_model": "three_cards",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "CARD_1_TITLE",
+        "CARD_2_TITLE",
+        "CARD_3_TITLE",
+        "CARD_1_BODY",
+        "CARD_2_BODY",
+        "CARD_3_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "CARD_1_TITLE",
+        "CARD_2_TITLE",
+        "CARD_3_TITLE",
+        "CARD_1_BODY",
+        "CARD_2_BODY",
+        "CARD_3_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "CARD_1_TITLE",
+          "role": "card_1_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 14,
+          "geometry": {
+            "x": 144.0,
+            "y": 210.0,
+            "width": 230.0,
+            "height": 50.0
+          }
+        },
+        {
+          "slot_id": "CARD_2_TITLE",
+          "role": "card_2_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 14,
+          "geometry": {
+            "x": 531.0,
+            "y": 210.0,
+            "width": 230.0,
+            "height": 50.0
+          }
+        },
+        {
+          "slot_id": "CARD_3_TITLE",
+          "role": "card_3_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 14,
+          "geometry": {
+            "x": 918.0,
+            "y": 210.0,
+            "width": 230.0,
+            "height": 50.0
+          }
+        },
+        {
+          "slot_id": "CARD_1_BODY",
+          "role": "card_1_body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 6,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 88.0,
+            "y": 284.0,
+            "width": 290.0,
+            "height": 250.0
+          }
+        },
+        {
+          "slot_id": "CARD_2_BODY",
+          "role": "card_2_body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 6,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 475.0,
+            "y": 284.0,
+            "width": 290.0,
+            "height": 250.0
+          }
+        },
+        {
+          "slot_id": "CARD_3_BODY",
+          "role": "card_3_body",
+          "kind": "list",
+          "required": true,
+          "max_lines": 6,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 862.0,
+            "y": 284.0,
+            "width": 290.0,
+            "height": 250.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "process",
+      "page_id": "09_process",
+      "svg_path": "09_process.svg",
+      "slot_model": "process",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "STEP_1_TITLE",
+        "STEP_2_TITLE",
+        "STEP_3_TITLE",
+        "STEP_4_TITLE",
+        "STEP_1_BODY",
+        "STEP_2_BODY",
+        "STEP_3_BODY",
+        "STEP_4_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "STEP_1_TITLE",
+        "STEP_2_TITLE",
+        "STEP_3_TITLE",
+        "STEP_4_TITLE",
+        "STEP_1_BODY",
+        "STEP_2_BODY",
+        "STEP_3_BODY",
+        "STEP_4_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "STEP_1_TITLE",
+          "role": "step_1_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 70.0,
+            "y": 327.0,
+            "width": 240.0,
+            "height": 52.0
+          }
+        },
+        {
+          "slot_id": "STEP_2_TITLE",
+          "role": "step_2_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 360.0,
+            "y": 327.0,
+            "width": 240.0,
+            "height": 52.0
+          }
+        },
+        {
+          "slot_id": "STEP_3_TITLE",
+          "role": "step_3_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 650.0,
+            "y": 327.0,
+            "width": 240.0,
+            "height": 52.0
+          }
+        },
+        {
+          "slot_id": "STEP_4_TITLE",
+          "role": "step_4_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 940.0,
+            "y": 327.0,
+            "width": 240.0,
+            "height": 52.0
+          }
+        },
+        {
+          "slot_id": "STEP_1_BODY",
+          "role": "step_1_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 4,
+          "max_chars_per_line": 15,
+          "geometry": {
+            "x": 70.0,
+            "y": 395.0,
+            "width": 210.0,
+            "height": 130.0
+          }
+        },
+        {
+          "slot_id": "STEP_2_BODY",
+          "role": "step_2_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 4,
+          "max_chars_per_line": 15,
+          "geometry": {
+            "x": 360.0,
+            "y": 395.0,
+            "width": 210.0,
+            "height": 130.0
+          }
+        },
+        {
+          "slot_id": "STEP_3_BODY",
+          "role": "step_3_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 4,
+          "max_chars_per_line": 15,
+          "geometry": {
+            "x": 650.0,
+            "y": 395.0,
+            "width": 210.0,
+            "height": 130.0
+          }
+        },
+        {
+          "slot_id": "STEP_4_BODY",
+          "role": "step_4_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 4,
+          "max_chars_per_line": 15,
+          "geometry": {
+            "x": 940.0,
+            "y": 395.0,
+            "width": 210.0,
+            "height": 130.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "result",
+      "page_id": "10_result",
+      "svg_path": "10_result.svg",
+      "slot_model": "result",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "FIGURE",
+        "CAPTION",
+        "METRIC_1_VALUE",
+        "METRIC_2_VALUE",
+        "METRIC_3_VALUE",
+        "METRIC_1_LABEL",
+        "METRIC_2_LABEL",
+        "METRIC_3_LABEL",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "CAPTION",
+        "METRIC_1_VALUE",
+        "METRIC_2_VALUE",
+        "METRIC_3_VALUE",
+        "METRIC_1_LABEL",
+        "METRIC_2_LABEL",
+        "METRIC_3_LABEL",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [
+        "FIGURE"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "FIGURE",
+          "role": "image",
+          "kind": "image",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 1,
+          "geometry": {
+            "x": 82.0,
+            "y": 232.0,
+            "width": 676.0,
+            "height": 338.0
+          }
+        },
+        {
+          "slot_id": "CAPTION",
+          "role": "caption",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 82.0,
+            "y": 594.0,
+            "width": 676.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "METRIC_1_VALUE",
+          "role": "metric_1_value",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "geometry": {
+            "x": 842.0,
+            "y": 234.0,
+            "width": 150.0,
+            "height": 48.0
+          }
+        },
+        {
+          "slot_id": "METRIC_2_VALUE",
+          "role": "metric_2_value",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "geometry": {
+            "x": 842.0,
+            "y": 376.0,
+            "width": 150.0,
+            "height": 48.0
+          }
+        },
+        {
+          "slot_id": "METRIC_3_VALUE",
+          "role": "metric_3_value",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "geometry": {
+            "x": 842.0,
+            "y": 518.0,
+            "width": 150.0,
+            "height": 48.0
+          }
+        },
+        {
+          "slot_id": "METRIC_1_LABEL",
+          "role": "metric_1_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 982.0,
+            "y": 250.0,
+            "width": 206.0,
+            "height": 48.0
+          }
+        },
+        {
+          "slot_id": "METRIC_2_LABEL",
+          "role": "metric_2_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 982.0,
+            "y": 392.0,
+            "width": 206.0,
+            "height": 48.0
+          }
+        },
+        {
+          "slot_id": "METRIC_3_LABEL",
+          "role": "metric_3_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 982.0,
+            "y": 534.0,
+            "width": 206.0,
+            "height": 48.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "timeline",
+      "page_id": "12_timeline",
+      "svg_path": "12_timeline.svg",
+      "slot_model": "timeline",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "STEP_1_TITLE",
+        "STEP_2_TITLE",
+        "STEP_3_TITLE",
+        "STEP_4_TITLE",
+        "STEP_1_BODY",
+        "STEP_2_BODY",
+        "STEP_3_BODY",
+        "STEP_4_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "STEP_1_TITLE",
+        "STEP_2_TITLE",
+        "STEP_3_TITLE",
+        "STEP_4_TITLE",
+        "STEP_1_BODY",
+        "STEP_2_BODY",
+        "STEP_3_BODY",
+        "STEP_4_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "STEP_1_TITLE",
+          "role": "step_1_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 14,
+          "geometry": {
+            "x": 22.0,
+            "y": 386.0,
+            "width": 216.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "STEP_2_TITLE",
+          "role": "step_2_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 14,
+          "geometry": {
+            "x": 362.0,
+            "y": 386.0,
+            "width": 216.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "STEP_3_TITLE",
+          "role": "step_3_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 14,
+          "geometry": {
+            "x": 702.0,
+            "y": 386.0,
+            "width": 216.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "STEP_4_TITLE",
+          "role": "step_4_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 14,
+          "geometry": {
+            "x": 1042.0,
+            "y": 386.0,
+            "width": 216.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "STEP_1_BODY",
+          "role": "step_1_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 3,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 22.0,
+            "y": 470.0,
+            "width": 216.0,
+            "height": 96.0
+          }
+        },
+        {
+          "slot_id": "STEP_2_BODY",
+          "role": "step_2_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 3,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 362.0,
+            "y": 470.0,
+            "width": 216.0,
+            "height": 96.0
+          }
+        },
+        {
+          "slot_id": "STEP_3_BODY",
+          "role": "step_3_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 3,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 702.0,
+            "y": 470.0,
+            "width": 216.0,
+            "height": 96.0
+          }
+        },
+        {
+          "slot_id": "STEP_4_BODY",
+          "role": "step_4_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 3,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 1042.0,
+            "y": 470.0,
+            "width": 216.0,
+            "height": 96.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "quote",
+      "page_id": "13_quote",
+      "svg_path": "13_quote.svg",
+      "slot_model": "quote",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "QUOTE",
+        "QUOTE_AUTHOR",
+        "QUOTE_SOURCE",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "QUOTE",
+        "QUOTE_AUTHOR",
+        "QUOTE_SOURCE",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "QUOTE",
+          "role": "quote",
+          "kind": "text",
+          "required": true,
+          "max_lines": 4,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 174.0,
+            "y": 298.0,
+            "width": 930.0,
+            "height": 150.0
+          }
+        },
+        {
+          "slot_id": "QUOTE_AUTHOR",
+          "role": "quote_author",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 34,
+          "geometry": {
+            "x": 174.0,
+            "y": 424.0,
+            "width": 560.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "QUOTE_SOURCE",
+          "role": "quote_source",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 174.0,
+            "y": 471.0,
+            "width": 780.0,
+            "height": 28.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "metrics",
+      "page_id": "14_metrics",
+      "svg_path": "14_metrics.svg",
+      "slot_model": "metrics",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "METRIC_1_VALUE",
+        "METRIC_2_VALUE",
+        "METRIC_3_VALUE",
+        "METRIC_4_VALUE",
+        "METRIC_1_LABEL",
+        "METRIC_2_LABEL",
+        "METRIC_3_LABEL",
+        "METRIC_4_LABEL",
+        "NOTE",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "METRIC_1_VALUE",
+        "METRIC_2_VALUE",
+        "METRIC_3_VALUE",
+        "METRIC_4_VALUE",
+        "METRIC_1_LABEL",
+        "METRIC_2_LABEL",
+        "METRIC_3_LABEL",
+        "METRIC_4_LABEL",
+        "NOTE",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "METRIC_1_VALUE",
+          "role": "metric_1_value",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "geometry": {
+            "x": 88.0,
+            "y": 328.0,
+            "width": 204.0,
+            "height": 54.0
+          }
+        },
+        {
+          "slot_id": "METRIC_2_VALUE",
+          "role": "metric_2_value",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "geometry": {
+            "x": 378.0,
+            "y": 328.0,
+            "width": 204.0,
+            "height": 54.0
+          }
+        },
+        {
+          "slot_id": "METRIC_3_VALUE",
+          "role": "metric_3_value",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "geometry": {
+            "x": 668.0,
+            "y": 328.0,
+            "width": 204.0,
+            "height": 54.0
+          }
+        },
+        {
+          "slot_id": "METRIC_4_VALUE",
+          "role": "metric_4_value",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "geometry": {
+            "x": 958.0,
+            "y": 328.0,
+            "width": 204.0,
+            "height": 54.0
+          }
+        },
+        {
+          "slot_id": "METRIC_1_LABEL",
+          "role": "metric_1_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 88.0,
+            "y": 404.0,
+            "width": 204.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "METRIC_2_LABEL",
+          "role": "metric_2_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 378.0,
+            "y": 404.0,
+            "width": 204.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "METRIC_3_LABEL",
+          "role": "metric_3_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 668.0,
+            "y": 404.0,
+            "width": 204.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "METRIC_4_LABEL",
+          "role": "metric_4_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 958.0,
+            "y": 404.0,
+            "width": 204.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "NOTE",
+          "role": "note",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 80,
+          "geometry": {
+            "x": 60.0,
+            "y": 536.0,
+            "width": 1160.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "table",
+      "page_id": "15_table",
+      "svg_path": "15_table.svg",
+      "slot_model": "table",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "COL_1",
+        "COL_2",
+        "COL_3",
+        "COL_4",
+        "ROW_1_LABEL",
+        "ROW_1_VALUE_1",
+        "ROW_1_VALUE_2",
+        "ROW_1_VALUE_3",
+        "ROW_2_LABEL",
+        "ROW_2_VALUE_1",
+        "ROW_2_VALUE_2",
+        "ROW_2_VALUE_3",
+        "ROW_3_LABEL",
+        "ROW_3_VALUE_1",
+        "ROW_3_VALUE_2",
+        "ROW_3_VALUE_3",
+        "ROW_4_LABEL",
+        "ROW_4_VALUE_1",
+        "ROW_4_VALUE_2",
+        "ROW_4_VALUE_3",
+        "TABLE_NOTE",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "COL_1",
+        "COL_2",
+        "COL_3",
+        "COL_4",
+        "ROW_1_LABEL",
+        "ROW_1_VALUE_1",
+        "ROW_1_VALUE_2",
+        "ROW_1_VALUE_3",
+        "ROW_2_LABEL",
+        "ROW_2_VALUE_1",
+        "ROW_2_VALUE_2",
+        "ROW_2_VALUE_3",
+        "ROW_3_LABEL",
+        "ROW_3_VALUE_1",
+        "ROW_3_VALUE_2",
+        "ROW_3_VALUE_3",
+        "ROW_4_LABEL",
+        "ROW_4_VALUE_1",
+        "ROW_4_VALUE_2",
+        "ROW_4_VALUE_3",
+        "TABLE_NOTE",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "COL_1",
+          "role": "col_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 96.0,
+            "y": 244.0,
+            "width": 300.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "COL_2",
+          "role": "col_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 430.0,
+            "y": 244.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "COL_3",
+          "role": "col_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 700.0,
+            "y": 244.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "COL_4",
+          "role": "col_4",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "geometry": {
+            "x": 1050.0,
+            "y": 244.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_1_LABEL",
+          "role": "row_1_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "geometry": {
+            "x": 96.0,
+            "y": 310.0,
+            "width": 300.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_1_VALUE_1",
+          "role": "row_1_value_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 320.0,
+            "y": 310.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_1_VALUE_2",
+          "role": "row_1_value_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 590.0,
+            "y": 310.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_1_VALUE_3",
+          "role": "row_1_value_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 940.0,
+            "y": 310.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_2_LABEL",
+          "role": "row_2_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "geometry": {
+            "x": 96.0,
+            "y": 376.0,
+            "width": 300.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_2_VALUE_1",
+          "role": "row_2_value_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 320.0,
+            "y": 376.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_2_VALUE_2",
+          "role": "row_2_value_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 590.0,
+            "y": 376.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_2_VALUE_3",
+          "role": "row_2_value_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 940.0,
+            "y": 376.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_3_LABEL",
+          "role": "row_3_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "geometry": {
+            "x": 96.0,
+            "y": 442.0,
+            "width": 300.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_3_VALUE_1",
+          "role": "row_3_value_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 320.0,
+            "y": 442.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_3_VALUE_2",
+          "role": "row_3_value_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 590.0,
+            "y": 442.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_3_VALUE_3",
+          "role": "row_3_value_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 940.0,
+            "y": 442.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_4_LABEL",
+          "role": "row_4_label",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "geometry": {
+            "x": 96.0,
+            "y": 508.0,
+            "width": 300.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_4_VALUE_1",
+          "role": "row_4_value_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 320.0,
+            "y": 508.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_4_VALUE_2",
+          "role": "row_4_value_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 590.0,
+            "y": 508.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "ROW_4_VALUE_3",
+          "role": "row_4_value_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "geometry": {
+            "x": 940.0,
+            "y": 508.0,
+            "width": 220.0,
+            "height": 34.0
+          }
+        },
+        {
+          "slot_id": "TABLE_NOTE",
+          "role": "table_note",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 80,
+          "geometry": {
+            "x": 96.0,
+            "y": 577.0,
+            "width": 1080.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "four_cards",
+      "page_id": "16_four_cards",
+      "svg_path": "16_four_cards.svg",
+      "slot_model": "four_cards",
+      "slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "CARD_1_TITLE",
+        "CARD_1_BODY",
+        "CARD_2_TITLE",
+        "CARD_2_BODY",
+        "CARD_3_TITLE",
+        "CARD_3_BODY",
+        "CARD_4_TITLE",
+        "CARD_4_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "SECTION",
+        "KEY_MESSAGE",
+        "CARD_1_TITLE",
+        "CARD_1_BODY",
+        "CARD_2_TITLE",
+        "CARD_2_BODY",
+        "CARD_3_TITLE",
+        "CARD_3_BODY",
+        "CARD_4_TITLE",
+        "CARD_4_BODY",
+        "SOURCE",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "geometry": {
+            "x": 52.0,
+            "y": 18.0,
+            "width": 900.0,
+            "height": 46.0
+          }
+        },
+        {
+          "slot_id": "SECTION",
+          "role": "section",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 1030.0,
+            "y": 29.0,
+            "width": 190.0,
+            "height": 30.0
+          }
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 46,
+          "geometry": {
+            "x": 84.0,
+            "y": 135.0,
+            "width": 1100.0,
+            "height": 44.0
+          }
+        },
+        {
+          "slot_id": "CARD_1_TITLE",
+          "role": "card_1_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "geometry": {
+            "x": 142.0,
+            "y": 182.0,
+            "width": 450.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "CARD_1_BODY",
+          "role": "card_1_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 42,
+          "geometry": {
+            "x": 92.0,
+            "y": 271.0,
+            "width": 506.0,
+            "height": 58.0
+          }
+        },
+        {
+          "slot_id": "CARD_2_TITLE",
+          "role": "card_2_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "geometry": {
+            "x": 732.0,
+            "y": 182.0,
+            "width": 450.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "CARD_2_BODY",
+          "role": "card_2_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 42,
+          "geometry": {
+            "x": 682.0,
+            "y": 271.0,
+            "width": 506.0,
+            "height": 58.0
+          }
+        },
+        {
+          "slot_id": "CARD_3_TITLE",
+          "role": "card_3_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "geometry": {
+            "x": 142.0,
+            "y": 432.0,
+            "width": 450.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "CARD_3_BODY",
+          "role": "card_3_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 42,
+          "geometry": {
+            "x": 92.0,
+            "y": 521.0,
+            "width": 506.0,
+            "height": 58.0
+          }
+        },
+        {
+          "slot_id": "CARD_4_TITLE",
+          "role": "card_4_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "geometry": {
+            "x": 732.0,
+            "y": 432.0,
+            "width": 450.0,
+            "height": 42.0
+          }
+        },
+        {
+          "slot_id": "CARD_4_BODY",
+          "role": "card_4_body",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 42,
+          "geometry": {
+            "x": 682.0,
+            "y": 521.0,
+            "width": 506.0,
+            "height": 58.0
+          }
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 70,
+          "geometry": {
+            "x": 52.0,
+            "y": 694.0,
+            "width": 900.0,
+            "height": 24.0
+          }
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_num",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "geometry": {
+            "x": 1132.0,
+            "y": 693.0,
+            "width": 96.0,
+            "height": 24.0
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "ending",
+      "page_id": "11_ending",
+      "svg_path": "11_ending.svg",
+      "slot_model": "ending",
+      "slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "CONTACT"
+      ],
+      "text_slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "CONTACT"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "CLOSING_TITLE",
+          "role": "closing_title",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "geometry": {
+            "x": 190.0,
+            "y": 236.0,
+            "width": 900.0,
+            "height": 100.0
+          }
+        },
+        {
+          "slot_id": "CLOSING_SUBTITLE",
+          "role": "closing_subtitle",
+          "kind": "text",
+          "required": false,
+          "max_lines": 2,
+          "max_chars_per_line": 32,
+          "geometry": {
+            "x": 230.0,
+            "y": 364.0,
+            "width": 820.0,
+            "height": 70.0
+          }
+        },
+        {
+          "slot_id": "CONTACT",
+          "role": "contact",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 40,
+          "geometry": {
+            "x": 290.0,
+            "y": 522.0,
+            "width": 700.0,
+            "height": 40.0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "easyslides.template_lock.v1",
+  "template_id": "nsfc_purple_semantic",
+  "package_version": "0.1.0",
+  "source_digest": "03835084aceca13751bb8b9ca496beb5114568614635e1cd0be9996e7ad59f89",
+  "sources": {
+    "package": {
+      "path": "templates/layouts/nsfc_purple_semantic/template_package.json",
+      "sha256": "e699f0ddde364fcc5ddfe96d4b1fcc403f98848d15dd648c3522c410df749411"
+    },
+    "shells": {
+      "path": "templates/layouts/nsfc_purple_semantic/layouts.json",
+      "sha256": "ca553a7c8553d0dd8a69e1b6f61be284a9cb2d96af96ad39f5a7d1e9aa50d121"
+    },
+    "body_variants": {
+      "path": "templates/layouts/nsfc_purple_semantic/body_variants.json",
+      "sha256": "873f651717daa8f22d6903fc51f1cdf7cce51e97f01bc1938cf53592a66aecac"
+    },
+    "components": {
+      "path": "templates/layouts/nsfc_purple_semantic/component_catalog.json",
+      "sha256": "8a9784e73637a0047a5da7a450a1df18539e3ba6b2862c61e350982434051fa8"
+    },
+    "capability_profile": {
+      "path": "templates/layouts/nsfc_purple_semantic/capability_profile.json",
+      "sha256": "2ccb5c11e6dca119c9b4f9ebb9ba5e13addbac7643572fe7e9f8de615799e2a2"
+    }
+  },
+  "component_dependencies": [],
+  "component_pack": {
+    "pack_id": "",
+    "version": "",
+    "scope": "",
+    "dependencies": [],
+    "design_tokens": {}
+  },
+  "capability_profile": {
+    "schema_version": "easyslides.template_capability_profile.v1",
+    "lifecycle": "production",
+    "generation_enabled": true,
+    "composition": {
+      "mode": "template_bounded",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module",
+        "template_component"
+      ],
+      "allow_global_component_fallback": false,
+      "allowed_component_packs": [],
+      "requires_declared_body_variant": true
+    },
+    "selection_policy": {
+      "template_affinity": "required",
+      "undeclared_assets": "reject",
+      "manual_selection": "must_be_declared",
+      "missing_profile": "block_named_template_component_selection"
+    },
+    "required_gates": [
+      "template_capability_profile",
+      "component_plan_contract",
+      "visual_measure_gate"
+    ]
+  }
+}

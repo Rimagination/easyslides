@@ -148,7 +148,7 @@ def text_block(
         f'font-family="{FONT}" font-size="{size}" fill="{fill}" font-weight="{weight}" '
         f'data-pptx-box-x="{x}" data-pptx-box-y="{box_y}" '
         f'data-pptx-box-w="{width}" data-pptx-box-h="{box_h}" '
-        f'data-pptx-textbox="true">{tspan_lines(lines, x, line_height)}</text>'
+        f'data-pptx-valign="top" data-pptx-textbox="true">{tspan_lines(lines, x, line_height)}</text>'
         "</g>"
     )
 
@@ -159,13 +159,13 @@ def page_shell(chapter: str, title: str, key_message: str, source: str, page_num
   <g id="content-header">
     <polygon points="52,77 1228,77 1230,85 50,85" fill="{PRIMARY}" fill-opacity="0.18"/>
     <polygon points="36,81 1244,81 1246,89 34,89" fill="{PRIMARY}"/>
-    <text x="54" y="55" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="34" fill="{PRIMARY}" font-weight="bold" data-pptx-textbox="true"><tspan>{esc(chapter)}</tspan></text>
-    <text x="1224" y="55" text-anchor="end" xml:space="preserve" font-family="{FONT}" font-size="34" fill="#000000" font-weight="bold" data-pptx-textbox="true"><tspan>{esc(title)}</tspan></text>
+    <text x="54" y="55" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="34" fill="{PRIMARY}" font-weight="bold" data-pptx-box-x="54" data-pptx-box-y="20" data-pptx-box-w="300" data-pptx-box-h="48" data-pptx-valign="top" data-pptx-textbox="true"><tspan>{esc(chapter)}</tspan></text>
+    <text x="1224" y="55" text-anchor="end" xml:space="preserve" font-family="{FONT}" font-size="34" fill="#000000" font-weight="bold" data-pptx-box-x="700" data-pptx-box-y="20" data-pptx-box-w="524" data-pptx-box-h="48" data-pptx-valign="top" data-pptx-textbox="true"><tspan>{esc(title)}</tspan></text>
   </g>
   <g id="key-message">
     <rect x="54" y="116" width="1172" height="74" rx="4" ry="4" fill="{SOFT}" stroke="{PRIMARY}" stroke-width="1" stroke-opacity="0.18"/>
     <rect x="54" y="116" width="8" height="74" fill="{PRIMARY}"/>
-    <text x="82" y="162" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="25" fill="{DEEP}" font-weight="bold" data-pptx-box-x="82" data-pptx-box-y="126" data-pptx-box-w="1116" data-pptx-box-h="54" data-pptx-textbox="true"><tspan>{esc(key_message)}</tspan></text>
+    <text x="82" y="162" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="25" fill="{DEEP}" font-weight="bold" data-pptx-box-x="82" data-pptx-box-y="126" data-pptx-box-w="1116" data-pptx-box-h="54" data-pptx-valign="middle" data-pptx-textbox="true"><tspan>{esc(key_message)}</tspan></text>
   </g>
   {body}
   <g id="content-footer">
@@ -190,7 +190,7 @@ def image_frame(x: int, y: int, w: int, h: int, key: str, caption: str, name: st
         f'<g id="{name}">'
         f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" ry="6" fill="#FFFFFF" stroke="{BORDER}" stroke-width="1.4"/>'
         f'<image href="{img_href(key)}" x="{x + 12}" y="{y + 12}" width="{w - 24}" height="{h - 58}" preserveAspectRatio="xMidYMid meet"/>'
-        f'<text x="{x + w / 2}" y="{y + h - 20}" text-anchor="middle" xml:space="preserve" font-family="{FONT}" font-size="14" fill="{MUTED}" data-pptx-box-x="{caption_x}" data-pptx-box-y="{caption_y}" data-pptx-box-w="{caption_w}" data-pptx-box-h="{caption_h}" data-pptx-textbox="true"><tspan>{esc(caption)}</tspan></text>'
+        f'<text x="{x + w / 2}" y="{y + h - 20}" text-anchor="middle" xml:space="preserve" font-family="{FONT}" font-size="14" fill="{MUTED}" data-pptx-box-x="{caption_x}" data-pptx-box-y="{caption_y}" data-pptx-box-w="{caption_w}" data-pptx-box-h="{caption_h}" data-pptx-valign="middle" data-pptx-textbox="true"><tspan>{esc(caption)}</tspan></text>'
         "</g>"
     )
 
@@ -207,7 +207,7 @@ def card(x: int, y: int, w: int, h: int, title: str, lines: list[str], name: str
         f'<g id="{name}">'
         f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" ry="6" fill="#FFFFFF" stroke="{BORDER}" stroke-width="1.3"/>'
         f'<rect x="{x}" y="{y}" width="7" height="{h}" fill="{PRIMARY}"/>'
-        f'<text x="{title_x}" y="{y + 34}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="21" fill="{DEEP}" font-weight="bold" data-pptx-box-x="{title_x}" data-pptx-box-y="{title_y}" data-pptx-box-w="{title_w}" data-pptx-box-h="{title_h}" data-pptx-textbox="true"><tspan>{esc(title)}</tspan></text>'
+        f'<text x="{title_x}" y="{y + 34}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="21" fill="{DEEP}" font-weight="bold" data-pptx-box-x="{title_x}" data-pptx-box-y="{title_y}" data-pptx-box-w="{title_w}" data-pptx-box-h="{title_h}" data-pptx-valign="top" data-pptx-textbox="true"><tspan>{esc(title)}</tspan></text>'
         f'{text_block(x + 24, body_baseline, lines, size=17, fill=MUTED, line_height=24, width=w - 48, name=name + "-body", box_y=body_box_y, box_h=body_box_h)}'
         "</g>"
     )
@@ -217,8 +217,8 @@ def open_stat(x: int, y: int, num: str, title: str, desc: str, name: str) -> str
     return (
         f'<g id="{name}">'
         f'<text x="{x}" y="{y}" text-anchor="start" xml:space="preserve" font-family="Arial, Microsoft YaHei, sans-serif" font-size="48" fill="{PRIMARY}" font-weight="bold"><tspan>{esc(num)}</tspan></text>'
-        f'<text x="{x + 88}" y="{y - 8}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="22" fill="{DEEP}" font-weight="bold" data-pptx-textbox="true"><tspan>{esc(title)}</tspan></text>'
-        f'<text x="{x + 88}" y="{y + 24}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="16" fill="{MUTED}" data-pptx-textbox="true"><tspan>{esc(desc)}</tspan></text>'
+        f'<text x="{x + 88}" y="{y - 8}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="22" fill="{DEEP}" font-weight="bold" data-pptx-box-x="{x + 88}" data-pptx-box-y="{y - 34}" data-pptx-box-w="360" data-pptx-box-h="30" data-pptx-valign="top" data-pptx-textbox="true"><tspan>{esc(title)}</tspan></text>'
+        f'<text x="{x + 88}" y="{y + 24}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="16" fill="{MUTED}" data-pptx-box-x="{x + 88}" data-pptx-box-y="{y + 4}" data-pptx-box-w="360" data-pptx-box-h="34" data-pptx-valign="top" data-pptx-textbox="true"><tspan>{esc(desc)}</tspan></text>'
         "</g>"
     )
 
@@ -402,7 +402,7 @@ def slide_12() -> str:
             f'<g id="question-{i + 1}">'
             f'<text x="88" y="{y + 25}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="28" fill="{PRIMARY}" font-weight="bold"><tspan>{esc(tag)}</tspan></text>'
             f'<line x1="164" y1="{y + 20}" x2="188" y2="{y + 20}" stroke="{PRIMARY}" stroke-width="2"/>'
-            f'<text x="208" y="{y + 25}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="23" fill="{TEXT}" data-pptx-textbox="true"><tspan>{esc(q)}</tspan></text>'
+            f'<text x="208" y="{y + 25}" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="23" fill="{TEXT}" data-pptx-box-x="208" data-pptx-box-y="{y}" data-pptx-box-w="960" data-pptx-box-h="42" data-pptx-valign="top" data-pptx-textbox="true"><tspan>{esc(q)}</tspan></text>'
             "</g>"
         )
     body = "".join(rows) + text_block(

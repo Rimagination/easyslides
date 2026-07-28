@@ -1,0 +1,31 @@
+{
+  "schema_version": "easyslides.template_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "nsfc_purple_semantic",
+  "display_name": "NSFC Purple Semantic",
+  "description": "nsfc_purple_semantic",
+  "version": "0.1.0",
+  "status": "quarantined",
+  "capability_level": "semantic",
+  "roles": [
+    "cover",
+    "toc",
+    "chapter",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "content",
+    "ending"
+  ],
+  "layout_count": 17,
+  "variant_count": 13
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "EasySlides Clarify"
+  short_description: "Resolve material PPT ambiguities before execution"
+  default_prompt: "Use $easyslides-clarify to resolve only the presentation decisions that would materially change the result."
+policy:
+  allow_implicit_invocation: true

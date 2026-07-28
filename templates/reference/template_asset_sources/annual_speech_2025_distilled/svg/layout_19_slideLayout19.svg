@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-3" data-name="日期占位符 2" data-ph-type="dt">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph dt idx=10</text>
+</g>
+<g id="layout-shape-4" data-name="页脚占位符 3" data-ph-type="ftr">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph ftr idx=11</text>
+</g>
+<g id="layout-shape-5" data-name="灯片编号占位符 4" data-ph-type="sldNum">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph sldNum idx=12</text>
+</g>
+<g id="layout-shape-7" data-name="图片 6">
+<svg x="0" y="0" width="1236.12" height="720" viewBox="0.03689 0 0.96311 1" preserveAspectRatio="none"><image href="../assets/image2.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="layout-shape-9" data-name="标题 8" data-ph-type="title">
+<rect x="43.88" y="34.37" width="1165.05" height="53.71" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="51.88" y="52.37" font-size="12" fill="#64748B">ph title</text>
+</g></svg>

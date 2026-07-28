@@ -1,0 +1,727 @@
+{
+  "schema_version": "easyslides.nsfc_defense_faithful_raster.layouts.v1",
+  "template_id": "nsfc_defense_faithful_raster",
+  "replication_mode": "slot_guided_mirror",
+  "global_contract": {
+    "replication_mode": "slot_guided_mirror",
+    "source_geometry_policy": "preserve_source_rendered_page_replace_declared_slots_after_reconstruction",
+    "rendering_surface": "source_rendered_raster_baseline"
+  },
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "format": "ppt169"
+  },
+  "style_system": "nsfc_defense_faithful_raster",
+  "colors": {
+    "primary": "#751497",
+    "dk1": "#000000",
+    "lt1": "#FFFFFF",
+    "dk2": "#44546A",
+    "lt2": "#E7E6E6",
+    "accent1": "#751497",
+    "accent2": "#751497",
+    "accent3": "#751497",
+    "accent4": "#751497",
+    "accent5": "#751497",
+    "accent6": "#751497",
+    "hlink": "#0563C1",
+    "folHlink": "#954F72"
+  },
+  "fonts": {
+    "majorLatin": "思源黑体 CN Bold",
+    "minorLatin": "思源黑体 CN Medium",
+    "minorEastAsia": "思源黑体 CN Medium"
+  },
+  "pages": [
+    {
+      "id": "01_cover",
+      "svg": "01_cover.svg",
+      "page_type": "cover",
+      "story_role": "cover",
+      "role_fit": [
+        "cover"
+      ],
+      "slot_model": "cover",
+      "source_slide": 1,
+      "density_score": 3
+    },
+    {
+      "id": "02_content",
+      "svg": "02_content.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 2,
+      "density_score": 2
+    },
+    {
+      "id": "03_content_02",
+      "svg": "03_content_02.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 3,
+      "density_score": 4
+    },
+    {
+      "id": "04_content_03",
+      "svg": "04_content_03.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 4,
+      "density_score": 4
+    },
+    {
+      "id": "05_content_04",
+      "svg": "05_content_04.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 5,
+      "density_score": 4
+    },
+    {
+      "id": "06_content_05",
+      "svg": "06_content_05.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 6,
+      "density_score": 4
+    },
+    {
+      "id": "07_content_06",
+      "svg": "07_content_06.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 7,
+      "density_score": 4
+    },
+    {
+      "id": "08_content_07",
+      "svg": "08_content_07.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 8,
+      "density_score": 3
+    },
+    {
+      "id": "09_content_08",
+      "svg": "09_content_08.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 9,
+      "density_score": 4
+    },
+    {
+      "id": "10_content_09",
+      "svg": "10_content_09.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 10,
+      "density_score": 4
+    },
+    {
+      "id": "11_content_10",
+      "svg": "11_content_10.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 11,
+      "density_score": 4
+    },
+    {
+      "id": "12_content_11",
+      "svg": "12_content_11.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 12,
+      "density_score": 4
+    },
+    {
+      "id": "13_content_12",
+      "svg": "13_content_12.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 13,
+      "density_score": 4
+    },
+    {
+      "id": "14_content_13",
+      "svg": "14_content_13.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 14,
+      "density_score": 4
+    },
+    {
+      "id": "15_content_14",
+      "svg": "15_content_14.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 15,
+      "density_score": 3
+    },
+    {
+      "id": "16_content_15",
+      "svg": "16_content_15.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 16,
+      "density_score": 4
+    },
+    {
+      "id": "17_ending",
+      "svg": "17_ending.svg",
+      "page_type": "ending",
+      "story_role": "ending",
+      "role_fit": [
+        "ending"
+      ],
+      "slot_model": "ending",
+      "source_slide": 17,
+      "density_score": 3
+    }
+  ],
+  "slot_models": {
+    "content": [
+      {
+        "slot_id": "PAGE_TITLE",
+        "role": "page_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_01",
+        "role": "body_text_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_02",
+        "role": "body_text_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_03",
+        "role": "body_text_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_04",
+        "role": "body_text_04",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_05",
+        "role": "body_text_05",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_06",
+        "role": "body_text_06",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_01",
+        "role": "image_01",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "BODY_TEXT_07",
+        "role": "body_text_07",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_08",
+        "role": "body_text_08",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_09",
+        "role": "body_text_09",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_10",
+        "role": "body_text_10",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_03",
+        "role": "image_03",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_04",
+        "role": "image_04",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_05",
+        "role": "image_05",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "BODY_TEXT_11",
+        "role": "body_text_11",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_12",
+        "role": "body_text_12",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_13",
+        "role": "body_text_13",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_14",
+        "role": "body_text_14",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_15",
+        "role": "body_text_15",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_16",
+        "role": "body_text_16",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_17",
+        "role": "body_text_17",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 23
+      },
+      {
+        "slot_id": "BODY_TEXT_18",
+        "role": "body_text_18",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_06",
+        "role": "image_06",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "BODY_TEXT_19",
+        "role": "body_text_19",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 39
+      },
+      {
+        "slot_id": "BODY_TEXT_20",
+        "role": "body_text_20",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_21",
+        "role": "body_text_21",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_22",
+        "role": "body_text_22",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 21
+      },
+      {
+        "slot_id": "BODY_TEXT_23",
+        "role": "body_text_23",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_24",
+        "role": "body_text_24",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      }
+    ],
+    "cover": [
+      {
+        "slot_id": "TITLE",
+        "role": "title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 20
+      },
+      {
+        "slot_id": "SUBTITLE",
+        "role": "subtitle",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "presenter",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "DATE",
+        "role": "date",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "DATE_02",
+        "role": "date_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "DATE_03",
+        "role": "date_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "DATE_04",
+        "role": "date_04",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "DATE_05",
+        "role": "date_05",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "DATE_06",
+        "role": "date_06",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "HERO_IMAGE",
+        "role": "hero_image",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_03",
+        "role": "image_03",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_04",
+        "role": "image_04",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_05",
+        "role": "image_05",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_06",
+        "role": "image_06",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_07",
+        "role": "image_07",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_08",
+        "role": "image_08",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_09",
+        "role": "image_09",
+        "kind": "image",
+        "image_fit": "contain"
+      }
+    ],
+    "ending": [
+      {
+        "slot_id": "CLOSING_TITLE",
+        "role": "closing_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CLOSING_SUBTITLE",
+        "role": "closing_subtitle",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CONTACT",
+        "role": "contact",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CONTACT_02",
+        "role": "contact_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CONTACT_03",
+        "role": "contact_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CONTACT_04",
+        "role": "contact_04",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CONTACT_05",
+        "role": "contact_05",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CONTACT_06",
+        "role": "contact_06",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_01",
+        "role": "image_01",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_03",
+        "role": "image_03",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_04",
+        "role": "image_04",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_05",
+        "role": "image_05",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_06",
+        "role": "image_06",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_07",
+        "role": "image_07",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_08",
+        "role": "image_08",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_09",
+        "role": "image_09",
+        "kind": "image",
+        "image_fit": "contain"
+      }
+    ]
+  },
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "use_declared_capacity",
+      "choose_lower_density_source_page",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ]
+  }
+}

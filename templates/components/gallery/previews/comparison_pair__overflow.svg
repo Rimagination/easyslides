@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#F7F8FA"/>
+  <rect x="38" y="30" width="1204" height="660" rx="18" fill="#FFFFFF" stroke="#D7DDE5"/>
+  <rect x="38" y="30" width="1204" height="86" rx="18" fill="#172033"/>
+  <rect x="38" y="98" width="1204" height="18" fill="#172033"/>
+  <text x="70" y="68" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">comparison_pair</text>
+  <text x="70" y="94" font-family="Aptos, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#B7C3D3">story: overflow | center-locked text slots</text>
+  <rect x="1040" y="54" width="128" height="34" rx="17" fill="#B42318"/><text x="1104" y="77" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">FAIL</text>
+  <rect x="82" y="184" width="520" height="372" rx="14" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="82" y="184" width="520" height="11" rx="5.5" fill="#1C75BC"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="120.0" data-pptx-box-y="242.0" data-pptx-box-w="444.0" data-pptx-box-h="52.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="title" x="342.0" y="268.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="850" fill="#172033"><tspan x="342.0" y="268.0">Overly long left-...</tspan></text>
+  <line x1="120" y1="320" x2="564" y2="320" stroke="#D7DDE5"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="120.0" data-pptx-box-y="354.0" data-pptx-box-w="444.0" data-pptx-box-h="128.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="body" x="342.0" y="418.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="17" font-weight="500" fill="#4B5B6D"><tspan x="342.0" y="375.5">This paragraph is intentionally</tspan><tspan x="342.0" y="396.8">far too long for a balanced two-</tspan><tspan x="342.0" y="418.0">column comparison card. It</tspan><tspan x="342.0" y="439.2">includes several separate</tspan><tspan x="342.0" y="460.5">criteria, multiple caveats, and...</tspan></text>
+  <rect x="678" y="184" width="520" height="372" rx="14" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="678" y="184" width="520" height="11" rx="5.5" fill="#0F766E"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="716.0" data-pptx-box-y="242.0" data-pptx-box-w="444.0" data-pptx-box-h="52.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="title" x="938.0" y="268.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="850" fill="#172033"><tspan x="938.0" y="268.0">Improved</tspan></text>
+  <line x1="716" y1="320" x2="1160" y2="320" stroke="#D7DDE5"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="716.0" data-pptx-box-y="354.0" data-pptx-box-w="444.0" data-pptx-box-h="128.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="body" x="938.0" y="418.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="17" font-weight="500" fill="#4B5B6D"><tspan x="938.0" y="396.8">Combines multiple signals and</tspan><tspan x="938.0" y="418.0">keeps contribution analysis</tspan><tspan x="938.0" y="439.2">interpretable.</tspan></text>
+  <rect x="202" y="584" width="876" height="54" rx="27" fill="#EFF6FB" stroke="#C9DFF0"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="242.0" data-pptx-box-y="592.0" data-pptx-box-w="796.0" data-pptx-box-h="38.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="synthesis" x="640.0" y="611.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#145F8F"><tspan x="640.0" y="601.6">This synthesis is intentionally long enough to overflow the caption</tspan><tspan x="640.0" y="620.4">region because it tries to explain multiple decision criteria,...</tspan></text>
+</svg>

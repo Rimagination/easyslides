@@ -16,15 +16,18 @@ Examples:
 """
 
 import argparse
-import subprocess
 import sys
 import tempfile
 import zipfile
 from pathlib import Path
 
 import defusedxml.minidom
-from office.soffice import get_soffice_env
 from PIL import Image, ImageDraw, ImageFont
+
+try:
+    from scripts.render_pptx_png import render_pptx_to_png
+except ImportError:  # pragma: no cover - direct script execution
+    from render_pptx_png import render_pptx_to_png
 
 THUMBNAIL_WIDTH = 300
 CONVERSION_DPI = 100
@@ -156,41 +159,16 @@ def create_hidden_placeholder(size: tuple[int, int]) -> Image.Image:
 
 
 def convert_to_images(pptx_path: Path, temp_dir: Path) -> list[Path]:
-    pdf_path = temp_dir / f"{pptx_path.stem}.pdf"
-
-    result = subprocess.run(
-        [
-            "soffice",
-            "--headless",
-            "--convert-to",
-            "pdf",
-            "--outdir",
-            str(temp_dir),
-            str(pptx_path),
-        ],
-        capture_output=True,
-        text=True,
-        env=get_soffice_env(),
-    )
-    if result.returncode != 0 or not pdf_path.exists():
-        raise RuntimeError("PDF conversion failed")
-
-    result = subprocess.run(
-        [
-            "pdftoppm",
-            "-jpeg",
-            "-r",
-            str(CONVERSION_DPI),
-            str(pdf_path),
-            str(temp_dir / "slide"),
-        ],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        raise RuntimeError("Image conversion failed")
-
-    return sorted(temp_dir.glob("slide-*.jpg"))
+    render_dir = temp_dir / "rendered_png"
+    report = render_pptx_to_png(pptx_path, render_dir, dpi=CONVERSION_DPI)
+    files: list[Path] = []
+    for index, filename in enumerate(report["files"], start=1):
+        source = render_dir / filename
+        target = temp_dir / f"slide-{index:03d}.jpg"
+        with Image.open(source) as image:
+            image.convert("RGB").save(target, "JPEG", quality=JPEG_QUALITY)
+        files.append(target)
+    return files
 
 
 def create_grids(

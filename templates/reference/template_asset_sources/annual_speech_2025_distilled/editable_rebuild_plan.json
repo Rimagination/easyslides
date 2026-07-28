@@ -1,0 +1,148 @@
+{
+  "schema_version": "easyslides.editable_rebuild_plan.v1",
+  "template_id": "annual_speech_2025_distilled",
+  "baseline": {
+    "surface": "source_rendered_raster_baseline",
+    "reason": "Use the surface that preserves source PowerPoint visual truth before editable reconstruction.",
+    "blocking_risks": [
+      "gradient_or_filter_effects",
+      "layered_or_cropped_media",
+      "text_anchor_alignment"
+    ]
+  },
+  "prototype_pages": [
+    {
+      "page_id": "01_cover",
+      "source_slide": 1,
+      "story_role": "cover",
+      "reason": "prototype for editable primitive reconstruction"
+    },
+    {
+      "page_id": "05_toc_02",
+      "source_slide": 5,
+      "story_role": "toc",
+      "reason": "prototype for editable primitive reconstruction"
+    },
+    {
+      "page_id": "06_chapter",
+      "source_slide": 6,
+      "story_role": "chapter",
+      "reason": "prototype for editable primitive reconstruction"
+    },
+    {
+      "page_id": "18_content_10",
+      "source_slide": 18,
+      "story_role": "content",
+      "reason": "prototype for editable primitive reconstruction"
+    },
+    {
+      "page_id": "29_ending_02",
+      "source_slide": 29,
+      "story_role": "ending",
+      "reason": "prototype for editable primitive reconstruction"
+    }
+  ],
+  "primitive_candidates": [
+    {
+      "primitive": "atmosphere_background",
+      "evidence": {
+        "gradients": 15,
+        "filters": 53,
+        "opacity": 55
+      },
+      "editable_strategy": "rebuild after raster baseline using layered rectangles/images with explicit alpha and visual diff gates",
+      "acceptance": "PowerPoint-rendered rebuild matches source render before text slots are introduced"
+    },
+    {
+      "primitive": "repeated_media_backdrop",
+      "evidence": [
+        {
+          "href": "../assets/image20.png",
+          "count": 15
+        },
+        {
+          "href": "../assets/image3.jpg",
+          "count": 10
+        },
+        {
+          "href": "../assets/image27.jpg",
+          "count": 10
+        },
+        {
+          "href": "../assets/image5.png",
+          "count": 5
+        },
+        {
+          "href": "../assets/image14_fx_ca5d10fe.png",
+          "count": 4
+        }
+      ],
+      "editable_strategy": "preserve repeated media as locked background assets until crop and layering are verified",
+      "acceptance": "repeated backdrop placement is stable across source-rendered comparison pages"
+    },
+    {
+      "primitive": "section_header_chrome",
+      "evidence": [
+        "02_content",
+        "03_content_02",
+        "11_content_03",
+        "12_content_04",
+        "13_content_05"
+      ],
+      "editable_strategy": "extract repeated title bars, section labels, and top/right chrome before body card reconstruction",
+      "acceptance": "headers align across prototype content pages without text or image overlap"
+    },
+    {
+      "primitive": "image_frames",
+      "evidence": "image slots detected in source page geometry",
+      "editable_strategy": "rebuild crop boxes and captions as explicit image frame components",
+      "acceptance": "image crops preserve source aspect and do not drift during PPTX export"
+    },
+    {
+      "primitive": "cover_ending_lockups",
+      "evidence": [
+        "01_cover",
+        "27_ending",
+        "29_ending_02"
+      ],
+      "editable_strategy": "rebuild cover and ending compositions as page-specific lockups, not generic shells",
+      "acceptance": "cover and ending pass visual diff before generalized variants are attempted"
+    }
+  ],
+  "phases": [
+    {
+      "id": "visual_baseline",
+      "goal": "Render the source PPTX and lock the raster baseline with a visual diff report.",
+      "output": "source-rendered PNG deck and source-vs-generated metrics"
+    },
+    {
+      "id": "chrome_rebuild",
+      "goal": "Rebuild repeated background, atmosphere, headers, section labels, and cards as editable primitives.",
+      "depends_on": [
+        "visual_baseline"
+      ],
+      "prototype_pages": [
+        "01_cover",
+        "05_toc_02",
+        "06_chapter",
+        "18_content_10",
+        "29_ending_02"
+      ]
+    },
+    {
+      "id": "slot_rebuild",
+      "goal": "Enable replacement only inside validated text/image slots and capacity bounds.",
+      "depends_on": [
+        "chrome_rebuild"
+      ]
+    },
+    {
+      "id": "visual_diff_gate",
+      "goal": "Compare PowerPoint-rendered source and generated decks before claiming fidelity.",
+      "command": "python scripts/pptx_visual_diff.py <source_png_dir> <generated_png_dir> --out <diff_dir>",
+      "depends_on": [
+        "slot_rebuild"
+      ]
+    }
+  ]
+}

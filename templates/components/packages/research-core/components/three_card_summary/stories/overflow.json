@@ -1,0 +1,20 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "overflow",
+  "payload": {
+    "items": [
+      {
+        "title": "Overlong requirement",
+        "body": "This intentionally long paragraph should exceed the compact card capacity and force the planner to shorten, split, or choose a roomier component before rendering the slide."
+      },
+      {
+        "title": "Method",
+        "body": "The card still receives a normal second item."
+      },
+      {
+        "title": "Gate",
+        "body": "The expected story status is fail."
+      }
+    ]
+  }
+}

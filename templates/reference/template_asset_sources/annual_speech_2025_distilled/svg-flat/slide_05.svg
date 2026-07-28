@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0" y1="1" x2="1" y2="0"><stop offset="0.41" stop-color="#FBF3FB" stop-opacity="0.07"/><stop offset="1" stop-color="#581969" stop-opacity="0.82"/></linearGradient></defs><image href="../assets/image10.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none"/>
+<g id="shape-35" data-name="流程图: 过程 34">
+<rect x="184.27" y="64.68" width="443.7" height="590.64" fill="#581969" fill-opacity="0.8" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-48" data-name="Rectangle 47">
+<rect x="0.06" y="0" width="354.29" height="720" fill="#441351" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-15" data-name="TextBox 14">
+<rect x="707.08" y="60.28" width="168.33" height="96.94" fill="none"/>
+<text x="716.68" y="126.28" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="707.08" data-pptx-box-y="60.28" data-pptx-box-w="168.33" data-pptx-box-h="96.94" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="72" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="72" font-weight="bold">目录</tspan></text>
+</g>
+<g id="shape-6" data-name="小李PPT22">
+<rect x="815.82" y="184.72" width="265.97" height="48.47" fill="none"/>
+<text x="825.42" y="216.72" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="184.72" data-pptx-box-w="265.97" data-pptx-box-h="48.47" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="32" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="32" font-weight="bold">添加章节标题</tspan></text>
+</g>
+<g id="shape-7" data-name="小李PPT23">
+<rect x="815.82" y="238.04" width="318.84" height="33.93" fill="none"/>
+<text x="825.42" y="260.98" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="238.04" data-pptx-box-w="318.84" data-pptx-box-h="33.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="21.33" fill="#2D283E"><tspan fill="#2D283E" font-size="21.33">添加章节描述添加章节</tspan><tspan fill="#2D283E" font-size="21.33">描述</tspan></text>
+</g>
+<g id="shape-14" data-name="제목 3" transform="translate(773.7 228.58) scale(-1 1) translate(-773.7 -228.58)">
+<rect x="728.93" y="202.73" width="89.54" height="51.7" fill="none"/>
+<text x="728.93" y="243.51" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="728.93" data-pptx-box-y="202.73" data-pptx-box-w="89.54" data-pptx-box-h="51.7" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="42.67" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="42.67" font-weight="bold">01-</tspan></text>
+</g>
+<g id="shape-20" data-name="文本框 19" transform="rotate(90 35.8 360)">
+<rect x="-324.2" y="290.53" width="720" height="138.94" fill="none"/>
+<text x="-314.6" y="385.99" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="-324.2" data-pptx-box-y="290.53" data-pptx-box-w="720" data-pptx-box-h="138.94" data-pptx-valign="top" font-family="&quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="106.67" fill="#FEFFFF" fill-opacity="0.5047" font-weight="bold"><tspan fill="#FEFFFF" font-size="106.67" fill-opacity="0.5047" font-weight="bold">CONTENTS</tspan></text>
+</g>
+<g id="shape-22" data-name="小李PPT22">
+<rect x="815.82" y="298.19" width="265.97" height="48.47" fill="none"/>
+<text x="825.42" y="330.19" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="298.19" data-pptx-box-w="265.97" data-pptx-box-h="48.47" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="32" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="32" font-weight="bold">添加章节标题</tspan></text>
+</g>
+<g id="shape-23" data-name="小李PPT23">
+<rect x="815.82" y="351.51" width="318.84" height="33.93" fill="none"/>
+<text x="825.42" y="374.44" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="351.51" data-pptx-box-w="318.84" data-pptx-box-h="33.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="21.33" fill="#2D283E"><tspan fill="#2D283E" font-size="21.33">添加章节描述添加章节描述</tspan></text>
+</g>
+<g id="shape-24" data-name="제목 3" transform="translate(773.7 338.84) scale(-1 1) translate(-773.7 -338.84)">
+<rect x="728.93" y="312.99" width="89.54" height="51.7" fill="none"/>
+<text x="728.93" y="353.77" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="728.93" data-pptx-box-y="312.99" data-pptx-box-w="89.54" data-pptx-box-h="51.7" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="42.67" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="42.67" font-weight="bold">02-</tspan></text>
+</g>
+<g id="shape-26" data-name="小李PPT22">
+<rect x="815.82" y="409.03" width="265.97" height="48.47" fill="none"/>
+<text x="825.42" y="441.03" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="409.03" data-pptx-box-w="265.97" data-pptx-box-h="48.47" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="32" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="32" font-weight="bold">添加章节标题</tspan></text>
+</g>
+<g id="shape-27" data-name="小李PPT23">
+<rect x="815.82" y="462.35" width="318.84" height="33.93" fill="none"/>
+<text x="825.42" y="485.28" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="462.35" data-pptx-box-w="318.84" data-pptx-box-h="33.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="21.33" fill="#2D283E"><tspan fill="#2D283E" font-size="21.33">添加章节描述添加章节描述</tspan></text>
+</g>
+<g id="shape-28" data-name="제목 3" transform="translate(773.7 447.55) scale(-1 1) translate(-773.7 -447.55)">
+<rect x="728.93" y="421.7" width="89.54" height="51.7" fill="none"/>
+<text x="728.93" y="462.48" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="728.93" data-pptx-box-y="421.7" data-pptx-box-w="89.54" data-pptx-box-h="51.7" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="42.67" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="42.67" font-weight="bold">03-</tspan></text>
+</g>
+<g id="shape-30" data-name="小李PPT22">
+<rect x="815.82" y="520.15" width="265.97" height="48.47" fill="none"/>
+<text x="825.42" y="552.15" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="520.15" data-pptx-box-w="265.97" data-pptx-box-h="48.47" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="32" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="32" font-weight="bold">添加章节标题</tspan></text>
+</g>
+<g id="shape-31" data-name="小李PPT23">
+<rect x="815.82" y="573.46" width="318.84" height="33.93" fill="none"/>
+<text x="825.42" y="596.4" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="815.82" data-pptx-box-y="573.46" data-pptx-box-w="318.84" data-pptx-box-h="33.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="21.33" fill="#2D283E"><tspan fill="#2D283E" font-size="21.33">添加章节描述添加章节描述</tspan></text>
+</g>
+<g id="shape-32" data-name="제목 3" transform="translate(773.7 559.73) scale(-1 1) translate(-773.7 -559.73)">
+<rect x="728.93" y="533.88" width="89.54" height="51.7" fill="none"/>
+<text x="728.93" y="574.66" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="728.93" data-pptx-box-y="533.88" data-pptx-box-w="89.54" data-pptx-box-h="51.7" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="42.67" fill="#441351" font-weight="bold"><tspan fill="#441351" font-size="42.67" font-weight="bold">04-</tspan></text>
+</g>
+<g id="shape-2" data-name="图片 1">
+<svg x="177.21" y="0" width="405.29" height="603.26" viewBox="0 0 0.81099 0.80475" preserveAspectRatio="none"><image href="../assets/image11.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-34" data-name="矩形 33">
+<rect x="177.21" y="0" width="405.29" height="603.26" fill="url(#ggrad1)" stroke="none" stroke-width="1"/>
+</g></svg>

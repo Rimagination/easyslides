@@ -294,6 +294,8 @@ _NON_VISUAL_TAGS = frozenset(('defs', 'title', 'desc', 'metadata', 'style'))
 def _supports_matrix_transform(elem: ET.Element) -> bool:
     """Return whether this subtree can consume a full affine matrix directly."""
     tag = elem.tag.replace(f'{{{SVG_NS}}}', '')
+    if tag in {'rect', 'text'}:
+        return True
     if tag == 'image':
         return True
     if tag == 'svg':

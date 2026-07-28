@@ -1,0 +1,61 @@
+{
+  "schema_version": "easyslides.template_geometry_qa_report.v1",
+  "contract_schema_version": "easyslides.template_geometry_contract.v1",
+  "template_dir": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense_distilled",
+  "status": "fail",
+  "page_count": 17,
+  "blocking_count": 2,
+  "warning_count": 0,
+  "issues": [
+    {
+      "code": "CONTROL-TEXT-VERTICAL-MISALIGN",
+      "severity": "blocking",
+      "svg_file": "04_content_03.svg",
+      "message": "Control-like text group is not vertically center-aligned with container_01.",
+      "details": {
+        "text_box": {
+          "x": 79.47,
+          "y": 109.74,
+          "width": 67.84,
+          "height": 74.24
+        },
+        "container": {
+          "x": 50.67,
+          "y": 104.48,
+          "width": 122.24,
+          "height": 93.59
+        },
+        "center_delta": 4.42,
+        "member_count": 2,
+        "valign_values": [],
+        "text_preview": "人工 / 智能"
+      },
+      "element_index": 56
+    },
+    {
+      "code": "CONTROL-TEXT-VERTICAL-MISALIGN",
+      "severity": "blocking",
+      "svg_file": "04_content_03.svg",
+      "message": "Control-like text group is not vertically center-aligned with container_03.",
+      "details": {
+        "text_box": {
+          "x": 685.54,
+          "y": 109.74,
+          "width": 67.84,
+          "height": 74.24
+        },
+        "container": {
+          "x": 656.73,
+          "y": 104.48,
+          "width": 122.24,
+          "height": 93.59
+        },
+        "center_delta": 4.42,
+        "member_count": 2,
+        "valign_values": [],
+        "text_preview": "高速 / 电路"
+      },
+      "element_index": 74
+    }
+  ]
+}

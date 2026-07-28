@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0" y1="0.5" x2="1" y2="0.5"><stop offset="0.75" stop-color="#751497"/><stop offset="1" stop-color="#751497" stop-opacity="0.7"/></linearGradient><linearGradient id="ggrad2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.73" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4"/></linearGradient><linearGradient id="ggrad3" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.73" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4"/></linearGradient><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.1"/></filter><linearGradient id="ggrad4" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0.5" stop-color="#F8ECFC"/><stop offset="0" stop-color="#F8EAFC" stop-opacity="0"/><stop offset="1" stop-color="#F3F1F4" stop-opacity="0"/></linearGradient><linearGradient id="ggrad5" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#F8EAFC"/><stop offset="1" stop-color="#F2F2F2" stop-opacity="0"/></linearGradient><linearGradient id="ggrad6" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#F8EAFC"/><stop offset="1" stop-color="#F2F2F2" stop-opacity="0"/></linearGradient><linearGradient id="ggrad7" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#F8EAFC"/><stop offset="1" stop-color="#F2F2F2" stop-opacity="0"/></linearGradient><linearGradient id="ggrad8" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#751497"/><stop offset="1" stop-color="#751497"/></linearGradient><linearGradient id="ggrad9" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#751497" stop-opacity="0"/><stop offset="1" stop-color="#751497"/></linearGradient><linearGradient id="ggrad10" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#751497" stop-opacity="0"/><stop offset="1" stop-color="#751497"/></linearGradient><linearGradient id="ggrad11" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#751497" stop-opacity="0"/><stop offset="1" stop-color="#751497"/></linearGradient></defs><g id="shape-2" data-name="图片 1">
+<svg x="952.32" y="0" width="327.68" height="79.18" viewBox="0 0.3189 1 0.3622" preserveAspectRatio="none"><image href="../assets/image9.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-3" data-name="矩形 2">
+<rect x="0" y="0" width="1280" height="79.18" fill="url(#ggrad1)" stroke-width="0.667" stroke="none"/>
+</g>
+<g id="shape-4" data-name="文本框 3">
+<rect x="38.67" y="6.94" width="342.85" height="67.86" fill="none"/>
+<text x="48.27" y="52.54" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.67" data-pptx-box-y="6.94" data-pptx-box-w="342.85" data-pptx-box-h="67.86" data-pptx-valign="top" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="48" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="48">02  </tspan><tspan fill="#FFFFFF" font-size="48">主要创新点</tspan></text>
+</g>
+<g id="shape-6" data-name="组合 5">
+<g id="shape-7" data-name="平行四边形 6">
+<polygon points="38.38,5.66 63.31,5.66 43.88,91.95 18.96,91.95" fill="url(#ggrad2)" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+<g id="shape-8" data-name="平行四边形 7">
+<polygon points="23.85,25.53 39.74,25.53 27.36,80.54 11.46,80.54" fill="url(#ggrad3)" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+</g>
+<g id="shape-26" data-name="矩形: 圆角 25">
+<rect x="50.67" y="105.61" width="1178.25" height="77.55" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter" filter="url(#fx1)"/>
+</g>
+<g id="shape-28" data-name="文本框 27">
+<rect x="84.25" y="125" width="1111.08" height="38.78" fill="none"/>
+<text x="639.79" y="152.2" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="84.25" data-pptx-box-y="125" data-pptx-box-w="1111.08" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#C00000"><tspan fill="#C00000" font-size="32">推动忆阻器件和神经形态计算技术发展</tspan><tspan fill="#C00000" font-size="32">/</tspan><tspan fill="#C00000" font-size="32">为未来人工智能和数据处理提供新方向</tspan></text>
+</g>
+<g id="shape-29" data-name="矩形: 圆角 28">
+<rect x="51.14" y="202.86" width="281.81" height="100.87" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-32" data-name="矩形: 圆角 31">
+<rect x="349.8" y="202.86" width="281.81" height="100.87" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-33" data-name="矩形: 圆角 32">
+<rect x="648.45" y="202.86" width="281.81" height="100.87" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-34" data-name="矩形: 圆角 33">
+<rect x="947.11" y="202.86" width="281.81" height="100.87" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-35" data-name="箭头: 五边形 34">
+<polygon points="51.12,323.42 1228.45,323.42 1228.45,356.21 1228.45,388.99 51.12,388.99" fill="url(#ggrad4)" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+<g id="shape-36" data-name="文本框 35">
+<rect x="375.9" y="330.94" width="527.77" height="50.54" fill="none"/>
+<text x="375.9" y="362.67" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="375.9" data-pptx-box-y="330.94" data-pptx-box-w="527.77" data-pptx-box-h="50.54" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, &quot;Times New Roman&quot;, sans-serif" font-size="37.33" fill="#751497"><tspan fill="#751497" font-size="37.33">开发相应的软件工具和编程框架</tspan></text>
+</g>
+<g id="shape-37" data-name="箭头: 五边形 36">
+<polygon points="50.62,408.68 430.7,408.68 430.7,542.34 430.7,676 50.62,676" fill="url(#ggrad5)" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-38" data-name="箭头: 五边形 37">
+<polygon points="449.31,408.68 829.39,408.68 829.39,542.34 829.39,676 449.31,676" fill="url(#ggrad6)" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-39" data-name="箭头: 五边形 38">
+<polygon points="848.11,408.68 1228.19,408.68 1228.19,542.34 1228.19,676 848.11,676" fill="url(#ggrad7)" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-82" data-name="图片 81">
+<svg x="76.19" y="420.06" width="328.93" height="229.8" viewBox="0.00897 0.33218 0.23464 0.2597" preserveAspectRatio="none"><image href="../assets/image24.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-84" data-name="图片 83">
+<svg x="469.19" y="420.06" width="340.32" height="257.85" viewBox="0.49728 0.65913 0.26523 0.3092" preserveAspectRatio="none"><image href="../assets/image24.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-83" data-name="图片 82">
+<svg x="874.82" y="420.06" width="326.66" height="229.8" viewBox="0.25622 0.32825 0.23464 0.2597" preserveAspectRatio="none"><image href="../assets/image24.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-43" data-name="矩形: 圆顶角 42">
+<path d="M 50.62 616.6 L 430.7 616.6 L 430.7 676.29 L 430.7 676.29 L 50.62 676.29 L 50.62 676.29 L 50.62 616.6 Z" data-pptx-prst="round2SameRect" data-pptx-adj1="0" data-pptx-adj2="0" fill="#751497" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-44" data-name="文本框 43">
+<rect x="143.72" y="627.05" width="193.87" height="38.78" fill="none"/>
+<text x="143.72" y="654.25" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="143.72" data-pptx-box-y="627.05" data-pptx-box-w="193.87" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="32">模拟生长突触</tspan></text>
+</g>
+<g id="shape-45" data-name="矩形: 圆顶角 44">
+<path d="M 449.31 616.6 L 829.39 616.6 L 829.39 676.29 L 829.39 676.29 L 449.31 676.29 L 449.31 676.29 L 449.31 616.6 Z" data-pptx-prst="round2SameRect" data-pptx-adj1="0" data-pptx-adj2="0" fill="url(#ggrad8)" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-46" data-name="文本框 45">
+<rect x="526.26" y="627.05" width="226.19" height="38.78" fill="none"/>
+<text x="526.26" y="654.25" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="526.26" data-pptx-box-y="627.05" data-pptx-box-w="226.19" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="32">忆阻器件可塑性</tspan></text>
+</g>
+<g id="shape-47" data-name="矩形: 圆顶角 46">
+<path d="M 848.11 616.6 L 1228.19 616.6 L 1228.19 676.29 L 1228.19 676.29 L 848.11 676.29 L 848.11 676.29 L 848.11 616.6 Z" data-pptx-prst="round2SameRect" data-pptx-adj1="0" data-pptx-adj2="0" fill="#751497" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-48" data-name="文本框 47">
+<rect x="925.05" y="627.05" width="226.19" height="38.78" fill="none"/>
+<text x="925.05" y="654.25" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="925.05" data-pptx-box-y="627.05" data-pptx-box-w="226.19" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="32">忆阻器件非线性</tspan></text>
+</g>
+<g id="shape-52" data-name="文本框 51">
+<rect x="74.13" y="212.11" width="235.84" height="82.36" fill="none"/>
+<text x="192.05" y="237.04" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="74.13" data-pptx-box-y="212.11" data-pptx-box-w="235.84" data-pptx-box-h="82.36" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="29.33" fill="#000000"><tspan fill="#000000" font-size="29.33">忆阻器件的非线性和可塑性</tspan></text>
+</g>
+<g id="shape-69" data-name="文本框 68">
+<rect x="372.79" y="212.11" width="235.84" height="82.36" fill="none"/>
+<text x="490.7" y="237.04" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="372.79" data-pptx-box-y="212.11" data-pptx-box-w="235.84" data-pptx-box-h="82.36" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="29.33" fill="#000000"><tspan fill="#000000" font-size="29.33">全忆阻神经网络的构建</tspan></text>
+</g>
+<g id="shape-70" data-name="文本框 69">
+<rect x="671.44" y="212.11" width="235.84" height="82.36" fill="none"/>
+<text x="789.36" y="237.04" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="671.44" data-pptx-box-y="212.11" data-pptx-box-w="235.84" data-pptx-box-h="82.36" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="29.33" fill="#000000"><tspan fill="#000000" font-size="29.33">基于忆阻器阵列的新型脑机接口</tspan></text>
+</g>
+<g id="shape-71" data-name="文本框 70">
+<rect x="970.1" y="212.11" width="235.84" height="82.36" fill="none"/>
+<text x="1088.01" y="237.04" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="970.1" data-pptx-box-y="212.11" data-pptx-box-w="235.84" data-pptx-box-h="82.36" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="29.33" fill="#000000"><tspan fill="#000000" font-size="29.33">可校准感知神经元的应用</tspan></text>
+</g>
+<g id="shape-76" data-name="箭头: 下 75" transform="rotate(90 341.38 253.29) translate(341.38 253.29) scale(1 -1) translate(-341.38 -253.29)">
+<polygon points="334.57,235.52 334.57,253.29 327.77,253.29 341.38,271.06 354.98,253.29 348.18,253.29 348.18,235.52" fill="url(#ggrad9)" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-77" data-name="箭头: 下 76" transform="rotate(90 640.03 253.29) translate(640.03 253.29) scale(1 -1) translate(-640.03 -253.29)">
+<polygon points="633.23,235.52 633.23,253.29 626.43,253.29 640.03,271.06 653.63,253.29 646.83,253.29 646.83,235.52" fill="url(#ggrad10)" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-78" data-name="箭头: 下 77" transform="rotate(90 938.69 253.29) translate(938.69 253.29) scale(1 -1) translate(-938.69 -253.29)">
+<polygon points="931.89,235.52 931.89,253.29 925.09,253.29 938.69,271.06 952.29,253.29 945.49,253.29 945.49,235.52" fill="url(#ggrad11)" stroke="none" stroke-width="1"/>
+</g></svg>

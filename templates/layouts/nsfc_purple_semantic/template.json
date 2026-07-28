@@ -1,0 +1,46 @@
+{
+  "schema_version": "easyslides.template_pack.v1",
+  "template_id": "nsfc_purple_semantic",
+  "display_name": "NSFC Purple Semantic",
+  "availability": "semantic_template_status_gated",
+  "recommended_template_route": "semantic_named_slots",
+  "output_contract": "editable-native-pptx",
+  "style_system": "nsfc_purple_semantic",
+  "layout_source_format": "svg",
+  "runtime_source_of_truth": "semantic_layouts_and_named_slots",
+  "production_status_source": "template_status.json",
+  "scenarios": [
+    "academic_paper_report",
+    "research_defense",
+    "scientific_project_report"
+  ],
+  "roles": [
+    "cover",
+    "toc",
+    "chapter",
+    "content",
+    "ending"
+  ],
+  "layout_count": 17,
+  "primary_color": "#751497",
+  "contract_sidecars": [
+    "page_catalog.json",
+    "geometry_contract.json",
+    "spec_lock.md",
+    "slot_contracts.json",
+    "assets/asset_manifest.json",
+    "component_catalog.json"
+  ],
+  "routing_policy": {
+    "required_inputs": [
+      "role",
+      "content_shape",
+      "item_count",
+      "slot_payload"
+    ],
+    "forbidden_inputs": [
+      "source_slide_number",
+      "dom_order"
+    ]
+  }
+}

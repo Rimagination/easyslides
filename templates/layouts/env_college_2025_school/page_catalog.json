@@ -1,0 +1,104 @@
+{
+  "schema_version": "easyslides.page_catalog.v1",
+  "template_id": "env_college_2025_school",
+  "pages": [
+    {
+      "id": "01_cover",
+      "source_slide": 1,
+      "story_role": "cover",
+      "role_fit": [
+        "cover"
+      ],
+      "density_score": 3,
+      "best_for": "opening slide that must preserve source title composition",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "id": "02_chapter",
+      "source_slide": 2,
+      "story_role": "chapter",
+      "role_fit": [
+        "chapter"
+      ],
+      "density_score": 3,
+      "best_for": "section opener or transition",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "id": "03_content",
+      "source_slide": 3,
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "density_score": 2,
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "id": "04_content_02",
+      "source_slide": 4,
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "density_score": 4,
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "id": "05_content_03",
+      "source_slide": 5,
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "density_score": 3,
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "id": "06_content_04",
+      "source_slide": 6,
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "density_score": 3,
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "id": "07_content_05",
+      "source_slide": 7,
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "density_score": 4,
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "id": "08_ending",
+      "source_slide": 8,
+      "story_role": "ending",
+      "role_fit": [
+        "ending"
+      ],
+      "density_score": 3,
+      "best_for": "closing or acknowledgement slide that must preserve source closing composition",
+      "avoid": "content that requires moving fixed source chrome"
+    }
+  ]
+}

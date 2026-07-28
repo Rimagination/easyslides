@@ -1,0 +1,136 @@
+{
+  "schema_version": "easyslides.editable_rebuild_plan.v1",
+  "template_id": "plugin_distill_smoke",
+  "baseline": {
+    "surface": "source_rendered_raster_baseline",
+    "reason": "Use the surface that preserves source PowerPoint visual truth before editable reconstruction.",
+    "blocking_risks": [
+      "gradient_or_filter_effects",
+      "layered_or_cropped_media",
+      "text_anchor_alignment"
+    ]
+  },
+  "prototype_pages": [
+    {
+      "page_id": "01_cover",
+      "source_slide": 1,
+      "story_role": "cover",
+      "reason": "prototype for editable primitive reconstruction"
+    },
+    {
+      "page_id": "02_chapter",
+      "source_slide": 2,
+      "story_role": "chapter",
+      "reason": "prototype for editable primitive reconstruction"
+    },
+    {
+      "page_id": "04_content_02",
+      "source_slide": 4,
+      "story_role": "content",
+      "reason": "prototype for editable primitive reconstruction"
+    },
+    {
+      "page_id": "08_ending",
+      "source_slide": 8,
+      "story_role": "ending",
+      "reason": "prototype for editable primitive reconstruction"
+    }
+  ],
+  "primitive_candidates": [
+    {
+      "primitive": "atmosphere_background",
+      "evidence": {
+        "gradients": 2,
+        "filters": 13,
+        "opacity": 13
+      },
+      "editable_strategy": "rebuild after raster baseline using layered rectangles/images with explicit alpha and visual diff gates",
+      "acceptance": "PowerPoint-rendered rebuild matches source render before text slots are introduced"
+    },
+    {
+      "primitive": "repeated_media_backdrop",
+      "evidence": [
+        {
+          "href": "../assets/image6.png",
+          "count": 7
+        },
+        {
+          "href": "../assets/image3.jpg",
+          "count": 5
+        },
+        {
+          "href": "../assets/image11.jpeg",
+          "count": 4
+        },
+        {
+          "href": "../assets/image10.jpeg",
+          "count": 2
+        }
+      ],
+      "editable_strategy": "preserve repeated media as locked background assets until crop and layering are verified",
+      "acceptance": "repeated backdrop placement is stable across source-rendered comparison pages"
+    },
+    {
+      "primitive": "section_header_chrome",
+      "evidence": [
+        "03_content",
+        "04_content_02",
+        "05_content_03",
+        "06_content_04",
+        "07_content_05"
+      ],
+      "editable_strategy": "extract repeated title bars, section labels, and top/right chrome before body card reconstruction",
+      "acceptance": "headers align across prototype content pages without text or image overlap"
+    },
+    {
+      "primitive": "image_frames",
+      "evidence": "image slots detected in source page geometry",
+      "editable_strategy": "rebuild crop boxes and captions as explicit image frame components",
+      "acceptance": "image crops preserve source aspect and do not drift during PPTX export"
+    },
+    {
+      "primitive": "cover_ending_lockups",
+      "evidence": [
+        "01_cover",
+        "08_ending"
+      ],
+      "editable_strategy": "rebuild cover and ending compositions as page-specific lockups, not generic shells",
+      "acceptance": "cover and ending pass visual diff before generalized variants are attempted"
+    }
+  ],
+  "phases": [
+    {
+      "id": "visual_baseline",
+      "goal": "Render the source PPTX and lock the raster baseline with a visual diff report.",
+      "output": "source-rendered PNG deck and source-vs-generated metrics"
+    },
+    {
+      "id": "chrome_rebuild",
+      "goal": "Rebuild repeated background, atmosphere, headers, section labels, and cards as editable primitives.",
+      "depends_on": [
+        "visual_baseline"
+      ],
+      "prototype_pages": [
+        "01_cover",
+        "02_chapter",
+        "04_content_02",
+        "08_ending"
+      ]
+    },
+    {
+      "id": "slot_rebuild",
+      "goal": "Enable replacement only inside validated text/image slots and capacity bounds.",
+      "depends_on": [
+        "chrome_rebuild"
+      ]
+    },
+    {
+      "id": "visual_diff_gate",
+      "goal": "Compare PowerPoint-rendered source and generated decks before claiming fidelity.",
+      "command": "python scripts/pptx_visual_diff.py <source_png_dir> <generated_png_dir> --out <diff_dir>",
+      "depends_on": [
+        "slot_rebuild"
+      ]
+    }
+  ]
+}

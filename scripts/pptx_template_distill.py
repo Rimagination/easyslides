@@ -33,6 +33,20 @@ REFERENCE_ROOT = ROOT / "templates" / "reference" / "template_asset_sources"
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
+from layout_metrics import (  # noqa: E402
+    IDENTITY_MATRIX,
+    Box as LayoutBox,
+    matrix_multiply,
+    parse_transform_matrix,
+    transform_box,
+)
+from canonical_shells import (  # noqa: E402
+    CANONICAL_SHELL_MINIMUM,
+    CANONICAL_SHELL_LIMIT,
+    build_shell_profile,
+    build_canonical_shell_pack,
+)
+
 
 def sanitize_template_id(value: str | None) -> str:
     """Return a stable folder-safe template id."""
@@ -226,29 +240,36 @@ def svg_rectangles(svg_path: Path) -> list[dict[str, Any]]:
     except ET.ParseError:
         return []
     rects: list[dict[str, Any]] = []
-    for index, node in enumerate(root.iter(), start=1):
-        if tag_name(node) != "rect":
-            continue
+    element_indexes = {id(node): index for index, node in enumerate(root.iter(), start=1)}
+
+    def walk(node: ET.Element, parent_matrix: tuple[float, float, float, float, float, float]) -> None:
         style = parse_style_attr(node.attrib.get("style"))
-        x = parse_float(node.attrib.get("x"))
-        y = parse_float(node.attrib.get("y"))
-        width = parse_float(node.attrib.get("width"))
-        height = parse_float(node.attrib.get("height"))
-        if width <= 0 or height <= 0:
-            continue
-        fill = node.attrib.get("fill") or style.get("fill") or ""
-        stroke = node.attrib.get("stroke") or style.get("stroke") or ""
-        rects.append(
-            {
-                "element_index": index,
-                "x": round(x, 2),
-                "y": round(y, 2),
-                "width": round(width, 2),
-                "height": round(height, 2),
-                "fill": fill,
-                "stroke": stroke,
-            }
-        )
+        transform = node.attrib.get("transform") or style.get("transform") or ""
+        matrix = matrix_multiply(parent_matrix, parse_transform_matrix(transform))
+        if tag_name(node) == "rect":
+            x = parse_float(node.attrib.get("x"))
+            y = parse_float(node.attrib.get("y"))
+            width = parse_float(node.attrib.get("width"))
+            height = parse_float(node.attrib.get("height"))
+            if width > 0 and height > 0:
+                visible_box = transform_box(LayoutBox(x, y, width, height), matrix)
+                fill = node.attrib.get("fill") or style.get("fill") or ""
+                stroke = node.attrib.get("stroke") or style.get("stroke") or ""
+                rects.append(
+                    {
+                        "element_index": element_indexes.get(id(node), 0),
+                        "x": round(visible_box.x, 2),
+                        "y": round(visible_box.y, 2),
+                        "width": round(visible_box.width, 2),
+                        "height": round(visible_box.height, 2),
+                        "fill": fill,
+                        "stroke": stroke,
+                    }
+                )
+        for child in node:
+            walk(child, matrix)
+
+    walk(root, IDENTITY_MATRIX)
     return rects
 
 
@@ -275,6 +296,53 @@ def has_visible_fill(fill: str) -> bool:
     return (fill or "").strip() not in {"", "none"}
 
 
+def split_protected_region_by_light_overlays(
+    region: dict[str, Any],
+    rects: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Keep light active-label surfaces out of a dark chrome contract."""
+    region_x = float(region["x"])
+    region_y = float(region["y"])
+    region_right = region_x + float(region["width"])
+    region_bottom = region_y + float(region["height"])
+    overlays: list[tuple[float, float]] = []
+    for rect in rects:
+        x = float(rect["x"])
+        y = float(rect["y"])
+        w = float(rect["width"])
+        h = float(rect["height"])
+        fill = str(rect.get("fill") or "")
+        if not has_visible_fill(fill) or is_dark_chrome_fill(fill) or fill.startswith("url("):
+            continue
+        if x > region_x + 2 or x + w < region_right - 2:
+            continue
+        if y <= region_y + 2 or y + h >= region_bottom - 2 or h < 24:
+            continue
+        overlays.append((max(region_y, y), min(region_bottom, y + h)))
+    if not overlays:
+        return [region]
+
+    merged: list[list[float]] = []
+    for start, end in sorted(overlays):
+        if merged and start <= merged[-1][1] + 2:
+            merged[-1][1] = max(merged[-1][1], end)
+        else:
+            merged.append([start, end])
+    segments: list[dict[str, Any]] = []
+    cursor = region_y
+    for start, end in merged:
+        if start - cursor >= 8:
+            segments.append({**region, "y": round(cursor, 2), "height": round(start - cursor, 2)})
+        cursor = max(cursor, end)
+    if region_bottom - cursor >= 8:
+        segments.append({**region, "y": round(cursor, 2), "height": round(region_bottom - cursor, 2)})
+    if len(segments) <= 1:
+        return [region]
+    for index, segment in enumerate(segments, start=1):
+        segment["id"] = f"{region['id']}_{index:02d}"
+    return segments
+
+
 def infer_protected_regions(rects: list[dict[str, Any]], width: int, height: int) -> list[dict[str, Any]]:
     protected: list[dict[str, Any]] = []
     for rect in rects:
@@ -290,15 +358,18 @@ def infer_protected_regions(rects: list[dict[str, Any]], width: int, height: int
             and 60 <= w <= width * 0.35
             and (is_dark_chrome_fill(fill) or fill.startswith("url("))
         ):
-            protected.append(
-                {
-                    "id": "left_nav",
-                    "x": round(x, 2),
-                    "y": round(y, 2),
-                    "width": round(w, 2),
-                    "height": round(h, 2),
-                    "fill": fill,
-                }
+            protected.extend(
+                split_protected_region_by_light_overlays(
+                    {
+                        "id": "left_nav",
+                        "x": round(x, 2),
+                        "y": round(y, 2),
+                        "width": round(w, 2),
+                        "height": round(h, 2),
+                        "fill": fill,
+                    },
+                    rects,
+                )
             )
         elif (
             y <= 8
@@ -386,6 +457,7 @@ def copy_svg_for_template(source_svg: Path, target_svg: Path) -> None:
     text = text.replace("href='../assets/", "href='assets/")
     text = text.replace('xlink:href="../assets/', 'xlink:href="assets/')
     text = text.replace("xlink:href='../assets/", "xlink:href='assets/")
+    text = normalize_navigation_text_colors(text)
     text = normalize_compact_control_text_alignment(text)
     target_svg.write_text(text, encoding="utf-8")
 
@@ -397,6 +469,96 @@ XLINK_NS = "http://www.w3.org/1999/xlink"
 def fmt_svg_num(value: float) -> str:
     text = f"{value:.2f}".rstrip("0").rstrip(".")
     return text or "0"
+
+
+def normalize_navigation_text_colors(svg_text: str) -> str:
+    """Restore fixed navigation text contrast from the visible chrome surfaces."""
+    try:
+        root = ET.fromstring(svg_text)
+    except ET.ParseError:
+        return svg_text
+
+    rects: list[tuple[ET.Element, dict[str, float], str]] = []
+    for node in root.iter():
+        if tag_name(node) != "rect":
+            continue
+        style = parse_style_attr(node.attrib.get("style"))
+        fill = (node.attrib.get("fill") or style.get("fill") or "").strip()
+        geometry = element_geometry(node)
+        if has_visible_fill(fill) and geometry["width"] > 0 and geometry["height"] > 0:
+            rects.append((node, geometry, fill))
+
+    nav_candidates = [
+        (geometry, fill)
+        for _node, geometry, fill in rects
+        if geometry["x"] <= 8
+        and geometry["y"] <= 8
+        and geometry["height"] >= 500
+        and 60 <= geometry["width"] <= 460
+        and is_dark_chrome_fill(fill)
+    ]
+    if not nav_candidates:
+        return svg_text
+
+    nav, nav_fill = max(nav_candidates, key=lambda item: item[0]["width"] * item[0]["height"])
+    nav_right = nav["x"] + nav["width"]
+    overlays = [
+        geometry
+        for _node, geometry, fill in rects
+        if not is_dark_chrome_fill(fill)
+        and geometry["x"] <= nav["x"] + 2
+        and geometry["x"] + geometry["width"] >= nav_right - 2
+        and geometry["y"] > nav["y"] + 2
+        and geometry["y"] + geometry["height"] < nav["y"] + nav["height"] - 2
+        and geometry["height"] >= 24
+    ]
+
+    def in_box(box: dict[str, float], region: dict[str, float]) -> bool:
+        return (
+            region["x"] <= box["x"] + box["width"] / 2 <= region["x"] + region["width"]
+            and region["y"] <= box["y"] + box["height"] / 2 <= region["y"] + region["height"]
+        )
+
+    changed = False
+    for node in root.iter():
+        if tag_name(node) != "text":
+            continue
+        box = element_geometry(node)
+        if box["x"] + box["width"] / 2 >= nav_right or not in_box(box, nav):
+            continue
+        active = any(in_box(box, overlay) for overlay in overlays)
+        node.set("data-pptx-fixed-chrome", "true")
+        desired = nav_fill if active else "#FFFFFF"
+        if node.attrib.get("fill") != desired:
+            node.set("fill", desired)
+            changed = True
+        for child in node:
+            if tag_name(child) == "tspan" and child.attrib.get("fill") != desired:
+                child.set("fill", desired)
+                changed = True
+
+    if not changed and all(
+        tag_name(node) != "text"
+        or not (element_geometry(node)["x"] + element_geometry(node)["width"] / 2 < nav_right and in_box(element_geometry(node), nav))
+        or node.attrib.get("data-pptx-fixed-chrome") == "true"
+        for node in root.iter()
+    ):
+        return svg_text
+    ET.register_namespace("", SVG_NS)
+    ET.register_namespace("xlink", XLINK_NS)
+    return ET.tostring(root, encoding="unicode", short_empty_elements=True)
+
+
+def normalize_source_svg_navigation(source_workspace: Path) -> None:
+    """Apply the derived navigation correction to projection source SVGs."""
+    svg_dir = source_workspace / "svg-flat"
+    if not svg_dir.exists():
+        return
+    for path in sorted(svg_dir.glob("*.svg")):
+        original = path.read_text(encoding="utf-8-sig")
+        normalized = normalize_navigation_text_colors(original)
+        if normalized != original:
+            path.write_text(normalized, encoding="utf-8")
 
 
 def normalize_compact_control_text_alignment(svg_text: str) -> str:
@@ -426,23 +588,31 @@ def normalize_compact_control_text_alignment(svg_text: str) -> str:
     for textbox in texts:
         rect = matching_control_rect(textbox, rects) if rects else None
         node = textbox["node"]
+        # Semantic slots already own an explicit geometry contract. Rebinding
+        # them to a nearby decorative rectangle can silently corrupt their
+        # capacity box during cross-material rendering.
+        if node.attrib.get("data-slot") or node.attrib.get("data-slot-id"):
+            continue
         if rect is None:
             if is_short_control_textbox(textbox):
                 if node.attrib.get("data-pptx-valign") != "middle":
                     node.set("data-pptx-valign", "middle")
                     changed = True
             continue
-        box_y = float(textbox["y"])
-        box_h = float(textbox["height"])
-        new_y = float(rect["cy"]) - box_h / 2
-        delta_y = new_y - box_y
+        new_y = float(rect["y"])
+        new_h = float(rect["height"])
         if node.attrib.get("data-pptx-valign") != "middle":
             node.set("data-pptx-valign", "middle")
             changed = True
-        if abs(delta_y) > 0.01:
+        if abs(float(textbox["y"]) - new_y) > 0.01:
             node.set("data-pptx-box-y", fmt_svg_num(new_y))
-            if node.attrib.get("y") is not None:
-                node.set("y", fmt_svg_num(parse_float(node.attrib.get("y")) + delta_y))
+            changed = True
+        if abs(float(textbox["height"]) - new_h) > 0.01:
+            node.set("data-pptx-box-h", fmt_svg_num(new_h))
+            changed = True
+        baseline_y = compact_control_baseline_y(node, new_y, new_h)
+        if baseline_y is not None and abs(parse_float(node.attrib.get("y")) - baseline_y) > 0.01:
+            node.set("y", fmt_svg_num(baseline_y))
             changed = True
 
     if not changed:
@@ -451,6 +621,16 @@ def normalize_compact_control_text_alignment(svg_text: str) -> str:
     ET.register_namespace("", SVG_NS)
     ET.register_namespace("xlink", XLINK_NS)
     return ET.tostring(root, encoding="unicode", short_empty_elements=True)
+
+
+def compact_control_baseline_y(node: ET.Element, box_y: float, box_h: float) -> float | None:
+    if node.attrib.get("y") is None:
+        return None
+    font_size = parse_float(node.attrib.get("font-size"), 18.0)
+    line_count = max(1, len(element_text(node).splitlines()) or 1)
+    line_step = font_size * 1.18
+    total_height = font_size if line_count <= 1 else font_size + (line_count - 1) * line_step
+    return box_y + (box_h - total_height) / 2 + font_size * 0.85
 
 
 def is_short_control_text(text: str) -> bool:
@@ -1339,6 +1519,8 @@ def build_pages(manifest: dict[str, Any], source_workspace: Path, template_dir: 
 
     template_dir.mkdir(parents=True, exist_ok=True)
     copy_assets(source_workspace, template_dir)
+    for stale_svg in template_dir.glob("*.svg"):
+        stale_svg.unlink()
 
     total = len(slides)
     role_seen: defaultdict[str, int] = defaultdict(int)
@@ -1354,9 +1536,6 @@ def build_pages(manifest: dict[str, Any], source_workspace: Path, template_dir: 
         target_stem = f"{index:02d}_{story_role}"
         if role_seen[story_role] > 1:
             target_stem = f"{index:02d}_{story_role}_{role_seen[story_role]:02d}"
-        target_svg = template_dir / f"{target_stem}.svg"
-        if source_svg.exists():
-            copy_svg_for_template(source_svg, target_svg)
 
         slot_candidates = svg_candidates(source_svg, story_role)
         if not slot_candidates:
@@ -1384,7 +1563,7 @@ def build_pages(manifest: dict[str, Any], source_workspace: Path, template_dir: 
         pages.append(
             {
                 "id": target_stem,
-                "svg": target_svg.name,
+                "svg": source_svg_name,
                 "source_svg": source_svg_name,
                 "source_slide": index,
                 "page_type": story_role,
@@ -1397,6 +1576,34 @@ def build_pages(manifest: dict[str, Any], source_workspace: Path, template_dir: 
             }
         )
     return pages
+
+
+def materialize_canonical_shells(
+    *,
+    source_pages: list[dict[str, Any]],
+    source_workspace: Path,
+    template_dir: Path,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Write the evidence-driven public shells; keep the full source roster in metadata."""
+    shells, variants, roster = build_canonical_shell_pack(source_pages)
+    for shell in shells:
+        source_svg_name = str(shell.get("source_svg") or "")
+        source_svg = source_workspace / "svg-flat" / source_svg_name
+        if not source_svg.exists():
+            source_svg = source_workspace / "svg" / source_svg_name
+        target_svg = template_dir / str(shell["svg"])
+        if source_svg.exists():
+            copy_svg_for_template(source_svg, target_svg)
+            measured = svg_candidates(source_svg, str(shell["story_role"]))
+            if measured:
+                shell["slot_candidates"] = measured
+        shell["source_svg"] = source_svg_name
+    if not CANONICAL_SHELL_MINIMUM <= len(shells) <= CANONICAL_SHELL_LIMIT:
+        raise RuntimeError(
+            "canonical shell policy requires "
+            f"{CANONICAL_SHELL_MINIMUM}-{CANONICAL_SHELL_LIMIT} shells, got {len(shells)}"
+        )
+    return shells, variants, roster
 
 
 def slot_models_from_pages(pages: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
@@ -1429,12 +1636,16 @@ def write_template_sidecars(
     template_id: str,
     manifest: dict[str, Any],
     pages: list[dict[str, Any]],
+    source_pages: list[dict[str, Any]],
+    body_variants: list[dict[str, Any]],
+    source_page_roster: list[dict[str, Any]],
     distilled_spec: dict[str, Any],
 ) -> None:
     width, height = slide_size_tuple(manifest)
     colors = distilled_spec.get("theme", {}).get("colors", {})
     fonts = distilled_spec.get("theme", {}).get("fonts", {})
     primary = distilled_spec.get("theme", {}).get("primary_color") or primary_color(manifest)
+    shell_profile = build_shell_profile(pages)
 
     layouts = {
         "schema_version": f"easyslides.{template_id}.layouts.v1",
@@ -1443,6 +1654,12 @@ def write_template_sidecars(
         "global_contract": {
             "replication_mode": "slot_guided_mirror",
             "source_geometry_policy": "preserve_fixed_geometry_replace_declared_slots",
+            "canonical_shell_policy": shell_profile["policy"],
+            "canonical_shell_minimum": shell_profile["minimum_shell_count"],
+            "canonical_shell_limit": CANONICAL_SHELL_LIMIT,
+            "required_shell_roles": shell_profile["required_shell_roles"],
+            "optional_shell_roles": shell_profile["optional_shell_roles"],
+            "active_shell_roles": shell_profile["active_shell_roles"],
         },
         "canvas": {"width": width, "height": height, "format": "ppt169"},
         "style_system": template_id,
@@ -1451,16 +1668,49 @@ def write_template_sidecars(
         "pages": [
             {
                 "id": page["id"],
+                "page_id": page["shell_id"],
+                "layout_id": page["shell_id"],
                 "svg": page["svg"],
+                "role": page["story_role"],
                 "page_type": page["page_type"],
                 "story_role": page["story_role"],
                 "role_fit": page["role_fit"],
                 "slot_model": page["slot_model"],
                 "source_slide": page["source_slide"],
                 "density_score": page["density_score"],
+                "shell_id": page["shell_id"],
+                "body_variants": page.get("body_variants", []),
             }
             for page in pages
         ],
+        "layouts": [
+            {
+                "layout_id": page["shell_id"],
+                "id": page["id"],
+                "page_id": page["shell_id"],
+                "svg": page["svg"],
+                "role": page["story_role"],
+                "story_role": page["story_role"],
+                "slot_model": page["slot_model"],
+                "body_variants": page.get("body_variants", []),
+            }
+            for page in pages
+        ],
+        "shells": [
+            {
+                "shell_id": page["shell_id"],
+                "page_id": page["id"],
+                "svg": page["svg"],
+                "role": page["story_role"],
+                "source_slide": page["source_slide"],
+                "source_page_id": page.get("source_page_id"),
+                "fallback_source_role": page.get("fallback_source_role", False),
+            }
+            for page in pages
+        ],
+        "body_variants": "body_variants.json",
+        "source_page_roster": "source_page_roster.json",
+        "shell_profile": shell_profile,
         "slot_models": slot_models_from_pages(pages),
         "text_fit_policy": {
             "schema_version": "easyslides.template_text_fit_policy.v1",
@@ -1473,10 +1723,36 @@ def write_template_sidecars(
         },
     }
     write_json(template_dir / "layouts.json", layouts)
+    write_json(
+        template_dir / "body_variants.json",
+        {
+            "schema_version": "easyslides.body_variants.v1",
+            "template_id": template_id,
+            "source_shell": "04_content.svg",
+            "selection_policy": "canonical_shell_then_body_variant_then_density_and_slot_fit",
+            "variants": [{**variant, "layout_id": "content"} for variant in body_variants],
+        },
+    )
+    write_json(
+        template_dir / "source_page_roster.json",
+        {
+            "schema_version": "easyslides.source_page_roster.v1",
+            "template_id": template_id,
+            "source_slide_count": len(source_pages),
+            "canonical_shell_count": len(pages),
+            "body_variant_count": len(body_variants),
+            "shell_profile": shell_profile,
+            "required_shell_roles": shell_profile["required_shell_roles"],
+            "optional_shell_roles": shell_profile["optional_shell_roles"],
+            "active_shell_roles": shell_profile["active_shell_roles"],
+            "pages": source_page_roster,
+        },
+    )
 
     catalog = {
         "schema_version": "easyslides.page_catalog.v1",
         "template_id": template_id,
+        "selection_policy": "canonical_shell_then_body_variant_then_role_density_slots",
         "pages": [
             {
                 "id": page["id"],
@@ -1486,9 +1762,13 @@ def write_template_sidecars(
                 "density_score": page["density_score"],
                 "best_for": page_best_for(page),
                 "avoid": page_avoid(page),
+                "shell_id": page["shell_id"],
+                "body_variants": page.get("body_variants", []),
             }
             for page in pages
         ],
+        "body_variants": body_variants,
+        "source_pages": source_page_roster,
     }
     write_json(template_dir / "page_catalog.json", catalog)
 
@@ -1496,6 +1776,9 @@ def write_template_sidecars(
         "schema_version": "easyslides.story_structure.v1",
         "template_id": template_id,
         "default_scenario": "source_faithful_template_reuse",
+        "canonical_shells": [page["shell_id"] for page in pages],
+        "shell_profile": shell_profile,
+        "source_slide_count": len(source_pages),
         "recommended_flow": [
             {"story_role": page["story_role"], "page_id": page["id"], "source_slide": page["source_slide"]}
             for page in pages
@@ -1602,9 +1885,10 @@ placeholders:
 
 # {template_id} Design Specification
 
-This template was generated by `scripts/pptx_template_distill.py` as a faithful
-first-pass EasySlides template. Treat the source PPTX previews and
-`distilled_spec.json` as the authority when reviewing visual fidelity.
+This template was generated by `scripts/pptx_template_distill.py` as an
+evidence-driven EasySlides shell profile. Treat the source PPTX previews,
+`source_page_roster.json`, and `distilled_spec.json` as the authority when
+reviewing visual fidelity.
 
 ## Template Contract
 
@@ -1614,7 +1898,7 @@ first-pass EasySlides template. Treat the source PPTX previews and
 | Replication Mode | `slot_guided_mirror` |
 | Canvas | {width} x {height}, 16:9 |
 | Primary Color | `{primary}` |
-| Runtime Surface | copied flat SVG source pages plus slot sidecars |
+| Runtime Surface | {len(pages)} active shell SVGs plus named-slot sidecars |
 
 ## Page Roster
 
@@ -1631,12 +1915,23 @@ first-pass EasySlides template. Treat the source PPTX previews and
 {placeholders_json}
 ```
 
+## Shell Policy
+
+The public runtime surface is an evidence-driven shell profile with three
+required shells (`cover`, `content`, `ending`) and two optional shells (`toc`,
+`chapter`). Optional shells are materialized only when the source PPTX contains
+evidence for that role; this template currently exposes: `{", ".join(page["shell_id"] for page in pages)}`.
+Source pages beyond these shells are kept as evidence and grouped into
+`body_variants.json`; they must not become new public layout files. Use
+`source_page_roster.json` to trace every variant back to its source slide.
+
 ## Source-Faithful Rules
 
 Use this as a review draft, not as a redesigned style pack. Replace declared
 slots only after confirming the faithful baseline against the source contact
 sheet. Promote repeated elements into reusable components only when they remain
-visually consistent with the imported source pages.
+visually consistent with the imported source pages. Select a shell first, then
+choose a body variant; never route by source page number.
 """
     path.write_text(body, encoding="utf-8")
 
@@ -1645,7 +1940,11 @@ def write_rules(path: Path, template_id: str) -> None:
     path.write_text(
         f"""# {template_id} Rules
 
+- The runtime template must expose the required shells `cover`, `content`, and `ending`, plus optional `toc` and `chapter` shells only when source evidence supports them.
+- Keep the active shell profile between 3 and 5 public layouts; do not synthesize a missing TOC or chapter page.
 - Preserve fixed source geometry before introducing body variants.
+- Keep source-only pages in `source_page_roster.json`; do not add one SVG per source slide.
+- Select `content` body variants by semantic shape, density, evidence count, and slot capacity.
 - Replace only declared slots from `layouts.json` and `slot_contracts.json`.
 - Do not move, resize, recolor, or delete repeated source chrome during faithful reuse.
 - Keep cover and ending pages page-specific unless a reviewer explicitly approves a generalized variant.
@@ -1688,6 +1987,7 @@ def build_from_reference_workspace(
     template_dir: Path,
     template_id: str,
     source_pptx: Path,
+    promote_assets: bool = False,
 ) -> dict[str, Any]:
     source_workspace = source_workspace.resolve()
     template_dir = template_dir.resolve()
@@ -1697,35 +1997,83 @@ def build_from_reference_workspace(
         raise FileNotFoundError(f"missing manifest.json in {source_workspace}")
 
     manifest = read_json(manifest_path)
-    pages = build_pages(manifest, source_workspace, template_dir)
+    from pptx_design_system_compiler import compile_design_system_pack, write_design_system_pack
+    from pptx_distill_registry import build_semantic_specs, write_semantic_specs
+    from pptx_projection import build_projection_manifest, write_projection_manifest
+    from pptx_distill_promotion_gate import build_promotion_report
+    from pptx_source_graph import build_distill_manifest, build_manifest_graph, build_source_graph
+
+    if source_pptx.exists():
+        source_graph = build_source_graph(source_pptx, manifest=manifest)
+    else:
+        source_graph = build_manifest_graph(manifest, source_pptx)
+    normalize_source_svg_navigation(source_workspace)
+    source_graph_path = source_workspace / "source_graph.json"
+    write_json(source_graph_path, source_graph)
+    semantic_specs = build_semantic_specs(
+        template_id=template_id,
+        graph=source_graph,
+        manifest=manifest,
+    )
+    semantic_paths = write_semantic_specs(source_workspace, semantic_specs)
+    compiled_design_system = compile_design_system_pack(
+        template_id=template_id,
+        source_workspace=source_workspace,
+        repository_root=ROOT,
+    )
+    design_system_paths = write_design_system_pack(source_workspace, compiled_design_system)
+    projection_manifest_path = write_projection_manifest(
+        source_workspace,
+        build_projection_manifest(template_id=template_id, source_workspace=source_workspace),
+    )
+    distill_manifest = build_distill_manifest(
+        template_id=template_id,
+        source_workspace=source_workspace,
+        source_pptx=source_pptx,
+        source_graph=source_graph,
+        stage="phase_5_qa_and_promotion",
+        next_phase="phase_6_human_review_and_promotion",
+    )
+    distill_manifest_path = source_workspace / "distill_manifest.json"
+    write_json(distill_manifest_path, distill_manifest)
+
+    source_pages = build_pages(manifest, source_workspace, template_dir)
+    pages, body_variants, source_page_roster = materialize_canonical_shells(
+        source_pages=source_pages,
+        source_workspace=source_workspace,
+        template_dir=template_dir,
+    )
     distilled_spec = build_distilled_spec(
         manifest=manifest,
         source_workspace=source_workspace,
         source_pptx=source_pptx.resolve(),
         template_id=template_id,
-        pages=pages,
+        pages=source_pages,
     )
     write_json(source_workspace / "distilled_spec.json", distilled_spec)
     write_template_language_report(source_workspace / "template_language.md", distilled_spec["template_language"])
     rebuild_plan = build_editable_rebuild_plan(
         template_id=template_id,
-        pages=pages,
+        pages=source_pages,
         template_language=distilled_spec["template_language"],
     )
     write_json(source_workspace / "editable_rebuild_plan.json", rebuild_plan)
     adaptation_strategy = build_adaptation_strategy(
         template_id=template_id,
-        pages=pages,
+        pages=source_pages,
         template_language=distilled_spec["template_language"],
         rebuild_plan=rebuild_plan,
     )
     write_json(source_workspace / "adaptation_strategy.json", adaptation_strategy)
-    write_contact_sheet(source_workspace, pages)
+    write_contact_sheet(source_workspace, source_pages)
     write_template_sidecars(
         template_dir=template_dir,
         template_id=template_id,
         manifest=manifest,
         pages=pages,
+        source_pages=source_pages,
+        body_variants=body_variants,
+        source_page_roster=source_page_roster,
         distilled_spec=distilled_spec,
     )
     source_geometry_risks_path = write_source_geometry_risks(source_workspace, template_dir)
@@ -1733,26 +2081,68 @@ def build_from_reference_workspace(
     from template_contract_pack import write_contract_pack
 
     written_contracts = write_contract_pack(template_dir)
+    promotion_report = build_promotion_report(
+        source_workspace=source_workspace,
+        template_dir=template_dir,
+        output_dir=source_workspace / "promotion_gate",
+        run_cross_material=False,
+    )
+    promotion_report_path = source_workspace / "promotion_report.json"
+    write_json(promotion_report_path, promotion_report)
+    asset_promotion: dict[str, Any] | None = None
+    if promote_assets:
+        if not promotion_report.get("promotable"):
+            asset_promotion = {
+                "status": "blocked",
+                "template_id": template_id,
+                "reason": "promotion_gate_not_passed",
+                "promotion_status": promotion_report.get("status"),
+                "promotion_report": str(promotion_report_path),
+            }
+        else:
+            from pptx_distill_promote import promote
+
+            asset_promotion = promote(
+                source_workspace,
+                template_dir,
+                template_id=template_id,
+                promotion_report=promotion_report,
+            )
     return {
         "template_id": template_id,
         "source_workspace": str(source_workspace),
         "template_dir": str(template_dir),
         "slide_count": len(pages),
+        "source_slide_count": len(source_pages),
+        "canonical_shell_count": len(pages),
+        "body_variant_count": len(body_variants),
+        "source_graph": str(source_graph_path),
+        "distill_manifest": str(distill_manifest_path),
+        "semantic_contracts": {key: str(path) for key, path in semantic_paths.items()},
+        "design_system_pack": {key: str(path) for key, path in design_system_paths.items()},
+        "projection_manifest": str(projection_manifest_path),
+        "promotion_report": str(promotion_report_path),
         "editable_rebuild_plan": str(source_workspace / "editable_rebuild_plan.json"),
         "adaptation_strategy": str(source_workspace / "adaptation_strategy.json"),
         "source_geometry_risks": str(source_geometry_risks_path),
         "contract_files": [str(path) for path in written_contracts],
+        **({"asset_promotion": asset_promotion} if asset_promotion is not None else {}),
     }
 
 
 def import_pptx_source(pptx_path: Path, source_workspace: Path) -> dict[str, Any]:
     from pptx_to_svg import convert_pptx_to_svg
     from pptx_to_svg.converter import ConvertOptions
+    from pptx_source_graph import build_source_graph
     from template_import.manifest import build_manifest
 
     source_workspace.mkdir(parents=True, exist_ok=True)
     manifest = build_manifest(pptx_path, source_workspace)
     write_json(source_workspace / "manifest.json", manifest)
+    write_json(
+        source_workspace / "source_graph.json",
+        build_source_graph(pptx_path, manifest=manifest),
+    )
 
     options = ConvertOptions(
         media_subdir="assets",
@@ -1783,6 +2173,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--from-existing-source",
         action="store_true",
         help="Skip PPTX import and build from an existing reference workspace with manifest.json.",
+    )
+    parser.set_defaults(promote_assets=False)
+    parser.add_argument(
+        "--promote-assets",
+        dest="promote_assets",
+        action="store_true",
+        help="Promote reusable assets only when the complete promotion gate passes.",
+    )
+    parser.add_argument(
+        "--no-promote-assets",
+        dest="promote_assets",
+        action="store_false",
+        help="Compatibility alias for the default: build only the faithful review layer.",
     )
     parser.add_argument("--json", action="store_true", help="Print machine-readable result.")
     return parser.parse_args(argv)
@@ -1818,7 +2221,16 @@ def main(argv: list[str] | None = None) -> int:
         template_dir=template_dir,
         template_id=template_id,
         source_pptx=pptx_path,
+        promote_assets=args.promote_assets,
     )
+    promotion = result.get("asset_promotion")
+    if args.promote_assets and isinstance(promotion, dict) and promotion.get("status") == "blocked":
+        print(
+            "Error: asset promotion was blocked because the promotion gate did not pass. "
+            f"Review {promotion.get('promotion_report')}.",
+            file=sys.stderr,
+        )
+        return 2
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:

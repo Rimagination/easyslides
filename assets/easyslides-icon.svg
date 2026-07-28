@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">EasySlides</title>
+  <desc id="desc">A black and white presentation page with a magnifying glass.</desc>
+
+  <rect width="1024" height="1024" rx="112" fill="#fff"/>
+  <rect x="46" y="16" width="932" height="992" rx="96" fill="none" stroke="#e8e8e8" stroke-width="10"/>
+
+  <!-- Original reference-style folded presentation mark. -->
+  <path fill="#111" d="M208 150h402c93 0 168 75 168 168v79c0 83-65 151-148 151h-30v-2H208z"/>
+  <rect x="208" y="150" width="96" height="668" fill="#111"/>
+
+  <!-- White slide panel and its two document lines. -->
+  <path fill="#fff" d="M304 248h348v302H304z"/>
+  <rect x="364" y="336" width="224" height="22" rx="11" fill="#111"/>
+  <rect x="364" y="414" width="168" height="22" rx="11" fill="#111"/>
+
+  <!-- Split lower fold, separated by the white diagonal cut. -->
+  <path fill="#111" d="M335 550h285L335 782z"/>
+  <path fill="#111" d="M335 818 536 648v170z"/>
+  <path d="M335 782 536 648" fill="none" stroke="#fff" stroke-width="18"/>
+
+  <!-- Magnifying glass replacing the former four-point sparkle. -->
+  <circle cx="746" cy="696" r="88" fill="#fff" stroke="#111" stroke-width="24"/>
+  <path d="m810 760 85 85" fill="none" stroke="#111" stroke-width="26" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#912C8D"/><stop offset="1" stop-color="#68A4C6"/><stop offset="0.5" stop-color="#7561D6"/></linearGradient></defs><g id="layout-shape-6" data-name="Picture Placeholder 5" data-ph-type="pic">
+<rect x="0" y="0" width="1280" height="280" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph pic idx=10</text>
+</g>
+<g id="layout-shape-2" data-name="Rectangle 1">
+<rect x="0" y="280" width="1280" height="440" fill="url(#ggrad1)" stroke="none" stroke-width="1"/>
+</g></svg>

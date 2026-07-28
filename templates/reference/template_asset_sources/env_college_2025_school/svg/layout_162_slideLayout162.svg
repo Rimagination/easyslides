@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-2" data-name="Group 1">
+<g id="layout-shape-3" data-name="Rectangle 2">
+<rect x="0" y="0" width="116.57" height="720" stroke="none" fill="#912C8D" stroke-width="1"/>
+</g>
+<g id="layout-shape-4" data-name="Freeform 3">
+<path d="M 58.29 0 L 1280 0 L 1280 417.48 C 1280 439.13 1262.45 456.69 1240.79 456.69 L 97.49 456.69 C 75.84 456.69 58.29 439.13 58.29 417.48 L 58.29 0 Z" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+</g>
+<g id="layout-shape-5" data-name="Freeform 4">
+<path d="M 51.46 456.69 L 1178.71 456.69 C 1207.13 456.69 1230.17 479.73 1230.17 508.15 L 1230.17 720 L 0 720 L 0 508.15 C 0 479.73 23.04 456.69 51.46 456.69 Z" stroke="none" fill="#912C8D" stroke-width="1"/>
+</g>
+</g>
+<g id="layout-shape-6" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="133.63" y="522.99" width="130.7" height="130.7" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="141.63" y="540.99" font-size="12" fill="#64748B">ph pic idx=10</text>
+</g></svg>

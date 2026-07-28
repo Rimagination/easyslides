@@ -1,0 +1,52 @@
+{
+  "schema_version": "easyslides.template_pack.v1",
+  "template_id": "nsfc_defense",
+  "display_name": "NSFC Defense",
+  "description": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
+  "mode": "slot_guided_mirror",
+  "source_template_id": "nsfc_defense_distilled",
+  "replication_mode": "slot_guided_mirror",
+  "recommended_template_route": "source_template_projection",
+  "output_contract": "editable-native-pptx",
+  "style_system": "nsfc_defense",
+  "layout_source_format": "svg",
+  "runtime_source_of_truth": "source_chrome_open_body_canvas_body_variants_and_named_slots",
+  "scenarios": [
+    "national_natural_science_foundation_defense",
+    "research_defense",
+    "scientific_project_report"
+  ],
+  "roles": [
+    "cover",
+    "agenda",
+    "chapter",
+    "content",
+    "ending"
+  ],
+  "layout_count": 5,
+  "variant_count": 12,
+  "component_asset_model": {
+    "component_pack_manifest": "component_pack.json",
+    "design_token_manifest": "design_tokens.json",
+    "primitive_manifest": "component_primitives.json",
+    "recipe_manifest": "body_variant_recipes.json",
+    "policy": "standard_primitives_composed_by_source_like_scene_recipes"
+  },
+  "primary_color": "#751497",
+  "emphasis_color": "#C00000",
+  "content_organization": [
+    "national_need",
+    "technical_innovation",
+    "application_benefits"
+  ],
+  "page_selection_inputs": [
+    "canonical_shell",
+    "body_variant",
+    "section",
+    "density",
+    "evidence_count"
+  ],
+  "forbidden_selection_inputs": [
+    "dom_order_only"
+  ]
+}

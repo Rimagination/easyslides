@@ -1,0 +1,60 @@
+{
+  "schema_version": "easyslides.adaptation_policy.v1",
+  "template_id": "nsfc_defense_distilled",
+  "source_graph_schema": "easyslides.source_graph.v1",
+  "default_mode": "mirror",
+  "modes": {
+    "mirror": {
+      "preserve": [
+        "slide_count",
+        "slide_order",
+        "canvas",
+        "geometry",
+        "layer_order",
+        "identity"
+      ],
+      "allow": [
+        "declared_slot_content",
+        "declared_asset_replacement"
+      ]
+    },
+    "layout": {
+      "preserve": [
+        "page_role",
+        "spatial_contract",
+        "component_relationships",
+        "identity"
+      ],
+      "allow": [
+        "controlled_page_count_change",
+        "density_variant_selection",
+        "declared_slot_replacement"
+      ]
+    },
+    "design-system": {
+      "preserve": [
+        "identity_tokens",
+        "component_contracts",
+        "slot_alignment_rules"
+      ],
+      "allow": [
+        "new_page_compositions_after_review",
+        "global_component_promotion_after_qa"
+      ]
+    }
+  },
+  "hard_rules": [
+    {
+      "rule": "text_center_y_matches_container_center_y",
+      "severity": "error"
+    },
+    {
+      "rule": "preserve_parent_transform",
+      "severity": "error"
+    },
+    {
+      "rule": "unknown_objects_require_review",
+      "severity": "error"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "easyslides.deck_plan.v1",
+  "deck_id": "nsfc-composition-gallery",
+  "template_id": "nsfc_defense",
+  "slides": [
+    {
+      "page": "P01",
+      "role": "content",
+      "section": "01",
+      "story_role": "national_need_evidence",
+      "body_variant_id": "evidence_triptych",
+      "shell_payload": {"PAGE_TITLE": "Evidence Board"},
+      "slot_payload": {"CLAIM": "Evidence converges on one finding", "PRIMARY_TITLE": "Three streams", "PRIMARY_BODY": "Monitoring, experiments, and cohorts agree.", "CAPTION": "Evidence scope"}
+    },
+    {
+      "page": "P02",
+      "role": "content",
+      "section": "01",
+      "story_role": "strategic_need_two_track",
+      "body_variant_id": "two_track_evidence",
+      "shell_payload": {"PAGE_TITLE": "Two Tracks"},
+      "slot_payload": {"PRIMARY_TITLE": "Model and field", "PRIMARY_BODY": "Paired tracks test the intervention.", "CAPTION": "Paired tracks", "EMPHASIS": "Ready to deploy"}
+    },
+    {
+      "page": "P03",
+      "role": "content",
+      "section": "01",
+      "story_role": "scientific_bottleneck",
+      "body_variant_id": "bottleneck_chain",
+      "shell_payload": {"PAGE_TITLE": "Bottleneck Chain"},
+      "slot_payload": {"PRIMARY_TITLE": "Constraint pathway", "PRIMARY_BODY": "Measure the bottleneck, then act.", "CLAIM": "Bottleneck is measurable", "EMPHASIS": "Target constraint"}
+    },
+    {
+      "page": "P04",
+      "role": "content",
+      "section": "01",
+      "story_role": "research_hotspot_metrics",
+      "body_variant_id": "hotspot_metrics",
+      "shell_payload": {"PAGE_TITLE": "Research Focus"},
+      "slot_payload": {"PRIMARY_TITLE": "Priority themes", "PRIMARY_BODY": "Metrics locate maturity and gaps.", "EMPHASIS": "Focus next study", "CAPTION": "Review indicators"}
+    },
+    {
+      "page": "P05",
+      "role": "content",
+      "section": "01",
+      "story_role": "research_hotspot_synthesis",
+      "body_variant_id": "hotspot_panels",
+      "shell_payload": {"PAGE_TITLE": "Panel Synthesis"},
+      "slot_payload": {"PRIMARY_TITLE": "Field synthesis", "PRIMARY_BODY": "Mechanisms, routes, and interventions connect.", "CAPTION": "Linked panels", "EMPHASIS": "Decision point"}
+    },
+    {
+      "page": "P06",
+      "role": "content",
+      "section": "02",
+      "story_role": "innovation_overview",
+      "body_variant_id": "innovation_evidence",
+      "shell_payload": {"PAGE_TITLE": "Innovation"},
+      "slot_payload": {"PRIMARY_TITLE": "Technical novelty", "PRIMARY_BODY": "New measurement links to performance.", "CAPTION": "Evidence map", "EMPHASIS": "Novelty verified"}
+    },
+    {
+      "page": "P07",
+      "role": "content",
+      "section": "02",
+      "story_role": "method_comparison",
+      "body_variant_id": "ann_snn_comparison",
+      "shell_payload": {"PAGE_TITLE": "Comparison"},
+      "slot_payload": {"PRIMARY_TITLE": "Method contrast", "PRIMARY_BODY": "Each method fits a distinct task.", "EMPHASIS": "Match method"}
+    },
+    {
+      "page": "P08",
+      "role": "content",
+      "section": "02",
+      "story_role": "device_mechanism_training",
+      "body_variant_id": "plasticity_training",
+      "shell_payload": {"PAGE_TITLE": "Training Flow"},
+      "slot_payload": {"PRIMARY_TITLE": "Training steps", "PRIMARY_BODY": "Update, test, and transfer the model.", "CLAIM": "Adaptation is visible", "EMPHASIS": "Validate training"}
+    },
+    {
+      "page": "P09",
+      "role": "content",
+      "section": "02",
+      "story_role": "system_architecture",
+      "body_variant_id": "network_architecture",
+      "shell_payload": {"PAGE_TITLE": "Architecture"},
+      "slot_payload": {"PRIMARY_TITLE": "Module pathway", "PRIMARY_BODY": "Signals become actionable decisions.", "CAPTION": "Information path", "EMPHASIS": "Measure modules"}
+    },
+    {
+      "page": "P10",
+      "role": "content",
+      "section": "02",
+      "story_role": "application_pipeline",
+      "body_variant_id": "sensor_application",
+      "shell_payload": {"PAGE_TITLE": "App Split"},
+      "slot_payload": {"PRIMARY_TITLE": "Sensing evidence", "PRIMARY_BODY": "Acquire reliable field signals.", "SECONDARY_1_TITLE": "Deployment metrics", "SECONDARY_1_BODY": "Report sensitivity, stability, and cost.", "CAPTION": "Sensing evidence"}
+    },
+    {
+      "page": "P11",
+      "role": "content",
+      "section": "02",
+      "story_role": "external_validation",
+      "body_variant_id": "literature_result",
+      "shell_payload": {"PAGE_TITLE": "Literature"},
+      "slot_payload": {"PRIMARY_TITLE": "External result", "PRIMARY_BODY": "Literature confirms the contribution.", "CAPTION": "Validation source", "EMPHASIS": "Testable finding"}
+    },
+    {
+      "page": "P12",
+      "role": "content",
+      "section": "03",
+      "story_role": "impact_and_benefits",
+      "body_variant_id": "application_benefits",
+      "shell_payload": {"PAGE_TITLE": "Benefits"},
+      "slot_payload": {"PRIMARY_TITLE": "Research impact", "PRIMARY_BODY": "Benefits link outputs to environmental outcomes.", "EMPHASIS": "Impact", "CAPTION": "Benefit pathway"}
+    }
+  ]
+}

@@ -4,11 +4,11 @@
 </g>
 <g id="shape-45" data-name="文本框 44">
 <rect x="240.5" y="262.45" width="805.07" height="87.13" fill="none"/>
-<text x="643.03" y="321.65" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="64" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="TITLE" data-pptx-textbox="true" data-pptx-box-x="123.03" data-pptx-box-y="254.45" data-pptx-box-w="1040" data-pptx-box-h="99.2"><tspan fill="#FFFFFF" font-size="64" font-weight="bold" letter-spacing="4">{{TITLE}}</tspan></text>
+<text x="643.03" y="321.65" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="64" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="TITLE" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="123.03" data-pptx-box-y="254.45" data-pptx-box-w="1040" data-pptx-box-h="99.2"><tspan fill="#FFFFFF" font-size="64" font-weight="bold" letter-spacing="4">{{TITLE}}</tspan></text>
 </g>
 <g id="shape-68" data-name="文本框 67">
 <rect x="180.96" y="347.62" width="918.08" height="40.53" fill="none"/>
-<text x="640" y="370.55" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑 Light&quot;, sans-serif" font-size="21.33" fill="#FFFFFF" letter-spacing="4" data-slot="SUBTITLE" data-pptx-textbox="true" data-pptx-box-x="190" data-pptx-box-y="348.15" data-pptx-box-w="900" data-pptx-box-h="36"><tspan fill="#FFFFFF" font-size="21.33" letter-spacing="4">{{SUBTITLE}}</tspan></text>
+<text x="640" y="370.55" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑 Light&quot;, sans-serif" font-size="21.33" fill="#FFFFFF" letter-spacing="4" data-slot="SUBTITLE" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="190" data-pptx-box-y="348.15" data-pptx-box-w="900" data-pptx-box-h="36"><tspan fill="#FFFFFF" font-size="21.33" letter-spacing="4">{{SUBTITLE}}</tspan></text>
 </g>
 <g id="shape-214" data-name="组合 213">
 <g id="shape-106" data-name="任意多边形: 形状 105">

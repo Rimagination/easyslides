@@ -1,0 +1,249 @@
+{
+  "schema_version": "easyslides.story_structure.v1",
+  "template_id": "nsfc_defense",
+  "default_scenario": "national_natural_science_foundation_defense",
+  "narrative_logic": [
+    "national_need_and_problem",
+    "innovation_and_technical_content",
+    "application_and_social_benefits"
+  ],
+  "recommended_flow": [
+    {
+      "page_id": "cover",
+      "svg": "01_cover.svg",
+      "story_role": "cover",
+      "archetype": "cover"
+    },
+    {
+      "page_id": "toc",
+      "svg": "02_toc.svg",
+      "story_role": "toc",
+      "archetype": "section_roadmap"
+    },
+    {
+      "page_id": "chapter",
+      "svg": "03_chapter.svg",
+      "story_role": "chapter",
+      "archetype": "chapter_divider"
+    },
+    {
+      "page_id": "content",
+      "svg": "04_content.svg",
+      "story_role": "content",
+      "archetype": "evidence_triptych_default"
+    },
+    {
+      "page_id": "ending",
+      "svg": "05_ending.svg",
+      "story_role": "ending",
+      "archetype": "ending"
+    }
+  ],
+  "sections": [
+    {
+      "section": "01",
+      "title": "立项背景和研究思路",
+      "narrative": "national need -> two research tracks -> bottleneck -> hotspot metrics -> hotspot synthesis",
+      "source_slides": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "section": "02",
+      "title": "创新点和主要技术内容",
+      "narrative": "innovation overview -> method comparison -> device mechanism and training -> system architecture -> application pipeline -> external validation",
+      "source_slides": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "section": "03",
+      "title": "应用推广和经济社会效益",
+      "narrative": "application metrics -> technology transfer evidence -> societal benefit",
+      "source_slides": [
+        16
+      ]
+    }
+  ],
+  "canonical_content_sequence": [
+    {
+      "section": "01",
+      "story_role": "national_need_evidence",
+      "body_variant_id": "evidence_triptych",
+      "source_slides": [
+        3
+      ],
+      "source_page_purpose": "Establish the need with a claim, relationship, and three converging exhibits.",
+      "required_components": [
+        "evidence_triptych"
+      ]
+    },
+    {
+      "section": "01",
+      "story_role": "strategic_need_two_track",
+      "body_variant_id": "two_track_evidence",
+      "source_slides": [
+        4
+      ],
+      "source_page_purpose": "Connect the need to complementary scientific and application tracks.",
+      "required_components": [
+        "two_track_evidence"
+      ]
+    },
+    {
+      "section": "01",
+      "story_role": "scientific_bottleneck",
+      "body_variant_id": "bottleneck_chain",
+      "source_slides": [
+        5
+      ],
+      "source_page_purpose": "Explain the bottleneck through four linked observations before stating the intervention.",
+      "required_components": [
+        "bottleneck_chain"
+      ]
+    },
+    {
+      "section": "01",
+      "story_role": "research_hotspot_metrics",
+      "body_variant_id": "hotspot_metrics",
+      "source_slides": [
+        6
+      ],
+      "source_page_purpose": "Locate the research hotspot using performance evidence and quantitative indicators.",
+      "required_components": [
+        "hotspot_metrics"
+      ]
+    },
+    {
+      "section": "01",
+      "story_role": "research_hotspot_synthesis",
+      "body_variant_id": "hotspot_panels",
+      "source_slides": [
+        7
+      ],
+      "source_page_purpose": "Synthesize three hotspot directions as linked research panels.",
+      "required_components": [
+        "hotspot_panels"
+      ]
+    },
+    {
+      "section": "02",
+      "story_role": "innovation_overview",
+      "body_variant_id": "innovation_evidence",
+      "source_slides": [
+        9
+      ],
+      "source_page_purpose": "State the innovation package as a four-step route backed by three exhibits.",
+      "required_components": [
+        "innovation_evidence"
+      ]
+    },
+    {
+      "section": "02",
+      "story_role": "method_comparison",
+      "body_variant_id": "ann_snn_comparison",
+      "source_slides": [
+        10
+      ],
+      "source_page_purpose": "Contrast baseline and event-driven methods in a decision table, then show the selection rationale.",
+      "required_components": [
+        "ann_snn_comparison"
+      ]
+    },
+    {
+      "section": "02",
+      "story_role": "device_mechanism_training",
+      "body_variant_id": "plasticity_training",
+      "source_slides": [
+        11
+      ],
+      "source_page_purpose": "Relate training behavior to device plasticity through paired mechanism evidence.",
+      "required_components": [
+        "plasticity_training"
+      ]
+    },
+    {
+      "section": "02",
+      "story_role": "system_architecture",
+      "body_variant_id": "network_architecture",
+      "source_slides": [
+        12
+      ],
+      "source_page_purpose": "Show formula-to-network-to-hardware architecture as one technical scene.",
+      "required_components": [
+        "network_architecture"
+      ]
+    },
+    {
+      "section": "02",
+      "story_role": "application_pipeline",
+      "body_variant_id": "sensor_application",
+      "source_slides": [
+        13
+      ],
+      "source_page_purpose": "Demonstrate the calibrated sensing path and the downstream system path together.",
+      "required_components": [
+        "sensor_application"
+      ]
+    },
+    {
+      "section": "02",
+      "story_role": "external_validation",
+      "body_variant_id": "literature_result",
+      "source_slides": [
+        14
+      ],
+      "source_page_purpose": "Anchor the contribution in researcher, paper, and external validation evidence.",
+      "required_components": [
+        "literature_result"
+      ]
+    },
+    {
+      "section": "03",
+      "story_role": "impact_and_benefits",
+      "body_variant_id": "application_benefits",
+      "source_slides": [
+        16
+      ],
+      "source_page_purpose": "Close with transfer evidence, performance metrics, and practical application outcome.",
+      "required_components": [
+        "application_benefits"
+      ]
+    }
+  ],
+  "generation_contract": {
+    "content_page_requires": [
+      "section",
+      "story_role",
+      "body_variant_id",
+      "PAGE_TITLE",
+      "slot_payload"
+    ],
+    "body_component_policy": "forbidden",
+    "selection_rule": "story_role and section must match the selected source-derived body variant",
+    "new_layout_rule": "A new content composition requires a reviewed source-page evidence record and a registered body variant; it cannot be assembled ad hoc."
+  },
+  "default_body_variant_sequence": [
+    "evidence_triptych",
+    "two_track_evidence",
+    "bottleneck_chain",
+    "hotspot_metrics",
+    "hotspot_panels",
+    "innovation_evidence",
+    "ann_snn_comparison",
+    "plasticity_training",
+    "network_architecture",
+    "sensor_application",
+    "literature_result",
+    "application_benefits"
+  ]
+}

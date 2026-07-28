@@ -1,0 +1,10 @@
+{
+  "schema_version": "easyslides.template_status.v1",
+  "template_id": "nsfc_defense_distilled_reusable",
+  "status": "quarantined_legacy_candidate",
+  "production_eligible": false,
+  "reason": "Source-slide roster and DOM-order slot matching are not semantic reusable-template contracts.",
+  "superseded_by": "nsfc_defense",
+  "allowed_use": "source_fidelity_review_only",
+  "forbidden_use": "new_deck_generation"
+}

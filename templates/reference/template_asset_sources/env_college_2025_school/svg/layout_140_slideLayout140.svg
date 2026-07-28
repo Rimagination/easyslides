@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-4" data-name="Rectangle 3">
+<rect x="0" y="0" width="281.22" height="720" stroke="none" fill="#912C8D" stroke-width="1"/>
+</g>
+<g id="layout-shape-5" data-name="Freeform 20">
+<rect x="216.85" y="0" width="1063.15" height="720" rx="45.54" ry="45.54" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="round" stroke="none"/>
+</g>
+<g id="layout-shape-7" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="300.31" y="86.75" width="289.3" height="199.14" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="308.31" y="104.75" font-size="12" fill="#64748B">ph pic idx=14</text>
+</g></svg>

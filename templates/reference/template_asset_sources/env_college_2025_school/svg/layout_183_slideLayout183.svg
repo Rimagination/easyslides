@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="5.33" stdDeviation="14.67" flood-color="#912C8D" flood-opacity="0.1"/></filter><linearGradient id="ggrad1" x1="0.8415" y1="1.0915" x2="0.1585" y2="-0.0915"><stop offset="0" stop-color="#5199EA"/><stop offset="0.9" stop-color="#5B84D8"/></linearGradient></defs><g id="layout-shape-8" data-name="Picture Placeholder 7" data-ph-type="pic">
+<rect x="75.13" y="154.45" width="117.86" height="117.86" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="83.13" y="172.45" font-size="12" fill="#64748B">ph pic idx=10</text>
+</g>
+<g id="layout-shape-2" data-name="Rectangle 1">
+<rect x="0" y="0" width="1280" height="65.52" fill="#FFFFFF" stroke="none" stroke-width="1" filter="url(#fx1)"/>
+</g>
+<g id="layout-shape-3" data-name="TextBox 2">
+<rect x="1017.95" y="16.32" width="226.22" height="29.08" fill="none"/>
+<text x="1027.55" y="33.58" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="1017.95" data-pptx-box-y="16.32" data-pptx-box-w="226.22" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="&quot;Montserrat Medium&quot;, &quot;等线&quot;, +mn-cs, sans-serif" font-size="14.67" fill="#595959"><tspan fill="#595959" font-size="14.67">Date Range </tspan><tspan fill="#595959" font-size="14.67">: </tspan><tspan fill="#5B9BD5" font-size="16" font-weight="bold">Q1</tspan><tspan fill="#5B9BD5" font-size="16"> Jan ~ Mar </tspan></text>
+</g>
+<g id="layout-shape-21" data-name="文本框 20">
+<rect x="13.23" y="21.15" width="109.89" height="32.31" fill="none"/>
+<text x="22.83" y="41.82" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="13.23" data-pptx-box-y="21.15" data-pptx-box-w="109.89" data-pptx-box-h="32.31" data-pptx-valign="top" font-family="&quot;微软雅黑 Light&quot;, +mn-cs, sans-serif" font-size="18.67" fill="#808080"><tspan fill="#808080" font-size="18.67">企业</tspan><tspan fill="#808080" font-size="18.67">LOGO</tspan></text>
+</g>
+<g id="layout-shape-4" data-name="Freeform 29">
+<path d="M 123.69 21.15 L 236.01 21.15 C 236.89 21.15 237.6 21.86 237.6 22.73 L 237.6 49.01 C 237.6 49.89 236.89 50.6 236.01 50.6 L 123.69 50.6 C 122.81 50.6 122.1 49.89 122.1 49.01 L 122.1 22.73 C 122.1 21.86 122.81 21.15 123.69 21.15 Z" fill="url(#ggrad1)" stroke="none" stroke-width="1"/>
+</g>
+<g id="layout-shape-5" data-name="文本框 4">
+<rect x="121.12" y="20.42" width="123.39" height="32.31" fill="none"/>
+<text x="130.72" y="41.09" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="121.12" data-pptx-box-y="20.42" data-pptx-box-w="123.39" data-pptx-box-h="32.31" data-pptx-valign="top" font-family="Arial, &quot;黑体&quot;, +mn-cs, sans-serif" font-size="18.67" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="18.67">MARKETING</tspan></text>
+</g></svg>

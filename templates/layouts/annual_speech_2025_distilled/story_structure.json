@@ -1,0 +1,152 @@
+{
+  "schema_version": "easyslides.story_structure.v1",
+  "template_id": "annual_speech_2025_distilled",
+  "default_scenario": "source_faithful_template_reuse",
+  "recommended_flow": [
+    {
+      "story_role": "cover",
+      "page_id": "01_cover",
+      "source_slide": 1
+    },
+    {
+      "story_role": "content",
+      "page_id": "02_content",
+      "source_slide": 2
+    },
+    {
+      "story_role": "content",
+      "page_id": "03_content_02",
+      "source_slide": 3
+    },
+    {
+      "story_role": "toc",
+      "page_id": "04_toc",
+      "source_slide": 4
+    },
+    {
+      "story_role": "toc",
+      "page_id": "05_toc_02",
+      "source_slide": 5
+    },
+    {
+      "story_role": "chapter",
+      "page_id": "06_chapter",
+      "source_slide": 6
+    },
+    {
+      "story_role": "chapter",
+      "page_id": "07_chapter_02",
+      "source_slide": 7
+    },
+    {
+      "story_role": "chapter",
+      "page_id": "08_chapter_03",
+      "source_slide": 8
+    },
+    {
+      "story_role": "chapter",
+      "page_id": "09_chapter_04",
+      "source_slide": 9
+    },
+    {
+      "story_role": "chapter",
+      "page_id": "10_chapter_05",
+      "source_slide": 10
+    },
+    {
+      "story_role": "content",
+      "page_id": "11_content_03",
+      "source_slide": 11
+    },
+    {
+      "story_role": "content",
+      "page_id": "12_content_04",
+      "source_slide": 12
+    },
+    {
+      "story_role": "content",
+      "page_id": "13_content_05",
+      "source_slide": 13
+    },
+    {
+      "story_role": "content",
+      "page_id": "14_content_06",
+      "source_slide": 14
+    },
+    {
+      "story_role": "content",
+      "page_id": "15_content_07",
+      "source_slide": 15
+    },
+    {
+      "story_role": "content",
+      "page_id": "16_content_08",
+      "source_slide": 16
+    },
+    {
+      "story_role": "content",
+      "page_id": "17_content_09",
+      "source_slide": 17
+    },
+    {
+      "story_role": "content",
+      "page_id": "18_content_10",
+      "source_slide": 18
+    },
+    {
+      "story_role": "content",
+      "page_id": "19_content_11",
+      "source_slide": 19
+    },
+    {
+      "story_role": "content",
+      "page_id": "20_content_12",
+      "source_slide": 20
+    },
+    {
+      "story_role": "content",
+      "page_id": "21_content_13",
+      "source_slide": 21
+    },
+    {
+      "story_role": "content",
+      "page_id": "22_content_14",
+      "source_slide": 22
+    },
+    {
+      "story_role": "content",
+      "page_id": "23_content_15",
+      "source_slide": 23
+    },
+    {
+      "story_role": "content",
+      "page_id": "24_content_16",
+      "source_slide": 24
+    },
+    {
+      "story_role": "content",
+      "page_id": "25_content_17",
+      "source_slide": 25
+    },
+    {
+      "story_role": "content",
+      "page_id": "26_content_18",
+      "source_slide": 26
+    },
+    {
+      "story_role": "ending",
+      "page_id": "27_ending",
+      "source_slide": 27
+    },
+    {
+      "story_role": "content",
+      "page_id": "28_content_19",
+      "source_slide": 28
+    },
+    {
+      "story_role": "ending",
+      "page_id": "29_ending_02",
+      "source_slide": 29
+    }
+  ]
+}

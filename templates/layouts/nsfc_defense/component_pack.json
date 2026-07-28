@@ -1,0 +1,43 @@
+{
+  "schema_version": "easyslides.template_component_pack.v1",
+  "pack_id": "template/nsfc_defense/components",
+  "template_id": "nsfc_defense",
+  "version": "1.0.0",
+  "display_name": "NSFC Defense Components",
+  "description": "Template-scoped research-defense scenes and primitives distilled from the NSFC defense source deck.",
+  "license": "source-derived-internal-use",
+  "scope": "template",
+  "dependencies": {
+    "component_packs": [
+      {
+        "pack_id": "research-core",
+        "version_range": ">=1.0.0 <2.0.0",
+        "optional": true
+      }
+    ]
+  },
+  "design_tokens": {
+    "source": "design_tokens.json",
+    "required": [
+      "color.primary",
+      "color.emphasis",
+      "surface.panel",
+      "text.primary",
+      "typography.title.font_size_px",
+      "layout.grid_px"
+    ]
+  },
+  "entrypoints": {
+    "catalog": "component_catalog.json",
+    "primitives": "component_primitives.json",
+    "recipes": "body_variant_recipes.json"
+  },
+  "qa": {
+    "required_gates": [
+      "template_component_pack_contract",
+      "component_catalog",
+      "body_variant_component_contract",
+      "vertical_center_alignment"
+    ]
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "schema_version": "easyslides.template_layout_roster.v1",
+  "template_id": "nsfc_defense_faithful_raster",
+  "source": "derived_from_layouts_page_catalog_and_story_structure",
+  "layouts": [
+    {
+      "layout_id": "NDFR-S01",
+      "source_slide": 1,
+      "page_id": "01_cover",
+      "name": "01 cover",
+      "role_fit": [
+        "cover"
+      ],
+      "page_archetype": "cover",
+      "density_score": 3,
+      "slot_model": "cover",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/01_cover.svg",
+      "layout_contract": "ndfr_s01_01_cover_contract",
+      "best_for": "opening slide that must preserve source title composition",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "NDFR-S02",
+      "source_slide": 2,
+      "page_id": "02_content",
+      "name": "02 content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 2,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/02_content.svg",
+      "layout_contract": "ndfr_s02_02_content_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "NDFR-S03",
+      "source_slide": 3,
+      "page_id": "03_content_02",
+      "name": "03 content 02",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/03_content_02.svg",
+      "layout_contract": "ndfr_s03_03_content_02_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S04",
+      "source_slide": 4,
+      "page_id": "04_content_03",
+      "name": "04 content 03",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/04_content_03.svg",
+      "layout_contract": "ndfr_s04_04_content_03_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S05",
+      "source_slide": 5,
+      "page_id": "05_content_04",
+      "name": "05 content 04",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/05_content_04.svg",
+      "layout_contract": "ndfr_s05_05_content_04_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S06",
+      "source_slide": 6,
+      "page_id": "06_content_05",
+      "name": "06 content 05",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/06_content_05.svg",
+      "layout_contract": "ndfr_s06_06_content_05_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S07",
+      "source_slide": 7,
+      "page_id": "07_content_06",
+      "name": "07 content 06",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/07_content_06.svg",
+      "layout_contract": "ndfr_s07_07_content_06_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S08",
+      "source_slide": 8,
+      "page_id": "08_content_07",
+      "name": "08 content 07",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 3,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/08_content_07.svg",
+      "layout_contract": "ndfr_s08_08_content_07_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "NDFR-S09",
+      "source_slide": 9,
+      "page_id": "09_content_08",
+      "name": "09 content 08",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/09_content_08.svg",
+      "layout_contract": "ndfr_s09_09_content_08_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S10",
+      "source_slide": 10,
+      "page_id": "10_content_09",
+      "name": "10 content 09",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/10_content_09.svg",
+      "layout_contract": "ndfr_s10_10_content_09_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S11",
+      "source_slide": 11,
+      "page_id": "11_content_10",
+      "name": "11 content 10",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/11_content_10.svg",
+      "layout_contract": "ndfr_s11_11_content_10_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S12",
+      "source_slide": 12,
+      "page_id": "12_content_11",
+      "name": "12 content 11",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/12_content_11.svg",
+      "layout_contract": "ndfr_s12_12_content_11_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S13",
+      "source_slide": 13,
+      "page_id": "13_content_12",
+      "name": "13 content 12",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/13_content_12.svg",
+      "layout_contract": "ndfr_s13_13_content_12_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S14",
+      "source_slide": 14,
+      "page_id": "14_content_13",
+      "name": "14 content 13",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/14_content_13.svg",
+      "layout_contract": "ndfr_s14_14_content_13_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S15",
+      "source_slide": 15,
+      "page_id": "15_content_14",
+      "name": "15 content 14",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 3,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/15_content_14.svg",
+      "layout_contract": "ndfr_s15_15_content_14_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "NDFR-S16",
+      "source_slide": 16,
+      "page_id": "16_content_15",
+      "name": "16 content 15",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/16_content_15.svg",
+      "layout_contract": "ndfr_s16_16_content_15_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "NDFR-S17",
+      "source_slide": 17,
+      "page_id": "17_ending",
+      "name": "17 ending",
+      "role_fit": [
+        "ending"
+      ],
+      "page_archetype": "ending",
+      "density_score": 3,
+      "slot_model": "ending",
+      "svg_path": "templates/layouts/nsfc_defense_faithful_raster/17_ending.svg",
+      "layout_contract": "ndfr_s17_17_ending_contract",
+      "best_for": "closing or acknowledgement slide that must preserve source closing composition",
+      "avoid": "content that requires moving fixed source chrome"
+    }
+  ]
+}

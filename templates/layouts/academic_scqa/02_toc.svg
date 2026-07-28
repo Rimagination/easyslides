@@ -1,36 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
   <rect x="0" y="0" width="1280" height="720" fill="#F7FAFF"/>
-  <text x="70" y="86" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="38" font-weight="700" data-slot="TOC_TITLE" data-pptx-textbox="true" data-pptx-box-x="70" data-pptx-box-y="46.1" data-pptx-box-w="780" data-pptx-box-h="58.9">{{TOC_TITLE}}</text>
+  <text x="70" y="86" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="38" font-weight="700" data-slot="TOC_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="70" data-pptx-box-y="46.1" data-pptx-box-w="780" data-pptx-box-h="58.9">{{TOC_TITLE}}</text>
   <rect x="70" y="106" width="248" height="4" fill="#00A6D6"/>
-  <text x="70" y="146" fill="#475569" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="TOC_INTRO" data-pptx-textbox="true" data-pptx-box-x="70" data-pptx-box-y="127.1" data-pptx-box-w="900" data-pptx-box-h="36">{{TOC_INTRO}}</text>
+  <text x="70" y="146" fill="#475569" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="TOC_INTRO" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="70" data-pptx-box-y="127.1" data-pptx-box-w="900" data-pptx-box-h="36">{{TOC_INTRO}}</text>
   <g id="toc-logo" data-slot="LOGO" data-slot-type="image" data-logo-fallback="degree-cap-icon" data-pptx-box-x="1096" data-pptx-box-y="44" data-pptx-box-w="102" data-pptx-box-h="50">
     <rect x="1096" y="44" width="102" height="50" fill="none" stroke="none"/>
     <path d="M1112 68 L1147 52 L1182 68 L1147 83 Z" fill="#0046A5"/>
     <path d="M1128 76 L1128 87 Q1147 96 1166 87 L1166 76" fill="none" stroke="#00A6D6" stroke-width="4" stroke-linecap="round"/>
     <path d="M1182 68 L1182 83" fill="none" stroke="#17A889" stroke-width="3" stroke-linecap="round"/>
     <circle cx="1182" cy="86" r="3" fill="#17A889"/>
-    <text x="1096" y="44" fill="#0046A5" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1" data-pptx-textbox="true" data-pptx-box-x="1096" data-pptx-box-y="6.2" data-pptx-box-w="170" data-pptx-box-h="54">{{LOGO}}</text>
+    <text x="1096" y="44" fill="#0046A5" fill-opacity="0" font-family="Microsoft YaHei, Arial, sans-serif" font-size="1" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="1096" data-pptx-box-y="6.2" data-pptx-box-w="170" data-pptx-box-h="54">{{LOGO}}</text>
   </g>
   <rect x="70" y="205" width="520" height="90" fill="#FFFFFF" stroke="#D6E4F5" stroke-width="1" rx="6"/>
   <text x="108" y="260" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700">01</text>
   <rect x="178" y="228" width="6" height="44" fill="#17A889" rx="3"/>
-  <text x="210" y="258" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_1_TITLE" data-pptx-textbox="true" data-pptx-box-x="210" data-pptx-box-y="234.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_1_TITLE}}</text>
+  <text x="210" y="258" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_1_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="210" data-pptx-box-y="234.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_1_TITLE}}</text>
   <rect x="690" y="205" width="520" height="90" fill="#FFFFFF" stroke="#D6E4F5" stroke-width="1" rx="6"/>
   <text x="728" y="260" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700">02</text>
   <rect x="798" y="228" width="6" height="44" fill="#17A889" rx="3"/>
-  <text x="830" y="258" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_2_TITLE" data-pptx-textbox="true" data-pptx-box-x="760" data-pptx-box-y="234.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_2_TITLE}}</text>
+  <text x="830" y="258" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_2_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="234.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_2_TITLE}}</text>
   <rect x="70" y="333" width="520" height="90" fill="#FFFFFF" stroke="#D6E4F5" stroke-width="1" rx="6"/>
   <text x="108" y="388" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700">03</text>
   <rect x="178" y="356" width="6" height="44" fill="#17A889" rx="3"/>
-  <text x="210" y="386" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_3_TITLE" data-pptx-textbox="true" data-pptx-box-x="210" data-pptx-box-y="362.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_3_TITLE}}</text>
+  <text x="210" y="386" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_3_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="210" data-pptx-box-y="362.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_3_TITLE}}</text>
   <rect x="690" y="333" width="520" height="90" fill="#FFFFFF" stroke="#D6E4F5" stroke-width="1" rx="6"/>
   <text x="728" y="388" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700">04</text>
   <rect x="798" y="356" width="6" height="44" fill="#17A889" rx="3"/>
-  <text x="830" y="386" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_4_TITLE" data-pptx-textbox="true" data-pptx-box-x="760" data-pptx-box-y="362.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_4_TITLE}}</text>
+  <text x="830" y="386" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_4_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="362.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_4_TITLE}}</text>
   <rect x="70" y="461" width="1140" height="90" fill="#FFFFFF" stroke="#D6E4F5" stroke-width="1" rx="6"/>
   <text x="108" y="516" fill="#0046A5" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" font-weight="700">05</text>
   <rect x="178" y="484" width="6" height="44" fill="#17A889" rx="3"/>
-  <text x="210" y="514" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_5_TITLE" data-pptx-textbox="true" data-pptx-box-x="210" data-pptx-box-y="490.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_5_TITLE}}</text>
+  <text x="210" y="514" fill="#334155" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="600" data-slot="TOC_ITEM_5_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="210" data-pptx-box-y="490.9" data-pptx-box-w="520" data-pptx-box-h="34.1">{{TOC_ITEM_5_TITLE}}</text>
   <rect x="70" y="642" width="1140" height="2" fill="#D6E4F5"/>
 </svg>
 

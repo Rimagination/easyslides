@@ -251,6 +251,7 @@ def add_text(
         attrib["data-pptx-box-y"] = box[1]
         attrib["data-pptx-box-w"] = box[2]
         attrib["data-pptx-box-h"] = box[3]
+        attrib["data-pptx-valign"] = "middle" if anchor == "middle" else "top"
     node = sub(parent, "text", attrib)
     dy = line_height if line_height is not None else size * 1.35
     for idx, line in enumerate(lines):

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.21" stop-color="#FFFFFF" /><stop offset="1" stop-color="#FFFFFF" stop-opacity="0.85" /></linearGradient><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.2" /></filter><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="2.83" dy="2.83" stdDeviation="3.33" flood-color="#02223D" flood-opacity="0.3" /></filter><filter id="fx3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="2.83" dy="2.83" stdDeviation="3.33" flood-color="#02223D" flood-opacity="0.3" /></filter></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-name="图片 6">
+<image href="assets/image1_fx_1bd44e6e.webp" x="0.33" y="0" width="1279.34" height="720" preserveAspectRatio="none" opacity="0" data-source-background-hidden="true" />
+</g>
+<g id="shape-42" data-name="图片 41">
+<image href="assets/image1_fx_1bd44e6e.webp" x="0.33" y="17" width="1279.34" height="703" preserveAspectRatio="none" opacity="0" data-source-background-hidden="true" />
+</g>
+<g id="shape-3" data-name="矩形 2">
+<rect x="0" y="0" width="1282.15" height="720" fill="url(#ggrad1)" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-41" data-name="矩形: 圆顶角 40">
+<path d="M 117.92 90.4 L 1161.79 90.4 A 18.26 18.26 0 0 1 1180.05 108.65 L 1180.05 624.86 A 10.67 10.67 0 0 1 1169.38 635.53 L 110.33 635.53 A 10.67 10.67 0 0 1 99.66 624.86 L 99.66 108.65 A 18.26 18.26 0 0 1 117.92 90.4 Z" data-pptx-prst="round2SameRect" data-pptx-adj1="3349" data-pptx-adj2="1957" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx1)" />
+</g>
+<g id="shape-4" data-name="组合 3">
+<g id="shape-5" data-name="任意多边形: 形状 4">
+<path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 40.01 0 141.17 C 0 185.14 0 -1.11 0 -1.11 Z" fill="#751497" fill-opacity="0.2" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-6" data-name="任意多边形: 形状 5">
+<path d="M 0 -1.11 L 247.51 -1.11 C 247.51 -1.11 76.86 20.22 0 121.39 C 0 165.35 0 -1.11 0 -1.11 Z" fill="#751497" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx2)" />
+</g>
+</g>
+<g id="shape-7" data-name="组合 6" transform="rotate(180 1157.6 644.18)">
+<g id="shape-8" data-name="任意多边形: 形状 7">
+<path d="M 1033.84 571 L 1281.35 571 C 1281.35 571 1110.7 612.12 1033.84 713.28 C 1033.84 757.25 1033.84 571 1033.84 571 Z" fill="#751497" fill-opacity="0.2" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-9" data-name="任意多边形: 形状 8">
+<path d="M 1033.84 568.36 L 1281.35 568.36 C 1281.35 568.36 1110.7 589.69 1033.84 690.86 C 1033.84 734.82 1033.84 568.36 1033.84 568.36 Z" fill="#751497" stroke-width="1" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx3)" />
+</g>
+</g>
+<g id="shape-82" data-name="组合 81">
+<g id="shape-14" data-name="PA-圆角矩形 5824">
+<rect x="452.37" y="183.48" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" />
+</g>
+<g id="shape-15" data-name="直接连接符 14">
+<line x1="722.63" y1="183.48" x2="821.68" y2="183.48" stroke-width="3.333" stroke-linecap="round" stroke="#751497" fill="#751497" />
+</g>
+<g id="shape-17" data-name="直接连接符 16">
+<line x1="572.68" y1="201.8" x2="572.68" y2="252.44" stroke-width="1" stroke="#751497" fill="#751497" />
+</g>
+<g id="shape-18" data-name="矩形 17">
+<rect x="590.7" y="194.64" width="402.27" height="64.97" fill="none" />
+<text x="597.89" y="242.05" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.7" data-pptx-box-y="183.48" data-pptx-box-w="402.27" data-pptx-box-h="87.28" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#751497" data-slot-id="slide-02_group_4" data-center-lock="true">{{PAGE_TITLE}}</text>
+</g>
+<g id="shape-19" data-name="标题占位符 27">
+<rect x="489.02" y="190.05" width="65.63" height="72.14" fill="none" />
+<text x="521.83" y="239.46" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="489.02" data-pptx-box-y="190.05" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#751497" data-slot-id="slide-02_text_67" data-center-lock="true">{{BODY_TEXT_01}}</text>
+</g>
+</g>
+<g id="shape-81" data-name="组合 80">
+<g id="shape-20" data-name="PA-圆角矩形 5824">
+<rect x="452.37" y="314.34" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" />
+</g>
+<g id="shape-21" data-name="直接连接符 20">
+<line x1="722.63" y1="314.34" x2="821.68" y2="314.34" stroke-width="3.333" stroke-linecap="round" stroke="#D9D9D9" fill="#751497" />
+</g>
+<g id="shape-23" data-name="直接连接符 22">
+<line x1="572.68" y1="332.66" x2="572.68" y2="383.3" stroke-width="1" stroke="#D9D9D9" fill="#751497" />
+</g>
+<g id="shape-24" data-name="矩形 23">
+<rect x="590.7" y="325.49" width="445.36" height="64.97" fill="none" />
+<text x="597.89" y="372.91" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.7" data-pptx-box-y="314.34" data-pptx-box-w="445.36" data-pptx-box-h="87.28" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#D9D9D9" data-slot-id="slide-02_text_82" data-center-lock="true">{{BODY_TEXT_02}}</text>
+</g>
+<g id="shape-25" data-name="标题占位符 27">
+<rect x="488.61" y="320.91" width="65.63" height="72.14" fill="none" />
+<text x="521.43" y="370.31" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="488.61" data-pptx-box-y="320.91" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#D9D9D9" data-slot-id="slide-02_text_81" data-center-lock="true">{{BODY_TEXT_03}}</text>
+</g>
+</g>
+<g id="shape-80" data-name="组合 79">
+<g id="shape-26" data-name="PA-圆角矩形 5824">
+<rect x="452.37" y="445.19" width="639.57" height="87.28" rx="43.64" ry="43.64" fill="#FFFFFF" stroke-width="0" stroke="#D9D9D9" />
+</g>
+<g id="shape-27" data-name="直接连接符 26">
+<line x1="722.63" y1="445.19" x2="821.68" y2="445.19" stroke-width="3.333" stroke-linecap="round" stroke="#D9D9D9" fill="#751497" />
+</g>
+<g id="shape-29" data-name="直接连接符 28">
+<line x1="572.68" y1="463.51" x2="572.68" y2="514.15" stroke-width="1" stroke="#D9D9D9" fill="#751497" />
+</g>
+<g id="shape-30" data-name="矩形 29">
+<rect x="590.7" y="456.35" width="488.44" height="64.97" fill="none" />
+<text x="597.89" y="503.76" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="590.7" data-pptx-box-y="445.19" data-pptx-box-w="488.44" data-pptx-box-h="87.28" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, &quot;思源黑体 CN Medium&quot;, sans-serif" font-size="42.67" fill="#D9D9D9" data-slot-id="slide-02_text_80" data-center-lock="true">{{BODY_TEXT_04}}</text>
+</g>
+<g id="shape-31" data-name="标题占位符 27">
+<rect x="488.61" y="451.76" width="65.63" height="72.14" fill="none" />
+<text x="521.43" y="501.17" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="488.61" data-pptx-box-y="451.76" data-pptx-box-w="65.63" data-pptx-box-h="72.14" data-pptx-valign="middle" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="53.33" fill="#D9D9D9" data-slot-id="slide-02_group_7" data-center-lock="true">{{BODY_TEXT_05}}</text>
+</g>
+</g>
+<g id="shape-67" data-name="组合 66">
+<g id="shape-11" data-name="文本框 10" transform="rotate(90 222.39 422.95)">
+<path d="M 330.75 416.59 C 330.75 414.76 331.04 413.22 331.61 411.97 C 332.18 410.72 333 409.71 334.07 408.95 C 335.14 408.18 336.43 407.64 337.95 407.32 C 339.47 407.01 341.16 406.85 343.02 406.85 C 344.98 406.85 346.6 406.96 347.89 407.19 C 349.19 407.41 350.27 407.68 351.14 407.98 L 351.14 415.15 C 350.81 415.03 350.34 414.91 349.72 414.79 C 349.1 414.67 348.43 414.56 347.71 414.45 C 346.99 414.35 346.25 414.26 345.5 414.18 C 344.75 414.1 344.06 414.07 343.43 414.07 C 341.98 414.07 340.95 414.24 340.34 414.59 C 339.72 414.93 339.41 415.48 339.41 416.23 C 339.41 416.59 339.47 416.89 339.57 417.13 C 339.68 417.38 339.89 417.59 340.22 417.79 C 340.56 417.98 341.02 418.17 341.62 418.35 C 342.22 418.53 343.01 418.74 343.97 418.98 C 345.92 419.5 347.48 420.05 348.64 420.65 C 349.79 421.25 350.67 421.95 351.28 422.73 C 351.88 423.51 352.27 424.43 352.45 425.48 C 352.63 426.53 352.72 427.76 352.72 429.18 C 352.72 430.74 352.51 432.13 352.09 433.35 C 351.67 434.57 350.97 435.6 349.99 436.44 C 349.01 437.28 347.71 437.93 346.09 438.38 C 344.46 438.83 342.43 439.06 340 439.06 C 338.25 439.06 336.59 438.95 335.01 438.74 C 333.44 438.53 332.09 438.29 330.98 438.02 L 330.98 430.31 C 331.49 430.46 332.09 430.61 332.78 430.76 C 333.47 430.91 334.2 431.04 334.97 431.14 C 335.74 431.25 336.51 431.33 337.29 431.39 C 338.07 431.45 338.81 431.48 339.5 431.48 C 340.44 431.48 341.18 431.43 341.74 431.34 C 342.29 431.25 342.72 431.11 343.02 430.91 C 343.32 430.72 343.52 430.46 343.61 430.13 C 343.7 429.79 343.74 429.39 343.74 428.91 C 343.74 428.58 343.69 428.28 343.59 428.01 C 343.48 427.73 343.27 427.49 342.95 427.26 C 342.64 427.04 342.19 426.81 341.6 426.58 C 341.01 426.36 340.22 426.13 339.23 425.89 C 337.52 425.49 336.11 425.05 335.01 424.55 C 333.92 424.06 333.05 423.45 332.42 422.73 C 331.79 422.01 331.35 421.16 331.11 420.18 C 330.87 419.2 330.75 418.01 330.75 416.59 Z M 299.42 415.15 L 299.42 407.3 L 323.28 407.3 L 323.28 415.15 L 315.79 415.15 L 315.79 438.61 L 306.86 438.61 L 306.86 415.15 Z M 262.02 438.61 L 262.02 407.3 L 275.56 407.3 L 282.05 426.92 L 282.32 426.92 L 282.32 407.3 L 291.07 407.3 L 291.07 438.61 L 278.58 438.61 L 271.14 417.68 L 270.86 417.68 L 270.86 438.61 Z M 232.89 438.61 L 232.89 407.3 L 253.33 407.3 L 253.33 415.06 L 241.87 415.06 L 241.87 419.03 L 252.38 419.03 L 252.38 426.47 L 241.87 426.47 L 241.87 430.89 L 253.6 430.89 L 253.6 438.61 Z M 200.75 415.15 L 200.75 407.3 L 224.61 407.3 L 224.61 415.15 L 217.12 415.15 L 217.12 438.61 L 208.19 438.61 L 208.19 415.15 Z M 163.35 438.61 L 163.35 407.3 L 176.88 407.3 L 183.38 426.92 L 183.65 426.92 L 183.65 407.3 L 192.4 407.3 L 192.4 438.61 L 179.91 438.61 L 172.46 417.68 L 172.19 417.68 L 172.19 438.61 Z M 133.48 422.95 C 133.48 424.64 133.56 426.04 133.71 427.15 C 133.86 428.26 134.13 429.16 134.52 429.83 C 134.91 430.51 135.45 430.98 136.12 431.25 C 136.8 431.52 137.68 431.66 138.76 431.66 C 139.84 431.66 140.72 431.52 141.4 431.25 C 142.08 430.98 142.62 430.51 143.02 429.83 C 143.43 429.16 143.71 428.26 143.86 427.15 C 144.01 426.04 144.08 424.64 144.08 422.95 C 144.08 421.24 144.01 419.82 143.86 418.69 C 143.71 417.56 143.43 416.66 143.02 415.98 C 142.62 415.31 142.08 414.83 141.4 414.54 C 140.72 414.26 139.84 414.11 138.76 414.11 C 137.68 414.11 136.8 414.26 136.12 414.54 C 135.45 414.83 134.91 415.31 134.52 415.98 C 134.13 416.66 133.86 417.56 133.71 418.69 C 133.56 419.82 133.48 421.24 133.48 422.95 Z M 124.01 422.95 C 124.01 419.74 124.34 417.09 125 415.01 C 125.66 412.94 126.63 411.29 127.89 410.08 C 129.15 408.86 130.7 408.02 132.54 407.55 C 134.37 407.08 136.45 406.85 138.76 406.85 C 141.11 406.85 143.19 407.08 145.01 407.55 C 146.83 408.02 148.37 408.86 149.63 410.08 C 150.89 411.29 151.86 412.94 152.52 415.01 C 153.18 417.09 153.51 419.74 153.51 422.95 C 153.51 426.17 153.18 428.82 152.52 430.91 C 151.86 433 150.89 434.65 149.63 435.85 C 148.37 437.06 146.83 437.89 145.01 438.36 C 143.19 438.82 141.11 439.06 138.76 439.06 C 136.45 439.06 134.37 438.82 132.54 438.36 C 130.7 437.89 129.15 437.06 127.89 435.85 C 126.63 434.65 125.66 433 125 430.91 C 124.34 428.82 124.01 426.17 124.01 422.95 Z M 92.06 422.95 C 92.06 419.95 92.42 417.41 93.14 415.35 C 93.86 413.29 94.89 411.63 96.23 410.37 C 97.57 409.11 99.19 408.2 101.08 407.66 C 102.98 407.12 105.1 406.85 107.44 406.85 C 108.98 406.85 110.4 406.95 111.73 407.14 C 113.05 407.34 114.19 407.62 115.15 407.98 L 115.15 415.6 C 113.05 414.82 110.72 414.43 108.16 414.43 C 107.02 414.43 106.06 414.57 105.28 414.86 C 104.49 415.14 103.85 415.62 103.34 416.28 C 102.83 416.94 102.46 417.82 102.23 418.92 C 102.01 420.01 101.89 421.36 101.89 422.95 C 101.89 424.64 102.02 426.02 102.28 427.1 C 102.53 428.19 102.92 429.04 103.45 429.65 C 103.98 430.27 104.64 430.7 105.43 430.94 C 106.23 431.18 107.19 431.3 108.3 431.3 C 109.47 431.3 110.67 431.22 111.88 431.05 C 113.1 430.88 114.31 430.59 115.52 430.17 L 115.52 437.79 C 114.55 438.15 113.4 438.46 112.04 438.7 C 110.69 438.94 109.29 439.06 107.85 439.06 C 105.44 439.06 103.27 438.83 101.33 438.38 C 99.39 437.93 97.74 437.11 96.37 435.92 C 95 434.73 93.94 433.09 93.19 431 C 92.44 428.91 92.06 426.23 92.06 422.95 Z" fill="none" stroke="#751497" stroke-opacity="0.4" />
+</g>
+<g id="shape-66" data-name="文本框 65">
+<rect x="262.88" y="143.26" width="135.71" height="426.22" fill="none" />
+</g>
+<g id="shape-66-text" data-name="文本框 65 text">
+<text x="330.74" y="236.37" text-anchor="middle" xml:space="preserve" font-family="&quot;思源宋体 CN Heavy&quot;, sans-serif" font-size="96" fill="#751497" />
+</g>
+</g></svg>

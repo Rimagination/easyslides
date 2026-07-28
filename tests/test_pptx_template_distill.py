@@ -124,6 +124,8 @@ class PptxTemplateDistillTests(unittest.TestCase):
         self.assertEqual(badge.attrib["data-pptx-valign"], "middle")
         center = float(badge.attrib["data-pptx-box-y"]) + float(badge.attrib["data-pptx-box-h"]) / 2
         self.assertAlmostEqual(center, 222.0)
+        self.assertAlmostEqual(float(badge.attrib["data-pptx-box-y"]), 200.0)
+        self.assertAlmostEqual(float(badge.attrib["data-pptx-box-h"]), 44.0)
         self.assertEqual(title.attrib["data-pptx-valign"], "top")
         self.assertEqual(status.attrib["data-pptx-valign"], "middle")
 
@@ -155,6 +157,27 @@ class PptxTemplateDistillTests(unittest.TestCase):
         self.assertEqual(containers[0]["x"], 90)
         self.assertEqual(containers[0]["height"], 220)
 
+    def test_svg_rectangles_use_parent_transform_for_container_geometry(self):
+        from scripts.pptx_template_distill import svg_rectangles
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rotated.svg"
+            path.write_text(
+                '<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">'
+                '<g transform="rotate(90 200 200)">'
+                '<rect x="150" y="100" width="100" height="200" fill="#FFFFFF"/>'
+                '</g></svg>',
+                encoding="utf-8",
+            )
+
+            rects = svg_rectangles(path)
+
+        self.assertEqual(len(rects), 1)
+        self.assertAlmostEqual(rects[0]["x"], 100)
+        self.assertAlmostEqual(rects[0]["y"], 150)
+        self.assertAlmostEqual(rects[0]["width"], 200)
+        self.assertAlmostEqual(rects[0]["height"], 100)
+
     def test_top_chrome_gradient_strip_is_protected_not_container(self):
         from scripts.pptx_template_distill import infer_containers, infer_protected_regions
 
@@ -184,6 +207,41 @@ class PptxTemplateDistillTests(unittest.TestCase):
         self.assertEqual(len(containers), 1)
         self.assertEqual(containers[0]["y"], 110)
 
+    def test_left_nav_contract_excludes_light_active_label_surface(self):
+        from scripts.pptx_template_distill import infer_protected_regions
+
+        protected = infer_protected_regions(
+            [
+                {"x": 0, "y": 0, "width": 214, "height": 720, "fill": "#911D22"},
+                {"x": 0, "y": 207, "width": 214, "height": 59, "fill": "#FFFFFF"},
+            ],
+            width=1280,
+            height=720,
+        )
+
+        assert [region["id"] for region in protected] == ["left_nav_01", "left_nav_02"]
+        assert protected[0]["height"] == 207
+        assert protected[1]["y"] == 266
+
+    def test_navigation_text_colors_follow_active_label_surface(self):
+        from scripts.pptx_template_distill import normalize_navigation_text_colors
+
+        svg = (
+            '<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">'
+            '<rect x="0" y="0" width="214" height="720" fill="#911D22"/>'
+            '<rect x="0" y="200" width="214" height="60" fill="#FFFFFF"/>'
+            '<text x="30" y="100" data-pptx-box-x="30" data-pptx-box-y="80" data-pptx-box-w="150" data-pptx-box-h="30" fill="#000000">Inactive</text>'
+            '<text x="30" y="230" data-pptx-box-x="30" data-pptx-box-y="210" data-pptx-box-w="150" data-pptx-box-h="30" fill="#000000">Active</text>'
+            '</svg>'
+        )
+
+        normalized = normalize_navigation_text_colors(svg)
+        root = ET.fromstring(normalized)
+        text_by_value = {"".join(node.itertext()): node for node in root.iter() if node.tag.endswith("text")}
+        assert text_by_value["Inactive"].attrib["fill"] == "#FFFFFF"
+        assert text_by_value["Active"].attrib["fill"] == "#911D22"
+        assert all(node.attrib.get("data-pptx-fixed-chrome") == "true" for node in text_by_value.values())
+
     def test_writes_distilled_spec_and_slot_guided_template_pack(self):
         from scripts.pptx_template_distill import build_from_reference_workspace
 
@@ -200,17 +258,55 @@ class PptxTemplateDistillTests(unittest.TestCase):
             )
 
             distilled = json.loads((source_workspace / "distilled_spec.json").read_text(encoding="utf-8"))
+            source_graph = json.loads((source_workspace / "source_graph.json").read_text(encoding="utf-8"))
+            distill_manifest = json.loads((source_workspace / "distill_manifest.json").read_text(encoding="utf-8"))
+            identity_spec = json.loads((source_workspace / "identity_spec.json").read_text(encoding="utf-8"))
+            layout_spec = json.loads((source_workspace / "layout_spec.json").read_text(encoding="utf-8"))
+            component_catalog = json.loads((source_workspace / "component_catalog.json").read_text(encoding="utf-8"))
+            slot_contracts = json.loads((source_workspace / "slot_contracts.json").read_text(encoding="utf-8"))
+            asset_provenance = json.loads((source_workspace / "asset_provenance.json").read_text(encoding="utf-8"))
+            adaptation_policy = json.loads((source_workspace / "adaptation_policy.json").read_text(encoding="utf-8"))
+            review_queue = json.loads((source_workspace / "review_queue.json").read_text(encoding="utf-8"))
+            design_system_pack = json.loads((source_workspace / "design_system_pack.json").read_text(encoding="utf-8"))
+            registry_fragment = json.loads((source_workspace / "component_registry_fragment.json").read_text(encoding="utf-8"))
+            projection_manifest = json.loads((source_workspace / "projection_manifest.json").read_text(encoding="utf-8"))
             rebuild_plan = json.loads((source_workspace / "editable_rebuild_plan.json").read_text(encoding="utf-8"))
             adaptation = json.loads((source_workspace / "adaptation_strategy.json").read_text(encoding="utf-8"))
             source_geometry = json.loads((source_workspace / "source_geometry_risks.json").read_text(encoding="utf-8"))
             design_spec = (template_dir / "design_spec.md").read_text(encoding="utf-8")
             layouts = json.loads((template_dir / "layouts.json").read_text(encoding="utf-8"))
+            body_variants = json.loads((template_dir / "body_variants.json").read_text(encoding="utf-8"))
+            source_page_roster = json.loads((template_dir / "source_page_roster.json").read_text(encoding="utf-8"))
             catalog = json.loads((template_dir / "page_catalog.json").read_text(encoding="utf-8"))
             geometry = json.loads((template_dir / "geometry_contract.json").read_text(encoding="utf-8"))
             template = json.loads((template_dir / "template.json").read_text(encoding="utf-8"))
+            promotion_report = json.loads((source_workspace / "promotion_report.json").read_text(encoding="utf-8"))
             language_report_exists = (source_workspace / "template_language.md").exists()
 
         self.assertEqual(result["template_id"], "fixture_distilled")
+        self.assertEqual(result["source_graph"], str(source_workspace / "source_graph.json"))
+        self.assertEqual(result["distill_manifest"], str(source_workspace / "distill_manifest.json"))
+        self.assertEqual(source_graph["schema_version"], "easyslides.source_graph.v1")
+        self.assertEqual(source_graph["status"], "manifest_only")
+        self.assertEqual(distill_manifest["stage"], "phase_5_qa_and_promotion")
+        self.assertEqual(identity_spec["schema_version"], "easyslides.identity_spec.v1")
+        self.assertEqual(layout_spec["schema_version"], "easyslides.layout_spec.v1")
+        self.assertEqual(component_catalog["schema_version"], "easyslides.pptx_component_catalog.v1")
+        self.assertEqual(slot_contracts["schema_version"], "easyslides.pptx_slot_contracts.v1")
+        self.assertEqual(asset_provenance["schema_version"], "easyslides.asset_provenance.v1")
+        self.assertEqual(adaptation_policy["default_mode"], "mirror")
+        self.assertEqual(review_queue["status"], "open")
+        self.assertEqual(design_system_pack["schema_version"], "easyslides.pptx_design_system_pack.v1")
+        self.assertEqual(design_system_pack["installability"], "source_template_only")
+        self.assertEqual(registry_fragment["schema_version"], "easyslides.component_registry_fragment.v1")
+        self.assertEqual(result["design_system_pack"]["design_system_pack"], str(source_workspace / "design_system_pack.json"))
+        self.assertEqual(projection_manifest["schema_version"], "easyslides.pptx_projection_manifest.v1")
+        self.assertEqual(result["projection_manifest"], str(source_workspace / "projection_manifest.json"))
+        self.assertEqual(result["promotion_report"], str(source_workspace / "promotion_report.json"))
+        self.assertEqual(promotion_report["schema_version"], "easyslides.pptx_distill_promotion_report.v1")
+        self.assertEqual(promotion_report["status"], "fail")
+        self.assertFalse(promotion_report["promotable"])
+        self.assertIn("semantic_contracts", result)
         self.assertEqual(distilled["source"]["slide_size"], [1280, 720])
         self.assertTrue(distilled["identity_must_preserve"])
         self.assertIn("forbidden_drift", distilled)
@@ -236,14 +332,32 @@ class PptxTemplateDistillTests(unittest.TestCase):
         self.assertIn("blocking_count", source_geometry)
         self.assertEqual(result["source_geometry_risks"], str(source_workspace / "source_geometry_risks.json"))
         self.assertEqual(layouts["global_contract"]["replication_mode"], "slot_guided_mirror")
+        self.assertEqual(
+            layouts["global_contract"]["canonical_shell_policy"],
+            "evidence_driven_three_to_five_stable_shells",
+        )
+        self.assertEqual(layouts["global_contract"]["canonical_shell_limit"], 5)
+        self.assertEqual(layouts["global_contract"]["active_shell_roles"], ["cover", "content", "ending"])
         self.assertEqual(len(layouts["pages"]), 3)
+        self.assertEqual(len(layouts["shells"]), 3)
+        self.assertEqual(len(body_variants["variants"]), 1)
+        self.assertEqual(body_variants["variants"][0]["component_refs"], [])
+        self.assertEqual(
+            body_variants["variants"][0]["composition_mode"],
+            "source_measured_open_composition",
+        )
+        self.assertEqual(len(source_page_roster["pages"]), 3)
+        self.assertEqual(result["slide_count"], 3)
+        self.assertEqual(result["source_slide_count"], 3)
         self.assertEqual(layouts["pages"][0]["story_role"], "cover")
         self.assertEqual(layouts["pages"][1]["story_role"], "content")
+        self.assertFalse((template_dir / "02_toc.svg").exists())
+        self.assertFalse((template_dir / "03_chapter.svg").exists())
         self.assertIn("PAGE_TITLE", {slot["slot_id"] for slot in layouts["slot_models"]["content"]})
         self.assertIn("placeholders:", design_spec)
         self.assertIn("{{PAGE_TITLE}}", design_spec)
         frontmatter = design_spec.split("\n---\n", 1)[0]
-        self.assertIn('"02_content": ["{{PAGE_TITLE}}", "{{BODY_TEXT_01}}", "{{IMAGE_01}}"]', frontmatter)
+        self.assertIn('"04_content":', frontmatter)
         self.assertEqual(catalog["pages"][1]["source_slide"], 2)
         self.assertEqual(geometry["schema_version"], "easyslides.template_geometry_contract.v1")
         self.assertEqual(len(geometry["pages"]), 3)

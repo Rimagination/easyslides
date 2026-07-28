@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#F7F8FA"/>
+  <rect x="38" y="30" width="1204" height="660" rx="18" fill="#FFFFFF" stroke="#D7DDE5"/>
+  <rect x="38" y="30" width="1204" height="86" rx="18" fill="#172033"/>
+  <rect x="38" y="98" width="1204" height="18" fill="#172033"/>
+  <text x="70" y="68" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">process_timeline</text>
+  <text x="70" y="94" font-family="Aptos, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#B7C3D3">story: dense | center-locked text slots</text>
+  <rect x="1040" y="54" width="128" height="34" rx="17" fill="#0F7B55"/><text x="1104" y="77" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">PASS</text>
+  <line x1="104" y1="318" x2="1176" y2="318" stroke="#9CB6C9" stroke-width="4" stroke-dasharray="8 12"/>
+  <rect x="96.0" y="238" width="254.0" height="250" rx="12" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="114.0" y="208" width="58" height="58" rx="29" fill="#145F8F"/>
+  <text x="143.0" y="245" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">1</text>
+  <text data-pptx-textbox="true" data-pptx-box-x="116.0" data-pptx-box-y="292.0" data-pptx-box-w="214.0" data-pptx-box-h="56.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="title" x="223.0" y="320.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#172033"><tspan x="223.0" y="320.0">Collect</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="116.0" data-pptx-box-y="372.0" data-pptx-box-w="214.0" data-pptx-box-h="84.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="body" x="223.0" y="414.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="500" fill="#4B5B6D"><tspan x="223.0" y="404.0">Gather paper and</tspan><tspan x="223.0" y="424.0">figures.</tspan></text>
+  <rect x="374.0" y="238" width="254.0" height="250" rx="12" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="392.0" y="208" width="58" height="58" rx="29" fill="#145F8F"/>
+  <text x="421.0" y="245" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">2</text>
+  <text data-pptx-textbox="true" data-pptx-box-x="394.0" data-pptx-box-y="292.0" data-pptx-box-w="214.0" data-pptx-box-h="56.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="title" x="501.0" y="320.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#172033"><tspan x="501.0" y="320.0">Normalize</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="394.0" data-pptx-box-y="372.0" data-pptx-box-w="214.0" data-pptx-box-h="84.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="body" x="501.0" y="414.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="500" fill="#4B5B6D"><tspan x="501.0" y="404.0">Convert sources to</tspan><tspan x="501.0" y="424.0">Markdown.</tspan></text>
+  <rect x="652.0" y="238" width="254.0" height="250" rx="12" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="670.0" y="208" width="58" height="58" rx="29" fill="#145F8F"/>
+  <text x="699.0" y="245" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">3</text>
+  <text data-pptx-textbox="true" data-pptx-box-x="672.0" data-pptx-box-y="292.0" data-pptx-box-w="214.0" data-pptx-box-h="56.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="title" x="779.0" y="320.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#172033"><tspan x="779.0" y="320.0">Select</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="672.0" data-pptx-box-y="372.0" data-pptx-box-w="214.0" data-pptx-box-h="84.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="body" x="779.0" y="414.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="500" fill="#4B5B6D"><tspan x="779.0" y="404.0">Select by role and</tspan><tspan x="779.0" y="424.0">shape.</tspan></text>
+  <rect x="930.0" y="238" width="254.0" height="250" rx="12" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="948.0" y="208" width="58" height="58" rx="29" fill="#145F8F"/>
+  <text x="977.0" y="245" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">4</text>
+  <text data-pptx-textbox="true" data-pptx-box-x="950.0" data-pptx-box-y="292.0" data-pptx-box-w="214.0" data-pptx-box-h="56.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="title" x="1057.0" y="320.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="20" font-weight="800" fill="#172033"><tspan x="1057.0" y="320.0">Verify</tspan></text>
+  <text data-pptx-textbox="true" data-pptx-box-x="950.0" data-pptx-box-y="372.0" data-pptx-box-w="214.0" data-pptx-box-h="84.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="body" x="1057.0" y="414.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="500" fill="#4B5B6D"><tspan x="1057.0" y="404.0">Check fit and</tspan><tspan x="1057.0" y="424.0">export.</tspan></text>
+</svg>

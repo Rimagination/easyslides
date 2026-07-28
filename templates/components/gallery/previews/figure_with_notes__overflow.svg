@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#F7F8FA"/>
+  <rect x="38" y="30" width="1204" height="660" rx="18" fill="#FFFFFF" stroke="#D7DDE5"/>
+  <rect x="38" y="30" width="1204" height="86" rx="18" fill="#172033"/>
+  <rect x="38" y="98" width="1204" height="18" fill="#172033"/>
+  <text x="70" y="68" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">figure_with_notes</text>
+  <text x="70" y="94" font-family="Aptos, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#B7C3D3">story: overflow | center-locked text slots</text>
+  <rect x="1040" y="54" width="128" height="34" rx="17" fill="#B42318"/><text x="1104" y="77" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">FAIL</text>
+  <rect x="82" y="156" width="690" height="452" rx="14" fill="#E9EEF3" stroke="#C4CDD8"/>
+  <rect x="122" y="198" width="610" height="322" rx="8" fill="#F8FAFC" stroke="#D7DDE5" stroke-dasharray="12 10"/>
+  <text x="427" y="366" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="28" font-weight="800" fill="#8290A2">FIGURE</text>
+  <text x="427" y="402" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#8290A2">preserve aspect ratio | source-linked</text>
+  <rect x="824" y="156" width="374" height="452" rx="14" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <rect x="824" y="156" width="374" height="10" rx="5" fill="#1C75BC"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="858.0" data-pptx-box-y="206.0" data-pptx-box-w="306.0" data-pptx-box-h="84.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="takeaway" x="1011.0" y="248.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#172033"><tspan x="1011.0" y="233.0">This headline is</tspan><tspan x="1011.0" y="263.0">intentionally...</tspan></text>
+  <line x1="858" y1="318" x2="1164" y2="318" stroke="#D7DDE5"/>
+  <text data-pptx-textbox="true" data-pptx-box-x="858.0" data-pptx-box-y="350.0" data-pptx-box-w="306.0" data-pptx-box-h="148.0" data-pptx-valign="middle" data-center-lock="true" data-slot-id="bullets" x="1011.0" y="424.0" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="17" font-weight="500" fill="#4B5B6D"><tspan x="1011.0" y="381.5">This intentionally verbose</tspan><tspan x="1011.0" y="402.8">note block should fail</tspan><tspan x="1011.0" y="424.0">capacity checks because it</tspan><tspan x="1011.0" y="445.2">tries to explain methods,</tspan><tspan x="1011.0" y="466.5">limitations, caveats, and...</tspan></text>
+  <text x="858" y="560" font-family="Aptos, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#69788A">Figure 1</text>
+</svg>

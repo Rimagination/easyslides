@@ -36,6 +36,7 @@ LINE_HEIGHT = 1.22
 CONTAINER_PADDING = 0.0
 OVERLAP_TOLERANCE = 1.0
 CONTAINER_OVERFLOW_TOLERANCE = 8.0
+CONTAINER_EDGE_LABEL_BLEED_TOLERANCE = 16.0
 CONTROL_TEXT_CENTER_TOLERANCE = 2.0
 CONTROL_CONTAINER_MAX_HEIGHT = 96.0
 EMU_PER_PX = 914400 / 96
@@ -350,6 +351,29 @@ def inset(box: Box, padding: float) -> Box:
         y=box.y + padding,
         width=max(0.0, box.width - padding * 2),
         height=max(0.0, box.height - padding * 2),
+    )
+
+
+def container_edge_label_bleed_allowed(text_box: Box, container: Box) -> bool:
+    """Allow a small textbox bearing to cross a large diagram edge.
+
+    A few imported PPTX labels carry a textbox wider than their visible glyphs.
+    Keep the contract strict for body text, but avoid rejecting a short label
+    whose center is inside a large diagram and whose edge bleed is tiny.
+    """
+    if not point_inside(container, text_box.cx, text_box.cy):
+        return False
+    overflow = max(
+        0.0,
+        container.x - text_box.x,
+        container.y - text_box.y,
+        text_box.right - container.right,
+        text_box.bottom - container.bottom,
+    )
+    return (
+        overflow <= CONTAINER_EDGE_LABEL_BLEED_TOLERANCE
+        and text_box.width <= max(container.width * 0.35, 180.0)
+        and text_box.height <= container.height * 0.25
     )
 
 
@@ -831,7 +855,7 @@ def validate_page(template_dir: Path, contract: dict[str, Any], page: dict[str, 
             name, container = assigned
             if not in_dark_label and not contains(
                 inset(container, CONTAINER_PADDING), text.box, tolerance=CONTAINER_OVERFLOW_TOLERANCE
-            ):
+            ) and not container_edge_label_bleed_allowed(text.box, container):
                 issues.append(
                     issue(
                         "TEXT-CONTAINER-OVERFLOW",
@@ -1064,18 +1088,79 @@ def iter_pptx_texts(pptx_path: Path) -> list[PptxText]:
     return texts
 
 
-def pptx_negative_extent_issues(pptx_path: Path, pages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _page_shell_id(page: dict[str, Any]) -> str:
+    for key in ("shell_id", "page_id", "layout_id"):
+        value = str(page.get(key) or "").strip()
+        if value:
+            return value
+    svg_name = str(page.get("svg") or "").strip()
+    if svg_name:
+        return re.sub(r"^\d+_", "", Path(svg_name).stem)
+    return str(page.get("id") or "").strip()
+
+
+def _page_assignments(
+    pages: list[dict[str, Any]],
+    slide_count: int,
+    slide_shell_ids: list[str] | None,
+) -> tuple[dict[int, dict[str, Any]], list[dict[str, Any]]]:
+    if slide_shell_ids is None:
+        return {index: page for index, page in enumerate(pages, start=1)}, []
+
+    issues: list[dict[str, Any]] = []
+    if len(slide_shell_ids) != slide_count:
+        issues.append(
+            issue(
+                "PPTX-SLIDE-SEQUENCE-MISMATCH",
+                "blocking",
+                "contract",
+                "The compiled slide sequence does not match the native PPTX slide count.",
+                expected_slide_count=slide_count,
+                supplied_shell_count=len(slide_shell_ids),
+            )
+        )
+    pages_by_shell = {
+        shell_id: page
+        for page in pages
+        if (shell_id := _page_shell_id(page))
+    }
+    assignments: dict[int, dict[str, Any]] = {}
+    for slide_number, shell_id in enumerate(slide_shell_ids[:slide_count], start=1):
+        normalized = str(shell_id or "").strip()
+        page = pages_by_shell.get(normalized)
+        if page is None:
+            issues.append(
+                issue(
+                    "PPTX-SLIDE-SHELL-UNKNOWN",
+                    "blocking",
+                    "contract",
+                    "The compiled slide sequence references a shell absent from the geometry contract.",
+                    slide_number=slide_number,
+                    shell_id=normalized,
+                    known_shell_ids=sorted(pages_by_shell),
+                )
+            )
+            continue
+        assignments[slide_number] = page
+    return assignments, issues
+
+
+def pptx_negative_extent_issues(
+    pptx_path: Path,
+    pages: list[dict[str, Any]],
+    *,
+    page_assignments: dict[int, dict[str, Any]] | None = None,
+) -> list[dict[str, Any]]:
     issues: list[dict[str, Any]] = []
     shape_tags = {"sp", "pic", "grpSp", "graphicFrame", "cxnSp"}
     order = pptx_slide_order(pptx_path)
     with zipfile.ZipFile(pptx_path) as zf:
         for slide_number, slide_name in enumerate(order, start=1):
             root = ET.fromstring(zf.read(slide_name))
-            svg_name = (
-                str(pages[slide_number - 1].get("svg") or f"{pages[slide_number - 1].get('id')}.svg")
-                if slide_number - 1 < len(pages)
-                else slide_name
-            )
+            page = page_assignments.get(slide_number) if page_assignments is not None else None
+            if page is None and slide_number - 1 < len(pages):
+                page = pages[slide_number - 1]
+            svg_name = str(page.get("svg") or f"{page.get('id')}.svg") if page else slide_name
             shape_index = 0
 
             def walk(parent: ET.Element) -> None:
@@ -1115,20 +1200,31 @@ def pptx_negative_extent_issues(pptx_path: Path, pages: list[dict[str, Any]]) ->
 def validate_pptx_against_contract(
     pptx_path: str | Path,
     template_dir: str | Path,
+    *,
+    slide_shell_ids: list[str] | None = None,
 ) -> dict[str, Any]:
     pptx_path = Path(pptx_path)
     template_dir = Path(template_dir)
     contract = load_contract(template_dir)
     pages = [page for page in contract.get("pages", []) if isinstance(page, dict)]
-    by_slide = {text.slide_number: [] for text in iter_pptx_texts(pptx_path)}
-    for text in iter_pptx_texts(pptx_path):
+    texts = iter_pptx_texts(pptx_path)
+    by_slide = {text.slide_number: [] for text in texts}
+    for text in texts:
         by_slide.setdefault(text.slide_number, []).append(text)
 
-    issues: list[dict[str, Any]] = pptx_negative_extent_issues(pptx_path, pages)
+    page_assignments, mapping_issues = _page_assignments(
+        pages,
+        len(pptx_slide_order(pptx_path)),
+        slide_shell_ids,
+    )
+    issues: list[dict[str, Any]] = [
+        *mapping_issues,
+        *pptx_negative_extent_issues(pptx_path, pages, page_assignments=page_assignments),
+    ]
     canvas_payload = contract.get("canvas", {})
     default_canvas = Box(0, 0, float(canvas_payload.get("width", 1280)), float(canvas_payload.get("height", 720)))
 
-    for slide_number, page in enumerate(pages, start=1):
+    for slide_number, page in page_assignments.items():
         svg_name = str(page.get("svg") or f"{page.get('id')}.svg")
         canvas_payload = page.get("canvas") if isinstance(page.get("canvas"), dict) else {}
         canvas = Box(0, 0, float(canvas_payload.get("width", default_canvas.width)), float(canvas_payload.get("height", default_canvas.height)))
@@ -1229,7 +1325,16 @@ def validate_pptx_against_contract(
         "template_dir": str(template_dir),
         "pptx_path": str(pptx_path),
         "status": "fail" if blocking_count else "pass",
-        "page_count": len(pages),
+        "page_count": len(page_assignments),
+        "slide_shell_ids": slide_shell_ids,
+        "page_assignments": [
+            {
+                "slide_number": slide_number,
+                "shell_id": _page_shell_id(page),
+                "svg": str(page.get("svg") or ""),
+            }
+            for slide_number, page in page_assignments.items()
+        ],
         "text_box_count": sum(len(items) for items in by_slide.values()),
         "blocking_count": blocking_count,
         "warning_count": sum(1 for item in issues if item["severity"] == "warning"),

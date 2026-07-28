@@ -1,0 +1,1604 @@
+{
+  "schema_version": "easyslides.pptx_distill_promotion_report.v1",
+  "status": "fail",
+  "promotable": false,
+  "source_workspace": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled",
+  "template_dir": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense_distilled",
+  "output_dir": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled\\promotion_gate",
+  "inputs": {
+    "pptx": null,
+    "source_render_dir": null,
+    "generated_render_dir": null,
+    "cross_material_enabled": false
+  },
+  "blocking_count": 2,
+  "warning_count": 0,
+  "review_count": 145,
+  "gate_count": 8,
+  "gates": [
+    {
+      "id": "distill_artifacts",
+      "description": "Distillation artifacts required by the promotion gate exist and are internally declared.",
+      "status": "pass",
+      "blocking_count": 0,
+      "warning_count": 0,
+      "review_count": 0,
+      "issues": [],
+      "report_path": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled\\distill_manifest.json",
+      "stage": "phase_5_qa_and_promotion",
+      "artifact_count": 14
+    },
+    {
+      "id": "projection",
+      "description": "Declared source-template slots have a renderer mapping and usable source geometry.",
+      "status": "review_required",
+      "blocking_count": 0,
+      "warning_count": 0,
+      "review_count": 141,
+      "issues": [
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_00c0fb68bf",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_00fd17f0d3",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_07161ead6f",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_0782c95286",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_087e679ab6",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_0e2a125882",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_103a121dde",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_10ccdd2ed0",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_111a908530",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_115faf3f7a",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_159bc54664",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_15a7d0afa4",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_17c7731829",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_194435aa94",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_1af8cd45d4",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_1ca1d01815",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_1e4d7dd73d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_1e5806a7b1",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_222803c0d7",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_22f1972d6f",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_24deb36510",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_2a85448db4",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_2ac650456f",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_2f1203bbc5",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_2f525c39bf",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_2f613c83d0",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_317a928c87",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_317d026a42",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_320cddd8a1",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_39b0f4947c",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_3d94a58a10",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_400d344681",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_406ec54bb6",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_411805db95",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_449f3e1d4c",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_4768a5d3b7",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_4811686d65",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_4a25ba72d0",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_4add8e1e99",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_4bbcf6d7c0",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_4ebebdd46a",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_51b233fcb5",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_51ce7dad2d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_54a1be322d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_55927e1ac8",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_5a0b52a931",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_5c4347105e",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_60302dce5d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_61411f0d96",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_62babc0a66",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_655038dde6",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_6825458fb5",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_69a842f1ee",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_6c217548be",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_6ebbb66317",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_72ead5bd4d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_7356fe2bed",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_737496046d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_7522795934",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_79b6c9a32a",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_80f220326e",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_8677ee1ded",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_894a34db21",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_89748c0266",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_8980babf72",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_8a050c4da8",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_8a06f060fe",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_8e68d0f175",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_8e9ea8b2eb",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_8e9f72981f",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_900c8e8d5d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_909aaadbf8",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_92ab845b60",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_94790c8b9c",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_94e7a42c93",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_951ba236a9",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_graphic_frame_951dbd2de4",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_999e6b5173",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_9b16ce37f7",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_9cc8ee9a6b",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_9f0ceb7a80",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a0be23bcfe",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a16ca02ae4",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a1f77c3034",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a3a7a9d601",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a740ef6323",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a7b644a58f",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a7dd24e75f",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_a876890797",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_aac803e6e0",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_ac541fa58d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_ad459320ef",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_aed8d4c31a",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_af8d224956",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_b007b9dc67",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_b0865b7e1b",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_b31b0324bd",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_b3c45ab621",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_b44b4af27b",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_b66148cf17",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_b7e4e29f0e",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_bc3b024f91",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_bc49f6cbc3",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_bd2d67875d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_be814b29b8",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_c12f3a7e2f",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_connector_c2a518bd96",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_c3dcf478aa",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_c9ee772d79",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_cae9e6a0fe",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_ce9c00b735",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_cf50814efc",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_d0381331e7",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_d086ff863b",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_d2478889c2",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_d29fea2b8b",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_d52f2a415e",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_d59f9b709c",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_d5e1779b46",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_dc31788dd2",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_dd7c9d672b",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_df5bf40669",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e02542a256",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e292df2ee7",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e32789b784",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e3a3e18fe9",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e4b26f7d79",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e577a2ad4b",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e75c2b39d4",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_e7bcd25f28",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_ea0c18c4cb",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_eed5fddcfb",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_eee88931c4",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_f064ced888",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_f37cc895d5",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_f53143671a",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_f6f9fb5337",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_f856431eae",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_fae7dd2505",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_fb3c9d2d8d",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        },
+        {
+          "code": "PROJECTION-COMPONENT-REVIEW",
+          "severity": "review",
+          "message": "A component mapping still needs semantic or visual review before global promotion.",
+          "details": {
+            "component_id": "pptx_shape_ff15db4dd9",
+            "classification": "unknown",
+            "status": "review_required"
+          }
+        }
+      ],
+      "report_path": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled\\projection_manifest.json",
+      "page_count": 17,
+      "component_count": 187,
+      "ready_page_count": 17,
+      "ready_component_count": 23
+    },
+    {
+      "id": "template_slot_contract",
+      "description": "Template sidecars declare editable slots and preserve source geometry.",
+      "status": "pass",
+      "blocking_count": 0,
+      "warning_count": 0,
+      "review_count": 0,
+      "issues": [],
+      "report_path": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled\\promotion_gate\\template_slot_contract_report.json",
+      "layout_count": 17
+    },
+    {
+      "id": "template_geometry_svg",
+      "description": "Source-faithful template SVG geometry satisfies its contract.",
+      "status": "fail",
+      "blocking_count": 2,
+      "warning_count": 0,
+      "review_count": 0,
+      "issues": [
+        {
+          "code": "CONTROL-TEXT-VERTICAL-MISALIGN",
+          "severity": "blocking",
+          "svg_file": "04_content_03.svg",
+          "message": "Control-like text group is not vertically center-aligned with container_01.",
+          "details": {
+            "text_box": {
+              "x": 79.47,
+              "y": 109.74,
+              "width": 67.84,
+              "height": 74.24
+            },
+            "container": {
+              "x": 50.67,
+              "y": 104.48,
+              "width": 122.24,
+              "height": 93.59
+            },
+            "center_delta": 4.42,
+            "member_count": 2,
+            "valign_values": [],
+            "text_preview": "人工 / 智能"
+          },
+          "element_index": 56
+        },
+        {
+          "code": "CONTROL-TEXT-VERTICAL-MISALIGN",
+          "severity": "blocking",
+          "svg_file": "04_content_03.svg",
+          "message": "Control-like text group is not vertically center-aligned with container_03.",
+          "details": {
+            "text_box": {
+              "x": 685.54,
+              "y": 109.74,
+              "width": 67.84,
+              "height": 74.24
+            },
+            "container": {
+              "x": 656.73,
+              "y": 104.48,
+              "width": 122.24,
+              "height": 93.59
+            },
+            "center_delta": 4.42,
+            "member_count": 2,
+            "valign_values": [],
+            "text_preview": "高速 / 电路"
+          },
+          "element_index": 74
+        }
+      ],
+      "report_path": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled\\promotion_gate\\template_geometry_svg_report.json",
+      "page_count": 17
+    },
+    {
+      "id": "template_geometry_pptx",
+      "description": "Exported native PPTX geometry matches the source template contract.",
+      "status": "review_required",
+      "blocking_count": 0,
+      "warning_count": 0,
+      "review_count": 1,
+      "issues": [
+        {
+          "code": "PPTX-REVIEW-REQUIRED",
+          "severity": "review",
+          "message": "No exported PPTX was supplied for native geometry and text-layout validation."
+        }
+      ]
+    },
+    {
+      "id": "pptx_text_layout",
+      "description": "Exported native PPTX text fits and keeps hard vertical alignment rules.",
+      "status": "review_required",
+      "blocking_count": 0,
+      "warning_count": 0,
+      "review_count": 1,
+      "issues": [
+        {
+          "code": "PPTX-REVIEW-REQUIRED",
+          "severity": "review",
+          "message": "No exported PPTX was supplied for native geometry and text-layout validation."
+        }
+      ]
+    },
+    {
+      "id": "render_diff",
+      "description": "Rendered source and generated slides stay within configured visual-diff thresholds.",
+      "status": "review_required",
+      "blocking_count": 0,
+      "warning_count": 0,
+      "review_count": 1,
+      "issues": [
+        {
+          "code": "VISUAL-DIFF-REVIEW-REQUIRED",
+          "severity": "review",
+          "message": "Source and generated render directories were not supplied."
+        }
+      ]
+    },
+    {
+      "id": "cross_material_smoke",
+      "description": "A second material set replaces declared slots without source-specific leakage or ellipsis.",
+      "status": "not_run",
+      "blocking_count": 0,
+      "warning_count": 0,
+      "review_count": 1,
+      "issues": [
+        {
+          "code": "CROSS-MATERIAL-NOT-RUN",
+          "severity": "review",
+          "message": "Cross-material smoke test was disabled."
+        }
+      ]
+    }
+  ],
+  "visual_measure": {
+    "status": "fail",
+    "blocking_count": 2,
+    "warning_count": 0,
+    "gate_count": 2,
+    "report_path": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\nsfc_defense_distilled\\promotion_gate\\visual_measure_report.json"
+  },
+  "decision": {
+    "promotable": false,
+    "rule": "fail_on_blocking; review_required_on_missing_or_unresolved_evidence; pass_only_when_all_gates_pass",
+    "next_actions": [
+      "Resolve every blocking gate, then rerun this promotion gate."
+    ]
+  }
+}

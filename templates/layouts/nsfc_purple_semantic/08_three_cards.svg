@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720">
+
+  <defs>
+    <linearGradient id="purpleGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#751497"/>
+      <stop offset="1" stop-color="#4B0D65"/>
+    </linearGradient>
+    <linearGradient id="softBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8EAFC"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <rect x="0" y="0" width="1280" height="72" fill="#751497"/>
+  <rect x="0" y="68" width="1280" height="4" fill="#BF4BE7"/>
+  <path d="M1080 0H1280V72H1140L1080 0Z" fill="#4B0D65" opacity="0.8"/>
+  <text data-slot="PAGE_TITLE" data-slot-kind="text" x="52" y="48" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" data-pptx-textbox="true" data-pptx-box-x="52" data-pptx-box-y="18" data-pptx-box-w="900" data-pptx-box-h="46" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{PAGE_TITLE}}</text>
+  <text data-slot="SECTION" data-slot-kind="text" x="1220" y="44" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="normal" fill="#FFFFFF" data-pptx-textbox="true" data-pptx-box-x="1030" data-pptx-box-y="29" data-pptx-box-w="190" data-pptx-box-h="30" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{SECTION}}</text>
+
+  <rect x="60" y="164" width="346" height="444" rx="16" fill="#FFFFFF" stroke="#E6D5EC" stroke-width="2"/>
+  <rect x="60" y="164" width="346" height="10" rx="5" fill="#751497"/>
+  <circle cx="108" cy="224" r="24" fill="#F8EAFC" stroke="#751497" stroke-width="2"/>
+  <text x="108" y="232" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#751497">1</text>
+  <text data-slot="CARD_1_TITLE" data-slot-kind="text" x="144" y="232" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="144" data-pptx-box-y="210" data-pptx-box-w="230" data-pptx-box-h="50" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{CARD_1_TITLE}}</text>
+  <text data-slot="CARD_1_BODY" data-slot-kind="list" x="88" y="302" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="88" data-pptx-box-y="284" data-pptx-box-w="290" data-pptx-box-h="250" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="39">{{CARD_1_BODY}}</text>
+
+  <rect x="447" y="164" width="346" height="444" rx="16" fill="#FFFFFF" stroke="#E6D5EC" stroke-width="2"/>
+  <rect x="447" y="164" width="346" height="10" rx="5" fill="#BF4BE7"/>
+  <circle cx="495" cy="224" r="24" fill="#F8EAFC" stroke="#751497" stroke-width="2"/>
+  <text x="495" y="232" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#751497">2</text>
+  <text data-slot="CARD_2_TITLE" data-slot-kind="text" x="531" y="232" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="531" data-pptx-box-y="210" data-pptx-box-w="230" data-pptx-box-h="50" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{CARD_2_TITLE}}</text>
+  <text data-slot="CARD_2_BODY" data-slot-kind="list" x="475" y="302" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="475" data-pptx-box-y="284" data-pptx-box-w="290" data-pptx-box-h="250" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="39">{{CARD_2_BODY}}</text>
+
+  <rect x="834" y="164" width="346" height="444" rx="16" fill="#FFFFFF" stroke="#E6D5EC" stroke-width="2"/>
+  <rect x="834" y="164" width="346" height="10" rx="5" fill="#BF4BE7"/>
+  <circle cx="882" cy="224" r="24" fill="#F8EAFC" stroke="#751497" stroke-width="2"/>
+  <text x="882" y="232" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#751497">3</text>
+  <text data-slot="CARD_3_TITLE" data-slot-kind="text" x="918" y="232" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="918" data-pptx-box-y="210" data-pptx-box-w="230" data-pptx-box-h="50" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{CARD_3_TITLE}}</text>
+  <text data-slot="CARD_3_BODY" data-slot-kind="list" x="862" y="302" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="862" data-pptx-box-y="284" data-pptx-box-w="290" data-pptx-box-h="250" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="39">{{CARD_3_BODY}}</text>
+
+  <line x1="52" y1="682" x2="1228" y2="682" stroke="#E6D5EC" stroke-width="1"/>
+  <text data-slot="SOURCE" data-slot-kind="text" x="52" y="707" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="normal" fill="#6F6275" data-pptx-textbox="true" data-pptx-box-x="52" data-pptx-box-y="694" data-pptx-box-w="900" data-pptx-box-h="24" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="32">{{SOURCE}}</text>
+  <text data-slot="PAGE_NUM" data-slot-kind="text" x="1228" y="707" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="bold" fill="#751497" data-pptx-textbox="true" data-pptx-box-x="1132" data-pptx-box-y="693" data-pptx-box-w="96" data-pptx-box-h="24" data-pptx-valign="top" data-pptx-measure-text="99" data-line-height="32">{{PAGE_NUM}}</text>
+
+</svg>

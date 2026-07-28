@@ -1,0 +1,54 @@
+{
+  "schema_version": "easyslides.source_geometry_risks.v1",
+  "template_dir": "D:\\scansci\\easyslides\\tmp\\plugin_distill_smoke",
+  "status": "fail",
+  "blocking_count": 2,
+  "warning_count": 0,
+  "issues": [
+    {
+      "code": "TEXT-CONTAINER-OVERFLOW",
+      "severity": "blocking",
+      "svg_file": "03_content.svg",
+      "message": "Text exceeds declared container container_01.",
+      "details": {
+        "text_box": {
+          "x": 131.48,
+          "y": 438.29,
+          "width": 180.95,
+          "height": 53.41
+        },
+        "container": {
+          "x": 105.66,
+          "y": 463.45,
+          "width": 1091.34,
+          "height": 198.39
+        },
+        "text_preview": "添加小标题："
+      },
+      "element_index": 33
+    },
+    {
+      "code": "TEXT-CONTAINER-OVERFLOW",
+      "severity": "blocking",
+      "svg_file": "03_content.svg",
+      "message": "Text exceeds declared container container_02.",
+      "details": {
+        "text_box": {
+          "x": 130.87,
+          "y": 128.12,
+          "width": 180.95,
+          "height": 53.41
+        },
+        "container": {
+          "x": 105.65,
+          "y": 150.32,
+          "width": 1091.34,
+          "height": 265.21
+        },
+        "text_preview": "添加小标题："
+      },
+      "element_index": 56
+    }
+  ],
+  "interpretation": "Source-authored geometry risks are preserved as template evidence. Use them to avoid treating intentional labels, overfull source text, or decorative overlaps as unconstrained user-material slots."
+}

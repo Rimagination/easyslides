@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-9" data-name="TextBox 8">
+<rect x="968.46" y="663.12" width="289.07" height="29.08" fill="none"/>
+<text x="1247.93" y="681.52" text-anchor="end" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="968.46" data-pptx-box-y="663.12" data-pptx-box-w="289.07" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="&quot;Arial Black&quot;, &quot;黑体&quot;, +mn-cs, sans-serif" font-size="16" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="16" font-weight="bold">Dashboard </tspan><tspan fill="#FFFFFF" font-size="16">Presentation</tspan></text>
+</g>
+<g id="layout-shape-10" data-name="TextBox 9" transform="rotate(180 1177.96 58.15) translate(1177.96 58.15) scale(1 -1) translate(-1177.96 -58.15)">
+<rect x="1098.39" y="21" width="159.14" height="74.32" fill="none"/>
+<text x="1247.93" y="71.13" text-anchor="end" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="1098.39" data-pptx-box-y="21" data-pptx-box-w="159.14" data-pptx-box-h="74.32" data-pptx-valign="top" font-family="Arial, &quot;Roboto Condensed&quot;, &quot;Segoe UI&quot;, sans-serif" font-size="53.33" fill="#D9D9D9"><tspan fill="#D9D9D9" font-size="53.33">‹#›</tspan></text>
+</g></svg>

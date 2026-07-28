@@ -1,0 +1,20 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "default",
+  "payload": {
+    "items": [
+      {
+        "title": "Need",
+        "body": "Readers need source-linked claims."
+      },
+      {
+        "title": "Fit",
+        "body": "Each card stays inside its capacity."
+      },
+      {
+        "title": "Gate",
+        "body": "Validate payloads before rendering."
+      }
+    ]
+  }
+}

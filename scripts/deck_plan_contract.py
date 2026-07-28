@@ -15,12 +15,22 @@ import sys
 from pathlib import Path
 from typing import Any
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 try:
     from scripts.body_variant_adapter import validate_deck_body_variants
+    from scripts.component_plan_builder import build_component_plan
+    from scripts.component_plan_contract import validate_component_plan
+    from scripts.clarification_gate import ClarificationError, require_confirmed
     from scripts.deck_execution_lock import build_deck_execution_lock
     from scripts.scenario_profiles import load_profiles, validate_profiles
 except ModuleNotFoundError:  # pragma: no cover - supports direct script execution
     from body_variant_adapter import validate_deck_body_variants
+    from component_plan_builder import build_component_plan
+    from component_plan_contract import validate_component_plan
+    from clarification_gate import ClarificationError, require_confirmed
     from deck_execution_lock import build_deck_execution_lock
     from scenario_profiles import load_profiles, validate_profiles
 
@@ -137,7 +147,29 @@ def validate_deck_plan(plan: dict[str, Any], *, repo_root: Path | None = None) -
             )
         )
 
-    return _report(issues, pages, len(slides), body_variant_report, execution_lock)
+    component_plan = None
+    component_plan_report = None
+    try:
+        component_plan = build_component_plan(plan)
+        component_plan_report = validate_component_plan(component_plan)
+        for item in component_plan_report["issues"]:
+            issues.append(
+                issue(
+                    "DECK-PLAN-COMPONENT-PLAN",
+                    f"{item['code']}: {item['message']}",
+                    item.get("path"),
+                )
+            )
+    except Exception as exc:
+        issues.append(
+            issue(
+                "DECK-PLAN-COMPONENT-PLAN",
+                f"cannot build component plan: {exc}",
+                "component_plan",
+            )
+        )
+
+    return _report(issues, pages, len(slides), body_variant_report, execution_lock, component_plan_report, component_plan)
 
 
 def _validate_source_map(value: Any, issues: list[dict[str, str]]) -> set[str]:
@@ -250,6 +282,8 @@ def _report(
     slide_count: int,
     body_variant_report: dict[str, Any] | None = None,
     execution_lock: dict[str, Any] | None = None,
+    component_plan_report: dict[str, Any] | None = None,
+    component_plan: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     body_variant_report = body_variant_report or _empty_body_variant_report(slide_count)
     execution_lock_status = (
@@ -257,6 +291,11 @@ def _report(
         if isinstance(execution_lock, dict) and not issues
         else "fail"
         if isinstance(execution_lock, dict)
+        else "skipped"
+    )
+    component_plan_status = (
+        component_plan_report.get("status", "skipped")
+        if isinstance(component_plan_report, dict)
         else "skipped"
     )
     return {
@@ -270,6 +309,9 @@ def _report(
         "body_variant_reports": body_variant_report["slides"],
         "execution_lock_status": execution_lock_status,
         "execution_lock": execution_lock,
+        "component_plan_status": component_plan_status,
+        "component_plan_report": component_plan_report,
+        "component_plan": component_plan,
     }
 
 
@@ -280,7 +322,28 @@ def validate_deck_plan_file(path: Path, *, repo_root: Path | None = None) -> dic
         return _report([issue("DECK-PLAN-FILE", "deck_plan.json not found", str(path))], [], 0)
     except json.JSONDecodeError as exc:
         return _report([issue("DECK-PLAN-JSON", f"invalid JSON: {exc}", str(path))], [], 0)
-    return validate_deck_plan(plan, repo_root=repo_root)
+    report = validate_deck_plan(plan, repo_root=repo_root)
+    clarification_path = path.parent / "clarification_request.json"
+    if clarification_path.exists():
+        try:
+            request = require_confirmed(clarification_path)
+        except ClarificationError as exc:
+            report["issues"].append(
+                issue(
+                    "DECK-PLAN-CLARIFICATION",
+                    f"clarification gate is not confirmed: {exc}",
+                    str(clarification_path),
+                )
+            )
+            report["status"] = "fail"
+            report["issue_count"] = len(report["issues"])
+            report["clarification_status"] = "fail"
+        else:
+            report["clarification_status"] = "confirmed"
+            report["clarification_decisions"] = request.get("decisions", {})
+    else:
+        report["clarification_status"] = "not_initialized"
+    return report
 
 
 def main(argv: list[str] | None = None) -> int:

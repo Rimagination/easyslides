@@ -1,0 +1,11 @@
+{
+  "schema_version": "easyslides.pptx_text_layout_report.v1",
+  "pptx_path": "templates\\components\\gallery\\component_gallery.pptx",
+  "status": "pass",
+  "slide_count": 18,
+  "text_box_count": 196,
+  "text_box_source": "raw_xml",
+  "blocking_count": 0,
+  "warning_count": 0,
+  "issues": []
+}

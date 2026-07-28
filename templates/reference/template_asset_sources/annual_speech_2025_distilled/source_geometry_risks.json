@@ -1,0 +1,9 @@
+{
+  "schema_version": "easyslides.source_geometry_risks.v1",
+  "template_dir": "D:\\scansci\\easyslides\\templates\\layouts\\annual_speech_2025_distilled",
+  "status": "pass",
+  "blocking_count": 0,
+  "warning_count": 0,
+  "issues": [],
+  "interpretation": "Source-authored geometry risks are preserved as template evidence. Use them to avoid treating intentional labels, overfull source text, or decorative overlaps as unconstrained user-material slots."
+}

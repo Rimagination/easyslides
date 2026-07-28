@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-4" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="1012.25" y="29.44" width="75.64" height="75.64" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="1020.25" y="47.44" font-size="12" fill="#64748B">ph pic idx=10</text>
+</g>
+<g id="layout-shape-3" data-name="Title 2" data-ph-type="title">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph title</text>
+</g>
+<g id="layout-shape-6" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="124.92" y="218.42" width="739.08" height="226.7" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="132.92" y="236.42" font-size="12" fill="#64748B">ph pic idx=11</text>
+</g></svg>

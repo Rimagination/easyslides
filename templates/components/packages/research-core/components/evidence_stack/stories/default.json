@@ -1,0 +1,18 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "default",
+  "payload": {
+    "claim": "Multiple sources support the main conclusion.",
+    "items": [
+      {
+        "evidence": "Long-term records show the same trend direction."
+      },
+      {
+        "evidence": "Independent samples localize errors to edge cases."
+      },
+      {
+        "evidence": "Sensitivity tests rule out a single-driver explanation."
+      }
+    ]
+  }
+}

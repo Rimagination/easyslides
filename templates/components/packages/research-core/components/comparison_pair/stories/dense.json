@@ -1,0 +1,17 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "dense",
+  "payload": {
+    "items": [
+      {
+        "title": "Manual",
+        "body": "Low setup cost. Expert judgment stays visible, but updates are slow and hard to reproduce."
+      },
+      {
+        "title": "Automated",
+        "body": "Higher setup cost. The pipeline preserves traceability and updates quickly across new inputs."
+      }
+    ],
+    "synthesis": "The choice turns on repeatability, not only first-run speed."
+  }
+}

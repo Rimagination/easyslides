@@ -18,36 +18,36 @@
       <circle cx="676" cy="168" r="24" fill="#0D5DBE"/>
       <circle cx="698" cy="168" r="24" fill="none" stroke="#0D5DBE" stroke-width="1.3"/>
       <text x="676" y="177" text-anchor="middle" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan>01</tspan></text>
-      <text x="768" y="166" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_1_TITLE" data-pptx-textbox="true" data-pptx-box-x="760" data-pptx-box-y="138.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_1_TITLE}}</tspan></text>
-      <text x="768" y="196" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_1_DESC" data-pptx-textbox="true" data-pptx-box-x="720" data-pptx-box-y="178.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_1_DESC}}</tspan></text>
+      <text x="768" y="166" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_1_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="138.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_1_TITLE}}</tspan></text>
+      <text x="768" y="196" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_1_DESC" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="720" data-pptx-box-y="178.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_1_DESC}}</tspan></text>
     </g>
     <g id="toc-item-2">
       <circle cx="676" cy="268" r="24" fill="#0D5DBE"/>
       <circle cx="698" cy="268" r="24" fill="none" stroke="#0D5DBE" stroke-width="1.3"/>
       <text x="676" y="277" text-anchor="middle" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan>02</tspan></text>
-      <text x="768" y="266" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_2_TITLE" data-pptx-textbox="true" data-pptx-box-x="760" data-pptx-box-y="238.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_2_TITLE}}</tspan></text>
-      <text x="768" y="296" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_2_DESC" data-pptx-textbox="true" data-pptx-box-x="720" data-pptx-box-y="278.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_2_DESC}}</tspan></text>
+      <text x="768" y="266" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_2_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="238.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_2_TITLE}}</tspan></text>
+      <text x="768" y="296" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_2_DESC" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="720" data-pptx-box-y="278.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_2_DESC}}</tspan></text>
     </g>
     <g id="toc-item-3">
       <circle cx="676" cy="368" r="24" fill="#0D5DBE"/>
       <circle cx="698" cy="368" r="24" fill="none" stroke="#0D5DBE" stroke-width="1.3"/>
       <text x="676" y="377" text-anchor="middle" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan>03</tspan></text>
-      <text x="768" y="366" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_3_TITLE" data-pptx-textbox="true" data-pptx-box-x="760" data-pptx-box-y="338.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_3_TITLE}}</tspan></text>
-      <text x="768" y="396" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_3_DESC" data-pptx-textbox="true" data-pptx-box-x="720" data-pptx-box-y="378.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_3_DESC}}</tspan></text>
+      <text x="768" y="366" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_3_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="338.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_3_TITLE}}</tspan></text>
+      <text x="768" y="396" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_3_DESC" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="720" data-pptx-box-y="378.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_3_DESC}}</tspan></text>
     </g>
     <g id="toc-item-4">
       <circle cx="676" cy="468" r="24" fill="#0D5DBE"/>
       <circle cx="698" cy="468" r="24" fill="none" stroke="#0D5DBE" stroke-width="1.3"/>
       <text x="676" y="477" text-anchor="middle" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan>04</tspan></text>
-      <text x="768" y="466" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_4_TITLE" data-pptx-textbox="true" data-pptx-box-x="760" data-pptx-box-y="438.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_4_TITLE}}</tspan></text>
-      <text x="768" y="496" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_4_DESC" data-pptx-textbox="true" data-pptx-box-x="720" data-pptx-box-y="478.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_4_DESC}}</tspan></text>
+      <text x="768" y="466" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_4_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="438.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_4_TITLE}}</tspan></text>
+      <text x="768" y="496" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_4_DESC" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="720" data-pptx-box-y="478.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_4_DESC}}</tspan></text>
     </g>
     <g id="toc-item-5">
       <circle cx="676" cy="568" r="24" fill="#0D5DBE"/>
       <circle cx="698" cy="568" r="24" fill="none" stroke="#0D5DBE" stroke-width="1.3"/>
       <text x="676" y="577" text-anchor="middle" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan>05</tspan></text>
-      <text x="768" y="566" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_5_TITLE" data-pptx-textbox="true" data-pptx-box-x="760" data-pptx-box-y="538.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_5_TITLE}}</tspan></text>
-      <text x="768" y="596" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_5_DESC" data-pptx-textbox="true" data-pptx-box-x="720" data-pptx-box-y="578.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_5_DESC}}</tspan></text>
+      <text x="768" y="566" text-anchor="start" font-size="26" fill="#000000" font-weight="bold" data-slot="TOC_ITEM_5_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="538.7" data-pptx-box-w="520" data-pptx-box-h="40.3"><tspan>{{TOC_ITEM_5_TITLE}}</tspan></text>
+      <text x="768" y="596" text-anchor="start" font-size="17" fill="#6B7280" data-slot="TOC_ITEM_5_DESC" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="720" data-pptx-box-y="578.15" data-pptx-box-w="560" data-pptx-box-h="26.35"><tspan>{{TOC_ITEM_5_DESC}}</tspan></text>
     </g>
   </g>
 </svg>

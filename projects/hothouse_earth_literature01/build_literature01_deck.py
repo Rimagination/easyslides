@@ -92,6 +92,7 @@ def text_block(
         box_y = y - size
     if box_h is None:
         box_h = height + size
+    valign = "middle" if anchor == "middle" else "top"
     return (
         f'<g id="{esc(name)}">'
         f'<rect x="{x}" y="{box_y}" width="{width}" height="{box_h}" fill="none"/>'
@@ -99,7 +100,7 @@ def text_block(
         f'font-family="{FONT}" font-size="{size}" fill="{fill}" font-weight="{weight}" '
         f'data-pptx-box-x="{x}" data-pptx-box-y="{box_y}" '
         f'data-pptx-box-w="{width}" data-pptx-box-h="{box_h}" '
-        f'data-pptx-textbox="true">{tspan_lines(lines, x, line_height)}</text>'
+        f'data-pptx-valign="{valign}" data-pptx-textbox="true">{tspan_lines(lines, x, line_height)}</text>'
         "</g>"
     )
 
@@ -126,6 +127,7 @@ def single_text(
     else:
         box_x = x
     box_y = y - size
+    valign = "middle" if anchor == "middle" else "top"
     return (
         f'<g id="{esc(name)}">'
         f'<rect x="{box_x}" y="{box_y}" width="{box_w}" height="{box_h}" fill="none"/>'
@@ -133,7 +135,7 @@ def single_text(
         f'font-family="{FONT}" font-size="{size}" fill="{fill}" font-weight="{weight}" '
         f'data-pptx-box-x="{box_x}" data-pptx-box-y="{box_y}" '
         f'data-pptx-box-w="{box_w}" data-pptx-box-h="{box_h}" '
-        f'data-pptx-textbox="true"><tspan>{esc(text)}</tspan></text>'
+        f'data-pptx-valign="{valign}" data-pptx-textbox="true"><tspan>{esc(text)}</tspan></text>'
         "</g>"
     )
 
@@ -354,7 +356,7 @@ def build_chapter(num: str, title: str, desc: str) -> str:
   <g id="chapter-heading">
     <text x="64" y="58" text-anchor="start" xml:space="preserve" font-family="{FONT}" font-size="44" fill="{DEEP}" font-weight="bold"><tspan>章节</tspan><tspan fill="#A6A6A6" font-size="34"> SECTION</tspan></text>
   </g>
-  <text x="430" y="402" text-anchor="middle" xml:space="preserve" font-family="Arial, Microsoft YaHei, sans-serif" font-size="48" fill="#FFFFFF" font-weight="bold" data-pptx-textbox="true"><tspan>{esc(num)}</tspan></text>
+  <text x="430" y="402" text-anchor="middle" xml:space="preserve" font-family="Arial, Microsoft YaHei, sans-serif" font-size="48" fill="#FFFFFF" font-weight="bold" data-pptx-box-x="380" data-pptx-box-y="344" data-pptx-box-w="96" data-pptx-box-h="96" data-pptx-valign="middle" data-pptx-textbox="true"><tspan>{esc(num)}</tspan></text>
   {single_text(522, 374, title, size=58, fill=DEEP, weight="bold", width=560, height=92, name="chapter-title")}
   {single_text(522, 450, desc, size=24, fill="#4B5563", width=600, height=46, name="chapter-desc")}
 </svg>

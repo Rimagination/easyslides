@@ -1,0 +1,10 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "default",
+  "payload": {
+    "image": "images/figure_1.png",
+    "takeaway": "Result exhibit",
+    "bullets": "Trend direction is stable; edge cases remain visible; source locator is retained.",
+    "caption": "Figure 1"
+  }
+}

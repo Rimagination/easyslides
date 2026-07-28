@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+<g id="shape-23" data-name="直接连接符 22">
+<line x1="0" y1="186.5" x2="1280" y2="186.5" stroke-width="2" stroke="#911D22" fill="#911D22"/>
+</g>
+<g id="shape-2" data-name="矩形 1">
+<rect x="0" y="194.13" width="1280" height="299.73" fill="#911D22" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-4" data-name="文本框 3">
+<rect x="226.4" y="267.63" width="827.2" height="106.63" fill="none"/>
+<text x="640" y="340.43" text-anchor="middle" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="80" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="80">敬请各位老师批评指正</tspan></text>
+</g>
+<g id="shape-5" data-name="文本框 4">
+<rect x="242.56" y="404.29" width="794.89" height="29.08" fill="none"/>
+<text x="640" y="422.69" text-anchor="middle" xml:space="preserve" font-family="&quot;思源黑体 CN Regular&quot;, sans-serif" font-size="16" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="16">这里输入论文题目这里输入论文题目这里输入论文题目这里输入论文题目这里输入论文题目这里输入论文题目</tspan></text>
+</g>
+<g id="shape-7" data-name="直接连接符 6">
+<line x1="243.2" y1="383.93" x2="1037.44" y2="383.93" stroke="#FFFFFF" stroke-opacity="0.5" fill="#911D22" stroke-width="1"/>
+</g>
+<g id="shape-12" data-name="组合 11">
+<g id="shape-10" data-name="流程图: 接点 9">
+<rect x="597.92" y="147.47" width="84.17" height="84.17" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-9" data-name="图片 8">
+<image href="assets/image4.bin" x="603.33" y="152.88" width="73.35" height="73.35" preserveAspectRatio="none"/>
+</g>
+</g>
+<g id="shape-11" data-name="文本框 10">
+<rect x="191.66" y="572.13" width="157.22" height="38.78" fill="none"/>
+<text x="201.26" y="597.33" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">答辩人：</tspan><tspan fill="#000000" font-size="24">xxx</tspan></text>
+</g>
+<g id="shape-17" data-name="graduate-hat_59495">
+<path d="M 155 597.92 L 157.73 597.92 L 158.32 603.46 C 158.35 603.7 158.27 603.94 158.11 604.13 C 157.95 604.32 157.71 604.42 157.44 604.42 L 155.29 604.42 C 155.05 604.42 154.81 604.32 154.65 604.13 C 154.46 603.94 154.38 603.7 154.41 603.46 Z M 185.16 589.72 C 185.16 589.72 185.91 596.55 185.91 596.63 C 185.94 597.14 185.51 597.51 185.03 597.51 C 185 597.51 184.92 597.51 184.87 597.51 C 184.17 597.41 183.45 597.35 182.72 597.35 C 178.43 597.35 174.6 599.17 173.18 601.85 C 173.04 602.15 172.72 602.33 172.4 602.33 L 172.13 602.33 C 171.78 602.33 171.49 602.15 171.33 601.85 C 169.91 599.15 166.07 597.35 161.78 597.35 C 161.06 597.35 160.33 597.41 159.64 597.51 C 159.37 597.54 159.07 597.46 158.89 597.25 C 158.67 597.06 158.59 596.79 158.62 596.5 L 159.37 589.78 L 172.27 594.62 Z M 171.94 578.66 C 172.16 578.58 172.37 578.58 172.56 578.66 L 188.51 584.66 C 188.86 584.8 189.1 585.12 189.1 585.49 C 189.1 585.87 188.86 586.19 188.51 586.32 L 172.56 592.32 C 172.37 592.4 172.16 592.4 171.94 592.32 L 157.38 586.86 L 157.38 596.36 L 155.37 596.36 L 155.37 585.49 C 155.37 585.14 155.59 584.8 155.94 584.66 Z" fill="#911D22" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-13" data-name="文本框 12">
+<rect x="601.89" y="572.13" width="132.99" height="38.78" fill="none"/>
+<text x="611.49" y="597.33" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">导师：</tspan><tspan fill="#000000" font-size="24">xxx</tspan></text>
+</g>
+<g id="shape-18" data-name="teacher_43663">
+<path d="M 584.94 584.94 L 584.02 588.12 L 584.94 588.12 Z M 593.41 584.8 L 593.48 588.12 L 594.33 588.12 Z M 587.83 581.84 L 589.39 583.6 L 590.87 581.84 L 595.18 582.48 L 596.73 588.12 L 601.89 588.12 L 601.89 591.36 L 599.84 591.36 L 599.84 602.5 L 578.8 602.5 L 578.8 591.36 L 576.75 591.36 L 576.75 588.12 L 581.76 588.12 L 583.46 582.41 Z M 589.28 573.32 C 591.48 573.32 593.27 575.1 593.27 577.3 C 593.27 579.5 591.48 581.29 589.28 581.29 C 587.08 581.29 585.3 579.5 585.3 577.3 C 585.3 575.1 587.08 573.32 589.28 573.32 Z" fill="#911D22" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-14" data-name="文本框 13">
+<rect x="925.09" y="572.13" width="222.69" height="38.78" fill="none"/>
+<text x="934.69" y="597.33" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">日期：</tspan><tspan fill="#000000" font-size="24">2026/xx/xx</tspan></text>
+</g>
+<g id="shape-19" data-name="alarm-clock_221910">
+<path d="M 920.53 602.74 L 921.66 604.29 L 920.08 605.35 L 918.95 603.8 C 919.51 603.48 920.03 603.13 920.53 602.74 Z M 904.18 602.74 C 904.68 603.13 905.21 603.48 905.77 603.8 L 904.63 605.35 L 903.05 604.29 Z M 911.34 586.92 L 911.34 593.5 L 916.19 598.15 L 917.56 596.83 L 913.28 592.72 L 913.28 586.92 Z M 912.36 582.63 C 918.41 582.63 923.31 587.34 923.31 593.14 C 923.31 598.95 918.41 603.66 912.36 603.66 C 906.3 603.66 901.4 598.95 901.4 593.14 C 901.4 587.34 906.3 582.63 912.36 582.63 Z M 918.47 577.76 C 919.89 577.52 921.41 577.8 922.68 578.65 C 925.23 580.37 925.85 583.74 924.07 586.18 L 914.84 579.98 C 915.73 578.76 917.05 578 918.47 577.76 Z M 906.24 577.76 C 907.66 578 908.98 578.76 909.87 579.98 L 900.65 586.18 C 898.86 583.74 899.48 580.36 902.03 578.65 C 903.31 577.8 904.82 577.52 906.24 577.76 Z M 911.39 577.68 L 913.33 577.68 L 913.33 580.8 C 913.01 580.78 912.68 580.77 912.36 580.77 C 912.03 580.77 911.71 580.78 911.39 580.8 Z" fill="#911D22" stroke="none" stroke-width="1"/>
+</g></svg>

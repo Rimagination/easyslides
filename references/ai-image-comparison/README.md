@@ -34,19 +34,19 @@ Each subdirectory contains:
 To reproduce or regenerate:
 
 ```bash
-python3 skills/ppt-master/scripts/image_gen.py \
-    --manifest skills/ppt-master/references/ai-image-comparison/rendering/_manifest.json \
-    -o skills/ppt-master/references/ai-image-comparison/rendering/ \
+python3 scripts/image_gen.py \
+    --manifest references/ai-image-comparison/rendering/_manifest.json \
+    -o references/ai-image-comparison/rendering/ \
     --backend openai
 
-python3 skills/ppt-master/scripts/image_gen.py \
-    --manifest skills/ppt-master/references/ai-image-comparison/palette/_manifest.json \
-    -o skills/ppt-master/references/ai-image-comparison/palette/ \
+python3 scripts/image_gen.py \
+    --manifest references/ai-image-comparison/palette/_manifest.json \
+    -o references/ai-image-comparison/palette/ \
     --backend openai
 
-python3 skills/ppt-master/scripts/image_gen.py \
-    --manifest skills/ppt-master/references/ai-image-comparison/type/_manifest.json \
-    -o skills/ppt-master/references/ai-image-comparison/type/ \
+python3 scripts/image_gen.py \
+    --manifest references/ai-image-comparison/type/_manifest.json \
+    -o references/ai-image-comparison/type/ \
     --backend openai
 ```
 

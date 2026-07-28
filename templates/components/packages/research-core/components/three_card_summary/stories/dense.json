@@ -1,0 +1,20 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "dense",
+  "payload": {
+    "items": [
+      {
+        "title": "Source",
+        "body": "Every point keeps a citation, figure id, or table locator visible."
+      },
+      {
+        "title": "Capacity",
+        "body": "The contract sets max lines so dense text is shortened or split."
+      },
+      {
+        "title": "Review",
+        "body": "A rendered preview must confirm readable spacing and alignment."
+      }
+    ]
+  }
+}

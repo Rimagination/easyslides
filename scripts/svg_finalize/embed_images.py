@@ -75,6 +75,20 @@ def _optimize_image_bytes(img_bytes: bytes, mime_type: str,
     except Exception:
         return img_bytes
 
+    # Re-saving animated GIF / WebP / APNG with Pillow keeps only the first
+    # frame in common paths. Preserve original bytes so authored animations
+    # survive SVG finalization and PPTX export.
+    if getattr(img, "is_animated", False):
+        if max_dimension:
+            w, h = img.size
+            if w > max_dimension or h > max_dimension:
+                print(
+                    f"  [WARN] Animated image kept as-is ({w}x{h} exceeds "
+                    f"max dimension {max_dimension}px); animations are "
+                    "exempt from size limits"
+                )
+        return img_bytes
+
     changed = False
 
     # Downscale if exceeding max_dimension

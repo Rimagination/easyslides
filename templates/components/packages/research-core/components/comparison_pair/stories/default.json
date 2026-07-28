@@ -1,0 +1,17 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "default",
+  "payload": {
+    "items": [
+      {
+        "title": "Baseline",
+        "body": "Uses one indicator. It is easy to explain, but misses regional variation."
+      },
+      {
+        "title": "Improved",
+        "body": "Combines multiple signals and keeps contribution analysis interpretable."
+      }
+    ],
+    "synthesis": "Use this layout when the two sides are genuinely balanced."
+  }
+}

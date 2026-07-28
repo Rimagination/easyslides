@@ -1,0 +1,12 @@
+{
+  "schema_version": "easyslides.template_status.v1",
+  "template_id": "nsfc_defense",
+  "status": "production",
+  "production_eligible": true,
+  "source_template_id": "nsfc_defense_distilled",
+  "reason": "all fail-closed production gates passed",
+  "canonical_shell_count": 5,
+  "body_variant_count": 12,
+  "last_gate_schema": "easyslides.template_production_gate.v1",
+  "last_gate_status": "pass"
+}

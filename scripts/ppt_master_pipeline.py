@@ -19,6 +19,11 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = REPO_ROOT / "scripts"
 
+try:
+    from scripts.clarification_gate import ClarificationError, require_confirmed
+except ImportError:  # pragma: no cover - direct script execution
+    from clarification_gate import ClarificationError, require_confirmed
+
 
 @dataclass(frozen=True)
 class GateResult:
@@ -63,6 +68,18 @@ def _svg_files(project_path: Path) -> list[Path]:
 def _notes_files(project_path: Path) -> list[Path]:
     notes_dir = project_path / "notes"
     return sorted(notes_dir.glob("*.md")) if notes_dir.exists() else []
+
+
+def _clarification_issue(project_path: Path) -> str | None:
+    """Return a blocking issue only when the project opted into clarification."""
+    request_path = project_path / "clarification_request.json"
+    if not request_path.exists():
+        return None
+    try:
+        require_confirmed(request_path)
+    except ClarificationError as exc:
+        return f"clarification_request.json (confirmed): {exc}"
+    return None
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -127,6 +144,9 @@ def validate_phase_a(project_path: str | Path) -> GateResult:
         ],
     )
     warnings: list[str] = []
+    clarification_issue = _clarification_issue(project)
+    if clarification_issue:
+        missing.append(clarification_issue)
     if not (project / "deck_execution_lock.json").exists():
         warnings.append(
             "deck_execution_lock.json is absent; PPT Master compatibility can continue, "
@@ -154,6 +174,9 @@ def validate_export_inputs(project_path: str | Path) -> GateResult:
     required, missing = _existing(project, ["svg_output", "notes/total.md"])
     if not _svg_files(project):
         missing.append("svg_output/*.svg")
+    clarification_issue = _clarification_issue(project)
+    if clarification_issue:
+        missing.append(clarification_issue)
     warnings: list[str] = []
     final_dir = project / "svg_final"
     if final_dir.exists() and list(final_dir.glob("*.svg")):
@@ -210,6 +233,8 @@ def export_command_plan(
                 str(SCRIPTS_DIR / "validate_svg_text_slots.py"),
                 str(project_path_obj / "svg_output"),
                 "--strict-unboxed",
+                "--require-valign",
+                "--check-canvas",
                 "--report",
                 str(project_path_obj / "reports" / "svg_text_slot_report.json"),
             ]

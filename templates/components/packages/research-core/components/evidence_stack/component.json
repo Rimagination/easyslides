@@ -1,0 +1,135 @@
+{
+  "schema_version": "easyslides.component_package.v1",
+  "component_id": "evidence_stack",
+  "asset_id": "component_package/evidence_stack",
+  "display_name": "Evidence Stack",
+  "source_asset_id": "card/evidence_stack",
+  "granularity": "component_package",
+  "render_backend": "component_package",
+  "render_targets": ["svg", "native_pptx", "template_body_variant"],
+  "selection": {
+    "content_shapes": ["evidence_list", "supporting_points", "paper_findings"],
+    "page_roles": ["evidence", "result", "literature"],
+    "item_count_min": 3,
+    "item_count_max": 5,
+    "density": "high",
+    "evidence_types": ["text_evidence", "paper_findings", "supporting_points"],
+    "editable_targets": ["claim", "evidence_items"],
+    "visual_complexity": "high",
+    "best_for": "Several short evidence snippets supporting one claim.",
+    "avoid_when": "The snippets are not comparable or require citations in full form."
+  },
+  "input_schema": {
+    "schema_version": "easyslides.component_input_schema.v1",
+    "type": "object",
+    "required": ["claim", "items"],
+    "additional_properties": false,
+    "properties": {
+      "claim": {"type": "string", "min_length": 1, "max_length": 100},
+      "items": {
+        "type": "array",
+        "min_items": 3,
+        "max_items": 5,
+        "items": {
+          "type": "object",
+          "required": ["evidence"],
+          "additional_properties": false,
+          "properties": {
+            "evidence": {"type": "string", "min_length": 1, "max_length": 180},
+            "source": {"type": "string", "max_length": 100},
+            "weight": {"type": "string", "max_length": 32}
+          }
+        }
+      }
+    }
+  },
+  "payload_contract": {
+    "shape": "claim + items[]",
+    "item_count_min": 3,
+    "item_count_max": 5,
+    "required": ["claim"],
+    "item_schema": {
+      "required": ["evidence"],
+      "optional": ["source", "weight"]
+    }
+  },
+  "slots": [
+    {
+      "slot_id": "claim",
+      "kind": "text",
+      "role": "title",
+      "required": true,
+      "capacity": {
+        "font_size_px": 22,
+        "min_font_size_px": 18,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 34,
+        "max_lines": 2,
+        "overflow_action": "shorten"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "evidence",
+      "kind": "text",
+      "role": "body",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 16,
+        "min_font_size_px": 14,
+        "line_height": 1.22,
+        "max_chars_per_line_zh": 42,
+        "max_lines": 2,
+        "overflow_action": "split_or_reduce_items"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    }
+  ],
+  "qa": {
+    "required_gates": [
+      "component_package_contract",
+      "component_plan_contract",
+      "card_payload_capacity",
+      "visual_measure_gate",
+      "validate_pptx_text_layout",
+      "renderer_governance"
+    ],
+    "alignment_invariants": [
+      {
+        "id": "evidence_text_vertical_center",
+        "scope": "text_in_container",
+        "rule": "text_center_y_matches_container_center_y",
+        "tolerance_px": 2,
+        "severity": "error"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "story_id": "default",
+      "payload": "stories/default.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "dense",
+      "payload": "stories/dense.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "overflow",
+      "payload": "stories/overflow.json",
+      "expected_status": "fail"
+    }
+  ],
+  "preview": {
+    "review_status": "pending",
+    "expected_files": ["preview/default.png", "preview/dense.png", "preview/overflow.png"]
+  }
+}

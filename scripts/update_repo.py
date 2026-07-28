@@ -2,8 +2,8 @@
 """Update the repository and sync Python dependencies when needed.
 
 Usage:
-    python3 skills/ppt-master/scripts/update_repo.py
-    python3 skills/ppt-master/scripts/update_repo.py --skip-pip
+    python3 scripts/update_repo.py
+    python3 scripts/update_repo.py --skip-pip
 """
 
 from __future__ import annotations

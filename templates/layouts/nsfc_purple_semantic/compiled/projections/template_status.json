@@ -1,0 +1,9 @@
+{
+  "schema_version": "easyslides.template_status.v2",
+  "derived_from": "template_package.json+qa_policy.json+compiled/template_ir.json",
+  "template_id": "nsfc_purple_semantic",
+  "status": "quarantined",
+  "capability_level": "semantic",
+  "production_eligible": false,
+  "source_digest": "03835084aceca13751bb8b9ca496beb5114568614635e1cd0be9996e7ad59f89"
+}

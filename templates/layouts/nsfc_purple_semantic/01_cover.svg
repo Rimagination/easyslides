@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720">
+
+  <defs>
+    <linearGradient id="purpleGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#751497"/>
+      <stop offset="1" stop-color="#4B0D65"/>
+    </linearGradient>
+    <linearGradient id="softBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8EAFC"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <image x="0" y="0" width="1280" height="720" preserveAspectRatio="none" href="assets/nsfc_purple_dark_pattern.png"/>
+  <rect width="1280" height="720" fill="#16051D" opacity="0.14"/>
+  <rect x="64" y="88" width="92" height="8" rx="4" fill="#E5B5F5"/>
+  <text data-slot="TITLE" data-slot-kind="text" x="64" y="236" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="54" font-weight="bold" fill="#FFFFFF" data-pptx-textbox="true" data-pptx-box-x="64" data-pptx-box-y="182" data-pptx-box-w="650" data-pptx-box-h="150" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="64">{{TITLE}}</text>
+  <text data-slot="SUBTITLE" data-slot-kind="text" x="66" y="354" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="26" font-weight="bold" fill="#F0D7F8" data-pptx-textbox="true" data-pptx-box-x="66" data-pptx-box-y="328" data-pptx-box-w="620" data-pptx-box-h="74" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="34">{{SUBTITLE}}</text>
+  <text data-slot="AUTHOR" data-slot-kind="text" x="66" y="574" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#F1DFF6" data-pptx-textbox="true" data-pptx-box-x="66" data-pptx-box-y="554" data-pptx-box-w="340" data-pptx-box-h="34" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="32">{{AUTHOR}}</text>
+  <text data-slot="DATE" data-slot-kind="text" x="66" y="622" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" font-weight="normal" fill="#D9BFDF" data-pptx-textbox="true" data-pptx-box-x="66" data-pptx-box-y="605" data-pptx-box-w="260" data-pptx-box-h="30" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="32">{{DATE}}</text>
+  <image data-slot="HERO_IMAGE" data-slot-kind="image" x="825" y="178" width="390" height="330" preserveAspectRatio="xMidYMid meet" href="assets/transparent.svg"/>
+
+</svg>

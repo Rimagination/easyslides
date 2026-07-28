@@ -1,0 +1,101 @@
+{
+  "schema_version": "easyslides.source_template_projection.v1",
+  "template_id": "nsfc_defense",
+  "source_template_id": "nsfc_defense_distilled",
+  "renderer": "scripts.source_template_renderer.project_source_template_svg",
+  "replacement_policy": "named_slots_only",
+  "pages": [
+    {
+      "projection_id": "nsfc_defense/cover",
+      "slide_id": "cover",
+      "source_slide_id": "slide-01",
+      "source_slide": 1,
+      "source_svg": "01_cover.svg",
+      "source_svg_exists": true,
+      "status": "ready",
+      "slots": [
+        "TITLE",
+        "PROJECT_TYPE",
+        "SUBTITLE",
+        "AFFILIATION",
+        "PRESENTER",
+        "DATE"
+      ],
+      "hard_geometry_invariants": [
+        "text_center_y_matches_container_center_y",
+        "preserve_parent_transform"
+      ]
+    },
+    {
+      "projection_id": "nsfc_defense/toc",
+      "slide_id": "toc",
+      "source_slide_id": "slide-02",
+      "source_slide": 2,
+      "source_svg": "02_toc.svg",
+      "source_svg_exists": true,
+      "status": "ready",
+      "slots": [
+        "TOC_ITEM_01_TITLE",
+        "TOC_ITEM_02_TITLE",
+        "TOC_ITEM_03_TITLE"
+      ],
+      "hard_geometry_invariants": [
+        "text_center_y_matches_container_center_y",
+        "preserve_parent_transform"
+      ]
+    },
+    {
+      "projection_id": "nsfc_defense/chapter",
+      "slide_id": "chapter",
+      "source_slide_id": "slide-08",
+      "source_slide": 8,
+      "source_svg": "03_chapter.svg",
+      "source_svg_exists": true,
+      "status": "ready",
+      "slots": [
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC"
+      ],
+      "hard_geometry_invariants": [
+        "text_center_y_matches_container_center_y",
+        "preserve_parent_transform"
+      ]
+    },
+    {
+      "projection_id": "nsfc_defense/content",
+      "slide_id": "content",
+      "source_slide_id": "slide-03",
+      "source_slide": 3,
+      "source_svg": "04_content.svg",
+      "source_svg_exists": true,
+      "status": "ready",
+      "slots": [
+        "PAGE_TITLE"
+      ],
+      "hard_geometry_invariants": [
+        "text_center_y_matches_container_center_y",
+        "preserve_parent_transform"
+      ]
+    },
+    {
+      "projection_id": "nsfc_defense/ending",
+      "slide_id": "ending",
+      "source_slide_id": "slide-17",
+      "source_slide": 17,
+      "source_svg": "05_ending.svg",
+      "source_svg_exists": true,
+      "status": "ready",
+      "slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "AFFILIATION",
+        "PRESENTER",
+        "DATE"
+      ],
+      "hard_geometry_invariants": [
+        "text_center_y_matches_container_center_y",
+        "preserve_parent_transform"
+      ]
+    }
+  ]
+}

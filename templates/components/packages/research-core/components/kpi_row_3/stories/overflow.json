@@ -1,0 +1,23 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "overflow",
+  "payload": {
+    "items": [
+      {
+        "metric": "1234567890",
+        "label": "Extremely long metric label",
+        "note": "This note is intentionally too long for the compact metric card slot and must be moved elsewhere."
+      },
+      {
+        "metric": "18",
+        "label": "Sites",
+        "note": "Validated samples."
+      },
+      {
+        "metric": "0.87",
+        "label": "Fit",
+        "note": "Stable across folds."
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-6" data-name="Slide Number Placeholder 5" data-ph-type="sldNum">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph sldNum idx=10</text>
+</g>
+<g id="layout-shape-17" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="424.66" y="145.91" width="176.38" height="383.63" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="432.66" y="163.91" font-size="12" fill="#64748B">ph pic idx=14</text>
+</g>
+<g id="layout-shape-18" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="670.34" y="161.45" width="176.38" height="359.32" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="678.34" y="179.45" font-size="12" fill="#64748B">ph pic idx=15</text>
+</g></svg>

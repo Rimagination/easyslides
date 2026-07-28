@@ -78,6 +78,24 @@ class ActiveAcademicTemplateTextFitTests(unittest.TestCase):
 
         self.assertEqual(failures, [])
 
+    def test_pptx_text_boxes_declare_vertical_alignment(self):
+        failures = []
+        layouts_root = ROOT / "templates" / "layouts"
+        valid = {"top", "t", "middle", "center", "ctr", "bottom", "b"}
+        for template_id in ACTIVE_ACADEMIC_TEMPLATES:
+            for svg_path in sorted((layouts_root / template_id).glob("*.svg")):
+                root = ET.parse(svg_path).getroot()
+                for elem in root.iter():
+                    if elem.tag.split("}", 1)[-1] != "text" or elem.get("data-pptx-textbox") != "true":
+                        continue
+                    valign = (elem.get("data-pptx-valign") or "").strip().lower()
+                    if valign not in valid:
+                        failures.append(f"{template_id}/{svg_path.name}: missing or invalid valign {valign!r}")
+                    if elem.get("text-anchor") == "middle" and valign not in {"middle", "center", "ctr"}:
+                        failures.append(f"{template_id}/{svg_path.name}: centered text is not vertically centered")
+
+        self.assertEqual(failures, [])
+
 
 if __name__ == "__main__":
     unittest.main()

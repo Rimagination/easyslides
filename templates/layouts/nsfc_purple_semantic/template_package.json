@@ -1,0 +1,60 @@
+{
+  "schema_version": "easyslides.template_package.v1",
+  "package_id": "template/nsfc_purple_semantic",
+  "template_id": "nsfc_purple_semantic",
+  "version": "0.1.0",
+  "status": "quarantined",
+  "display_name": "NSFC Purple Semantic",
+  "description": "nsfc_purple_semantic",
+  "installability": "repo_relative_template_package",
+  "entrypoints": {
+    "template": "template.json",
+    "layouts": "layouts.json",
+    "body_variants": "body_variants.json",
+    "slots": "slot_contracts.json",
+    "geometry": "geometry_contract.json",
+    "components": "component_catalog.json",
+    "assets": "assets/asset_manifest.json",
+    "design_spec": "design_spec.md",
+    "rules": "rules.md"
+  },
+  "source_of_truth": {
+    "package": "template_package.json",
+    "shells": "layouts.json",
+    "body_variants": "body_variants.json",
+    "components": "component_catalog.json"
+  },
+  "derived_outputs": {
+    "template_ir": "compiled/template_ir.json",
+    "lock": "compiled/template.lock.json",
+    "projections": "compiled/projections",
+    "registry": "templates/template_registry.json"
+  },
+  "capability_level": "semantic",
+  "compatibility": {
+    "canvas_format": "ppt169",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "output_contract": "editable-native-pptx",
+    "layout_mode": "semantic_named_slots",
+    "required_renderer": "svg_to_pptx"
+  },
+  "capabilities": [
+    "named_slots",
+    "editable_native_pptx",
+    "component_asset_catalog",
+    "geometry_contract",
+    "text_capacity_contract"
+  ],
+  "scenarios": [
+    "academic_paper_report",
+    "research_defense",
+    "scientific_project_report"
+  ],
+  "examples": [],
+  "layout_count": 17,
+  "source_template_id": "",
+  "production_eligible": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "easyslides.template_links.v1",
+  "template_id": "nsfc_defense_faithful_raster",
+  "runtime_template_dir": "templates/layouts/nsfc_defense_faithful_raster",
+  "design_spec": "templates/layouts/nsfc_defense_faithful_raster/design_spec.md",
+  "layouts": "templates/layouts/nsfc_defense_faithful_raster/layouts.json",
+  "page_catalog": "templates/layouts/nsfc_defense_faithful_raster/page_catalog.json",
+  "story_structure": "templates/layouts/nsfc_defense_faithful_raster/story_structure.json",
+  "rules": "templates/layouts/nsfc_defense_faithful_raster/rules.md",
+  "template": "templates/layouts/nsfc_defense_faithful_raster/template.json",
+  "layout_roster": "templates/layouts/nsfc_defense_faithful_raster/layout_roster.json",
+  "slot_contracts": "templates/layouts/nsfc_defense_faithful_raster/slot_contracts.json",
+  "private_asset_bank_role": "build_reference_only"
+}

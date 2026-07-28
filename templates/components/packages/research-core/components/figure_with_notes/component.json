@@ -1,0 +1,125 @@
+{
+  "schema_version": "easyslides.component_package.v1",
+  "component_id": "figure_with_notes",
+  "asset_id": "component_package/figure_with_notes",
+  "display_name": "Figure With Notes",
+  "source_asset_id": "card/figure_note_card",
+  "granularity": "component_package",
+  "render_backend": "component_package",
+  "render_targets": ["svg", "native_pptx", "template_body_variant"],
+  "selection": {
+    "content_shapes": ["figure_with_notes", "single_exhibit", "result_interpretation", "image_evidence", "figure_explanation"],
+    "page_roles": ["evidence", "result", "case_study"],
+    "item_count_min": 1,
+    "item_count_max": 3,
+    "density": "medium",
+    "evidence_types": ["figure", "image", "visual_evidence"],
+    "editable_targets": ["image", "takeaway", "notes"],
+    "visual_complexity": "medium",
+    "best_for": "One dominant figure plus a concise interpretation rail.",
+    "avoid_when": "The slide needs multiple independent figures or a full table."
+  },
+  "input_schema": {
+    "schema_version": "easyslides.component_input_schema.v1",
+    "type": "object",
+    "required": ["image", "takeaway", "bullets"],
+    "additional_properties": false,
+    "properties": {
+      "image": {"type": "string", "min_length": 1, "max_length": 260},
+      "takeaway": {"type": "string", "min_length": 1, "max_length": 150},
+      "bullets": {"type": "string", "min_length": 1, "max_length": 240},
+      "caption": {"type": "string", "max_length": 120},
+      "source": {"type": "string", "max_length": 160}
+    }
+  },
+  "payload_contract": {
+    "shape": "figure + notes",
+    "required": ["image", "takeaway", "bullets"],
+    "optional": ["caption", "source"]
+  },
+  "slots": [
+    {
+      "slot_id": "image",
+      "kind": "image",
+      "role": "evidence",
+      "required": true,
+      "image_fit": "contain"
+    },
+    {
+      "slot_id": "takeaway",
+      "kind": "text",
+      "role": "title",
+      "required": true,
+      "capacity": {
+        "font_size_px": 22,
+        "min_font_size_px": 18,
+        "line_height": 1.16,
+        "max_chars_per_line_zh": 12,
+        "max_lines": 2,
+        "overflow_action": "shorten"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "bullets",
+      "kind": "text",
+      "role": "body",
+      "required": true,
+      "capacity": {
+        "font_size_px": 16,
+        "min_font_size_px": 14,
+        "line_height": 1.28,
+        "max_chars_per_line_zh": 15,
+        "max_lines": 7,
+        "overflow_action": "split_or_use_text_right"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    }
+  ],
+  "qa": {
+    "required_gates": [
+      "component_package_contract",
+      "component_plan_contract",
+      "card_payload_capacity",
+      "visual_measure_gate",
+      "validate_pptx_text_layout",
+      "renderer_governance"
+    ],
+    "alignment_invariants": [
+      {
+        "id": "note_text_vertical_center",
+        "scope": "text_in_container",
+        "rule": "text_center_y_matches_container_center_y",
+        "tolerance_px": 2,
+        "severity": "error"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "story_id": "default",
+      "payload": "stories/default.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "dense",
+      "payload": "stories/dense.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "overflow",
+      "payload": "stories/overflow.json",
+      "expected_status": "fail"
+    }
+  ],
+  "preview": {
+    "review_status": "pending",
+    "expected_files": ["preview/default.png", "preview/dense.png", "preview/overflow.png"]
+  }
+}

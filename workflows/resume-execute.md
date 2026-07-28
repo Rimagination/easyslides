@@ -48,7 +48,7 @@ python scripts/deck_execution_lock.py <project_path>/deck_plan.json --validate <
 ## Step 2: Load SKILL.md, proceed from Step 6
 
 ```
-Read skills/ppt-master/SKILL.md
+Read SKILL.md
 ```
 
 Then jump to `### Step 6: Executor Phase` and run the documented pipeline:

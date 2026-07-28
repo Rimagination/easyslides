@@ -1,0 +1,7 @@
+{
+  "schema_version": "easyslides.asset_promotion.v1",
+  "template_id": "nsfc_defense_distilled",
+  "component_assets": "D:\\scansci\\easyslides\\templates\\components\\source_templates\\nsfc_defense_distilled_kit\\component_asset_manifest.json",
+  "symbol_assets": "D:\\scansci\\easyslides\\templates\\components\\source_templates\\nsfc_defense_distilled_kit\\symbol_asset_manifest.json",
+  "promotion_policy": "source_scoped_until_visual_promotion"
+}

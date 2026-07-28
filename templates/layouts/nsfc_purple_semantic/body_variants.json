@@ -1,0 +1,164 @@
+{
+  "schema_version": "easyslides.body_variants.v2",
+  "template_id": "nsfc_purple_semantic",
+  "selection_policy": "Resolve by semantic content_shape and item_count; never by source slide number.",
+  "variants": [
+    {
+      "variant_id": "text_focus",
+      "layout_id": "text_focus",
+      "content_shapes": [
+        "text_focus",
+        "supporting_points",
+        "summary",
+        "question"
+      ],
+      "min_items": 1,
+      "max_items": 7,
+      "priority": 10
+    },
+    {
+      "variant_id": "figure_left",
+      "layout_id": "figure_left",
+      "content_shapes": [
+        "figure",
+        "architecture",
+        "table",
+        "image_evidence"
+      ],
+      "min_items": 1,
+      "max_items": 7,
+      "priority": 20
+    },
+    {
+      "variant_id": "figure_right",
+      "layout_id": "figure_right",
+      "content_shapes": [
+        "figure_explanation",
+        "mechanism"
+      ],
+      "min_items": 1,
+      "max_items": 7,
+      "priority": 20
+    },
+    {
+      "variant_id": "comparison_focus",
+      "layout_id": "comparison_focus",
+      "content_shapes": [
+        "comparison",
+        "two_sides",
+        "before_after"
+      ],
+      "min_items": 2,
+      "max_items": 8,
+      "priority": 30
+    },
+    {
+      "variant_id": "two_column",
+      "layout_id": "two_column",
+      "content_shapes": [
+        "comparison",
+        "two_sides",
+        "before_after"
+      ],
+      "min_items": 2,
+      "max_items": 10,
+      "priority": 20
+    },
+    {
+      "variant_id": "three_cards",
+      "layout_id": "three_cards",
+      "content_shapes": [
+        "three_findings",
+        "three_contributions",
+        "parallel_points"
+      ],
+      "min_items": 3,
+      "max_items": 9,
+      "priority": 20
+    },
+    {
+      "variant_id": "process",
+      "layout_id": "process",
+      "content_shapes": [
+        "workflow",
+        "process",
+        "sequence"
+      ],
+      "min_items": 4,
+      "max_items": 8,
+      "priority": 20
+    },
+    {
+      "variant_id": "result",
+      "layout_id": "result",
+      "content_shapes": [
+        "result",
+        "metric_set",
+        "benchmark"
+      ],
+      "min_items": 1,
+      "max_items": 6,
+      "priority": 30
+    },
+    {
+      "variant_id": "timeline",
+      "layout_id": "timeline",
+      "content_shapes": [
+        "timeline",
+        "milestones",
+        "sequence_evidence"
+      ],
+      "min_items": 3,
+      "max_items": 6,
+      "priority": 40
+    },
+    {
+      "variant_id": "quote",
+      "layout_id": "quote",
+      "content_shapes": [
+        "quote",
+        "key_takeaway",
+        "conclusion"
+      ],
+      "min_items": 1,
+      "max_items": 4,
+      "priority": 40
+    },
+    {
+      "variant_id": "metrics",
+      "layout_id": "metrics",
+      "content_shapes": [
+        "metric_set",
+        "kpi_summary",
+        "benchmark_summary"
+      ],
+      "min_items": 3,
+      "max_items": 8,
+      "priority": 40
+    },
+    {
+      "variant_id": "table",
+      "layout_id": "table",
+      "content_shapes": [
+        "table",
+        "dataset",
+        "benchmark_table"
+      ],
+      "min_items": 2,
+      "max_items": 12,
+      "priority": 40
+    },
+    {
+      "variant_id": "four_cards",
+      "layout_id": "four_cards",
+      "content_shapes": [
+        "four_findings",
+        "evidence_matrix",
+        "risks_and_actions"
+      ],
+      "min_items": 4,
+      "max_items": 8,
+      "priority": 40
+    }
+  ]
+}

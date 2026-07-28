@@ -2,7 +2,7 @@
 
 [中文](#中文) | [English](#english)
 
-![Defense Palette Family](templates/layouts/assets/defense_palette_family_preview.svg)
+![EasySlides: Research to editable slides](assets/easyslides-github-hero.png)
 
 EasySlides is a **project-backed Codex skill**. `SKILL.md` is the agent
 entrypoint, but real PPTX generation, template reuse, slide-image
@@ -18,17 +18,29 @@ reconstruction, and QA gates require the full repository.
 
 EasySlides 是一个面向学术汇报与研究型演示文稿的本地 PPTX 生成工具链。它的核心目标是把论文、报告、网页、Markdown 等来源材料转换为结构清晰、风格一致、并且可以在 PowerPoint 中继续编辑的演示文稿。
 
+> 研究材料 -> 可追溯叙事 -> 模板与组件编排 -> 可编辑原生 PPTX
+
 核心流程：
 
 ```text
 来源材料 -> 项目工作区 -> Deck Plan -> SVG/布局模板 -> 可编辑 PPTX
 ```
 
+### 核心能力
+
+- **学术材料到叙事**：从论文、报告、数据、网页和 Markdown 建立可追溯的内容计划，优先保留用户提供的主张、图表、表格与引用。
+- **PPTX 蒸馏与模板化**：把参考 PPTX 分解为稳定页面壳、内容变体、组件、几何、设计令牌与来源证据，而不是把整套页面当作不可控的图片。
+- **模板受边界约束**：命名模板只能使用其声明的本地页面变体和组件；全局组件或其它模板资产不能被悄悄套用。
+- **组件资产体系**：提供模板组件、卡片、页面配方、图表和图标库；组件具有输入槽位、容量、渲染器和 QA 契约。
+- **原生可编辑交付**：生产链固定为 `SVG/shape IR -> DrawingML/OOXML -> PPTX`，文字、形状、颜色和图表保持可编辑。
+- **Fail-closed QA**：文本容量、垂直居中、几何、视觉差异、PPTX 可编辑性与跨材料测试均为交付门禁。
+
 ### 项目结构
 
 - `SKILL.md`：学术 PPT 工作流的主说明。
 - `scripts/`：转换、项目管理、SVG 校验、模板导入、PPTX 导出等工具。
 - `templates/`：学术布局模板、风格包、图表模块与图标库。
+- `assets/`：README、品牌和产品级视觉资产。
 - `references/`：写作规范、设计规则、执行器/策略器参考。
 - `workflows/`：预览、音频、模板创建、图表验证、主题调研等扩展流程。
 - `tests/`：模板契约、CLI 入口与核心工具的回归测试。
@@ -38,6 +50,7 @@ EasySlides 是一个面向学术汇报与研究型演示文稿的本地 PPTX 生
 ```powershell
 python -m pip install -r requirements.txt
 python -m pytest -q
+python scripts/easyslides.py --help
 ```
 
 创建一个本地演示项目：
@@ -55,17 +68,36 @@ python scripts/finalize_svg.py projects/my_presentation
 python scripts/svg_to_pptx.py projects/my_presentation
 ```
 
+### 常用工作流
+
+```powershell
+# 将资料转换为 Markdown，并建立项目
+python scripts/easyslides.py source-to-md <source-file-or-url> -o <markdown-output>
+python scripts/project_manager.py init my_presentation --format ppt169
+
+# 从参考 PPTX 蒸馏可复用模板资产
+python scripts/easyslides.py distill <template.pptx> --template-id <template_id>
+
+# 验证模板能力边界，并编译生产模板
+python scripts/easyslides.py template-capabilities validate --json
+python scripts/easyslides.py template-compile templates/layouts/nsfc_defense --write --json
+
+# 生成组件选择、候选方案和 PPTX 预览
+python scripts/easyslides.py component-workflow deck_plan.json --out build/component_workflow
+```
+
 ### 模板
 
-当前可发布的学术布局模板位于 `templates/layouts/`，索引文件为 `templates/layouts/layouts_index.json`。旧模板 ID 的兼容映射记录在 `templates/layouts/aliases.json`，其中 `defense_s01` 已指向 `defense_leftnav`，`literature_s01` 已指向 `literature_minimal`。
+当前可发布的学术布局模板位于 `templates/layouts/`，索引文件为 `templates/layouts/layouts_index.json`。除了通用学术、SCQA、答辩和文献汇报页面壳外，`nsfc_defense` 提供了可执行内容变体与模板局部组件。
+
+每个模板目录都拥有 `capability_profile.json`。它定义模板是否可用于生成、允许哪些页面或组件粒度，以及是否存在局部组件包。命名模板默认拒绝未声明的全局资产；蒸馏中间目录与栅格保真目录被标记为不可直接生成。
 
 常用维护命令：
 
 ```powershell
-python scripts/svg_quality_checker.py templates/layouts/defense_leftnav --template-mode --format ppt169
-python scripts/svg_quality_checker.py templates/layouts/defense_topnav --template-mode --format ppt169
-python scripts/svg_quality_checker.py templates/layouts/literature_minimal --template-mode --format ppt169
-python scripts/register_template.py --rebuild-all
+python scripts/easyslides.py template-capabilities validate --json
+python scripts/easyslides.py template-package rebuild --json
+python scripts/easyslides.py template-gate templates/layouts/nsfc_defense --json
 ```
 
 ### 致谢
@@ -94,6 +126,8 @@ API Key 请放在环境变量或本地 `.env` 中，不要提交真实密钥。`
 
 EasySlides is a local PPTX generation toolchain for academic talks and research presentations. Its goal is to turn papers, reports, web pages, Markdown, and other source materials into structured, visually consistent, and PowerPoint-editable decks.
 
+> Research material -> traceable narrative -> template and component composition -> editable native PPTX
+
 It is a project-backed skill: installing only `SKILL.md` gives an agent the
 routing guide, while installing the full repository provides the runtime,
 templates, workflows, and QA gates required for actual PPTX generation. See
@@ -105,11 +139,21 @@ Core pipeline:
 source material -> project workspace -> deck plan -> SVG/layout templates -> editable PPTX
 ```
 
+### What It Does
+
+- **Research material to narrative**: turns papers, reports, data, web pages, and Markdown into traceable deck plans while preserving supplied claims, figures, tables, and citations.
+- **PPTX distillation and templating**: extracts stable shells, body variants, components, geometry, design tokens, and provenance from reference decks instead of treating them as opaque page images.
+- **Bounded templates**: a named template can select only its declared local variants and components. Global or cross-template assets cannot silently leak into a deck.
+- **Component assets**: template components, cards, page recipes, charts, and icons carry slot, capacity, renderer, and QA contracts.
+- **Editable native delivery**: the production path is `SVG/shape IR -> DrawingML/OOXML -> PPTX`, keeping text, shapes, colors, and charts editable.
+- **Fail-closed QA**: content capacity, vertical alignment, geometry, visual difference, editability, and cross-material checks are delivery gates.
+
 ### Repository Layout
 
 - `SKILL.md`: main operating guide for the academic PPT workflow.
 - `scripts/`: utilities for conversion, project management, SVG validation, template import, and PPTX export.
 - `templates/`: academic layout templates, style packs, chart modules, and icon libraries.
+- `assets/`: README, brand, and product-level visual assets.
 - `references/`: authoring standards, design rules, strategist/executor guidance.
 - `workflows/`: optional flows for preview, audio, template creation, chart verification, and topic research.
 - `tests/`: regression tests for template contracts, CLI entry points, and core tools.
@@ -119,6 +163,7 @@ source material -> project workspace -> deck plan -> SVG/layout templates -> edi
 ```powershell
 python scripts/project_manager.py setup-pdf-tools --install
 python -m pytest -q
+python scripts/easyslides.py --help
 ```
 
 Create a local deck project:
@@ -147,17 +192,36 @@ python scripts/finalize_svg.py projects/my_presentation
 python scripts/svg_to_pptx.py projects/my_presentation
 ```
 
+### Common Workflows
+
+```powershell
+# Convert source material and create a project
+python scripts/easyslides.py source-to-md <source-file-or-url> -o <markdown-output>
+python scripts/project_manager.py init my_presentation --format ppt169
+
+# Distill reusable template assets from a reference PPTX
+python scripts/easyslides.py distill <template.pptx> --template-id <template_id>
+
+# Validate template boundaries and compile a production template
+python scripts/easyslides.py template-capabilities validate --json
+python scripts/easyslides.py template-compile templates/layouts/nsfc_defense --write --json
+
+# Produce component choices, review material, and a PPTX preview
+python scripts/easyslides.py component-workflow deck_plan.json --out build/component_workflow
+```
+
 ### Templates
 
-Active academic layout templates live under `templates/layouts/` and are indexed in `templates/layouts/layouts_index.json`. Legacy template IDs are recorded in `templates/layouts/aliases.json`; `defense_s01` now resolves to `defense_leftnav`, and `literature_s01` now resolves to `literature_minimal`.
+Active academic layout templates live under `templates/layouts/` and are indexed in `templates/layouts/layouts_index.json`. Alongside general academic, SCQA, defense, and literature-report shells, `nsfc_defense` provides executable body variants and template-local components.
+
+Every template directory owns a `capability_profile.json`. It declares whether the directory can generate decks, which page/component granularities are permitted, and whether a local component pack exists. Named templates reject undeclared global assets by default; distilled and raster-faithful directories are source-scoped rather than direct generation templates.
 
 Useful maintenance commands:
 
 ```powershell
-python scripts/svg_quality_checker.py templates/layouts/defense_leftnav --template-mode --format ppt169
-python scripts/svg_quality_checker.py templates/layouts/defense_topnav --template-mode --format ppt169
-python scripts/svg_quality_checker.py templates/layouts/literature_minimal --template-mode --format ppt169
-python scripts/register_template.py --rebuild-all
+python scripts/easyslides.py template-capabilities validate --json
+python scripts/easyslides.py template-package rebuild --json
+python scripts/easyslides.py template-gate templates/layouts/nsfc_defense --json
 ```
 
 ### Acknowledgements

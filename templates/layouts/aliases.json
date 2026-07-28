@@ -8,5 +8,7 @@
   "literature01": "literature_minimal",
   "literature02": "literature_minimal",
   "literature_s01": "literature_minimal",
-  "literature_s02": "literature_minimal"
+  "literature_s02": "literature_minimal",
+  "nsfc_semantic": "nsfc_defense",
+  "nsfc_purple": "nsfc_defense"
 }

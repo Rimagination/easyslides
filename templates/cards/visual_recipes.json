@@ -1,14 +1,14 @@
 {
   "schema_version": "easyslides.card_visual_recipes.v1",
   "source_basis": [
-    "D:/scansci/easyslides/卡片.pptx",
+    "external://template-sources/card-recipes.pptx",
     "outputs/cards_source_svg/svg-flat/slide_13.svg",
     "outputs/cards_source_svg/svg-flat/slide_14.svg",
     "outputs/cards_source_svg/svg-flat/slide_16.svg",
     "outputs/cards_source_svg/svg-flat/slide_17.svg",
     "outputs/cards_source_svg/svg-flat/slide_21.svg",
     "outputs/cards_source_svg/svg-flat/slide_22.svg",
-    "D:/PPT skill/_research/easyppt_refs/hugohe3__ppt-master/examples"
+    "external://research-references/ppt-master-examples"
   ],
   "default_canvas": {"width": 1280, "height": 720, "unit": "px"},
   "authoring_rule": "Recipes produce one SVG <g> component. The LLM must hand-write SVG from the recipe and keep every child inside the declared box.",

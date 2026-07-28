@@ -1,0 +1,32 @@
+{
+  "schema_version": "easyslides.template_capability_profile.v1",
+  "template_id": "nsfc_defense_distilled",
+  "lifecycle": "source_scoped",
+  "generation_enabled": false,
+  "composition": {
+    "mode": "disabled",
+    "allowed_granularities": [],
+    "allow_global_component_fallback": false,
+    "allowed_component_packs": [],
+    "requires_declared_body_variant": false
+  },
+  "contracts": {
+    "layouts": true,
+    "body_variants": false,
+    "component_catalog": false,
+    "component_pack": false,
+    "design_tokens": false
+  },
+  "selection_policy": {
+    "template_affinity": "required",
+    "undeclared_assets": "reject",
+    "manual_selection": "must_be_declared",
+    "missing_profile": "block_named_template_component_selection"
+  },
+  "required_gates": [
+    "template_capability_profile",
+    "component_plan_contract",
+    "visual_measure_gate"
+  ],
+  "derived_from": "template_directory_contracts"
+}

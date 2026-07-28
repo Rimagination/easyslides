@@ -44,6 +44,8 @@ OVERFLOW_BLOCK_RATIO = 1.10
 OVERLAP_BLOCK_RATIO = 0.65
 OVERLAP_MIN_AREA_IN2 = 0.08
 OFF_SLIDE_TOLERANCE_IN = 0.08
+CONTROL_CONTAINER_MAX_HEIGHT_IN = 1.0
+CONTROL_CENTER_TOLERANCE_IN = 0.05
 AffineMatrix = tuple[float, float, float, float, float, float]
 IDENTITY_MATRIX: AffineMatrix = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
 PPTX_NS = {
@@ -82,6 +84,47 @@ class TextBox:
     @property
     def area(self) -> float:
         return max(0.0, self.w) * max(0.0, self.h)
+
+    @property
+    def cx(self) -> float:
+        return self.x + self.w / 2
+
+    @property
+    def cy(self) -> float:
+        return self.y + self.h / 2
+
+
+@dataclass(frozen=True)
+class ShapeBox:
+    slide_number: int
+    shape_index: int
+    name: str
+    x: float
+    y: float
+    w: float
+    h: float
+    fill: str | None = None
+    prst: str | None = None
+
+    @property
+    def right(self) -> float:
+        return self.x + self.w
+
+    @property
+    def bottom(self) -> float:
+        return self.y + self.h
+
+    @property
+    def area(self) -> float:
+        return max(0.0, self.w) * max(0.0, self.h)
+
+    @property
+    def cx(self) -> float:
+        return self.x + self.w / 2
+
+    @property
+    def cy(self) -> float:
+        return self.y + self.h / 2
 
 
 def _inches(value: int | float | None) -> float:
@@ -307,6 +350,21 @@ def _raw_body_wrap(sp: ET.Element) -> str:
     return str(body_pr.attrib.get("wrap") or "square").lower()
 
 
+def _raw_shape_fill(sp: ET.Element) -> str | None:
+    solid = sp.find("p:spPr/a:solidFill/a:srgbClr", PPTX_NS)
+    if solid is not None and solid.attrib.get("val"):
+        return f"#{solid.attrib['val'].upper()}"
+    solid_scheme = sp.find("p:spPr/a:solidFill/a:schemeClr", PPTX_NS)
+    if solid_scheme is not None and solid_scheme.attrib.get("val"):
+        return solid_scheme.attrib["val"]
+    return None
+
+
+def _raw_shape_prst(sp: ET.Element) -> str | None:
+    prst = sp.find("p:spPr/a:prstGeom", PPTX_NS)
+    return prst.attrib.get("prst") if prst is not None else None
+
+
 def _measure_text_width_pt(text: str, font_name: str, size_pt: float) -> float:
     font = _load_font(font_name, size_pt)
     return max(
@@ -346,6 +404,54 @@ def _raw_visual_box(
     else:
         visual_y = y
     return visual_x, visual_y, visual_w, min(max(visual_h, 0.01), max(h, visual_h))
+
+
+def _iter_shape_boxes_from_xml(pptx_path: str | Path) -> list[ShapeBox]:
+    pptx_path = Path(pptx_path)
+    boxes: list[ShapeBox] = []
+    with zipfile.ZipFile(pptx_path) as zf:
+        for slide_number, slide_name in enumerate(_pptx_slide_order(pptx_path), start=1):
+            root = ET.fromstring(zf.read(slide_name))
+            shape_index = 0
+
+            def walk(parent: ET.Element, matrix: AffineMatrix) -> None:
+                nonlocal shape_index
+                for child in parent:
+                    tag = child.tag.rsplit("}", 1)[-1] if "}" in child.tag else child.tag
+                    if tag == "grpSp":
+                        walk(child, _matrix_multiply(matrix, _group_child_matrix(child)))
+                        continue
+                    if tag != "sp":
+                        walk(child, matrix)
+                        continue
+                    shape_index += 1
+                    sp = child
+                    if _raw_text(sp):
+                        continue
+                    xfrm = sp.find("p:spPr/a:xfrm", PPTX_NS)
+                    rect = _xfrm_rect(xfrm)
+                    if rect is None:
+                        continue
+                    x, y, w, h = _transform_rect(_xfrm_rotation_matrix(xfrm, rect), *rect)
+                    x, y, w, h = _transform_rect(matrix, x, y, w, h)
+                    c_nv_pr = sp.find("p:nvSpPr/p:cNvPr", PPTX_NS)
+                    name = c_nv_pr.attrib.get("name", "") if c_nv_pr is not None else ""
+                    boxes.append(
+                        ShapeBox(
+                            slide_number=slide_number,
+                            shape_index=shape_index,
+                            name=name or f"raw_xml_shape_{shape_index}",
+                            x=x,
+                            y=y,
+                            w=w,
+                            h=h,
+                            fill=_raw_shape_fill(sp),
+                            prst=_raw_shape_prst(sp),
+                        )
+                    )
+
+            walk(root, IDENTITY_MATRIX)
+    return boxes
 
 
 def _iter_text_boxes_from_xml(pptx_path: str | Path) -> list[TextBox]:
@@ -580,6 +686,108 @@ def _overlap_area(a: TextBox, b: TextBox) -> float:
     return dx * dy
 
 
+def _shape_text_overlap_area(text: TextBox, shape: ShapeBox) -> float:
+    dx = min(text.right, shape.right) - max(text.x, shape.x)
+    dy = min(text.bottom, shape.bottom) - max(text.y, shape.y)
+    if dx <= 0 or dy <= 0:
+        return 0.0
+    return dx * dy
+
+
+def _horizontal_overlap_ratio(a: TextBox, b: ShapeBox) -> float:
+    dx = min(a.right, b.right) - max(a.x, b.x)
+    if dx <= 0:
+        return 0.0
+    return dx / max(min(a.w, b.w), 0.01)
+
+
+def _point_in_shape(shape: ShapeBox, x: float, y: float) -> bool:
+    return shape.x <= x <= shape.right and shape.y <= y <= shape.bottom
+
+
+def _hex_luminance(fill: str | None) -> float | None:
+    if not fill or not fill.startswith("#") or len(fill) != 7:
+        return None
+    try:
+        r = int(fill[1:3], 16) / 255.0
+        g = int(fill[3:5], 16) / 255.0
+        b = int(fill[5:7], 16) / 255.0
+    except ValueError:
+        return None
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def _is_control_container(shape: ShapeBox) -> bool:
+    if shape.w <= 0 or shape.h <= 0:
+        return False
+    if shape.h < 0.14 or shape.h > CONTROL_CONTAINER_MAX_HEIGHT_IN:
+        return False
+    if shape.w < 0.25 or shape.w > 8.0:
+        return False
+    fill_luma = _hex_luminance(shape.fill)
+    rounded = (shape.prst or "").lower() in {"roundrect", "roundrectangularcallout"}
+    dark_or_colored = bool(shape.fill) and (fill_luma is None or fill_luma < 0.92)
+    return rounded or dark_or_colored
+
+
+def _is_control_text_for_container(text: TextBox, shape: ShapeBox) -> bool:
+    if text.h > shape.h * 1.20 or text.h < shape.h * 0.10:
+        return False
+    if _horizontal_overlap_ratio(text, shape) < 0.45 and not _point_in_shape(shape, text.cx, text.cy):
+        return False
+    if _shape_text_overlap_area(text, shape) <= 0:
+        return False
+    return True
+
+
+def _is_bottom_caption(text: TextBox, shape: ShapeBox) -> bool:
+    """Exclude image/card captions from the single-control center check."""
+    if text.h > 0.30 or text.cy < shape.y + shape.h * 0.60:
+        return False
+    if abs(text.cx - shape.cx) > shape.w * 0.18:
+        return False
+    return text.bottom >= shape.bottom - 0.32
+
+
+def _is_compound_card_text(text: TextBox, shape: ShapeBox, boxes: list[TextBox]) -> bool:
+    """Return whether the shape contains multiple text roles, not one control label."""
+    siblings = [
+        candidate
+        for candidate in boxes
+        if candidate.slide_number == text.slide_number
+        and candidate.shape_index != text.shape_index
+        and _shape_text_overlap_area(candidate, shape) > 0
+    ]
+    return bool(siblings)
+
+
+def _control_container_for_text(
+    text: TextBox,
+    shapes: list[ShapeBox],
+    boxes: list[TextBox],
+) -> ShapeBox | None:
+    candidates: list[tuple[float, float, float, ShapeBox]] = []
+    for shape in shapes:
+        if shape.slide_number != text.slide_number:
+            continue
+        if not _is_control_container(shape):
+            continue
+        if not _is_control_text_for_container(text, shape):
+            continue
+        if _is_bottom_caption(text, shape) or _is_compound_card_text(text, shape, boxes):
+            continue
+        # Exported source templates can retain a partially overlapping control
+        # behind a newly composed component. Prefer the shape that actually
+        # contains the label before comparing its geometry to the label.
+        text_coverage = _shape_text_overlap_area(text, shape) / max(text.area, 0.01)
+        center_delta = abs(text.cy - shape.cy)
+        candidates.append((-text_coverage, center_delta, shape.area, shape))
+    if not candidates:
+        return None
+    _coverage, _delta, _area, shape = min(candidates, key=lambda item: item[:3])
+    return shape
+
+
 def _is_page_number_like(box: TextBox) -> bool:
     text = box.text.strip()
     return len(text) <= 4 and text.replace("/", "").replace("-", "").isdigit()
@@ -621,15 +829,28 @@ def _is_side_label_bleed(box: TextBox, slide_w: float, slide_h: float) -> bool:
     )
 
 
+def _is_wrapped_visual_edge_bleed(box: TextBox, slide_w: float, slide_h: float) -> bool:
+    """Ignore one-line width estimates that exceed an otherwise in-slide box."""
+    if box.wrap == "none" or box.x < 0 or box.y < 0:
+        return False
+    return (
+        box.right > slide_w + OFF_SLIDE_TOLERANCE_IN
+        and box.x + box.usable_w <= slide_w + OFF_SLIDE_TOLERANCE_IN
+        and box.bottom <= slide_h + OFF_SLIDE_TOLERANCE_IN
+    )
+
+
 def validate_pptx_text_layout(pptx_path: str | Path) -> dict[str, Any]:
     pptx_path = Path(pptx_path)
     prs = Presentation(str(pptx_path))
     slide_w = _inches(prs.slide_width)
     slide_h = _inches(prs.slide_height)
     boxes = _iter_text_boxes_from_xml(pptx_path)
+    shapes = _iter_shape_boxes_from_xml(pptx_path) if boxes else []
     text_box_source = "raw_xml"
     if not boxes:
         boxes = _iter_text_boxes(prs)
+        shapes = []
         text_box_source = "python-pptx_fallback"
     issues: list[dict[str, Any]] = _negative_extent_issues_from_xml(pptx_path)
 
@@ -638,7 +859,12 @@ def validate_pptx_text_layout(pptx_path: str | Path) -> dict[str, Any]:
         height_in = max(box.usable_h, box.h) if box.wrap == "none" else box.usable_h
         height_pt = height_in * PT_PER_INCH
         lines_needed = _measure_lines_for_box(box, width_pt)
-        line_height = box.font_size_pt * box.line_spacing
+        # Imported source decks often store deliberate line breaks without an
+        # explicit DrawingML line-spacing element. Those paragraphs use the
+        # natural single-line height; estimate 1.2 spacing only for wrapped
+        # text that has to be laid out by the validator.
+        line_spacing = 1.0 if "\n" in box.text else box.line_spacing
+        line_height = box.font_size_pt * line_spacing
         lines_available = max(1, math.floor(height_pt / max(line_height, 1.0) + 1e-6))
         overflow_ratio = lines_needed / max(lines_available, 1)
 
@@ -676,7 +902,9 @@ def validate_pptx_text_layout(pptx_path: str | Path) -> dict[str, Any]:
             or box.y < -OFF_SLIDE_TOLERANCE_IN
             or box.right > slide_w + OFF_SLIDE_TOLERANCE_IN
             or box.bottom > slide_h + OFF_SLIDE_TOLERANCE_IN
-        ) and not _is_side_label_bleed(box, slide_w, slide_h):
+        ) and not _is_side_label_bleed(box, slide_w, slide_h) and not _is_wrapped_visual_edge_bleed(
+            box, slide_w, slide_h
+        ):
             placeholder = _is_template_placeholder_text(box.text)
             issues.append(
                 _issue(
@@ -689,7 +917,7 @@ def validate_pptx_text_layout(pptx_path: str | Path) -> dict[str, Any]:
                 )
             )
 
-        if len(box.text) > 24 and (box.h < 0.35 or box.usable_w < 1.0):
+        if len(box.text) > 24 and (box.usable_h < 0.35 or box.usable_w < 1.0):
             issues.append(
                 _issue(
                     "TEXT-LABEL-TOO-LONG",
@@ -699,6 +927,28 @@ def validate_pptx_text_layout(pptx_path: str | Path) -> dict[str, Any]:
                     text_length=len(box.text),
                 )
             )
+
+        control_container = _control_container_for_text(box, shapes, boxes)
+        if control_container is not None:
+            center_delta = abs(box.cy - control_container.cy)
+            if center_delta > CONTROL_CENTER_TOLERANCE_IN:
+                issues.append(
+                    _issue(
+                        "CONTROL-TEXT-VERTICAL-MISALIGN",
+                        "Control-like text is not vertically centered in its containing shape.",
+                        box,
+                        container_shape_index=control_container.shape_index,
+                        container_shape_name=control_container.name,
+                        container_x=round(control_container.x, 3),
+                        container_y=round(control_container.y, 3),
+                        container_w=round(control_container.w, 3),
+                        container_h=round(control_container.h, 3),
+                        text_center_y=round(box.cy, 3),
+                        container_center_y=round(control_container.cy, 3),
+                        center_delta=round(center_delta, 3),
+                        max_center_delta=CONTROL_CENTER_TOLERANCE_IN,
+                    )
+                )
 
     for i, left in enumerate(boxes):
         for right in boxes[i + 1 :]:

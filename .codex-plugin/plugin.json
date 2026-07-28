@@ -1,0 +1,47 @@
+{
+  "name": "easyslides",
+  "version": "0.1.1+codex.20260726164018",
+  "description": "EasySlides creates editable academic PPTX decks and distills source PowerPoint files into content-free semantic templates, components, and symbols with fail-closed visual QA.",
+  "author": {
+    "name": "EasySlides contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "PowerPoint",
+    "PPTX",
+    "academic presentations",
+    "research presentations",
+    "editable slides",
+    "PPTX distillation",
+    "template extraction",
+    "EasySlides",
+    "\u84b8\u998fPPT",
+    "PPT\u6a21\u677f",
+    "\u7b54\u8fa9PPT"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "EasySlides",
+    "shortDescription": "Create, distill, edit, and review editable PPTX files.",
+    "longDescription": "EasySlides turns papers, reports, Markdown, web pages, and existing PowerPoint files into structured editable presentations. Its distillation route separates source evidence from content-free semantic layout families, reusable components, and symbols, then requires native PowerPoint and visual QA before production promotion.",
+    "developerName": "EasySlides contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Create presentations",
+      "Distill PPTX templates",
+      "Edit PPTX files",
+      "Reuse templates",
+      "Render previews",
+      "Run visual QA"
+    ],
+    "defaultPrompt": [
+      "\u4f7f\u7528 EasySlides \u628a\u8fd9\u4e2a PPTX \u84b8\u998f\u4e3a\u65e0\u5185\u5bb9\u7684\u8bed\u4e49\u6a21\u677f\u3001\u7ec4\u4ef6\u548c\u7b26\u53f7\u8d44\u4ea7\u3002",
+      "Use EasySlides to create an editable academic PPTX from my source materials.",
+      "Use EasySlides to review this presentation and fix blocking visual issues."
+    ],
+    "brandColor": "#751497",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "easyslides.visual_review_decision.v1",
+  "template_id": "nsfc_purple_semantic",
+  "status": "pass",
+  "approved": true,
+  "reviewer": "Codex visual QA (AI-assisted)",
+  "reviewed_at": "2026-07-27",
+  "evidence": {
+    "pptx": "projects/attention_all_you_need_thu_env_ppt169_20260525/exports/attention_all_you_need_nsfc_semantic_darkbg.pptx",
+    "contact_sheet": "projects/attention_all_you_need_thu_env_ppt169_20260525/reports/nsfc_semantic_darkbg_visual_review/contact_sheet.png",
+    "slide_png_dir": "projects/attention_all_you_need_thu_env_ppt169_20260525/reports/nsfc_semantic_darkbg_png",
+    "text_layout_report": "projects/attention_all_you_need_thu_env_ppt169_20260525/reports/nsfc_semantic_darkbg_text_layout.json"
+  },
+  "checks": {
+    "readability": "pass",
+    "alignment": "pass",
+    "cross_slide_consistency": "pass",
+    "figure_legibility": "pass",
+    "source_content_absent_from_template": "pass",
+    "placeholder_artifacts": "pass"
+  },
+  "notes": "Reviewed all 13 native PowerPoint renders after replacing cover and ending with the template-owned dark-purple background. No blocking overflow, overlap, clipping, unreadable text, or unresolved placeholder remains."
+}

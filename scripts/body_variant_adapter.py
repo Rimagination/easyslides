@@ -8,6 +8,11 @@ import json
 from pathlib import Path
 from typing import Any
 
+try:
+    from scripts.body_variant_contract import normalize_component_refs, validate_body_variant_contract
+except ModuleNotFoundError:  # pragma: no cover
+    from body_variant_contract import normalize_component_refs, validate_body_variant_contract
+
 
 ROOT = Path(__file__).resolve().parents[1]
 LAYOUTS_ROOT = ROOT / "templates" / "layouts"
@@ -20,6 +25,8 @@ class BodyVariant:
     best_for: str
     layout: str
     slots: tuple[str, ...]
+    slot_contracts: tuple[dict[str, Any], ...]
+    component_refs: tuple[dict[str, Any], ...]
     raw: dict[str, Any]
 
 
@@ -50,6 +57,7 @@ class BodyVariantPayloadContract:
     payload: dict[str, Any]
     missing_slots: tuple[str, ...]
     extra_slots: tuple[str, ...]
+    component_refs: tuple[dict[str, Any], ...]
     issues: tuple[dict[str, str], ...]
 
 
@@ -78,6 +86,7 @@ _SHAPE_KEYWORDS = {
 }
 REQUIRED_GATES = (
     "body_variant_contract",
+    "body_variant_component_contract",
     "template_tokens",
     "text_capacity",
     "svg_quality_checker",
@@ -101,6 +110,25 @@ def _read_json(path: Path) -> dict[str, Any]:
     return payload
 
 
+def _variant_slot_contracts(value: object) -> tuple[dict[str, Any], ...]:
+    if not isinstance(value, list):
+        return ()
+    rows: list[dict[str, Any]] = []
+    for slot in value:
+        if isinstance(slot, str) and slot:
+            rows.append({"slot_id": slot, "kind": "text", "required": True})
+        elif isinstance(slot, dict):
+            slot_id = str(slot.get("slot_id") or slot.get("slot") or slot.get("id") or "")
+            if not slot_id:
+                continue
+            row = dict(slot)
+            row["slot_id"] = slot_id
+            row.setdefault("kind", "text")
+            row.setdefault("required", True)
+            rows.append(row)
+    return tuple(rows)
+
+
 def load_body_variant_registry(template: str | Path) -> BodyVariantRegistry:
     """Load verified body variants from a template's body_variants.json."""
     template_dir = resolve_template_dir(template)
@@ -111,11 +139,14 @@ def load_body_variant_registry(template: str | Path) -> BodyVariantRegistry:
         if not isinstance(item, dict) or not item.get("variant_id"):
             continue
         variant_id = str(item["variant_id"])
+        slot_contracts = _variant_slot_contracts(item.get("slots"))
         variants[variant_id] = BodyVariant(
             variant_id=variant_id,
             best_for=str(item.get("best_for") or ""),
             layout=str(item.get("layout") or item.get("layout_hint") or ""),
-            slots=tuple(str(slot) for slot in item.get("slots", []) if str(slot)),
+            slots=tuple(str(slot["slot_id"]) for slot in slot_contracts),
+            slot_contracts=slot_contracts,
+            component_refs=tuple(normalize_component_refs(item, template_id)),
             raw=item,
         )
     if not variants:
@@ -251,12 +282,17 @@ def _slot_payload(slide: dict[str, Any]) -> dict[str, Any]:
 
 
 def validate_body_variant_payload(template: str | Path, slide: dict[str, Any]) -> BodyVariantPayloadContract:
-    """Validate slide payload keys against the selected body's declared slots."""
+    """Validate payload keys and the selected variant's component composition."""
     selection = select_body_variant(template, slide)
     payload = _slot_payload(slide)
     declared = selection.variant.slots
+    required = tuple(
+        str(slot["slot_id"])
+        for slot in selection.variant.slot_contracts
+        if bool(slot.get("required", True))
+    )
     provided = tuple(payload)
-    missing = tuple(slot for slot in declared if slot not in payload)
+    missing = tuple(slot for slot in required if slot not in payload)
     extra = tuple(slot for slot in provided if slot not in declared)
     issues: list[dict[str, str]] = []
     if missing:
@@ -275,12 +311,27 @@ def validate_body_variant_payload(template: str | Path, slide: dict[str, Any]) -
                 "path": "slot_payload",
             }
         )
+    component_report = validate_body_variant_contract(
+        selection.registry.template_dir,
+        variant_id=selection.variant.variant_id,
+    )
+    for item in component_report.get("issues", []):
+        if not isinstance(item, dict):
+            continue
+        issues.append(
+            {
+                "code": str(item.get("code") or "BODY-VARIANT-COMPONENT"),
+                "message": str(item.get("message") or "invalid component reference"),
+                "path": str(item.get("path") or "component_refs"),
+            }
+        )
     return BodyVariantPayloadContract(
         status="pass" if not issues else "fail",
         selection=selection,
         payload=payload,
         missing_slots=missing,
         extra_slots=extra,
+        component_refs=selection.variant.component_refs,
         issues=tuple(issues),
     )
 
@@ -381,6 +432,7 @@ def validate_deck_body_variants(
             "status": contract.status,
             "declared_slots": list(contract.selection.variant.slots),
             "provided_slots": list(contract.payload),
+            "component_refs": list(contract.component_refs),
             "palette_id": contract.selection.tokens.palette_id,
             "required_gates": list(contract.selection.required_gates),
             "issues": list(contract.issues),
@@ -435,6 +487,7 @@ def main(argv: list[str] | None = None) -> int:
                 "reason": selection.reason,
                 "source": selection.source,
                 "slots": list(selection.variant.slots),
+                "component_refs": list(selection.variant.component_refs),
                 "content_area": selection.registry.content_area,
                 "palette_id": selection.tokens.palette_id,
                 "colors": selection.tokens.colors,
@@ -445,6 +498,7 @@ def main(argv: list[str] | None = None) -> int:
                             "status": contract.status,
                             "missing_slots": list(contract.missing_slots),
                             "extra_slots": list(contract.extra_slots),
+                            "component_refs": list(contract.component_refs),
                             "issues": list(contract.issues),
                         }
                     }

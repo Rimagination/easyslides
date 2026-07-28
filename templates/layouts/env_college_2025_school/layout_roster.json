@@ -1,0 +1,145 @@
+{
+  "schema_version": "easyslides.template_layout_roster.v1",
+  "template_id": "env_college_2025_school",
+  "source": "derived_from_layouts_page_catalog_and_story_structure",
+  "layouts": [
+    {
+      "layout_id": "ECS-S01",
+      "source_slide": 1,
+      "page_id": "01_cover",
+      "name": "01 cover",
+      "role_fit": [
+        "cover"
+      ],
+      "page_archetype": "cover",
+      "density_score": 3,
+      "slot_model": "cover",
+      "svg_path": "templates/layouts/env_college_2025_school/01_cover.svg",
+      "layout_contract": "ecs_s01_01_cover_contract",
+      "best_for": "opening slide that must preserve source title composition",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ECS-S02",
+      "source_slide": 2,
+      "page_id": "02_chapter",
+      "name": "02 chapter",
+      "role_fit": [
+        "chapter"
+      ],
+      "page_archetype": "chapter",
+      "density_score": 3,
+      "slot_model": "chapter",
+      "svg_path": "templates/layouts/env_college_2025_school/02_chapter.svg",
+      "layout_contract": "ecs_s02_02_chapter_contract",
+      "best_for": "section opener or transition",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ECS-S03",
+      "source_slide": 3,
+      "page_id": "03_content",
+      "name": "03 content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 2,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/env_college_2025_school/03_content.svg",
+      "layout_contract": "ecs_s03_03_content_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ECS-S04",
+      "source_slide": 4,
+      "page_id": "04_content_02",
+      "name": "04 content 02",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/env_college_2025_school/04_content_02.svg",
+      "layout_contract": "ecs_s04_04_content_02_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "ECS-S05",
+      "source_slide": 5,
+      "page_id": "05_content_03",
+      "name": "05 content 03",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 3,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/env_college_2025_school/05_content_03.svg",
+      "layout_contract": "ecs_s05_05_content_03_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ECS-S06",
+      "source_slide": 6,
+      "page_id": "06_content_04",
+      "name": "06 content 04",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 3,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/env_college_2025_school/06_content_04.svg",
+      "layout_contract": "ecs_s06_06_content_04_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ECS-S07",
+      "source_slide": 7,
+      "page_id": "07_content_05",
+      "name": "07 content 05",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "page_archetype": "content",
+      "density_score": 4,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/env_college_2025_school/07_content_05.svg",
+      "layout_contract": "ecs_s07_07_content_05_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "ECS-S08",
+      "source_slide": 8,
+      "page_id": "08_ending",
+      "name": "08 ending",
+      "role_fit": [
+        "ending"
+      ],
+      "page_archetype": "ending",
+      "density_score": 3,
+      "slot_model": "ending",
+      "svg_path": "templates/layouts/env_college_2025_school/08_ending.svg",
+      "layout_contract": "ecs_s08_08_ending_contract",
+      "best_for": "closing or acknowledgement slide that must preserve source closing composition",
+      "avoid": "content that requires moving fixed source chrome"
+    }
+  ]
+}

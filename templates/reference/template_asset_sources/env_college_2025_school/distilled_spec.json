@@ -1,0 +1,1994 @@
+{
+  "schema_version": "easyslides.pptx_distilled_spec.v1",
+  "template_id": "plugin_distill_smoke",
+  "source": {
+    "deck_path": "D:\\scansci\\easyslides\\卡片.pptx",
+    "manifest_path": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\env_college_2025_school\\manifest.json",
+    "preview_dir": "D:\\scansci\\easyslides\\templates\\reference\\template_asset_sources\\env_college_2025_school\\svg-flat",
+    "slide_size": [
+      1280,
+      720
+    ]
+  },
+  "identity_must_preserve": [
+    {
+      "name": "source_slide_geometry",
+      "evidence_slides": [
+        "slide_01",
+        "slide_02",
+        "slide_03",
+        "slide_04",
+        "slide_05",
+        "slide_06",
+        "slide_07",
+        "slide_08"
+      ],
+      "rule": "Preserve fixed source slide geometry on a 1280x720 canvas.",
+      "failure_if_missing": "The template no longer reads as the source PPTX."
+    },
+    {
+      "name": "source_page_role_roster",
+      "evidence_slides": [
+        "slide_01",
+        "slide_02",
+        "slide_03",
+        "slide_04",
+        "slide_05",
+        "slide_06",
+        "slide_07",
+        "slide_08"
+      ],
+      "rule": "Keep cover, section/content, and ending roles mapped to source pages.",
+      "failure_if_missing": "Generators cannot choose faithful source pages by story role."
+    },
+    {
+      "name": "theme_color_family",
+      "evidence_slides": [
+        "slide_01",
+        "slide_02",
+        "slide_03"
+      ],
+      "rule": "Use the extracted PPTX theme color family as the default palette.",
+      "failure_if_missing": "The imported template drifts into an unrelated color system."
+    },
+    {
+      "name": "repeated_source_assets",
+      "evidence_slides": [
+        "slide_01",
+        "slide_02",
+        "slide_03",
+        "slide_04",
+        "slide_05",
+        "slide_06",
+        "slide_07",
+        "slide_08"
+      ],
+      "rule": "Preserve repeated media assets unless a reviewer explicitly marks them replaceable.",
+      "failure_if_missing": "Logos, repeated backgrounds, or template marks disappear."
+    }
+  ],
+  "structural_primitives": {
+    "background": {
+      "source": "flat_source_svg",
+      "editable_policy": "preserve_source_geometry"
+    },
+    "header": {
+      "detected": true
+    },
+    "section_label": {
+      "detected": true
+    },
+    "card": {
+      "detected": true
+    },
+    "image_frame": {
+      "detected": true
+    },
+    "cover": {
+      "source_slides": [
+        1
+      ]
+    },
+    "ending": {
+      "source_slides": [
+        8
+      ]
+    }
+  },
+  "slot_candidates": [
+    {
+      "source_slide": 1,
+      "page_role": "cover",
+      "slot": "TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 61.59,
+        "y": 440.92,
+        "width": 681.22,
+        "height": 38.78
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 1,
+      "page_role": "cover",
+      "slot": "SUBTITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 61.59,
+        "y": 491.24,
+        "width": 504.07,
+        "height": 67.86
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 1,
+      "page_role": "cover",
+      "slot": "PRESENTER",
+      "kind": "text",
+      "geometry": {
+        "x": 71.19,
+        "y": 607.8,
+        "width": 92.57,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 1,
+      "page_role": "cover",
+      "slot": "DATE",
+      "kind": "text",
+      "geometry": {
+        "x": 71.19,
+        "y": 647.8,
+        "width": 185.14,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 1,
+      "page_role": "cover",
+      "slot": "HERO_IMAGE",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 1,
+      "page_role": "cover",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 1,
+      "page_role": "cover",
+      "slot": "IMAGE_03",
+      "kind": "image",
+      "geometry": {
+        "x": 864.22,
+        "y": 416.55,
+        "width": 391.62,
+        "height": 61.22
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 166.53,
+        "y": 81.13,
+        "width": 400.67,
+        "height": 113.33
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_DESC",
+      "kind": "text",
+      "geometry": {
+        "x": 146.73,
+        "y": 117.2,
+        "width": 440.33,
+        "height": 102.33
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_DESC_02",
+      "kind": "text",
+      "geometry": {
+        "x": 207.28,
+        "y": 272.43,
+        "width": 62.67,
+        "height": 62.67
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_DESC_03",
+      "kind": "text",
+      "geometry": {
+        "x": 294.38,
+        "y": 279.53,
+        "width": 245.58,
+        "height": 48.47
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_DESC_04",
+      "kind": "text",
+      "geometry": {
+        "x": 207.28,
+        "y": 381.37,
+        "width": 62.67,
+        "height": 62.67
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_DESC_05",
+      "kind": "text",
+      "geometry": {
+        "x": 294.38,
+        "y": 388.47,
+        "width": 245.58,
+        "height": 48.47
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_DESC_06",
+      "kind": "text",
+      "geometry": {
+        "x": 207.28,
+        "y": 493.03,
+        "width": 62.67,
+        "height": 62.67
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "CHAPTER_DESC_07",
+      "kind": "text",
+      "geometry": {
+        "x": 294.38,
+        "y": 500.13,
+        "width": 245.58,
+        "height": 48.47
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "IMAGE_01",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 2,
+      "page_role": "chapter",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 680.0,
+        "y": 119.86,
+        "width": 720.0,
+        "height": 480.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "PAGE_TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 38.2,
+        "y": 25.71,
+        "width": 245.58,
+        "height": 54.93
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "BODY_TEXT_01",
+      "kind": "text",
+      "geometry": {
+        "x": 130.87,
+        "y": 133.98,
+        "width": 180.95,
+        "height": 42.01
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "BODY_TEXT_02",
+      "kind": "text",
+      "geometry": {
+        "x": 129.63,
+        "y": 221.17,
+        "width": 806.7,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 2,
+        "max_chars_per_line": 30
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "BODY_TEXT_03",
+      "kind": "text",
+      "geometry": {
+        "x": 129.63,
+        "y": 276.64,
+        "width": 806.7,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 2,
+        "max_chars_per_line": 30
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "BODY_TEXT_04",
+      "kind": "text",
+      "geometry": {
+        "x": 129.63,
+        "y": 332.1,
+        "width": 806.7,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 2,
+        "max_chars_per_line": 30
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "BODY_TEXT_05",
+      "kind": "text",
+      "geometry": {
+        "x": 131.48,
+        "y": 443.36,
+        "width": 180.95,
+        "height": 42.01
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "BODY_TEXT_06",
+      "kind": "text",
+      "geometry": {
+        "x": 137.07,
+        "y": 531.83,
+        "width": 780.25,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 2,
+        "max_chars_per_line": 30
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "BODY_TEXT_07",
+      "kind": "text",
+      "geometry": {
+        "x": 137.07,
+        "y": 587.3,
+        "width": 780.25,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 2,
+        "max_chars_per_line": 30
+      }
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "IMAGE_01",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 3,
+      "page_role": "content",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 840.63,
+        "y": 16.33,
+        "width": 391.62,
+        "height": 61.22
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "PAGE_TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 38.2,
+        "y": 25.71,
+        "width": 245.58,
+        "height": 54.93
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_01",
+      "kind": "text",
+      "geometry": {
+        "x": 92.16,
+        "y": 267.6,
+        "width": 114.87,
+        "height": 74.32
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_02",
+      "kind": "text",
+      "geometry": {
+        "x": 472.06,
+        "y": 267.6,
+        "width": 114.87,
+        "height": 74.32
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_03",
+      "kind": "text",
+      "geometry": {
+        "x": 850.53,
+        "y": 267.6,
+        "width": 114.87,
+        "height": 74.32
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_04",
+      "kind": "text",
+      "geometry": {
+        "x": 91.36,
+        "y": 300.45,
+        "width": 347.3,
+        "height": 48.93
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_05",
+      "kind": "text",
+      "geometry": {
+        "x": 471.31,
+        "y": 300.45,
+        "width": 342.66,
+        "height": 48.93
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_06",
+      "kind": "text",
+      "geometry": {
+        "x": 849.4,
+        "y": 300.45,
+        "width": 345.85,
+        "height": 48.09
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_07",
+      "kind": "text",
+      "geometry": {
+        "x": 133.44,
+        "y": 393.93,
+        "width": 259.71,
+        "height": 42.01
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_08",
+      "kind": "text",
+      "geometry": {
+        "x": 513.07,
+        "y": 393.93,
+        "width": 259.71,
+        "height": 42.01
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_09",
+      "kind": "text",
+      "geometry": {
+        "x": 883.93,
+        "y": 393.93,
+        "width": 276.37,
+        "height": 42.01
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_10",
+      "kind": "text",
+      "geometry": {
+        "x": 116.01,
+        "y": 490.7,
+        "width": 335.69,
+        "height": 23.34
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_11",
+      "kind": "text",
+      "geometry": {
+        "x": 488.5,
+        "y": 490.7,
+        "width": 335.69,
+        "height": 23.34
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_12",
+      "kind": "text",
+      "geometry": {
+        "x": 862.45,
+        "y": 490.7,
+        "width": 335.69,
+        "height": 23.34
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_13",
+      "kind": "text",
+      "geometry": {
+        "x": 116.01,
+        "y": 546.7,
+        "width": 335.69,
+        "height": 23.34
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_14",
+      "kind": "text",
+      "geometry": {
+        "x": 488.5,
+        "y": 546.7,
+        "width": 335.69,
+        "height": 23.34
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "BODY_TEXT_15",
+      "kind": "text",
+      "geometry": {
+        "x": 862.45,
+        "y": 546.7,
+        "width": 335.69,
+        "height": 23.34
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "IMAGE_01",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "IMAGE_03",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "IMAGE_04",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 4,
+      "page_role": "content",
+      "slot": "IMAGE_05",
+      "kind": "image",
+      "geometry": {
+        "x": 840.63,
+        "y": 16.33,
+        "width": 391.62,
+        "height": 61.22
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "PAGE_TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 38.2,
+        "y": 25.71,
+        "width": 245.58,
+        "height": 54.93
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_01",
+      "kind": "text",
+      "geometry": {
+        "x": 86.6,
+        "y": 125.44,
+        "width": 260.27,
+        "height": 42.01
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_02",
+      "kind": "text",
+      "geometry": {
+        "x": 456.77,
+        "y": 129.48,
+        "width": 353.14,
+        "height": 39.81
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_03",
+      "kind": "text",
+      "geometry": {
+        "x": 848.35,
+        "y": 129.85,
+        "width": 249.45,
+        "height": 42.01
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_04",
+      "kind": "text",
+      "geometry": {
+        "x": 80.49,
+        "y": 206.23,
+        "width": 431.52,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_05",
+      "kind": "text",
+      "geometry": {
+        "x": 455.36,
+        "y": 210.72,
+        "width": 401.76,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 27
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_06",
+      "kind": "text",
+      "geometry": {
+        "x": 835.4,
+        "y": 211.12,
+        "width": 431.52,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_07",
+      "kind": "text",
+      "geometry": {
+        "x": 455.36,
+        "y": 297.12,
+        "width": 386.88,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 26
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_08",
+      "kind": "text",
+      "geometry": {
+        "x": 80.49,
+        "y": 300.63,
+        "width": 431.52,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "BODY_TEXT_09",
+      "kind": "text",
+      "geometry": {
+        "x": 835.4,
+        "y": 305.52,
+        "width": 431.52,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "IMAGE_01",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "IMAGE_03",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "IMAGE_04",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 5,
+      "page_role": "content",
+      "slot": "IMAGE_05",
+      "kind": "image",
+      "geometry": {
+        "x": 840.63,
+        "y": 16.33,
+        "width": 391.62,
+        "height": 61.22
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "PAGE_TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 38.2,
+        "y": 25.71,
+        "width": 245.58,
+        "height": 54.93
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_01",
+      "kind": "text",
+      "geometry": {
+        "x": 123.06,
+        "y": 185.19,
+        "width": 121.17,
+        "height": 29.08
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_02",
+      "kind": "text",
+      "geometry": {
+        "x": 507.01,
+        "y": 185.19,
+        "width": 251.98,
+        "height": 29.08
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_03",
+      "kind": "text",
+      "geometry": {
+        "x": 931.83,
+        "y": 185.19,
+        "width": 265.48,
+        "height": 29.08
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_04",
+      "kind": "text",
+      "geometry": {
+        "x": 74.03,
+        "y": 255.51,
+        "width": 357.06,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 27
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_05",
+      "kind": "text",
+      "geometry": {
+        "x": 468.67,
+        "y": 255.51,
+        "width": 383.51,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 29
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_06",
+      "kind": "text",
+      "geometry": {
+        "x": 870.7,
+        "y": 257.77,
+        "width": 193.44,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_07",
+      "kind": "text",
+      "geometry": {
+        "x": 870.7,
+        "y": 286.57,
+        "width": 193.44,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_08",
+      "kind": "text",
+      "geometry": {
+        "x": 74.03,
+        "y": 306.71,
+        "width": 171.92,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_09",
+      "kind": "text",
+      "geometry": {
+        "x": 468.67,
+        "y": 310.97,
+        "width": 198.37,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_10",
+      "kind": "text",
+      "geometry": {
+        "x": 870.7,
+        "y": 315.37,
+        "width": 193.44,
+        "height": 30.0
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_11",
+      "kind": "text",
+      "geometry": {
+        "x": 933.87,
+        "y": 419.73,
+        "width": 229.83,
+        "height": 29.08
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_12",
+      "kind": "text",
+      "geometry": {
+        "x": 507.01,
+        "y": 420.59,
+        "width": 288.26,
+        "height": 29.08
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_13",
+      "kind": "text",
+      "geometry": {
+        "x": 123.06,
+        "y": 428.33,
+        "width": 121.17,
+        "height": 29.08
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_14",
+      "kind": "text",
+      "geometry": {
+        "x": 77.62,
+        "y": 491.62,
+        "width": 198.37,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_15",
+      "kind": "text",
+      "geometry": {
+        "x": 467.46,
+        "y": 491.62,
+        "width": 171.92,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_16",
+      "kind": "text",
+      "geometry": {
+        "x": 879.41,
+        "y": 491.62,
+        "width": 198.37,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_17",
+      "kind": "text",
+      "geometry": {
+        "x": 467.46,
+        "y": 517.22,
+        "width": 171.92,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_18",
+      "kind": "text",
+      "geometry": {
+        "x": 77.62,
+        "y": 519.35,
+        "width": 198.37,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "BODY_TEXT_19",
+      "kind": "text",
+      "geometry": {
+        "x": 879.41,
+        "y": 519.35,
+        "width": 198.37,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "IMAGE_01",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 6,
+      "page_role": "content",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 840.63,
+        "y": 16.33,
+        "width": 391.62,
+        "height": 61.22
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "PAGE_TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 38.2,
+        "y": 25.71,
+        "width": 245.58,
+        "height": 54.93
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "BODY_TEXT_01",
+      "kind": "text",
+      "geometry": {
+        "x": 921.54,
+        "y": 510.04,
+        "width": 229.8,
+        "height": 157.23
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 27
+      }
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "BODY_TEXT_02",
+      "kind": "text",
+      "geometry": {
+        "x": 121.38,
+        "y": 513.33,
+        "width": 214.2,
+        "height": 157.23
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 27
+      }
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "BODY_TEXT_03",
+      "kind": "text",
+      "geometry": {
+        "x": 384.01,
+        "y": 527.61,
+        "width": 224.25,
+        "height": 157.23
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 27
+      }
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "BODY_TEXT_04",
+      "kind": "text",
+      "geometry": {
+        "x": 648.86,
+        "y": 529.41,
+        "width": 216.05,
+        "height": 157.23
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 27
+      }
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_01",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 720.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_03",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_04",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_05",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_06",
+      "kind": "image",
+      "geometry": {
+        "x": 840.63,
+        "y": 16.33,
+        "width": 391.62,
+        "height": 61.22
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_07",
+      "kind": "image",
+      "geometry": {
+        "x": 649.33,
+        "y": 153.26,
+        "width": 229.8,
+        "height": 324.14
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 7,
+      "page_role": "content",
+      "slot": "IMAGE_08",
+      "kind": "image",
+      "geometry": {
+        "x": 914.01,
+        "y": 153.26,
+        "width": 229.8,
+        "height": 313.69
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 8,
+      "page_role": "ending",
+      "slot": "CLOSING_TITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 93.72,
+        "y": 360.57,
+        "width": 681.22,
+        "height": 38.78
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 18
+      }
+    },
+    {
+      "source_slide": 8,
+      "page_role": "ending",
+      "slot": "CLOSING_SUBTITLE",
+      "kind": "text",
+      "geometry": {
+        "x": 93.72,
+        "y": 402.73,
+        "width": 665.64,
+        "height": 87.24
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 8,
+      "page_role": "ending",
+      "slot": "CONTACT",
+      "kind": "text",
+      "geometry": {
+        "x": 109.41,
+        "y": 551.03,
+        "width": 105.8,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 8,
+      "page_role": "ending",
+      "slot": "CONTACT_02",
+      "kind": "text",
+      "geometry": {
+        "x": 109.41,
+        "y": 586.76,
+        "width": 185.14,
+        "height": 26.66
+      },
+      "capacity": {
+        "lines": 1,
+        "max_chars_per_line": 16
+      }
+    },
+    {
+      "source_slide": 8,
+      "page_role": "ending",
+      "slot": "IMAGE_01",
+      "kind": "image",
+      "geometry": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "image_fit": "contain"
+    },
+    {
+      "source_slide": 8,
+      "page_role": "ending",
+      "slot": "IMAGE_02",
+      "kind": "image",
+      "geometry": {
+        "x": 846.79,
+        "y": 548.58,
+        "width": 391.62,
+        "height": 61.22
+      },
+      "image_fit": "contain"
+    }
+  ],
+  "adaptable_patterns": [
+    {
+      "name": "chapter_source_pages",
+      "allowed_use": "Use after the faithful baseline is accepted; preserve page geometry and replace only declared slots.",
+      "source_slide_count": 1
+    },
+    {
+      "name": "content_source_pages",
+      "allowed_use": "Use after the faithful baseline is accepted; preserve page geometry and replace only declared slots.",
+      "source_slide_count": 5
+    }
+  ],
+  "template_language": {
+    "schema_version": "easyslides.template_language.v1",
+    "template_id": "plugin_distill_smoke",
+    "summary": {
+      "slide_count": 8,
+      "baseline_surface": "source_rendered_raster_baseline",
+      "role_counts": {
+        "cover": 1,
+        "chapter": 1,
+        "content": 5,
+        "ending": 1
+      },
+      "slot_count": 104,
+      "top_repeated_images": [
+        {
+          "href": "../assets/image6.png",
+          "count": 7
+        },
+        {
+          "href": "../assets/image3.jpg",
+          "count": 5
+        },
+        {
+          "href": "../assets/image11.jpeg",
+          "count": 4
+        },
+        {
+          "href": "../assets/image10.jpeg",
+          "count": 2
+        }
+      ]
+    },
+    "visual_system": {
+      "primary_color": "#912C8D",
+      "palette": [
+        {
+          "color": "#000000",
+          "count": 87
+        },
+        {
+          "color": "#FFFFFF",
+          "count": 51
+        },
+        {
+          "color": "#262626",
+          "count": 50
+        },
+        {
+          "color": "#1971D3",
+          "count": 45
+        },
+        {
+          "color": "#404040",
+          "count": 19
+        },
+        {
+          "color": "#114B8D",
+          "count": 18
+        },
+        {
+          "color": "#68A4C6",
+          "count": 10
+        },
+        {
+          "color": "#0070C0",
+          "count": 9
+        },
+        {
+          "color": "#5B84D8",
+          "count": 6
+        },
+        {
+          "color": "#C5DCE9",
+          "count": 6
+        },
+        {
+          "color": "#912C8D",
+          "count": 5
+        },
+        {
+          "color": "#5199EA",
+          "count": 1
+        }
+      ],
+      "theme_fonts": {
+        "majorLatin": "等线 Light",
+        "minorLatin": "等线"
+      },
+      "observed_fonts": [
+        {
+          "font": "微软雅黑",
+          "count": 53
+        },
+        {
+          "font": "sans-serif",
+          "count": 17
+        },
+        {
+          "font": "Arial",
+          "count": 5
+        }
+      ],
+      "effect_counts": {
+        "gradients": 2,
+        "filters": 13,
+        "filter_refs": 13,
+        "opacity": 13,
+        "rotations": 2,
+        "nested_svg_images": 12,
+        "cropped_images": 12
+      },
+      "text_anchor_counts": {
+        "start": 64,
+        "middle": 11
+      }
+    },
+    "layout_grammar": [
+      {
+        "role": "chapter",
+        "count": 1,
+        "page_ids": [
+          "02_chapter"
+        ],
+        "source_slides": [
+          2
+        ],
+        "density_range": [
+          3,
+          3
+        ],
+        "slot_vocabulary": [
+          "CHAPTER",
+          "IMAGE"
+        ],
+        "text_slot_count": 8,
+        "image_slot_count": 2
+      },
+      {
+        "role": "content",
+        "count": 5,
+        "page_ids": [
+          "03_content",
+          "04_content_02",
+          "05_content_03",
+          "06_content_04",
+          "07_content_05"
+        ],
+        "source_slides": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "density_range": [
+          2,
+          4
+        ],
+        "slot_vocabulary": [
+          "BODY",
+          "IMAGE",
+          "PAGE"
+        ],
+        "text_slot_count": 59,
+        "image_slot_count": 22
+      },
+      {
+        "role": "cover",
+        "count": 1,
+        "page_ids": [
+          "01_cover"
+        ],
+        "source_slides": [
+          1
+        ],
+        "density_range": [
+          3,
+          3
+        ],
+        "slot_vocabulary": [
+          "IMAGE",
+          "TITLE",
+          "SUBTITLE",
+          "PRESENTER",
+          "DATE",
+          "HERO"
+        ],
+        "text_slot_count": 4,
+        "image_slot_count": 3
+      },
+      {
+        "role": "ending",
+        "count": 1,
+        "page_ids": [
+          "08_ending"
+        ],
+        "source_slides": [
+          8
+        ],
+        "density_range": [
+          3,
+          3
+        ],
+        "slot_vocabulary": [
+          "CLOSING",
+          "CONTACT",
+          "IMAGE"
+        ],
+        "text_slot_count": 4,
+        "image_slot_count": 2
+      }
+    ],
+    "fidelity_risks": [
+      {
+        "risk": "gradient_or_filter_effects",
+        "evidence": {
+          "gradients": 2,
+          "filters": 13,
+          "filter_refs": 13,
+          "opacity": 13
+        },
+        "failure_mode": "Native editable PPTX export can flatten or mis-layer translucent atmosphere, shadows, and gradient masks.",
+        "recommended_baseline": "source_rendered_raster_baseline"
+      },
+      {
+        "risk": "layered_or_cropped_media",
+        "evidence": {
+          "nested_svg_images": 12,
+          "cropped_images": 12,
+          "rotations": 2
+        },
+        "failure_mode": "Image crop, rotation, and nested SVG viewBox semantics can drift during shape conversion.",
+        "recommended_baseline": "source_rendered_raster_baseline"
+      },
+      {
+        "risk": "text_anchor_alignment",
+        "evidence": {
+          "start": 64,
+          "middle": 11
+        },
+        "failure_mode": "Text position checks and editable export must preserve start/middle/end anchors.",
+        "recommended_baseline": "anchor_aware_text_rebuild"
+      }
+    ],
+    "editable_rebuild_plan": [
+      {
+        "phase": "faithful_visual_baseline",
+        "surface": "source_rendered_raster_baseline",
+        "goal": "Lock colors, transparency, text positions, alignment, and occlusion against the original PowerPoint render."
+      },
+      {
+        "phase": "editable_chrome_rebuild",
+        "surface": "editable_primitives",
+        "goal": "Rebuild repeated backgrounds, headers/nav, cards, labels, and image frames one primitive family at a time."
+      },
+      {
+        "phase": "slot_layer_rebuild",
+        "surface": "editable_slots",
+        "goal": "Replace only validated text/image slots after the chrome has a passing visual diff."
+      },
+      {
+        "phase": "visual_diff_gate",
+        "surface": "source_vs_generated_render",
+        "goal": "Compare PowerPoint-rendered PNGs before claiming fidelity or registering the template."
+      }
+    ]
+  },
+  "forbidden_drift": [
+    "Do not replace source cover and ending pages with generic EasySlides shells.",
+    "Do not move, resize, recolor, regroup, or delete fixed source geometry during the faithful baseline pass.",
+    "Do not treat the distilled spec as permission to redesign before visual comparison against source previews.",
+    "Do not register the template before SVG/PPTX export and placeholder checks pass."
+  ],
+  "qa_expectations": {
+    "requires_source_contact_sheet": true,
+    "requires_svg_export": true,
+    "requires_pptx_render": true,
+    "requires_cross_material_smoke_test": true,
+    "geometry_checks": [
+      "text_canvas",
+      "text_text_overlap",
+      "line_text_overlap"
+    ]
+  },
+  "theme": {
+    "colors": {
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#3C3652",
+      "lt2": "#FFFFFF",
+      "accent1": "#912C8D",
+      "accent2": "#7561D6",
+      "accent3": "#68A4C6",
+      "accent4": "#6A69B6",
+      "accent5": "#5199EA",
+      "accent6": "#5B84D8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fonts": {
+      "majorLatin": "等线 Light",
+      "minorLatin": "等线"
+    },
+    "primary_color": "#912C8D"
+  }
+}

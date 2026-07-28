@@ -1,0 +1,827 @@
+{
+  "template_id": "nsfc_defense_distilled",
+  "reusable_template": {
+    "output_dir": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense_distilled_reusable",
+    "replaced_slots": [
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_3",
+        "kind": "image",
+        "token": "{{HERO_IMAGE}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_62",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_9",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_72",
+        "kind": "text",
+        "token": "{{TITLE}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_2",
+        "kind": "text",
+        "token": "{{SUBTITLE}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_8",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_6",
+        "kind": "image",
+        "token": "{{IMAGE_05}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_group_57",
+        "kind": "object",
+        "token": "{{PRESENTER}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_74",
+        "kind": "text",
+        "token": "{{DATE}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_75",
+        "kind": "text",
+        "token": "{{DATE_02}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_92",
+        "kind": "text",
+        "token": "{{DATE_03}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_98",
+        "kind": "text",
+        "token": "{{DATE_03}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_88",
+        "kind": "text",
+        "token": "{{DATE_03}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_text_83",
+        "kind": "text",
+        "token": "{{DATE_03}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_59",
+        "kind": "image",
+        "token": "{{IMAGE_06}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_58",
+        "kind": "image",
+        "token": "{{IMAGE_07}}"
+      },
+      {
+        "slide_id": "slide-01",
+        "slot_id": "slide-01_image_60",
+        "kind": "image",
+        "token": "{{IMAGE_08}}"
+      },
+      {
+        "slide_id": "slide-02",
+        "slot_id": "slide-02_group_4",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-02",
+        "slot_id": "slide-02_image_42",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-02",
+        "slot_id": "slide-02_text_67",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-02",
+        "slot_id": "slide-02_text_82",
+        "kind": "text",
+        "token": "{{BODY_TEXT_02}}"
+      },
+      {
+        "slide_id": "slide-02",
+        "slot_id": "slide-02_text_81",
+        "kind": "text",
+        "token": "{{BODY_TEXT_03}}"
+      },
+      {
+        "slide_id": "slide-02",
+        "slot_id": "slide-02_text_80",
+        "kind": "text",
+        "token": "{{BODY_TEXT_04}}"
+      },
+      {
+        "slide_id": "slide-02",
+        "slot_id": "slide-02_group_7",
+        "kind": "object",
+        "token": "{{BODY_TEXT_05}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_image_10",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_text_17",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_text_13",
+        "kind": "text",
+        "token": "{{BODY_TEXT_02}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_text_14",
+        "kind": "text",
+        "token": "{{BODY_TEXT_03}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_text_16",
+        "kind": "text",
+        "token": "{{BODY_TEXT_04}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_text_2",
+        "kind": "text",
+        "token": "{{BODY_TEXT_05}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_image_110",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_image_112",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_image_108",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-03",
+        "slot_id": "slide-03_auto_image_01",
+        "kind": "image",
+        "token": "{{IMAGE_AUTO_01}}",
+        "reason": "unresolved_source_image_promoted_to_slot"
+      },
+      {
+        "slide_id": "slide-04",
+        "slot_id": "slide-04_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-04",
+        "slot_id": "slide-04_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-04",
+        "slot_id": "slide-04_image_54",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-04",
+        "slot_id": "slide-04_image_72",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-05",
+        "slot_id": "slide-05_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-05",
+        "slot_id": "slide-05_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-05",
+        "slot_id": "slide-05_image_10",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-05",
+        "slot_id": "slide-05_image_33",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-05",
+        "slot_id": "slide-05_image_35",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-05",
+        "slot_id": "slide-05_image_44",
+        "kind": "image",
+        "token": "{{IMAGE_05}}"
+      },
+      {
+        "slide_id": "slide-05",
+        "slot_id": "slide-05_auto_image_01",
+        "kind": "image",
+        "token": "{{IMAGE_AUTO_01}}",
+        "reason": "unresolved_source_image_promoted_to_slot"
+      },
+      {
+        "slide_id": "slide-06",
+        "slot_id": "slide-06_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-06",
+        "slot_id": "slide-06_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-06",
+        "slot_id": "slide-06_image_59",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-06",
+        "slot_id": "slide-06_group_65",
+        "kind": "object",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-06",
+        "slot_id": "slide-06_image_20",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-06",
+        "slot_id": "slide-06_image_64",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-06",
+        "slot_id": "slide-06_auto_image_01",
+        "kind": "image",
+        "token": "{{IMAGE_AUTO_01}}",
+        "reason": "unresolved_source_image_promoted_to_slot"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_image_78",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_text_62",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_image_40",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_image_42",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_image_80",
+        "kind": "image",
+        "token": "{{IMAGE_05}}"
+      },
+      {
+        "slide_id": "slide-07",
+        "slot_id": "slide-07_auto_image_01",
+        "kind": "image",
+        "token": "{{IMAGE_AUTO_01}}",
+        "reason": "unresolved_source_image_promoted_to_slot"
+      },
+      {
+        "slide_id": "slide-08",
+        "slot_id": "slide-08_group_4",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-08",
+        "slot_id": "slide-08_image_42",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-08",
+        "slot_id": "slide-08_text_67",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-08",
+        "slot_id": "slide-08_group_7",
+        "kind": "object",
+        "token": "{{BODY_TEXT_02}}"
+      },
+      {
+        "slide_id": "slide-09",
+        "slot_id": "slide-09_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-09",
+        "slot_id": "slide-09_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-09",
+        "slot_id": "slide-09_image_82",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-09",
+        "slot_id": "slide-09_image_84",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-09",
+        "slot_id": "slide-09_image_83",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-10",
+        "slot_id": "slide-10_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-10",
+        "slot_id": "slide-10_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-10",
+        "slot_id": "slide-10_image_33",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-10",
+        "slot_id": "slide-10_image_31",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-10",
+        "slot_id": "slide-10_auto_image_01",
+        "kind": "image",
+        "token": "{{IMAGE_AUTO_01}}",
+        "reason": "unresolved_source_image_promoted_to_slot"
+      },
+      {
+        "slide_id": "slide-11",
+        "slot_id": "slide-11_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-11",
+        "slot_id": "slide-11_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-11",
+        "slot_id": "slide-11_image_53",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-11",
+        "slot_id": "slide-11_image_55",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-11",
+        "slot_id": "slide-11_image_100",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-12",
+        "slot_id": "slide-12_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-12",
+        "slot_id": "slide-12_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-12",
+        "slot_id": "slide-12_image_15",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-12",
+        "slot_id": "slide-12_image_57",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-12",
+        "slot_id": "slide-12_image_89",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-12",
+        "slot_id": "slide-12_text_92",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-12",
+        "slot_id": "slide-12_auto_image_01",
+        "kind": "image",
+        "token": "{{IMAGE_AUTO_01}}",
+        "reason": "unresolved_source_image_promoted_to_slot"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_text_95",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_text_101",
+        "kind": "text",
+        "token": "{{BODY_TEXT_02}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_image_14",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_image_84",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_text_37",
+        "kind": "text",
+        "token": "{{BODY_TEXT_03}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_text_38",
+        "kind": "text",
+        "token": "{{BODY_TEXT_04}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_image_88",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_text_39",
+        "kind": "text",
+        "token": "{{BODY_TEXT_05}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_text_40",
+        "kind": "text",
+        "token": "{{BODY_TEXT_06}}"
+      },
+      {
+        "slide_id": "slide-13",
+        "slot_id": "slide-13_auto_image_01",
+        "kind": "image",
+        "token": "{{IMAGE_AUTO_01}}",
+        "reason": "unresolved_source_image_promoted_to_slot"
+      },
+      {
+        "slide_id": "slide-14",
+        "slot_id": "slide-14_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-14",
+        "slot_id": "slide-14_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-14",
+        "slot_id": "slide-14_image_10",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-14",
+        "slot_id": "slide-14_image_33",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-14",
+        "slot_id": "slide-14_image_37",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-14",
+        "slot_id": "slide-14_image_53",
+        "kind": "image",
+        "token": "{{IMAGE_05}}"
+      },
+      {
+        "slide_id": "slide-15",
+        "slot_id": "slide-15_group_4",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-15",
+        "slot_id": "slide-15_image_42",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-15",
+        "slot_id": "slide-15_text_67",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-15",
+        "slot_id": "slide-15_group_7",
+        "kind": "object",
+        "token": "{{BODY_TEXT_02}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_image_2",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_group_6",
+        "kind": "object",
+        "token": "{{PAGE_TITLE}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_image_68",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_text_97",
+        "kind": "text",
+        "token": "{{BODY_TEXT_01}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_text_93",
+        "kind": "text",
+        "token": "{{BODY_TEXT_02}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_text_89",
+        "kind": "text",
+        "token": "{{BODY_TEXT_03}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_text_88",
+        "kind": "text",
+        "token": "{{BODY_TEXT_04}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_text_87",
+        "kind": "text",
+        "token": "{{BODY_TEXT_05}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_group_59",
+        "kind": "object",
+        "token": "{{BODY_TEXT_06}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_image_50",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-16",
+        "slot_id": "slide-16_image_51",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_3",
+        "kind": "image",
+        "token": "{{IMAGE_01}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_62",
+        "kind": "image",
+        "token": "{{IMAGE_02}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_9",
+        "kind": "image",
+        "token": "{{IMAGE_03}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_8",
+        "kind": "image",
+        "token": "{{IMAGE_04}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_6",
+        "kind": "image",
+        "token": "{{IMAGE_05}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_group_57",
+        "kind": "object",
+        "token": "{{CLOSING_TITLE}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_text_4",
+        "kind": "text",
+        "token": "{{CLOSING_SUBTITLE}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_text_10",
+        "kind": "text",
+        "token": "{{CONTACT}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_text_11",
+        "kind": "text",
+        "token": "{{CONTACT_02}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_text_2",
+        "kind": "text",
+        "token": "{{CONTACT_02}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_text_23",
+        "kind": "text",
+        "token": "{{CONTACT_02}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_59",
+        "kind": "image",
+        "token": "{{IMAGE_06}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_58",
+        "kind": "image",
+        "token": "{{IMAGE_07}}"
+      },
+      {
+        "slide_id": "slide-17",
+        "slot_id": "slide-17_image_60",
+        "kind": "image",
+        "token": "{{IMAGE_08}}"
+      }
+    ],
+    "slot_count": 134
+  },
+  "assets": {
+    "component_asset_manifest": "D:\\scansci\\easyslides\\templates\\components\\source_templates\\nsfc_defense_distilled_kit\\component_asset_manifest.json",
+    "symbol_asset_manifest": "D:\\scansci\\easyslides\\templates\\components\\source_templates\\nsfc_defense_distilled_kit\\symbol_asset_manifest.json",
+    "component_count": 1,
+    "symbol_count": 19,
+    "review_queue_count": 30
+  }
+}

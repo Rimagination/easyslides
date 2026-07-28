@@ -1,0 +1,872 @@
+{
+  "schema_version": "easyslides.template_production_gate.v1",
+  "template_id": "nsfc_purple_semantic",
+  "status": "pass",
+  "production_eligible": true,
+  "blocking_count": 0,
+  "review_count": 0,
+  "gates": [
+    {
+      "id": "contract",
+      "status": "pass",
+      "layout_count": 12,
+      "variant_count": 8,
+      "issues": []
+    },
+    {
+      "id": "svg_quality",
+      "status": "pass",
+      "issues": [],
+      "file_count": 12
+    },
+    {
+      "id": "pptx_text_layout",
+      "status": "pass",
+      "issues": [
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 1,
+          "shape_index": 5,
+          "shape_name": "TextBox 7",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Transformer 论文精读 · NIPS 2017",
+            "x": 0.688,
+            "y": 3.417,
+            "w": 4.014,
+            "h": 0.325,
+            "font_name": "Arial",
+            "font_size_pt": 19.5,
+            "wrap": "square",
+            "text_length": 28
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 3,
+          "shape_index": 8,
+          "shape_name": "TextBox 9",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Transformer 的出发点不是替换一个模块，而是重写序列计算路径。",
+            "x": 0.875,
+            "y": 1.406,
+            "w": 5.273,
+            "h": 0.275,
+            "font_name": "Arial",
+            "font_size_pt": 16.5,
+            "wrap": "square",
+            "text_length": 36
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 3,
+          "shape_index": 20,
+          "shape_name": "TextBox 21",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Attention Is All You Need, Abstract and Sections 1-2",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 3.212,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 52
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 4,
+          "shape_index": 8,
+          "shape_name": "TextBox 9",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "编码器建立源序列表示，解码器在因果约束下逐步生成目标序列。",
+            "x": 0.875,
+            "y": 1.406,
+            "w": 4.833,
+            "h": 0.275,
+            "font_name": "Arial",
+            "font_size_pt": 16.5,
+            "wrap": "square",
+            "text_length": 29
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 4,
+          "shape_index": 10,
+          "shape_name": "TextBox 11",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Paper Figure 1 and Section 3",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 1.807,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 28
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 4,
+          "shape_index": 13,
+          "shape_name": "TextBox 15",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Figure 1 · The Transformer model architecture",
+            "x": 0.854,
+            "y": 6.188,
+            "w": 2.849,
+            "h": 0.175,
+            "font_name": "Arial",
+            "font_size_pt": 10.5,
+            "wrap": "square",
+            "text_length": 45
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 5,
+          "shape_index": 8,
+          "shape_name": "TextBox 9",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "缩放项稳定 softmax 梯度，Q、K、V 完成匹配与信息聚合。",
+            "x": 0.875,
+            "y": 1.406,
+            "w": 4.767,
+            "h": 0.275,
+            "font_name": "Arial",
+            "font_size_pt": 16.5,
+            "wrap": "square",
+            "text_length": 33
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 5,
+          "shape_index": 10,
+          "shape_name": "TextBox 11",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Paper Section 3.2.1 and Figure 2",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 2.039,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 32
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 5,
+          "shape_index": 15,
+          "shape_name": "TextBox 17",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Figure 2 · Scaled dot-product attention",
+            "x": 5.771,
+            "y": 6.188,
+            "w": 2.371,
+            "h": 0.175,
+            "font_name": "Arial",
+            "font_size_pt": 10.5,
+            "wrap": "square",
+            "text_length": 39
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 6,
+          "shape_index": 8,
+          "shape_name": "TextBox 9",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Multi-head 扩展关系子空间，位置编码补回序列坐标。",
+            "x": 0.875,
+            "y": 1.406,
+            "w": 4.267,
+            "h": 0.275,
+            "font_name": "Arial",
+            "font_size_pt": 16.5,
+            "wrap": "square",
+            "text_length": 30
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 6,
+          "shape_index": 20,
+          "shape_name": "TextBox 21",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Paper Sections 3.2.2 and 3.5",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 1.792,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 28
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 8,
+          "shape_index": 8,
+          "shape_name": "TextBox 9",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Self-attention 用 O(n^2 d) 换取 O(1) 的顺序操作与最大路径长度。",
+            "x": 0.875,
+            "y": 1.406,
+            "w": 5.59,
+            "h": 0.275,
+            "font_name": "Arial",
+            "font_size_pt": 16.5,
+            "wrap": "square",
+            "text_length": 47
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 8,
+          "shape_index": 10,
+          "shape_name": "TextBox 11",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Paper Table 1 and Section 4",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 1.761,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 27
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 8,
+          "shape_index": 13,
+          "shape_name": "TextBox 15",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Table 1 · Complexity, sequential operations and path length",
+            "x": 0.854,
+            "y": 6.188,
+            "w": 3.668,
+            "h": 0.175,
+            "font_name": "Arial",
+            "font_size_pt": 10.5,
+            "wrap": "square",
+            "text_length": 59
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 10,
+          "shape_index": 10,
+          "shape_name": "TextBox 12",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Table 2 · BLEU scores and training cost",
+            "x": 0.854,
+            "y": 6.188,
+            "w": 2.455,
+            "h": 0.175,
+            "font_name": "Arial",
+            "font_size_pt": 10.5,
+            "wrap": "square",
+            "text_length": 39
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 10,
+          "shape_index": 21,
+          "shape_name": "TextBox 23",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Paper Table 2 and Section 6.1",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 1.877,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 29
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 11,
+          "shape_index": 8,
+          "shape_name": "TextBox 9",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Transformer 的效果来自一组相互配合的设计，而不是单一超参数。",
+            "x": 0.875,
+            "y": 1.406,
+            "w": 5.273,
+            "h": 0.275,
+            "font_name": "Arial",
+            "font_size_pt": 16.5,
+            "wrap": "square",
+            "text_length": 36
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 11,
+          "shape_index": 10,
+          "shape_name": "TextBox 11",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Paper Table 3 and Section 6.2",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 1.877,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 29
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 11,
+          "shape_index": 15,
+          "shape_name": "TextBox 17",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Table 3 · Model variations and validation performance",
+            "x": 5.771,
+            "y": 6.188,
+            "w": 3.312,
+            "h": 0.175,
+            "font_name": "Arial",
+            "font_size_pt": 10.5,
+            "wrap": "square",
+            "text_length": 53
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 12,
+          "shape_index": 26,
+          "shape_name": "TextBox 27",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Paper Conclusion and discussion",
+            "x": 0.542,
+            "y": 7.229,
+            "w": 2.054,
+            "h": 0.162,
+            "font_name": "Arial",
+            "font_size_pt": 9.75,
+            "wrap": "square",
+            "text_length": 31
+          }
+        },
+        {
+          "code": "TEXT-LABEL-TOO-LONG",
+          "severity": "warning",
+          "slide_number": 13,
+          "shape_index": 4,
+          "shape_name": "TextBox 6",
+          "message": "A small label-like slot contains sentence-length text.",
+          "details": {
+            "text_preview": "Q&A · Attention Is All You Need",
+            "x": 0.434,
+            "y": 3.792,
+            "w": 3.923,
+            "h": 0.325,
+            "font_name": "Arial",
+            "font_size_pt": 19.5,
+            "wrap": "square",
+            "text_length": 31
+          }
+        }
+      ],
+      "report": {
+        "schema_version": "easyslides.pptx_text_layout_report.v1",
+        "pptx_path": "D:\\scansci\\easyslides\\projects\\attention_all_you_need_thu_env_ppt169_20260525\\exports\\attention_all_you_need_nsfc_semantic_darkbg.pptx",
+        "status": "pass",
+        "slide_count": 13,
+        "text_box_count": 116,
+        "text_box_source": "raw_xml",
+        "blocking_count": 0,
+        "warning_count": 21,
+        "issues": [
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 1,
+            "shape_index": 5,
+            "shape_name": "TextBox 7",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Transformer 论文精读 · NIPS 2017",
+              "x": 0.688,
+              "y": 3.417,
+              "w": 4.014,
+              "h": 0.325,
+              "font_name": "Arial",
+              "font_size_pt": 19.5,
+              "wrap": "square",
+              "text_length": 28
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 3,
+            "shape_index": 8,
+            "shape_name": "TextBox 9",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Transformer 的出发点不是替换一个模块，而是重写序列计算路径。",
+              "x": 0.875,
+              "y": 1.406,
+              "w": 5.273,
+              "h": 0.275,
+              "font_name": "Arial",
+              "font_size_pt": 16.5,
+              "wrap": "square",
+              "text_length": 36
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 3,
+            "shape_index": 20,
+            "shape_name": "TextBox 21",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Attention Is All You Need, Abstract and Sections 1-2",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 3.212,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 52
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 4,
+            "shape_index": 8,
+            "shape_name": "TextBox 9",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "编码器建立源序列表示，解码器在因果约束下逐步生成目标序列。",
+              "x": 0.875,
+              "y": 1.406,
+              "w": 4.833,
+              "h": 0.275,
+              "font_name": "Arial",
+              "font_size_pt": 16.5,
+              "wrap": "square",
+              "text_length": 29
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 4,
+            "shape_index": 10,
+            "shape_name": "TextBox 11",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Paper Figure 1 and Section 3",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 1.807,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 28
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 4,
+            "shape_index": 13,
+            "shape_name": "TextBox 15",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Figure 1 · The Transformer model architecture",
+              "x": 0.854,
+              "y": 6.188,
+              "w": 2.849,
+              "h": 0.175,
+              "font_name": "Arial",
+              "font_size_pt": 10.5,
+              "wrap": "square",
+              "text_length": 45
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 5,
+            "shape_index": 8,
+            "shape_name": "TextBox 9",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "缩放项稳定 softmax 梯度，Q、K、V 完成匹配与信息聚合。",
+              "x": 0.875,
+              "y": 1.406,
+              "w": 4.767,
+              "h": 0.275,
+              "font_name": "Arial",
+              "font_size_pt": 16.5,
+              "wrap": "square",
+              "text_length": 33
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 5,
+            "shape_index": 10,
+            "shape_name": "TextBox 11",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Paper Section 3.2.1 and Figure 2",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 2.039,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 32
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 5,
+            "shape_index": 15,
+            "shape_name": "TextBox 17",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Figure 2 · Scaled dot-product attention",
+              "x": 5.771,
+              "y": 6.188,
+              "w": 2.371,
+              "h": 0.175,
+              "font_name": "Arial",
+              "font_size_pt": 10.5,
+              "wrap": "square",
+              "text_length": 39
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 6,
+            "shape_index": 8,
+            "shape_name": "TextBox 9",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Multi-head 扩展关系子空间，位置编码补回序列坐标。",
+              "x": 0.875,
+              "y": 1.406,
+              "w": 4.267,
+              "h": 0.275,
+              "font_name": "Arial",
+              "font_size_pt": 16.5,
+              "wrap": "square",
+              "text_length": 30
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 6,
+            "shape_index": 20,
+            "shape_name": "TextBox 21",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Paper Sections 3.2.2 and 3.5",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 1.792,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 28
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 8,
+            "shape_index": 8,
+            "shape_name": "TextBox 9",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Self-attention 用 O(n^2 d) 换取 O(1) 的顺序操作与最大路径长度。",
+              "x": 0.875,
+              "y": 1.406,
+              "w": 5.59,
+              "h": 0.275,
+              "font_name": "Arial",
+              "font_size_pt": 16.5,
+              "wrap": "square",
+              "text_length": 47
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 8,
+            "shape_index": 10,
+            "shape_name": "TextBox 11",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Paper Table 1 and Section 4",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 1.761,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 27
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 8,
+            "shape_index": 13,
+            "shape_name": "TextBox 15",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Table 1 · Complexity, sequential operations and path length",
+              "x": 0.854,
+              "y": 6.188,
+              "w": 3.668,
+              "h": 0.175,
+              "font_name": "Arial",
+              "font_size_pt": 10.5,
+              "wrap": "square",
+              "text_length": 59
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 10,
+            "shape_index": 10,
+            "shape_name": "TextBox 12",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Table 2 · BLEU scores and training cost",
+              "x": 0.854,
+              "y": 6.188,
+              "w": 2.455,
+              "h": 0.175,
+              "font_name": "Arial",
+              "font_size_pt": 10.5,
+              "wrap": "square",
+              "text_length": 39
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 10,
+            "shape_index": 21,
+            "shape_name": "TextBox 23",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Paper Table 2 and Section 6.1",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 1.877,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 29
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 11,
+            "shape_index": 8,
+            "shape_name": "TextBox 9",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Transformer 的效果来自一组相互配合的设计，而不是单一超参数。",
+              "x": 0.875,
+              "y": 1.406,
+              "w": 5.273,
+              "h": 0.275,
+              "font_name": "Arial",
+              "font_size_pt": 16.5,
+              "wrap": "square",
+              "text_length": 36
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 11,
+            "shape_index": 10,
+            "shape_name": "TextBox 11",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Paper Table 3 and Section 6.2",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 1.877,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 29
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 11,
+            "shape_index": 15,
+            "shape_name": "TextBox 17",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Table 3 · Model variations and validation performance",
+              "x": 5.771,
+              "y": 6.188,
+              "w": 3.312,
+              "h": 0.175,
+              "font_name": "Arial",
+              "font_size_pt": 10.5,
+              "wrap": "square",
+              "text_length": 53
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 12,
+            "shape_index": 26,
+            "shape_name": "TextBox 27",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Paper Conclusion and discussion",
+              "x": 0.542,
+              "y": 7.229,
+              "w": 2.054,
+              "h": 0.162,
+              "font_name": "Arial",
+              "font_size_pt": 9.75,
+              "wrap": "square",
+              "text_length": 31
+            }
+          },
+          {
+            "code": "TEXT-LABEL-TOO-LONG",
+            "severity": "warning",
+            "slide_number": 13,
+            "shape_index": 4,
+            "shape_name": "TextBox 6",
+            "message": "A small label-like slot contains sentence-length text.",
+            "details": {
+              "text_preview": "Q&A · Attention Is All You Need",
+              "x": 0.434,
+              "y": 3.792,
+              "w": 3.923,
+              "h": 0.325,
+              "font_name": "Arial",
+              "font_size_pt": 19.5,
+              "wrap": "square",
+              "text_length": 31
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "placeholder_scan",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "id": "human_visual_review",
+      "status": "pass",
+      "issues": [],
+      "review": {
+        "schema_version": "easyslides.visual_review_decision.v1",
+        "template_id": "nsfc_purple_semantic",
+        "status": "pass",
+        "approved": true,
+        "reviewer": "Codex visual QA (AI-assisted)",
+        "reviewed_at": "2026-07-27",
+        "evidence": {
+          "pptx": "projects/attention_all_you_need_thu_env_ppt169_20260525/exports/attention_all_you_need_nsfc_semantic_darkbg.pptx",
+          "contact_sheet": "projects/attention_all_you_need_thu_env_ppt169_20260525/reports/nsfc_semantic_darkbg_visual_review/contact_sheet.png",
+          "slide_png_dir": "projects/attention_all_you_need_thu_env_ppt169_20260525/reports/nsfc_semantic_darkbg_png",
+          "text_layout_report": "projects/attention_all_you_need_thu_env_ppt169_20260525/reports/nsfc_semantic_darkbg_text_layout.json"
+        },
+        "checks": {
+          "readability": "pass",
+          "alignment": "pass",
+          "cross_slide_consistency": "pass",
+          "figure_legibility": "pass",
+          "source_content_absent_from_template": "pass",
+          "placeholder_artifacts": "pass"
+        },
+        "notes": "Reviewed all 13 native PowerPoint renders after replacing cover and ending with the template-owned dark-purple background. No blocking overflow, overlap, clipping, unreadable text, or unresolved placeholder remains."
+      }
+    }
+  ]
+}

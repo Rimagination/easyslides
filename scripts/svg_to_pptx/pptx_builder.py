@@ -148,13 +148,35 @@ def _ensure_notes_master(extract_dir: Path, content_types: str) -> str:
     return content_types
 
 
+def _insert_default_content_types(content_types: str, entries: list[str]) -> str:
+    """Insert ``Default`` entries before the first ``Override`` entry.
+
+    ECMA-376 requires every ``Default`` child in ``[Content_Types].xml`` to
+    precede every ``Override`` child.  Appending image defaults immediately
+    before ``</Types>`` produces a package that python-pptx can read but
+    desktop PowerPoint rejects as corrupt.
+    """
+    if not entries:
+        return content_types
+
+    override_match = re.search(r"<Override\b", content_types)
+    closing_match = re.search(r"</Types\s*>", content_types)
+    if closing_match is None:
+        raise ValueError("Invalid [Content_Types].xml: missing </Types>")
+    insertion_at = override_match.start() if override_match else closing_match.start()
+    prefix = content_types[:insertion_at]
+    suffix = content_types[insertion_at:]
+    leading_newline = "" if prefix.endswith(("\n", "\r")) else "\n"
+    return prefix + leading_newline + "\n".join(entries) + "\n" + suffix
+
+
 def _add_default_content_type(content_types: str, extension: str, content_type: str) -> str:
-    """Add a Default content type if it is not already present."""
+    """Add a schema-ordered Default content type if it is not already present."""
     ext = extension.lstrip(".")
     if f'Extension="{ext}"' in content_types:
         return content_types
     entry = f'  <Default Extension="{ext}" ContentType="{content_type}"/>'
-    return content_types.replace('</Types>', entry + '\n</Types>')
+    return _insert_default_content_types(content_types, [entry])
 
 
 _IMAGE_CONTENT_TYPES = {
@@ -827,9 +849,7 @@ def create_pptx_with_native_svg(
                 )
 
         if types_to_add:
-            content_types = content_types.replace(
-                '</Types>', '\n'.join(types_to_add) + '\n</Types>',
-            )
+            content_types = _insert_default_content_types(content_types, types_to_add)
             with open(content_types_path, 'w', encoding='utf-8') as f:
                 f.write(content_types)
 

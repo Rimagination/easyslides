@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="76" viewBox="0 0 640 76" data-primitive="synthesis_bar">
+  <rect x="0" y="0" width="640" height="76" fill="#F8EAFC" stroke="#D5B2E0"/><rect x="0" y="0" width="640" height="6" fill="#751497" stroke="none"/><rect x="0" y="0" width="8" height="76" fill="#751497" stroke="none"/>
+  <text x="320.00" y="45.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#751497" data-slot="TEXT" data-slot-id="TEXT" data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" data-pptx-box-x="24.00" data-pptx-box-y="12.00" data-pptx-box-w="592.00" data-pptx-box-h="52.00" data-pptx-valign="middle" data-center-lock="true" data-pptx-line-height-ratio="1.150" data-pptx-text-anchor="middle">TEXT</text>
+</svg>

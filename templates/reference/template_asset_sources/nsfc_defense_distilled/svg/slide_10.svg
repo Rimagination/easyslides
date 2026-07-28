@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0" y1="0.5" x2="1" y2="0.5"><stop offset="0.75" stop-color="#751497"/><stop offset="1" stop-color="#751497" stop-opacity="0.7"/></linearGradient><linearGradient id="ggrad2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.73" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4"/></linearGradient><linearGradient id="ggrad3" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.73" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4"/></linearGradient><linearGradient id="tbl6fillgrad4" x1="0" y1="1" x2="1" y2="0"><stop offset="0.75" stop-color="#751497"/><stop offset="0.18" stop-color="#8116A6"/></linearGradient><linearGradient id="tbl6fillgrad5" x1="0" y1="1" x2="1" y2="0"><stop offset="0.75" stop-color="#751497"/><stop offset="0.18" stop-color="#8116A6"/></linearGradient><linearGradient id="tbl6fillgrad6" x1="0" y1="1" x2="1" y2="0"><stop offset="0.75" stop-color="#751497"/><stop offset="0.18" stop-color="#8116A6"/></linearGradient><linearGradient id="ggrad7" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#751497" stop-opacity="0.7"/><stop offset="1" stop-color="#8C18B5" stop-opacity="0.7"/></linearGradient><linearGradient id="ggrad8" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#751497" stop-opacity="0.7"/><stop offset="1" stop-color="#8C18B5" stop-opacity="0.7"/></linearGradient><linearGradient id="ggrad9" x1="0" y1="0.5" x2="1" y2="0.5"><stop offset="0.24" stop-color="#751497" stop-opacity="0.15"/><stop offset="1" stop-color="#751497" stop-opacity="0"/></linearGradient><linearGradient id="ggrad10" x1="0" y1="0.5" x2="1" y2="0.5"><stop offset="0.24" stop-color="#751497" stop-opacity="0.15"/><stop offset="1" stop-color="#751497" stop-opacity="0"/></linearGradient></defs><g id="shape-2" data-name="图片 1">
+<svg x="952.32" y="0" width="327.68" height="79.18" viewBox="0 0.3189 1 0.3622" preserveAspectRatio="none"><image href="../assets/image9.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-3" data-name="矩形 2">
+<rect x="0" y="0" width="1280" height="79.18" fill="url(#ggrad1)" stroke-width="0.667" stroke="none"/>
+</g>
+<g id="shape-4" data-name="文本框 3">
+<rect x="38.67" y="6.94" width="330.23" height="67.86" fill="none"/>
+<text x="48.27" y="52.54" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.67" data-pptx-box-y="6.94" data-pptx-box-w="330.23" data-pptx-box-h="67.86" data-pptx-valign="top" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="48" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="48">02  ANN/SNN</tspan></text>
+</g>
+<g id="shape-6" data-name="组合 5">
+<g id="shape-7" data-name="平行四边形 6">
+<polygon points="38.38,5.66 63.31,5.66 43.88,91.95 18.96,91.95" fill="url(#ggrad2)" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+<g id="shape-8" data-name="平行四边形 7">
+<polygon points="23.85,25.53 39.74,25.53 27.36,80.54 11.46,80.54" fill="url(#ggrad3)" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+</g>
+<g id="shape-15" data-name="表格 14">
+<rect x="50.67" y="104.2" width="177.45" height="48.49" fill="url(#tbl6fillgrad4)"/>
+<rect x="228.12" y="104.2" width="559.77" height="48.49" fill="url(#tbl6fillgrad5)"/>
+<rect x="787.89" y="104.2" width="440.24" height="48.49" fill="url(#tbl6fillgrad6)"/>
+<rect x="50.67" y="152.69" width="177.45" height="59.73" fill="#F3F3F7"/>
+<rect x="228.12" y="152.69" width="559.77" height="59.73" fill="#F3F3F7"/>
+<rect x="787.89" y="152.69" width="440.24" height="59.73" fill="#F3F3F7"/>
+<rect x="50.67" y="212.42" width="177.45" height="59.73" fill="#FFFFFF"/>
+<rect x="228.12" y="212.42" width="559.77" height="59.73" fill="#FFFFFF"/>
+<rect x="787.89" y="212.42" width="440.24" height="59.73" fill="#FFFFFF"/>
+<rect x="50.67" y="272.16" width="177.45" height="59.73" fill="#F3F3F7"/>
+<rect x="228.12" y="272.16" width="559.77" height="59.73" fill="#F3F3F7"/>
+<rect x="787.89" y="272.16" width="440.24" height="59.73" fill="#F3F3F7"/>
+<rect x="50.67" y="331.89" width="177.45" height="59.73" fill="#FFFFFF"/>
+<rect x="228.12" y="331.89" width="1000.01" height="59.73" fill="#FFFFFF"/>
+<text x="139.39" y="136.09" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="50.67" data-pptx-box-y="104.2" data-pptx-box-w="177.45" data-pptx-box-h="48.49" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="32">网络类型</tspan></text>
+<text x="508" y="136.09" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="228.12" data-pptx-box-y="104.2" data-pptx-box-w="559.77" data-pptx-box-h="48.49" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="32">ANN</tspan></text>
+<text x="1008.01" y="136.09" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="787.89" data-pptx-box-y="104.2" data-pptx-box-w="440.24" data-pptx-box-h="48.49" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="32">SNN</tspan></text>
+<text x="139.39" y="180.05" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="50.67" data-pptx-box-y="152.69" data-pptx-box-w="177.45" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#262626"><tspan fill="#262626" font-size="26.67">生物合理性</tspan></text>
+<text x="508" y="180.05" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="228.12" data-pptx-box-y="152.69" data-pptx-box-w="559.77" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#262626"><tspan fill="#262626" font-size="26.67">生物合理性不足</tspan></text>
+<text x="1008.01" y="180.05" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="787.89" data-pptx-box-y="152.69" data-pptx-box-w="440.24" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, &quot;Times New Roman&quot;, sans-serif" font-size="26.67" fill="#262626"><tspan fill="#262626" font-size="26.67">具有生物合理性</tspan></text>
+<text x="139.39" y="239.79" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="50.67" data-pptx-box-y="212.42" data-pptx-box-w="177.45" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#262626"><tspan fill="#262626" font-size="26.67">信息表示</tspan></text>
+<text x="508" y="239.79" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="228.12" data-pptx-box-y="212.42" data-pptx-box-w="559.77" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, +mn-cs, sans-serif" font-size="26.67" fill="#262626"><tspan fill="#262626" font-size="26.67">模拟的激活值</tspan><tspan fill="#C00000" font-size="26.67">（频率）</tspan></text>
+<text x="1008.01" y="239.79" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="787.89" data-pptx-box-y="212.42" data-pptx-box-w="440.24" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, &quot;Times New Roman&quot;, sans-serif" font-size="26.67" fill="#262626"><tspan fill="#262626" font-size="26.67">多种脉冲编码方案整合时间空间</tspan></text>
+<text x="139.39" y="299.52" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="50.67" data-pptx-box-y="272.16" data-pptx-box-w="177.45" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#C00000"><tspan fill="#C00000" font-size="26.67">激活函数</tspan></text>
+<text x="508" y="299.52" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="228.12" data-pptx-box-y="272.16" data-pptx-box-w="559.77" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#C00000"><tspan fill="#C00000" font-size="26.67">非线性激活函数</tspan></text>
+<text x="1008.01" y="299.52" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="787.89" data-pptx-box-y="272.16" data-pptx-box-w="440.24" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, &quot;Times New Roman&quot;, sans-serif" font-size="26.67" fill="#C00000"><tspan fill="#C00000" font-size="26.67">仿生脉冲神经元</tspan></text>
+<text x="139.39" y="359.25" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="50.67" data-pptx-box-y="331.89" data-pptx-box-w="177.45" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#000000"><tspan fill="#000000" font-size="26.67">计算能力</tspan></text>
+<text x="728.12" y="359.25" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="228.12" data-pptx-box-y="331.89" data-pptx-box-w="1000.01" data-pptx-box-h="59.73" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#000000"><tspan fill="#000000" font-size="26.67">相较基于频率编码的</tspan><tspan fill="#000000" font-size="26.67">ANN</tspan><tspan fill="#000000" font-size="26.67">、</tspan><tspan fill="#000000" font-size="26.67">SNN</tspan><tspan fill="#000000" font-size="26.67">引入了时间度，理论上具有更强大的计算能力</tspan></text>
+<line x1="50.67" y1="104.2" x2="228.12" y2="104.2" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="104.2" x2="228.12" y2="152.69" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="50.67" y1="152.69" x2="228.12" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="50.67" y1="104.2" x2="50.67" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="104.2" x2="787.89" y2="104.2" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="104.2" x2="787.89" y2="152.69" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="228.12" y1="152.69" x2="787.89" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="104.2" x2="228.12" y2="152.69" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="787.89" y1="104.2" x2="1228.13" y2="104.2" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="1228.13" y1="104.2" x2="1228.13" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="152.69" x2="1228.13" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="104.2" x2="787.89" y2="152.69" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="50.67" y1="152.69" x2="228.12" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="152.69" x2="228.12" y2="212.42" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="50.67" y1="212.42" x2="228.12" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="50.67" y1="152.69" x2="50.67" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="152.69" x2="787.89" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="152.69" x2="787.89" y2="212.42" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="228.12" y1="212.42" x2="787.89" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="152.69" x2="228.12" y2="212.42" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="787.89" y1="152.69" x2="1228.13" y2="152.69" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="1228.13" y1="152.69" x2="1228.13" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="212.42" x2="1228.13" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="152.69" x2="787.89" y2="212.42" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="50.67" y1="212.42" x2="228.12" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="212.42" x2="228.12" y2="272.16" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="50.67" y1="272.16" x2="228.12" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="50.67" y1="212.42" x2="50.67" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="212.42" x2="787.89" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="212.42" x2="787.89" y2="272.16" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="228.12" y1="272.16" x2="787.89" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="212.42" x2="228.12" y2="272.16" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="787.89" y1="212.42" x2="1228.13" y2="212.42" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="1228.13" y1="212.42" x2="1228.13" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="272.16" x2="1228.13" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="212.42" x2="787.89" y2="272.16" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="50.67" y1="272.16" x2="228.12" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="272.16" x2="228.12" y2="331.89" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="50.67" y1="272.16" x2="50.67" y2="331.89" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="228.12" y1="272.16" x2="787.89" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="272.16" x2="787.89" y2="331.89" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="228.12" y1="272.16" x2="228.12" y2="331.89" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="787.89" y1="272.16" x2="1228.13" y2="272.16" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="1228.13" y1="272.16" x2="1228.13" y2="331.89" stroke-width="0.667" stroke-linecap="butt" stroke="#CECEDC" stroke-linejoin="round"/>
+<line x1="787.89" y1="272.16" x2="787.89" y2="331.89" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="228.12" y1="331.89" x2="228.12" y2="391.62" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+<line x1="228.12" y1="331.89" x2="228.12" y2="391.62" stroke-width="1.333" stroke-linecap="butt" stroke="#D9D9D9" stroke-linejoin="round"/>
+</g>
+<g id="shape-17" data-name="矩形: 圆角 16">
+<rect x="146.43" y="412.39" width="604.04" height="263.61" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke="#751497" stroke-opacity="0.5"/>
+</g>
+<g id="shape-29" data-name="矩形: 圆顶角 28">
+<path d="M 50.73 412.94 L 132.6 412.94 L 132.6 676 L 132.6 676 L 50.73 676 L 50.73 676 L 50.73 412.94 Z" data-pptx-prst="round2SameRect" data-pptx-adj1="0" data-pptx-adj2="0" fill="#751497" stroke-width="0.333" stroke="#751497"/>
+</g>
+<g id="shape-20" data-name="文本框 19">
+<rect x="184.07" y="417.36" width="525.58" height="43.32" fill="none"/>
+<text x="184.07" y="444.56" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="184.07" data-pptx-box-y="417.36" data-pptx-box-w="525.58" data-pptx-box-h="43.32" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#C00000"><tspan fill="#C00000" font-size="32">ANN</tspan><tspan fill="#C00000" font-size="32">和</tspan><tspan fill="#C00000" font-size="32">SNN</tspan><tspan fill="#C00000" font-size="32">通过模仿人脑的处理方式</tspan></text>
+</g>
+<g id="shape-22" data-name="文本框 21">
+<rect x="64.25" y="454.95" width="54.83" height="179.03" fill="none"/>
+<text x="91.67" y="487.43" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="64.25" data-pptx-box-y="454.95" data-pptx-box-w="54.83" data-pptx-box-h="179.03" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="32">目标解决</tspan></text>
+</g>
+<g id="shape-33" data-name="图片 32">
+<svg x="1006.43" y="412.02" width="221.69" height="263.61" viewBox="0.5 0 0.5 1" preserveAspectRatio="none"><image href="../assets/image25.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-31" data-name="图片 30">
+<image href="../assets/image26.jpg" x="764.55" y="412.94" width="228.31" height="262.75" preserveAspectRatio="none"/>
+</g>
+<g id="shape-24" data-name="矩形: 圆角 23">
+<rect x="1006.37" y="619.04" width="221.82" height="56.92" rx="0" ry="0" fill="url(#ggrad7)" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-25" data-name="文本框 24">
+<rect x="1036.5" y="628.11" width="161.56" height="38.78" fill="none"/>
+<text x="1036.5" y="655.31" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="1036.5" data-pptx-box-y="628.11" data-pptx-box-w="161.56" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, &quot;Times New Roman&quot;, sans-serif" font-size="32" fill="#C00000"><tspan fill="#C00000" font-size="32">计算生物学</tspan></text>
+</g>
+<g id="shape-27" data-name="矩形: 圆角 26">
+<rect x="764.55" y="619.04" width="228.31" height="56.92" rx="0" ry="0" fill="url(#ggrad8)" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-28" data-name="文本框 27">
+<rect x="797.93" y="628.11" width="161.56" height="38.78" fill="none"/>
+<text x="797.93" y="655.31" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="797.93" data-pptx-box-y="628.11" data-pptx-box-w="161.56" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, &quot;Times New Roman&quot;, sans-serif" font-size="32" fill="#C00000"><tspan fill="#C00000" font-size="32">生物信息学</tspan></text>
+</g>
+<g id="shape-55" data-name="矩形: 圆角 54">
+<rect x="164.23" y="490.41" width="545.97" height="20.3" rx="0.86" ry="0.86" fill="url(#ggrad9)" stroke-width="0.667" stroke="none"/>
+</g>
+<g id="shape-56" data-name="文本框 55">
+<rect x="216.65" y="471.93" width="188.49" height="32.31" fill="none"/>
+<text x="216.65" y="494.6" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="216.65" data-pptx-box-y="471.93" data-pptx-box-w="188.49" data-pptx-box-h="32.31" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#751497"><tspan fill="#751497" font-size="26.67">模式识别与分类</tspan></text>
+</g>
+<g id="shape-57" data-name="文本框 56">
+<rect x="166.9" y="468.7" width="38.03" height="38.78" fill="none"/>
+<text x="166.9" y="495.9" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="166.9" data-pptx-box-y="468.7" data-pptx-box-w="38.03" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#751497"><tspan fill="#751497" font-size="32">01</tspan></text>
+</g>
+<g id="shape-38" data-name="文本框 37">
+<rect x="169.55" y="511.2" width="562.54" height="67.42" fill="none"/>
+<text x="169.55" y="531.6" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="169.55" data-pptx-box-y="511.2" data-pptx-box-w="562.54" data-pptx-box-h="67.42" data-pptx-valign="top" font-family="&quot;思源黑体 CN Medium&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">ANN</tspan><tspan fill="#000000" font-size="24">广泛应用于图像识别</tspan><tspan fill="#000000" font-size="24">,</tspan><tspan fill="#000000" font-size="24">通过学习数据的内在规律实</tspan><tspan x="169.55" dy="28.8" fill="#000000" font-size="24">现对不同模式的有效识别和分类</tspan></text>
+</g>
+<g id="shape-63" data-name="矩形: 圆角 62">
+<rect x="164.23" y="606.6" width="545.97" height="20.3" rx="0.86" ry="0.86" fill="url(#ggrad10)" stroke-width="0.667" stroke="none"/>
+</g>
+<g id="shape-64" data-name="文本框 63">
+<rect x="216.65" y="588.13" width="242.34" height="32.31" fill="none"/>
+<text x="216.65" y="610.8" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="216.65" data-pptx-box-y="588.13" data-pptx-box-w="242.34" data-pptx-box-h="32.31" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#751497"><tspan fill="#751497" font-size="26.67">预测与时间序列分析</tspan></text>
+</g>
+<g id="shape-65" data-name="文本框 64">
+<rect x="166.9" y="584.9" width="38.03" height="38.78" fill="none"/>
+<text x="166.9" y="612.1" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="166.9" data-pptx-box-y="584.9" data-pptx-box-w="38.03" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#751497"><tspan fill="#751497" font-size="32">02</tspan></text>
+</g>
+<g id="shape-66" data-name="文本框 65">
+<rect x="169.55" y="630.88" width="508.92" height="32.52" fill="none"/>
+<text x="169.55" y="651.28" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="169.55" data-pptx-box-y="630.88" data-pptx-box-w="508.92" data-pptx-box-h="32.52" data-pptx-valign="top" font-family="&quot;思源黑体 CN Medium&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">循环神经网络时间序列数据的预测方面表现出色</tspan></text>
+</g></svg>

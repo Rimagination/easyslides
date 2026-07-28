@@ -4,6 +4,9 @@ import zipfile
 from pathlib import Path
 
 from pptx import Presentation
+from pptx.dml.color import RGBColor
+from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.text import MSO_ANCHOR
 from pptx.util import Inches, Pt
 
 
@@ -49,6 +52,31 @@ class ValidatePptxTextLayoutTests(unittest.TestCase):
             report["issues"],
         )
 
+    def test_sentence_in_tall_centered_box_is_not_treated_as_small_label(self):
+        from scripts.validate_pptx_text_layout import validate_pptx_text_layout
+
+        def build(slide):
+            box = add_textbox(
+                slide,
+                1.0,
+                1.0,
+                10.0,
+                3.0,
+                "Monitoring, mechanism, and population evidence support the conclusion.",
+                18,
+                word_wrap=True,
+            )
+            box.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+
+        tmp, path = save_deck(build)
+        with tmp:
+            report = validate_pptx_text_layout(path)
+
+        self.assertNotIn(
+            "TEXT-LABEL-TOO-LONG",
+            {issue["code"] for issue in report["issues"]},
+        )
+
     def test_no_wrap_text_uses_explicit_lines_for_overflow(self):
         from scripts.validate_pptx_text_layout import PT_PER_INCH, TextBox, _measure_lines_for_box
 
@@ -63,6 +91,18 @@ class ValidatePptxTextLayoutTests(unittest.TestCase):
 
         self.assertEqual(_measure_lines_for_box(nowrap, width_pt), 2)
         self.assertGreater(_measure_lines_for_box(wrapped, width_pt), 2)
+
+    def test_explicit_line_breaks_use_natural_line_height(self):
+        from scripts.validate_pptx_text_layout import validate_pptx_text_layout
+
+        def build(slide):
+            add_textbox(slide, 1.0, 1.0, 2.0, 1.3, "第一行\n第二行\n第三行\n第四行", 18)
+
+        tmp, path = save_deck(build)
+        with tmp:
+            report = validate_pptx_text_layout(path)
+
+        self.assertNotIn("TEXT-OVERFLOW", {issue["code"] for issue in report["issues"]})
 
     def test_highly_overlapping_text_boxes_are_blocking(self):
         from scripts.validate_pptx_text_layout import validate_pptx_text_layout
@@ -154,6 +194,88 @@ class ValidatePptxTextLayoutTests(unittest.TestCase):
             report["issues"],
         )
 
+    def test_control_text_must_be_vertically_centered_in_container(self):
+        from scripts.validate_pptx_text_layout import validate_pptx_text_layout
+
+        def build(slide):
+            add_control_container(slide, 1.0, 1.0, 4.0, 0.7)
+            add_textbox(slide, 1.2, 1.03, 2.2, 0.25, "Badge", 24)
+
+        tmp, path = save_deck(build)
+        with tmp:
+            report = validate_pptx_text_layout(path)
+
+        self.assertEqual(report["status"], "fail")
+        self.assertTrue(
+            any(issue["code"] == "CONTROL-TEXT-VERTICAL-MISALIGN" for issue in report["issues"]),
+            report["issues"],
+        )
+
+    def test_control_text_center_lock_passes(self):
+        from scripts.validate_pptx_text_layout import validate_pptx_text_layout
+
+        def build(slide):
+            add_control_container(slide, 1.0, 1.0, 4.0, 0.7)
+            label = add_textbox(slide, 1.0, 1.0, 4.0, 0.7, "Badge", 24)
+            label.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+
+        tmp, path = save_deck(build)
+        with tmp:
+            report = validate_pptx_text_layout(path)
+
+        self.assertEqual(report["status"], "pass", report["issues"])
+        self.assertFalse(
+            any(issue["code"] == "CONTROL-TEXT-VERTICAL-MISALIGN" for issue in report["issues"]),
+            report["issues"],
+        )
+
+    def test_control_container_prefers_full_text_coverage_over_partial_background(self):
+        from scripts.validate_pptx_text_layout import (
+            ShapeBox,
+            TextBox,
+            _control_container_for_text,
+        )
+
+        label = TextBox(1, 1, "label", "Focus", 2.0, 2.0, 1.8, 0.3, 1.8, 0.3, "Arial", 24, 1.2)
+        partial_background = ShapeBox(1, 2, "legacy", 1.9, 2.15, 2.2, 0.6, "#751497", "rect")
+        component_control = ShapeBox(1, 3, "live", 1.7, 1.8, 2.4, 0.7, "#C00000", "rect")
+
+        selected = _control_container_for_text(
+            label,
+            [partial_background, component_control],
+            [label],
+        )
+
+        self.assertIsNotNone(selected)
+        self.assertEqual(selected.shape_index, component_control.shape_index)
+
+    def test_bottom_caption_is_not_treated_as_control_text(self):
+        from scripts.validate_pptx_text_layout import validate_pptx_text_layout
+
+        def build(slide):
+            add_control_container(slide, 1.0, 1.0, 4.0, 2.2)
+            add_textbox(slide, 1.2, 2.7, 3.6, 0.25, "Figure caption", 12)
+
+        tmp, path = save_deck(build)
+        with tmp:
+            report = validate_pptx_text_layout(path)
+
+        self.assertNotIn("CONTROL-TEXT-VERTICAL-MISALIGN", {issue["code"] for issue in report["issues"]})
+
+    def test_compound_card_text_is_not_treated_as_single_control(self):
+        from scripts.validate_pptx_text_layout import validate_pptx_text_layout
+
+        def build(slide):
+            add_control_container(slide, 1.0, 1.0, 4.0, 0.95)
+            add_textbox(slide, 1.2, 1.12, 2.0, 0.22, "Card title", 16)
+            add_textbox(slide, 1.2, 1.45, 3.4, 0.25, "Card body copy", 12)
+
+        tmp, path = save_deck(build)
+        with tmp:
+            report = validate_pptx_text_layout(path)
+
+        self.assertNotIn("CONTROL-TEXT-VERTICAL-MISALIGN", {issue["code"] for issue in report["issues"]})
+
     def test_short_and_vertical_labels_are_not_treated_as_body_overflow(self):
         from scripts.validate_pptx_text_layout import TextBox, _is_short_label_like, _is_vertical_stack_label
 
@@ -188,6 +310,14 @@ def add_textbox(slide, x, y, w, h, text, size_pt, word_wrap=None):
     run.font.size = Pt(size_pt)
     run.font.name = "Arial"
     return box
+
+
+def add_control_container(slide, x, y, w, h):
+    shape = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x), Inches(y), Inches(w), Inches(h))
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = RGBColor(25, 85, 145)
+    shape.line.fill.background()
+    return shape
 
 
 if __name__ == "__main__":

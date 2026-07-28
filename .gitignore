@@ -46,6 +46,10 @@ tools/pdffigures2/
 /svg_quality_report.txt
 /seedling.svg
 
+# Local review renders, analysis bundles, and generated release previews.
+/analysis_*
+/build/
+
 # Generated deck/project artifacts. Keep curated tracked project scripts,
 # ignore imported source material, rendered decks, previews, unpacked OOXML,
 # and reports.

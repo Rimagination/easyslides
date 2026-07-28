@@ -1,11 +1,14 @@
-# Academic Layout Template Library (5 Active Templates)
+# EasySlides Template Library
 
-`templates/layouts/` is the active, discoverable layout library for academic
-PPT work. It is intentionally slim: old brand, government, enterprise, special
-effect, and retired slot-guided packs are no longer part of the active library.
+`templates/layouts/` contains managed template packages and legacy-compatible
+layout packs. Discovery is generated from package manifests and layout
+contracts.
 
-- **Slim index**: [layouts_index.json](./layouts_index.json) lists only active
-  template IDs used for discovery.
+- **Canonical registry**: [template_registry.json](../template_registry.json)
+  records managed packages, capability levels, status, and legacy entries.
+- **Generated index**: [layouts_index.json](./layouts_index.json) is the
+  human-facing active-template projection of that registry. Quarantined and
+  legacy packages remain visible only in the canonical registry.
 - **Selection rule**: templates are opt-in. A deck uses a layout only when the
   user gives an explicit directory path such as
   `templates/layouts/literature_minimal/`. Bare names remain discovery hints, not
@@ -23,6 +26,7 @@ effect, and retired slot-guided packs are no longer part of the active library.
 | `defense_leftnav` | Scenario | Thesis defense, graduation defense, proposal defense, research progress reports | `#8B0012` | Compact, formal, burgundy, left navigation, reusable |
 | `defense_topnav` | Scenario | Thesis defense, proposal defense, opening defense, research progress reports | `#183A6A` | Academic, calm, blue-white, structured, source-faithful |
 | `literature_minimal` | Scenario | Literature reports, paper reading, academic reports, research progress reviews | `#0D5DBE` | Minimal, blue-white, restrained, spacious, academic |
+| `nsfc_defense` | Scenario | NSFC defense, scientific project review, evidence-dense research reporting | `#751497` | Source-faithful, dense, component-composable, production-gated |
 <!-- quick-index:end -->
 
 ## Active Families
@@ -36,6 +40,7 @@ effect, and retired slot-guided packs are no longer part of the active library.
 | `defense_leftnav` | Compact left-navigation thesis defense shells with wine, academic-blue, academic-purple, and academic-green palettes. |
 | `defense_topnav` | Academic-blue thesis defense shells with dynamic top navigation and flexible content canvas. |
 | `literature_minimal` | Classic five-page minimal blue literature report shells. |
+| `nsfc_defense` | Five stable NSFC defense shells backed by executable body variants and component regions. |
 
 ## Template Modes
 
@@ -44,6 +49,29 @@ effect, and retired slot-guided packs are no longer part of the active library.
 | `classic` | The template is a flexible visual style with reusable shells. | `design_spec.md` plus canonical placeholders. |
 | `mirror` | A source PPTX deck must be visually preserved. | Fixed SVG roster, replace only existing text/image content. |
 | `slot_guided_mirror` | A mirror template also needs story-role page selection. | `layouts.json`, `page_catalog.json`, `rules.md`, optional `story_structure.json`. |
+
+## Capability Levels
+
+| Level | Runtime contract |
+|-------|------------------|
+| `shell` | Stable public shells only. |
+| `semantic` | Shells plus selectable body variants. |
+| `composable` | Body variants bind executable components into named regions. |
+| `production` | Composable runtime plus QA policy, lock file, and promotion gates. |
+
+Managed packages compile to `compiled/template_ir.json` and
+`compiled/template.lock.json`. Render decks through `slide_compiler.py` so SVG
+and native PPTX consume the same resolved slide definition.
+
+## Composition Boundaries
+
+Each layout directory also contains `capability_profile.json`, with a generated
+summary in [capability_registry.json](./capability_registry.json). This profile
+is separate from a template's visual capability level: it defines which local
+assets may be selected for a named template. Profiles never silently fall back
+to the global component registry. A template with body variants must receive a
+declared local `layout_id` or explicit local component; distilled and raster
+reference directories are marked non-generative.
 
 The current active academic library uses compact classic shells for the defense,
 academic-report, and literature-report families. Retired slot-guided packs should stay outside
@@ -56,7 +84,9 @@ Run these checks after editing a template:
 
 ```bash
 python scripts/svg_quality_checker.py templates/layouts/<template_id> --template-mode --format ppt169
-python scripts/register_template.py <template_id>
+python scripts/easyslides.py template-package rebuild --json
+python scripts/easyslides.py template-capabilities validate --json
+python scripts/easyslides.py template-compile templates/layouts/<template_id> --write --json
 ```
 
 `layouts_index.json` is a discovery index, not a routing gate. A template kept

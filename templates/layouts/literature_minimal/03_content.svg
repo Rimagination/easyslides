@@ -3,8 +3,8 @@
   <g id="content-header">
     <polygon points="52,77 1228,77 1230,85 50,85" fill="#0D5DBE" fill-opacity="0.18"/>
     <polygon points="36,81 1244,81 1246,89 34,89" fill="#0D5DBE"/>
-    <text x="54" y="55" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" fill="#0D5DBE" font-weight="bold" data-slot="CHAPTER_TITLE" data-pptx-textbox="true" data-pptx-box-x="54" data-pptx-box-y="19.3" data-pptx-box-w="780" data-pptx-box-h="52.7"><tspan>{{CHAPTER_TITLE}}</tspan></text>
-    <text x="1224" y="55" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" fill="#000000" font-weight="bold" data-slot="PAGE_TITLE" data-pptx-textbox="true" data-pptx-box-x="819.4" data-pptx-box-y="19.3" data-pptx-box-w="404.6" data-pptx-box-h="52.7"><tspan>{{PAGE_TITLE}}</tspan></text>
+    <text x="54" y="55" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" fill="#0D5DBE" font-weight="bold" data-slot="CHAPTER_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="54" data-pptx-box-y="19.3" data-pptx-box-w="780" data-pptx-box-h="52.7"><tspan>{{CHAPTER_TITLE}}</tspan></text>
+    <text x="1224" y="55" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="34" fill="#000000" font-weight="bold" data-slot="PAGE_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="819.4" data-pptx-box-y="19.3" data-pptx-box-w="404.6" data-pptx-box-h="52.7"><tspan>{{PAGE_TITLE}}</tspan></text>
   </g>
   <g id="key-message" data-slot="KEY_MESSAGE">
     <rect x="54" y="116" width="1172" height="74" rx="4" ry="4" fill="#F5F9FE" stroke="#0D5DBE" stroke-width="1" stroke-opacity="0.18"/>
@@ -14,11 +14,11 @@
   <g id="content-body">
     <rect x="70" y="224" width="1140" height="394" rx="6" ry="6" fill="#FFFFFF" stroke="#D9E4F2" stroke-width="1.4"/>
     <line x1="104" y1="270" x2="1176" y2="270" stroke="#0D5DBE" stroke-width="1.2" stroke-opacity="0.28"/>
-    <text x="104" y="314" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#1F2937" data-slot="CONTENT_BODY" data-pptx-textbox="true" data-pptx-box-x="104" data-pptx-box-y="286" data-pptx-box-w="1072" data-pptx-box-h="300"><tspan>{{CONTENT_BODY}}</tspan></text>
+    <text x="104" y="314" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" fill="#1F2937" data-slot="CONTENT_BODY" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="104" data-pptx-box-y="286" data-pptx-box-w="1072" data-pptx-box-h="300"><tspan>{{CONTENT_BODY}}</tspan></text>
   </g>
   <g id="content-footer">
     <path d="M 0 713 L 1238 713 L 1245 717 L 1252 713 L 1280 713 L 1280 720 L 0 720 Z" fill="#0D5DBE"/>
-    <text x="54" y="688" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280" data-slot="SOURCE" data-pptx-textbox="true" data-pptx-box-x="54" data-pptx-box-y="673.3" data-pptx-box-w="520" data-pptx-box-h="21.7"><tspan>{{SOURCE}}</tspan></text>
-    <text x="1245" y="710" text-anchor="middle" xml:space="preserve" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14.67" fill="#0D5DBE" font-weight="bold" data-slot="PAGE_NUM" data-pptx-textbox="true" data-pptx-box-x="1190" data-pptx-box-y="694.6" data-pptx-box-w="90" data-pptx-box-h="22.74"><tspan>{{PAGE_NUM}}</tspan></text>
+    <text x="54" y="688" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" fill="#6B7280" data-slot="SOURCE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="54" data-pptx-box-y="673.3" data-pptx-box-w="520" data-pptx-box-h="21.7"><tspan>{{SOURCE}}</tspan></text>
+    <text x="1245" y="710" text-anchor="middle" xml:space="preserve" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14.67" fill="#0D5DBE" font-weight="bold" data-slot="PAGE_NUM" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="1190" data-pptx-box-y="694.6" data-pptx-box-w="90" data-pptx-box-h="22.74"><tspan>{{PAGE_NUM}}</tspan></text>
   </g>
 </svg>

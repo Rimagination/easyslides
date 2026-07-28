@@ -25,10 +25,14 @@ except ImportError:  # pragma: no cover - direct script execution
     from layout_metrics import estimate_text_width_px
 
 
-SCHEMA_VERSION = "easyslides.svg_text_slot_report.v1"
+SCHEMA_VERSION = "easyslides.svg_text_slot_report.v2"
 LINE_HEIGHT_RATIO = 1.25
 WIDTH_TOLERANCE = 1.02
 HEIGHT_TOLERANCE = 1.02
+VALID_VALIGNS = {"top", "t", "middle", "center", "ctr", "bottom", "b"}
+CENTER_VALIGNS = {"middle", "center", "ctr"}
+CANVAS_WIDTH = 1280.0
+CANVAS_HEIGHT = 720.0
 
 
 @dataclass(frozen=True)
@@ -46,7 +50,11 @@ class SvgTextSlot:
     box_y: float | None
     box_w: float | None
     box_h: float | None
+    valign: str
+    center_lock: bool
     slot_id: str
+    measure_lines: list[str]
+    line_height_ratio: float
 
 
 def _local_name(tag: str) -> str:
@@ -113,6 +121,14 @@ def _iter_slots(svg_path: Path) -> list[SvgTextSlot]:
         text = _text_content(elem)
         if not text:
             continue
+        # A placeholder needs a representative contract sample, while a
+        # rendered material slide must be measured using its actual text.
+        display_lines = _tspan_lines(elem)
+        if "{{" in text:
+            measure_text = elem.get("data-pptx-measure-text") or text
+            measure_lines = measure_text.splitlines() or [measure_text]
+        else:
+            measure_lines = display_lines
         boxed = _truthy(elem.get("data-pptx-textbox"))
         slots.append(
             SvgTextSlot(
@@ -129,7 +145,11 @@ def _iter_slots(svg_path: Path) -> list[SvgTextSlot]:
                 box_y=_float(elem.get("data-pptx-box-y")) if elem.get("data-pptx-box-y") is not None else None,
                 box_w=_float(elem.get("data-pptx-box-w")) if elem.get("data-pptx-box-w") is not None else None,
                 box_h=_float(elem.get("data-pptx-box-h")) if elem.get("data-pptx-box-h") is not None else None,
+                valign=(elem.get("data-pptx-valign") or "").strip().lower(),
+                center_lock=_truthy(elem.get("data-center-lock")),
                 slot_id=elem.get("data-slot-id") or "",
+                measure_lines=measure_lines,
+                line_height_ratio=max(0.75, min(1.25, _float(elem.get("data-pptx-line-height-ratio"), LINE_HEIGHT_RATIO))),
             )
         )
     return slots
@@ -149,6 +169,7 @@ def _issue(code: str, slot: SvgTextSlot, severity: str, message: str, **details:
             "y": round(slot.y, 2),
             "font_size": round(slot.font_size, 2),
             "font_weight": slot.font_weight,
+            "valign": slot.valign or None,
             **details,
         },
     }
@@ -159,6 +180,8 @@ def validate_svg_text_slots(
     *,
     strict_unboxed: bool = False,
     unboxed_char_threshold: int = 14,
+    require_valign: bool = False,
+    check_canvas: bool = False,
 ) -> dict[str, Any]:
     root = Path(path)
     svg_files = sorted(root.glob("*.svg")) if root.is_dir() else [root]
@@ -193,9 +216,68 @@ def validate_svg_text_slots(
                 )
                 continue
 
-            max_line_width = max((estimate_text_width(line, slot.font_size, slot.font_weight) for line in slot.lines), default=0.0)
-            line_height = slot.font_size * LINE_HEIGHT_RATIO
-            needed_h = max(1, len(slot.lines)) * line_height
+            if require_valign and not slot.valign:
+                issues.append(
+                    _issue(
+                        "SVG-TEXT-MISSING-VALIGN",
+                        slot,
+                        "blocking",
+                        "data-pptx-textbox text must declare data-pptx-valign.",
+                    )
+                )
+            elif slot.valign and slot.valign not in VALID_VALIGNS:
+                issues.append(
+                    _issue(
+                        "SVG-TEXT-INVALID-VALIGN",
+                        slot,
+                        "blocking",
+                        "data-pptx-valign must be top, middle/center, or bottom.",
+                        allowed=sorted(VALID_VALIGNS),
+                    )
+                )
+
+            if slot.valign and slot.valign not in VALID_VALIGNS:
+                continue
+
+            if slot.center_lock and slot.valign not in CENTER_VALIGNS:
+                issues.append(
+                    _issue(
+                        "SVG-TEXT-CENTER-LOCK-VALIGN",
+                        slot,
+                        "blocking",
+                        "A center-locked text box must use middle/center vertical alignment.",
+                    )
+                )
+
+            if check_canvas and (
+                slot.box_w <= 0
+                or slot.box_h <= 0
+                or slot.box_x < 0
+                or slot.box_y < 0
+                or slot.box_x + slot.box_w > CANVAS_WIDTH
+                or slot.box_y + slot.box_h > CANVAS_HEIGHT
+            ):
+                issues.append(
+                    _issue(
+                        "SVG-TEXT-BOX-OFF-CANVAS",
+                        slot,
+                        "blocking",
+                        "Declared text slot must have positive geometry and stay inside the 1280x720 canvas.",
+                        canvas_width=CANVAS_WIDTH,
+                        canvas_height=CANVAS_HEIGHT,
+                        box_x=round(slot.box_x, 2),
+                        box_y=round(slot.box_y, 2),
+                        box_w=round(slot.box_w, 2),
+                        box_h=round(slot.box_h, 2),
+                    )
+                )
+
+            max_line_width = max(
+                (estimate_text_width(line, slot.font_size, slot.font_weight) for line in slot.measure_lines),
+                default=0.0,
+            )
+            line_height = slot.font_size * slot.line_height_ratio
+            needed_h = max(1, len(slot.measure_lines)) * line_height
             if max_line_width > slot.box_w * WIDTH_TOLERANCE:
                 issues.append(
                     _issue(
@@ -205,7 +287,7 @@ def validate_svg_text_slots(
                         "A declared text slot is too narrow for its longest rendered line.",
                         box_w=round(slot.box_w, 2),
                         estimated_line_w=round(max_line_width, 2),
-                        line_count=len(slot.lines),
+                        line_count=len(slot.measure_lines),
                     )
                 )
             if needed_h > slot.box_h * HEIGHT_TOLERANCE:
@@ -217,7 +299,7 @@ def validate_svg_text_slots(
                         "A declared text slot is too short for its rendered line count.",
                         box_h=round(slot.box_h, 2),
                         estimated_text_h=round(needed_h, 2),
-                        line_count=len(slot.lines),
+                        line_count=len(slot.measure_lines),
                     )
                 )
 
@@ -240,6 +322,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("path", help="SVG file or directory containing SVG files.")
     parser.add_argument("--strict-unboxed", action="store_true", help="Treat long text without data-pptx-box as blocking.")
     parser.add_argument("--unboxed-char-threshold", type=int, default=14)
+    parser.add_argument(
+        "--require-valign",
+        action="store_true",
+        help="Require every declared PPTX text box to state data-pptx-valign.",
+    )
+    parser.add_argument(
+        "--check-canvas",
+        action="store_true",
+        help="Require declared text boxes to stay inside the 1280x720 canvas.",
+    )
     parser.add_argument("--report", help="Optional JSON report path.")
     parser.add_argument("--json", action="store_true")
     return parser
@@ -251,6 +343,8 @@ def main(argv: list[str] | None = None) -> int:
         args.path,
         strict_unboxed=args.strict_unboxed,
         unboxed_char_threshold=args.unboxed_char_threshold,
+        require_valign=args.require_valign,
+        check_canvas=args.check_canvas,
     )
     if args.report:
         report_path = Path(args.report)

@@ -1,0 +1,154 @@
+{
+  "schema_version": "easyslides.component_package.v1",
+  "component_id": "comparison_pair",
+  "asset_id": "component_package/comparison_pair",
+  "display_name": "Comparison Pair",
+  "source_asset_id": "card/comparison_pair",
+  "granularity": "component_package",
+  "render_backend": "component_package",
+  "render_targets": ["svg", "native_pptx", "template_body_variant"],
+  "selection": {
+    "content_shapes": ["two_sides", "before_after", "method_comparison", "domestic_foreign"],
+    "page_roles": ["comparison", "decision", "result"],
+    "item_count_min": 2,
+    "item_count_max": 2,
+    "density": "medium",
+    "evidence_types": ["comparison", "method", "before_after"],
+    "editable_targets": ["titles", "body", "synthesis"],
+    "visual_complexity": "medium",
+    "best_for": "Two balanced alternatives or phases with a short synthesis.",
+    "avoid_when": "There are more than three comparable dimensions requiring a table."
+  },
+  "input_schema": {
+    "schema_version": "easyslides.component_input_schema.v1",
+    "type": "object",
+    "required": ["items"],
+    "additional_properties": false,
+    "properties": {
+      "items": {
+        "type": "array",
+        "min_items": 2,
+        "max_items": 2,
+        "items": {
+          "type": "object",
+          "required": ["title", "body"],
+          "additional_properties": false,
+          "properties": {
+            "title": {"type": "string", "min_length": 1, "max_length": 36},
+            "body": {"type": "string", "min_length": 1, "max_length": 150},
+            "badge": {"type": "string", "max_length": 28}
+          }
+        }
+      },
+      "synthesis": {"type": "string", "max_length": 96}
+    }
+  },
+  "payload_contract": {
+    "shape": "items[] + synthesis",
+    "item_count_min": 2,
+    "item_count_max": 2,
+    "item_schema": {
+      "required": ["title", "body"],
+      "optional": ["badge"]
+    },
+    "optional": ["synthesis"]
+  },
+  "slots": [
+    {
+      "slot_id": "title",
+      "kind": "text",
+      "role": "title",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 22,
+        "min_font_size_px": 18,
+        "line_height": 1.16,
+        "max_chars_per_line_zh": 14,
+        "max_lines": 1,
+        "overflow_action": "shorten"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "body",
+      "kind": "text",
+      "role": "body",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 17,
+        "min_font_size_px": 15,
+        "line_height": 1.27,
+        "max_chars_per_line_zh": 22,
+        "max_lines": 6,
+        "overflow_action": "split_or_use_comparison_table"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "synthesis",
+      "kind": "text",
+      "role": "caption",
+      "required": false,
+      "capacity": {
+        "font_size_px": 15,
+        "min_font_size_px": 13,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 34,
+        "max_lines": 2,
+        "overflow_action": "move_to_speaker_notes"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    }
+  ],
+  "qa": {
+    "required_gates": [
+      "component_package_contract",
+      "component_plan_contract",
+      "card_payload_capacity",
+      "visual_measure_gate",
+      "validate_pptx_text_layout",
+      "renderer_governance"
+    ],
+    "alignment_invariants": [
+      {
+        "id": "comparison_text_vertical_center",
+        "scope": "text_in_container",
+        "rule": "text_center_y_matches_container_center_y",
+        "tolerance_px": 2,
+        "severity": "error"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "story_id": "default",
+      "payload": "stories/default.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "dense",
+      "payload": "stories/dense.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "overflow",
+      "payload": "stories/overflow.json",
+      "expected_status": "fail"
+    }
+  ],
+  "preview": {
+    "review_status": "pending",
+    "expected_files": ["preview/default.png", "preview/dense.png", "preview/overflow.png"]
+  }
+}

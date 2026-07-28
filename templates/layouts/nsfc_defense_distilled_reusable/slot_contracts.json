@@ -1,0 +1,5152 @@
+{
+  "schema_version": "easyslides.template_slot_contracts.v1",
+  "template_id": "nsfc_defense_distilled_reusable",
+  "source": "derived_from_layouts_json_slot_models",
+  "replacement_rule": "replace_declared_slots_preserve_template_geometry",
+  "private_clone_required": false,
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "use_declared_capacity",
+      "choose_lower_density_source_page",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ]
+  },
+  "layouts": [
+    {
+      "layout_id": "NDD-S01",
+      "page_id": "01_cover",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/01_cover.svg",
+      "role_fit": [
+        "cover"
+      ],
+      "slot_model": "cover",
+      "slots": [
+        "TITLE",
+        "SUBTITLE",
+        "PRESENTER",
+        "DATE",
+        "DATE_02",
+        "DATE_03",
+        "DATE_04",
+        "DATE_05",
+        "DATE_06",
+        "HERO_IMAGE",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06",
+        "IMAGE_07",
+        "IMAGE_08",
+        "IMAGE_09"
+      ],
+      "text_slots": [
+        "TITLE",
+        "SUBTITLE",
+        "PRESENTER",
+        "DATE",
+        "DATE_02",
+        "DATE_03",
+        "DATE_04",
+        "DATE_05",
+        "DATE_06"
+      ],
+      "image_slots": [
+        "HERO_IMAGE",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06",
+        "IMAGE_07",
+        "IMAGE_08",
+        "IMAGE_09"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "TITLE",
+          "role": "title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 20
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "role": "subtitle",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "PRESENTER",
+          "role": "presenter",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "DATE",
+          "role": "date",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "DATE_02",
+          "role": "date_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "DATE_03",
+          "role": "date_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "DATE_04",
+          "role": "date_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "DATE_05",
+          "role": "date_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "DATE_06",
+          "role": "date_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "HERO_IMAGE",
+          "role": "hero_image",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_07",
+          "role": "image_07",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_08",
+          "role": "image_08",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_09",
+          "role": "image_09",
+          "kind": "image",
+          "image_fit": "contain"
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S02",
+      "page_id": "02_content",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/02_content.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S03",
+      "page_id": "03_content_02",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/03_content_02.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S04",
+      "page_id": "04_content_03",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/04_content_03.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S05",
+      "page_id": "05_content_04",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/05_content_04.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S06",
+      "page_id": "06_content_05",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/06_content_05.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S07",
+      "page_id": "07_content_06",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/07_content_06.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S08",
+      "page_id": "08_content_07",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/08_content_07.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S09",
+      "page_id": "09_content_08",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/09_content_08.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S10",
+      "page_id": "10_content_09",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/10_content_09.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S11",
+      "page_id": "11_content_10",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/11_content_10.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S12",
+      "page_id": "12_content_11",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/12_content_11.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S13",
+      "page_id": "13_content_12",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/13_content_12.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S14",
+      "page_id": "14_content_13",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/14_content_13.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S15",
+      "page_id": "15_content_14",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/15_content_14.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S16",
+      "page_id": "16_content_15",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/16_content_15.svg",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "IMAGE_06",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "text_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT_01",
+        "BODY_TEXT_02",
+        "BODY_TEXT_03",
+        "BODY_TEXT_04",
+        "BODY_TEXT_05",
+        "BODY_TEXT_06",
+        "PAGE_TITLE_02",
+        "BODY_TEXT_07",
+        "BODY_TEXT_08",
+        "BODY_TEXT_09",
+        "BODY_TEXT_10",
+        "PAGE_TITLE_03",
+        "BODY_TEXT_11",
+        "BODY_TEXT_12",
+        "BODY_TEXT_13",
+        "BODY_TEXT_14",
+        "BODY_TEXT_15",
+        "BODY_TEXT_16",
+        "BODY_TEXT_17",
+        "BODY_TEXT_18",
+        "PAGE_TITLE_04",
+        "BODY_TEXT_19",
+        "BODY_TEXT_20",
+        "BODY_TEXT_21",
+        "BODY_TEXT_22",
+        "BODY_TEXT_23",
+        "BODY_TEXT_24"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_02",
+          "role": "page_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 27
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_03",
+          "role": "page_title_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 26
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_15",
+          "role": "body_text_15",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_16",
+          "role": "body_text_16",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 23
+        },
+        {
+          "slot_id": "BODY_TEXT_17",
+          "role": "body_text_17",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_18",
+          "role": "body_text_18",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAGE_TITLE_04",
+          "role": "page_title_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_19",
+          "role": "body_text_19",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 39
+        },
+        {
+          "slot_id": "BODY_TEXT_20",
+          "role": "body_text_20",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_21",
+          "role": "body_text_21",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_22",
+          "role": "body_text_22",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_23",
+          "role": "body_text_23",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "BODY_TEXT_24",
+          "role": "body_text_24",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 21
+        }
+      ]
+    },
+    {
+      "layout_id": "NDD-S17",
+      "page_id": "17_ending",
+      "svg_path": "templates/layouts/nsfc_defense_distilled/17_ending.svg",
+      "role_fit": [
+        "ending"
+      ],
+      "slot_model": "ending",
+      "slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "CONTACT",
+        "CONTACT_02",
+        "CONTACT_03",
+        "CONTACT_04",
+        "CONTACT_05",
+        "CONTACT_06",
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06",
+        "IMAGE_07",
+        "IMAGE_08",
+        "IMAGE_09"
+      ],
+      "text_slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "CONTACT",
+        "CONTACT_02",
+        "CONTACT_03",
+        "CONTACT_04",
+        "CONTACT_05",
+        "CONTACT_06"
+      ],
+      "image_slots": [
+        "IMAGE_01",
+        "IMAGE_02",
+        "IMAGE_03",
+        "IMAGE_04",
+        "IMAGE_05",
+        "IMAGE_06",
+        "IMAGE_07",
+        "IMAGE_08",
+        "IMAGE_09"
+      ],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "CLOSING_TITLE",
+          "role": "closing_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "CLOSING_SUBTITLE",
+          "role": "closing_subtitle",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "CONTACT",
+          "role": "contact",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "CONTACT_02",
+          "role": "contact_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "CONTACT_03",
+          "role": "contact_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "CONTACT_04",
+          "role": "contact_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "CONTACT_05",
+          "role": "contact_05",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "CONTACT_06",
+          "role": "contact_06",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 16
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_05",
+          "role": "image_05",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_06",
+          "role": "image_06",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_07",
+          "role": "image_07",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_08",
+          "role": "image_08",
+          "kind": "image",
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "IMAGE_09",
+          "role": "image_09",
+          "kind": "image",
+          "image_fit": "contain"
+        }
+      ]
+    }
+  ],
+  "source_template_id": "nsfc_defense_distilled"
+}

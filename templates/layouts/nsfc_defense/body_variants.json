@@ -1,0 +1,2533 @@
+{
+  "schema_version": "easyslides.nsfc_defense.body_variants.v1",
+  "template_id": "nsfc_defense",
+  "source_shell": "04_content.svg",
+  "content_area": {
+    "x": 64.0,
+    "y": 116.0,
+    "width": 1152.0,
+    "height": 548.0
+  },
+  "coordinate_space": "body_canvas",
+  "clear_region": {
+    "x": 0.0,
+    "y": 100.0,
+    "width": 1280.0,
+    "height": 620.0
+  },
+  "selection_policy": "match_required_story_role_then_source_archetype_density_and_evidence",
+  "composition_contract": "regions_required",
+  "body_component_policy": "forbidden",
+  "variants": [
+    {
+      "variant_id": "evidence_triptych",
+      "source_slides": [
+        3
+      ],
+      "section": "01",
+      "story_roles": [
+        "national_need_evidence"
+      ],
+      "narrative_step": 3,
+      "source_page_purpose": "Establish the need with a claim, relationship, and three converging exhibits.",
+      "density": 5,
+      "best_for": "national-need claim supported by three independent evidence exhibits",
+      "composition_profile": "evidence_triptych_scene",
+      "figure_count": 4,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_evidence_triptych",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "evidence_triptych",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "CLAIM",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 32,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RELATION_LEFT",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 13,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RELATION_RIGHT",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 13,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_03_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CALLOUT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 15,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CALLOUT_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CALLOUT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 35,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/evidence_triptych",
+          "instance_id": "evidence_triptych",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "CLAIM": "CLAIM",
+            "RELATION_LEFT": "RELATION_LEFT",
+            "RELATION_RIGHT": "RELATION_RIGHT",
+            "FIGURE_01": "FIGURE_01",
+            "FIGURE_01_CAPTION": "FIGURE_01_CAPTION",
+            "FIGURE_02": "FIGURE_02",
+            "FIGURE_02_CAPTION": "FIGURE_02_CAPTION",
+            "FIGURE_03": "FIGURE_03",
+            "FIGURE_03_CAPTION": "FIGURE_03_CAPTION",
+            "CALLOUT_TITLE": "CALLOUT_TITLE",
+            "CALLOUT_BODY": "CALLOUT_BODY",
+            "CALLOUT_FIGURE": "CALLOUT_FIGURE",
+            "SYNTHESIS": "SYNTHESIS"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "two_track_evidence",
+      "source_slides": [
+        4
+      ],
+      "section": "01",
+      "story_roles": [
+        "strategic_need_two_track"
+      ],
+      "narrative_step": 4,
+      "source_page_purpose": "Connect the need to complementary scientific and application tracks.",
+      "density": 5,
+      "best_for": "two-track scientific roadmap with evidence and distinct takeaways",
+      "composition_profile": "two_track_evidence_scene",
+      "figure_count": 2,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_two_track_evidence",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "two_track_evidence",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "TRACK_01_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_01_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "TRACK_01_POINT_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_01_POINT_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_01_POINT_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_02_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_02_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "TRACK_02_CALLOUT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_02_CALLOUT_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_01_TAKEAWAY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 30,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRACK_02_TAKEAWAY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 30,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 42,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/two_track_evidence",
+          "instance_id": "two_track_evidence",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "TRACK_01_TITLE": "TRACK_01_TITLE",
+            "TRACK_01_FIGURE": "TRACK_01_FIGURE",
+            "TRACK_01_POINT_01": "TRACK_01_POINT_01",
+            "TRACK_01_POINT_02": "TRACK_01_POINT_02",
+            "TRACK_01_POINT_03": "TRACK_01_POINT_03",
+            "TRACK_02_TITLE": "TRACK_02_TITLE",
+            "TRACK_02_FIGURE": "TRACK_02_FIGURE",
+            "TRACK_02_CALLOUT_TITLE": "TRACK_02_CALLOUT_TITLE",
+            "TRACK_02_CALLOUT_BODY": "TRACK_02_CALLOUT_BODY",
+            "TRACK_01_TAKEAWAY": "TRACK_01_TAKEAWAY",
+            "TRACK_02_TAKEAWAY": "TRACK_02_TAKEAWAY",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "bottleneck_chain",
+      "source_slides": [
+        5
+      ],
+      "section": "01",
+      "story_roles": [
+        "scientific_bottleneck"
+      ],
+      "narrative_step": 5,
+      "source_page_purpose": "Explain the bottleneck through four linked observations before stating the intervention.",
+      "density": 5,
+      "best_for": "problem-to-bottleneck chain with four connected exhibits",
+      "composition_profile": "bottleneck_chain_scene",
+      "figure_count": 4,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_bottleneck_chain",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "bottleneck_chain",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "CLAIM",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 42,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "BOTTLENECK",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "NODE_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "NODE_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "NODE_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_04",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "NODE_04",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/bottleneck_chain",
+          "instance_id": "bottleneck_chain",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "CLAIM": "CLAIM",
+            "BOTTLENECK": "BOTTLENECK",
+            "FIGURE_01": "FIGURE_01",
+            "NODE_01": "NODE_01",
+            "FIGURE_02": "FIGURE_02",
+            "NODE_02": "NODE_02",
+            "FIGURE_03": "FIGURE_03",
+            "NODE_03": "NODE_03",
+            "FIGURE_04": "FIGURE_04",
+            "NODE_04": "NODE_04",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "hotspot_metrics",
+      "source_slides": [
+        6
+      ],
+      "section": "01",
+      "story_roles": [
+        "research_hotspot_metrics"
+      ],
+      "narrative_step": 6,
+      "source_page_purpose": "Locate the research hotspot using performance evidence and quantitative indicators.",
+      "density": 5,
+      "best_for": "research hotspot with figures and four decision metrics",
+      "composition_profile": "hotspot_metrics_scene",
+      "figure_count": 3,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_hotspot_metrics",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "hotspot_metrics",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "THEME_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "THEME_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "HERO_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "TRANSITION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 38,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_01_VALUE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_01_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_02_VALUE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_02_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_03_VALUE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_03_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_04_VALUE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_04_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 21,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/hotspot_metrics",
+          "instance_id": "hotspot_metrics",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "THEME_TITLE": "THEME_TITLE",
+            "THEME_BODY": "THEME_BODY",
+            "HERO_FIGURE": "HERO_FIGURE",
+            "TRANSITION": "TRANSITION",
+            "FIGURE_01": "FIGURE_01",
+            "FIGURE_01_CAPTION": "FIGURE_01_CAPTION",
+            "FIGURE_02": "FIGURE_02",
+            "FIGURE_02_CAPTION": "FIGURE_02_CAPTION",
+            "METRIC_01_VALUE": "METRIC_01_VALUE",
+            "METRIC_01_LABEL": "METRIC_01_LABEL",
+            "METRIC_02_VALUE": "METRIC_02_VALUE",
+            "METRIC_02_LABEL": "METRIC_02_LABEL",
+            "METRIC_03_VALUE": "METRIC_03_VALUE",
+            "METRIC_03_LABEL": "METRIC_03_LABEL",
+            "METRIC_04_VALUE": "METRIC_04_VALUE",
+            "METRIC_04_LABEL": "METRIC_04_LABEL",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "hotspot_panels",
+      "source_slides": [
+        7
+      ],
+      "section": "01",
+      "story_roles": [
+        "research_hotspot_synthesis"
+      ],
+      "narrative_step": 7,
+      "source_page_purpose": "Synthesize three hotspot directions as linked research panels.",
+      "density": 5,
+      "best_for": "three-column research landscape with a synthesis",
+      "composition_profile": "hotspot_panels_scene",
+      "figure_count": 3,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_hotspot_panels",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "hotspot_panels",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "PANEL_01_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 17,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PANEL_01_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PANEL_01_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "PANEL_02_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 17,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PANEL_02_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PANEL_02_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "PANEL_03_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 17,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PANEL_03_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PANEL_03_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 46,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/hotspot_panels",
+          "instance_id": "hotspot_panels",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "PANEL_01_TITLE": "PANEL_01_TITLE",
+            "PANEL_01_BODY": "PANEL_01_BODY",
+            "PANEL_01_FIGURE": "PANEL_01_FIGURE",
+            "PANEL_02_TITLE": "PANEL_02_TITLE",
+            "PANEL_02_BODY": "PANEL_02_BODY",
+            "PANEL_02_FIGURE": "PANEL_02_FIGURE",
+            "PANEL_03_TITLE": "PANEL_03_TITLE",
+            "PANEL_03_BODY": "PANEL_03_BODY",
+            "PANEL_03_FIGURE": "PANEL_03_FIGURE",
+            "SYNTHESIS": "SYNTHESIS"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "innovation_evidence",
+      "source_slides": [
+        9
+      ],
+      "section": "02",
+      "story_roles": [
+        "innovation_overview"
+      ],
+      "narrative_step": 9,
+      "source_page_purpose": "State the innovation package as a four-step route backed by three exhibits.",
+      "density": 5,
+      "best_for": "innovation pathway with a four-step route and three supporting figures",
+      "composition_profile": "innovation_evidence_scene",
+      "figure_count": 3,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_innovation_evidence",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "innovation_evidence",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "INNOVATION_CLAIM",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 48,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_04",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "SUPPORTING_LINE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 42,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_03_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/innovation_evidence",
+          "instance_id": "innovation_evidence",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "INNOVATION_CLAIM": "INNOVATION_CLAIM",
+            "STEP_01": "STEP_01",
+            "STEP_02": "STEP_02",
+            "STEP_03": "STEP_03",
+            "STEP_04": "STEP_04",
+            "SUPPORTING_LINE": "SUPPORTING_LINE",
+            "FIGURE_01": "FIGURE_01",
+            "FIGURE_01_CAPTION": "FIGURE_01_CAPTION",
+            "FIGURE_02": "FIGURE_02",
+            "FIGURE_02_CAPTION": "FIGURE_02_CAPTION",
+            "FIGURE_03": "FIGURE_03",
+            "FIGURE_03_CAPTION": "FIGURE_03_CAPTION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "ann_snn_comparison",
+      "source_slides": [
+        10
+      ],
+      "section": "02",
+      "story_roles": [
+        "method_comparison"
+      ],
+      "narrative_step": 10,
+      "source_page_purpose": "Contrast baseline and event-driven methods in a decision table, then show the selection rationale.",
+      "density": 5,
+      "best_for": "method comparison table with two scientific figures",
+      "composition_profile": "ann_snn_comparison_scene",
+      "figure_count": 2,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_ann_snn_comparison",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "ann_snn_comparison",
+        "comparison"
+      ],
+      "slots": [
+        {
+          "slot_id": "TABLE_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 32,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "COLUMN_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "COLUMN_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "COLUMN_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_01_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_01_ANN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_01_SNN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_02_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_02_ANN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_02_SNN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_03_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_03_ANN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_03_SNN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_04_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_04_ANN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ROW_04_SNN",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "OBJECTIVE_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "OBJECTIVE_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/ann_snn_comparison",
+          "instance_id": "ann_snn_comparison",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "TABLE_TITLE": "TABLE_TITLE",
+            "COLUMN_01": "COLUMN_01",
+            "COLUMN_02": "COLUMN_02",
+            "COLUMN_03": "COLUMN_03",
+            "ROW_01_LABEL": "ROW_01_LABEL",
+            "ROW_01_ANN": "ROW_01_ANN",
+            "ROW_01_SNN": "ROW_01_SNN",
+            "ROW_02_LABEL": "ROW_02_LABEL",
+            "ROW_02_ANN": "ROW_02_ANN",
+            "ROW_02_SNN": "ROW_02_SNN",
+            "ROW_03_LABEL": "ROW_03_LABEL",
+            "ROW_03_ANN": "ROW_03_ANN",
+            "ROW_03_SNN": "ROW_03_SNN",
+            "ROW_04_LABEL": "ROW_04_LABEL",
+            "ROW_04_ANN": "ROW_04_ANN",
+            "ROW_04_SNN": "ROW_04_SNN",
+            "OBJECTIVE_TITLE": "OBJECTIVE_TITLE",
+            "OBJECTIVE_BODY": "OBJECTIVE_BODY",
+            "FIGURE_01": "FIGURE_01",
+            "FIGURE_01_CAPTION": "FIGURE_01_CAPTION",
+            "FIGURE_02": "FIGURE_02",
+            "FIGURE_02_CAPTION": "FIGURE_02_CAPTION",
+            "SYNTHESIS": "SYNTHESIS"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "plasticity_training",
+      "source_slides": [
+        11
+      ],
+      "section": "02",
+      "story_roles": [
+        "device_mechanism_training"
+      ],
+      "narrative_step": 11,
+      "source_page_purpose": "Relate training behavior to device plasticity through paired mechanism evidence.",
+      "density": 5,
+      "best_for": "ANN/SNN mechanism comparison with device-training callout",
+      "composition_profile": "plasticity_training_scene",
+      "figure_count": 3,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_plasticity_training",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "plasticity_training",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "POINT_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 29,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "POINT_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 29,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ANN_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "ANN_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "SNN_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "SNN_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "CALLOUT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CALLOUT_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "SUPPORT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 55,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/plasticity_training",
+          "instance_id": "plasticity_training",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "POINT_01": "POINT_01",
+            "POINT_02": "POINT_02",
+            "ANN_LABEL": "ANN_LABEL",
+            "ANN_FIGURE": "ANN_FIGURE",
+            "SNN_LABEL": "SNN_LABEL",
+            "SNN_FIGURE": "SNN_FIGURE",
+            "CALLOUT_TITLE": "CALLOUT_TITLE",
+            "CALLOUT_BODY": "CALLOUT_BODY",
+            "SUPPORT_FIGURE": "SUPPORT_FIGURE",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "network_architecture",
+      "source_slides": [
+        12
+      ],
+      "section": "02",
+      "story_roles": [
+        "system_architecture"
+      ],
+      "narrative_step": 12,
+      "source_page_purpose": "Show formula-to-network-to-hardware architecture as one technical scene.",
+      "density": 5,
+      "best_for": "layered network architecture with module and hardware flow",
+      "composition_profile": "network_architecture_scene",
+      "figure_count": 3,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_network_architecture",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "network_architecture",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "ARCHITECTURE_CLAIM",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FORMULA",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "STAGE_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "STAGE_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "STAGE_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "MODULE_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "MODULE_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "HARDWARE_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 43,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/network_architecture",
+          "instance_id": "network_architecture",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "ARCHITECTURE_CLAIM": "ARCHITECTURE_CLAIM",
+            "FORMULA": "FORMULA",
+            "FIGURE_01": "FIGURE_01",
+            "STAGE_01": "STAGE_01",
+            "STAGE_02": "STAGE_02",
+            "STAGE_03": "STAGE_03",
+            "MODULE_TITLE": "MODULE_TITLE",
+            "FIGURE_02": "FIGURE_02",
+            "MODULE_BODY": "MODULE_BODY",
+            "HARDWARE_TITLE": "HARDWARE_TITLE",
+            "FIGURE_03": "FIGURE_03",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "sensor_application",
+      "source_slides": [
+        13
+      ],
+      "section": "02",
+      "story_roles": [
+        "application_pipeline"
+      ],
+      "narrative_step": 13,
+      "source_page_purpose": "Demonstrate the calibrated sensing path and the downstream system path together.",
+      "density": 5,
+      "best_for": "dual-application evidence with sensor and system panels",
+      "composition_profile": "sensor_application_scene",
+      "figure_count": 2,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_sensor_application",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "sensor_application",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "APPLICATION_CLAIM",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 50,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "LEFT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "LEFT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "LEFT_NODE_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "LEFT_NODE_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "LEFT_NODE_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RIGHT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "RIGHT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RIGHT_NODE_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RIGHT_NODE_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RIGHT_NODE_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 46,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/sensor_application",
+          "instance_id": "sensor_application",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "APPLICATION_CLAIM": "APPLICATION_CLAIM",
+            "LEFT_FIGURE": "LEFT_FIGURE",
+            "LEFT_TITLE": "LEFT_TITLE",
+            "LEFT_NODE_01": "LEFT_NODE_01",
+            "LEFT_NODE_02": "LEFT_NODE_02",
+            "LEFT_NODE_03": "LEFT_NODE_03",
+            "RIGHT_FIGURE": "RIGHT_FIGURE",
+            "RIGHT_TITLE": "RIGHT_TITLE",
+            "RIGHT_NODE_01": "RIGHT_NODE_01",
+            "RIGHT_NODE_02": "RIGHT_NODE_02",
+            "RIGHT_NODE_03": "RIGHT_NODE_03",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "literature_result",
+      "source_slides": [
+        14
+      ],
+      "section": "02",
+      "story_roles": [
+        "external_validation"
+      ],
+      "narrative_step": 14,
+      "source_page_purpose": "Anchor the contribution in researcher, paper, and external validation evidence.",
+      "density": 5,
+      "best_for": "publication collage and external validation result",
+      "composition_profile": "literature_result_scene",
+      "figure_count": 4,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_literature_result",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "literature_result",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "PROFILE_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "PROFILE_NAME",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PROFILE_CREDENTIAL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PROFILE_QUOTE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "PAPER_FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "PAPER_FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "PAPER_FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "VALIDATION_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "VALIDATION_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RESULT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RESULT_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 24,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 46,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/literature_result",
+          "instance_id": "literature_result",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "PROFILE_FIGURE": "PROFILE_FIGURE",
+            "PROFILE_NAME": "PROFILE_NAME",
+            "PROFILE_CREDENTIAL": "PROFILE_CREDENTIAL",
+            "PROFILE_QUOTE": "PROFILE_QUOTE",
+            "PAPER_FIGURE_01": "PAPER_FIGURE_01",
+            "PAPER_FIGURE_02": "PAPER_FIGURE_02",
+            "PAPER_FIGURE_03": "PAPER_FIGURE_03",
+            "VALIDATION_TITLE": "VALIDATION_TITLE",
+            "VALIDATION_BODY": "VALIDATION_BODY",
+            "RESULT_TITLE": "RESULT_TITLE",
+            "RESULT_BODY": "RESULT_BODY",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    },
+    {
+      "variant_id": "application_benefits",
+      "source_slides": [
+        16
+      ],
+      "section": "03",
+      "story_roles": [
+        "impact_and_benefits"
+      ],
+      "narrative_step": 16,
+      "source_page_purpose": "Close with transfer evidence, performance metrics, and practical application outcome.",
+      "density": 5,
+      "best_for": "application impact with transfer evidence and quantified benefits",
+      "composition_profile": "application_benefits_scene",
+      "figure_count": 2,
+      "page_id": "content",
+      "layout_id": "content",
+      "shell": "04_content.svg",
+      "composition_mode": "ordered_component_refs",
+      "composition_contract": "regions_required",
+      "composition_scene": "source_like_application_benefits",
+      "coordinate_space": "body_canvas",
+      "content_shapes": [
+        "application_benefits",
+        "evidence"
+      ],
+      "slots": [
+        {
+          "slot_id": "HERO_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "TRANSFER_CLAIM",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 38,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TRANSFER_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 44,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TAG_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TAG_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TAG_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "TAG_04",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_01_VALUE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_01_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_02_VALUE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "METRIC_02_LABEL",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RESULT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "capacity": {}
+        },
+        {
+          "slot_id": "RESULT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 7,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "RESULT_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 7,
+            "overflow_action": "choose_variant_or_split"
+          }
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "overflow_action": "choose_variant_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "main",
+          "frame": {
+            "x": 64.0,
+            "y": 116.0,
+            "width": 1152.0,
+            "height": 548.0
+          },
+          "coordinate_space": "body_canvas",
+          "normalized_frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1.0,
+            "height": 1.0
+          },
+          "z_index": 10,
+          "fit": "contain"
+        }
+      ],
+      "clear_region": {
+        "x": 0.0,
+        "y": 100.0,
+        "width": 1280.0,
+        "height": 620.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/nsfc_defense/application_benefits",
+          "instance_id": "application_benefits",
+          "role": "primary_body",
+          "order": 1,
+          "required": true,
+          "region": "main",
+          "slot_bindings": {
+            "HERO_FIGURE": "HERO_FIGURE",
+            "TRANSFER_CLAIM": "TRANSFER_CLAIM",
+            "TRANSFER_BODY": "TRANSFER_BODY",
+            "TAG_01": "TAG_01",
+            "TAG_02": "TAG_02",
+            "TAG_03": "TAG_03",
+            "TAG_04": "TAG_04",
+            "METRIC_01_VALUE": "METRIC_01_VALUE",
+            "METRIC_01_LABEL": "METRIC_01_LABEL",
+            "METRIC_02_VALUE": "METRIC_02_VALUE",
+            "METRIC_02_LABEL": "METRIC_02_LABEL",
+            "RESULT_FIGURE": "RESULT_FIGURE",
+            "RESULT_TITLE": "RESULT_TITLE",
+            "RESULT_BODY": "RESULT_BODY",
+            "CONCLUSION": "CONCLUSION"
+          }
+        }
+      ],
+      "selection_key": [
+        "story_role",
+        "content_shape",
+        "section",
+        "density",
+        "evidence_count"
+      ],
+      "slot_policy": "bind_variant_slots_to_component_local_slots"
+    }
+  ],
+  "constraint": "The content shell owns chrome only. Each page must select a source-derived body variant whose section and story_role match the intended narrative step. Direct body_components are forbidden."
+}

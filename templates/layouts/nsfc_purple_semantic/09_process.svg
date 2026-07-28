@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720">
+
+  <defs>
+    <linearGradient id="purpleGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#751497"/>
+      <stop offset="1" stop-color="#4B0D65"/>
+    </linearGradient>
+    <linearGradient id="softBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8EAFC"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <rect x="0" y="0" width="1280" height="72" fill="#751497"/>
+  <rect x="0" y="68" width="1280" height="4" fill="#BF4BE7"/>
+  <path d="M1080 0H1280V72H1140L1080 0Z" fill="#4B0D65" opacity="0.8"/>
+  <text data-slot="PAGE_TITLE" data-slot-kind="text" x="52" y="48" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" data-pptx-textbox="true" data-pptx-box-x="52" data-pptx-box-y="18" data-pptx-box-w="900" data-pptx-box-h="46" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{PAGE_TITLE}}</text>
+  <text data-slot="SECTION" data-slot-kind="text" x="1220" y="44" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="15" font-weight="normal" fill="#FFFFFF" data-pptx-textbox="true" data-pptx-box-x="1030" data-pptx-box-y="29" data-pptx-box-w="190" data-pptx-box-h="30" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{SECTION}}</text>
+<path d="M290 350H346" stroke="#BF4BE7" stroke-width="5"/><path d="M346 350l-16-11v22Z" fill="#BF4BE7"/>
+  <circle cx="162" cy="250" r="54" fill="#F8EAFC" stroke="#751497" stroke-width="3"/>
+  <text x="162" y="264" text-anchor="middle" font-family="Arial" font-size="34" font-weight="bold" fill="#751497">1</text>
+  <text data-slot="STEP_1_TITLE" data-slot-kind="text" x="70" y="348" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="70" data-pptx-box-y="327" data-pptx-box-w="240" data-pptx-box-h="52" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{STEP_1_TITLE}}</text>
+  <text data-slot="STEP_1_BODY" data-slot-kind="text" x="70" y="412" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="70" data-pptx-box-y="395" data-pptx-box-w="210" data-pptx-box-h="130" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="27">{{STEP_1_BODY}}</text>
+<path d="M580 350H636" stroke="#BF4BE7" stroke-width="5"/><path d="M636 350l-16-11v22Z" fill="#BF4BE7"/>
+  <circle cx="452" cy="250" r="54" fill="#F8EAFC" stroke="#751497" stroke-width="3"/>
+  <text x="452" y="264" text-anchor="middle" font-family="Arial" font-size="34" font-weight="bold" fill="#751497">2</text>
+  <text data-slot="STEP_2_TITLE" data-slot-kind="text" x="360" y="348" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="360" data-pptx-box-y="327" data-pptx-box-w="240" data-pptx-box-h="52" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{STEP_2_TITLE}}</text>
+  <text data-slot="STEP_2_BODY" data-slot-kind="text" x="360" y="412" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="360" data-pptx-box-y="395" data-pptx-box-w="210" data-pptx-box-h="130" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="27">{{STEP_2_BODY}}</text>
+<path d="M870 350H926" stroke="#BF4BE7" stroke-width="5"/><path d="M926 350l-16-11v22Z" fill="#BF4BE7"/>
+  <circle cx="742" cy="250" r="54" fill="#F8EAFC" stroke="#751497" stroke-width="3"/>
+  <text x="742" y="264" text-anchor="middle" font-family="Arial" font-size="34" font-weight="bold" fill="#751497">3</text>
+  <text data-slot="STEP_3_TITLE" data-slot-kind="text" x="650" y="348" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="650" data-pptx-box-y="327" data-pptx-box-w="240" data-pptx-box-h="52" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{STEP_3_TITLE}}</text>
+  <text data-slot="STEP_3_BODY" data-slot-kind="text" x="650" y="412" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="650" data-pptx-box-y="395" data-pptx-box-w="210" data-pptx-box-h="130" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="27">{{STEP_3_BODY}}</text>
+
+  <circle cx="1032" cy="250" r="54" fill="#F8EAFC" stroke="#751497" stroke-width="3"/>
+  <text x="1032" y="264" text-anchor="middle" font-family="Arial" font-size="34" font-weight="bold" fill="#751497">4</text>
+  <text data-slot="STEP_4_TITLE" data-slot-kind="text" x="940" y="348" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="bold" fill="#4B0D65" data-pptx-textbox="true" data-pptx-box-x="940" data-pptx-box-y="327" data-pptx-box-w="240" data-pptx-box-h="52" data-pptx-valign="top" data-pptx-measure-text="Sample title" data-line-height="32">{{STEP_4_TITLE}}</text>
+  <text data-slot="STEP_4_BODY" data-slot-kind="text" x="940" y="412" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="17" font-weight="normal" fill="#2F2436" data-pptx-textbox="true" data-pptx-box-x="940" data-pptx-box-y="395" data-pptx-box-w="210" data-pptx-box-h="130" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="27">{{STEP_4_BODY}}</text>
+
+  <line x1="52" y1="682" x2="1228" y2="682" stroke="#E6D5EC" stroke-width="1"/>
+  <text data-slot="SOURCE" data-slot-kind="text" x="52" y="707" text-anchor="start" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="13" font-weight="normal" fill="#6F6275" data-pptx-textbox="true" data-pptx-box-x="52" data-pptx-box-y="694" data-pptx-box-w="900" data-pptx-box-h="24" data-pptx-valign="top" data-pptx-measure-text="Short evidence line" data-line-height="32">{{SOURCE}}</text>
+  <text data-slot="PAGE_NUM" data-slot-kind="text" x="1228" y="707" text-anchor="end" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" font-weight="bold" fill="#751497" data-pptx-textbox="true" data-pptx-box-x="1132" data-pptx-box-y="693" data-pptx-box-w="96" data-pptx-box-h="24" data-pptx-valign="top" data-pptx-measure-text="99" data-line-height="32">{{PAGE_NUM}}</text>
+
+</svg>

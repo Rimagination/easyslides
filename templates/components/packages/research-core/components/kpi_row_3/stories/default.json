@@ -1,0 +1,23 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "default",
+  "payload": {
+    "items": [
+      {
+        "metric": "42%",
+        "label": "Exposure",
+        "note": "Annual mean load."
+      },
+      {
+        "metric": "18",
+        "label": "Sites",
+        "note": "Validated samples."
+      },
+      {
+        "metric": "0.87",
+        "label": "Fit",
+        "note": "Stable across folds."
+      }
+    ]
+  }
+}

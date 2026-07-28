@@ -1,0 +1,8 @@
+{
+  "template_id": "nsfc_defense",
+  "source_template": "templates/reference/template_asset_sources/nsfc_defense_distilled",
+  "runtime_template_dir": "templates/layouts/nsfc_defense",
+  "projection_manifest": "templates/layouts/nsfc_defense/projection_manifest.json",
+  "renderer": "source_template_projection",
+  "native_pptx_route": "scripts/svg_to_pptx.py"
+}

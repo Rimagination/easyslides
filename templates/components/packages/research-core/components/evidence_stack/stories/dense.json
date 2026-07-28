@@ -1,0 +1,24 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "dense",
+  "payload": {
+    "claim": "Five compact checks make the result easier to trust.",
+    "items": [
+      {
+        "evidence": "Remote sensing and field samples point in the same direction."
+      },
+      {
+        "evidence": "Model residuals cluster in known boundary zones."
+      },
+      {
+        "evidence": "Ablation tests keep the leading factors stable."
+      },
+      {
+        "evidence": "Cross-year validation preserves rank order."
+      },
+      {
+        "evidence": "Uncertainty bands remain within the decision threshold."
+      }
+    ]
+  }
+}

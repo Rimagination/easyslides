@@ -1,0 +1,534 @@
+{
+  "schema_version": "easyslides.component_gallery.v1",
+  "status": "pass",
+  "output_dir": "templates\\components\\gallery",
+  "html": "component_gallery.html",
+  "preview_gate_status": "pass",
+  "preview_gate_report": {
+    "schema_version": "easyslides.component_preview_gate_report.v1",
+    "status": "pass",
+    "issue_count": 0,
+    "issues": [],
+    "preview_root": "templates\\components\\gallery\\previews",
+    "svg_count": 18,
+    "checked_text_count": 102,
+    "tolerance_px": 2.0,
+    "svgs": [
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\comparison_pair__default.svg",
+        "checked_text_count": 5
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\comparison_pair__dense.svg",
+        "checked_text_count": 5
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\comparison_pair__overflow.svg",
+        "checked_text_count": 5
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\evidence_stack__default.svg",
+        "checked_text_count": 4
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\evidence_stack__dense.svg",
+        "checked_text_count": 6
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\evidence_stack__overflow.svg",
+        "checked_text_count": 4
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\figure_with_notes__default.svg",
+        "checked_text_count": 2
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\figure_with_notes__dense.svg",
+        "checked_text_count": 2
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\figure_with_notes__overflow.svg",
+        "checked_text_count": 2
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\kpi_row_3__default.svg",
+        "checked_text_count": 9
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\kpi_row_3__dense.svg",
+        "checked_text_count": 9
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\kpi_row_3__overflow.svg",
+        "checked_text_count": 9
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\process_timeline__default.svg",
+        "checked_text_count": 8
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\process_timeline__dense.svg",
+        "checked_text_count": 8
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\process_timeline__overflow.svg",
+        "checked_text_count": 6
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\three_card_summary__default.svg",
+        "checked_text_count": 6
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\three_card_summary__dense.svg",
+        "checked_text_count": 6
+      },
+      {
+        "schema_version": "easyslides.component_preview_gate_report.v1",
+        "status": "pass",
+        "issue_count": 0,
+        "issues": [],
+        "svg": "templates\\components\\gallery\\previews\\three_card_summary__overflow.svg",
+        "checked_text_count": 6
+      }
+    ]
+  },
+  "package_count": 6,
+  "story_count": 18,
+  "fail_story_count": 6,
+  "packages": [
+    {
+      "component_id": "comparison_pair",
+      "source_asset_id": "card/comparison_pair",
+      "status": "pass",
+      "required_gates": [
+        "component_package_contract",
+        "component_plan_contract",
+        "card_payload_capacity",
+        "visual_measure_gate",
+        "validate_pptx_text_layout",
+        "renderer_governance"
+      ],
+      "stories": [
+        {
+          "story_id": "default",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/comparison_pair__default.svg",
+          "checked_slots": 5,
+          "violations": []
+        },
+        {
+          "story_id": "dense",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/comparison_pair__dense.svg",
+          "checked_slots": 5,
+          "violations": []
+        },
+        {
+          "story_id": "overflow",
+          "expected_status": "fail",
+          "status": "fail",
+          "svg": "previews/comparison_pair__overflow.svg",
+          "checked_slots": 5,
+          "violations": [
+            {
+              "location": "items[1].title",
+              "slot_id": "title",
+              "input_chars": 38,
+              "capacity_chars": 14,
+              "max_lines": 1,
+              "max_chars_per_line_zh": 14,
+              "overflow_action": "shorten"
+            },
+            {
+              "location": "items[1].body",
+              "slot_id": "body",
+              "input_chars": 309,
+              "capacity_chars": 132,
+              "max_lines": 6,
+              "max_chars_per_line_zh": 22,
+              "overflow_action": "split_or_use_comparison_table"
+            },
+            {
+              "location": "synthesis",
+              "slot_id": "synthesis",
+              "input_chars": 191,
+              "capacity_chars": 68,
+              "max_lines": 2,
+              "max_chars_per_line_zh": 34,
+              "overflow_action": "move_to_speaker_notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component_id": "evidence_stack",
+      "source_asset_id": "card/evidence_stack",
+      "status": "pass",
+      "required_gates": [
+        "component_package_contract",
+        "component_plan_contract",
+        "card_payload_capacity",
+        "visual_measure_gate",
+        "validate_pptx_text_layout",
+        "renderer_governance"
+      ],
+      "stories": [
+        {
+          "story_id": "default",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/evidence_stack__default.svg",
+          "checked_slots": 4,
+          "violations": []
+        },
+        {
+          "story_id": "dense",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/evidence_stack__dense.svg",
+          "checked_slots": 6,
+          "violations": []
+        },
+        {
+          "story_id": "overflow",
+          "expected_status": "fail",
+          "status": "fail",
+          "svg": "previews/evidence_stack__overflow.svg",
+          "checked_slots": 4,
+          "violations": [
+            {
+              "location": "claim",
+              "slot_id": "claim",
+              "input_chars": 151,
+              "capacity_chars": 68,
+              "max_lines": 2,
+              "max_chars_per_line_zh": 34,
+              "overflow_action": "shorten"
+            },
+            {
+              "location": "items[1].evidence",
+              "slot_id": "evidence",
+              "input_chars": 216,
+              "capacity_chars": 84,
+              "max_lines": 2,
+              "max_chars_per_line_zh": 42,
+              "overflow_action": "split_or_reduce_items"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component_id": "figure_with_notes",
+      "source_asset_id": "card/figure_note_card",
+      "status": "pass",
+      "required_gates": [
+        "component_package_contract",
+        "component_plan_contract",
+        "card_payload_capacity",
+        "visual_measure_gate",
+        "validate_pptx_text_layout",
+        "renderer_governance"
+      ],
+      "stories": [
+        {
+          "story_id": "default",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/figure_with_notes__default.svg",
+          "checked_slots": 2,
+          "violations": []
+        },
+        {
+          "story_id": "dense",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/figure_with_notes__dense.svg",
+          "checked_slots": 2,
+          "violations": []
+        },
+        {
+          "story_id": "overflow",
+          "expected_status": "fail",
+          "status": "fail",
+          "svg": "previews/figure_with_notes__overflow.svg",
+          "checked_slots": 2,
+          "violations": [
+            {
+              "location": "takeaway",
+              "slot_id": "takeaway",
+              "input_chars": 73,
+              "capacity_chars": 24,
+              "max_lines": 2,
+              "max_chars_per_line_zh": 12,
+              "overflow_action": "shorten"
+            },
+            {
+              "location": "bullets",
+              "slot_id": "bullets",
+              "input_chars": 234,
+              "capacity_chars": 105,
+              "max_lines": 7,
+              "max_chars_per_line_zh": 15,
+              "overflow_action": "split_or_use_text_right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component_id": "kpi_row_3",
+      "source_asset_id": "card/kpi_row_3",
+      "status": "pass",
+      "required_gates": [
+        "component_package_contract",
+        "component_plan_contract",
+        "card_payload_capacity",
+        "visual_measure_gate",
+        "validate_pptx_text_layout",
+        "renderer_governance"
+      ],
+      "stories": [
+        {
+          "story_id": "default",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/kpi_row_3__default.svg",
+          "checked_slots": 9,
+          "violations": []
+        },
+        {
+          "story_id": "dense",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/kpi_row_3__dense.svg",
+          "checked_slots": 9,
+          "violations": []
+        },
+        {
+          "story_id": "overflow",
+          "expected_status": "fail",
+          "status": "fail",
+          "svg": "previews/kpi_row_3__overflow.svg",
+          "checked_slots": 9,
+          "violations": [
+            {
+              "location": "items[1].metric",
+              "slot_id": "metric",
+              "input_chars": 10,
+              "capacity_chars": 7,
+              "max_lines": 1,
+              "max_chars_per_line_zh": 7,
+              "overflow_action": "shorten"
+            },
+            {
+              "location": "items[1].label",
+              "slot_id": "label",
+              "input_chars": 27,
+              "capacity_chars": 12,
+              "max_lines": 1,
+              "max_chars_per_line_zh": 12,
+              "overflow_action": "shorten"
+            },
+            {
+              "location": "items[1].note",
+              "slot_id": "note",
+              "input_chars": 97,
+              "capacity_chars": 32,
+              "max_lines": 2,
+              "max_chars_per_line_zh": 16,
+              "overflow_action": "drop_or_move_to_notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component_id": "process_timeline",
+      "source_asset_id": "card/process_steps_4",
+      "status": "pass",
+      "required_gates": [
+        "component_package_contract",
+        "component_plan_contract",
+        "card_payload_capacity",
+        "visual_measure_gate",
+        "validate_pptx_text_layout",
+        "renderer_governance"
+      ],
+      "stories": [
+        {
+          "story_id": "default",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/process_timeline__default.svg",
+          "checked_slots": 8,
+          "violations": []
+        },
+        {
+          "story_id": "dense",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/process_timeline__dense.svg",
+          "checked_slots": 8,
+          "violations": []
+        },
+        {
+          "story_id": "overflow",
+          "expected_status": "fail",
+          "status": "fail",
+          "svg": "previews/process_timeline__overflow.svg",
+          "checked_slots": 6,
+          "violations": [
+            {
+              "location": "items[1].title",
+              "slot_id": "title",
+              "input_chars": 73,
+              "capacity_chars": 20,
+              "max_lines": 2,
+              "max_chars_per_line_zh": 10,
+              "overflow_action": "shorten"
+            },
+            {
+              "location": "items[1].body",
+              "slot_id": "body",
+              "input_chars": 133,
+              "capacity_chars": 52,
+              "max_lines": 4,
+              "max_chars_per_line_zh": 13,
+              "overflow_action": "split_or_use_timeline"
+            },
+            {
+              "location": "items[2].body",
+              "slot_id": "body",
+              "input_chars": 51,
+              "capacity_chars": 52,
+              "max_lines": 4,
+              "max_chars_per_line_zh": 13,
+              "overflow_action": "split_or_use_timeline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component_id": "three_card_summary",
+      "source_asset_id": "card/three_card_summary",
+      "status": "pass",
+      "required_gates": [
+        "component_package_contract",
+        "component_plan_contract",
+        "card_payload_capacity",
+        "visual_measure_gate",
+        "validate_pptx_text_layout",
+        "renderer_governance"
+      ],
+      "stories": [
+        {
+          "story_id": "default",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/three_card_summary__default.svg",
+          "checked_slots": 6,
+          "violations": []
+        },
+        {
+          "story_id": "dense",
+          "expected_status": "pass",
+          "status": "pass",
+          "svg": "previews/three_card_summary__dense.svg",
+          "checked_slots": 6,
+          "violations": []
+        },
+        {
+          "story_id": "overflow",
+          "expected_status": "fail",
+          "status": "fail",
+          "svg": "previews/three_card_summary__overflow.svg",
+          "checked_slots": 6,
+          "violations": [
+            {
+              "location": "items[1].body",
+              "slot_id": "body",
+              "input_chars": 172,
+              "capacity_chars": 128,
+              "max_lines": 8,
+              "max_chars_per_line_zh": 16,
+              "overflow_action": "split_or_choose_flexible_canvas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

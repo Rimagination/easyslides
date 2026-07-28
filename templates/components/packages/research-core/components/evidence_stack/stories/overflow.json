@@ -1,0 +1,18 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "overflow",
+  "payload": {
+    "claim": "This claim is intentionally too long for the compact evidence stack heading because it tries to include methods, results, and implications all at once.",
+    "items": [
+      {
+        "evidence": "This evidence sentence is intentionally too long for one evidence row because it mixes the data source, the statistical result, the limitation, the caveat, and the next action in one dense block that should be split."
+      },
+      {
+        "evidence": "Independent samples localize errors to edge cases."
+      },
+      {
+        "evidence": "Sensitivity tests rule out a single-driver explanation."
+      }
+    ]
+  }
+}

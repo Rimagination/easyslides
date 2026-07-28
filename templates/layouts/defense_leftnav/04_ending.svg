@@ -4,7 +4,7 @@
 </g>
 <g id="shape-45" data-name="文本框 44">
 <rect x="252.65" y="277.62" width="774.69" height="87.24" fill="none"/>
-<text x="640" y="336.82" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="64" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="CLOSING_TITLE" data-pptx-textbox="true" data-pptx-box-x="250" data-pptx-box-y="269.62" data-pptx-box-w="780" data-pptx-box-h="99.2"><tspan fill="#FFFFFF" font-size="64" font-weight="bold" letter-spacing="4">{{CLOSING_TITLE}}</tspan></text>
+<text x="640" y="336.82" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="64" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="CLOSING_TITLE" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="250" data-pptx-box-y="269.62" data-pptx-box-w="780" data-pptx-box-h="99.2"><tspan fill="#FFFFFF" font-size="64" font-weight="bold" letter-spacing="4">{{CLOSING_TITLE}}</tspan></text>
 </g>
 <g id="shape-214" data-name="组合 213">
 <g id="shape-106" data-name="任意多边形: 形状 105">

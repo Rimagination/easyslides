@@ -1,0 +1,172 @@
+{
+  "schema_version": "easyslides.template_capability_registry.v1",
+  "status": "pass",
+  "template_count": 14,
+  "templates": [
+    {
+      "template_id": "academic_general",
+      "status": "pass",
+      "lifecycle": "legacy",
+      "generation_enabled": true,
+      "composition_mode": "shell_only",
+      "allowed_granularities": [
+        "page_module"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\academic_general\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "academic_red_nav6_distilled",
+      "status": "pass",
+      "lifecycle": "source_scoped",
+      "generation_enabled": false,
+      "composition_mode": "disabled",
+      "allowed_granularities": [],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\academic_red_nav6_distilled\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "academic_scqa",
+      "status": "pass",
+      "lifecycle": "legacy",
+      "generation_enabled": true,
+      "composition_mode": "body_variant_only",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\academic_scqa\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "annual_speech_2025_distilled",
+      "status": "pass",
+      "lifecycle": "source_scoped",
+      "generation_enabled": false,
+      "composition_mode": "disabled",
+      "allowed_granularities": [],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\annual_speech_2025_distilled\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "assets",
+      "status": "pass",
+      "lifecycle": "non_template",
+      "generation_enabled": false,
+      "composition_mode": "non_template",
+      "allowed_granularities": [],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\assets\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "defense_leftnav",
+      "status": "pass",
+      "lifecycle": "legacy",
+      "generation_enabled": true,
+      "composition_mode": "body_variant_only",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\defense_leftnav\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "defense_topnav",
+      "status": "pass",
+      "lifecycle": "legacy",
+      "generation_enabled": true,
+      "composition_mode": "body_variant_only",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\defense_topnav\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "env_college_2025_school",
+      "status": "pass",
+      "lifecycle": "legacy",
+      "generation_enabled": true,
+      "composition_mode": "shell_only",
+      "allowed_granularities": [
+        "page_module"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\env_college_2025_school\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "literature_minimal",
+      "status": "pass",
+      "lifecycle": "legacy",
+      "generation_enabled": true,
+      "composition_mode": "body_variant_only",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\literature_minimal\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "nsfc_defense",
+      "status": "pass",
+      "lifecycle": "production",
+      "generation_enabled": true,
+      "composition_mode": "template_composable",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module",
+        "template_component"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "nsfc_defense_distilled",
+      "status": "pass",
+      "lifecycle": "source_scoped",
+      "generation_enabled": false,
+      "composition_mode": "disabled",
+      "allowed_granularities": [],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense_distilled\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "nsfc_defense_distilled_reusable",
+      "status": "pass",
+      "lifecycle": "source_scoped",
+      "generation_enabled": false,
+      "composition_mode": "disabled",
+      "allowed_granularities": [],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense_distilled_reusable\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "nsfc_defense_faithful_raster",
+      "status": "pass",
+      "lifecycle": "source_scoped",
+      "generation_enabled": false,
+      "composition_mode": "disabled",
+      "allowed_granularities": [],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense_faithful_raster\\capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "nsfc_purple_semantic",
+      "status": "pass",
+      "lifecycle": "production",
+      "generation_enabled": true,
+      "composition_mode": "template_bounded",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module",
+        "template_component"
+      ],
+      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_purple_semantic\\capability_profile.json",
+      "issue_count": 0
+    }
+  ],
+  "policy": "named-template component selection requires a valid local capability profile"
+}

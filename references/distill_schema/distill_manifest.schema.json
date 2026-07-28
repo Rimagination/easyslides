@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://easyslides.local/schema/distill_manifest.v1.json",
+  "title": "EasySlides distillation manifest",
+  "type": "object",
+  "required": ["schema_version", "stage", "status", "template_id", "source", "artifacts", "supported_modes", "classification_states", "invariants"],
+  "properties": {
+    "schema_version": {"const": "easyslides.distill_manifest.v1"},
+    "stage": {"enum": ["phase_1_source_graph", "phase_2_semantic_registry", "phase_3_design_system_compiler", "phase_4_projection_and_renderer_mapping", "phase_5_qa_and_promotion"]},
+    "status": {"enum": ["ready", "manifest_only", "deferred"]},
+    "template_id": {"type": "string", "minLength": 1},
+    "source": {"type": "object", "required": ["pptx", "workspace"]},
+    "artifacts": {"type": "object", "required": ["source_graph", "source_manifest"]},
+    "supported_modes": {"type": "array", "items": {"enum": ["mirror", "layout", "design-system"]}},
+    "classification_states": {"type": "array", "items": {"enum": ["fixed", "replaceable", "hybrid", "unknown"]}},
+    "invariants": {"type": "object"}
+  }
+}

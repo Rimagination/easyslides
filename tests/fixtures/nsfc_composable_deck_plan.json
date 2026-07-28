@@ -1,0 +1,25 @@
+{
+  "schema_version": "easyslides.deck_plan.v1",
+  "deck_id": "nsfc-composable-smoke",
+  "template_id": "nsfc_defense",
+  "slides": [
+    {
+      "page": "P01",
+      "role": "content",
+      "section": "01",
+      "story_role": "national_need_evidence",
+      "body_variant_id": "evidence_triptych",
+      "shell_payload": {
+        "PAGE_TITLE": "环境健康风险"
+      },
+      "slot_payload": {
+        "CLAIM": "多源证据共同支持环境健康风险判断",
+        "RELATION_LEFT": "环境暴露\n多源数据",
+        "RELATION_RIGHT": "健康风险\n闭环决策",
+        "CALLOUT_TITLE": "关键挑战",
+        "CALLOUT_BODY": "复杂暴露条件下，需要同时解释时空变化、个体差异和干预窗口。",
+        "SYNTHESIS": "用可追溯的证据链连接环境监测、机制研究与人群健康结果。"
+      }
+    }
+  ]
+}

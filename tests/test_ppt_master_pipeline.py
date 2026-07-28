@@ -87,10 +87,32 @@ class PptMasterPipelineTests(unittest.TestCase):
         self.assertTrue(result["passed"])
         self.assertIn("validate_svg_text_slots.py", commands[0])
         self.assertIn("--strict-unboxed", commands[0])
+        self.assertIn("--require-valign", commands[0])
+        self.assertIn("--check-canvas", commands[0])
         self.assertIn("total_md_split.py", commands[1])
         self.assertIn("finalize_svg.py", commands[2])
         self.assertIn("svg_to_pptx.py", commands[3])
         self.assertIn("validate-latest-visual-measure", commands[4])
+
+    def test_export_is_blocked_by_unconfirmed_clarification(self):
+        from scripts.clarification_gate import build_clarification_request
+        from scripts.ppt_master_pipeline import run_export
+
+        with self.make_project() as temp_dir:
+            project = Path(temp_dir)
+            (project / "notes" / "total.md").write_text("# 01\nNotes\n", encoding="utf-8")
+            (project / "svg_output" / "01.svg").write_text(
+                '<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"></svg>',
+                encoding="utf-8",
+            )
+            (project / "clarification_request.json").write_text(
+                json.dumps(build_clarification_request("new_deck"), ensure_ascii=False),
+                encoding="utf-8",
+            )
+            result = run_export(project, dry_run=True)
+
+        self.assertFalse(result["passed"])
+        self.assertIn("clarification_request.json (confirmed)", result["gate"]["missing"][0])
 
     def test_export_dry_run_includes_template_geometry_when_lock_names_template(self):
         from scripts.ppt_master_pipeline import run_export
@@ -129,6 +151,7 @@ class PptMasterPipelineTests(unittest.TestCase):
         commands = [" ".join(command) for command in result["commands"]]
         self.assertTrue(result["passed"])
         self.assertIn("validate_svg_text_slots.py", commands[0])
+        self.assertIn("--require-valign", commands[0])
         self.assertIn("visual_measure_gate.py", commands[1])
         self.assertIn("--template-dir", commands[1])
         self.assertIn("templates\\nsfc_defense_distilled", commands[1].replace("/", "\\"))

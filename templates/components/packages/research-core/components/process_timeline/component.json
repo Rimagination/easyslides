@@ -1,0 +1,136 @@
+{
+  "schema_version": "easyslides.component_package.v1",
+  "component_id": "process_timeline",
+  "asset_id": "component_package/process_timeline",
+  "display_name": "Process Timeline",
+  "source_asset_id": "card/process_steps_4",
+  "granularity": "component_package",
+  "render_backend": "component_package",
+  "render_targets": ["svg", "native_pptx", "template_body_variant"],
+  "selection": {
+    "content_shapes": ["workflow", "method_pipeline", "procedure", "process", "timeline"],
+    "page_roles": ["method", "workflow", "roadmap"],
+    "item_count_min": 3,
+    "item_count_max": 5,
+    "density": "medium",
+    "evidence_types": ["workflow", "process", "method"],
+    "editable_targets": ["steps", "titles", "body"],
+    "visual_complexity": "medium",
+    "best_for": "A linear method, experiment pipeline, or work plan where order matters.",
+    "avoid_when": "The steps branch heavily or need nested substeps."
+  },
+  "input_schema": {
+    "schema_version": "easyslides.component_input_schema.v1",
+    "type": "object",
+    "required": ["items"],
+    "additional_properties": false,
+    "properties": {
+      "items": {
+        "type": "array",
+        "min_items": 3,
+        "max_items": 5,
+        "items": {
+          "type": "object",
+          "required": ["title", "body"],
+          "additional_properties": false,
+          "properties": {
+            "title": {"type": "string", "min_length": 1, "max_length": 32},
+            "body": {"type": "string", "min_length": 1, "max_length": 110},
+            "date": {"type": "string", "max_length": 24},
+            "status": {"type": "string", "max_length": 24},
+            "output": {"type": "string", "max_length": 48}
+          }
+        }
+      }
+    }
+  },
+  "payload_contract": {
+    "shape": "items[]",
+    "item_count_min": 3,
+    "item_count_max": 5,
+    "item_schema": {
+      "required": ["title", "body"],
+      "optional": ["date", "status", "output"]
+    }
+  },
+  "slots": [
+    {
+      "slot_id": "title",
+      "kind": "text",
+      "role": "title",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 18,
+        "min_font_size_px": 16,
+        "line_height": 1.16,
+        "max_chars_per_line_zh": 10,
+        "max_lines": 2,
+        "overflow_action": "shorten"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "body",
+      "kind": "text",
+      "role": "body",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 15,
+        "min_font_size_px": 13,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 13,
+        "max_lines": 4,
+        "overflow_action": "split_or_use_timeline"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    }
+  ],
+  "qa": {
+    "required_gates": [
+      "component_package_contract",
+      "component_plan_contract",
+      "card_payload_capacity",
+      "visual_measure_gate",
+      "validate_pptx_text_layout",
+      "renderer_governance"
+    ],
+    "alignment_invariants": [
+      {
+        "id": "step_text_vertical_center",
+        "scope": "text_in_container",
+        "rule": "text_center_y_matches_container_center_y",
+        "tolerance_px": 2,
+        "severity": "error"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "story_id": "default",
+      "payload": "stories/default.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "dense",
+      "payload": "stories/dense.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "overflow",
+      "payload": "stories/overflow.json",
+      "expected_status": "fail"
+    }
+  ],
+  "preview": {
+    "review_status": "pending",
+    "expected_files": ["preview/default.png", "preview/dense.png", "preview/overflow.png"]
+  }
+}

@@ -1,0 +1,923 @@
+{
+  "schema_version": "easyslides.annual_speech_2025_distilled.layouts.v1",
+  "template_id": "annual_speech_2025_distilled",
+  "replication_mode": "slot_guided_mirror",
+  "global_contract": {
+    "replication_mode": "slot_guided_mirror",
+    "source_geometry_policy": "preserve_fixed_geometry_replace_declared_slots"
+  },
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "format": "ppt169"
+  },
+  "style_system": "annual_speech_2025_distilled",
+  "colors": {
+    "primary": "#912C8D",
+    "dk1": "#000000",
+    "lt1": "#FFFFFF",
+    "dk2": "#3C3652",
+    "lt2": "#FFFFFF",
+    "accent1": "#912C8D",
+    "accent2": "#7561D6",
+    "accent3": "#68A4C6",
+    "accent4": "#6A69B6",
+    "accent5": "#5199EA",
+    "accent6": "#5B84D8",
+    "hlink": "#467886",
+    "folHlink": "#96607D"
+  },
+  "fonts": {
+    "majorLatin": "等线 Light",
+    "minorLatin": "等线"
+  },
+  "pages": [
+    {
+      "id": "01_cover",
+      "svg": "01_cover.svg",
+      "page_type": "cover",
+      "story_role": "cover",
+      "role_fit": [
+        "cover"
+      ],
+      "slot_model": "cover",
+      "source_slide": 1,
+      "density_score": 3
+    },
+    {
+      "id": "02_content",
+      "svg": "02_content.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 2,
+      "density_score": 3
+    },
+    {
+      "id": "03_content_02",
+      "svg": "03_content_02.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 3,
+      "density_score": 3
+    },
+    {
+      "id": "04_toc",
+      "svg": "04_toc.svg",
+      "page_type": "toc",
+      "story_role": "toc",
+      "role_fit": [
+        "toc"
+      ],
+      "slot_model": "toc",
+      "source_slide": 4,
+      "density_score": 2
+    },
+    {
+      "id": "05_toc_02",
+      "svg": "05_toc_02.svg",
+      "page_type": "toc",
+      "story_role": "toc",
+      "role_fit": [
+        "toc"
+      ],
+      "slot_model": "toc",
+      "source_slide": 5,
+      "density_score": 4
+    },
+    {
+      "id": "06_chapter",
+      "svg": "06_chapter.svg",
+      "page_type": "chapter",
+      "story_role": "chapter",
+      "role_fit": [
+        "chapter"
+      ],
+      "slot_model": "chapter",
+      "source_slide": 6,
+      "density_score": 4
+    },
+    {
+      "id": "07_chapter_02",
+      "svg": "07_chapter_02.svg",
+      "page_type": "chapter",
+      "story_role": "chapter",
+      "role_fit": [
+        "chapter"
+      ],
+      "slot_model": "chapter",
+      "source_slide": 7,
+      "density_score": 3
+    },
+    {
+      "id": "08_chapter_03",
+      "svg": "08_chapter_03.svg",
+      "page_type": "chapter",
+      "story_role": "chapter",
+      "role_fit": [
+        "chapter"
+      ],
+      "slot_model": "chapter",
+      "source_slide": 8,
+      "density_score": 3
+    },
+    {
+      "id": "09_chapter_04",
+      "svg": "09_chapter_04.svg",
+      "page_type": "chapter",
+      "story_role": "chapter",
+      "role_fit": [
+        "chapter"
+      ],
+      "slot_model": "chapter",
+      "source_slide": 9,
+      "density_score": 3
+    },
+    {
+      "id": "10_chapter_05",
+      "svg": "10_chapter_05.svg",
+      "page_type": "chapter",
+      "story_role": "chapter",
+      "role_fit": [
+        "chapter"
+      ],
+      "slot_model": "chapter",
+      "source_slide": 10,
+      "density_score": 3
+    },
+    {
+      "id": "11_content_03",
+      "svg": "11_content_03.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 11,
+      "density_score": 3
+    },
+    {
+      "id": "12_content_04",
+      "svg": "12_content_04.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 12,
+      "density_score": 4
+    },
+    {
+      "id": "13_content_05",
+      "svg": "13_content_05.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 13,
+      "density_score": 4
+    },
+    {
+      "id": "14_content_06",
+      "svg": "14_content_06.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 14,
+      "density_score": 4
+    },
+    {
+      "id": "15_content_07",
+      "svg": "15_content_07.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 15,
+      "density_score": 4
+    },
+    {
+      "id": "16_content_08",
+      "svg": "16_content_08.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 16,
+      "density_score": 4
+    },
+    {
+      "id": "17_content_09",
+      "svg": "17_content_09.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 17,
+      "density_score": 4
+    },
+    {
+      "id": "18_content_10",
+      "svg": "18_content_10.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 18,
+      "density_score": 4
+    },
+    {
+      "id": "19_content_11",
+      "svg": "19_content_11.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 19,
+      "density_score": 4
+    },
+    {
+      "id": "20_content_12",
+      "svg": "20_content_12.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 20,
+      "density_score": 4
+    },
+    {
+      "id": "21_content_13",
+      "svg": "21_content_13.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 21,
+      "density_score": 3
+    },
+    {
+      "id": "22_content_14",
+      "svg": "22_content_14.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 22,
+      "density_score": 3
+    },
+    {
+      "id": "23_content_15",
+      "svg": "23_content_15.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 23,
+      "density_score": 4
+    },
+    {
+      "id": "24_content_16",
+      "svg": "24_content_16.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 24,
+      "density_score": 4
+    },
+    {
+      "id": "25_content_17",
+      "svg": "25_content_17.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 25,
+      "density_score": 4
+    },
+    {
+      "id": "26_content_18",
+      "svg": "26_content_18.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 26,
+      "density_score": 4
+    },
+    {
+      "id": "27_ending",
+      "svg": "27_ending.svg",
+      "page_type": "ending",
+      "story_role": "ending",
+      "role_fit": [
+        "ending"
+      ],
+      "slot_model": "ending",
+      "source_slide": 27,
+      "density_score": 3
+    },
+    {
+      "id": "28_content_19",
+      "svg": "28_content_19.svg",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content",
+        "evidence",
+        "explanation"
+      ],
+      "slot_model": "content",
+      "source_slide": 28,
+      "density_score": 3
+    },
+    {
+      "id": "29_ending_02",
+      "svg": "29_ending_02.svg",
+      "page_type": "ending",
+      "story_role": "ending",
+      "role_fit": [
+        "ending"
+      ],
+      "slot_model": "ending",
+      "source_slide": 29,
+      "density_score": 3
+    }
+  ],
+  "slot_models": {
+    "chapter": [
+      {
+        "slot_id": "CHAPTER_TITLE",
+        "role": "chapter_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC",
+        "role": "chapter_desc",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_02",
+        "role": "chapter_desc_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_03",
+        "role": "chapter_desc_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_04",
+        "role": "chapter_desc_04",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_05",
+        "role": "chapter_desc_05",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_06",
+        "role": "chapter_desc_06",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_07",
+        "role": "chapter_desc_07",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_08",
+        "role": "chapter_desc_08",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_09",
+        "role": "chapter_desc_09",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_10",
+        "role": "chapter_desc_10",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_11",
+        "role": "chapter_desc_11",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_12",
+        "role": "chapter_desc_12",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_13",
+        "role": "chapter_desc_13",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CHAPTER_DESC_14",
+        "role": "chapter_desc_14",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_01",
+        "role": "image_01",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_03",
+        "role": "image_03",
+        "kind": "image",
+        "image_fit": "contain"
+      }
+    ],
+    "content": [
+      {
+        "slot_id": "PAGE_TITLE",
+        "role": "page_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 18
+      },
+      {
+        "slot_id": "BODY_TEXT_01",
+        "role": "body_text_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_02",
+        "role": "body_text_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 17
+      },
+      {
+        "slot_id": "IMAGE_01",
+        "role": "image_01",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_03",
+        "role": "image_03",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "BODY_TEXT_03",
+        "role": "body_text_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_04",
+        "role": "body_text_04",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 30
+      },
+      {
+        "slot_id": "BODY_TEXT_05",
+        "role": "body_text_05",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_06",
+        "role": "body_text_06",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_07",
+        "role": "body_text_07",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 30
+      },
+      {
+        "slot_id": "BODY_TEXT_08",
+        "role": "body_text_08",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_09",
+        "role": "body_text_09",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_10",
+        "role": "body_text_10",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_11",
+        "role": "body_text_11",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 30
+      },
+      {
+        "slot_id": "BODY_TEXT_12",
+        "role": "body_text_12",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_13",
+        "role": "body_text_13",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_14",
+        "role": "body_text_14",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 30
+      },
+      {
+        "slot_id": "BODY_TEXT_15",
+        "role": "body_text_15",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_04",
+        "role": "image_04",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_05",
+        "role": "image_05",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_06",
+        "role": "image_06",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "BODY_TEXT_16",
+        "role": "body_text_16",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "BODY_TEXT_17",
+        "role": "body_text_17",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      }
+    ],
+    "cover": [
+      {
+        "slot_id": "TITLE",
+        "role": "title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 18
+      },
+      {
+        "slot_id": "SUBTITLE",
+        "role": "subtitle",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "presenter",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 17
+      },
+      {
+        "slot_id": "HERO_IMAGE",
+        "role": "hero_image",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      }
+    ],
+    "ending": [
+      {
+        "slot_id": "CLOSING_TITLE",
+        "role": "closing_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 18
+      },
+      {
+        "slot_id": "CLOSING_SUBTITLE",
+        "role": "closing_subtitle",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "CONTACT",
+        "role": "contact",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 17
+      },
+      {
+        "slot_id": "IMAGE_01",
+        "role": "image_01",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "CONTACT_02",
+        "role": "contact_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_03",
+        "role": "image_03",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "IMAGE_04",
+        "role": "image_04",
+        "kind": "image",
+        "image_fit": "contain"
+      }
+    ],
+    "toc": [
+      {
+        "slot_id": "TOC_ITEM_01",
+        "role": "toc_item_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_02",
+        "role": "toc_item_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_03",
+        "role": "toc_item_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_04",
+        "role": "toc_item_04",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_05",
+        "role": "toc_item_05",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 18
+      },
+      {
+        "slot_id": "TOC_ITEM_06",
+        "role": "toc_item_06",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 18
+      },
+      {
+        "slot_id": "TOC_ITEM_07",
+        "role": "toc_item_07",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_08",
+        "role": "toc_item_08",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_09",
+        "role": "toc_item_09",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 18
+      },
+      {
+        "slot_id": "TOC_ITEM_10",
+        "role": "toc_item_10",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 18
+      },
+      {
+        "slot_id": "IMAGE_01",
+        "role": "image_01",
+        "kind": "image",
+        "image_fit": "contain"
+      },
+      {
+        "slot_id": "TOC_ITEM_11",
+        "role": "toc_item_11",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_12",
+        "role": "toc_item_12",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_13",
+        "role": "toc_item_13",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "TOC_ITEM_14",
+        "role": "toc_item_14",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 16
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image",
+        "image_fit": "contain"
+      }
+    ]
+  },
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "use_declared_capacity",
+      "choose_lower_density_source_page",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ]
+  }
+}

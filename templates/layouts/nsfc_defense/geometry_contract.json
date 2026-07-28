@@ -1,0 +1,297 @@
+{
+  "schema_version": "easyslides.nsfc_defense.geometry_contract.v1",
+  "template_id": "nsfc_defense",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "hard_invariants": [
+    "text_center_y_matches_container_center_y",
+    "native_pptx_text_must_fit_declared_geometry"
+  ],
+  "pages": [
+    {
+      "id": "01_cover",
+      "page_id": "cover",
+      "svg": "01_cover.svg",
+      "source_slide": 1,
+      "story_role": "cover",
+      "page_archetype": "cover",
+      "content_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "protected_regions": [
+        {
+          "id": "source_page_chrome",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "policy": "preserve_geometry"
+        }
+      ],
+      "containers": [
+        {
+          "x": 307.18,
+          "y": 62.13,
+          "width": 665.64,
+          "height": 52.97,
+          "id": "TITLE",
+          "slot_id": "TITLE",
+          "kind": "text"
+        },
+        {
+          "x": 150.88,
+          "y": 165.41,
+          "width": 978.24,
+          "height": 157.69,
+          "id": "PROJECT_TYPE",
+          "slot_id": "PROJECT_TYPE",
+          "kind": "text"
+        },
+        {
+          "x": 297.21,
+          "y": 303.33,
+          "width": 685.59,
+          "height": 108.96,
+          "id": "SUBTITLE",
+          "slot_id": "SUBTITLE",
+          "kind": "text"
+        },
+        {
+          "x": 279.29,
+          "y": 465.04,
+          "width": 116.03,
+          "height": 40.57,
+          "id": "AFFILIATION",
+          "slot_id": "AFFILIATION",
+          "kind": "text"
+        },
+        {
+          "x": 640.76,
+          "y": 465.04,
+          "width": 116.03,
+          "height": 38.78,
+          "id": "PRESENTER",
+          "slot_id": "PRESENTER",
+          "kind": "text"
+        },
+        {
+          "x": 1002.23,
+          "y": 465.04,
+          "width": 116.03,
+          "height": 38.78,
+          "id": "DATE",
+          "slot_id": "DATE",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "02_toc",
+      "page_id": "toc",
+      "svg": "02_toc.svg",
+      "source_slide": 2,
+      "story_role": "toc",
+      "page_archetype": "section_roadmap",
+      "content_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "protected_regions": [
+        {
+          "id": "source_page_chrome",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "policy": "preserve_geometry"
+        }
+      ],
+      "containers": [
+        {
+          "x": 590.7,
+          "y": 194.64,
+          "width": 402.27,
+          "height": 64.97,
+          "id": "TOC_ITEM_01_TITLE",
+          "slot_id": "TOC_ITEM_01_TITLE",
+          "kind": "text"
+        },
+        {
+          "x": 590.7,
+          "y": 325.49,
+          "width": 445.36,
+          "height": 64.97,
+          "id": "TOC_ITEM_02_TITLE",
+          "slot_id": "TOC_ITEM_02_TITLE",
+          "kind": "text"
+        },
+        {
+          "x": 590.7,
+          "y": 456.35,
+          "width": 488.44,
+          "height": 64.97,
+          "id": "TOC_ITEM_03_TITLE",
+          "slot_id": "TOC_ITEM_03_TITLE",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "03_chapter",
+      "page_id": "chapter",
+      "svg": "03_chapter.svg",
+      "source_slide": 8,
+      "story_role": "chapter",
+      "page_archetype": "chapter_divider",
+      "content_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "protected_regions": [
+        {
+          "id": "source_page_chrome",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "policy": "preserve_geometry"
+        }
+      ],
+      "containers": [
+        {
+          "x": 320.0,
+          "y": 285.0,
+          "width": 640.0,
+          "height": 96.0,
+          "id": "CHAPTER_TITLE",
+          "slot_id": "CHAPTER_TITLE",
+          "kind": "text"
+        },
+        {
+          "x": 380.0,
+          "y": 410.0,
+          "width": 520.0,
+          "height": 56.0,
+          "id": "CHAPTER_DESC",
+          "slot_id": "CHAPTER_DESC",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "04_content",
+      "page_id": "content",
+      "svg": "04_content.svg",
+      "source_slide": 3,
+      "story_role": "content",
+      "page_archetype": "evidence_triptych_default",
+      "content_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "protected_regions": [
+        {
+          "id": "source_page_chrome",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "policy": "preserve_geometry"
+        }
+      ],
+      "containers": [
+        {
+          "x": 38.67,
+          "y": 6.94,
+          "width": 391.32,
+          "height": 67.86,
+          "id": "PAGE_TITLE",
+          "slot_id": "PAGE_TITLE",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "05_ending",
+      "page_id": "ending",
+      "svg": "05_ending.svg",
+      "source_slide": 17,
+      "story_role": "ending",
+      "page_archetype": "ending",
+      "content_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720
+      },
+      "protected_regions": [
+        {
+          "id": "source_page_chrome",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "policy": "preserve_geometry"
+        }
+      ],
+      "containers": [
+        {
+          "x": 440.0,
+          "y": 115.45,
+          "width": 400.0,
+          "height": 152.529,
+          "id": "CLOSING_TITLE",
+          "slot_id": "CLOSING_TITLE",
+          "kind": "text"
+        },
+        {
+          "x": 440.0,
+          "y": 244.52000000000004,
+          "width": 400.0,
+          "height": 152.529,
+          "id": "CLOSING_SUBTITLE",
+          "slot_id": "CLOSING_SUBTITLE",
+          "kind": "text"
+        },
+        {
+          "x": 279.29,
+          "y": 465.04,
+          "width": 116.03,
+          "height": 40.57,
+          "id": "AFFILIATION",
+          "slot_id": "AFFILIATION",
+          "kind": "text"
+        },
+        {
+          "x": 640.76,
+          "y": 465.04,
+          "width": 116.03,
+          "height": 38.78,
+          "id": "PRESENTER",
+          "slot_id": "PRESENTER",
+          "kind": "text"
+        },
+        {
+          "x": 1002.23,
+          "y": 465.04,
+          "width": 116.03,
+          "height": 38.78,
+          "id": "DATE",
+          "slot_id": "DATE",
+          "kind": "text"
+        }
+      ]
+    }
+  ]
+}

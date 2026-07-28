@@ -1,0 +1,20 @@
+{
+  "schema_version": "easyslides.component_story.v1",
+  "story_id": "overflow",
+  "payload": {
+    "items": [
+      {
+        "title": "Collect every available source artifact before any story decision is made",
+        "body": "This title and body are intentionally too long for a compact process step card and should trigger a rewrite or a different component."
+      },
+      {
+        "title": "Normalize",
+        "body": "Convert sources into traceable Markdown and assets."
+      },
+      {
+        "title": "Verify",
+        "body": "Check layout and export."
+      }
+    ]
+  }
+}

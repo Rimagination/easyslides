@@ -1,0 +1,186 @@
+{
+  "schema_version": "easyslides.thu_env_2025.body_variants.v1",
+  "template_id": "thu_env_2025",
+  "positioning": "slot_guided_distillation",
+  "content_area": {
+    "x": 48,
+    "y": 112,
+    "width": 1184,
+    "height": 562
+  },
+  "primary_variant": "academic_open_canvas",
+  "selection_policy": {
+    "default": "prefer_existing_academic_shell_then_apply_thu_env_body_variant",
+    "rules": [
+      {
+        "when": "source has two stacked explanation groups, each with a short section label and paragraph or bullets",
+        "prefer": "stacked_evidence_blocks",
+        "project_bridge": "academic_scqa.flexible_canvas or defense_topnav.flexible_canvas",
+        "guidance": "Use THU Env blue label bars inside the existing EasySlides academic content shell."
+      },
+      {
+        "when": "source is a three-phase method, schedule, technical route, or milestone sequence with image context",
+        "prefer": "three_phase_photo_timeline",
+        "project_bridge": "templates/charts/timeline.svg or numbered_steps.svg when images are not needed",
+        "guidance": "Keep the white-to-transparent stage numerals as a THU Env motif; compress stage labels to 4-8 Chinese chars."
+      },
+      {
+        "when": "source has three parallel findings, deliverables, applications, or contribution groups",
+        "prefer": "three_card_with_image_strip",
+        "project_bridge": "defense_topnav.three_card_summary or templates/charts/labeled_card.svg",
+        "guidance": "Use cards only for genuinely parallel content; move evidence photos to the bottom strip or replace with one figure per card."
+      },
+      {
+        "when": "source has 4-6 dense categories, many short bullets, or a method/result matrix",
+        "prefer": "dense_multi_block_matrix",
+        "project_bridge": "defense_topnav.four_quadrant_grid or templates/charts/vertical_pillars.svg",
+        "guidance": "Use only after capacity check; split if any block exceeds 5 lines."
+      },
+      {
+        "when": "source is mainly image evidence, cases, campus photos, or before-after panels",
+        "prefer": "photo_gallery_narrative",
+        "project_bridge": "academic_scqa.image_grid or templates/charts/team_roster.svg only if captions are required",
+        "guidance": "Use as an evidence body, not as a default content page."
+      }
+    ]
+  },
+  "visual_tokens": {
+    "brand_blue": "#1971D3",
+    "deep_blue": "#114B8D",
+    "soft_blue": "#68A4C6",
+    "logo_slot": {
+      "x": 840.63,
+      "y": 16.33,
+      "width": 391.62,
+      "height": 61.22
+    },
+    "title_rule": {
+      "x1": 47.74,
+      "y1": 89.62,
+      "x2": 1232.26,
+      "y2": 89.62
+    },
+    "stage_number_gradient": {
+      "type": "linear",
+      "direction": "top_to_bottom",
+      "stops": [
+        {
+          "offset": 0,
+          "color": "#FFFFFF",
+          "opacity": 1
+        },
+        {
+          "offset": 0.7,
+          "color": "#FFFFFF",
+          "opacity": 0
+        }
+      ]
+    }
+  },
+  "text_fit_policy": {
+    "source": "templates/reference/template_asset_sources/thu_env_2025/text_fit_policy.json",
+    "hard_rule": "Every slot payload must pass capacity before SVG/PPTX rendering; use compression, lower-density variant, or split slides before shrinking below the declared floor."
+  },
+  "variants": [
+    {
+      "variant_id": "academic_open_canvas",
+      "source_slide": null,
+      "decision": "keep",
+      "best_for": "default academic body content after applying THU Env logo/header tokens",
+      "layout": "Use the active EasySlides academic content shell; attach THU Env logo, blue header rule, and optional light campus watermark only when relevant.",
+      "slots": ["PAGE_TITLE", "KEY_MESSAGE", "CONTENT_BODY", "MAIN_EXHIBIT"],
+      "text_capacity": {
+        "title_max_chars": 18,
+        "body_max_lines": 12,
+        "body_font_size_px": 22
+      }
+    },
+    {
+      "variant_id": "stacked_evidence_blocks",
+      "source_slide": 3,
+      "decision": "distill",
+      "best_for": "two grouped background, problem framing, method explanation, or evidence summaries",
+      "layout": "Two stacked rounded white panels; each panel has a blue label bar and a text region. Source measurement: top panel x=105.65 y=150.32 w=1091.34 h=265.21; bottom panel x=105.66 y=463.45 w=1091.34 h=198.39.",
+      "slots": ["PAGE_TITLE", "BLOCK_1_TITLE", "BLOCK_1_BODY", "BLOCK_2_TITLE", "BLOCK_2_BODY"],
+      "text_capacity": {
+        "page_title_chars": 18,
+        "block_1_body_lines": 5,
+        "block_2_body_lines": 3,
+        "body_line_chars_zh": 34
+      },
+      "project_bridge": ["academic_scqa.flexible_canvas", "defense_topnav.flexible_canvas"]
+    },
+    {
+      "variant_id": "three_phase_photo_timeline",
+      "source_slide": 4,
+      "decision": "distill",
+      "best_for": "three-phase work plan, technical route, method stages, fieldwork schedule",
+      "layout": "Three equal photo cards across the page with colored stage bars, white-to-transparent stage numerals over the lower-left of each image, dates below, and two bullets per phase. Source card groups occupy roughly x=91/471/849, y=122-349, w≈347, h≈227.",
+      "slots": ["PAGE_TITLE", "STEP_1_TITLE", "STEP_1_DATE", "STEP_1_BULLETS", "STEP_1_IMAGE", "STEP_2_TITLE", "STEP_2_DATE", "STEP_2_BULLETS", "STEP_2_IMAGE", "STEP_3_TITLE", "STEP_3_DATE", "STEP_3_BULLETS", "STEP_3_IMAGE"],
+      "text_capacity": {
+        "stage_title_chars": 8,
+        "date_chars": 14,
+        "bullets_per_stage": 2,
+        "bullet_line_chars_zh": 18
+      },
+      "project_bridge": ["templates/charts/timeline.svg", "templates/charts/numbered_steps.svg", "templates/charts/gantt_chart.svg"],
+      "must_preserve": ["stage_number_gradient"]
+    },
+    {
+      "variant_id": "three_card_with_image_strip",
+      "source_slide": 5,
+      "decision": "distill",
+      "best_for": "three parallel findings, deliverables, applications, or recommendations with optional evidence photos",
+      "layout": "Three card columns with blue label bars, text area above, and image strip below. Source rhythm: 3 columns, equal card width ≈346, top card y≈148-442, image y≈481-659.",
+      "slots": ["PAGE_TITLE", "CARD_1_TITLE", "CARD_1_BODY", "CARD_1_IMAGE", "CARD_2_TITLE", "CARD_2_BODY", "CARD_2_IMAGE", "CARD_3_TITLE", "CARD_3_BODY", "CARD_3_IMAGE"],
+      "text_capacity": {
+        "card_title_chars": 8,
+        "card_body_lines": 6,
+        "card_body_line_chars_zh": 13
+      },
+      "project_bridge": ["defense_topnav.three_card_summary", "templates/charts/labeled_card.svg", "templates/charts/kpi_cards.svg"]
+    },
+    {
+      "variant_id": "dense_multi_block_matrix",
+      "source_slide": 6,
+      "decision": "distill_with_caution",
+      "best_for": "4-6 compact method/result categories, task matrix, or grouped evidence notes",
+      "layout": "Dense multi-block information matrix. Source has 20 text objects, 20 rects, and 6 decorative paths; it should be rebuilt with simpler EasySlides cards rather than copied literally.",
+      "slots": ["PAGE_TITLE", "BLOCK_1_TITLE", "BLOCK_1_BODY", "BLOCK_2_TITLE", "BLOCK_2_BODY", "BLOCK_3_TITLE", "BLOCK_3_BODY", "BLOCK_4_TITLE", "BLOCK_4_BODY"],
+      "text_capacity": {
+        "max_blocks": 4,
+        "block_title_chars": 8,
+        "block_body_lines": 5,
+        "body_line_chars_zh": 18
+      },
+      "project_bridge": ["defense_topnav.four_quadrant_grid", "templates/charts/vertical_pillars.svg", "templates/charts/matrix_2x2.svg"]
+    },
+    {
+      "variant_id": "photo_gallery_narrative",
+      "source_slide": 7,
+      "decision": "distill_with_caution",
+      "best_for": "campus photo evidence, site cases, visual comparison, or fieldwork record",
+      "layout": "Image-forward gallery with a small amount of supporting copy. Source has 8 image objects and 13 paths; use only when images carry the argument.",
+      "slots": ["PAGE_TITLE", "SUMMARY", "IMAGE_1", "CAPTION_1", "IMAGE_2", "CAPTION_2", "IMAGE_3", "CAPTION_3", "IMAGE_4", "CAPTION_4"],
+      "text_capacity": {
+        "summary_lines": 3,
+        "caption_chars": 18
+      },
+      "project_bridge": ["academic_scqa.image_grid", "templates/charts/image_grid.svg"]
+    }
+  ],
+  "rejected_or_asset_only": [
+    {
+      "source_slide": 1,
+      "reason": "asset_only_cover; keep photo crop, translucent title band, THU Env logo placement, and bottom blue rail, but do not use as a universal content template."
+    },
+    {
+      "source_slide": 2,
+      "reason": "toc_asset_only; keep split campus-photo rhythm and numbered diamonds as an optional agenda style, but use EasySlides agenda_list/TOC logic."
+    },
+    {
+      "source_slide": 8,
+      "reason": "asset_only_closing; keep campus-photo closing treatment and logo placement, not as body content."
+    }
+  ]
+}

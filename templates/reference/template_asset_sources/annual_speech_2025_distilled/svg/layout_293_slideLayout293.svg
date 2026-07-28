@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-2" data-name="标题 1" data-ph-type="title">
+<rect x="88.17" y="38.33" width="1104" height="139.17" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="96.17" y="56.33" font-size="12" fill="#64748B">ph title</text>
+</g>
+<g id="layout-shape-3" data-name="文本占位符 2" data-ph-type="body">
+<rect x="88.17" y="176.5" width="541.5" height="86.5" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="96.17" y="194.5" font-size="12" fill="#64748B">ph body idx=1</text>
+</g>
+<g id="layout-shape-4" data-name="内容占位符 3">
+<rect x="88.17" y="263" width="541.5" height="386.83" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="96.17" y="281" font-size="12" fill="#64748B">ph idx=2</text>
+</g>
+<g id="layout-shape-5" data-name="文本占位符 4" data-ph-type="body">
+<rect x="648" y="176.5" width="544.17" height="86.5" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="656" y="194.5" font-size="12" fill="#64748B">ph body idx=3</text>
+</g>
+<g id="layout-shape-6" data-name="内容占位符 5">
+<rect x="648" y="263" width="544.17" height="386.83" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="656" y="281" font-size="12" fill="#64748B">ph idx=4</text>
+</g>
+<g id="layout-shape-7" data-name="日期占位符 6" data-ph-type="dt">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph dt idx=10</text>
+</g>
+<g id="layout-shape-8" data-name="页脚占位符 7" data-ph-type="ftr">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph ftr idx=11</text>
+</g>
+<g id="layout-shape-9" data-name="灯片编号占位符 8" data-ph-type="sldNum">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph sldNum idx=12</text>
+</g></svg>

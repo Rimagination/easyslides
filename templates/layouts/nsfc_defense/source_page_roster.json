@@ -1,0 +1,279 @@
+{
+  "schema_version": "easyslides.nsfc_defense.source_page_roster.v1",
+  "template_id": "nsfc_defense",
+  "source_template_id": "nsfc_defense_distilled",
+  "source_slide_count": 17,
+  "canonical_shell_count": 5,
+  "body_variant_count": 12,
+  "shell_profile": {
+    "policy": "evidence_driven_three_to_five_stable_shells",
+    "required_shell_roles": [
+      "cover",
+      "content",
+      "ending"
+    ],
+    "optional_shell_roles": [
+      "toc",
+      "chapter"
+    ],
+    "active_shell_roles": [
+      "cover",
+      "toc",
+      "chapter",
+      "content",
+      "ending"
+    ],
+    "active_shell_count": 5
+  },
+  "pages": [
+    {
+      "source_slide": 1,
+      "source_page_id": "01_cover",
+      "source_archetype": "cover",
+      "section": "",
+      "canonical_shell": "cover",
+      "body_variant": null,
+      "preserved_as": "shell"
+    },
+    {
+      "source_slide": 2,
+      "source_page_id": "02_agenda",
+      "source_archetype": "section_roadmap",
+      "section": "",
+      "canonical_shell": "toc",
+      "body_variant": null,
+      "preserved_as": "shell"
+    },
+    {
+      "source_slide": 3,
+      "source_page_id": "03_need_triptych",
+      "source_archetype": "national_need_evidence_triptych",
+      "section": "01",
+      "canonical_shell": "content",
+      "body_variant": "evidence_triptych",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "national_need_evidence"
+      ],
+      "narrative_step": 3,
+      "source_page_purpose": "Establish the need with a claim, relationship, and three converging exhibits.",
+      "required_components": [
+        "evidence_triptych"
+      ]
+    },
+    {
+      "source_slide": 4,
+      "source_page_id": "04_need_two_track",
+      "source_archetype": "national_need_two_track",
+      "section": "01",
+      "canonical_shell": "content",
+      "body_variant": "two_track_evidence",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "strategic_need_two_track"
+      ],
+      "narrative_step": 4,
+      "source_page_purpose": "Connect the need to complementary scientific and application tracks.",
+      "required_components": [
+        "two_track_evidence"
+      ]
+    },
+    {
+      "source_slide": 5,
+      "source_page_id": "05_bottleneck_chain",
+      "source_archetype": "bottleneck_evidence_chain",
+      "section": "01",
+      "canonical_shell": "content",
+      "body_variant": "bottleneck_chain",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "scientific_bottleneck"
+      ],
+      "narrative_step": 5,
+      "source_page_purpose": "Explain the bottleneck through four linked observations before stating the intervention.",
+      "required_components": [
+        "bottleneck_chain"
+      ]
+    },
+    {
+      "source_slide": 6,
+      "source_page_id": "06_hotspot_metrics",
+      "source_archetype": "research_hotspot_metrics",
+      "section": "01",
+      "canonical_shell": "content",
+      "body_variant": "hotspot_metrics",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "research_hotspot_metrics"
+      ],
+      "narrative_step": 6,
+      "source_page_purpose": "Locate the research hotspot using performance evidence and quantitative indicators.",
+      "required_components": [
+        "hotspot_metrics"
+      ]
+    },
+    {
+      "source_slide": 7,
+      "source_page_id": "07_hotspot_panels",
+      "source_archetype": "research_hotspot_panels",
+      "section": "01",
+      "canonical_shell": "content",
+      "body_variant": "hotspot_panels",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "research_hotspot_synthesis"
+      ],
+      "narrative_step": 7,
+      "source_page_purpose": "Synthesize three hotspot directions as linked research panels.",
+      "required_components": [
+        "hotspot_panels"
+      ]
+    },
+    {
+      "source_slide": 8,
+      "source_page_id": "08_chapter_innovation",
+      "source_archetype": "chapter_divider",
+      "section": "02",
+      "canonical_shell": "chapter",
+      "body_variant": null,
+      "preserved_as": "shell"
+    },
+    {
+      "source_slide": 9,
+      "source_page_id": "09_innovation_evidence",
+      "source_archetype": "innovation_three_evidence",
+      "section": "02",
+      "canonical_shell": "content",
+      "body_variant": "innovation_evidence",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "innovation_overview"
+      ],
+      "narrative_step": 9,
+      "source_page_purpose": "State the innovation package as a four-step route backed by three exhibits.",
+      "required_components": [
+        "innovation_evidence"
+      ]
+    },
+    {
+      "source_slide": 10,
+      "source_page_id": "10_ann_snn_compare",
+      "source_archetype": "ann_snn_comparison",
+      "section": "02",
+      "canonical_shell": "content",
+      "body_variant": "ann_snn_comparison",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "method_comparison"
+      ],
+      "narrative_step": 10,
+      "source_page_purpose": "Contrast baseline and event-driven methods in a decision table, then show the selection rationale.",
+      "required_components": [
+        "ann_snn_comparison"
+      ]
+    },
+    {
+      "source_slide": 11,
+      "source_page_id": "11_plasticity_training",
+      "source_archetype": "nonlinearity_training",
+      "section": "02",
+      "canonical_shell": "content",
+      "body_variant": "plasticity_training",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "device_mechanism_training"
+      ],
+      "narrative_step": 11,
+      "source_page_purpose": "Relate training behavior to device plasticity through paired mechanism evidence.",
+      "required_components": [
+        "plasticity_training"
+      ]
+    },
+    {
+      "source_slide": 12,
+      "source_page_id": "12_network_architecture",
+      "source_archetype": "network_architecture",
+      "section": "02",
+      "canonical_shell": "content",
+      "body_variant": "network_architecture",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "system_architecture"
+      ],
+      "narrative_step": 12,
+      "source_page_purpose": "Show formula-to-network-to-hardware architecture as one technical scene.",
+      "required_components": [
+        "network_architecture"
+      ]
+    },
+    {
+      "source_slide": 13,
+      "source_page_id": "13_sensor_application",
+      "source_archetype": "calibrated_sensor_application",
+      "section": "02",
+      "canonical_shell": "content",
+      "body_variant": "sensor_application",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "application_pipeline"
+      ],
+      "narrative_step": 13,
+      "source_page_purpose": "Demonstrate the calibrated sensing path and the downstream system path together.",
+      "required_components": [
+        "sensor_application"
+      ]
+    },
+    {
+      "source_slide": 14,
+      "source_page_id": "14_literature_result",
+      "source_archetype": "international_literature_result",
+      "section": "02",
+      "canonical_shell": "content",
+      "body_variant": "literature_result",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "external_validation"
+      ],
+      "narrative_step": 14,
+      "source_page_purpose": "Anchor the contribution in researcher, paper, and external validation evidence.",
+      "required_components": [
+        "literature_result"
+      ]
+    },
+    {
+      "source_slide": 15,
+      "source_page_id": "15_chapter_application",
+      "source_archetype": "chapter_divider",
+      "section": "03",
+      "canonical_shell": "chapter",
+      "body_variant": null,
+      "preserved_as": "shell"
+    },
+    {
+      "source_slide": 16,
+      "source_page_id": "16_application_benefits",
+      "source_archetype": "application_metrics_impact",
+      "section": "03",
+      "canonical_shell": "content",
+      "body_variant": "application_benefits",
+      "preserved_as": "body_variant",
+      "story_roles": [
+        "impact_and_benefits"
+      ],
+      "narrative_step": 16,
+      "source_page_purpose": "Close with transfer evidence, performance metrics, and practical application outcome.",
+      "required_components": [
+        "application_benefits"
+      ]
+    },
+    {
+      "source_slide": 17,
+      "source_page_id": "17_ending",
+      "source_archetype": "ending",
+      "section": "",
+      "canonical_shell": "ending",
+      "body_variant": null,
+      "preserved_as": "shell"
+    }
+  ]
+}

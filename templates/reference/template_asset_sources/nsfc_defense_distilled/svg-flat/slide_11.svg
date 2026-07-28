@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0" y1="0.5" x2="1" y2="0.5"><stop offset="0.75" stop-color="#751497"/><stop offset="1" stop-color="#751497" stop-opacity="0.7"/></linearGradient><linearGradient id="ggrad2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.73" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4"/></linearGradient><linearGradient id="ggrad3" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0.73" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4"/></linearGradient><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#751497" flood-opacity="0.1"/></filter><marker id="marrow1" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#751497"/></marker><marker id="marrow2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C00000"/></marker><marker id="marrow3" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#751497"/></marker><marker id="marrow4" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#751497"/></marker><marker id="marrow5" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#751497"/></marker><marker id="marrow6" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#751497"/></marker><marker id="marrow7" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#751497"/></marker><linearGradient id="ggrad4" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#F8EAFC"/><stop offset="1" stop-color="#F2F2F2" stop-opacity="0"/></linearGradient><marker id="marrow8" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C00000"/></marker></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+<g id="master-shape-7" data-name="图片 6">
+<image href="../assets/image1_fx_1bd44e6e.webp" x="0.33" y="0" width="1279.34" height="720" preserveAspectRatio="none" opacity="0.07"/>
+</g>
+<g id="shape-2" data-name="图片 1">
+<svg x="952.32" y="0" width="327.68" height="79.18" viewBox="0 0.3189 1 0.3622" preserveAspectRatio="none"><image href="../assets/image9.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-3" data-name="矩形 2">
+<rect x="0" y="0" width="1280" height="79.18" fill="url(#ggrad1)" stroke-width="0.667" stroke="none"/>
+</g>
+<g id="shape-4" data-name="文本框 3">
+<rect x="38.67" y="6.94" width="682.13" height="67.86" fill="none"/>
+<text x="48.27" y="52.54" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.67" data-pptx-box-y="6.94" data-pptx-box-w="682.13" data-pptx-box-h="67.86" data-pptx-valign="top" font-family="&quot;思源黑体 CN Heavy&quot;, sans-serif" font-size="48" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="48">02  </tspan><tspan fill="#FFFFFF" font-size="48">忆阻器件的非线性和可塑性</tspan></text>
+</g>
+<g id="shape-6" data-name="组合 5">
+<g id="shape-7" data-name="平行四边形 6">
+<polygon points="38.38,5.66 63.31,5.66 43.88,91.95 18.96,91.95" fill="url(#ggrad2)" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+<g id="shape-8" data-name="平行四边形 7">
+<polygon points="23.85,25.53 39.74,25.53 27.36,80.54 11.46,80.54" fill="url(#ggrad3)" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+</g>
+<g id="shape-27" data-name="矩形: 圆角 26">
+<rect x="50.67" y="104.93" width="1176.67" height="163.95" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter" filter="url(#fx1)"/>
+</g>
+<g id="shape-33" data-name="文本框 32">
+<rect x="88.32" y="112.45" width="1104.02" height="147.04" fill="none"/>
+<text x="88.32" y="139.65" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#000000"><tspan fill="#000000" font-size="32">1 </tspan><tspan fill="#000000" font-size="32">主要源于其电阻值可以根据历史电荷或电压的变化而变化</tspan></text>
+<text x="88.32" y="181.25" text-anchor="start" xml:space="preserve" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="32" fill="#000000"><tspan fill="#000000" font-size="32">2 </tspan><tspan fill="#000000" font-size="32">忆阻器件的这种</tspan><tspan fill="#C00000" font-size="32">非线性特性对于实现复杂的计算功能</tspan><tspan fill="#000000" font-size="32">至关重要，在信号处理</tspan><tspan x="88.32" dy="41.6" fill="#000000" font-size="32">和模式识别中的应用 </tspan></text>
+</g>
+<g id="shape-47" data-name="矩形: 圆角 46">
+<rect x="50.67" y="288" width="933.71" height="388.46" rx="0" ry="0" fill="#FFFFFF" stroke-width="0.333" stroke="#751497" stroke-opacity="0.5"/>
+</g>
+<g id="shape-53" data-name="图片 52">
+<svg x="185.84" y="363.01" width="232.78" height="197.4" viewBox="0.18587 0.21297 0.26976 0.60945" preserveAspectRatio="none"><image href="../assets/image27.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-56" data-name="直接箭头连接符 55">
+<line x1="70.85" y1="535.57" x2="185.55" y2="535.57" stroke-width="2.667" marker-end="url(#marrow1)" fill="#751497" stroke="#751497"/>
+</g>
+<g id="shape-59" data-name="直接箭头连接符 58">
+<line x1="155.6" y1="406.75" x2="155.6" y2="472" stroke-width="2.667" stroke="#C00000" marker-end="url(#marrow2)" fill="#751497"/>
+</g>
+<g id="shape-61" data-name="文本框 60">
+<rect x="87.25" y="362.26" width="86.4" height="36.1" fill="none"/>
+<text x="130.45" y="384.93" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="87.25" data-pptx-box-y="362.26" data-pptx-box-w="86.4" data-pptx-box-h="36.1" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#000000"><tspan fill="#000000" font-size="26.67">Soikes</tspan></text>
+</g>
+<g id="shape-62" data-name="文本框 61">
+<rect x="73.97" y="472.44" width="108.46" height="52.41" fill="none"/>
+<text x="128.2" y="488.31" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="73.97" data-pptx-box-y="472.44" data-pptx-box-w="108.46" data-pptx-box-h="52.41" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="18.67" fill="#000000"><tspan fill="#000000" font-size="18.67">B</tspan><tspan x="128.2" dy="22.4" fill="#000000" font-size="18.67">i</tspan><tspan x="128.2" dy="22.4" fill="#000000" font-size="18.67">n</tspan></text>
+</g>
+<g id="shape-64" data-name="文本框 63">
+<rect x="79.45" y="422.23" width="66.14" height="28.88" fill="none"/>
+<text x="112.52" y="440.37" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="79.45" data-pptx-box-y="422.23" data-pptx-box-w="66.14" data-pptx-box-h="28.88" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="21.33" fill="#000000"><tspan fill="#000000" font-size="21.33">Signal</tspan></text>
+</g>
+<g id="shape-65" data-name="直接箭头连接符 64">
+<line x1="418.62" y1="498.65" x2="513.85" y2="498.65" stroke-width="2.667" marker-end="url(#marrow3)" fill="#751497" stroke="#751497"/>
+</g>
+<g id="shape-73" data-name="任意多边形: 形状 72">
+<path d="M 467.31 497.8 L 467.31 339.92 L 316.45 339.92 L 316.45 361.59" fill="none" stroke-width="2.667" stroke="#751497" marker-end="url(#marrow4)"/>
+</g>
+<g id="shape-76" data-name="文本框 75">
+<rect x="338.85" y="306.73" width="121.3" height="28.88" fill="none"/>
+<text x="399.5" y="324.87" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="338.85" data-pptx-box-y="306.73" data-pptx-box-w="121.3" data-pptx-box-h="28.88" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="21.33" fill="#000000"><tspan fill="#000000" font-size="21.33">BP Training</tspan></text>
+</g>
+<g id="shape-78" data-name="文本框 77">
+<rect x="73.97" y="303.12" width="133.29" height="36.1" fill="none"/>
+<text x="140.61" y="325.79" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="73.97" data-pptx-box-y="303.12" data-pptx-box-w="133.29" data-pptx-box-h="36.1" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#751497"><tspan fill="#751497" font-size="26.67">Model-4/5</tspan></text>
+</g>
+<g id="shape-55" data-name="图片 54">
+<svg x="636.21" y="363.01" width="232.78" height="197.54" viewBox="0.64562 0.21644 0.26917 0.60859" preserveAspectRatio="none"><image href="../assets/image27.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-80" data-name="直接箭头连接符 79">
+<line x1="537.76" y1="498.65" x2="636.21" y2="498.65" stroke-width="2.667" marker-end="url(#marrow5)" fill="#751497" stroke="#751497"/>
+</g>
+<g id="shape-83" data-name="文本框 82">
+<rect x="544.92" y="447.27" width="85.8" height="32.49" fill="none"/>
+<text x="587.82" y="467.67" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="544.92" data-pptx-box-y="447.27" data-pptx-box-w="85.8" data-pptx-box-h="32.49" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">Splikes</tspan></text>
+</g>
+<g id="shape-85" data-name="直接箭头连接符 84">
+<line x1="869.28" y1="498.65" x2="964.51" y2="498.65" stroke-width="2.667" marker-end="url(#marrow6)" fill="#751497" stroke="#751497"/>
+</g>
+<g id="shape-86" data-name="任意多边形: 形状 85">
+<path d="M 917.97 497.8 L 917.97 339.92 L 767.11 339.92 L 767.11 361.59" fill="none" stroke-width="2.667" stroke="#751497" marker-end="url(#marrow7)"/>
+</g>
+<g id="shape-87" data-name="文本框 86">
+<rect x="742.5" y="306.73" width="215.32" height="28.88" fill="none"/>
+<text x="850.16" y="324.87" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="742.5" data-pptx-box-y="306.73" data-pptx-box-w="215.32" data-pptx-box-h="28.88" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="21.33" fill="#000000"><tspan fill="#000000" font-size="21.33">BP-inspired Training</tspan></text>
+</g>
+<g id="shape-88" data-name="文本框 87">
+<rect x="545.38" y="303.12" width="107.04" height="36.1" fill="none"/>
+<text x="598.89" y="325.79" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="545.38" data-pptx-box-y="303.12" data-pptx-box-w="107.04" data-pptx-box-h="36.1" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="26.67" fill="#751497"><tspan fill="#751497" font-size="26.67">Model-6</tspan></text>
+</g>
+<g id="shape-90" data-name="直接连接符 89">
+<line x1="525.8" y1="306.5" x2="525.8" y2="560.41" stroke="#751497" stroke-dasharray="8 4" fill="#751497" stroke-width="1"/>
+</g>
+<g id="shape-93" data-name="箭头: 五边形 92">
+<polygon points="68.16,588.49 966.89,588.49 966.89,627.2 966.89,665.91 68.16,665.91" fill="url(#ggrad4)" stroke-width="0.333" stroke-linecap="butt" stroke="#751497" stroke-opacity="0.5" stroke-linejoin="miter"/>
+</g>
+<g id="shape-35" data-name="文本框 34">
+<rect x="91.47" y="593.49" width="854.37" height="67.42" fill="none"/>
+<text x="91.47" y="613.89" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="91.47" data-pptx-box-y="593.49" data-pptx-box-w="854.37" data-pptx-box-h="67.42" data-pptx-valign="top" font-family="&quot;思源黑体 CN Medium&quot;, sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">忆阻器件能够模拟生物突触的可塑性，包括短时程可塑性（如双脉冲易化和抑制</tspan><tspan x="91.47" dy="28.8" fill="#000000" font-size="24">）和长时程可塑性（如长时程增强和长时程抑制）</tspan></text>
+</g>
+<g id="shape-99" data-name="矩形: 圆顶角 98">
+<path d="M 1002.16 288.09 L 1227.99 288.09 L 1227.99 438.2 L 1227.99 438.2 L 1002.16 438.2 L 1002.16 438.2 L 1002.16 288.09 Z" data-pptx-prst="round2SameRect" data-pptx-adj1="0" data-pptx-adj2="0" fill="#751497" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-96" data-name="文本框 95">
+<rect x="1018.14" y="294.55" width="193.88" height="137.18" fill="none"/>
+<text x="1018.14" y="314.95" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="1018.14" data-pptx-box-y="294.55" data-pptx-box-w="193.88" data-pptx-box-h="137.18" data-pptx-valign="top" font-family="&quot;思源黑体 CN Bold&quot;, sans-serif" font-size="24" fill="#FFFFFF"><tspan fill="#FFFFFF" font-size="24">忆阻器件</tspan><tspan fill="#FFFF00" font-size="24">还能模拟</tspan><tspan x="1018.14" dy="28.8" fill="#FFFF00" font-size="24">更复杂的再可塑性</tspan><tspan x="1018.14" dy="28.8" fill="#FFFFFF" font-size="24">变化本身也受到先</tspan><tspan x="1018.14" dy="28.8" fill="#FFFFFF" font-size="24">前活动的影响</tspan></text>
+</g>
+<g id="shape-100" data-name="图片 99">
+<svg x="1002.16" y="461.67" width="225.83" height="214.48" viewBox="0.00892 0.45465 0.34053 0.52634" preserveAspectRatio="none"><image href="../assets/image28.jpg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-98" data-name="直接箭头连接符 97">
+<line x1="1115.08" y1="438.2" x2="1115.08" y2="466.67" stroke-width="2" stroke="#C00000" marker-end="url(#marrow8)" fill="#751497"/>
+</g>
+<g id="shape-109" data-name="矩形 108">
+<rect x="1008.95" y="594.4" width="212.26" height="68.47" fill="none" stroke="#C00000" stroke-width="1"/>
+</g></svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="150" viewBox="0 0 360 150" data-primitive="info_panel">
+  <rect x="0" y="0" width="360" height="150" fill="#F8EAFC" stroke="#D5B2E0"/><rect x="0" y="0" width="360" height="6" fill="#751497" stroke="none"/>
+  <text x="26.00" y="39.65" text-anchor="start" font-family="Arial, sans-serif" font-size="19" fill="#751497" data-slot="TITLE" data-slot-id="TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" data-pptx-box-x="18.00" data-pptx-box-y="16.00" data-pptx-box-w="324.00" data-pptx-box-h="34.00" data-pptx-valign="middle" data-center-lock="true" data-pptx-line-height-ratio="1.150" data-pptx-text-anchor="start">TITLE</text>
+  <text x="26.00" y="104.60" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#060607" data-slot="BODY" data-slot-id="BODY" data-slot-kind="text" data-pptx-textbox="true" data-pptx-measure-text="T" data-pptx-box-x="18.00" data-pptx-box-y="62.00" data-pptx-box-w="324.00" data-pptx-box-h="74.00" data-pptx-valign="middle" data-center-lock="true" data-pptx-line-height-ratio="1.150" data-pptx-text-anchor="start">BODY</text>
+</svg>

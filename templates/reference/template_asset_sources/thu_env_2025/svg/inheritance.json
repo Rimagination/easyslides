@@ -1,0 +1,1900 @@
+{
+  "masters": [
+    {
+      "file": "master_01_slideMaster1.svg",
+      "partPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "master_02_slideMaster2.svg",
+      "partPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    }
+  ],
+  "layouts": [
+    {
+      "file": "layout_01_slideLayout1.svg",
+      "partPath": "ppt/slideLayouts/slideLayout1.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_02_slideLayout2.svg",
+      "partPath": "ppt/slideLayouts/slideLayout2.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_03_slideLayout3.svg",
+      "partPath": "ppt/slideLayouts/slideLayout3.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_04_slideLayout4.svg",
+      "partPath": "ppt/slideLayouts/slideLayout4.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_05_slideLayout5.svg",
+      "partPath": "ppt/slideLayouts/slideLayout5.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_06_slideLayout6.svg",
+      "partPath": "ppt/slideLayouts/slideLayout6.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_07_slideLayout7.svg",
+      "partPath": "ppt/slideLayouts/slideLayout7.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_08_slideLayout8.svg",
+      "partPath": "ppt/slideLayouts/slideLayout8.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_09_slideLayout9.svg",
+      "partPath": "ppt/slideLayouts/slideLayout9.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_10_slideLayout10.svg",
+      "partPath": "ppt/slideLayouts/slideLayout10.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_11_slideLayout11.svg",
+      "partPath": "ppt/slideLayouts/slideLayout11.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_12_slideLayout12.svg",
+      "partPath": "ppt/slideLayouts/slideLayout12.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_13_slideLayout13.svg",
+      "partPath": "ppt/slideLayouts/slideLayout13.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_14_slideLayout14.svg",
+      "partPath": "ppt/slideLayouts/slideLayout14.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_15_slideLayout15.svg",
+      "partPath": "ppt/slideLayouts/slideLayout15.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_16_slideLayout16.svg",
+      "partPath": "ppt/slideLayouts/slideLayout16.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_17_slideLayout17.svg",
+      "partPath": "ppt/slideLayouts/slideLayout17.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_18_slideLayout18.svg",
+      "partPath": "ppt/slideLayouts/slideLayout18.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_19_slideLayout19.svg",
+      "partPath": "ppt/slideLayouts/slideLayout19.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_20_slideLayout20.svg",
+      "partPath": "ppt/slideLayouts/slideLayout20.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_21_slideLayout21.svg",
+      "partPath": "ppt/slideLayouts/slideLayout21.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_22_slideLayout22.svg",
+      "partPath": "ppt/slideLayouts/slideLayout22.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_23_slideLayout23.svg",
+      "partPath": "ppt/slideLayouts/slideLayout23.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_24_slideLayout24.svg",
+      "partPath": "ppt/slideLayouts/slideLayout24.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_25_slideLayout25.svg",
+      "partPath": "ppt/slideLayouts/slideLayout25.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_26_slideLayout26.svg",
+      "partPath": "ppt/slideLayouts/slideLayout26.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_27_slideLayout27.svg",
+      "partPath": "ppt/slideLayouts/slideLayout27.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_28_slideLayout28.svg",
+      "partPath": "ppt/slideLayouts/slideLayout28.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_29_slideLayout29.svg",
+      "partPath": "ppt/slideLayouts/slideLayout29.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_30_slideLayout30.svg",
+      "partPath": "ppt/slideLayouts/slideLayout30.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_31_slideLayout31.svg",
+      "partPath": "ppt/slideLayouts/slideLayout31.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_32_slideLayout32.svg",
+      "partPath": "ppt/slideLayouts/slideLayout32.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_33_slideLayout33.svg",
+      "partPath": "ppt/slideLayouts/slideLayout33.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_34_slideLayout34.svg",
+      "partPath": "ppt/slideLayouts/slideLayout34.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_35_slideLayout35.svg",
+      "partPath": "ppt/slideLayouts/slideLayout35.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_36_slideLayout36.svg",
+      "partPath": "ppt/slideLayouts/slideLayout36.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_37_slideLayout37.svg",
+      "partPath": "ppt/slideLayouts/slideLayout37.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_38_slideLayout38.svg",
+      "partPath": "ppt/slideLayouts/slideLayout38.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_39_slideLayout39.svg",
+      "partPath": "ppt/slideLayouts/slideLayout39.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_40_slideLayout40.svg",
+      "partPath": "ppt/slideLayouts/slideLayout40.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_41_slideLayout41.svg",
+      "partPath": "ppt/slideLayouts/slideLayout41.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_42_slideLayout42.svg",
+      "partPath": "ppt/slideLayouts/slideLayout42.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_43_slideLayout43.svg",
+      "partPath": "ppt/slideLayouts/slideLayout43.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_44_slideLayout44.svg",
+      "partPath": "ppt/slideLayouts/slideLayout44.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_45_slideLayout45.svg",
+      "partPath": "ppt/slideLayouts/slideLayout45.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_46_slideLayout46.svg",
+      "partPath": "ppt/slideLayouts/slideLayout46.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_47_slideLayout47.svg",
+      "partPath": "ppt/slideLayouts/slideLayout47.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_48_slideLayout48.svg",
+      "partPath": "ppt/slideLayouts/slideLayout48.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_49_slideLayout49.svg",
+      "partPath": "ppt/slideLayouts/slideLayout49.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_50_slideLayout50.svg",
+      "partPath": "ppt/slideLayouts/slideLayout50.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_51_slideLayout51.svg",
+      "partPath": "ppt/slideLayouts/slideLayout51.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_52_slideLayout52.svg",
+      "partPath": "ppt/slideLayouts/slideLayout52.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_53_slideLayout53.svg",
+      "partPath": "ppt/slideLayouts/slideLayout53.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_54_slideLayout54.svg",
+      "partPath": "ppt/slideLayouts/slideLayout54.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_55_slideLayout55.svg",
+      "partPath": "ppt/slideLayouts/slideLayout55.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_56_slideLayout56.svg",
+      "partPath": "ppt/slideLayouts/slideLayout56.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_57_slideLayout57.svg",
+      "partPath": "ppt/slideLayouts/slideLayout57.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_58_slideLayout58.svg",
+      "partPath": "ppt/slideLayouts/slideLayout58.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_59_slideLayout59.svg",
+      "partPath": "ppt/slideLayouts/slideLayout59.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_60_slideLayout60.svg",
+      "partPath": "ppt/slideLayouts/slideLayout60.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_61_slideLayout61.svg",
+      "partPath": "ppt/slideLayouts/slideLayout61.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_62_slideLayout62.svg",
+      "partPath": "ppt/slideLayouts/slideLayout62.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_63_slideLayout63.svg",
+      "partPath": "ppt/slideLayouts/slideLayout63.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_64_slideLayout64.svg",
+      "partPath": "ppt/slideLayouts/slideLayout64.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_65_slideLayout65.svg",
+      "partPath": "ppt/slideLayouts/slideLayout65.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_66_slideLayout66.svg",
+      "partPath": "ppt/slideLayouts/slideLayout66.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_67_slideLayout67.svg",
+      "partPath": "ppt/slideLayouts/slideLayout67.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_68_slideLayout68.svg",
+      "partPath": "ppt/slideLayouts/slideLayout68.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_69_slideLayout69.svg",
+      "partPath": "ppt/slideLayouts/slideLayout69.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_70_slideLayout70.svg",
+      "partPath": "ppt/slideLayouts/slideLayout70.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_71_slideLayout71.svg",
+      "partPath": "ppt/slideLayouts/slideLayout71.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_72_slideLayout72.svg",
+      "partPath": "ppt/slideLayouts/slideLayout72.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_73_slideLayout73.svg",
+      "partPath": "ppt/slideLayouts/slideLayout73.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_74_slideLayout74.svg",
+      "partPath": "ppt/slideLayouts/slideLayout74.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_75_slideLayout75.svg",
+      "partPath": "ppt/slideLayouts/slideLayout75.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_76_slideLayout76.svg",
+      "partPath": "ppt/slideLayouts/slideLayout76.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_77_slideLayout77.svg",
+      "partPath": "ppt/slideLayouts/slideLayout77.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_78_slideLayout78.svg",
+      "partPath": "ppt/slideLayouts/slideLayout78.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_79_slideLayout79.svg",
+      "partPath": "ppt/slideLayouts/slideLayout79.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_80_slideLayout80.svg",
+      "partPath": "ppt/slideLayouts/slideLayout80.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_81_slideLayout81.svg",
+      "partPath": "ppt/slideLayouts/slideLayout81.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_82_slideLayout82.svg",
+      "partPath": "ppt/slideLayouts/slideLayout82.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_83_slideLayout83.svg",
+      "partPath": "ppt/slideLayouts/slideLayout83.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_84_slideLayout84.svg",
+      "partPath": "ppt/slideLayouts/slideLayout84.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_85_slideLayout85.svg",
+      "partPath": "ppt/slideLayouts/slideLayout85.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_86_slideLayout86.svg",
+      "partPath": "ppt/slideLayouts/slideLayout86.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_87_slideLayout87.svg",
+      "partPath": "ppt/slideLayouts/slideLayout87.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_88_slideLayout88.svg",
+      "partPath": "ppt/slideLayouts/slideLayout88.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_89_slideLayout89.svg",
+      "partPath": "ppt/slideLayouts/slideLayout89.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_90_slideLayout90.svg",
+      "partPath": "ppt/slideLayouts/slideLayout90.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_91_slideLayout91.svg",
+      "partPath": "ppt/slideLayouts/slideLayout91.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_92_slideLayout92.svg",
+      "partPath": "ppt/slideLayouts/slideLayout92.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_93_slideLayout93.svg",
+      "partPath": "ppt/slideLayouts/slideLayout93.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_94_slideLayout94.svg",
+      "partPath": "ppt/slideLayouts/slideLayout94.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_95_slideLayout95.svg",
+      "partPath": "ppt/slideLayouts/slideLayout95.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_96_slideLayout96.svg",
+      "partPath": "ppt/slideLayouts/slideLayout96.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_97_slideLayout97.svg",
+      "partPath": "ppt/slideLayouts/slideLayout97.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_98_slideLayout98.svg",
+      "partPath": "ppt/slideLayouts/slideLayout98.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_99_slideLayout99.svg",
+      "partPath": "ppt/slideLayouts/slideLayout99.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_100_slideLayout100.svg",
+      "partPath": "ppt/slideLayouts/slideLayout100.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_101_slideLayout101.svg",
+      "partPath": "ppt/slideLayouts/slideLayout101.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_102_slideLayout102.svg",
+      "partPath": "ppt/slideLayouts/slideLayout102.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_103_slideLayout103.svg",
+      "partPath": "ppt/slideLayouts/slideLayout103.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_104_slideLayout104.svg",
+      "partPath": "ppt/slideLayouts/slideLayout104.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_105_slideLayout105.svg",
+      "partPath": "ppt/slideLayouts/slideLayout105.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_106_slideLayout106.svg",
+      "partPath": "ppt/slideLayouts/slideLayout106.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_107_slideLayout107.svg",
+      "partPath": "ppt/slideLayouts/slideLayout107.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_108_slideLayout108.svg",
+      "partPath": "ppt/slideLayouts/slideLayout108.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_109_slideLayout109.svg",
+      "partPath": "ppt/slideLayouts/slideLayout109.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_110_slideLayout110.svg",
+      "partPath": "ppt/slideLayouts/slideLayout110.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_111_slideLayout111.svg",
+      "partPath": "ppt/slideLayouts/slideLayout111.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_112_slideLayout112.svg",
+      "partPath": "ppt/slideLayouts/slideLayout112.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_113_slideLayout113.svg",
+      "partPath": "ppt/slideLayouts/slideLayout113.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_114_slideLayout114.svg",
+      "partPath": "ppt/slideLayouts/slideLayout114.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_115_slideLayout115.svg",
+      "partPath": "ppt/slideLayouts/slideLayout115.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_116_slideLayout116.svg",
+      "partPath": "ppt/slideLayouts/slideLayout116.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_117_slideLayout117.svg",
+      "partPath": "ppt/slideLayouts/slideLayout117.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_118_slideLayout118.svg",
+      "partPath": "ppt/slideLayouts/slideLayout118.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_119_slideLayout119.svg",
+      "partPath": "ppt/slideLayouts/slideLayout119.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_120_slideLayout120.svg",
+      "partPath": "ppt/slideLayouts/slideLayout120.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_121_slideLayout121.svg",
+      "partPath": "ppt/slideLayouts/slideLayout121.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_122_slideLayout122.svg",
+      "partPath": "ppt/slideLayouts/slideLayout122.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_123_slideLayout123.svg",
+      "partPath": "ppt/slideLayouts/slideLayout123.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_124_slideLayout124.svg",
+      "partPath": "ppt/slideLayouts/slideLayout124.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_125_slideLayout125.svg",
+      "partPath": "ppt/slideLayouts/slideLayout125.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_126_slideLayout126.svg",
+      "partPath": "ppt/slideLayouts/slideLayout126.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_127_slideLayout127.svg",
+      "partPath": "ppt/slideLayouts/slideLayout127.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_128_slideLayout128.svg",
+      "partPath": "ppt/slideLayouts/slideLayout128.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_129_slideLayout129.svg",
+      "partPath": "ppt/slideLayouts/slideLayout129.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_130_slideLayout130.svg",
+      "partPath": "ppt/slideLayouts/slideLayout130.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_131_slideLayout131.svg",
+      "partPath": "ppt/slideLayouts/slideLayout131.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_132_slideLayout132.svg",
+      "partPath": "ppt/slideLayouts/slideLayout132.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_133_slideLayout133.svg",
+      "partPath": "ppt/slideLayouts/slideLayout133.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_134_slideLayout134.svg",
+      "partPath": "ppt/slideLayouts/slideLayout134.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_135_slideLayout135.svg",
+      "partPath": "ppt/slideLayouts/slideLayout135.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_136_slideLayout136.svg",
+      "partPath": "ppt/slideLayouts/slideLayout136.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_137_slideLayout137.svg",
+      "partPath": "ppt/slideLayouts/slideLayout137.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_138_slideLayout138.svg",
+      "partPath": "ppt/slideLayouts/slideLayout138.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_139_slideLayout139.svg",
+      "partPath": "ppt/slideLayouts/slideLayout139.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_140_slideLayout140.svg",
+      "partPath": "ppt/slideLayouts/slideLayout140.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_141_slideLayout141.svg",
+      "partPath": "ppt/slideLayouts/slideLayout141.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_142_slideLayout142.svg",
+      "partPath": "ppt/slideLayouts/slideLayout142.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_143_slideLayout143.svg",
+      "partPath": "ppt/slideLayouts/slideLayout143.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_144_slideLayout144.svg",
+      "partPath": "ppt/slideLayouts/slideLayout144.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_145_slideLayout145.svg",
+      "partPath": "ppt/slideLayouts/slideLayout145.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_146_slideLayout146.svg",
+      "partPath": "ppt/slideLayouts/slideLayout146.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_147_slideLayout147.svg",
+      "partPath": "ppt/slideLayouts/slideLayout147.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_148_slideLayout148.svg",
+      "partPath": "ppt/slideLayouts/slideLayout148.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_149_slideLayout149.svg",
+      "partPath": "ppt/slideLayouts/slideLayout149.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_150_slideLayout150.svg",
+      "partPath": "ppt/slideLayouts/slideLayout150.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_151_slideLayout151.svg",
+      "partPath": "ppt/slideLayouts/slideLayout151.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_152_slideLayout152.svg",
+      "partPath": "ppt/slideLayouts/slideLayout152.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_153_slideLayout153.svg",
+      "partPath": "ppt/slideLayouts/slideLayout153.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_154_slideLayout154.svg",
+      "partPath": "ppt/slideLayouts/slideLayout154.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_155_slideLayout155.svg",
+      "partPath": "ppt/slideLayouts/slideLayout155.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_156_slideLayout156.svg",
+      "partPath": "ppt/slideLayouts/slideLayout156.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_157_slideLayout157.svg",
+      "partPath": "ppt/slideLayouts/slideLayout157.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_158_slideLayout158.svg",
+      "partPath": "ppt/slideLayouts/slideLayout158.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_159_slideLayout159.svg",
+      "partPath": "ppt/slideLayouts/slideLayout159.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_160_slideLayout160.svg",
+      "partPath": "ppt/slideLayouts/slideLayout160.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_161_slideLayout161.svg",
+      "partPath": "ppt/slideLayouts/slideLayout161.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_162_slideLayout162.svg",
+      "partPath": "ppt/slideLayouts/slideLayout162.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_163_slideLayout163.svg",
+      "partPath": "ppt/slideLayouts/slideLayout163.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_164_slideLayout164.svg",
+      "partPath": "ppt/slideLayouts/slideLayout164.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_165_slideLayout165.svg",
+      "partPath": "ppt/slideLayouts/slideLayout165.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_166_slideLayout166.svg",
+      "partPath": "ppt/slideLayouts/slideLayout166.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_167_slideLayout167.svg",
+      "partPath": "ppt/slideLayouts/slideLayout167.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_168_slideLayout168.svg",
+      "partPath": "ppt/slideLayouts/slideLayout168.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_169_slideLayout169.svg",
+      "partPath": "ppt/slideLayouts/slideLayout169.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_170_slideLayout170.svg",
+      "partPath": "ppt/slideLayouts/slideLayout170.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_171_slideLayout171.svg",
+      "partPath": "ppt/slideLayouts/slideLayout171.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_172_slideLayout172.svg",
+      "partPath": "ppt/slideLayouts/slideLayout172.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_173_slideLayout173.svg",
+      "partPath": "ppt/slideLayouts/slideLayout173.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_174_slideLayout174.svg",
+      "partPath": "ppt/slideLayouts/slideLayout174.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_175_slideLayout175.svg",
+      "partPath": "ppt/slideLayouts/slideLayout175.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_176_slideLayout176.svg",
+      "partPath": "ppt/slideLayouts/slideLayout176.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_177_slideLayout177.svg",
+      "partPath": "ppt/slideLayouts/slideLayout177.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_178_slideLayout178.svg",
+      "partPath": "ppt/slideLayouts/slideLayout178.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_179_slideLayout179.svg",
+      "partPath": "ppt/slideLayouts/slideLayout179.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_180_slideLayout180.svg",
+      "partPath": "ppt/slideLayouts/slideLayout180.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_181_slideLayout181.svg",
+      "partPath": "ppt/slideLayouts/slideLayout181.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_182_slideLayout182.svg",
+      "partPath": "ppt/slideLayouts/slideLayout182.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_183_slideLayout183.svg",
+      "partPath": "ppt/slideLayouts/slideLayout183.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_184_slideLayout184.svg",
+      "partPath": "ppt/slideLayouts/slideLayout184.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_185_slideLayout185.svg",
+      "partPath": "ppt/slideLayouts/slideLayout185.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_186_slideLayout186.svg",
+      "partPath": "ppt/slideLayouts/slideLayout186.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_187_slideLayout187.svg",
+      "partPath": "ppt/slideLayouts/slideLayout187.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_188_slideLayout188.svg",
+      "partPath": "ppt/slideLayouts/slideLayout188.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_189_slideLayout189.svg",
+      "partPath": "ppt/slideLayouts/slideLayout189.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_190_slideLayout190.svg",
+      "partPath": "ppt/slideLayouts/slideLayout190.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_191_slideLayout191.svg",
+      "partPath": "ppt/slideLayouts/slideLayout191.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_192_slideLayout192.svg",
+      "partPath": "ppt/slideLayouts/slideLayout192.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_193_slideLayout193.svg",
+      "partPath": "ppt/slideLayouts/slideLayout193.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_194_slideLayout194.svg",
+      "partPath": "ppt/slideLayouts/slideLayout194.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_195_slideLayout195.svg",
+      "partPath": "ppt/slideLayouts/slideLayout195.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_196_slideLayout196.svg",
+      "partPath": "ppt/slideLayouts/slideLayout196.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_197_slideLayout197.svg",
+      "partPath": "ppt/slideLayouts/slideLayout197.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_198_slideLayout198.svg",
+      "partPath": "ppt/slideLayouts/slideLayout198.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_199_slideLayout199.svg",
+      "partPath": "ppt/slideLayouts/slideLayout199.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_200_slideLayout200.svg",
+      "partPath": "ppt/slideLayouts/slideLayout200.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_201_slideLayout201.svg",
+      "partPath": "ppt/slideLayouts/slideLayout201.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_202_slideLayout202.svg",
+      "partPath": "ppt/slideLayouts/slideLayout202.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_203_slideLayout203.svg",
+      "partPath": "ppt/slideLayouts/slideLayout203.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_204_slideLayout204.svg",
+      "partPath": "ppt/slideLayouts/slideLayout204.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_205_slideLayout205.svg",
+      "partPath": "ppt/slideLayouts/slideLayout205.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_206_slideLayout206.svg",
+      "partPath": "ppt/slideLayouts/slideLayout206.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_207_slideLayout207.svg",
+      "partPath": "ppt/slideLayouts/slideLayout207.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_208_slideLayout208.svg",
+      "partPath": "ppt/slideLayouts/slideLayout208.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_209_slideLayout209.svg",
+      "partPath": "ppt/slideLayouts/slideLayout209.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_210_slideLayout210.svg",
+      "partPath": "ppt/slideLayouts/slideLayout210.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_211_slideLayout211.svg",
+      "partPath": "ppt/slideLayouts/slideLayout211.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_212_slideLayout212.svg",
+      "partPath": "ppt/slideLayouts/slideLayout212.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_213_slideLayout213.svg",
+      "partPath": "ppt/slideLayouts/slideLayout213.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_214_slideLayout214.svg",
+      "partPath": "ppt/slideLayouts/slideLayout214.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_215_slideLayout215.svg",
+      "partPath": "ppt/slideLayouts/slideLayout215.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_216_slideLayout216.svg",
+      "partPath": "ppt/slideLayouts/slideLayout216.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_217_slideLayout217.svg",
+      "partPath": "ppt/slideLayouts/slideLayout217.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_218_slideLayout218.svg",
+      "partPath": "ppt/slideLayouts/slideLayout218.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_219_slideLayout219.svg",
+      "partPath": "ppt/slideLayouts/slideLayout219.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_220_slideLayout220.svg",
+      "partPath": "ppt/slideLayouts/slideLayout220.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_221_slideLayout221.svg",
+      "partPath": "ppt/slideLayouts/slideLayout221.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_222_slideLayout222.svg",
+      "partPath": "ppt/slideLayouts/slideLayout222.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_223_slideLayout223.svg",
+      "partPath": "ppt/slideLayouts/slideLayout223.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_224_slideLayout224.svg",
+      "partPath": "ppt/slideLayouts/slideLayout224.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_225_slideLayout225.svg",
+      "partPath": "ppt/slideLayouts/slideLayout225.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_226_slideLayout226.svg",
+      "partPath": "ppt/slideLayouts/slideLayout226.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_227_slideLayout227.svg",
+      "partPath": "ppt/slideLayouts/slideLayout227.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_228_slideLayout228.svg",
+      "partPath": "ppt/slideLayouts/slideLayout228.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_229_slideLayout229.svg",
+      "partPath": "ppt/slideLayouts/slideLayout229.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_230_slideLayout230.svg",
+      "partPath": "ppt/slideLayouts/slideLayout230.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_231_slideLayout231.svg",
+      "partPath": "ppt/slideLayouts/slideLayout231.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_232_slideLayout232.svg",
+      "partPath": "ppt/slideLayouts/slideLayout232.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_233_slideLayout233.svg",
+      "partPath": "ppt/slideLayouts/slideLayout233.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_234_slideLayout234.svg",
+      "partPath": "ppt/slideLayouts/slideLayout234.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_235_slideLayout235.svg",
+      "partPath": "ppt/slideLayouts/slideLayout235.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_236_slideLayout236.svg",
+      "partPath": "ppt/slideLayouts/slideLayout236.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_237_slideLayout237.svg",
+      "partPath": "ppt/slideLayouts/slideLayout237.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_238_slideLayout238.svg",
+      "partPath": "ppt/slideLayouts/slideLayout238.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_239_slideLayout239.svg",
+      "partPath": "ppt/slideLayouts/slideLayout239.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_240_slideLayout240.svg",
+      "partPath": "ppt/slideLayouts/slideLayout240.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_241_slideLayout241.svg",
+      "partPath": "ppt/slideLayouts/slideLayout241.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_242_slideLayout242.svg",
+      "partPath": "ppt/slideLayouts/slideLayout242.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_243_slideLayout243.svg",
+      "partPath": "ppt/slideLayouts/slideLayout243.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_244_slideLayout244.svg",
+      "partPath": "ppt/slideLayouts/slideLayout244.xml",
+      "master": "master_01_slideMaster1.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster1.xml",
+      "themePath": "ppt/theme/theme1.xml"
+    },
+    {
+      "file": "layout_245_slideLayout245.svg",
+      "partPath": "ppt/slideLayouts/slideLayout245.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_246_slideLayout246.svg",
+      "partPath": "ppt/slideLayouts/slideLayout246.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_247_slideLayout247.svg",
+      "partPath": "ppt/slideLayouts/slideLayout247.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_248_slideLayout248.svg",
+      "partPath": "ppt/slideLayouts/slideLayout248.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_249_slideLayout249.svg",
+      "partPath": "ppt/slideLayouts/slideLayout249.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_250_slideLayout250.svg",
+      "partPath": "ppt/slideLayouts/slideLayout250.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_251_slideLayout251.svg",
+      "partPath": "ppt/slideLayouts/slideLayout251.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_252_slideLayout252.svg",
+      "partPath": "ppt/slideLayouts/slideLayout252.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_253_slideLayout253.svg",
+      "partPath": "ppt/slideLayouts/slideLayout253.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_254_slideLayout254.svg",
+      "partPath": "ppt/slideLayouts/slideLayout254.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_255_slideLayout255.svg",
+      "partPath": "ppt/slideLayouts/slideLayout255.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_256_slideLayout256.svg",
+      "partPath": "ppt/slideLayouts/slideLayout256.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_257_slideLayout257.svg",
+      "partPath": "ppt/slideLayouts/slideLayout257.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_258_slideLayout258.svg",
+      "partPath": "ppt/slideLayouts/slideLayout258.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_259_slideLayout259.svg",
+      "partPath": "ppt/slideLayouts/slideLayout259.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_260_slideLayout260.svg",
+      "partPath": "ppt/slideLayouts/slideLayout260.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_261_slideLayout261.svg",
+      "partPath": "ppt/slideLayouts/slideLayout261.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    },
+    {
+      "file": "layout_262_slideLayout262.svg",
+      "partPath": "ppt/slideLayouts/slideLayout262.xml",
+      "master": "master_02_slideMaster2.svg",
+      "parentPartPath": "ppt/slideMasters/slideMaster2.xml",
+      "themePath": "ppt/theme/theme2.xml"
+    }
+  ],
+  "slides": [
+    {
+      "file": "slide_01.svg",
+      "index": 1,
+      "layout": "layout_20_slideLayout20.svg",
+      "master": "master_01_slideMaster1.svg"
+    },
+    {
+      "file": "slide_02.svg",
+      "index": 2,
+      "layout": "layout_14_slideLayout14.svg",
+      "master": "master_01_slideMaster1.svg"
+    },
+    {
+      "file": "slide_03.svg",
+      "index": 3,
+      "layout": "layout_262_slideLayout262.svg",
+      "master": "master_02_slideMaster2.svg"
+    },
+    {
+      "file": "slide_04.svg",
+      "index": 4,
+      "layout": "layout_262_slideLayout262.svg",
+      "master": "master_02_slideMaster2.svg"
+    },
+    {
+      "file": "slide_05.svg",
+      "index": 5,
+      "layout": "layout_262_slideLayout262.svg",
+      "master": "master_02_slideMaster2.svg"
+    },
+    {
+      "file": "slide_06.svg",
+      "index": 6,
+      "layout": "layout_262_slideLayout262.svg",
+      "master": "master_02_slideMaster2.svg"
+    },
+    {
+      "file": "slide_07.svg",
+      "index": 7,
+      "layout": "layout_262_slideLayout262.svg",
+      "master": "master_02_slideMaster2.svg"
+    },
+    {
+      "file": "slide_08.svg",
+      "index": 8,
+      "layout": "layout_07_slideLayout7.svg",
+      "master": "master_01_slideMaster1.svg"
+    }
+  ]
+}

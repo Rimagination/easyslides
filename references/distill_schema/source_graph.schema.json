@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://easyslides.local/schema/source_graph.v1.json",
+  "title": "EasySlides PPTX source graph",
+  "type": "object",
+  "required": ["schema_version", "status", "source", "canvas", "parts", "assets", "counts", "invariants"],
+  "properties": {
+    "schema_version": {"const": "easyslides.source_graph.v1"},
+    "status": {"enum": ["ready", "manifest_only", "deferred"]},
+    "source": {"type": "object", "required": ["pptx", "name"], "properties": {"pptx": {"type": "string"}, "name": {"type": "string"}, "sha256": {"type": ["string", "null"]}}},
+    "canvas": {"type": "object", "required": ["width_px", "height_px"], "properties": {"width_emu": {"type": "integer"}, "height_emu": {"type": "integer"}, "width_px": {"type": "integer", "minimum": 1}, "height_px": {"type": "integer", "minimum": 1}}},
+    "parts": {"type": "object", "required": ["masters", "layouts", "slides"], "properties": {"masters": {"type": "array"}, "layouts": {"type": "array"}, "slides": {"type": "array"}}},
+    "assets": {"type": "array"},
+    "counts": {"type": "object", "required": ["masters", "layouts", "slides", "nodes", "assets"]},
+    "invariants": {"type": "object", "required": ["graph_is_factual", "classification_states", "supported_modes", "vertical_alignment"]}
+  }
+}

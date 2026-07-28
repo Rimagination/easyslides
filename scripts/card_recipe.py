@@ -14,7 +14,10 @@ DEFAULT_RECIPES = REPO_ROOT / "templates" / "cards" / "visual_recipes.json"
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.text_capacity import SlotCapacity, fit_text_to_capacity
+try:
+    from scripts.text_capacity import SlotCapacity, fit_text_to_capacity
+except ModuleNotFoundError:  # pragma: no cover - supports direct script execution
+    from text_capacity import SlotCapacity, fit_text_to_capacity
 
 
 def load_visual_recipes(path: str | Path | None = None) -> dict[str, Any]:

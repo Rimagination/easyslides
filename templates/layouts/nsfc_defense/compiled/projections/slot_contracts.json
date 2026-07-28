@@ -1,0 +1,739 @@
+{
+  "schema_version": "easyslides.template_slot_contracts.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "nsfc_defense",
+  "replacement_rule": "replace_declared_slots_preserve_template_geometry",
+  "private_clone_required": false,
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "use_declared_capacity",
+      "choose_same_archetype_variant",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ]
+  },
+  "hard_geometry_invariants": [
+    "text_center_y_matches_container_center_y",
+    "declared_slots_stay_inside_canvas",
+    "component_regions_stay_inside_canvas",
+    "content_shell_public_slots_are_title_only",
+    "body_variant_regions_stay_inside_body_canvas"
+  ],
+  "layouts": [
+    {
+      "layout_id": "cover",
+      "page_id": "01_cover",
+      "svg_path": "templates/layouts/nsfc_defense/01_cover.svg",
+      "slot_model": "cover",
+      "slots": [
+        "TITLE",
+        "PROJECT_TYPE",
+        "SUBTITLE",
+        "AFFILIATION",
+        "PRESENTER",
+        "DATE"
+      ],
+      "text_slots": [
+        "TITLE",
+        "PROJECT_TYPE",
+        "SUBTITLE",
+        "AFFILIATION",
+        "PRESENTER",
+        "DATE"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "TITLE",
+          "role": "project_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 307.18,
+            "y": 62.13,
+            "width": 665.64,
+            "height": 52.97
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "PROJECT_TYPE",
+          "role": "project_type",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 150.88,
+            "y": 165.41,
+            "width": 978.24,
+            "height": 157.69
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "role": "presentation_subtitle",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 297.21,
+            "y": 303.33,
+            "width": 685.59,
+            "height": 108.96
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "AFFILIATION",
+          "role": "affiliation",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 279.29,
+            "y": 465.04,
+            "width": 116.03,
+            "height": 40.57
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "PRESENTER",
+          "role": "presenter",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 640.76,
+            "y": 465.04,
+            "width": 116.03,
+            "height": 38.78
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "DATE",
+          "role": "presentation_date",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 1002.23,
+            "y": 465.04,
+            "width": 116.03,
+            "height": 38.78
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        }
+      ]
+    },
+    {
+      "layout_id": "toc",
+      "page_id": "02_toc",
+      "svg_path": "templates/layouts/nsfc_defense/02_toc.svg",
+      "slot_model": "toc",
+      "slots": [
+        "TOC_ITEM_01_TITLE",
+        "TOC_ITEM_02_TITLE",
+        "TOC_ITEM_03_TITLE"
+      ],
+      "text_slots": [
+        "TOC_ITEM_01_TITLE",
+        "TOC_ITEM_02_TITLE",
+        "TOC_ITEM_03_TITLE"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "TOC_ITEM_01_TITLE",
+          "role": "toc_item_title",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 590.7,
+            "y": 194.64,
+            "width": 402.27,
+            "height": 64.97
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "TOC_ITEM_02_TITLE",
+          "role": "toc_item_title",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 590.7,
+            "y": 325.49,
+            "width": 445.36,
+            "height": 64.97
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "TOC_ITEM_03_TITLE",
+          "role": "toc_item_title",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 590.7,
+            "y": 456.35,
+            "width": 488.44,
+            "height": 64.97
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        }
+      ]
+    },
+    {
+      "layout_id": "chapter",
+      "page_id": "03_chapter",
+      "svg_path": "templates/layouts/nsfc_defense/03_chapter.svg",
+      "slot_model": "chapter",
+      "slots": [
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC"
+      ],
+      "text_slots": [
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "role": "chapter_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 320.0,
+            "y": 285.0,
+            "width": 640.0,
+            "height": 96.0
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "overflow_action": "shorten_or_split"
+        },
+        {
+          "slot_id": "CHAPTER_DESC",
+          "role": "chapter_description",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 380.0,
+            "y": 410.0,
+            "width": 520.0,
+            "height": 56.0
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 28,
+          "overflow_action": "shorten_or_drop"
+        }
+      ]
+    },
+    {
+      "layout_id": "content",
+      "page_id": "04_content",
+      "svg_path": "templates/layouts/nsfc_defense/04_content.svg",
+      "slot_model": "content",
+      "slots": [
+        "PAGE_TITLE"
+      ],
+      "text_slots": [
+        "PAGE_TITLE"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 38.67,
+            "y": 6.94,
+            "width": 391.32,
+            "height": 67.86
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        }
+      ]
+    },
+    {
+      "layout_id": "ending",
+      "page_id": "05_ending",
+      "svg_path": "templates/layouts/nsfc_defense/05_ending.svg",
+      "slot_model": "ending",
+      "slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "AFFILIATION",
+        "PRESENTER",
+        "DATE"
+      ],
+      "text_slots": [
+        "CLOSING_TITLE",
+        "CLOSING_SUBTITLE",
+        "AFFILIATION",
+        "PRESENTER",
+        "DATE"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "CLOSING_TITLE",
+          "role": "closing_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 440.0,
+            "y": 115.45,
+            "width": 400.0,
+            "height": 152.529
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "CLOSING_SUBTITLE",
+          "role": "closing_subtitle",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 440.0,
+            "y": 244.52000000000004,
+            "width": 400.0,
+            "height": 152.529
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "AFFILIATION",
+          "role": "affiliation",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 279.29,
+            "y": 465.04,
+            "width": 116.03,
+            "height": 40.57
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "PRESENTER",
+          "role": "presenter",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 640.76,
+            "y": 465.04,
+            "width": 116.03,
+            "height": 38.78
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        },
+        {
+          "slot_id": "DATE",
+          "role": "presentation_date",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 1002.23,
+            "y": 465.04,
+            "width": 116.03,
+            "height": 38.78
+          },
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_action": "split_or_choose_page_variant"
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "slot_id": "TITLE",
+      "kind": "text",
+      "role": "project_title",
+      "required": true,
+      "geometry": {
+        "x": 307.18,
+        "y": 62.13,
+        "width": 665.64,
+        "height": 52.97
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 20,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 1,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "PROJECT_TYPE",
+      "kind": "text",
+      "role": "project_type",
+      "required": false,
+      "geometry": {
+        "x": 150.88,
+        "y": 165.41,
+        "width": 978.24,
+        "height": 157.69
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 2,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "SUBTITLE",
+      "kind": "text",
+      "role": "presentation_subtitle",
+      "required": false,
+      "geometry": {
+        "x": 297.21,
+        "y": 303.33,
+        "width": 685.59,
+        "height": 108.96
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 3,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "AFFILIATION",
+      "kind": "text",
+      "role": "affiliation",
+      "required": false,
+      "geometry": {
+        "x": 279.29,
+        "y": 465.04,
+        "width": 116.03,
+        "height": 40.57
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 5,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "PRESENTER",
+      "kind": "text",
+      "role": "presenter",
+      "required": false,
+      "geometry": {
+        "x": 640.76,
+        "y": 465.04,
+        "width": 116.03,
+        "height": 38.78
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 7,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "DATE",
+      "kind": "text",
+      "role": "presentation_date",
+      "required": false,
+      "geometry": {
+        "x": 1002.23,
+        "y": 465.04,
+        "width": 116.03,
+        "height": 38.78
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 9,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "TOC_ITEM_01_TITLE",
+      "kind": "text",
+      "role": "toc_item_title",
+      "required": false,
+      "geometry": {
+        "x": 590.7,
+        "y": 194.64,
+        "width": 402.27,
+        "height": 64.97
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "start",
+      "source_position": 1,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_02_TITLE",
+      "kind": "text",
+      "role": "toc_item_title",
+      "required": false,
+      "geometry": {
+        "x": 590.7,
+        "y": 325.49,
+        "width": 445.36,
+        "height": 64.97
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "start",
+      "source_position": 3,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_03_TITLE",
+      "kind": "text",
+      "role": "toc_item_title",
+      "required": false,
+      "geometry": {
+        "x": 590.7,
+        "y": 456.35,
+        "width": 488.44,
+        "height": 64.97
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "start",
+      "source_position": 5,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "CHAPTER_TITLE",
+      "kind": "text",
+      "role": "chapter_title",
+      "required": true,
+      "geometry": {
+        "x": 320.0,
+        "y": 285.0,
+        "width": 640.0,
+        "height": 96.0
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 20,
+        "overflow_action": "shorten_or_split"
+      },
+      "source_position": 1,
+      "shell_id": "chapter"
+    },
+    {
+      "slot_id": "CHAPTER_DESC",
+      "kind": "text",
+      "role": "chapter_description",
+      "required": false,
+      "geometry": {
+        "x": 380.0,
+        "y": 410.0,
+        "width": 520.0,
+        "height": 56.0
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 28,
+        "overflow_action": "shorten_or_drop"
+      },
+      "source_position": 2,
+      "shell_id": "chapter"
+    },
+    {
+      "slot_id": "PAGE_TITLE",
+      "kind": "text",
+      "role": "page_title",
+      "required": true,
+      "geometry": {
+        "x": 38.67,
+        "y": 6.94,
+        "width": 391.32,
+        "height": 67.86
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 0.75,
+      "text_anchor": "start",
+      "source_position": 1,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "CLOSING_TITLE",
+      "kind": "text",
+      "role": "closing_title",
+      "required": true,
+      "geometry": {
+        "x": 440.0,
+        "y": 115.45,
+        "width": 400.0,
+        "height": 152.529
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 1,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "CLOSING_SUBTITLE",
+      "kind": "text",
+      "role": "closing_subtitle",
+      "required": false,
+      "geometry": {
+        "x": 440.0,
+        "y": 244.52000000000004,
+        "width": 400.0,
+        "height": 152.529
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 2,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "AFFILIATION",
+      "kind": "text",
+      "role": "affiliation",
+      "required": false,
+      "geometry": {
+        "x": 279.29,
+        "y": 465.04,
+        "width": 116.03,
+        "height": 40.57
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 4,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "PRESENTER",
+      "kind": "text",
+      "role": "presenter",
+      "required": false,
+      "geometry": {
+        "x": 640.76,
+        "y": 465.04,
+        "width": 116.03,
+        "height": 38.78
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 6,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "DATE",
+      "kind": "text",
+      "role": "presentation_date",
+      "required": false,
+      "geometry": {
+        "x": 1002.23,
+        "y": 465.04,
+        "width": 116.03,
+        "height": 38.78
+      },
+      "capacity": {
+        "max_lines": 1,
+        "max_chars_per_line": 16,
+        "overflow_action": "split_or_choose_page_variant"
+      },
+      "line_height_ratio": 1.25,
+      "text_anchor": "middle",
+      "source_position": 8,
+      "shell_id": "ending"
+    }
+  ]
+}

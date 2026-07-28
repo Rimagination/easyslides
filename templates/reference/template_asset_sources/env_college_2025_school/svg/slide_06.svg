@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2AA3F0" flood-opacity="0.34"/></filter><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2AA3F0" flood-opacity="0.34"/></filter><filter id="fx3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2AA3F0" flood-opacity="0.34"/></filter><filter id="fx4" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2AA3F0" flood-opacity="0.34"/></filter><filter id="fx5" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2AA3F0" flood-opacity="0.34"/></filter><filter id="fx6" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2AA3F0" flood-opacity="0.34"/></filter><filter id="fx7" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2AA3F0" flood-opacity="0.34"/></filter></defs><g id="shape-21" data-name="小李PPT1">
+<rect x="38.2" y="25.71" width="245.58" height="54.93" fill="none"/>
+<text x="47.8" y="62.24" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.2" data-pptx-box-y="25.71" data-pptx-box-w="245.58" data-pptx-box-h="54.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="37.33" fill="#1971D3" font-weight="bold"><tspan fill="#1971D3" font-size="37.33" font-weight="bold">添加标题文字</tspan></text>
+</g>
+<g id="shape-22" data-name="直线连接符 3">
+<line x1="47.74" y1="89.62" x2="1232.26" y2="89.62" stroke="#5B84D8" fill="#912C8D" stroke-width="1"/>
+</g>
+<g id="shape-2" data-name="图形 1">
+<image href="../assets/image6.png" x="840.63" y="16.33" width="391.62" height="61.22" preserveAspectRatio="none"/>
+</g>
+<g id="shape-3" data-name="圆角矩形 8">
+<rect x="850.75" y="169.18" width="369.81" height="186.67" rx="31.11" ry="31.11" fill="none" stroke="#1971D3" filter="url(#fx1)"/>
+</g>
+<g id="shape-4" data-name="文本框 3">
+<rect x="931.83" y="185.19" width="265.48" height="29.08" fill="none"/>
+<text x="931.83" y="205.59" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="931.83" data-pptx-box-y="185.19" data-pptx-box-w="265.48" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="24" fill="#0070C0" font-weight="bold"><tspan fill="#0070C0" font-size="24" font-weight="bold">添加小标题</tspan></text>
+</g>
+<g id="shape-5" data-name="文本框 4">
+<rect x="870.7" y="237.37" width="326.61" height="97.54" fill="none"/>
+<text x="870.7" y="257.77" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">添加正文内容添加正文内容。</tspan></text>
+<text x="870.7" y="286.57" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">添加正文内容添加正文内容。</tspan></text>
+<text x="870.7" y="315.37" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-8" data-name="圆角矩形 19">
+<rect x="852.13" y="398.67" width="368.44" height="186.67" rx="31.11" ry="31.11" fill="none" stroke="#1971D3" filter="url(#fx2)"/>
+</g>
+<g id="shape-9" data-name="文本框 8">
+<rect x="933.87" y="419.73" width="229.83" height="29.08" fill="none"/>
+<text x="933.87" y="440.13" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="933.87" data-pptx-box-y="419.73" data-pptx-box-w="229.83" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="24" fill="#0070C0" font-weight="bold"><tspan fill="#0070C0" font-size="24" font-weight="bold">添加小标题</tspan></text>
+</g>
+<g id="shape-10" data-name="文本框 9">
+<rect x="879.41" y="473.49" width="330.24" height="63.94" fill="none"/>
+<text x="879.41" y="491.62" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="21.33" fill="#404040" font-weight="bold"><tspan fill="#404040" font-size="21.33" font-weight="bold">l </tspan><tspan fill="#404040" font-size="21.33" font-weight="bold">添加正文内容添加正文内容。</tspan></text>
+<text x="879.41" y="519.35" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="21.33" fill="#404040" font-weight="bold"><tspan fill="#404040" font-size="21.33" font-weight="bold">l </tspan><tspan fill="#404040" font-size="21.33" font-weight="bold">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-13" data-name="圆角矩形 24">
+<rect x="448.95" y="167.74" width="370.98" height="186.67" rx="31.11" ry="31.11" fill="none" stroke="#1971D3" filter="url(#fx3)"/>
+</g>
+<g id="shape-23" data-name="文本框 22">
+<rect x="507.01" y="185.19" width="251.98" height="29.08" fill="none"/>
+<text x="507.01" y="205.59" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="507.01" data-pptx-box-y="185.19" data-pptx-box-w="251.98" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">添加小标题</tspan></text>
+</g>
+<g id="shape-24" data-name="文本框 23">
+<rect x="468.67" y="237.37" width="342.66" height="97.54" fill="none"/>
+<text x="468.67" y="255.51" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="21.33" fill="#000000" font-weight="bold"><tspan fill="#000000" font-size="21.33" font-weight="bold">l </tspan><tspan fill="#000000" font-size="21.33" font-weight="bold">添加正文内容添加正文内容，添加</tspan><tspan x="468.67" dy="27.73" fill="#000000" font-size="21.33" font-weight="bold">正文内容，添加正文内容。</tspan></text>
+<text x="468.67" y="310.97" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="21.33" fill="#404040" font-weight="bold"><tspan fill="#404040" font-size="21.33" font-weight="bold">l </tspan><tspan fill="#404040" font-size="21.33" font-weight="bold">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-25" data-name="圆角矩形 30">
+<rect x="46.95" y="167.74" width="378.75" height="186.67" rx="31.11" ry="31.11" fill="none" stroke="#1971D3" filter="url(#fx4)"/>
+</g>
+<g id="shape-26" data-name="文本框 25">
+<rect x="74.03" y="237.37" width="317.18" height="97.54" fill="none"/>
+<text x="74.03" y="255.51" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="21.33" fill="#000000"><tspan fill="#000000" font-size="21.33">添加正文内容添加正文内容，添</tspan><tspan x="74.03" dy="25.6" fill="#000000" font-size="21.33">加正文内容，添加正文内容。</tspan></text>
+<text x="74.03" y="306.71" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="21.33" fill="#000000"><tspan fill="#000000" font-size="21.33">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-27" data-name="圆角矩形 35">
+<rect x="46.95" y="401.01" width="378" height="186.67" rx="31.11" ry="31.11" fill="none" stroke="#1971D3" filter="url(#fx5)"/>
+</g>
+<g id="shape-28" data-name="文本框 27">
+<rect x="123.06" y="428.33" width="121.17" height="29.08" fill="none"/>
+<text x="123.06" y="448.73" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="123.06" data-pptx-box-y="428.33" data-pptx-box-w="121.17" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="24" fill="#0070C0" font-weight="bold"><tspan fill="#0070C0" font-size="24" font-weight="bold">添加小标题</tspan></text>
+</g>
+<g id="shape-29" data-name="文本框 28">
+<rect x="77.62" y="473.49" width="316.67" height="63.94" fill="none"/>
+<text x="77.62" y="491.62" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="21.33" fill="#404040" font-weight="bold"><tspan fill="#404040" font-size="21.33" font-weight="bold">l </tspan><tspan fill="#404040" font-size="21.33" font-weight="bold">添加正文内容添加正文内容。</tspan></text>
+<text x="77.62" y="519.35" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="21.33" fill="#404040" font-weight="bold"><tspan fill="#404040" font-size="21.33" font-weight="bold">l </tspan><tspan fill="#404040" font-size="21.33" font-weight="bold">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-30" data-name="圆角矩形 40">
+<rect x="450.13" y="398.67" width="369.81" height="189.01" rx="31.5" ry="31.5" fill="none" stroke="#1971D3" filter="url(#fx6)"/>
+</g>
+<g id="shape-31" data-name="文本框 30">
+<rect x="507.01" y="420.59" width="288.26" height="29.08" fill="none"/>
+<text x="507.01" y="440.99" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="507.01" data-pptx-box-y="420.59" data-pptx-box-w="288.26" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">添加小标题</tspan></text>
+</g>
+<g id="shape-32" data-name="文本框 31">
+<rect x="467.46" y="473.49" width="343.87" height="63.94" fill="none"/>
+<text x="467.46" y="491.62" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="21.33" fill="#404040"><tspan fill="#404040" font-size="21.33">添加正文内容添加正文内容。</tspan></text>
+<text x="467.46" y="517.22" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="21.33" fill="#404040"><tspan fill="#404040" font-size="21.33">添加正文内容添加正文内容。</tspan></text>
+</g>
+<g id="shape-33" data-name="任意多边形: 形状 86">
+<path d="M 100.09 210.19 L 100.09 216.29 L 106.42 218.82 L 112.75 216.29 L 112.75 210.19 L 106.42 212.73 Z M 99.46 206.72 C 99.78 206.72 100.1 206.78 100.4 206.9 L 106.42 209.31 L 112.44 206.9 C 113.74 206.38 115.21 207.02 115.73 208.32 C 115.85 208.61 115.91 208.93 115.91 209.25 L 115.91 216.71 C 115.91 217.75 115.28 218.68 114.32 219.07 L 106.42 222.24 L 98.52 219.07 C 97.56 218.68 96.93 217.75 96.93 216.71 L 96.93 209.25 C 96.93 207.85 98.06 206.72 99.46 206.72 Z M 96.54 184.22 C 92.18 184.22 88.64 187.77 88.64 192.14 C 88.64 196.52 92.18 200.06 96.54 200.06 C 100.91 200.06 104.45 196.52 104.45 192.14 C 104.45 187.77 100.91 184.22 96.54 184.22 Z M 96.54 181.05 C 102.66 181.05 107.62 186.02 107.62 192.14 C 107.62 195.2 106.38 197.98 104.37 199.98 L 102.83 201.26 L 102.96 201.3 C 104.99 202.1 106.87 203.29 108.48 204.81 L 108.48 204.82 C 109.1 205.44 109.1 206.44 108.48 207.06 C 107.89 207.65 106.94 207.68 106.31 207.12 C 100.59 201.72 91.58 201.98 86.19 207.72 C 83.7 210.36 82.31 213.86 82.31 217.5 C 82.31 218.37 81.6 219.08 80.73 219.08 C 79.85 219.08 79.15 218.37 79.15 217.5 C 79.15 210.28 83.53 204.08 89.77 201.44 L 90.28 201.28 L 88.71 199.98 C 86.71 197.98 85.47 195.2 85.47 192.14 C 85.47 186.02 90.43 181.05 96.54 181.05 Z" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#1971D3" stroke-linejoin="miter"/>
+</g>
+<g id="shape-34" data-name="任意多边形: 形状 86">
+<path d="M 899.01 216.32 C 899.01 216.75 898.59 217.18 898.15 217.18 L 884.43 217.18 C 884 217.18 883.57 216.75 883.57 216.32 C 883.57 215.89 883.91 215.46 884.43 215.46 L 898.15 215.46 C 898.59 215.46 899.01 215.89 899.01 216.32 Z M 909.31 211.94 L 873.27 211.94 C 871.81 211.94 870.7 210.83 870.7 209.37 L 870.7 183.62 C 870.7 182.17 871.81 181.05 873.27 181.05 L 909.31 181.05 C 910.77 181.05 911.88 182.17 911.88 183.62 L 911.88 209.37 C 911.88 210.74 910.77 211.94 909.31 211.94 Z M 873.36 182.77 C 872.84 182.77 872.5 183.11 872.5 183.62 L 872.5 209.37 C 872.5 209.88 872.84 210.22 873.36 210.22 L 909.4 210.22 C 909.91 210.22 910.25 209.88 910.25 209.37 L 910.25 183.62 C 910.25 183.11 909.91 182.77 909.4 182.77 L 873.36 182.77 Z" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#1971D3" stroke-linejoin="miter"/>
+</g>
+<g id="shape-35" data-name="任意多边形: 形状 86">
+<path d="M 77.11 454.72 L 117.94 454.72 L 117.94 456.94 L 77.11 456.94 Z M 104.48 446.03 L 108.43 446.03 L 108.43 448.25 L 104.48 448.25 Z M 109.58 446.01 L 111.58 446.01 L 111.58 448.24 L 109.58 448.24 Z M 84.94 442.24 L 91.88 442.24 L 91.88 444.47 L 84.94 444.47 Z M 93.9 442.23 L 97.41 442.23 L 97.41 444.45 L 93.9 444.45 Z M 104.48 438.98 L 108.43 438.98 L 108.43 441.2 L 104.48 441.2 Z M 109.58 438.97 L 111.58 438.97 L 111.58 441.19 L 109.58 441.19 Z M 84.94 435.16 L 91.88 435.16 L 91.88 437.38 L 84.94 437.38 Z M 93.9 435.15 L 97.41 435.15 L 97.41 437.37 L 93.9 437.37 Z M 104.48 432.05 L 108.43 432.05 L 108.43 434.27 L 104.48 434.27 Z M 109.58 432.04 L 111.58 432.04 L 111.58 434.26 L 109.58 434.26 Z M 84.94 427.66 L 91.88 427.66 L 91.88 429.88 L 84.94 429.88 Z M 93.9 427.65 L 97.41 427.65 L 97.41 429.87 L 93.9 429.87 Z M 85.17 415.76 L 97.77 415.76 C 99.17 415.76 100.48 416.25 101.48 417.13 C 102.5 418.05 103.07 419.27 103.07 420.59 L 103.07 424.67 L 110.44 424.67 C 113.1 424.67 115.26 426.83 115.26 429.5 L 115.26 452.46 L 113.04 452.46 L 113.04 429.49 C 113.04 428.06 111.88 426.89 110.44 426.89 L 103.08 426.89 L 103.08 452.87 L 100.85 452.87 L 100.85 420.59 C 100.85 419.16 99.47 417.98 97.78 417.98 L 85.17 417.98 C 83.45 417.98 82.06 419.15 82.06 420.59 L 82.06 452.86 L 79.84 452.86 L 79.84 420.58 C 79.84 417.92 82.23 415.76 85.17 415.76 Z" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#1971D3" stroke-linejoin="miter"/>
+</g>
+<g id="shape-36" data-name="任意多边形: 形状 86">
+<path d="M 884.9 446.79 L 897.83 446.79 L 898.24 449.08 C 898.33 449.6 898.77 449.96 899.29 449.96 L 906.1 449.96 C 906.62 449.96 907.06 449.6 907.15 449.08 L 907.56 446.79 L 920.5 446.79 C 922.04 446.79 923.29 448.04 923.29 449.58 L 923.29 451.51 C 923.29 453.04 922.04 454.29 920.5 454.29 L 884.9 454.29 C 883.36 454.29 882.11 453.04 882.11 451.51 L 882.11 449.58 C 882.11 448.04 883.36 446.79 884.9 446.79 Z M 898.43 426.12 L 906.94 428.69 C 907.46 428.84 907.52 429.55 907.05 429.79 L 904.64 431.01 L 909.04 435.41 C 909.35 435.72 909.35 436.21 909.04 436.52 L 908.09 437.46 C 907.79 437.77 907.29 437.77 906.98 437.46 L 902.58 433.07 L 901.36 435.47 C 901.11 435.95 900.4 435.88 900.25 435.37 L 897.68 426.87 C 897.54 426.41 897.97 425.99 898.43 426.12 Z M 890.34 423.76 C 890.27 423.76 890.23 423.81 890.23 423.87 L 890.23 440.02 L 915.17 440.02 L 915.17 423.87 C 915.17 423.81 915.12 423.76 915.06 423.76 Z M 890.34 419.73 L 915.06 419.73 C 917.34 419.73 919.2 421.59 919.2 423.87 L 919.2 442.04 C 919.2 443.15 918.3 444.05 917.19 444.05 L 888.21 444.05 C 887.1 444.05 886.19 443.15 886.19 442.04 L 886.19 423.87 C 886.19 421.59 888.05 419.73 890.34 419.73 Z" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#1971D3" stroke-linejoin="miter"/>
+</g>
+<g id="shape-37" data-name="任意多边形: 形状 86">
+<path d="M 486.23 446.09 L 493.04 446.09 L 486.23 451.74 Z M 474.29 439.03 L 474.29 441.12 L 488.3 441.12 L 488.3 439.03 Z M 474.29 434.61 L 474.29 436.71 L 488.3 436.71 L 488.3 434.61 Z M 474.29 430.27 L 474.29 432.29 L 488.3 432.29 L 488.3 430.27 Z M 468.67 422.99 L 471.04 422.99 L 471.04 424.54 C 471.04 425.93 472.52 427.1 474.29 427.1 C 476.07 427.1 477.55 425.93 477.55 424.54 L 477.55 422.99 L 477.94 422.99 L 477.94 424.54 C 477.94 425.93 479.42 427.1 481.3 427.1 C 483.07 427.1 484.55 425.93 484.55 424.54 L 484.55 422.99 L 484.95 422.99 L 484.95 424.54 C 484.95 425.93 486.43 427.1 488.3 427.1 C 490.08 427.1 491.56 425.93 491.56 424.54 L 491.56 422.99 L 493.93 422.99 L 493.93 444.69 L 484.46 444.69 L 484.46 452.13 L 468.67 452.13 Z M 488.3 419.73 C 489.39 419.73 490.28 420.43 490.28 421.28 L 490.28 424.54 C 490.28 425.39 489.39 426.08 488.3 426.08 C 487.21 426.08 486.32 425.39 486.32 424.54 L 486.32 421.28 C 486.32 420.43 487.21 419.73 488.3 419.73 Z M 481.3 419.73 C 482.39 419.73 483.27 420.43 483.27 421.28 L 483.27 424.54 C 483.27 425.39 482.39 426.08 481.3 426.08 C 480.21 426.08 479.32 425.39 479.32 424.54 L 479.32 421.28 C 479.32 420.43 480.21 419.73 481.3 419.73 Z M 474.3 419.73 C 475.38 419.73 476.27 420.43 476.27 421.28 L 476.27 424.54 C 476.27 425.39 475.38 426.08 474.3 426.08 C 473.21 426.08 472.32 425.39 472.32 424.54 L 472.32 421.28 C 472.32 420.43 473.21 419.73 474.3 419.73 Z" fill="none" stroke="#1971D3" filter="url(#fx7)"/>
+</g>
+<g id="shape-38" data-name="任意多边形: 形状 86">
+<path d="M 490.27 185.81 L 490.27 190.65 L 478.55 190.65 L 478.55 185.81 L 480.4 185.81 C 480.37 185.58 480.34 185.35 480.34 185.12 C 480.34 182.88 482.17 181.05 484.42 181.05 C 486.66 181.05 488.48 182.88 488.48 185.12 C 488.48 185.35 488.45 185.58 488.42 185.81 L 490.27 185.81 Z M 497.62 189.22 L 497.62 221.28 C 497.62 221.81 497.19 222.24 496.66 222.24 L 472.16 222.24 C 471.63 222.24 471.2 221.81 471.2 221.28 L 471.2 189.22 C 471.2 188.69 471.63 188.26 472.16 188.26 L 476.65 188.26 L 476.65 191.61 C 476.65 192.14 477.08 192.56 477.61 192.56 L 491.21 192.56 C 491.74 192.56 492.17 192.14 492.17 191.61 L 492.17 188.26 L 496.66 188.26 C 497.19 188.26 497.62 188.69 497.62 189.22 Z M 493.39 216.25 C 493.39 215.72 492.96 215.29 492.43 215.29 L 476.39 215.29 C 475.86 215.29 475.43 215.72 475.43 216.25 C 475.43 216.78 475.86 217.21 476.39 217.21 L 492.43 217.21 C 492.96 217.21 493.39 216.78 493.39 216.25 Z M 493.39 210.39 C 493.39 209.86 492.96 209.44 492.43 209.44 L 476.39 209.44 C 475.86 209.44 475.43 209.86 475.43 210.39 C 475.43 210.91 475.86 211.34 476.39 211.34 L 492.43 211.34 C 492.96 211.34 493.39 210.91 493.39 210.39 Z M 493.39 204.52 C 493.39 203.99 492.96 203.58 492.43 203.58 L 476.39 203.58 C 475.86 203.58 475.43 203.99 475.43 204.52 C 475.43 205.05 475.86 205.48 476.39 205.48 L 492.43 205.48 C 492.96 205.48 493.39 205.05 493.39 204.52 Z M 493.39 198.66 C 493.39 198.14 492.96 197.71 492.43 197.71 L 476.39 197.71 C 475.86 197.71 475.43 198.14 475.43 198.66 C 475.43 199.19 475.86 199.62 476.39 199.62 L 492.43 199.62 C 492.96 199.62 493.39 199.19 493.39 198.66 Z" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#1971D3" stroke-linejoin="miter"/>
+</g>
+<g id="shape-47" data-name="文本框 46">
+<rect x="123.06" y="185.19" width="121.17" height="29.08" fill="none"/>
+<text x="123.06" y="205.59" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="123.06" data-pptx-box-y="185.19" data-pptx-box-w="121.17" data-pptx-box-h="29.08" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="24" fill="#0070C0" font-weight="bold"><tspan fill="#0070C0" font-size="24" font-weight="bold">添加小标题</tspan></text>
+</g></svg>

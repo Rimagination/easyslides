@@ -1,0 +1,5460 @@
+{
+  "schema_version": "easyslides.template_asset_bank.v1",
+  "bank_id": "local_pptx_template_bank",
+  "generated_at": "2026-05-21T18:38:57+00:00",
+  "generated_by": "scripts/template_asset_bank.py + registration merge",
+  "harness": {
+    "primary_mode": "exact_template_reuse",
+    "selection_unit": "source_slide_module",
+    "template_source": "pptx_template_import workspace",
+    "agent_rule": "Select a module by content fit, copy its flat SVG, then replace text/images inside existing slots while preserving fixed geometry.",
+    "fallback": "Use a Style Pack only when no exact template module fits."
+  },
+  "templates": [
+    {
+      "template_id": "l001_left_nav",
+      "source_name": "毕业答辩-酒红左侧导航栏.pptx",
+      "source_pptx": "external://template-sources/defense-left-nav.pptx",
+      "import_workspace": "tmp/template_imports/l001_left_nav",
+      "slide_size": {
+        "width_emu": 12192000,
+        "height_emu": 6858000,
+        "width_px": 1280,
+        "height_px": 720
+      },
+      "theme": {
+        "colors": {
+          "dk1": "#000000",
+          "lt1": "#FFFFFF",
+          "dk2": "#44546A",
+          "lt2": "#E7E6E6",
+          "accent1": "#8B0012",
+          "accent2": "#ED7D31",
+          "accent3": "#A5A5A5",
+          "accent4": "#FFC000",
+          "accent5": "#5B9BD5",
+          "accent6": "#70AD47",
+          "hlink": "#0563C1",
+          "folHlink": "#954F72"
+        },
+        "fonts": {
+          "majorLatin": "微软雅黑",
+          "minorLatin": "微软雅黑 Light",
+          "minorEastAsia": "微软雅黑 Light"
+        }
+      },
+      "assets": {
+        "dir": "assets",
+        "all": [
+          "image1.jpeg",
+          "image2.jpeg",
+          "image3.jpeg",
+          "image4.png",
+          "image5.jpeg"
+        ],
+        "common": []
+      },
+      "module_count": 27,
+      "page_type_candidates": {
+        "chapter_candidate": [
+          3,
+          7,
+          12,
+          17,
+          22
+        ],
+        "content_candidate": [
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          18,
+          19,
+          20,
+          21,
+          23,
+          24,
+          25,
+          26
+        ],
+        "cover_candidate": [
+          1
+        ],
+        "ending_candidate": [
+          27
+        ],
+        "toc_candidate": [
+          2
+        ]
+      },
+      "pages": [
+        {
+          "module_id": "l001_left_nav/001_cover_candidate",
+          "module_basename": "001_cover_candidate",
+          "source_slide_index": 1,
+          "page_type": "cover_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout1.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_01.svg",
+            "layered_svg": "svg/slide_01.svg"
+          },
+          "text_samples": [
+            "2025",
+            "年毕业论文答辩模板",
+            "The Final Defense Of The Senior Undergraduate Thesis",
+            "答辩人：",
+            "小光",
+            "指导老师："
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 13,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "cover_candidate",
+            "2025",
+            "年毕业论文答辩模板",
+            "The Final Defense Of The Senior Undergraduate Thesis",
+            "答辩人：",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/002_toc_candidate",
+          "module_basename": "002_toc_candidate",
+          "source_slide_index": 2,
+          "page_type": "toc_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_02.svg",
+            "layered_svg": "svg/slide_02.svg"
+          },
+          "text_samples": [
+            "CONTENTS",
+            "目录",
+            "研究背景",
+            "Research background",
+            "01",
+            "目的及意义"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 29,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "toc_candidate",
+            "CONTENTS",
+            "目录",
+            "研究背景",
+            "Research background",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/003_chapter_candidate",
+          "module_basename": "003_chapter_candidate",
+          "source_slide_index": 3,
+          "page_type": "chapter_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_03.svg",
+            "layered_svg": "svg/slide_03.svg"
+          },
+          "text_samples": [
+            "01",
+            "PART ONE",
+            "研究背景",
+            "Research background"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 4,
+            "shape_count": 11,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "chapter_candidate",
+            "01",
+            "PART ONE",
+            "研究背景",
+            "Research background",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/004_content_candidate",
+          "module_basename": "004_content_candidate",
+          "source_slide_index": 4,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_04.svg",
+            "layered_svg": "svg/slide_04.svg"
+          },
+          "text_samples": [
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "请输入您的标题",
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 21,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "请输入您的标题",
+            "研究背景",
+            "目的及意义",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/005_content_candidate",
+          "module_basename": "005_content_candidate",
+          "source_slide_index": 5,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_05.svg",
+            "layered_svg": "svg/slide_05.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "请输入您的文本请输入您的文本请输入您的文本",
+            "2019",
+            "这里是小标题",
+            "请输入您的文本请输入您的文本请输入您的文本",
+            "2021"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 42,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "请输入您的文本请输入您的文本请输入您的文本",
+            "2019",
+            "这里是小标题",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/006_content_candidate",
+          "module_basename": "006_content_candidate",
+          "source_slide_index": 6,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_06.svg",
+            "layered_svg": "svg/slide_06.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；",
+            "国内外研究进展",
+            "研究背景"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 25,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/007_chapter_candidate",
+          "module_basename": "007_chapter_candidate",
+          "source_slide_index": 7,
+          "page_type": "chapter_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_07.svg",
+            "layered_svg": "svg/slide_07.svg"
+          },
+          "text_samples": [
+            "02",
+            "PART TWO",
+            "目的及意义",
+            "Purpose and significance"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 4,
+            "shape_count": 11,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "chapter_candidate",
+            "02",
+            "PART TWO",
+            "目的及意义",
+            "Purpose and significance",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/008_content_candidate",
+          "module_basename": "008_content_candidate",
+          "source_slide_index": 8,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_08.svg",
+            "layered_svg": "svg/slide_08.svg"
+          },
+          "text_samples": [
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析",
+            "结论与讨论",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 25,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/009_content_candidate",
+          "module_basename": "009_content_candidate",
+          "source_slide_index": 9,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_09.svg",
+            "layered_svg": "svg/slide_09.svg"
+          },
+          "text_samples": [
+            "请输入您的标题",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 29,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "请输入您的标题",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/010_content_candidate",
+          "module_basename": "010_content_candidate",
+          "source_slide_index": 10,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_10.svg",
+            "layered_svg": "svg/slide_10.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 26,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/011_content_candidate",
+          "module_basename": "011_content_candidate",
+          "source_slide_index": 11,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_11.svg",
+            "layered_svg": "svg/slide_11.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 28,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/012_chapter_candidate",
+          "module_basename": "012_chapter_candidate",
+          "source_slide_index": 12,
+          "page_type": "chapter_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_12.svg",
+            "layered_svg": "svg/slide_12.svg"
+          },
+          "text_samples": [
+            "03",
+            "PART THREE",
+            "材料与方法",
+            "Materials and Methods"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 4,
+            "shape_count": 11,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "chapter_candidate",
+            "03",
+            "PART THREE",
+            "材料与方法",
+            "Materials and Methods",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/013_content_candidate",
+          "module_basename": "013_content_candidate",
+          "source_slide_index": 13,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_13.svg",
+            "layered_svg": "svg/slide_13.svg"
+          },
+          "text_samples": [
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析",
+            "结论与讨论",
+            "这里是小标题"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 30,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/014_content_candidate",
+          "module_basename": "014_content_candidate",
+          "source_slide_index": 14,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_14.svg",
+            "layered_svg": "svg/slide_14.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向",
+            "01",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向",
+            "02"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 37,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向",
+            "01",
+            "这里是小标题",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/015_content_candidate",
+          "module_basename": "015_content_candidate",
+          "source_slide_index": 15,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_15.svg",
+            "layered_svg": "svg/slide_15.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "请输入",
+            "您的标题",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 31,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "请输入",
+            "您的标题",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/016_content_candidate",
+          "module_basename": "016_content_candidate",
+          "source_slide_index": 16,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_16.svg",
+            "layered_svg": "svg/slide_16.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 27,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/017_chapter_candidate",
+          "module_basename": "017_chapter_candidate",
+          "source_slide_index": 17,
+          "page_type": "chapter_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_17.svg",
+            "layered_svg": "svg/slide_17.svg"
+          },
+          "text_samples": [
+            "04",
+            "PART FOUR",
+            "结果与分析",
+            "Results and Analysis"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 4,
+            "shape_count": 11,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "chapter_candidate",
+            "04",
+            "PART FOUR",
+            "结果与分析",
+            "Results and Analysis",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/018_content_candidate",
+          "module_basename": "018_content_candidate",
+          "source_slide_index": 18,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_18.svg",
+            "layered_svg": "svg/slide_18.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 42,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/019_content_candidate",
+          "module_basename": "019_content_candidate",
+          "source_slide_index": 19,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_19.svg",
+            "layered_svg": "svg/slide_19.svg"
+          },
+          "text_samples": [
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析",
+            "结论与讨论",
+            "这里是小标题"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 35,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/020_content_candidate",
+          "module_basename": "020_content_candidate",
+          "source_slide_index": 20,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_20.svg",
+            "layered_svg": "svg/slide_20.svg"
+          },
+          "text_samples": [
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "请输入您的表格标题",
+            "表头"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 28,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/021_content_candidate",
+          "module_basename": "021_content_candidate",
+          "source_slide_index": 21,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_21.svg",
+            "layered_svg": "svg/slide_21.svg"
+          },
+          "text_samples": [
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "研究背景",
+            "目的及意义",
+            "材料与方法",
+            "结果与分析"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 22,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "研究背景",
+            "目的及意义",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/022_chapter_candidate",
+          "module_basename": "022_chapter_candidate",
+          "source_slide_index": 22,
+          "page_type": "chapter_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_22.svg",
+            "layered_svg": "svg/slide_22.svg"
+          },
+          "text_samples": [
+            "05",
+            "PART FIVE",
+            "结论与讨论",
+            "Conclusion and Discussion"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 4,
+            "shape_count": 11,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "chapter_candidate",
+            "05",
+            "PART FIVE",
+            "结论与讨论",
+            "Conclusion and Discussion",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/023_content_candidate",
+          "module_basename": "023_content_candidate",
+          "source_slide_index": 23,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_23.svg",
+            "layered_svg": "svg/slide_23.svg"
+          },
+          "text_samples": [
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "请输入您的标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "请输入您的标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "请输入您的标题"
+          ],
+          "assets": {
+            "background": null,
+            "images": [
+              "image1.jpeg",
+              "image2.jpeg",
+              "image3.jpeg"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 29,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "请输入您的标题",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "请输入您的标题",
+            "image1.jpeg",
+            "image2.jpeg",
+            "image3.jpeg",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/024_content_candidate",
+          "module_basename": "024_content_candidate",
+          "source_slide_index": 24,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_24.svg",
+            "layered_svg": "svg/slide_24.svg"
+          },
+          "text_samples": [
+            "这里是小标题",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容"
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 26,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "这里是小标题",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "请输入您的文本内容",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/025_content_candidate",
+          "module_basename": "025_content_candidate",
+          "source_slide_index": 25,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_25.svg",
+            "layered_svg": "svg/slide_25.svg"
+          },
+          "text_samples": [
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "结果讨论",
+            "研究背景",
+            "目的及意义"
+          ],
+          "assets": {
+            "background": null,
+            "images": [
+              "image4.png",
+              "image5.jpeg"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 22,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "撰写毕业论文五个步骤：确立研究方向；查阅该领域的文献资料和论文；对研究的方向提出理论假设；设计研究方法；论文框架及内容撰写。",
+            "这里是小标题",
+            "结果讨论",
+            "image4.png",
+            "image5.jpeg",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/026_content_candidate",
+          "module_basename": "026_content_candidate",
+          "source_slide_index": 26,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout3.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_26.svg",
+            "layered_svg": "svg/slide_26.svg"
+          },
+          "text_samples": [
+            "期刊作者",
+            ".",
+            "题名",
+            "[J].",
+            "刊名，出版年，卷",
+            "("
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 20,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": {
+                "x": 987,
+                "y": 679,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "期刊作者",
+            ".",
+            "题名",
+            "[J].",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        },
+        {
+          "module_id": "l001_left_nav/027_ending_candidate",
+          "module_basename": "027_ending_candidate",
+          "source_slide_index": 27,
+          "page_type": "ending_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout1.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_27.svg",
+            "layered_svg": "svg/slide_27.svg"
+          },
+          "text_samples": [
+            "恳请各位老师批评指正！",
+            "答辩人：",
+            "小光",
+            "指导老师：",
+            "小光",
+            "答辩时间："
+          ],
+          "assets": {
+            "background": null,
+            "images": []
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 12,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              }
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "ending_candidate",
+            "恳请各位老师批评指正！",
+            "答辩人：",
+            "小光",
+            "指导老师：",
+            "毕业答辩-酒红左侧导航栏.pptx"
+          ]
+        }
+      ]
+    },
+    {
+      "template_id": "thu_env_2025",
+      "source_name": "2025 THU Environment School presentation template",
+      "source_pptx": "external://template-sources/thu-env-2025.pptx",
+      "import_workspace": "templates/reference/template_asset_sources/thu_env_2025",
+      "slide_size": {
+        "width_emu": 12192000,
+        "height_emu": 6858000,
+        "width_px": 1280,
+        "height_px": 720
+      },
+      "theme": {
+        "colors": {
+          "dk1": "#000000",
+          "lt1": "#FFFFFF",
+          "dk2": "#3C3652",
+          "lt2": "#FFFFFF",
+          "accent1": "#912C8D",
+          "accent2": "#7561D6",
+          "accent3": "#68A4C6",
+          "accent4": "#6A69B6",
+          "accent5": "#5199EA",
+          "accent6": "#5B84D8",
+          "hlink": "#467886",
+          "folHlink": "#96607D"
+        },
+        "fonts": {
+          "majorLatin": "等线 Light",
+          "minorLatin": "等线"
+        }
+      },
+      "assets": {
+        "dir": "assets",
+        "all": [
+          "image1.jpeg",
+          "image10.jpeg",
+          "image11.jpeg",
+          "image12.jpeg",
+          "image13.jpeg",
+          "image14.jpeg",
+          "image15.jpeg",
+          "image16.jpeg",
+          "image17.jpeg",
+          "image18.jpeg",
+          "image2.png",
+          "image3.jpg",
+          "image4.png",
+          "image5.jpg",
+          "image6.png",
+          "image7.svg",
+          "image8.png",
+          "image9.jpeg"
+        ],
+        "common": [
+          "image1.jpeg",
+          "image10.jpeg",
+          "image11.jpeg",
+          "image3.jpg",
+          "image6.png"
+        ]
+      },
+      "module_count": 8,
+      "page_type_candidates": {
+        "chapter_candidate": [
+          2
+        ],
+        "content_candidate": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "cover_candidate": [
+          1
+        ],
+        "ending_candidate": [
+          8
+        ]
+      },
+      "pages": [
+        {
+          "module_id": "thu_env_2025/001_cover_candidate",
+          "module_basename": "001_cover_candidate",
+          "source_slide_index": 1,
+          "page_type": "cover_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout20.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_01.svg",
+            "layered_svg": "svg/slide_01.svg"
+          },
+          "text_samples": [
+            "添加标题描述",
+            "环境学院演示文稿模板",
+            "汇报人：",
+            "XXX",
+            "日期：",
+            "XXXX"
+          ],
+          "assets": {
+            "background": "image4.png",
+            "images": [
+              "image4.png",
+              "image5.jpg",
+              "image6.png"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 10,
+            "slot_count": 6
+          },
+          "slots": [
+            {
+              "slot_id": "pic_13",
+              "kind": "image",
+              "placeholder_type": "pic",
+              "idx": "13",
+              "source": "layout",
+              "geometry": {
+                "x": 1157,
+                "y": 36,
+                "width": 89,
+                "height": 89
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "cover_candidate",
+            "添加标题描述",
+            "环境学院演示文稿模板",
+            "汇报人：",
+            "XXX",
+            "image4.png",
+            "image5.jpg",
+            "image6.png",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        },
+        {
+          "module_id": "thu_env_2025/002_chapter_candidate",
+          "module_basename": "002_chapter_candidate",
+          "source_slide_index": 2,
+          "page_type": "chapter_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout14.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_02.svg",
+            "layered_svg": "svg/slide_02.svg"
+          },
+          "text_samples": [
+            "1",
+            "2",
+            "3",
+            "请添加章节标题",
+            "请添加章节标题",
+            "请添加章节标题"
+          ],
+          "assets": {
+            "background": "image8.png",
+            "images": [
+              "image8.png",
+              "image9.jpeg"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 11,
+            "slot_count": 6
+          },
+          "slots": [
+            {
+              "slot_id": "pic_10",
+              "kind": "image",
+              "placeholder_type": "pic",
+              "idx": "10",
+              "source": "layout",
+              "geometry": {
+                "x": 233,
+                "y": 0,
+                "width": 407,
+                "height": 570
+              }
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "chapter_candidate",
+            "1",
+            "2",
+            "3",
+            "请添加章节标题",
+            "image8.png",
+            "image9.jpeg",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        },
+        {
+          "module_id": "thu_env_2025/003_content_candidate",
+          "module_basename": "003_content_candidate",
+          "source_slide_index": 3,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout262.xml",
+          "master_path": "ppt/slideMasters/slideMaster2.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_03.svg",
+            "layered_svg": "svg/slide_03.svg"
+          },
+          "text_samples": [
+            "添加标题文字",
+            "添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容。",
+            "添加小标题：",
+            "添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容。"
+          ],
+          "assets": {
+            "background": null,
+            "images": [
+              "image6.png"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 7,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "添加标题文字",
+            "添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容添加正文内容，添加正文内容。",
+            "添加小标题：",
+            "image6.png",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        },
+        {
+          "module_id": "thu_env_2025/004_content_candidate",
+          "module_basename": "004_content_candidate",
+          "source_slide_index": 4,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout262.xml",
+          "master_path": "ppt/slideMasters/slideMaster2.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_04.svg",
+            "layered_svg": "svg/slide_04.svg"
+          },
+          "text_samples": [
+            "添加标题文字",
+            "添加小标题：",
+            "2025.4——2025.6",
+            "2025.6——2025.7",
+            "2025.8——2025.12",
+            "01"
+          ],
+          "assets": {
+            "background": null,
+            "images": [
+              "image10.jpeg",
+              "image11.jpeg",
+              "image6.png"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 24,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "添加标题文字",
+            "添加小标题：",
+            "2025.4——2025.6",
+            "2025.6——2025.7",
+            "image10.jpeg",
+            "image11.jpeg",
+            "image6.png",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        },
+        {
+          "module_id": "thu_env_2025/005_content_candidate",
+          "module_basename": "005_content_candidate",
+          "source_slide_index": 5,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout262.xml",
+          "master_path": "ppt/slideMasters/slideMaster2.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_05.svg",
+            "layered_svg": "svg/slide_05.svg"
+          },
+          "text_samples": [
+            "添加标题文字",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加小标题",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容"
+          ],
+          "assets": {
+            "background": null,
+            "images": [
+              "image6.png",
+              "image10.jpeg",
+              "image11.jpeg"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 11,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "添加标题文字",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加小标题",
+            "image6.png",
+            "image10.jpeg",
+            "image11.jpeg",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        },
+        {
+          "module_id": "thu_env_2025/006_content_candidate",
+          "module_basename": "006_content_candidate",
+          "source_slide_index": 6,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout262.xml",
+          "master_path": "ppt/slideMasters/slideMaster2.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_06.svg",
+            "layered_svg": "svg/slide_06.svg"
+          },
+          "text_samples": [
+            "添加标题文字",
+            "添加小标题",
+            "添加正文内容添加正文内容。",
+            "添加正文内容添加正文内容。",
+            "添加正文内容添加正文内容。",
+            "添加小标题"
+          ],
+          "assets": {
+            "background": null,
+            "images": [
+              "image6.png"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 29,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "添加标题文字",
+            "添加小标题",
+            "添加正文内容添加正文内容。",
+            "添加正文内容添加正文内容。",
+            "image6.png",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        },
+        {
+          "module_id": "thu_env_2025/007_content_candidate",
+          "module_basename": "007_content_candidate",
+          "source_slide_index": 7,
+          "page_type": "content_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout262.xml",
+          "master_path": "ppt/slideMasters/slideMaster2.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_07.svg",
+            "layered_svg": "svg/slide_07.svg"
+          },
+          "text_samples": [
+            "添加标题文字",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。"
+          ],
+          "assets": {
+            "background": null,
+            "images": [
+              "image6.png",
+              "image12.jpeg",
+              "image13.jpeg",
+              "image14.jpeg",
+              "image15.jpeg",
+              "image16.jpeg",
+              "image17.jpeg"
+            ]
+          },
+          "metrics": {
+            "text_count": 5,
+            "shape_count": 20,
+            "slot_count": 5
+          },
+          "slots": [
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "content_candidate",
+            "添加标题文字",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "添加正文内容添加正文内容，添加正文内容，添加正文内容。",
+            "image6.png",
+            "image12.jpeg",
+            "image13.jpeg",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        },
+        {
+          "module_id": "thu_env_2025/008_ending_candidate",
+          "module_basename": "008_ending_candidate",
+          "source_slide_index": 8,
+          "page_type": "ending_candidate",
+          "layout_path": "ppt/slideLayouts/slideLayout7.xml",
+          "master_path": "ppt/slideMasters/slideMaster1.xml",
+          "source": {
+            "flat_svg": "svg-flat/slide_08.svg",
+            "layered_svg": "svg/slide_08.svg"
+          },
+          "text_samples": [
+            "添加标题描述添加标题描述添加标题描述",
+            "谢谢，敬请批评指正！",
+            "汇报人：",
+            "XXXX",
+            "日期：",
+            "XXXX"
+          ],
+          "assets": {
+            "background": "image1.jpeg",
+            "images": [
+              "image18.jpeg",
+              "image6.png"
+            ]
+          },
+          "metrics": {
+            "text_count": 6,
+            "shape_count": 10,
+            "slot_count": 8
+          },
+          "slots": [
+            {
+              "slot_id": "dt_10",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "10",
+              "source": "layout",
+              "geometry": null,
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_11",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "11",
+              "source": "layout",
+              "geometry": null,
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_12",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "12",
+              "source": "layout",
+              "geometry": null,
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            },
+            {
+              "slot_id": "title_0",
+              "kind": "text",
+              "placeholder_type": "title",
+              "idx": "0",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 38,
+                "width": 1104,
+                "height": 139
+              },
+              "text_samples": [
+                "单击此处编辑母版标题样式"
+              ]
+            },
+            {
+              "slot_id": "body_1",
+              "kind": "text",
+              "placeholder_type": "body",
+              "idx": "1",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 192,
+                "width": 1104,
+                "height": 457
+              },
+              "text_samples": [
+                "单击此处编辑母版文本样式",
+                "二级"
+              ]
+            },
+            {
+              "slot_id": "dt_2",
+              "kind": "text",
+              "placeholder_type": "dt",
+              "idx": "2",
+              "source": "master",
+              "geometry": {
+                "x": 88,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "2025/10/21"
+              ]
+            },
+            {
+              "slot_id": "ftr_3",
+              "kind": "text",
+              "placeholder_type": "ftr",
+              "idx": "3",
+              "source": "master",
+              "geometry": {
+                "x": 424,
+                "y": 667,
+                "width": 432,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              }
+            },
+            {
+              "slot_id": "sldNum_4",
+              "kind": "text",
+              "placeholder_type": "sldNum",
+              "idx": "4",
+              "source": "master",
+              "geometry": {
+                "x": 904,
+                "y": 667,
+                "width": 288,
+                "height": 38
+              },
+              "text_style": {
+                "fontSizePx": 16.0,
+                "latinFont": "Alibaba PuHuiTi",
+                "eastAsiaFont": "Alibaba PuHuiTi",
+                "fill": "#000000"
+              },
+              "text_samples": [
+                "‹#›"
+              ]
+            }
+          ],
+          "reuse_contract": {
+            "mode": "exact_template_reuse",
+            "allowed_edits": [
+              "replace text in existing text elements",
+              "replace images inside existing picture/media slots",
+              "update chart/table labels only when the source slide already contains that structure"
+            ],
+            "forbidden_edits": [
+              "move, resize, recolor, or delete fixed geometry",
+              "invent new layout grids or decorative shapes",
+              "convert the module into a free-form Style Pack page"
+            ],
+            "content_fit_rule": "If content does not fit the existing slots, choose another module, split the content across pages, or warn before simplifying."
+          },
+          "search_hints": [
+            "ending_candidate",
+            "添加标题描述添加标题描述添加标题描述",
+            "谢谢，敬请批评指正！",
+            "汇报人：",
+            "XXXX",
+            "image18.jpeg",
+            "image6.png",
+            "2025nianhuanjingxueyuanmoban-jiyuxuexiao.pptx",
+            "THU ENV",
+            "thu_env_2025",
+            "environment school"
+          ]
+        }
+      ],
+      "reuse_notes": {
+        "visual_reuse_mode": "self_contained_flat_svg_modules",
+        "editable_export_mode": "use svg_to_pptx --only native so text and shapes become PowerPoint DrawingML objects",
+        "text_fit_policy": "templates/reference/template_asset_sources/thu_env_2025/text_fit_policy.json",
+        "design_spec": "templates/reference/template_asset_sources/thu_env_2025/design_spec.md",
+        "body_variants": "templates/reference/template_asset_sources/thu_env_2025/body_variants.json",
+        "layouts": "templates/reference/template_asset_sources/thu_env_2025/layouts.json",
+        "distillation_mode": "do not mirror the source PPTX as a final template; use measured body variants inside EasySlides academic shells",
+        "asset_embedding": "images are embedded as data URIs in svg-flat modules for PPTX portability",
+        "source_pptx_role": "reference template imported once; downstream generation copies module SVGs and replaces content in-place"
+      }
+    }
+  ]
+}

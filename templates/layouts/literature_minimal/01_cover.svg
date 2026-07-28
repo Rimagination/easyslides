@@ -7,14 +7,14 @@
   </g>
   <g id="cover-title" data-slot="TITLE">
     <rect x="100" y="246" width="1080" height="92" fill="none"/>
-    <text x="640" y="310" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="62" fill="#000000" font-weight="bold" data-pptx-box-x="100" data-pptx-box-y="246" data-pptx-box-w="1080" data-pptx-box-h="92" data-pptx-textbox="true"><tspan>{{TITLE}}</tspan></text>
+    <text x="640" y="310" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="62" fill="#000000" font-weight="bold" data-pptx-box-x="100" data-pptx-box-y="246" data-pptx-box-w="1080" data-pptx-box-h="92" data-pptx-textbox="true" data-pptx-valign="middle"><tspan>{{TITLE}}</tspan></text>
   </g>
   <g id="cover-subtitle" data-slot="SUBTITLE">
     <rect x="90" y="352" width="1100" height="48" fill="none"/>
-    <text x="640" y="386" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" fill="#0E2841" font-weight="bold" data-pptx-box-x="90" data-pptx-box-y="352" data-pptx-box-w="1100" data-pptx-box-h="48" data-pptx-textbox="true"><tspan>{{SUBTITLE}}</tspan></text>
+    <text x="640" y="386" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" fill="#0E2841" font-weight="bold" data-pptx-box-x="90" data-pptx-box-y="352" data-pptx-box-w="1100" data-pptx-box-h="48" data-pptx-textbox="true" data-pptx-valign="middle"><tspan>{{SUBTITLE}}</tspan></text>
   </g>
   <g id="cover-meta" data-slot-group="meta">
-    <text x="640" y="480" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#000000" data-pptx-box-x="470" data-pptx-box-y="463" data-pptx-box-w="340" data-pptx-box-h="28" data-pptx-textbox="true"><tspan>汇报人：</tspan><tspan data-slot="AUTHOR">{{AUTHOR}}</tspan></text>
-    <text x="640" y="516" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#000000" data-pptx-box-x="470" data-pptx-box-y="499" data-pptx-box-w="340" data-pptx-box-h="28" data-pptx-textbox="true"><tspan>日期：</tspan><tspan data-slot="DATE">{{DATE}}</tspan></text>
+    <text x="640" y="480" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#000000" data-pptx-box-x="470" data-pptx-box-y="463" data-pptx-box-w="340" data-pptx-box-h="28" data-pptx-textbox="true" data-pptx-valign="middle"><tspan>汇报人：</tspan><tspan data-slot="AUTHOR">{{AUTHOR}}</tspan></text>
+    <text x="640" y="516" text-anchor="middle" xml:space="preserve" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" fill="#000000" data-pptx-box-x="470" data-pptx-box-y="499" data-pptx-box-w="340" data-pptx-box-h="28" data-pptx-textbox="true" data-pptx-valign="middle"><tspan>日期：</tspan><tspan data-slot="DATE">{{DATE}}</tspan></text>
   </g>
 </svg>

@@ -54,6 +54,74 @@ class ValidateSvgTextSlotsTests(unittest.TestCase):
         self.assertEqual(report["status"], "fail")
         self.assertTrue(any(issue["code"] == "SVG-TEXT-UNBOXED" for issue in report["issues"]), report["issues"])
 
+    def test_require_valign_fails_for_boxed_text_without_alignment(self):
+        tmp, path = write_svg(
+            '<text x="100" y="100" font-size="20" data-pptx-textbox="true" '
+            'data-pptx-box-x="100" data-pptx-box-y="80" data-pptx-box-w="260" data-pptx-box-h="40">title</text>'
+        )
+        with tmp:
+            report = validate_svg_text_slots(path, require_valign=True)
+
+        self.assertEqual(report["status"], "fail")
+        self.assertTrue(any(issue["code"] == "SVG-TEXT-MISSING-VALIGN" for issue in report["issues"]), report["issues"])
+
+    def test_invalid_valign_fails(self):
+        tmp, path = write_svg(
+            '<text x="100" y="100" font-size="20" data-pptx-textbox="true" data-pptx-valign="center-ish" '
+            'data-pptx-box-x="100" data-pptx-box-y="80" data-pptx-box-w="260" data-pptx-box-h="40">title</text>'
+        )
+        with tmp:
+            report = validate_svg_text_slots(path)
+
+        self.assertEqual(report["status"], "fail")
+        self.assertTrue(any(issue["code"] == "SVG-TEXT-INVALID-VALIGN" for issue in report["issues"]), report["issues"])
+
+    def test_center_lock_requires_middle_alignment(self):
+        tmp, path = write_svg(
+            '<text x="100" y="100" font-size="20" data-pptx-textbox="true" data-center-lock="true" '
+            'data-pptx-valign="top" data-pptx-box-x="100" data-pptx-box-y="80" data-pptx-box-w="260" '
+            'data-pptx-box-h="40">button</text>'
+        )
+        with tmp:
+            report = validate_svg_text_slots(path)
+
+        self.assertEqual(report["status"], "fail")
+        self.assertTrue(any(issue["code"] == "SVG-TEXT-CENTER-LOCK-VALIGN" for issue in report["issues"]), report["issues"])
+
+    def test_middle_aligned_box_passes_required_contract(self):
+        tmp, path = write_svg(
+            '<text x="100" y="100" font-size="20" data-pptx-textbox="true" data-center-lock="true" '
+            'data-pptx-valign="middle" data-pptx-box-x="100" data-pptx-box-y="80" data-pptx-box-w="260" '
+            'data-pptx-box-h="40">button</text>'
+        )
+        with tmp:
+            report = validate_svg_text_slots(path, require_valign=True, check_canvas=True)
+
+        self.assertEqual(report["status"], "pass", report["issues"])
+
+    def test_placeholder_measure_sample_is_used_before_export(self):
+        tmp, path = write_svg(
+            '<text x="100" y="100" font-size="20" data-pptx-textbox="true" '
+            'data-pptx-valign="middle" data-pptx-measure-text="99" '
+            'data-pptx-box-x="100" data-pptx-box-y="80" data-pptx-box-w="32" '
+            'data-pptx-box-h="40">{{PAGE_NUM}}</text>'
+        )
+        with tmp:
+            report = validate_svg_text_slots(path, require_valign=True, check_canvas=True)
+
+        self.assertEqual(report["status"], "pass", report["issues"])
+
+    def test_check_canvas_rejects_out_of_bounds_box(self):
+        tmp, path = write_svg(
+            '<text x="100" y="100" font-size="20" data-pptx-textbox="true" data-pptx-valign="top" '
+            'data-pptx-box-x="1200" data-pptx-box-y="80" data-pptx-box-w="200" data-pptx-box-h="40">overflow</text>'
+        )
+        with tmp:
+            report = validate_svg_text_slots(path, check_canvas=True)
+
+        self.assertEqual(report["status"], "fail")
+        self.assertTrue(any(issue["code"] == "SVG-TEXT-BOX-OFF-CANVAS" for issue in report["issues"]), report["issues"])
+
 
 if __name__ == "__main__":
     unittest.main()

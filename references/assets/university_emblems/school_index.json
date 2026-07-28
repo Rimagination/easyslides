@@ -1,0 +1,903 @@
+{
+  "schema_version": "easyslides.university_emblem_school_index.v1",
+  "source_manifest": "manifest.json",
+  "identification_method": "Manual visual reading from exported logo text; entries should be rechecked against official school identity before publication use.",
+  "entries": [
+    {
+      "id": "university_emblem_001",
+      "file": "png/university_emblem_001.png",
+      "school_name_zh": "北京大学",
+      "school_name_en": "Peking University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_002",
+      "file": "png/university_emblem_002.png",
+      "school_name_zh": "辽宁大学",
+      "school_name_en": "Liaoning University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_003",
+      "file": "png/university_emblem_003.png",
+      "school_name_zh": "清华大学",
+      "school_name_en": "Tsinghua University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_004",
+      "file": "png/university_emblem_004.png",
+      "school_name_zh": "中国政法大学",
+      "school_name_en": "China University of Political Science and Law",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_005",
+      "file": "png/university_emblem_005.png",
+      "school_name_zh": "华北电力大学",
+      "school_name_en": "North China Electric Power University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_006",
+      "file": "png/university_emblem_006.png",
+      "school_name_zh": "厦门大学",
+      "school_name_en": "Xiamen University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_007",
+      "file": "png/university_emblem_007.png",
+      "school_name_zh": "东北电力大学",
+      "school_name_en": "Northeast Dianli University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_008",
+      "file": "png/university_emblem_008.png",
+      "school_name_zh": "北京师范大学",
+      "school_name_en": "Beijing Normal University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_009",
+      "file": "png/university_emblem_009.png",
+      "school_name_zh": "中国人民大学",
+      "school_name_en": "Renmin University of China",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_010",
+      "file": "png/university_emblem_010.png",
+      "school_name_zh": "中国传媒大学",
+      "school_name_en": "Communication University of China",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_011",
+      "file": "png/university_emblem_011.png",
+      "school_name_zh": "北京邮电大学",
+      "school_name_en": "Beijing University of Posts and Telecommunications",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_012",
+      "file": "png/university_emblem_012.png",
+      "school_name_zh": "复旦大学",
+      "school_name_en": "Fudan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_013",
+      "file": "png/university_emblem_013.png",
+      "school_name_zh": "郑州大学",
+      "school_name_en": "Zhengzhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_014",
+      "file": "png/university_emblem_014.png",
+      "school_name_zh": "湖南大学",
+      "school_name_en": "Hunan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_015",
+      "file": "png/university_emblem_015.png",
+      "school_name_zh": "河南大学",
+      "school_name_en": "Henan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_016",
+      "file": "png/university_emblem_016.png",
+      "school_name_zh": "海南大学",
+      "school_name_en": "Hainan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_017",
+      "file": "png/university_emblem_017.png",
+      "school_name_zh": "河北工业大学",
+      "school_name_en": "Hebei University of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_018",
+      "file": "png/university_emblem_018.png",
+      "school_name_zh": "东北大学",
+      "school_name_en": "Northeastern University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_019",
+      "file": "png/university_emblem_019.png",
+      "school_name_zh": "东北师范大学",
+      "school_name_en": "Northeast Normal University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_020",
+      "file": "png/university_emblem_020.png",
+      "school_name_zh": "西安电子科技大学",
+      "school_name_en": "Xidian University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_021",
+      "file": "png/university_emblem_021.png",
+      "school_name_zh": "上海大学",
+      "school_name_en": "Shanghai University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_022",
+      "file": "png/university_emblem_022.png",
+      "school_name_zh": "西北工业大学",
+      "school_name_en": "Northwestern Polytechnical University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_023",
+      "file": "png/university_emblem_023.png",
+      "school_name_zh": "新疆大学",
+      "school_name_en": "Xinjiang University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_024",
+      "file": "png/university_emblem_024.png",
+      "school_name_zh": "哈尔滨工业大学",
+      "school_name_en": "Harbin Institute of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_025",
+      "file": "png/university_emblem_025.png",
+      "school_name_zh": "上海交通大学",
+      "school_name_en": "Shanghai Jiao Tong University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_026",
+      "file": "png/university_emblem_026.png",
+      "school_name_zh": "大连理工大学",
+      "school_name_en": "Dalian University of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_027",
+      "file": "png/university_emblem_027.png",
+      "school_name_zh": "兰州大学",
+      "school_name_en": "Lanzhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_028",
+      "file": "png/university_emblem_028.png",
+      "school_name_zh": "南京师范大学",
+      "school_name_en": "Nanjing Normal University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_029",
+      "file": "png/university_emblem_029.png",
+      "school_name_zh": "黑龙江大学",
+      "school_name_en": "Heilongjiang University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_030",
+      "file": "png/university_emblem_030.png",
+      "school_name_zh": "南开大学",
+      "school_name_en": "Nankai University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_031",
+      "file": "png/university_emblem_031.png",
+      "school_name_zh": "宁夏大学",
+      "school_name_en": "Ningxia University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_032",
+      "file": "png/university_emblem_032.png",
+      "school_name_zh": "内蒙古大学",
+      "school_name_en": "Inner Mongolia University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_033",
+      "file": "png/university_emblem_033.png",
+      "school_name_zh": "四川大学",
+      "school_name_en": "Sichuan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_034",
+      "file": "png/university_emblem_034.png",
+      "school_name_zh": "天津大学",
+      "school_name_en": "Tianjin University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_035",
+      "file": "png/university_emblem_035.png",
+      "school_name_zh": "西南大学",
+      "school_name_en": "Southwest University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_036",
+      "file": "png/university_emblem_036.png",
+      "school_name_zh": "太原理工大学",
+      "school_name_en": "Taiyuan University of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_037",
+      "file": "png/university_emblem_037.png",
+      "school_name_zh": "河北大学",
+      "school_name_en": "Hebei University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_038",
+      "file": "png/university_emblem_038.png",
+      "school_name_zh": "华北电力大学",
+      "school_name_en": "North China Electric Power University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_039",
+      "file": "png/university_emblem_039.png",
+      "school_name_zh": "江苏大学",
+      "school_name_en": "Jiangsu University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_040",
+      "file": "png/university_emblem_040.png",
+      "school_name_zh": "蚌埠医学院",
+      "school_name_en": "Bengbu Medical University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_041",
+      "file": "png/university_emblem_041.png",
+      "school_name_zh": "东华大学",
+      "school_name_en": "Donghua University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_042",
+      "file": "png/university_emblem_042.png",
+      "school_name_zh": "广州中医药大学",
+      "school_name_en": "Guangzhou University of Chinese Medicine",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_043",
+      "file": "png/university_emblem_043.png",
+      "school_name_zh": "贵州财经大学",
+      "school_name_en": "Guizhou University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_044",
+      "file": "png/university_emblem_044.png",
+      "school_name_zh": "贵州财经大学",
+      "school_name_en": "Guizhou University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_045",
+      "file": "png/university_emblem_045.png",
+      "school_name_zh": "沈阳建筑大学",
+      "school_name_en": "Shenyang Jianzhu University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_046",
+      "file": "png/university_emblem_046.png",
+      "school_name_zh": "西安交通大学",
+      "school_name_en": "Xi'an Jiaotong University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_047",
+      "file": "png/university_emblem_047.png",
+      "school_name_zh": "成都理工大学",
+      "school_name_en": "Chengdu University of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_048",
+      "file": "png/university_emblem_048.png",
+      "school_name_zh": "山东农业大学",
+      "school_name_en": "Shandong Agricultural University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_049",
+      "file": "png/university_emblem_049.png",
+      "school_name_zh": "南昌大学",
+      "school_name_en": "Nanchang University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_050",
+      "file": "png/university_emblem_050.png",
+      "school_name_zh": "集美大学",
+      "school_name_en": "Jimei University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_051",
+      "file": "png/university_emblem_051.png",
+      "school_name_zh": "沈阳药科大学",
+      "school_name_en": "Shenyang Pharmaceutical University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_052",
+      "file": "png/university_emblem_052.png",
+      "school_name_zh": "西北民族大学",
+      "school_name_en": "Northwest Minzu University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_053",
+      "file": "png/university_emblem_053.png",
+      "school_name_zh": "重庆师范大学",
+      "school_name_en": "Chongqing Normal University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_054",
+      "file": "png/university_emblem_054.png",
+      "school_name_zh": "山东中医药大学",
+      "school_name_en": "Shandong University of Traditional Chinese Medicine",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_055",
+      "file": "png/university_emblem_055.png",
+      "school_name_zh": "宁波大学",
+      "school_name_en": "Ningbo University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_056",
+      "file": "png/university_emblem_056.png",
+      "school_name_zh": "东南大学",
+      "school_name_en": "Southeast University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_057",
+      "file": "png/university_emblem_057.png",
+      "school_name_zh": "福州大学",
+      "school_name_en": "Fuzhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_058",
+      "file": "png/university_emblem_058.png",
+      "school_name_zh": "复旦大学",
+      "school_name_en": "Fudan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_059",
+      "file": "png/university_emblem_059.png",
+      "school_name_zh": "广西大学",
+      "school_name_en": "Guangxi University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_060",
+      "file": "png/university_emblem_060.png",
+      "school_name_zh": "广州大学",
+      "school_name_en": "Guangzhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_061",
+      "file": "png/university_emblem_061.png",
+      "school_name_zh": "贵州财经大学",
+      "school_name_en": "Guizhou University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_062",
+      "file": "png/university_emblem_062.png",
+      "school_name_zh": "贵州大学",
+      "school_name_en": "Guizhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_063",
+      "file": "png/university_emblem_063.png",
+      "school_name_zh": "哈尔滨理工大学",
+      "school_name_en": "Harbin University of Science and Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_064",
+      "file": "png/university_emblem_064.png",
+      "school_name_zh": "海南大学",
+      "school_name_en": "Hainan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_065",
+      "file": "png/university_emblem_065.png",
+      "school_name_zh": "合肥工业大学",
+      "school_name_en": "Hefei University of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_066",
+      "file": "png/university_emblem_066.png",
+      "school_name_zh": "河北大学",
+      "school_name_en": "Hebei University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_067",
+      "file": "png/university_emblem_067.png",
+      "school_name_zh": "河南大学",
+      "school_name_en": "Henan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_068",
+      "file": "png/university_emblem_068.png",
+      "school_name_zh": "黑龙江大学",
+      "school_name_en": "Heilongjiang University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_069",
+      "file": "png/university_emblem_069.png",
+      "school_name_zh": "湖南大学",
+      "school_name_en": "Hunan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_070",
+      "file": "png/university_emblem_070.png",
+      "school_name_zh": "华东理工大学",
+      "school_name_en": "East China University of Science and Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_071",
+      "file": "png/university_emblem_071.png",
+      "school_name_zh": "华中师范大学",
+      "school_name_en": "Central China Normal University",
+      "confidence": "high",
+      "notes": "Processed to keep the horizontal Central China Normal University version only."
+    },
+    {
+      "id": "university_emblem_072",
+      "file": "png/university_emblem_072.png",
+      "school_name_zh": "暨南大学",
+      "school_name_en": "Jinan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_073",
+      "file": "png/university_emblem_073.png",
+      "school_name_zh": "江南大学",
+      "school_name_en": "Jiangnan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_074",
+      "file": "png/university_emblem_074.png",
+      "school_name_zh": "江苏大学",
+      "school_name_en": "Jiangsu University",
+      "confidence": "high",
+      "notes": "Processed to keep the Jiangsu University mark only; removed the School of Electrical and Information Engineering variant."
+    },
+    {
+      "id": "university_emblem_075",
+      "file": "png/university_emblem_075.png",
+      "school_name_zh": "江西财经大学",
+      "school_name_en": "Jiangxi University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_076",
+      "file": "png/university_emblem_076.png",
+      "school_name_zh": "兰州大学",
+      "school_name_en": "Lanzhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_077",
+      "file": "png/university_emblem_077.png",
+      "school_name_zh": "南京大学",
+      "school_name_en": "Nanjing University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_078",
+      "file": "png/university_emblem_078.png",
+      "school_name_zh": "南开大学",
+      "school_name_en": "Nankai University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_079",
+      "file": "png/university_emblem_079.png",
+      "school_name_zh": "内蒙古工业大学",
+      "school_name_en": "Inner Mongolia University of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_080",
+      "file": "png/university_emblem_080.png",
+      "school_name_zh": "宁夏大学",
+      "school_name_en": "Ningxia University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_081",
+      "file": "png/university_emblem_081.png",
+      "school_name_zh": "青海大学",
+      "school_name_en": "Qinghai University",
+      "confidence": "high",
+      "notes": "Processed to keep the horizontal Qinghai University version only; upper stacked variant removed."
+    },
+    {
+      "id": "university_emblem_082",
+      "file": "png/university_emblem_082.png",
+      "school_name_zh": "清华大学",
+      "school_name_en": "Tsinghua University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_083",
+      "file": "png/university_emblem_083.png",
+      "school_name_zh": "厦门大学",
+      "school_name_en": "Xiamen University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_084",
+      "file": "png/university_emblem_084.png",
+      "school_name_zh": "山东大学",
+      "school_name_en": "Shandong University",
+      "confidence": "high",
+      "notes": "Processed to keep the horizontal Shandong University version only."
+    },
+    {
+      "id": "university_emblem_085",
+      "file": "png/university_emblem_085.png",
+      "school_name_zh": "山西大学",
+      "school_name_en": "Shanxi University",
+      "confidence": "high",
+      "notes": "Processed to keep the horizontal Shanxi University version only."
+    },
+    {
+      "id": "university_emblem_086",
+      "file": "png/university_emblem_086.png",
+      "school_name_zh": "汕头大学",
+      "school_name_en": "Shantou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_087",
+      "file": "png/university_emblem_087.png",
+      "school_name_zh": "上海财经大学",
+      "school_name_en": "Shanghai University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_088",
+      "file": "png/university_emblem_088.png",
+      "school_name_zh": "上海交通大学",
+      "school_name_en": "Shanghai Jiao Tong University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_089",
+      "file": "png/university_emblem_089.png",
+      "school_name_zh": "深圳大学",
+      "school_name_en": "Shenzhen University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_090",
+      "file": "png/university_emblem_090.png",
+      "school_name_zh": "四川大学",
+      "school_name_en": "Sichuan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_091",
+      "file": "png/university_emblem_091.png",
+      "school_name_zh": "太原理工大学",
+      "school_name_en": "Taiyuan University of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_092",
+      "file": "png/university_emblem_092.png",
+      "school_name_zh": "天津大学",
+      "school_name_en": "Tianjin University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_093",
+      "file": "png/university_emblem_093.png",
+      "school_name_zh": "同济大学",
+      "school_name_en": "Tongji University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_094",
+      "file": "png/university_emblem_094.png",
+      "school_name_zh": "武汉大学",
+      "school_name_en": "Wuhan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_095",
+      "file": "png/university_emblem_095.png",
+      "school_name_zh": "西南财经大学",
+      "school_name_en": "Southwestern University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_096",
+      "file": "png/university_emblem_096.png",
+      "school_name_zh": "西南大学",
+      "school_name_en": "Southwest University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_097",
+      "file": "png/university_emblem_097.png",
+      "school_name_zh": "西南交通大学",
+      "school_name_en": "Southwest Jiaotong University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_098",
+      "file": "png/university_emblem_098.png",
+      "school_name_zh": "新疆大学",
+      "school_name_en": "Xinjiang University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_099",
+      "file": "png/university_emblem_099.png",
+      "school_name_zh": "燕山大学",
+      "school_name_en": "Yanshan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_100",
+      "file": "png/university_emblem_100.png",
+      "school_name_zh": "云南大学",
+      "school_name_en": "Yunnan University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_101",
+      "file": "png/university_emblem_101.png",
+      "school_name_zh": "郑州大学",
+      "school_name_en": "Zhengzhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_102",
+      "file": "png/university_emblem_102.png",
+      "school_name_zh": "中北大学",
+      "school_name_en": "North University of China",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_103",
+      "file": "png/university_emblem_103.png",
+      "school_name_zh": "中国海洋大学",
+      "school_name_en": "Ocean University of China",
+      "confidence": "high",
+      "notes": "Processed into a horizontal Ocean University of China lockup and removed the slogan."
+    },
+    {
+      "id": "university_emblem_104",
+      "file": "png/university_emblem_104.png",
+      "school_name_zh": "中国海洋大学",
+      "school_name_en": "Ocean University of China",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_105",
+      "file": "png/university_emblem_105.png",
+      "school_name_zh": "中国科学技术大学",
+      "school_name_en": "University of Science and Technology of China",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_106",
+      "file": "png/university_emblem_106.png",
+      "school_name_zh": "中南大学",
+      "school_name_en": "Central South University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_107",
+      "file": "png/university_emblem_107.png",
+      "school_name_zh": "中央财经大学",
+      "school_name_en": "Central University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_108",
+      "file": "png/university_emblem_108.png",
+      "school_name_zh": "中央财经大学",
+      "school_name_en": "Central University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_109",
+      "file": "png/university_emblem_109.png",
+      "school_name_zh": "重庆大学",
+      "school_name_en": "Chongqing University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_110",
+      "file": "png/university_emblem_110.png",
+      "school_name_zh": "北京理工大学",
+      "school_name_en": "Beijing Institute of Technology",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_111",
+      "file": "png/university_emblem_111.png",
+      "school_name_zh": "延边大学",
+      "school_name_en": "Yanbian University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_112",
+      "file": "png/university_emblem_112.png",
+      "school_name_zh": "山东大学",
+      "school_name_en": "Shandong University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_113",
+      "file": "png/university_emblem_113.png",
+      "school_name_zh": "吉林大学",
+      "school_name_en": "Jilin University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_114",
+      "file": "png/university_emblem_114.png",
+      "school_name_zh": "江西财经大学",
+      "school_name_en": "Jiangxi University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_115",
+      "file": "png/university_emblem_115.png",
+      "school_name_zh": "东南大学",
+      "school_name_en": "Southeast University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_116",
+      "file": "png/university_emblem_116.png",
+      "school_name_zh": "安徽大学",
+      "school_name_en": "Anhui University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_117",
+      "file": "png/university_emblem_117.png",
+      "school_name_zh": "重庆大学",
+      "school_name_en": "Chongqing University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_118",
+      "file": "png/university_emblem_118.png",
+      "school_name_zh": "中山大学",
+      "school_name_en": "Sun Yat-sen University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_119",
+      "file": "png/university_emblem_119.png",
+      "school_name_zh": "贵州大学",
+      "school_name_en": "Guizhou University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_120",
+      "file": "png/university_emblem_120.png",
+      "school_name_zh": "中国海洋大学",
+      "school_name_en": "Ocean University of China",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_121",
+      "file": "png/university_emblem_121.png",
+      "school_name_zh": "东北财经大学",
+      "school_name_en": "Dongbei University of Finance and Economics",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_122",
+      "file": "png/university_emblem_122.png",
+      "school_name_zh": "浙江大学",
+      "school_name_en": "Zhejiang University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_123",
+      "file": "png/university_emblem_123.png",
+      "school_name_zh": "河北大学",
+      "school_name_en": "Hebei University",
+      "confidence": "high"
+    },
+    {
+      "id": "university_emblem_124",
+      "file": "png/university_emblem_124.png",
+      "school_name_zh": "华东师范大学",
+      "school_name_en": "East China Normal University",
+      "aliases": [
+        "ECNU",
+        "华东师大"
+      ],
+      "confidence": "high",
+      "source_url": "https://www.urongda.com/logos/4131010269"
+    },
+    {
+      "id": "ecnu_logo_wordmark",
+      "file": "svg/ecnu_logo_wordmark.svg",
+      "preview_png": "png/ecnu_logo_wordmark.png",
+      "school_name_zh": "华东师范大学",
+      "school_name_en": "East China Normal University",
+      "aliases": [
+        "ECNU",
+        "华东师大"
+      ],
+      "confidence": "high",
+      "source_file": "C:/Users/Liang/Downloads/logo3.svg",
+      "preferred_for": [
+        "defense_leftnav",
+        "school_brand_wordmark"
+      ]
+    }
+  ]
+}

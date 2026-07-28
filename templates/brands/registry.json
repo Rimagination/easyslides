@@ -1,0 +1,10 @@
+{
+  "schema_version": "easyslides.brand_registry.v1",
+  "brands": [
+    {
+      "id": "academic-blue",
+      "name": "Academic Blue",
+      "path": "academic-blue/brand.json"
+    }
+  ]
+}

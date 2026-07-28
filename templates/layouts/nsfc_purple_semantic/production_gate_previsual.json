@@ -1,0 +1,56 @@
+{
+  "schema_version": "easyslides.template_production_gate.v1",
+  "template_id": "nsfc_purple_semantic",
+  "status": "review_required",
+  "production_eligible": false,
+  "blocking_count": 0,
+  "review_count": 3,
+  "gates": [
+    {
+      "id": "contract",
+      "status": "pass",
+      "layout_count": 12,
+      "variant_count": 8,
+      "issues": []
+    },
+    {
+      "id": "svg_quality",
+      "status": "pass",
+      "issues": [],
+      "file_count": 12
+    },
+    {
+      "id": "pptx_text_layout",
+      "status": "review_required",
+      "issues": [
+        {
+          "code": "PPTX-MISSING",
+          "severity": "review",
+          "message": "A rendered PPTX is required."
+        }
+      ]
+    },
+    {
+      "id": "placeholder_scan",
+      "status": "review_required",
+      "issues": [
+        {
+          "code": "PPTX-MISSING",
+          "severity": "review",
+          "message": "A rendered PPTX is required."
+        }
+      ]
+    },
+    {
+      "id": "human_visual_review",
+      "status": "review_required",
+      "issues": [
+        {
+          "code": "HUMAN-REVIEW-MISSING",
+          "severity": "review",
+          "message": "A visual reviewer must approve the rendered contact sheet."
+        }
+      ]
+    }
+  ]
+}

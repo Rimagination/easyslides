@@ -63,9 +63,41 @@ python scripts/build_icon_gallery.py
 
 ---
 
+## EasySlides product layer
+
+The SVG directories are the visual source of truth. The product layer is
+`scripts/icon_library.py`, which exposes family metadata, semantic lookup,
+payload validation, and project-local synchronization. Family assets are
+registered as `icon_family/<family>` while individual SVGs use tokens such as
+`tabler-outline/home`.
+
+The selector treats `chunk-filled`, `lucide`, `tabler-filled`,
+`tabler-outline`, and `phosphor-duotone` as stylistic families. A selection
+batch may use only one stylistic family; `simple-icons` may accompany it for
+real brand marks. This rule is validated before project assets are copied.
+
+Useful commands:
+
+```bash
+python scripts/icon_library.py validate
+python scripts/icon_library.py list --family tabler-outline
+python scripts/icon_library.py search "environment" --family tabler-outline
+python scripts/icon_library.py sync <project_path> tabler-outline/leaf simple-icons/github
+python scripts/component_selector.py query --content-shape icon --limit 10
+```
+
+---
+
 ## Searching for Icons
 
-Use `ls | grep` — zero token cost:
+Use the productized search command for semantic lookup:
+
+```bash
+python scripts/icon_library.py search "environment" --limit 20
+python scripts/icon_library.py search "data" --style stroke --limit 20
+```
+
+For a known basename, direct filesystem search remains useful:
 
 ```bash
 ls templates/icons/chunk-filled/ | grep home

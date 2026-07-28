@@ -1,0 +1,6 @@
+interface:
+  display_name: "EasySlides"
+  short_description: "Create and distill editable academic PPTX decks"
+  default_prompt: "Use $easyslides to create or distill an editable academic PPTX."
+policy:
+  allow_implicit_invocation: true

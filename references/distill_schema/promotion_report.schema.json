@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://easyslides.local/schema/promotion_report.v1.json",
+  "title": "EasySlides PPTX distillation promotion report",
+  "type": "object",
+  "required": ["schema_version", "status", "promotable", "source_workspace", "template_dir", "gates", "decision"],
+  "properties": {
+    "schema_version": {"const": "easyslides.pptx_distill_promotion_report.v1"},
+    "status": {"enum": ["pass", "review_required", "fail"]},
+    "promotable": {"type": "boolean"},
+    "source_workspace": {"type": "string", "minLength": 1},
+    "template_dir": {"type": "string", "minLength": 1},
+    "output_dir": {"type": "string"},
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "issues"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["pass", "review_required", "not_run", "skipped", "fail"]},
+          "issues": {"type": "array", "items": {"type": "object"}}
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": ["promotable", "rule", "next_actions"],
+      "properties": {
+        "promotable": {"type": "boolean"},
+        "rule": {"type": "string"},
+        "next_actions": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

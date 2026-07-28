@@ -1,0 +1,3523 @@
+{
+  "schema_version": "easyslides.nsfc_defense.component_catalog.v1",
+  "template_id": "nsfc_defense",
+  "selection_policy": "body_variant_recipe_then_declared_slot_capacity",
+  "primitive_manifest": "component_primitives.json",
+  "recipe_manifest": "body_variant_recipes.json",
+  "components": [
+    {
+      "asset_id": "component/nsfc_defense/evidence_triptych",
+      "component_id": "evidence_triptych",
+      "asset_path": "assets/components/evidence_triptych.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "national-need claim, relationship, and three evidence exhibits",
+      "slots": [
+        {
+          "slot_id": "CLAIM",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 32,
+            "y": 22,
+            "width": 650,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 32,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 23,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RELATION_LEFT",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 48,
+            "y": 118,
+            "width": 192,
+            "height": 70
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 13,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RELATION_RIGHT",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 276,
+            "y": 118,
+            "width": 192,
+            "height": 70
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 13,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 28,
+            "y": 280,
+            "width": 220,
+            "height": 136
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 28,
+            "y": 424,
+            "width": 220,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 270,
+            "y": 280,
+            "width": 220,
+            "height": 136
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 270,
+            "y": 424,
+            "width": 220,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 530,
+            "y": 98,
+            "width": 300,
+            "height": 196
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_03_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 530,
+            "y": 302,
+            "width": 300,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CALLOUT_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 862,
+            "y": 105,
+            "width": 224,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 15,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CALLOUT_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 862,
+            "y": 166,
+            "width": 224,
+            "height": 96
+          },
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 17,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "CALLOUT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 862,
+            "y": 294,
+            "width": 224,
+            "height": 146
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 530,
+            "y": 372,
+            "width": 556,
+            "height": 70
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 35,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/two_track_evidence",
+      "component_id": "two_track_evidence",
+      "asset_path": "assets/components/two_track_evidence.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "two strategic tracks with evidence and an application callout",
+      "slots": [
+        {
+          "slot_id": "TRACK_01_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 22,
+            "width": 492,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "TRACK_01_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 86,
+            "width": 260,
+            "height": 162
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "TRACK_01_POINT_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 310,
+            "y": 86,
+            "width": 212,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "TRACK_01_POINT_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 310,
+            "y": 145,
+            "width": 212,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "TRACK_01_POINT_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 310,
+            "y": 204,
+            "width": 212,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "TRACK_02_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 598,
+            "y": 22,
+            "width": 492,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "TRACK_02_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 598,
+            "y": 86,
+            "width": 330,
+            "height": 246
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "TRACK_02_CALLOUT_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 948,
+            "y": 88,
+            "width": 142,
+            "height": 48
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 17,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "TRACK_02_CALLOUT_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 948,
+            "y": 154,
+            "width": 142,
+            "height": 128
+          },
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "TRACK_01_TAKEAWAY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 372,
+            "width": 492,
+            "height": 68
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 30,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "TRACK_02_TAKEAWAY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 598,
+            "y": 372,
+            "width": 492,
+            "height": 68
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 30,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 180,
+            "y": 462,
+            "width": 760,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 42,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/bottleneck_chain",
+      "component_id": "bottleneck_chain",
+      "asset_path": "assets/components/bottleneck_chain.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "claim, bottleneck, four connected scientific exhibits, and conclusion",
+      "slots": [
+        {
+          "slot_id": "CLAIM",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 28,
+            "y": 20,
+            "width": 1064,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 42,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 22,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "BOTTLENECK",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 270,
+            "y": 84,
+            "width": 580,
+            "height": 50
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 28,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 24,
+            "y": 184,
+            "width": 238,
+            "height": 142
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "NODE_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 24,
+            "y": 338,
+            "width": 238,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 17,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 300,
+            "y": 184,
+            "width": 238,
+            "height": 142
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "NODE_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 300,
+            "y": 338,
+            "width": 238,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 17,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 576,
+            "y": 184,
+            "width": 238,
+            "height": 142
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "NODE_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 576,
+            "y": 338,
+            "width": 238,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 17,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_04",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 852,
+            "y": 184,
+            "width": 238,
+            "height": 142
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "NODE_04",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 852,
+            "y": 338,
+            "width": 238,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 17,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 110,
+            "y": 430,
+            "width": 900,
+            "height": 52
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 22,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/hotspot_metrics",
+      "component_id": "hotspot_metrics",
+      "asset_path": "assets/components/hotspot_metrics.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "research hotspot with hero evidence, supporting figures, and four metrics",
+      "slots": [
+        {
+          "slot_id": "THEME_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 20,
+            "width": 390,
+            "height": 48
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 22,
+          "fill": "#751497",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "THEME_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 78,
+            "width": 390,
+            "height": 86
+          },
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "HERO_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 452,
+            "y": 20,
+            "width": 278,
+            "height": 174
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "TRANSITION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 206,
+            "width": 700,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 38,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 268,
+            "width": 318,
+            "height": 160
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 436,
+            "width": 318,
+            "height": 32
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 374,
+            "y": 268,
+            "width": 318,
+            "height": 160
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 374,
+            "y": 436,
+            "width": 318,
+            "height": 32
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_01_VALUE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 770,
+            "y": 40,
+            "width": 136,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 24,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_01_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 770,
+            "y": 84,
+            "width": 136,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_02_VALUE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 936,
+            "y": 40,
+            "width": 136,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 24,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_02_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 936,
+            "y": 84,
+            "width": 136,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_03_VALUE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 770,
+            "y": 142,
+            "width": 136,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 24,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_03_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 770,
+            "y": 186,
+            "width": 136,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_04_VALUE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 936,
+            "y": 142,
+            "width": 136,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 24,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_04_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 936,
+            "y": 186,
+            "width": 136,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 11,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 748,
+            "y": 278,
+            "width": 340,
+            "height": 142
+          },
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 21,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/hotspot_panels",
+      "component_id": "hotspot_panels",
+      "asset_path": "assets/components/hotspot_panels.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "three linked research hotspot panels with a synthesis",
+      "slots": [
+        {
+          "slot_id": "PANEL_01_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 24,
+            "width": 320,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 17,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "PANEL_01_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 84,
+            "width": 320,
+            "height": 68
+          },
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "PANEL_01_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 170,
+            "width": 320,
+            "height": 184
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PANEL_02_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 400,
+            "y": 24,
+            "width": 320,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 17,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "PANEL_02_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 400,
+            "y": 84,
+            "width": 320,
+            "height": 68
+          },
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "PANEL_02_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 400,
+            "y": 170,
+            "width": 320,
+            "height": 184
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PANEL_03_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 770,
+            "y": 24,
+            "width": 320,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 17,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "PANEL_03_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 770,
+            "y": 84,
+            "width": 320,
+            "height": 68
+          },
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "PANEL_03_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 770,
+            "y": 170,
+            "width": 320,
+            "height": 184
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 150,
+            "y": 400,
+            "width": 820,
+            "height": 60
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 46,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/innovation_evidence",
+      "component_id": "innovation_evidence",
+      "asset_path": "assets/components/innovation_evidence.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "innovation claim, four-step route, and three supporting exhibits",
+      "slots": [
+        {
+          "slot_id": "INNOVATION_CLAIM",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 20,
+            "width": 1060,
+            "height": 48
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 48,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 22,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "STEP_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 42,
+            "y": 106,
+            "width": 214,
+            "height": 54
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "STEP_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 310,
+            "y": 106,
+            "width": 214,
+            "height": 54
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "STEP_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 578,
+            "y": 106,
+            "width": 214,
+            "height": 54
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "STEP_04",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 846,
+            "y": 106,
+            "width": 214,
+            "height": 54
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "SUPPORTING_LINE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 184,
+            "y": 184,
+            "width": 752,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 42,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 38,
+            "y": 258,
+            "width": 318,
+            "height": 152
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 38,
+            "y": 418,
+            "width": 318,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 401,
+            "y": 258,
+            "width": 318,
+            "height": 152
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 401,
+            "y": 418,
+            "width": 318,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 764,
+            "y": 258,
+            "width": 318,
+            "height": 152
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_03_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 764,
+            "y": 418,
+            "width": 318,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/ann_snn_comparison",
+      "component_id": "ann_snn_comparison",
+      "asset_path": "assets/components/ann_snn_comparison.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "ANN/SNN comparison matrix, method objective, and two evidence figures",
+      "slots": [
+        {
+          "slot_id": "TABLE_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 20,
+            "width": 690,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 32,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "COLUMN_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 78,
+            "width": 154,
+            "height": 36
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "COLUMN_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 184,
+            "y": 78,
+            "width": 268,
+            "height": 36
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "COLUMN_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 452,
+            "y": 78,
+            "width": 268,
+            "height": 36
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 12,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_01_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 114,
+            "width": 154,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_01_ANN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 184,
+            "y": 114,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_01_SNN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 452,
+            "y": 114,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_02_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 152,
+            "width": 154,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_02_ANN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 184,
+            "y": 152,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_02_SNN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 452,
+            "y": 152,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_03_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 190,
+            "width": 154,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_03_ANN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 184,
+            "y": 190,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_03_SNN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 452,
+            "y": 190,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_04_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 228,
+            "width": 154,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_04_ANN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 184,
+            "y": 228,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ROW_04_SNN",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 452,
+            "y": 228,
+            "width": 268,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "OBJECTIVE_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 764,
+            "y": 29,
+            "width": 324,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "OBJECTIVE_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 764,
+            "y": 88,
+            "width": 324,
+            "height": 96
+          },
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 48,
+            "y": 328,
+            "width": 310,
+            "height": 118
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_01_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 48,
+            "y": 454,
+            "width": 310,
+            "height": 30
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 402,
+            "y": 328,
+            "width": 310,
+            "height": 118
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "FIGURE_02_CAPTION",
+          "kind": "text",
+          "required": false,
+          "geometry": {
+            "x": 402,
+            "y": 454,
+            "width": 310,
+            "height": 30
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 764,
+            "y": 244,
+            "width": 324,
+            "height": 184
+          },
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 18,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/plasticity_training",
+      "component_id": "plasticity_training",
+      "asset_path": "assets/components/plasticity_training.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "training mechanism comparison, callout, and device evidence",
+      "slots": [
+        {
+          "slot_id": "POINT_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 20,
+            "width": 514,
+            "height": 48
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 29,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "POINT_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 576,
+            "y": 20,
+            "width": 514,
+            "height": 48
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 29,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ANN_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 94,
+            "width": 300,
+            "height": 36
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "ANN_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 138,
+            "width": 300,
+            "height": 188
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "SNN_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 386,
+            "y": 94,
+            "width": 300,
+            "height": 36
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "SNN_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 386,
+            "y": 138,
+            "width": 300,
+            "height": 188
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "CALLOUT_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 748,
+            "y": 94,
+            "width": 340,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CALLOUT_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 748,
+            "y": 148,
+            "width": 340,
+            "height": 96
+          },
+          "capacity": {
+            "max_lines": 4,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "SUPPORT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 748,
+            "y": 270,
+            "width": 340,
+            "height": 110
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 80,
+            "y": 422,
+            "width": 960,
+            "height": 52
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 55,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/network_architecture",
+      "component_id": "network_architecture",
+      "asset_path": "assets/components/network_architecture.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "formula, network architecture, module evidence, and hardware flow",
+      "slots": [
+        {
+          "slot_id": "ARCHITECTURE_CLAIM",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 20,
+            "width": 470,
+            "height": 52
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FORMULA",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 92,
+            "width": 220,
+            "height": 54
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 276,
+            "y": 84,
+            "width": 240,
+            "height": 142
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "STAGE_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 534,
+            "y": 96,
+            "width": 170,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "STAGE_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 732,
+            "y": 96,
+            "width": 170,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "STAGE_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 930,
+            "y": 96,
+            "width": 160,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "MODULE_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 258,
+            "width": 330,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 310,
+            "width": 330,
+            "height": 132
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "MODULE_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 378,
+            "y": 310,
+            "width": 280,
+            "height": 132
+          },
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "HARDWARE_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 704,
+            "y": 258,
+            "width": 386,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 20,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 704,
+            "y": 310,
+            "width": 386,
+            "height": 132
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 162,
+            "y": 466,
+            "width": 796,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 43,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/sensor_application",
+      "component_id": "sensor_application",
+      "asset_path": "assets/components/sensor_application.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "dual application evidence: calibrated sensor and downstream system",
+      "slots": [
+        {
+          "slot_id": "APPLICATION_CLAIM",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 18,
+            "width": 1060,
+            "height": 46
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 50,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "LEFT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 94,
+            "width": 476,
+            "height": 230
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "LEFT_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 334,
+            "width": 476,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "LEFT_NODE_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 30,
+            "y": 390,
+            "width": 142,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "LEFT_NODE_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 194,
+            "y": 390,
+            "width": 142,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "LEFT_NODE_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 358,
+            "y": 390,
+            "width": 142,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RIGHT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 614,
+            "y": 94,
+            "width": 476,
+            "height": 230
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "RIGHT_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 614,
+            "y": 334,
+            "width": 476,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 25,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 19,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RIGHT_NODE_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 614,
+            "y": 390,
+            "width": 142,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RIGHT_NODE_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 778,
+            "y": 390,
+            "width": 142,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RIGHT_NODE_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 942,
+            "y": 390,
+            "width": 142,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 15,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 150,
+            "y": 458,
+            "width": 820,
+            "height": 38
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 46,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/literature_result",
+      "component_id": "literature_result",
+      "asset_path": "assets/components/literature_result.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "researcher profile, publication collage, and external validation",
+      "slots": [
+        {
+          "slot_id": "PROFILE_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 54,
+            "width": 164,
+            "height": 164
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PROFILE_NAME",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 216,
+            "y": 58,
+            "width": 284,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 16,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 22,
+          "fill": "#751497",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "PROFILE_CREDENTIAL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 216,
+            "y": 108,
+            "width": 284,
+            "height": 48
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "PROFILE_QUOTE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 216,
+            "y": 170,
+            "width": 284,
+            "height": 54
+          },
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "PAPER_FIGURE_01",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 536,
+            "y": 50,
+            "width": 248,
+            "height": 150
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAPER_FIGURE_02",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 810,
+            "y": 50,
+            "width": 280,
+            "height": 150
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "PAPER_FIGURE_03",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 276,
+            "width": 328,
+            "height": 144
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "VALIDATION_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 390,
+            "y": 274,
+            "width": 286,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "VALIDATION_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 390,
+            "y": 330,
+            "width": 286,
+            "height": 100
+          },
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 18,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "RESULT_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 720,
+            "y": 274,
+            "width": 370,
+            "height": 44
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 22,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RESULT_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 720,
+            "y": 330,
+            "width": 370,
+            "height": 100
+          },
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 24,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 136,
+            "y": 462,
+            "width": 848,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 46,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    },
+    {
+      "asset_id": "component/nsfc_defense/application_benefits",
+      "component_id": "application_benefits",
+      "asset_path": "assets/components/application_benefits.svg",
+      "asset_status": "renderable_svg",
+      "render_backend": "template_svg_component",
+      "renderer_id": "svg_fragment",
+      "classification": "template_scoped",
+      "reuse_policy": "nsfc_defense_shell_or_body_variant",
+      "description": "transfer evidence, quantitative benefits, and application result",
+      "slots": [
+        {
+          "slot_id": "HERO_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 30,
+            "y": 26,
+            "width": 340,
+            "height": 184
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "TRANSFER_CLAIM",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 400,
+            "y": 26,
+            "width": 690,
+            "height": 48
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 38,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 21,
+          "fill": "#751497",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "TRANSFER_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 400,
+            "y": 88,
+            "width": 690,
+            "height": 72
+          },
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 44,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "start"
+        },
+        {
+          "slot_id": "TAG_01",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 400,
+            "y": 176,
+            "width": 146,
+            "height": 32
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 14,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "TAG_02",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 558,
+            "y": 176,
+            "width": 146,
+            "height": 32
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 14,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "TAG_03",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 716,
+            "y": 176,
+            "width": 146,
+            "height": 32
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 14,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "TAG_04",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 874,
+            "y": 176,
+            "width": 146,
+            "height": 32
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 9,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 14,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_01_VALUE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 40,
+            "y": 276,
+            "width": 220,
+            "height": 56
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 31,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_01_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 40,
+            "y": 338,
+            "width": 220,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_02_VALUE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 286,
+            "y": 276,
+            "width": 220,
+            "height": 56
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 10,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 31,
+          "fill": "#751497",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "METRIC_02_LABEL",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 286,
+            "y": 338,
+            "width": 220,
+            "height": 34
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 14,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 16,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RESULT_FIGURE",
+          "kind": "image",
+          "required": false,
+          "geometry": {
+            "x": 658,
+            "y": 258,
+            "width": 432,
+            "height": 142
+          },
+          "image_fit": "contain"
+        },
+        {
+          "slot_id": "RESULT_TITLE",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 532,
+            "y": 278,
+            "width": 106,
+            "height": 40
+          },
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 7,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 17,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "RESULT_BODY",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 532,
+            "y": 328,
+            "width": 106,
+            "height": 62
+          },
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 7,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 14,
+          "fill": "#060607",
+          "text_anchor": "middle"
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true,
+          "geometry": {
+            "x": 120,
+            "y": 448,
+            "width": 880,
+            "height": 42
+          },
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 48,
+            "overflow_action": "choose_variant_or_split"
+          },
+          "vertical_anchor": "middle",
+          "font_size": 20,
+          "fill": "#FFFFFF",
+          "text_anchor": "middle"
+        }
+      ],
+      "selection": {
+        "page_roles": [
+          "content",
+          "agenda",
+          "chapter"
+        ],
+        "archetypes": [
+          "ann_snn_comparison",
+          "application_benefits",
+          "bottleneck_chain",
+          "chapter_divider",
+          "cover",
+          "ending",
+          "evidence_triptych",
+          "evidence_triptych_default",
+          "hotspot_metrics",
+          "hotspot_panels",
+          "innovation_evidence",
+          "literature_result",
+          "network_architecture",
+          "plasticity_training",
+          "section_roadmap",
+          "sensor_application",
+          "two_track_evidence"
+        ],
+        "density": "dense_research_defense"
+      },
+      "geometry": {
+        "width": 1120,
+        "height": 520
+      },
+      "qa": {
+        "required_gates": [
+          "asset_manifest",
+          "component_geometry",
+          "vertical_center_alignment"
+        ]
+      }
+    }
+  ],
+  "symbols": [],
+  "unknown_component_count": 0
+}

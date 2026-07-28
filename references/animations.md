@@ -19,13 +19,13 @@ Run the standalone [`customize-animations`](../workflows/customize-animations.md
 
 ```bash
 # Build an editable scaffold from real top-level <g id> anchors
-python3 skills/ppt-master/scripts/animation_config.py scaffold <project>
+python3 scripts/animation_config.py scaffold <project>
 
 # Validate references before export
-python3 skills/ppt-master/scripts/animation_config.py validate <project>
+python3 scripts/animation_config.py validate <project>
 
 # Export reads <project>/animations.json automatically when present
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project>
+python3 scripts/svg_to_pptx.py <project>
 ```
 
 Minimal sidecar:
@@ -60,13 +60,13 @@ Rules:
 
 ```bash
 # Pick a different effect
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -t push --transition-duration 0.6
+python3 scripts/svg_to_pptx.py <project> -t push --transition-duration 0.6
 
 # Disable
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -t none
+python3 scripts/svg_to_pptx.py <project> -t none
 
 # Auto-advance every 5 seconds (kiosk-style playback)
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --auto-advance 5
+python3 scripts/svg_to_pptx.py <project> --auto-advance 5
 ```
 
 Available effects: `fade`, `push`, `wipe`, `split`, `strips`, `cover`, `random`.
@@ -87,23 +87,23 @@ Enabled by default (`mixed` effect + `after-previous` trigger). Three Start mode
 
 ```bash
 # Default behavior (no flags needed): mixed effect + after-previous cascade
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project>
+python3 scripts/svg_to_pptx.py <project>
 
 # Disable per-element animation entirely
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> -a none
+python3 scripts/svg_to_pptx.py <project> -a none
 
 # Use a single effect (still cascades via the default after-previous trigger)
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --animation fade
+python3 scripts/svg_to_pptx.py <project> --animation fade
 
 # Switch to on-click for live presentations (presenter controls pacing)
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --animation-trigger on-click
+python3 scripts/svg_to_pptx.py <project> --animation-trigger on-click
 
 # Custom pacing
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --animation mixed \
+python3 scripts/svg_to_pptx.py <project> --animation mixed \
         --animation-stagger 0.7 --animation-duration 0.5
 
 # All groups animate in unison on slide entry
-python3 skills/ppt-master/scripts/svg_to_pptx.py <project> --animation-trigger with-previous
+python3 scripts/svg_to_pptx.py <project> --animation-trigger with-previous
 ```
 
 22 single effects: `appear`, `fade`, `fly`, `cut`, `zoom`, `wipe`, `split`, `blinds`, `checkerboard`, `dissolve`, `random_bars`, `peek`, `wheel`, `box`, `circle`, `diamond`, `plus`, `strips`, `wedge`, `stretch`, `expand`, `swivel`. Plus two auto-vary modes:
@@ -136,7 +136,7 @@ Aim for **3–8 content groups per slide**. This is also the granularity PowerPo
 - ≤ 8 visible top-level primitives → each becomes one anchor (capped to avoid 70+ atom cascades on dense pages).
 - > 8 → animation is skipped on that slide. The slide still renders, just without entrance animation.
 
-Executors should wrap logical sections in `<g id>` regardless of whether you plan to animate. The Executor reference (`skills/ppt-master/references/shared-standards.md`) requires it.
+Executors should wrap logical sections in `<g id>` regardless of whether you plan to animate. The Executor reference (`references/shared-standards.md`) requires it.
 
 ## Limitations
 

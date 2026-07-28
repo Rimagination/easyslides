@@ -74,6 +74,9 @@ class DeckPlanContractTests(unittest.TestCase):
         self.assertEqual(report["status"], "pass", report["issues"])
         self.assertEqual(report["slide_count"], 2)
         self.assertEqual(report["pages"], ["P01", "P02"])
+        self.assertEqual(report["component_plan_status"], "pass")
+        self.assertEqual(report["component_plan"]["slide_count"], 2)
+        self.assertTrue(report["component_plan"]["slides"][0]["selected_assets"])
 
     def test_unknown_evidence_source_and_missing_action_title_fail(self):
         from scripts.deck_plan_contract import validate_deck_plan
@@ -156,6 +159,29 @@ class DeckPlanContractTests(unittest.TestCase):
         report = json.loads(result.stdout)
         self.assertEqual(report["status"], "pass")
         self.assertEqual(report["slide_count"], 2)
+
+    def test_cli_rejects_deck_plan_when_sibling_clarification_is_unconfirmed(self):
+        from scripts.clarification_gate import build_clarification_request
+
+        with tempfile.TemporaryDirectory() as tmp:
+            plan_path = Path(tmp) / "deck_plan.json"
+            plan_path.write_text(json.dumps(valid_deck_plan(), ensure_ascii=False), encoding="utf-8")
+            (Path(tmp) / "clarification_request.json").write_text(
+                json.dumps(build_clarification_request("new_deck"), ensure_ascii=False),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [sys.executable, str(VALIDATOR), str(plan_path), "--repo-root", str(ROOT), "--json"],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+                encoding="utf-8",
+            )
+
+        self.assertNotEqual(result.returncode, 0)
+        report = json.loads(result.stdout)
+        self.assertEqual(report["clarification_status"], "fail")
+        self.assertIn("DECK-PLAN-CLARIFICATION", {item["code"] for item in report["issues"]})
 
     def test_workflow_docs_require_deck_plan_before_spec_lock(self):
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")

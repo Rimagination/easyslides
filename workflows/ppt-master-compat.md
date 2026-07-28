@@ -95,7 +95,7 @@ Executor gate command:
 ```bash
 python scripts/ppt_master_pipeline.py validate-executor <project_path>
 python scripts/svg_quality_checker.py <project_path>
-python scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed
+python scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed --require-valign --check-canvas
 ```
 
 The Executor phase is complete only when:
@@ -129,8 +129,9 @@ Dry-run the command plan:
 python scripts/ppt_master_pipeline.py export <project_path> --dry-run
 ```
 
-Generate full-size PNG previews during export when local LibreOffice/Poppler or
-PyMuPDF render tooling is available:
+Generate full-size PNG previews during export. On Windows the export preview
+uses installed Microsoft PowerPoint first, with LibreOffice/Poppler or PyMuPDF
+as a fallback:
 
 ```bash
 python scripts/ppt_master_pipeline.py export <project_path> --render-png-preview

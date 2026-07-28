@@ -10,6 +10,26 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 class TemplateGeometryQaTests(unittest.TestCase):
+    def test_compiled_shell_sequence_reuses_content_contract_for_repeated_pages(self):
+        from scripts.template_geometry_qa import _page_assignments
+
+        pages = [
+            {"page_id": "cover", "svg": "01_cover.svg"},
+            {"page_id": "content", "svg": "04_content.svg"},
+            {"page_id": "ending", "svg": "05_ending.svg"},
+        ]
+
+        assignments, issues = _page_assignments(
+            pages,
+            slide_count=3,
+            slide_shell_ids=["content", "content", "ending"],
+        )
+
+        self.assertEqual(issues, [])
+        self.assertEqual(assignments[1]["svg"], "04_content.svg")
+        self.assertEqual(assignments[2]["svg"], "04_content.svg")
+        self.assertEqual(assignments[3]["svg"], "05_ending.svg")
+
     def test_pptx_text_visual_box_is_tighter_than_autofit_shape_extents(self):
         from scripts.template_geometry_qa import Box, pptx_visual_text_box
 
@@ -121,6 +141,14 @@ class TemplateGeometryQaTests(unittest.TestCase):
 
         self.assertIsNotNone(assigned)
         self.assertEqual(assigned[0], "label")
+
+    def test_large_diagram_label_edge_bleed_is_allowed(self):
+        from scripts.template_geometry_qa import Box, container_edge_label_bleed_allowed
+
+        container = Box(x=100, y=100, width=770, height=500)
+        label = Box(x=768, y=520, width=113, height=36)
+
+        self.assertTrue(container_edge_label_bleed_allowed(label, container))
 
     def test_center_anchored_text_inside_container_passes(self):
         from scripts.template_geometry_qa import validate_template_geometry

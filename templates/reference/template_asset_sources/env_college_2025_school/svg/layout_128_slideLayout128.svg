@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-2" data-name="Title 1" data-ph-type="title">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph title</text>
+</g>
+<g id="layout-shape-9" data-name="Slide Number Placeholder 8" data-ph-type="sldNum">
+<rect x="0" y="0" width="0" height="0" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="8" y="18" font-size="12" fill="#64748B">ph sldNum idx=11</text>
+</g>
+<g id="layout-shape-4" data-name="Text Placeholder 3" data-ph-type="body">
+<rect x="88" y="70.07" width="1104" height="33.8" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="96" y="88.07" font-size="12" fill="#64748B">ph body idx=12</text>
+</g>
+<g id="layout-shape-5" data-name="Picture Placeholder 3" data-ph-type="pic">
+<rect x="420.78" y="207.91" width="111.65" height="111.65" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="428.78" y="225.91" font-size="12" fill="#64748B">ph pic idx=15</text>
+</g>
+<g id="layout-shape-6" data-name="Picture Placeholder 3" data-ph-type="pic">
+<rect x="572.63" y="196.37" width="134.74" height="134.74" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="580.63" y="214.37" font-size="12" fill="#64748B">ph pic idx=16</text>
+</g>
+<g id="layout-shape-7" data-name="Picture Placeholder 3" data-ph-type="pic">
+<rect x="747.57" y="207.91" width="111.65" height="111.65" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="755.57" y="225.91" font-size="12" fill="#64748B">ph pic idx=17</text>
+</g>
+<g id="layout-shape-8" data-name="Picture Placeholder 3" data-ph-type="pic">
+<rect x="899.42" y="213.73" width="100" height="100" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="907.42" y="231.73" font-size="12" fill="#64748B">ph pic idx=18</text>
+</g>
+<g id="layout-shape-10" data-name="Picture Placeholder 3" data-ph-type="pic">
+<rect x="280.58" y="213.73" width="100" height="100" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="288.58" y="231.73" font-size="12" fill="#64748B">ph pic idx=19</text>
+</g>
+<g id="layout-shape-11" data-name="Picture Placeholder 3" data-ph-type="pic">
+<rect x="1039.62" y="227.4" width="72.67" height="72.67" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="1047.62" y="245.4" font-size="12" fill="#64748B">ph pic idx=20</text>
+</g>
+<g id="layout-shape-12" data-name="Picture Placeholder 3" data-ph-type="pic">
+<rect x="167.72" y="227.4" width="72.67" height="72.67" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="175.72" y="245.4" font-size="12" fill="#64748B">ph pic idx=21</text>
+</g></svg>

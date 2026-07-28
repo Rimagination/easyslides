@@ -1,0 +1,36 @@
+{
+  "schema_version": "easyslides.component_pack.v1",
+  "pack_id": "research-core",
+  "version": "1.0.0",
+  "display_name": "Research Core",
+  "description": "Production-ready, editable scientific presentation components for claims, evidence, metrics, comparisons, figures, and timelines.",
+  "license": "MIT",
+  "trust": {
+    "mode": "declarative_only",
+    "permissions": [],
+    "code_execution": false
+  },
+  "dependencies": {
+    "component_packs": []
+  },
+  "design_tokens": {
+    "mode": "self_contained",
+    "source": "assets/design_tokens.json",
+    "required": [
+      "color.accent",
+      "surface.canvas",
+      "surface.panel",
+      "text.primary",
+      "typography.title.font_size_px",
+      "typography.body.font_size_px"
+    ]
+  },
+  "components": [
+    {"component_id": "comparison_pair", "path": "components/comparison_pair"},
+    {"component_id": "evidence_stack", "path": "components/evidence_stack"},
+    {"component_id": "figure_with_notes", "path": "components/figure_with_notes"},
+    {"component_id": "kpi_row_3", "path": "components/kpi_row_3"},
+    {"component_id": "process_timeline", "path": "components/process_timeline"},
+    {"component_id": "three_card_summary", "path": "components/three_card_summary"}
+  ]
+}

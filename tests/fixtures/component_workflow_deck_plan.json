@@ -1,0 +1,55 @@
+{
+  "schema_version": "easyslides.deck_plan.v1",
+  "slides": [
+    {
+      "page": "P01",
+      "role": "result",
+      "content_shape": "metric_set",
+      "item_count": 3,
+      "component_payload": {
+        "items": [
+          {
+            "metric": "42%",
+            "label": "Exposure",
+            "note": "Annual mean load."
+          },
+          {
+            "metric": "18",
+            "label": "Sites",
+            "note": "Validated samples."
+          },
+          {
+            "metric": "0.87",
+            "label": "Fit",
+            "note": "Stable across folds."
+          }
+        ]
+      }
+    },
+    {
+      "page": "P02",
+      "role": "result",
+      "content_shape": "supporting_points",
+      "item_count": 3,
+      "component_requirements": {
+        "evidence_type": "text_evidence",
+        "editable_target": "evidence_items",
+        "visual_complexity": "high"
+      },
+      "component_payload": {
+        "claim": "Multiple sources support the conclusion.",
+        "items": [
+          {
+            "evidence": "Records show the same trend."
+          },
+          {
+            "evidence": "Independent checks localize error."
+          },
+          {
+            "evidence": "Sensitivity tests keep rank order."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -118,6 +118,13 @@ MATERIAL_TEXT = {
         "Cooling corridors, shade networks, blue-green spaces, and roof retrofits are matched to local risk profiles.",
         "The adapted deck keeps the source template language while replacing all scientific material with a new domain.",
     ],
+    "body_short": [
+        "Heat patterns guide local renewal.",
+        "Sensors map exposure and shade.",
+        "Priority zones receive targeted action.",
+        "Green corridors reduce thermal stress.",
+        "Evidence links risk to decisions.",
+    ],
     "label": [
         "Baseline",
         "Sensor",
@@ -382,6 +389,27 @@ def shift_text_node_y(node: ET.Element, delta: float) -> None:
         )
 
 
+def text_display_lines(node: ET.Element) -> int:
+    text = node_text(node)
+    if not text:
+        return 1
+    return max(1, len(text.splitlines()))
+
+
+def center_lock_text_node_to_container(node: ET.Element, container: Box) -> None:
+    """Make a compact control text box share the container's vertical center."""
+    fs = font_size(node)
+    line_count = text_display_lines(node)
+    line_step = fs * 1.18
+    total_height = fs if line_count <= 1 else fs + (line_count - 1) * line_step
+    baseline_y = container.y + (container.height - total_height) / 2 + fs * 0.85
+    node.set("data-pptx-valign", "middle")
+    node.set("data-pptx-box-y", f"{container.y:.2f}".rstrip("0").rstrip("."))
+    node.set("data-pptx-box-h", f"{container.height:.2f}".rstrip("0").rstrip("."))
+    if node.attrib.get("y") is not None:
+        node.set("y", f"{baseline_y:.2f}".rstrip("0").rstrip("."))
+
+
 def recenter_control_text_groups(template_dir: Path) -> None:
     geometry_path = template_dir / "geometry_contract.json"
     if not geometry_path.exists():
@@ -423,14 +451,39 @@ def recenter_control_text_groups(template_dir: Path) -> None:
             )
             if len(members) == 1 and not has_metadata:
                 continue
+            if len(members) == 1 and has_metadata:
+                node, box = members[0]
+                before = (
+                    node.attrib.get("data-pptx-valign"),
+                    node.attrib.get("data-pptx-box-y"),
+                    node.attrib.get("data-pptx-box-h"),
+                    node.attrib.get("y"),
+                )
+                center_lock_text_node_to_container(node, container)
+                after = (
+                    node.attrib.get("data-pptx-valign"),
+                    node.attrib.get("data-pptx-box-y"),
+                    node.attrib.get("data-pptx-box-h"),
+                    node.attrib.get("y"),
+                )
+                if before != after or abs(box.cy - container.cy) > 0.01:
+                    changed = True
+                continue
             group_box = union_boxes([box for _node, box in members])
             if group_box.height > container.height * 1.15:
                 continue
             delta = container.cy - group_box.cy
-            if abs(delta) <= 0.01:
-                continue
+            group_changed = False
             for node, _box in members:
-                shift_text_node_y(node, delta)
+                if str(node.attrib.get("data-pptx-textbox") or "").lower() == "true":
+                    if node.attrib.get("data-pptx-valign") != "middle":
+                        node.set("data-pptx-valign", "middle")
+                        group_changed = True
+                if abs(delta) > 0.01:
+                    shift_text_node_y(node, delta)
+                    group_changed = True
+            if not group_changed:
+                continue
             changed = True
 
         if changed:
@@ -783,17 +836,21 @@ def fit_text_to_box(text: str, box: Box, fs: float) -> tuple[float, list[str]]:
 
     while current >= min_fs:
         max_lines = max_lines_for(current)
-        lines = wrap_words(text, current, box.width * 0.96, max_lines)
+        # Keep a deliberate width buffer: the smoke fitter uses a lightweight
+        # metric while the production SVG validator uses font-aware metrics.
+        # Without this margin, borderline English labels can pass here yet
+        # overflow in the stricter gate.
+        lines = wrap_words(text, current, box.width * 0.88, max_lines)
         ellipsized = any(line.rstrip().endswith("...") for line in lines)
         if (
             len(lines) <= max_lines
-            and all(estimate_width(line, current) <= box.width * 0.98 for line in lines)
+            and all(estimate_width(line, current) <= box.width * 0.88 for line in lines)
             and not ellipsized
         ):
             return round(current, 2), lines
         current -= 1.0
     max_lines = max_lines_for(min_fs)
-    lines = wrap_words(text, min_fs, box.width * 0.94, max_lines)
+    lines = wrap_words(text, min_fs, box.width * 0.86, max_lines)
     return round(min_fs, 2), lines
 
 
@@ -891,7 +948,15 @@ def replacement_for_text(node: ET.Element, role: str, ordinal: int, picker: Text
     text = node_text(node)
     if re.fullmatch(r"\d{1,2}", text):
         return f"{max(1, ordinal):02d}"
-    if box.width <= 180 or box.height <= 42 or fs <= 18:
+    # Cross-material smoke content must fit the source slot without relying on
+    # ellipsis. Compact source boxes get compact semantic material, while
+    # larger body slots still exercise the full-length replacement path.
+    if role not in {"cover", "toc", "chapter", "ending"}:
+        if box.width <= 150 or (box.height <= 54 and box.width <= 500):
+            return picker.next("value" if re.search(r"\d|%|km|ms|ps|fj", text.lower()) else "label")
+        if box.width <= 300 or box.height <= 100:
+            return picker.next("body_short")
+    if box.width <= 220 or (box.height <= 54 and box.width <= 380) or fs <= 18:
         return picker.next("value" if re.search(r"\d|%|km|ms|ps|fj", text.lower()) else "label")
     if role == "cover":
         return picker.next("cover")

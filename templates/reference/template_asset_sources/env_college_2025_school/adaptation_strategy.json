@@ -1,0 +1,253 @@
+{
+  "schema_version": "easyslides.material_adaptation_strategy.v1",
+  "template_id": "plugin_distill_smoke",
+  "baseline_surface": "source_rendered_raster_baseline",
+  "selection_policy": {
+    "default_route": "classify_material_then_match_role_density_slots",
+    "scoring": {
+      "material_role_match": 0.35,
+      "density_fit": 0.25,
+      "slot_fit": 0.25,
+      "visual_identity_preservation": 0.15
+    },
+    "density_inputs": {
+      "text_blocks": "number of claims, bullets, paragraphs, and captions",
+      "visual_blocks": "number of figures, tables, charts, diagrams, or screenshots",
+      "recommended_default": "one defensible claim plus one primary evidence object per slide"
+    },
+    "candidate_page_order": {
+      "cover": [
+        "01_cover"
+      ],
+      "low_density_content": [
+        "03_content"
+      ],
+      "balanced_content": [
+        "03_content",
+        "05_content_03",
+        "06_content_04"
+      ],
+      "high_density_content": [
+        "04_content_02",
+        "07_content_05"
+      ],
+      "ending": [
+        "08_ending"
+      ]
+    }
+  },
+  "material_types": [
+    {
+      "id": "deck_title",
+      "intent": "open the talk and establish project identity",
+      "signals": [
+        "title",
+        "subtitle",
+        "speaker",
+        "affiliation",
+        "date"
+      ],
+      "preferred_pages": [
+        "01_cover"
+      ],
+      "required_slots": [
+        "TITLE",
+        "SUBTITLE"
+      ],
+      "overflow_action": "compress_metadata_not_title"
+    },
+    {
+      "id": "agenda_or_storyline",
+      "intent": "show the presentation route or section roadmap",
+      "signals": [
+        "outline",
+        "agenda",
+        "contents",
+        "section list",
+        "storyline"
+      ],
+      "preferred_pages": [
+        "03_content"
+      ],
+      "required_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT"
+      ],
+      "overflow_action": "split_across_multiple_pages"
+    },
+    {
+      "id": "research_problem",
+      "intent": "state the scientific problem, gap, or motivation",
+      "signals": [
+        "problem",
+        "gap",
+        "motivation",
+        "challenge",
+        "why it matters"
+      ],
+      "preferred_pages": [
+        "03_content",
+        "05_content_03",
+        "06_content_04"
+      ],
+      "required_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT"
+      ],
+      "overflow_action": "one_claim_plus_supporting_evidence"
+    },
+    {
+      "id": "research_objective",
+      "intent": "state objective, hypothesis, or contribution",
+      "signals": [
+        "objective",
+        "aim",
+        "hypothesis",
+        "contribution",
+        "innovation"
+      ],
+      "preferred_pages": [
+        "03_content",
+        "05_content_03",
+        "06_content_04"
+      ],
+      "required_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT"
+      ],
+      "overflow_action": "split_objectives_into_numbered_pages"
+    },
+    {
+      "id": "technical_route",
+      "intent": "explain workflow, model architecture, mechanism, or method pipeline",
+      "signals": [
+        "workflow",
+        "pipeline",
+        "architecture",
+        "mechanism",
+        "method"
+      ],
+      "preferred_pages": [
+        "03_content",
+        "05_content_03",
+        "06_content_04",
+        "04_content_02"
+      ],
+      "required_slots": [
+        "PAGE_TITLE",
+        "IMAGE"
+      ],
+      "overflow_action": "promote_diagram_and_move_explanation_to_body_slots"
+    },
+    {
+      "id": "evidence_result",
+      "intent": "present experiment, figure, metric, chart, table, or comparison result",
+      "signals": [
+        "result",
+        "figure",
+        "chart",
+        "table",
+        "metric",
+        "comparison"
+      ],
+      "preferred_pages": [
+        "04_content_02",
+        "07_content_05"
+      ],
+      "required_slots": [
+        "PAGE_TITLE",
+        "IMAGE",
+        "BODY_TEXT"
+      ],
+      "overflow_action": "split_across_multiple_pages"
+    },
+    {
+      "id": "application_value",
+      "intent": "explain impact, application, social value, or expected benefit",
+      "signals": [
+        "application",
+        "impact",
+        "value",
+        "benefit",
+        "societal",
+        "translation"
+      ],
+      "preferred_pages": [
+        "03_content",
+        "05_content_03",
+        "06_content_04"
+      ],
+      "required_slots": [
+        "PAGE_TITLE",
+        "BODY_TEXT"
+      ],
+      "overflow_action": "summarize_to_claim_evidence_action"
+    },
+    {
+      "id": "closing_acknowledgement",
+      "intent": "close the talk, thank reviewers, or list contact information",
+      "signals": [
+        "thanks",
+        "acknowledgement",
+        "contact",
+        "questions"
+      ],
+      "preferred_pages": [
+        "08_ending"
+      ],
+      "required_slots": [
+        "CLOSING_TITLE"
+      ],
+      "overflow_action": "keep_closing_short"
+    }
+  ],
+  "overflow_policy": {
+    "trigger": "material exceeds declared slot capacity or would obscure fixed template identity",
+    "actions": [
+      "split_across_multiple_pages",
+      "choose_lower_density_page",
+      "summarize_to_claim_evidence_action",
+      "move_secondary_detail_to_appendix",
+      "keep_visual_evidence_primary"
+    ],
+    "never": [
+      "shrink text until unreadable",
+      "move fixed chrome to make room",
+      "cover source identity regions with user material"
+    ]
+  },
+  "identity_constraints": {
+    "primary_color": "#912C8D",
+    "preserve_primitives": [
+      "atmosphere_background",
+      "repeated_media_backdrop",
+      "section_header_chrome",
+      "image_frames",
+      "cover_ending_lockups"
+    ],
+    "baseline_surface": "source_rendered_raster_baseline"
+  },
+  "validation_gates": [
+    {
+      "id": "material_classification",
+      "check": "every input item is assigned a material_type and confidence before layout selection"
+    },
+    {
+      "id": "slot_capacity_gate",
+      "check": "selected page has enough declared text/image slots or overflow_policy is applied"
+    },
+    {
+      "id": "identity_preservation_gate",
+      "check": "generated content does not obscure preserved chrome, cover/ending lockups, or atmosphere background"
+    },
+    {
+      "id": "cross_material_smoke_test",
+      "check": "clone the template with a different topic and images, then re-run SVG/PPTX geometry and text-layout gates",
+      "command": "python scripts/template_material_smoke_test.py templates/layouts/plugin_distill_smoke --out tmp/plugin_distill_smoke_material_smoke --force"
+    },
+    {
+      "id": "visual_diff_gate",
+      "check": "PowerPoint-rendered output remains within visual-diff threshold for the selected baseline surface"
+    }
+  ]
+}

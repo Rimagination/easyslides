@@ -164,17 +164,17 @@
 </g>
 <g id="shape-45" data-name="文本框 44">
 <rect x="362.79" y="238.85" width="187.01" height="164.79" fill="none"/>
-<text x="456.3" y="352.45" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="128" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="SECTION_NUMBER" data-pptx-textbox="true" data-pptx-box-x="196.3" data-pptx-box-y="218.05" data-pptx-box-w="520" data-pptx-box-h="198.4"><tspan fill="#FFFFFF" font-size="128" font-weight="bold" letter-spacing="4">{{SECTION_NUMBER}}</tspan></text>
+<text x="456.3" y="352.45" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="128" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="SECTION_NUMBER" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="196.3" data-pptx-box-y="218.05" data-pptx-box-w="520" data-pptx-box-h="198.4"><tspan fill="#FFFFFF" font-size="128" font-weight="bold" letter-spacing="4">{{SECTION_NUMBER}}</tspan></text>
 </g>
 <g id="shape-3" data-name="文本框 2">
 <rect x="371.04" y="384.25" width="170.51" height="38.78" fill="none"/>
-<text x="456.3" y="409.45" text-anchor="middle" xml:space="preserve" font-family="sans-serif" font-size="24" fill="#FFFFFF" letter-spacing="4" data-slot="PART_LABEL" data-pptx-textbox="true" data-pptx-box-x="196.3" data-pptx-box-y="384.25" data-pptx-box-w="520" data-pptx-box-h="37.2"><tspan fill="#FFFFFF" font-size="24" letter-spacing="4">{{PART_LABEL}}</tspan></text>
+<text x="456.3" y="409.45" text-anchor="middle" xml:space="preserve" font-family="sans-serif" font-size="24" fill="#FFFFFF" letter-spacing="4" data-slot="PART_LABEL" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="196.3" data-pptx-box-y="384.25" data-pptx-box-w="520" data-pptx-box-h="37.2"><tspan fill="#FFFFFF" font-size="24" letter-spacing="4">{{PART_LABEL}}</tspan></text>
 </g>
 <g id="shape-51" data-name="文本框 50">
 <rect x="618.04" y="267.52" width="272.5" height="80.78" fill="none"/>
-<text x="627.64" y="322.19" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="58.67" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="SECTION_TITLE" data-pptx-textbox="true" data-pptx-box-x="627.64" data-pptx-box-y="260.59" data-pptx-box-w="520" data-pptx-box-h="90.94"><tspan fill="#FFFFFF" font-size="58.67" font-weight="bold" letter-spacing="4">{{SECTION_TITLE}}</tspan></text>
+<text x="627.64" y="322.19" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="58.67" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="SECTION_TITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="627.64" data-pptx-box-y="260.59" data-pptx-box-w="520" data-pptx-box-h="90.94"><tspan fill="#FFFFFF" font-size="58.67" font-weight="bold" letter-spacing="4">{{SECTION_TITLE}}</tspan></text>
 </g>
 <g id="shape-2" data-name="文本框 1">
 <rect x="624.71" y="360" width="279.99" height="35.54" fill="none"/>
-<text x="634.31" y="382.93" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑 Light&quot;, +mn-cs, sans-serif" font-size="21.33" fill="#FFFFFF" data-slot="SECTION_SUBTITLE" data-pptx-textbox="true" data-pptx-box-x="634.31" data-pptx-box-y="360.53" data-pptx-box-w="520" data-pptx-box-h="33.06"><tspan fill="#FFFFFF" font-size="21.33">{{SECTION_SUBTITLE}}</tspan></text>
+<text x="634.31" y="382.93" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑 Light&quot;, +mn-cs, sans-serif" font-size="21.33" fill="#FFFFFF" data-slot="SECTION_SUBTITLE" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="634.31" data-pptx-box-y="360.53" data-pptx-box-w="520" data-pptx-box-h="33.06"><tspan fill="#FFFFFF" font-size="21.33">{{SECTION_SUBTITLE}}</tspan></text>
 </g></svg>

@@ -32,6 +32,11 @@ ROOT = Path(__file__).resolve().parents[1]
 TMP_ROOT = ROOT / "tmp"
 SCHEMA_VERSION = "easyslides.template_distill_acceptance_report.v1"
 
+try:
+    from scripts.render_pptx_png import _find_powerpoint_executable
+except ImportError:  # pragma: no cover - direct script execution
+    from render_pptx_png import _find_powerpoint_executable
+
 
 @dataclass
 class Gate:
@@ -143,7 +148,11 @@ def run_gate(gate: Gate, *, cwd: Path, dry_run: bool = False) -> dict[str, Any]:
 
 
 def renderer_available() -> bool:
-    return shutil.which("soffice") is not None or shutil.which("libreoffice") is not None
+    return (
+        _find_powerpoint_executable() is not None
+        or shutil.which("soffice") is not None
+        or shutil.which("libreoffice") is not None
+    )
 
 
 def build_gate_plan(
@@ -381,7 +390,7 @@ def run_acceptance(
         results.append(
             {
                 "id": "render_contact_sheet",
-                "description": "Rendered contact sheet skipped because LibreOffice/soffice is unavailable.",
+                "description": "Rendered contact sheet skipped because no PPTX renderer is available.",
                 "required": False,
                 "status": "skipped",
                 "renderer_available": False,

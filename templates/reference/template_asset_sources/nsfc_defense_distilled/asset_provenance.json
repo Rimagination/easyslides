@@ -1,0 +1,840 @@
+{
+  "schema_version": "easyslides.asset_provenance.v1",
+  "template_id": "nsfc_defense_distilled",
+  "source_graph_schema": "easyslides.source_graph.v1",
+  "assets": [
+    {
+      "part_path": "ppt/media/hdphoto1.wdp",
+      "name": "hdphoto1.wdp",
+      "extension": "wdp",
+      "content_type": "image/vnd.ms-photo",
+      "compression_method": 0,
+      "size_bytes": 84020,
+      "sha256": "2f2cf23c0919375267c395f34fa61c0938e695c93915ae23d41b13c096836ed8",
+      "referenced_by": [],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/hdphoto1.wdp",
+      "roles": [],
+      "derived_asset": "hdphoto1.wdp",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/hdphoto2.wdp",
+      "name": "hdphoto2.wdp",
+      "extension": "wdp",
+      "content_type": "image/vnd.ms-photo",
+      "compression_method": 0,
+      "size_bytes": 63188,
+      "sha256": "3216f7b32dd825052bc7ea3128dacf3d13c5c62019fd1271cc31864ab3374bb4",
+      "referenced_by": [],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/hdphoto2.wdp",
+      "roles": [],
+      "derived_asset": "hdphoto2.wdp",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/hdphoto3.wdp",
+      "name": "hdphoto3.wdp",
+      "extension": "wdp",
+      "content_type": "image/vnd.ms-photo",
+      "compression_method": 0,
+      "size_bytes": 60814,
+      "sha256": "fc2918510d768852b427fec1a0c085fa9d35749ac59b446b903a5bbe21391ea8",
+      "referenced_by": [],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/hdphoto3.wdp",
+      "roles": [],
+      "derived_asset": "hdphoto3.wdp",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image1.webp",
+      "name": "image1.webp",
+      "extension": "webp",
+      "content_type": null,
+      "compression_method": 0,
+      "size_bytes": 100326,
+      "sha256": "b4ddbb89cc5c8ba11706631c1505dd1b34ca32d32cc51475af35f214b4d76ecf",
+      "referenced_by": [
+        "master-01",
+        "slide-02",
+        "slide-08",
+        "slide-15"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image1.webp",
+      "roles": [
+        "master_image",
+        "slide_image"
+      ],
+      "derived_asset": "image1.webp",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image10.jpg",
+      "name": "image10.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 92245,
+      "sha256": "15dc3c3772d1a6be0e93e15d2fa82f23aadb4a10389cea3b3494b19df155585e",
+      "referenced_by": [
+        "slide-03"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image10.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image10.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image11.webp",
+      "name": "image11.webp",
+      "extension": "webp",
+      "content_type": null,
+      "compression_method": 0,
+      "size_bytes": 158676,
+      "sha256": "1bb0f55643be42b943f7e54e23b4462e5ca7ca0c7be830a6127673437a708959",
+      "referenced_by": [
+        "slide-03"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image11.webp",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image11.webp",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image12.jpg",
+      "name": "image12.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 259595,
+      "sha256": "14d19810d56173e47ca16f49a9847c3ed792311a06ea2a9aef9337b123a8103a",
+      "referenced_by": [
+        "slide-03"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image12.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image12.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image13.png",
+      "name": "image13.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 185220,
+      "sha256": "2678b1d7bfd53d53998ce6d187a5a2c1fe5e5c07f65849079867e0b69e1d37df",
+      "referenced_by": [
+        "slide-04"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image13.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image13.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image14.png",
+      "name": "image14.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 999603,
+      "sha256": "e530d2b3ba21239b4a10caca974e90f25c3e65b05a3ba26c60213a158d2ffafd",
+      "referenced_by": [
+        "slide-04"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image14.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image14.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image15.png",
+      "name": "image15.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 232461,
+      "sha256": "f4c2c5c44b2e9171ecb83ceb1470fd190f47a5d566f131f44c01b238c32e8c02",
+      "referenced_by": [
+        "slide-05"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image15.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image15.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image16.jpeg",
+      "name": "image16.jpeg",
+      "extension": "jpeg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 1108984,
+      "sha256": "bf56c9432b1987326ad3696f275349ba19e8538bf90db450c91193c24b15a6d8",
+      "referenced_by": [
+        "slide-05",
+        "slide-06"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image16.jpeg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image16.jpeg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image17.png",
+      "name": "image17.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 282422,
+      "sha256": "7a2a3dccd47259bf4c2b8735916fd5cb171f76cd3d4663dfe23a05f6fd9a471f",
+      "referenced_by": [
+        "slide-05"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image17.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image17.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image18.jpeg",
+      "name": "image18.jpeg",
+      "extension": "jpeg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 1082837,
+      "sha256": "f48f670181fde9227dc01ae647f3eaa69c797d2afa02f7063a08909de8668678",
+      "referenced_by": [
+        "slide-06"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image18.jpeg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image18.jpeg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image19.jpg",
+      "name": "image19.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 204309,
+      "sha256": "d2df4b3b23b1240a84e2714a1eba728f44f09361d15f2dae508d0e53e57d86f0",
+      "referenced_by": [
+        "slide-06"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image19.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image19.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image2.png",
+      "name": "image2.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 2578367,
+      "sha256": "10f9ec38095e8884d6cf94c5ad0988895ff5ca6327f06ea770186b09bdb5462a",
+      "referenced_by": [
+        "slide-01",
+        "slide-17"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image2.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image2.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image20.jpg",
+      "name": "image20.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 62557,
+      "sha256": "f0bbc287ec3e04944b3a98cc024c4c7b4042ed875d637b4a50b380a42582679f",
+      "referenced_by": [
+        "slide-07"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image20.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image20.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image21.png",
+      "name": "image21.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 39114,
+      "sha256": "2dd6541889b814e186f3fdc73ed5bf24e61daeb3d66d738acccd3d8d468fbbde",
+      "referenced_by": [
+        "slide-07"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image21.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image21.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image22.png",
+      "name": "image22.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 7247,
+      "sha256": "1a01e4a53385fe43184cbb1597565ea46ec6cbedf995f296066a4a95a5507059",
+      "referenced_by": [
+        "slide-07"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image22.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image22.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image23.png",
+      "name": "image23.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 43396,
+      "sha256": "de09de8b2fa369f4c602cedfc91cf2bb0b135a6a8d732bd5abae112d573e5db3",
+      "referenced_by": [
+        "slide-07"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image23.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image23.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image24.png",
+      "name": "image24.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 286162,
+      "sha256": "a7938e6fa6726b88e72b094f33a2241fd1a0fd63c03907376ce4709fa639dab6",
+      "referenced_by": [
+        "slide-09"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image24.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image24.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image25.jpg",
+      "name": "image25.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 51151,
+      "sha256": "c96a2c54c8b740883b579e5f404891234dfb80d74ccb340e93940339662f6dd8",
+      "referenced_by": [
+        "slide-10"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image25.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image25.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image26.jpg",
+      "name": "image26.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 45897,
+      "sha256": "139eba5af5d5261423afaa2d8414cf4eee8469b46493f254ac19fce5aa33a573",
+      "referenced_by": [
+        "slide-10"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image26.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image26.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image27.jpg",
+      "name": "image27.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 58898,
+      "sha256": "77e3a7a826717860f33d2f0c7207bb4702a436f9e5df5208f90b2a89d1c9deb5",
+      "referenced_by": [
+        "slide-11"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image27.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image27.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image28.jpg",
+      "name": "image28.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 186655,
+      "sha256": "34a96d0ecedb0adf0dde20321110c9290d50083979a96726b6791de4ac44975e",
+      "referenced_by": [
+        "slide-11"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image28.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image28.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image29.jpg",
+      "name": "image29.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 132738,
+      "sha256": "e20efc777b1b6f60c7280e6c84ebc282afef939d76e297a1b81bbd9d2b38d52a",
+      "referenced_by": [
+        "slide-12"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image29.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image29.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image3.jpeg",
+      "name": "image3.jpeg",
+      "extension": "jpeg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 803675,
+      "sha256": "2a626a2b428df4717e95cc516b02425427c3080c0b3c0071d46db37d3e003230",
+      "referenced_by": [
+        "slide-01",
+        "slide-17"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image3.jpeg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image3.jpeg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image30.gif",
+      "name": "image30.gif",
+      "extension": "gif",
+      "content_type": "image/gif",
+      "compression_method": 0,
+      "size_bytes": 1079,
+      "sha256": "1f1027d526a5f0e825265a6531662932709238adf26e60f06736fd127b94d2ac",
+      "referenced_by": [
+        "slide-12"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image30.gif",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image30.gif",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image31.jpg",
+      "name": "image31.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 189651,
+      "sha256": "0446baf72b1f64a53c15bc22707688bd2eb7bee3b80d925a676344ac118cf7cc",
+      "referenced_by": [
+        "slide-12"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image31.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image31.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image32.jpeg",
+      "name": "image32.jpeg",
+      "extension": "jpeg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 186402,
+      "sha256": "3e73c617145c99baae3a868cbc848caf3cdd22b2c5f4a3cd0e32e1f9d5a92303",
+      "referenced_by": [
+        "slide-13"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image32.jpeg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image32.jpeg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image33.png",
+      "name": "image33.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 181417,
+      "sha256": "e8f46f07e2ba632ab0e24f5e4bb38f1511c305918183c0c554af74f9d04f6809",
+      "referenced_by": [
+        "slide-13"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image33.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image33.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image34.jpeg",
+      "name": "image34.jpeg",
+      "extension": "jpeg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 49226,
+      "sha256": "9cf96c0d2db1b9928e8b61da1ef18534cfb5af0ecbdb58b1d58b30ed2391f16c",
+      "referenced_by": [
+        "slide-13"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image34.jpeg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image34.jpeg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image35.png",
+      "name": "image35.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 264166,
+      "sha256": "7d775a635a35c185f86bb5e2948c8fb36ad28cd88fe98de2709915d9da56e3fb",
+      "referenced_by": [
+        "slide-14"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image35.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image35.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image36.png",
+      "name": "image36.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 367422,
+      "sha256": "ce84bc6a59b39a8509bd9a8a3a5ded3bdbad917134af25fd8e6c54a22a6a2088",
+      "referenced_by": [
+        "slide-14"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image36.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image36.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image37.jpeg",
+      "name": "image37.jpeg",
+      "extension": "jpeg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 176836,
+      "sha256": "642fcba24f15ad6f5bcd21e033b653feecb07257171b07bf3bd93365128e892d",
+      "referenced_by": [
+        "slide-14"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image37.jpeg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image37.jpeg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image38.png",
+      "name": "image38.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 26478,
+      "sha256": "b8b7f0c2e5db2518781cbf6e56de03887089ea7c88bdc187bb70a7a99328f030",
+      "referenced_by": [
+        "slide-14"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image38.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image38.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image39.jpg",
+      "name": "image39.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 635265,
+      "sha256": "544cbe77dca1050d194ae4267ccb0e157ba2e7863016a7b5e7f44ef156690bfc",
+      "referenced_by": [
+        "slide-16"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image39.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image39.jpg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image4.png",
+      "name": "image4.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 26971,
+      "sha256": "6777cc0e21904db5e0e12080da7a3599a1f28578e12dd4f74fd358b5e3f19205",
+      "referenced_by": [
+        "slide-01",
+        "slide-17"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image4.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image4.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image40.jpeg",
+      "name": "image40.jpeg",
+      "extension": "jpeg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 1248287,
+      "sha256": "ba0213e27258c603a9b5e173b06305875022fbe107039557b0ac4f7873b85fc9",
+      "referenced_by": [
+        "slide-16"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image40.jpeg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image40.jpeg",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image5.png",
+      "name": "image5.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 21069,
+      "sha256": "9015977d6e75d11ab385514a3f555caed36c783985c97f175097587dd5655e13",
+      "referenced_by": [
+        "slide-01",
+        "slide-17"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image5.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image5.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image6.png",
+      "name": "image6.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 88167,
+      "sha256": "21432d5c409ba90a4affe172422c657a8712017ef5a48e9f4a88788d5ee563ff",
+      "referenced_by": [
+        "slide-01",
+        "slide-17"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image6.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image6.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image7.png",
+      "name": "image7.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 831564,
+      "sha256": "dc1742b8b307ec4050ae2c67d72a2463a062fc1dbc529daf8682ee6460e10d71",
+      "referenced_by": [
+        "slide-01",
+        "slide-17"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image7.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image7.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image8.png",
+      "name": "image8.png",
+      "extension": "png",
+      "content_type": "image/png",
+      "compression_method": 0,
+      "size_bytes": 1169997,
+      "sha256": "c2e56c8b51b4b4f85b3f64816f766e1f2723f576b78063c669fc7d1278126750",
+      "referenced_by": [
+        "slide-01",
+        "slide-17"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image8.png",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image8.png",
+      "license_status": "unknown_requires_review"
+    },
+    {
+      "part_path": "ppt/media/image9.jpg",
+      "name": "image9.jpg",
+      "extension": "jpg",
+      "content_type": "image/jpeg",
+      "compression_method": 0,
+      "size_bytes": 41158,
+      "sha256": "e213a2ea00fb6fd5e7e33d58f90630d886e9ec6a412fcdf089dde041c1baa9b3",
+      "referenced_by": [
+        "slide-03",
+        "slide-04",
+        "slide-05",
+        "slide-06",
+        "slide-07",
+        "slide-09",
+        "slide-10",
+        "slide-11",
+        "slide-12",
+        "slide-13",
+        "slide-14",
+        "slide-16"
+      ],
+      "template_id": "nsfc_defense_distilled",
+      "source_part": "ppt/media/image9.jpg",
+      "roles": [
+        "slide_image"
+      ],
+      "derived_asset": "image9.jpg",
+      "license_status": "unknown_requires_review"
+    }
+  ],
+  "rules": [
+    "preserve_source_part_and_sha256",
+    "do_not_promote_unknown_license_assets_without_review",
+    "keep_background_assets_separate_from_replaceable_media"
+  ]
+}

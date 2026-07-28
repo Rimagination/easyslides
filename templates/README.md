@@ -21,9 +21,9 @@
 
 ## Page Layout Templates
 
-The `layouts/` directory is now a slim academic-only active library. It keeps
-five repeatable academic template packs: `academic_general`, `academic_scqa`,
-`defense_leftnav`, `defense_topnav`, and `literature_minimal`.
+The `layouts/` directory exposes a slim academic-only active library. It keeps
+six repeatable academic template packs: `academic_general`, `academic_scqa`,
+`defense_leftnav`, `defense_topnav`, `literature_minimal`, and `nsfc_defense`.
 
 The broader brand, government, enterprise, domain-specific, and special-style PPT Master packs
 were moved out of the active library for review because EasySlides is focused

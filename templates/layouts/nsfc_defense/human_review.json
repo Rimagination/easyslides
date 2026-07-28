@@ -1,0 +1,11 @@
+{
+  "schema_version": "easyslides.human_visual_review.v1",
+  "template_id": "nsfc_defense",
+  "status": "pass",
+  "approved": true,
+  "approved_by": "user",
+  "approved_at": "2026-07-28",
+  "scope": "twelve source-guided content body variants",
+  "reviewed_artifact": "projects/nsfc_source_like_body_variant_audit_20260728/content_pages_contact_sheet.png",
+  "notes": "User approved the rendered nsfc_defense content-page contact sheet as the canonical template body system."
+}

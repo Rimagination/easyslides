@@ -7,7 +7,9 @@
       "SCQA",
       "research-oriented",
       "neutral_base"
-    ]
+    ],
+    "capability_level": "shell",
+    "status": "legacy"
   },
   "academic_scqa": {
     "summary": "Blue-cyan academic and technical report template with Audience-State-Transfer and SCQA body-variant guidance.",
@@ -18,7 +20,9 @@
       "Audience-State-Transfer",
       "SCQA",
       "slot_distilled"
-    ]
+    ],
+    "capability_level": "semantic",
+    "status": "legacy"
   },
   "defense_leftnav": {
     "summary": "Compact thesis-defense template with a dynamic left navigation highlight for the current section.",
@@ -28,7 +32,9 @@
       "left_navigation",
       "active_section",
       "compact_classic"
-    ]
+    ],
+    "capability_level": "semantic",
+    "status": "legacy"
   },
   "defense_topnav": {
     "summary": "Source-faithful academic-blue thesis defense template with a dynamic top navigation bar.",
@@ -38,7 +44,9 @@
       "academic_blue",
       "top_navigation",
       "source_geometry"
-    ]
+    ],
+    "capability_level": "semantic",
+    "status": "legacy"
   },
   "literature_minimal": {
     "summary": "Minimal blue-white literature report and paper-reading template with five reusable classic page shells.",
@@ -48,6 +56,22 @@
       "paper_reading",
       "minimal_blue_white",
       "research_report"
-    ]
+    ],
+    "capability_level": "semantic",
+    "status": "legacy"
+  },
+  "nsfc_defense": {
+    "summary": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
+    "keywords": [
+      "academic_report",
+      "research_defense",
+      "nsfc_defense",
+      "source_geometry",
+      "evidence_dense",
+      "named_slots",
+      "production_gated"
+    ],
+    "capability_level": "production",
+    "status": "review"
   }
 }

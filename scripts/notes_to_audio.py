@@ -5,13 +5,13 @@ This script uses provider backends for the same per-slide output contract on
 macOS, Linux, and Windows. `edge-tts` remains the default no-key backend.
 
 Usage:
-    python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> --voice zh-CN-XiaoxiaoNeural
-    python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> --provider elevenlabs --voice-id <voice_id>
-    python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> --provider minimax --voice-id <voice_id>
-    python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> --provider qwen --voice-id <voice>
-    python3 skills/ppt-master/scripts/notes_to_audio.py <project_path> --provider cosyvoice --voice-id <voice>
-    python3 skills/ppt-master/scripts/notes_to_audio.py --list-common-voices
-    python3 skills/ppt-master/scripts/notes_to_audio.py --list-voices --locale zh-CN
+    python3 scripts/notes_to_audio.py <project_path> --voice zh-CN-XiaoxiaoNeural
+    python3 scripts/notes_to_audio.py <project_path> --provider elevenlabs --voice-id <voice_id>
+    python3 scripts/notes_to_audio.py <project_path> --provider minimax --voice-id <voice_id>
+    python3 scripts/notes_to_audio.py <project_path> --provider qwen --voice-id <voice>
+    python3 scripts/notes_to_audio.py <project_path> --provider cosyvoice --voice-id <voice>
+    python3 scripts/notes_to_audio.py --list-common-voices
+    python3 scripts/notes_to_audio.py --list-voices --locale zh-CN
 
 Dependencies:
     python3 -m pip install edge-tts
@@ -233,7 +233,7 @@ def main() -> int:
     if args.provider == "edge" and not args.voice:
         parser.error(
             "--voice is required for --provider edge. Run --list-voices --locale <locale> to discover voices "
-            "(e.g. --locale zh-CN), or follow skills/ppt-master/workflows/generate-audio.md "
+            "(e.g. --locale zh-CN), or follow workflows/generate-audio.md "
             "for an AI-curated recommendation."
         )
         raise AssertionError("unreachable")

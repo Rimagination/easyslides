@@ -1,0 +1,135 @@
+{
+  "schema_version": "easyslides.component_package.v1",
+  "component_id": "three_card_summary",
+  "asset_id": "component_package/three_card_summary",
+  "display_name": "Three Card Summary",
+  "source_asset_id": "card/three_card_summary",
+  "granularity": "component_package",
+  "render_backend": "component_package",
+  "render_targets": ["svg", "native_pptx", "template_body_variant"],
+  "selection": {
+    "content_shapes": ["parallel_points", "three_findings", "three_contributions", "risk_set"],
+    "page_roles": ["overview", "result", "conclusion"],
+    "item_count_min": 3,
+    "item_count_max": 3,
+    "density": "medium",
+    "evidence_types": ["text", "summary", "findings"],
+    "editable_targets": ["titles", "body", "items"],
+    "visual_complexity": "medium",
+    "best_for": "Three genuinely parallel ideas with comparable visual weight.",
+    "avoid_when": "The items form a sequence, hierarchy, or one item needs much more text than the others."
+  },
+  "input_schema": {
+    "schema_version": "easyslides.component_input_schema.v1",
+    "type": "object",
+    "required": ["items"],
+    "additional_properties": false,
+    "properties": {
+      "items": {
+        "type": "array",
+        "min_items": 3,
+        "max_items": 3,
+        "items": {
+          "type": "object",
+          "required": ["title", "body"],
+          "additional_properties": false,
+          "properties": {
+            "title": {"type": "string", "min_length": 1, "max_length": 36},
+            "body": {"type": "string", "min_length": 1, "max_length": 150},
+            "icon": {"type": "string", "max_length": 80},
+            "source": {"type": "string", "max_length": 100}
+          }
+        }
+      }
+    }
+  },
+  "payload_contract": {
+    "shape": "items[]",
+    "item_count_min": 3,
+    "item_count_max": 3,
+    "item_schema": {
+      "required": ["title", "body"],
+      "optional": ["icon", "source"]
+    }
+  },
+  "slots": [
+    {
+      "slot_id": "title",
+      "kind": "text",
+      "role": "title",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 22,
+        "min_font_size_px": 18,
+        "line_height": 1.16,
+        "max_chars_per_line_zh": 10,
+        "max_lines": 2,
+        "overflow_action": "shorten"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    },
+    {
+      "slot_id": "body",
+      "kind": "text",
+      "role": "body",
+      "repeated": true,
+      "required": true,
+      "capacity": {
+        "font_size_px": 18,
+        "min_font_size_px": 16,
+        "line_height": 1.28,
+        "max_chars_per_line_zh": 16,
+        "max_lines": 8,
+        "overflow_action": "split_or_choose_flexible_canvas"
+      },
+      "alignment": {
+        "vertical": "middle",
+        "text_center_y": "container_center_y"
+      }
+    }
+  ],
+  "qa": {
+    "required_gates": [
+      "component_package_contract",
+      "component_plan_contract",
+      "card_payload_capacity",
+      "visual_measure_gate",
+      "validate_pptx_text_layout",
+      "renderer_governance"
+    ],
+    "alignment_invariants": [
+      {
+        "id": "text_box_vertical_center",
+        "scope": "text_in_container",
+        "rule": "text_center_y_matches_container_center_y",
+        "tolerance_px": 2,
+        "severity": "error"
+      }
+    ]
+  },
+  "stories": [
+    {
+      "story_id": "default",
+      "payload": "stories/default.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "dense",
+      "payload": "stories/dense.json",
+      "expected_status": "pass"
+    },
+    {
+      "story_id": "overflow",
+      "payload": "stories/overflow.json",
+      "expected_status": "fail"
+    }
+  ],
+  "preview": {
+    "review_status": "pending",
+    "expected_files": ["preview/default.png", "preview/dense.png", "preview/overflow.png"]
+  }
+}

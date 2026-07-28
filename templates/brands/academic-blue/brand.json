@@ -1,0 +1,29 @@
+{
+  "schema_version": "easyslides.brand.v1",
+  "id": "academic-blue",
+  "name": "Academic Blue",
+  "palette": {
+    "primary": "#2454A6",
+    "accent": "#E9B44C",
+    "background": "#FFFFFF",
+    "surface": "#F6F7F9",
+    "text": "#161A1D",
+    "muted": "#68707A"
+  },
+  "typography": {
+    "heading": "Aptos Display",
+    "body": "Aptos"
+  },
+  "logo": "",
+  "usage": {
+    "preferred_layouts": [
+      "academic",
+      "research",
+      "defense"
+    ],
+    "avoid": [
+      "low contrast overlays",
+      "decorative gradients behind dense text"
+    ]
+  }
+}

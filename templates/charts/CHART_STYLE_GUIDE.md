@@ -445,9 +445,9 @@ font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Micr
 ```bash
 # 一键校验
 f="your_chart.svg"
-xmllint --noout "skills/ppt-master/templates/charts/$f" && echo "XML OK" || echo "XML FAIL"
-echo "Old colors:" && grep -c '#2C3E50\|#7F8C8D\|#95A5A6\|#5D6D7E\|#000000' "skills/ppt-master/templates/charts/$f"
-echo "Small fonts:" && grep -c 'font-size="[0-9]"' "skills/ppt-master/templates/charts/$f"
+xmllint --noout "templates/charts/$f" && echo "XML OK" || echo "XML FAIL"
+echo "Old colors:" && grep -c '#2C3E50\|#7F8C8D\|#95A5A6\|#5D6D7E\|#000000' "templates/charts/$f"
+echo "Small fonts:" && grep -c 'font-size="[0-9]"' "templates/charts/$f"
 ```
 
 ---

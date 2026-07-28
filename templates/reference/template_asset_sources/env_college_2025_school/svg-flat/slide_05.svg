@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#325DB4" flood-opacity="0.23"/></filter><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#325DB4" flood-opacity="0.23"/></filter><filter id="fx3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#325DB4" flood-opacity="0.23"/></filter></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+<g id="master-shape-7" data-name="图片 6">
+<image href="../assets/image3.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none"/>
+</g>
+<g id="shape-21" data-name="小李PPT1">
+<rect x="38.2" y="25.71" width="245.58" height="54.93" fill="none"/>
+<text x="47.8" y="62.24" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.2" data-pptx-box-y="25.71" data-pptx-box-w="245.58" data-pptx-box-h="54.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="37.33" fill="#1971D3" font-weight="bold"><tspan fill="#1971D3" font-size="37.33" font-weight="bold">添加标题文字</tspan></text>
+</g>
+<g id="shape-22" data-name="直线连接符 3">
+<line x1="47.74" y1="89.62" x2="1232.26" y2="89.62" stroke="#5B84D8" fill="#912C8D" stroke-width="1"/>
+</g>
+<g id="shape-2" data-name="图形 1">
+<image href="../assets/image6.png" x="840.63" y="16.33" width="391.62" height="61.22" preserveAspectRatio="none"/>
+</g>
+<g id="shape-3" data-name="组合 2">
+<g id="shape-4" data-name="矩形: 圆角 28">
+<rect x="56.41" y="143.91" width="345.74" height="298.5" rx="18.89" ry="18.89" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#114B8D" stroke-linejoin="miter" filter="url(#fx1)"/>
+</g>
+<g id="shape-5" data-name="文本框 4">
+<rect x="70.89" y="181.03" width="312.5" height="224.2" fill="none"/>
+<text x="80.49" y="206.23" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#000000" font-weight="bold"><tspan fill="#000000" font-size="24" font-weight="bold">n </tspan><tspan fill="#000000" font-size="24" font-weight="bold">添加正文内容添加正文内</tspan><tspan x="80.49" dy="28.8" fill="#000000" font-size="24" font-weight="bold">容，添加正文内容，添加正</tspan><tspan x="80.49" dy="28.8" fill="#000000" font-size="24" font-weight="bold">文内容。</tspan></text>
+<text x="80.49" y="300.63" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#000000" font-weight="bold"><tspan fill="#000000" font-size="24" font-weight="bold">n </tspan><tspan fill="#000000" font-size="24" font-weight="bold">添加正文内容添加正文内</tspan><tspan x="80.49" dy="28.8" fill="#000000" font-size="24" font-weight="bold">容，添加正文内容，添加正</tspan><tspan x="80.49" dy="28.8" fill="#000000" font-size="24" font-weight="bold">文内容。</tspan></text>
+</g>
+<g id="shape-8" data-name="圆角矩形 72">
+<rect x="63.78" y="120.55" width="298.94" height="53.41" rx="8.9" ry="8.9" fill="#114B8D" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-9" data-name="文本框 8">
+<rect x="86.6" y="125.44" width="260.27" height="42.01" fill="none"/>
+<text x="96.2" y="152.91" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="86.6" data-pptx-box-y="125.44" data-pptx-box-w="260.27" data-pptx-box-h="42.01" data-pptx-valign="top" font-family="Arial, &quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">添加小标题</tspan></text>
+</g>
+</g>
+<g id="shape-10" data-name="组合 9">
+<g id="shape-13" data-name="矩形: 圆角 28">
+<rect x="437.9" y="149.55" width="342.37" height="292.85" rx="18.53" ry="18.53" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#1971D3" stroke-linejoin="miter" filter="url(#fx2)"/>
+</g>
+<g id="shape-23" data-name="文本框 22">
+<rect x="445.76" y="185.52" width="321.57" height="224.2" fill="none"/>
+<text x="455.36" y="210.72" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">添加正文内容添加正文内容</tspan><tspan x="455.36" dy="28.8" fill="#000000" font-size="24">，添加正文内容，添加正文</tspan><tspan x="455.36" dy="28.8" fill="#000000" font-size="24">内容。</tspan></text>
+<text x="455.36" y="297.12" text-anchor="start" xml:space="preserve" font-family="sans-serif" font-size="24" fill="#000000"><tspan fill="#000000" font-size="24">添加正文内容添加正文内容</tspan><tspan x="455.36" dy="28.8" fill="#000000" font-size="24">，添加正文内容，添加正文</tspan><tspan x="455.36" dy="28.8" fill="#000000" font-size="24">内容</tspan></text>
+</g>
+<g id="shape-24" data-name="圆角矩形 71">
+<rect x="447.18" y="120.55" width="290.61" height="60.05" rx="10.01" ry="10.01" fill="#1971D3" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-25" data-name="文本框 24">
+<rect x="456.77" y="129.48" width="353.14" height="39.81" fill="none"/>
+<text x="466.37" y="156.95" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="456.77" data-pptx-box-y="129.48" data-pptx-box-w="353.14" data-pptx-box-h="39.81" data-pptx-valign="top" font-family="Arial, &quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">添加小标题</tspan></text>
+</g>
+</g>
+<g id="shape-26" data-name="组合 25">
+<g id="shape-27" data-name="矩形: 圆角 28">
+<rect x="815.7" y="148.79" width="345.61" height="299.57" rx="18.96" ry="18.96" fill="#FFFFFF" stroke-width="1" stroke-linecap="butt" stroke="#114B8D" stroke-linejoin="miter" filter="url(#fx3)"/>
+</g>
+<g id="shape-28" data-name="文本框 27">
+<rect x="825.8" y="185.92" width="314.78" height="224.2" fill="none"/>
+<text x="835.4" y="211.12" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#000000" font-weight="bold"><tspan fill="#000000" font-size="24" font-weight="bold">n </tspan><tspan fill="#000000" font-size="24" font-weight="bold">添加正文内容添加正文内</tspan><tspan x="835.4" dy="28.8" fill="#000000" font-size="24" font-weight="bold">容，添加正文内容，添加正</tspan><tspan x="835.4" dy="28.8" fill="#000000" font-size="24" font-weight="bold">文内容。</tspan></text>
+<text x="835.4" y="305.52" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#000000" font-weight="bold"><tspan fill="#000000" font-size="24" font-weight="bold">n </tspan><tspan fill="#000000" font-size="24" font-weight="bold">添加正文内容添加正文内</tspan><tspan x="835.4" dy="28.8" fill="#000000" font-size="24" font-weight="bold">容，添加正文内容，添加正</tspan><tspan x="835.4" dy="28.8" fill="#000000" font-size="24" font-weight="bold">文内容。</tspan></text>
+</g>
+<g id="shape-29" data-name="圆角矩形 72">
+<rect x="832.42" y="125.44" width="281.32" height="53.41" rx="8.9" ry="8.9" fill="#114B8D" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-30" data-name="文本框 29">
+<rect x="848.35" y="129.85" width="249.45" height="42.01" fill="none"/>
+<text x="857.95" y="157.32" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="848.35" data-pptx-box-y="129.85" data-pptx-box-w="249.45" data-pptx-box-h="42.01" data-pptx-valign="top" font-family="Arial, &quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">添加小标题</tspan></text>
+</g>
+</g>
+<g id="shape-31" data-name="图片 30">
+<svg x="815.7" y="480.72" width="345.85" height="177.86" viewBox="0.06902 0 0.93098 0.85454" preserveAspectRatio="none"><image href="../assets/image10.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-32" data-name="图片 31">
+<svg x="437.9" y="480.77" width="342.37" height="177.86" viewBox="0.08418 0 0.91582 0.85454" preserveAspectRatio="none"><image href="../assets/image11.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-33" data-name="图片 32">
+<svg x="57.63" y="480.23" width="348.04" height="177.86" viewBox="0.06902 0 0.93098 0.85454" preserveAspectRatio="none"><image href="../assets/image11.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g></svg>

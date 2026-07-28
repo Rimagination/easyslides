@@ -9,7 +9,7 @@ These tools cover post-processing, SVG validation, speaker notes, recorded narra
 Run these steps in order:
 
 ```bash
-python3 scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed
+python3 scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed --require-valign --check-canvas
 python3 scripts/total_md_split.py <project_path>
 python3 scripts/finalize_svg.py <project_path>
 python3 scripts/svg_to_pptx.py <project_path>
@@ -35,14 +35,16 @@ a text element is technically a valid PowerPoint text box but visually escapes
 its intended card or page region.
 
 ```bash
-python3 scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed \
+python3 scripts/validate_svg_text_slots.py <project_path>/svg_output --strict-unboxed --require-valign --check-canvas \
   --report <project_path>/reports/svg_text_slot_report.json
 ```
 
 For PPT Master-compatible pages, meaningful text should use
-`data-pptx-textbox="true"` plus `data-pptx-box-x/y/w/h` and explicit `<tspan>`
-lines. If this gate fails, shorten content, split the page, or choose a larger
-page recipe before running `finalize_svg.py`.
+`data-pptx-textbox="true"` plus `data-pptx-box-x/y/w/h`, explicit
+`data-pptx-valign="top|middle|bottom"`, and explicit `<tspan>` lines. A
+center-locked control must use `data-pptx-valign="middle"`. If this gate fails,
+fix the slot contract before shortening content, splitting the page, or running
+`finalize_svg.py`.
 
 ## `svg_to_pptx.py`
 
@@ -126,9 +128,11 @@ issues mean exported PowerPoint geometry is unsafe even if SVG validation
 passed.
 
 For visual QA, render the exported PPTX rather than relying only on SVG previews.
-Preferred route: LibreOffice/soffice -> PDF -> PNG. If `soffice` or `pdftoppm`
-is not on `PATH`, locate the executable explicitly; if `pdftoppm` is unavailable,
-`scripts/render_pptx_png.py` renders the PDF pages with PyMuPDF. Inspect
+On Windows, `scripts/render_pptx_png.py` prefers native Microsoft PowerPoint
+COM export so the preview uses the Office layout engine. Otherwise it uses the
+LibreOffice/soffice -> PDF -> PNG route. Use `--renderer powerpoint` or
+`--renderer soffice` to force a backend; if `pdftoppm` is unavailable, the
+wrapper renders the PDF pages with PyMuPDF. Inspect
 full-size previews for dense cards, process steps, tables, references, and any
 page where text was shortened or ported from another template. Contact sheets
 are only a deck-rhythm overview.

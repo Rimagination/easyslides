@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-2" data-name="Group 1" transform="translate(640 360) scale(-1 1) translate(-640 -360)">
+<g id="layout-shape-4" data-name="Rectangle 3">
+<rect x="0" y="0" width="239.21" height="720" stroke="none" fill="#912C8D" stroke-width="1"/>
+</g>
+<g id="layout-shape-5" data-name="Freeform 20">
+<rect x="111.74" y="0" width="1168.26" height="720" rx="45.54" ry="45.54" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="round" stroke="none"/>
+</g>
+</g>
+<g id="layout-shape-11" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="518.67" y="217.86" width="48.36" height="48.36" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="526.67" y="235.86" font-size="12" fill="#64748B">ph pic idx=14</text>
+</g>
+<g id="layout-shape-90" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="735.31" y="217.86" width="48.36" height="48.36" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="743.31" y="235.86" font-size="12" fill="#64748B">ph pic idx=17</text>
+</g>
+<g id="layout-shape-91" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="955.85" y="217.86" width="48.36" height="48.36" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="963.85" y="235.86" font-size="12" fill="#64748B">ph pic idx=18</text>
+</g></svg>

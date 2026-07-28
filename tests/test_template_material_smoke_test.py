@@ -106,6 +106,8 @@ class TemplateMaterialSmokeTestTests(unittest.TestCase):
         self.assertEqual(texts[0].attrib["data-pptx-box-w"], "760")
         self.assertEqual(texts[0].attrib["data-pptx-box-h"], "64")
         self.assertEqual(texts[1].attrib["data-pptx-valign"], "middle")
+        self.assertEqual(texts[1].attrib["data-pptx-box-y"], "610")
+        self.assertEqual(texts[1].attrib["data-pptx-box-h"], "46")
 
     def test_selected_pages_filter_page_sidecars(self):
         from scripts.template_material_smoke_test import run_material_smoke_test
@@ -173,6 +175,64 @@ class TemplateMaterialSmokeTestTests(unittest.TestCase):
         self.assertIn("01-", svg)
         self.assertNotIn("38.6", svg)
         self.assertNotIn("Ba...", svg)
+
+    def test_narrow_tab_heading_uses_short_label_material(self):
+        from scripts.template_material_smoke_test import run_material_smoke_test
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "template"
+            source.mkdir()
+            (source / "01_content.svg").write_text(
+                """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="105" y="128" width="402" height="53" rx="9" fill="#114B8D"/>
+  <text x="140" y="161" data-pptx-textbox="true" data-pptx-box-x="130"
+    data-pptx-box-y="134" data-pptx-box-w="180.95" data-pptx-box-h="42.01"
+    data-pptx-valign="middle" font-size="26.67" fill="#FFFFFF">娣诲姞灏忔爣棰橈細</text>
+  <text x="130" y="230" data-pptx-textbox="true" data-pptx-box-x="130"
+    data-pptx-box-y="200" data-pptx-box-w="900" data-pptx-box-h="96"
+    data-pptx-valign="top" font-size="22">Original body evidence remains here.</text>
+</svg>
+""",
+                encoding="utf-8",
+            )
+            write_json(
+                source / "layouts.json",
+                {
+                    "template_id": "narrow_tab_fixture",
+                    "pages": [
+                        {"id": "01_content", "svg": "01_content.svg", "story_role": "content", "source_slide": 1},
+                    ],
+                },
+            )
+            write_json(
+                source / "geometry_contract.json",
+                {
+                    "schema_version": "easyslides.template_geometry_contract.v1",
+                    "template_id": "narrow_tab_fixture",
+                    "canvas": {"width": 1280, "height": 720},
+                    "pages": [{"id": "01_content", "svg": "01_content.svg", "protected_regions": [], "containers": []}],
+                },
+            )
+            write_json(
+                source / "layout_roster.json",
+                {"template_id": "narrow_tab_fixture", "layouts": [{"page_id": "01_content", "svg_path": "01_content.svg"}]},
+            )
+
+            target = root / "out"
+            report = run_material_smoke_test(source, target)
+            svg = (target / "01_content.svg").read_text(encoding="utf-8")
+            root_xml = ET.fromstring(svg)
+            texts = [
+                "".join(node.itertext())
+                for node in root_xml.iter()
+                if node.tag.rsplit("}", 1)[-1] == "text"
+            ]
+
+        self.assertEqual(report["status"], "pass", report["failures"])
+        self.assertEqual(report["ellipsized_heading_count"], 0)
+        self.assertEqual(texts[0].strip(), "Baseline")
+        self.assertNotIn("High-temperatur", texts[0])
 
     def test_flipped_images_are_not_treated_as_safe_material_slots(self):
         from scripts.template_material_smoke_test import run_material_smoke_test

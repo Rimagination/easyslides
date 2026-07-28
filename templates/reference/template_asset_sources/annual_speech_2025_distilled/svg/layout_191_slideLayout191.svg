@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><g id="layout-shape-4" data-name="Rectangle 3">
+<rect x="0" y="0" width="239.21" height="720" stroke="none" fill="#912C8D" stroke-width="1"/>
+</g>
+<g id="layout-shape-5" data-name="Freeform 20">
+<rect x="143.46" y="0" width="1136.54" height="720" rx="45.54" ry="45.54" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="round" stroke="none"/>
+</g>
+<g id="layout-shape-6" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="30.12" y="35.84" width="89.49" height="89.49" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="38.12" y="53.84" font-size="12" fill="#64748B">ph pic idx=13</text>
+</g>
+<g id="layout-shape-49" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="222.31" y="511.06" width="56.12" height="56.12" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="230.31" y="529.06" font-size="12" fill="#64748B">ph pic idx=14</text>
+</g>
+<g id="layout-shape-50" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="470.78" y="511.06" width="56.12" height="56.12" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="478.78" y="529.06" font-size="12" fill="#64748B">ph pic idx=15</text>
+</g>
+<g id="layout-shape-51" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="720.06" y="511.06" width="56.12" height="56.12" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="728.06" y="529.06" font-size="12" fill="#64748B">ph pic idx=16</text>
+</g>
+<g id="layout-shape-52" data-name="Picture Placeholder 2" data-ph-type="pic">
+<rect x="972.57" y="511.06" width="56.12" height="56.12" fill="#F8FAFC" fill-opacity="0.18" stroke="#94A3B8" stroke-dasharray="6 4" stroke-width="1"/><text x="980.57" y="529.06" font-size="12" fill="#64748B">ph pic idx=17</text>
+</g></svg>
