@@ -4,9 +4,11 @@
 
 ![EasySlides: Research to editable slides](assets/easyslides-github-hero.png)
 
-![AI Agent Plugin](https://img.shields.io/badge/AI%20Agent-Plugin-2563EB?style=flat-square)
-![Output: Editable PPTX](https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square)
-[![License: MIT](https://img.shields.io/badge/License-MIT-16A34A?style=flat-square)](LICENSE)
+<p align="center">
+  <img alt="AI Agent Plugin" src="https://img.shields.io/badge/AI%20Agent-Plugin-2563EB?style=flat-square">
+  <img alt="Output: Editable PPTX" src="https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-16A34A?style=flat-square"></a>
+</p>
 
 ## 中文
 
