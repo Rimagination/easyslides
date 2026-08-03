@@ -22,23 +22,8 @@
         "research-oriented",
         "neutral_base"
       ],
-      "compiled_ir": ""
-    },
-    {
-      "package_id": "",
-      "template_id": "academic_red_nav6_distilled",
-      "version": "",
-      "status": "legacy",
-      "display_name": "academic_red_nav6_distilled",
-      "description": "",
-      "path": "templates/layouts/academic_red_nav6_distilled",
-      "canvas_format": "ppt169",
-      "layout_count": 19,
-      "capability_level": "shell",
-      "production_eligible": false,
-      "managed_package": false,
-      "keywords": [],
-      "compiled_ir": ""
+      "compiled_ir": "",
+      "official": true
     },
     {
       "package_id": "",
@@ -61,23 +46,8 @@
         "SCQA",
         "slot_distilled"
       ],
-      "compiled_ir": ""
-    },
-    {
-      "package_id": "",
-      "template_id": "annual_speech_2025_distilled",
-      "version": "",
-      "status": "legacy",
-      "display_name": "annual_speech_2025_distilled",
-      "description": "",
-      "path": "templates/layouts/annual_speech_2025_distilled",
-      "canvas_format": "ppt169",
-      "layout_count": 29,
-      "capability_level": "shell",
-      "production_eligible": false,
-      "managed_package": false,
-      "keywords": [],
-      "compiled_ir": ""
+      "compiled_ir": "",
+      "official": true
     },
     {
       "package_id": "",
@@ -99,7 +69,8 @@
         "active_section",
         "compact_classic"
       ],
-      "compiled_ir": ""
+      "compiled_ir": "",
+      "official": true
     },
     {
       "package_id": "",
@@ -121,23 +92,8 @@
         "top_navigation",
         "source_geometry"
       ],
-      "compiled_ir": ""
-    },
-    {
-      "package_id": "",
-      "template_id": "env_college_2025_school",
-      "version": "",
-      "status": "legacy",
-      "display_name": "env_college_2025_school",
-      "description": "",
-      "path": "templates/layouts/env_college_2025_school",
-      "canvas_format": "ppt169",
-      "layout_count": 8,
-      "capability_level": "shell",
-      "production_eligible": false,
-      "managed_package": false,
-      "keywords": [],
-      "compiled_ir": ""
+      "compiled_ir": "",
+      "official": true
     },
     {
       "package_id": "",
@@ -159,7 +115,8 @@
         "minimal_blue_white",
         "research_report"
       ],
-      "compiled_ir": ""
+      "compiled_ir": "",
+      "official": true
     },
     {
       "package_id": "template/nsfc_defense",
@@ -174,96 +131,26 @@
       "capability_level": "production",
       "production_eligible": false,
       "managed_package": true,
-      "keywords": [
-        "academic_report",
-        "research_defense",
-        "nsfc_defense",
-        "source_geometry",
-        "evidence_dense",
-        "named_slots",
-        "production_gated"
-      ],
-      "compiled_ir": "compiled/template_ir.json"
-    },
-    {
-      "package_id": "",
-      "template_id": "nsfc_defense_distilled",
-      "version": "",
-      "status": "legacy",
-      "display_name": "nsfc_defense_distilled",
-      "description": "",
-      "path": "templates/layouts/nsfc_defense_distilled",
-      "canvas_format": "ppt169",
-      "layout_count": 17,
-      "capability_level": "shell",
-      "production_eligible": false,
-      "managed_package": false,
       "keywords": [],
-      "compiled_ir": ""
+      "compiled_ir": "compiled/template_ir.json",
+      "official": true
     },
     {
-      "package_id": "",
-      "template_id": "nsfc_defense_distilled_reusable",
-      "version": "",
-      "status": "legacy",
-      "display_name": "nsfc_defense_distilled_reusable",
-      "description": "",
-      "path": "templates/layouts/nsfc_defense_distilled_reusable",
-      "canvas_format": "ppt169",
-      "layout_count": 17,
-      "capability_level": "shell",
-      "production_eligible": false,
-      "managed_package": false,
-      "keywords": [],
-      "compiled_ir": ""
-    },
-    {
-      "package_id": "",
-      "template_id": "nsfc_defense_faithful_raster",
-      "version": "",
-      "status": "legacy",
-      "display_name": "nsfc_defense_faithful_raster",
-      "description": "",
-      "path": "templates/layouts/nsfc_defense_faithful_raster",
-      "canvas_format": "ppt169",
-      "layout_count": 17,
-      "capability_level": "shell",
-      "production_eligible": false,
-      "managed_package": false,
-      "keywords": [],
-      "compiled_ir": ""
-    },
-    {
-      "package_id": "template/nsfc_purple_semantic",
-      "template_id": "nsfc_purple_semantic",
-      "version": "0.1.0",
-      "status": "quarantined",
-      "display_name": "NSFC Purple Semantic",
-      "description": "nsfc_purple_semantic",
-      "path": "templates/layouts/nsfc_purple_semantic",
-      "canvas_format": "ppt169",
-      "layout_count": 17,
-      "capability_level": "semantic",
-      "production_eligible": false,
-      "managed_package": true,
-      "keywords": [],
-      "compiled_ir": "compiled/template_ir.json"
-    },
-    {
-      "package_id": "template/research_core",
-      "template_id": "research_core",
+      "package_id": "template/thu_speech",
+      "template_id": "thu_speech",
       "version": "1.0.0",
-      "status": "review",
-      "display_name": "General Research Briefing",
-      "description": "A general research-report template with six controlled evidence and analysis scenes.",
-      "path": "templates/layouts/research_core",
+      "status": "production",
+      "display_name": "THU Speech",
+      "description": "Official Tsinghua speech template with five functional shells, one transition series, and fifteen reviewed content variants.",
+      "path": "templates/layouts/thu_speech",
       "canvas_format": "ppt169",
       "layout_count": 5,
       "capability_level": "production",
-      "production_eligible": false,
+      "production_eligible": true,
       "managed_package": true,
       "keywords": [],
-      "compiled_ir": "compiled/template_ir.json"
+      "compiled_ir": "compiled/template_ir.json",
+      "official": true
     }
   ],
   "packages": [
@@ -280,50 +167,28 @@
       "capability_level": "production",
       "production_eligible": false,
       "managed_package": true,
-      "keywords": [
-        "academic_report",
-        "research_defense",
-        "nsfc_defense",
-        "source_geometry",
-        "evidence_dense",
-        "named_slots",
-        "production_gated"
-      ],
-      "compiled_ir": "compiled/template_ir.json"
-    },
-    {
-      "package_id": "template/nsfc_purple_semantic",
-      "template_id": "nsfc_purple_semantic",
-      "version": "0.1.0",
-      "status": "quarantined",
-      "display_name": "NSFC Purple Semantic",
-      "description": "nsfc_purple_semantic",
-      "path": "templates/layouts/nsfc_purple_semantic",
-      "canvas_format": "ppt169",
-      "layout_count": 17,
-      "capability_level": "semantic",
-      "production_eligible": false,
-      "managed_package": true,
       "keywords": [],
-      "compiled_ir": "compiled/template_ir.json"
+      "compiled_ir": "compiled/template_ir.json",
+      "official": true
     },
     {
-      "package_id": "template/research_core",
-      "template_id": "research_core",
+      "package_id": "template/thu_speech",
+      "template_id": "thu_speech",
       "version": "1.0.0",
-      "status": "review",
-      "display_name": "General Research Briefing",
-      "description": "A general research-report template with six controlled evidence and analysis scenes.",
-      "path": "templates/layouts/research_core",
+      "status": "production",
+      "display_name": "THU Speech",
+      "description": "Official Tsinghua speech template with five functional shells, one transition series, and fifteen reviewed content variants.",
+      "path": "templates/layouts/thu_speech",
       "canvas_format": "ppt169",
       "layout_count": 5,
       "capability_level": "production",
-      "production_eligible": false,
+      "production_eligible": true,
       "managed_package": true,
       "keywords": [],
-      "compiled_ir": "compiled/template_ir.json"
+      "compiled_ir": "compiled/template_ir.json",
+      "official": true
     }
   ],
-  "template_count": 14,
-  "package_count": 3
+  "template_count": 7,
+  "package_count": 2
 }

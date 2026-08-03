@@ -1,0 +1,2497 @@
+{
+  "schema_version": "easyslides.thu_speech.layouts.v1",
+  "template_id": "thu_speech",
+  "replication_mode": "slot_guided_mirror",
+  "global_contract": {
+    "replication_mode": "slot_guided_mirror",
+    "source_geometry_policy": "preserve_fixed_geometry_replace_declared_slots",
+    "functional_page_policy": "four_functional_roles_with_transition_series",
+    "functional_roles": [
+      "cover",
+      "toc",
+      "transition",
+      "ending"
+    ],
+    "content_role": "content",
+    "series_policy": {
+      "transition": {
+        "series_id": "transition_series",
+        "shared_layout": "03_transition.svg",
+        "variation_dimensions": [
+          "TRANSITION_NUMBER",
+          "TRANSITION_PHOTO"
+        ],
+        "rule": "Slides 07-10 share one transition layout; only sequence number and photo differ."
+      }
+    }
+  },
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "format": "ppt169"
+  },
+  "style_system": "thu_speech",
+  "colors": {
+    "primary": "#912C8D",
+    "accent2": "#7561D6",
+    "accent3": "#68A4C6",
+    "accent4": "#6A69B6",
+    "accent5": "#5199EA",
+    "accent6": "#5B84D8"
+  },
+  "fonts": {
+    "majorLatin": "等线 Light",
+    "minorLatin": "等线"
+  },
+  "pages": [
+    {
+      "id": "01_cover",
+      "page_id": "cover",
+      "layout_id": "cover",
+      "svg": "01_cover.svg",
+      "role": "cover",
+      "page_type": "cover",
+      "story_role": "cover",
+      "role_fit": [
+        "cover"
+      ],
+      "slot_model": "cover",
+      "source_slide": 1,
+      "density_score": 3,
+      "functional_variant_group": "cover",
+      "functional_variants": [
+        "cover_source_01",
+        "cover_source_02",
+        "cover_source_03"
+      ],
+      "variant_model": "source_page_variants",
+      "selection_policy": "select_one_source_faithful_variant"
+    },
+    {
+      "id": "02_toc",
+      "page_id": "toc",
+      "layout_id": "toc",
+      "svg": "02_toc.svg",
+      "role": "toc",
+      "page_type": "toc",
+      "story_role": "toc",
+      "role_fit": [
+        "toc"
+      ],
+      "slot_model": "toc",
+      "source_slide": 4,
+      "density_score": 3,
+      "functional_variant_group": "toc",
+      "functional_variants": [
+        "toc_source_04",
+        "toc_source_05",
+        "toc_source_06"
+      ],
+      "variant_model": "source_page_variants",
+      "selection_policy": "select_one_source_faithful_variant"
+    },
+    {
+      "id": "03_transition",
+      "page_id": "transition",
+      "layout_id": "transition",
+      "svg": "03_transition.svg",
+      "role": "transition",
+      "page_type": "transition",
+      "story_role": "transition",
+      "role_fit": [
+        "transition"
+      ],
+      "slot_model": "transition",
+      "source_slide": 7,
+      "density_score": 3,
+      "functional_variant_group": "transition",
+      "functional_variants": [
+        "transition_source_07",
+        "transition_source_08",
+        "transition_source_09",
+        "transition_source_10"
+      ],
+      "variant_model": "series_presets",
+      "series_id": "transition_series",
+      "variation_dimensions": [
+        "TRANSITION_NUMBER",
+        "TRANSITION_PHOTO"
+      ],
+      "shared_layout": "03_transition.svg",
+      "selection_policy": "select_one_series_preset"
+    },
+    {
+      "id": "04_content",
+      "page_id": "content",
+      "layout_id": "content",
+      "svg": "04_content.svg",
+      "role": "content",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content"
+      ],
+      "slot_model": "content",
+      "source_slide": 18,
+      "density_score": 3,
+      "body_variants": [
+        "content_cards_callout",
+        "content_metrics",
+        "content_source_13",
+        "content_source_14",
+        "content_source_15",
+        "content_source_16",
+        "content_source_17",
+        "content_two_panel",
+        "content_source_19",
+        "content_source_20",
+        "content_dual_panels",
+        "content_source_23",
+        "content_source_24",
+        "content_source_25",
+        "content_source_26"
+      ],
+      "selection_policy": "select_one_source_faithful_body_variant"
+    },
+    {
+      "id": "05_ending",
+      "page_id": "ending",
+      "layout_id": "ending",
+      "svg": "05_ending.svg",
+      "role": "ending",
+      "page_type": "ending",
+      "story_role": "ending",
+      "role_fit": [
+        "ending"
+      ],
+      "slot_model": "ending",
+      "source_slide": 27,
+      "density_score": 3,
+      "functional_variant_group": "ending",
+      "functional_variants": [
+        "ending_source_27",
+        "ending_source_28",
+        "ending_source_29"
+      ],
+      "variant_model": "source_page_variants",
+      "selection_policy": "select_one_source_faithful_variant"
+    }
+  ],
+  "layouts": [
+    {
+      "id": "01_cover",
+      "page_id": "cover",
+      "layout_id": "cover",
+      "svg": "01_cover.svg",
+      "role": "cover",
+      "page_type": "cover",
+      "story_role": "cover",
+      "role_fit": [
+        "cover"
+      ],
+      "slot_model": "cover",
+      "source_slide": 1,
+      "density_score": 3,
+      "functional_variant_group": "cover",
+      "functional_variants": [
+        "cover_source_01",
+        "cover_source_02",
+        "cover_source_03"
+      ],
+      "variant_model": "source_page_variants",
+      "selection_policy": "select_one_source_faithful_variant"
+    },
+    {
+      "id": "02_toc",
+      "page_id": "toc",
+      "layout_id": "toc",
+      "svg": "02_toc.svg",
+      "role": "toc",
+      "page_type": "toc",
+      "story_role": "toc",
+      "role_fit": [
+        "toc"
+      ],
+      "slot_model": "toc",
+      "source_slide": 4,
+      "density_score": 3,
+      "functional_variant_group": "toc",
+      "functional_variants": [
+        "toc_source_04",
+        "toc_source_05",
+        "toc_source_06"
+      ],
+      "variant_model": "source_page_variants",
+      "selection_policy": "select_one_source_faithful_variant"
+    },
+    {
+      "id": "03_transition",
+      "page_id": "transition",
+      "layout_id": "transition",
+      "svg": "03_transition.svg",
+      "role": "transition",
+      "page_type": "transition",
+      "story_role": "transition",
+      "role_fit": [
+        "transition"
+      ],
+      "slot_model": "transition",
+      "source_slide": 7,
+      "density_score": 3,
+      "functional_variant_group": "transition",
+      "functional_variants": [
+        "transition_source_07",
+        "transition_source_08",
+        "transition_source_09",
+        "transition_source_10"
+      ],
+      "variant_model": "series_presets",
+      "series_id": "transition_series",
+      "variation_dimensions": [
+        "TRANSITION_NUMBER",
+        "TRANSITION_PHOTO"
+      ],
+      "shared_layout": "03_transition.svg",
+      "selection_policy": "select_one_series_preset"
+    },
+    {
+      "id": "04_content",
+      "page_id": "content",
+      "layout_id": "content",
+      "svg": "04_content.svg",
+      "role": "content",
+      "page_type": "content",
+      "story_role": "content",
+      "role_fit": [
+        "content"
+      ],
+      "slot_model": "content",
+      "source_slide": 18,
+      "density_score": 3,
+      "body_variants": [
+        "content_cards_callout",
+        "content_metrics",
+        "content_source_13",
+        "content_source_14",
+        "content_source_15",
+        "content_source_16",
+        "content_source_17",
+        "content_two_panel",
+        "content_source_19",
+        "content_source_20",
+        "content_dual_panels",
+        "content_source_23",
+        "content_source_24",
+        "content_source_25",
+        "content_source_26"
+      ],
+      "selection_policy": "select_one_source_faithful_body_variant"
+    },
+    {
+      "id": "05_ending",
+      "page_id": "ending",
+      "layout_id": "ending",
+      "svg": "05_ending.svg",
+      "role": "ending",
+      "page_type": "ending",
+      "story_role": "ending",
+      "role_fit": [
+        "ending"
+      ],
+      "slot_model": "ending",
+      "source_slide": 27,
+      "density_score": 3,
+      "functional_variant_group": "ending",
+      "functional_variants": [
+        "ending_source_27",
+        "ending_source_28",
+        "ending_source_29"
+      ],
+      "variant_model": "source_page_variants",
+      "selection_policy": "select_one_source_faithful_variant"
+    }
+  ],
+  "shells": [
+    {
+      "shell_id": "cover",
+      "page_id": "01_cover",
+      "svg": "01_cover.svg",
+      "role": "cover",
+      "source_slide": 1,
+      "variant_group": "cover",
+      "slots": [
+        {
+          "slot_id": "COVER_SUBTITLE",
+          "role": "cover_subtitle",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "COVER_TITLE",
+          "role": "cover_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "COVER_META",
+          "role": "cover_meta",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PRESENTER",
+          "role": "presenter",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "DATE",
+          "role": "date",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        }
+      ]
+    },
+    {
+      "shell_id": "toc",
+      "page_id": "02_toc",
+      "svg": "02_toc.svg",
+      "role": "toc",
+      "source_slide": 4,
+      "variant_group": "toc",
+      "slots": [
+        {
+          "slot_id": "TOC_TITLE",
+          "role": "toc_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_RAIL_LABEL",
+          "role": "toc_rail_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_01",
+          "role": "toc_item_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_02",
+          "role": "toc_item_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_03",
+          "role": "toc_item_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_04",
+          "role": "toc_item_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_01_DESC",
+          "role": "toc_item_01_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_02_DESC",
+          "role": "toc_item_02_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_03_DESC",
+          "role": "toc_item_03_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_04_DESC",
+          "role": "toc_item_04_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_01_TITLE",
+          "role": "toc_item_01_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_01_NUMBER",
+          "role": "toc_item_01_number",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_02_TITLE",
+          "role": "toc_item_02_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_02_NUMBER",
+          "role": "toc_item_02_number",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_03_TITLE",
+          "role": "toc_item_03_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_03_NUMBER",
+          "role": "toc_item_03_number",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_04_TITLE",
+          "role": "toc_item_04_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_ITEM_04_NUMBER",
+          "role": "toc_item_04_number",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TOC_YEAR",
+          "role": "toc_year",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        }
+      ]
+    },
+    {
+      "shell_id": "transition",
+      "page_id": "03_transition",
+      "svg": "03_transition.svg",
+      "role": "transition",
+      "source_slide": 7,
+      "variant_group": "transition",
+      "slots": [
+        {
+          "slot_id": "TRANSITION_TITLE",
+          "role": "transition_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TRANSITION_DESC",
+          "role": "transition_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "TRANSITION_NUMBER",
+          "role": "transition_number",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        }
+      ]
+    },
+    {
+      "shell_id": "content",
+      "page_id": "04_content",
+      "svg": "04_content.svg",
+      "role": "content",
+      "source_slide": 18,
+      "variant_group": null,
+      "slots": [
+        {
+          "slot_id": "CARD_01_TITLE",
+          "role": "card_01_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "CARD_01_BODY",
+          "role": "card_01_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "CARD_02_TITLE",
+          "role": "card_02_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "CARD_02_BODY",
+          "role": "card_02_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "CALLOUT_TEXT",
+          "role": "callout_text",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image"
+        },
+        {
+          "slot_id": "IMAGE_CAPTION",
+          "role": "image_caption",
+          "kind": "image"
+        },
+        {
+          "slot_id": "METRIC_01_VALUE",
+          "role": "metric_01_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "METRIC_01_LABEL",
+          "role": "metric_01_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "METRIC_02_VALUE",
+          "role": "metric_02_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "METRIC_02_LABEL",
+          "role": "metric_02_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "METRIC_03_VALUE",
+          "role": "metric_03_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "METRIC_03_LABEL",
+          "role": "metric_03_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "METRIC_04_VALUE",
+          "role": "metric_04_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "METRIC_04_LABEL",
+          "role": "metric_04_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "EVIDENCE_TITLE_01",
+          "role": "evidence_title_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "EVIDENCE_TEXT_01",
+          "role": "evidence_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "EVIDENCE_TITLE_02",
+          "role": "evidence_title_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "EVIDENCE_TEXT_02",
+          "role": "evidence_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image"
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image"
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image"
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "HIGHLIGHT_VALUE",
+          "role": "highlight_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "HIGHLIGHT_IMAGE",
+          "role": "highlight_image",
+          "kind": "image"
+        },
+        {
+          "slot_id": "KEYWORD_01",
+          "role": "keyword_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "KEYWORD_02",
+          "role": "keyword_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "KEYWORD_03",
+          "role": "keyword_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "KEYWORD_04",
+          "role": "keyword_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_TITLE_01",
+          "role": "panel_title_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_TITLE_02",
+          "role": "panel_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_01_BODY_01",
+          "role": "panel_01_body_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_01_BODY_02",
+          "role": "panel_01_body_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_02_BODY_01",
+          "role": "panel_02_body_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_02_BODY_02",
+          "role": "panel_02_body_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_01_TAG_01",
+          "role": "panel_01_tag_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_01_TAG_02",
+          "role": "panel_01_tag_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_01_TAG_03",
+          "role": "panel_01_tag_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_02_TAG_01",
+          "role": "panel_02_tag_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_02_TAG_02",
+          "role": "panel_02_tag_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_02_TAG_03",
+          "role": "panel_02_tag_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_LEFT_TITLE",
+          "role": "panel_left_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_LEFT_BODY",
+          "role": "panel_left_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_LEFT_IMAGE",
+          "role": "panel_left_image",
+          "kind": "image"
+        },
+        {
+          "slot_id": "PANEL_RIGHT_TITLE",
+          "role": "panel_right_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_RIGHT_BODY",
+          "role": "panel_right_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PANEL_RIGHT_IMAGE",
+          "role": "panel_right_image",
+          "kind": "image"
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        }
+      ],
+      "content_shell_policy": "source_guided_body_variant_required",
+      "body_canvas": {
+        "x": 0,
+        "y": 120,
+        "width": 1280,
+        "height": 600
+      }
+    },
+    {
+      "shell_id": "ending",
+      "page_id": "05_ending",
+      "svg": "05_ending.svg",
+      "role": "ending",
+      "source_slide": 27,
+      "variant_group": "ending",
+      "slots": [
+        {
+          "slot_id": "CLOSING_SUBTITLE",
+          "role": "closing_subtitle",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "CLOSING_TITLE",
+          "role": "closing_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "ENDING_META",
+          "role": "ending_meta",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "PRESENTER",
+          "role": "presenter",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        },
+        {
+          "slot_id": "DATE",
+          "role": "date",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24
+        }
+      ]
+    }
+  ],
+  "body_variants": [
+    "content_cards_callout",
+    "content_metrics",
+    "content_source_13",
+    "content_source_14",
+    "content_source_15",
+    "content_source_16",
+    "content_source_17",
+    "content_two_panel",
+    "content_source_19",
+    "content_source_20",
+    "content_dual_panels",
+    "content_source_23",
+    "content_source_24",
+    "content_source_25",
+    "content_source_26"
+  ],
+  "functional_page_variant_groups": [
+    "cover",
+    "toc",
+    "transition",
+    "ending"
+  ],
+  "slot_models": {
+    "cover": [
+      {
+        "slot_id": "COVER_SUBTITLE",
+        "role": "cover_subtitle",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "COVER_TITLE",
+        "role": "cover_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "COVER_META",
+        "role": "cover_meta",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "presenter",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "DATE",
+        "role": "date",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      }
+    ],
+    "toc": [
+      {
+        "slot_id": "TOC_TITLE",
+        "role": "toc_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_RAIL_LABEL",
+        "role": "toc_rail_label",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_01",
+        "role": "toc_item_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_02",
+        "role": "toc_item_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_03",
+        "role": "toc_item_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_04",
+        "role": "toc_item_04",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_01_DESC",
+        "role": "toc_item_01_desc",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_02_DESC",
+        "role": "toc_item_02_desc",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_03_DESC",
+        "role": "toc_item_03_desc",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_04_DESC",
+        "role": "toc_item_04_desc",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_01_TITLE",
+        "role": "toc_item_01_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_01_NUMBER",
+        "role": "toc_item_01_number",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_02_TITLE",
+        "role": "toc_item_02_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_02_NUMBER",
+        "role": "toc_item_02_number",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_03_TITLE",
+        "role": "toc_item_03_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_03_NUMBER",
+        "role": "toc_item_03_number",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_04_TITLE",
+        "role": "toc_item_04_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_ITEM_04_NUMBER",
+        "role": "toc_item_04_number",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TOC_YEAR",
+        "role": "toc_year",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      }
+    ],
+    "transition": [
+      {
+        "slot_id": "TRANSITION_TITLE",
+        "role": "transition_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TRANSITION_DESC",
+        "role": "transition_desc",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "TRANSITION_NUMBER",
+        "role": "transition_number",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      }
+    ],
+    "ending": [
+      {
+        "slot_id": "CLOSING_SUBTITLE",
+        "role": "closing_subtitle",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "CLOSING_TITLE",
+        "role": "closing_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "ENDING_META",
+        "role": "ending_meta",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PRESENTER",
+        "role": "presenter",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "DATE",
+        "role": "date",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      }
+    ],
+    "content": [
+      {
+        "slot_id": "CARD_01_TITLE",
+        "role": "card_01_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "CARD_01_BODY",
+        "role": "card_01_body",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "CARD_02_TITLE",
+        "role": "card_02_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "CARD_02_BODY",
+        "role": "card_02_body",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "CALLOUT_TEXT",
+        "role": "callout_text",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "IMAGE_01",
+        "role": "image_01",
+        "kind": "image"
+      },
+      {
+        "slot_id": "IMAGE_CAPTION",
+        "role": "image_caption",
+        "kind": "image"
+      },
+      {
+        "slot_id": "METRIC_01_VALUE",
+        "role": "metric_01_value",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "METRIC_01_LABEL",
+        "role": "metric_01_label",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "METRIC_02_VALUE",
+        "role": "metric_02_value",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "METRIC_02_LABEL",
+        "role": "metric_02_label",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "METRIC_03_VALUE",
+        "role": "metric_03_value",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "METRIC_03_LABEL",
+        "role": "metric_03_label",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "METRIC_04_VALUE",
+        "role": "metric_04_value",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "METRIC_04_LABEL",
+        "role": "metric_04_label",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "EVIDENCE_TITLE_01",
+        "role": "evidence_title_01",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "EVIDENCE_TEXT_01",
+        "role": "evidence_text_01",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "EVIDENCE_TITLE_02",
+        "role": "evidence_title_02",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "EVIDENCE_TEXT_02",
+        "role": "evidence_text_02",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "IMAGE_02",
+        "role": "image_02",
+        "kind": "image"
+      },
+      {
+        "slot_id": "IMAGE_03",
+        "role": "image_03",
+        "kind": "image"
+      },
+      {
+        "slot_id": "IMAGE_04",
+        "role": "image_04",
+        "kind": "image"
+      },
+      {
+        "slot_id": "BODY_TEXT_01",
+        "role": "body_text_01",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_02",
+        "role": "body_text_02",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_03",
+        "role": "body_text_03",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_04",
+        "role": "body_text_04",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_05",
+        "role": "body_text_05",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_06",
+        "role": "body_text_06",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_07",
+        "role": "body_text_07",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_08",
+        "role": "body_text_08",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_09",
+        "role": "body_text_09",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_10",
+        "role": "body_text_10",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_11",
+        "role": "body_text_11",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_12",
+        "role": "body_text_12",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "HIGHLIGHT_VALUE",
+        "role": "highlight_value",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "HIGHLIGHT_IMAGE",
+        "role": "highlight_image",
+        "kind": "image"
+      },
+      {
+        "slot_id": "KEYWORD_01",
+        "role": "keyword_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "KEYWORD_02",
+        "role": "keyword_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "KEYWORD_03",
+        "role": "keyword_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "KEYWORD_04",
+        "role": "keyword_04",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_TITLE_01",
+        "role": "panel_title_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_TITLE_02",
+        "role": "panel_title_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_01_BODY_01",
+        "role": "panel_01_body_01",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_01_BODY_02",
+        "role": "panel_01_body_02",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_02_BODY_01",
+        "role": "panel_02_body_01",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_02_BODY_02",
+        "role": "panel_02_body_02",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_01_TAG_01",
+        "role": "panel_01_tag_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_01_TAG_02",
+        "role": "panel_01_tag_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_01_TAG_03",
+        "role": "panel_01_tag_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_02_TAG_01",
+        "role": "panel_02_tag_01",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_02_TAG_02",
+        "role": "panel_02_tag_02",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_02_TAG_03",
+        "role": "panel_02_tag_03",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_LEFT_TITLE",
+        "role": "panel_left_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_LEFT_BODY",
+        "role": "panel_left_body",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_LEFT_IMAGE",
+        "role": "panel_left_image",
+        "kind": "image"
+      },
+      {
+        "slot_id": "PANEL_RIGHT_TITLE",
+        "role": "panel_right_title",
+        "kind": "text",
+        "max_lines": 1,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_RIGHT_BODY",
+        "role": "panel_right_body",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "PANEL_RIGHT_IMAGE",
+        "role": "panel_right_image",
+        "kind": "image"
+      },
+      {
+        "slot_id": "BODY_TEXT_13",
+        "role": "body_text_13",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      },
+      {
+        "slot_id": "BODY_TEXT_14",
+        "role": "body_text_14",
+        "kind": "text",
+        "max_lines": 2,
+        "max_chars_per_line": 24
+      }
+    ]
+  },
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "compress_text_to_capacity",
+      "choose_lower_density_layout",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ],
+    "allowed_overflow_actions": [
+      "split",
+      "truncate"
+    ],
+    "role_defaults": {
+      "title": {
+        "default_font_size_px": 48,
+        "min_font_size_px": 32,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "subtitle": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "presenter": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "date": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "closing_title": {
+        "default_font_size_px": 64,
+        "min_font_size_px": 42,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "split",
+        "max_lines": 1
+      },
+      "closing_subtitle": {
+        "default_font_size_px": 48,
+        "min_font_size_px": 32,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 14,
+        "overflow_action": "split",
+        "max_lines": 1
+      },
+      "year": {
+        "default_font_size_px": 32,
+        "min_font_size_px": 24,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "page_title": {
+        "default_font_size_px": 28,
+        "min_font_size_px": 20,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 1
+      },
+      "highlight_value": {
+        "default_font_size_px": 30,
+        "min_font_size_px": 22,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_title": {
+        "default_font_size_px": 48,
+        "min_font_size_px": 32,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_rail_label": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_title_01": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_title_02": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "chapter_title_01": {
+        "default_font_size_px": 40,
+        "min_font_size_px": 28,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_desc_01": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 15,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_title_02": {
+        "default_font_size_px": 40,
+        "min_font_size_px": 28,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_desc_02": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 15,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_title_03": {
+        "default_font_size_px": 40,
+        "min_font_size_px": 28,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_desc_03": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 15,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_title_04": {
+        "default_font_size_px": 40,
+        "min_font_size_px": 28,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_desc_04": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 15,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "keyword_01": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_01_number": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_01_title": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_01_desc": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 1
+      },
+      "keyword_02": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_02_number": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_02_title": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_02_desc": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 1
+      },
+      "keyword_03": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_03_number": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_03_title": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_03_desc": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 1
+      },
+      "keyword_04": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_04_number": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 16,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_04_title": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_04_desc": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 1
+      },
+      "panel_01_body_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "panel_01_body_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "panel_01_tag_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_01_tag_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_01_tag_03": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_02_body_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "panel_02_body_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "panel_02_tag_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_02_tag_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_02_tag_03": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "cover_subtitle": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "cover_title": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "cover_meta": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "toc_item_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_03": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item_04": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_year": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "transition_title": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "transition_desc": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "transition_number": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "ending_meta": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "card_01_title": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "card_01_body": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "card_02_title": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "card_02_body": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "callout_text": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "image_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "image_caption": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_01_value": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_01_label": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_02_value": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_02_label": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_03_value": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_03_label": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_04_value": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "metric_04_label": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "evidence_title_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "evidence_text_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "evidence_title_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "evidence_text_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "image_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "image_03": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "image_04": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "body_text_01": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_02": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_03": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_04": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_05": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_06": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_07": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_08": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_09": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_10": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_11": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_12": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "highlight_image": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_left_title": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_left_body": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "panel_left_image": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_right_title": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "panel_right_body": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "panel_right_image": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 22,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "body_text_13": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body_text_14": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "split",
+        "max_lines": 2
+      }
+    }
+  },
+  "runtime_contract": "compiled/template_ir.json",
+  "selection_policy": "explicit_functional_variant_then_body_variant"
+}

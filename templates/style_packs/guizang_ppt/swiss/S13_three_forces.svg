@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-style="guizang-style-b" data-layout="S13" data-layout-name="Three Forces">
-  <rect id="background" width="1280" height="720" fill="#FAFAF8"/>
-  <text id="chrome-left" x="64" y="56" fill="#737373" font-family="Consolas, JetBrains Mono, monospace" font-size="12" letter-spacing="3">{{KICKER}}</text>
-  <text id="chrome-right" x="1216" y="56" text-anchor="end" fill="#737373" font-family="Consolas, JetBrains Mono, monospace" font-size="12">S13 · {{PAGE_NUM}}</text>
-  <rect id="chrome-rule" x="64" y="84" width="1152" height="1" fill="#D4D4D2"/>
-  <rect id="chrome-accent" x="64" y="84" width="112" height="3" fill="#002FA7"/>
-  <g id="three-forces"><rect x="64" y="190" width="520" height="390" fill="#0A0A0A"/><text x="104" y="340" fill="#FFFFFF" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="64" font-weight="200">{{HERO_FORCE}}</text><rect x="690" y="218" width="480" height="98" fill="#F0F0EE" stroke="#D4D4D2"/><text x="714" y="270" fill="#0A0A0A" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="300">{{FORCE_1}}</text><rect x="690" y="350" width="480" height="98" fill="#F0F0EE" stroke="#D4D4D2"/><text x="714" y="402" fill="#0A0A0A" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="300">{{FORCE_2}}</text><rect x="690" y="482" width="480" height="98" fill="#F0F0EE" stroke="#D4D4D2"/><text x="714" y="534" fill="#0A0A0A" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="24" font-weight="300">{{FORCE_3}}</text></g>
-</svg>

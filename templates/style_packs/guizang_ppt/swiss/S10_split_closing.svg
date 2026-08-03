@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-style="guizang-style-b" data-layout="S10" data-layout-name="Split Closing">
-  <rect id="background" width="1280" height="720" fill="#FAFAF8"/>
-  <rect id="closing-left" x="0" y="0" width="640" height="720" fill="#002FA7"/>
-  <text id="closing-title" x="64" y="336" fill="#FFFFFF" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="84" font-weight="200">{{CLOSING_TITLE}}</text>
-  <g id="closing-list" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="24" fill="#0A0A0A"><text x="704" y="220">{{POINT_1}}</text><line x1="704" y1="252" x2="1160" y2="252" stroke="#D4D4D2"/><text x="704" y="340">{{POINT_2}}</text><line x1="704" y1="372" x2="1160" y2="372" stroke="#D4D4D2"/><text x="704" y="460">{{POINT_3}}</text></g>
-</svg>

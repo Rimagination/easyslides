@@ -1,0 +1,164 @@
+{
+  "schema_version": "easyslides.page_catalog.v1",
+  "template_id": "thu_speech",
+  "selection_policy": "functional_role_variant_then_body_variant",
+  "pages": [
+    {
+      "id": "01_cover",
+      "source_slide": 1,
+      "story_role": "cover",
+      "role_fit": [
+        "cover"
+      ],
+      "selection_policy": "select_one_source_faithful_variant",
+      "functional_variant_group": "cover",
+      "functional_variants": [
+        "cover_source_01",
+        "cover_source_02",
+        "cover_source_03"
+      ],
+      "variant_model": "source_page_variants",
+      "series_id": null,
+      "body_variants": []
+    },
+    {
+      "id": "02_toc",
+      "source_slide": 4,
+      "story_role": "toc",
+      "role_fit": [
+        "toc"
+      ],
+      "selection_policy": "select_one_source_faithful_variant",
+      "functional_variant_group": "toc",
+      "functional_variants": [
+        "toc_source_04",
+        "toc_source_05",
+        "toc_source_06"
+      ],
+      "variant_model": "source_page_variants",
+      "series_id": null,
+      "body_variants": []
+    },
+    {
+      "id": "03_transition",
+      "source_slide": 7,
+      "story_role": "transition",
+      "role_fit": [
+        "transition"
+      ],
+      "selection_policy": "select_one_source_faithful_variant",
+      "functional_variant_group": "transition",
+      "functional_variants": [
+        "transition_source_07",
+        "transition_source_08",
+        "transition_source_09",
+        "transition_source_10"
+      ],
+      "variant_model": "series_presets",
+      "series_id": "transition_series",
+      "body_variants": []
+    },
+    {
+      "id": "04_content",
+      "source_slide": 18,
+      "story_role": "content",
+      "role_fit": [
+        "content"
+      ],
+      "selection_policy": "select_one_source_faithful_body_variant",
+      "functional_variant_group": null,
+      "functional_variants": [],
+      "variant_model": "body_variants",
+      "series_id": null,
+      "body_variants": [
+        "content_cards_callout",
+        "content_metrics",
+        "content_source_13",
+        "content_source_14",
+        "content_source_15",
+        "content_source_16",
+        "content_source_17",
+        "content_two_panel",
+        "content_source_19",
+        "content_source_20",
+        "content_dual_panels",
+        "content_source_23",
+        "content_source_24",
+        "content_source_25",
+        "content_source_26"
+      ]
+    },
+    {
+      "id": "05_ending",
+      "source_slide": 27,
+      "story_role": "ending",
+      "role_fit": [
+        "ending"
+      ],
+      "selection_policy": "select_one_source_faithful_variant",
+      "functional_variant_group": "ending",
+      "functional_variants": [
+        "ending_source_27",
+        "ending_source_28",
+        "ending_source_29"
+      ],
+      "variant_model": "source_page_variants",
+      "series_id": null,
+      "body_variants": []
+    }
+  ],
+  "functional_page_variants": [
+    "cover",
+    "toc",
+    "transition",
+    "ending"
+  ],
+  "body_variants": [
+    "content_cards_callout",
+    "content_metrics",
+    "content_source_13",
+    "content_source_14",
+    "content_source_15",
+    "content_source_16",
+    "content_source_17",
+    "content_two_panel",
+    "content_source_19",
+    "content_source_20",
+    "content_dual_panels",
+    "content_source_23",
+    "content_source_24",
+    "content_source_25",
+    "content_source_26"
+  ],
+  "source_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "easyslides.story_structure.v1",
+  "template_id": "thu_speech",
+  "default_scenario": "source_faithful_template_reuse",
+  "canonical_shells": [
+    "cover",
+    "toc",
+    "transition",
+    "content",
+    "ending"
+  ],
+  "shell_profile": {
+    "policy": "evidence_driven_three_to_five_stable_shells",
+    "minimum_shell_count": 3,
+    "maximum_shell_count": 5,
+    "required_shell_roles": [
+      "cover",
+      "content",
+      "ending"
+    ],
+    "optional_shell_roles": [
+      "toc",
+      "transition"
+    ],
+    "active_shell_roles": [
+      "cover",
+      "toc",
+      "transition",
+      "content",
+      "ending"
+    ],
+    "active_shell_count": 5,
+    "toc_present": true,
+    "chapter_present": false,
+    "transition_present": true
+  },
+  "source_slide_count": 29,
+  "recommended_flow": [
+    {
+      "story_role": "cover",
+      "page_id": "01_cover",
+      "source_slide": 1
+    },
+    {
+      "story_role": "toc",
+      "page_id": "02_toc",
+      "source_slide": 4
+    },
+    {
+      "story_role": "transition",
+      "page_id": "03_transition",
+      "source_slide": 7
+    },
+    {
+      "story_role": "content",
+      "page_id": "04_content",
+      "source_slide": 18
+    },
+    {
+      "story_role": "ending",
+      "page_id": "05_ending",
+      "source_slide": 27
+    }
+  ]
+}

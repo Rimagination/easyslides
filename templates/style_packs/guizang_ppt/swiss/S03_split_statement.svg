@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-style="guizang-style-b" data-layout="S03" data-layout-name="Split Statement">
-  <rect id="background" width="1280" height="720" fill="#FAFAF8"/>
-  <rect id="left-half" x="0" y="0" width="640" height="720" fill="#002FA7"/>
-  <rect id="right-half" x="640" y="0" width="640" height="720" fill="#F0F0EE"/>
-  <text id="statement-left" x="64" y="312" fill="#FFFFFF" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="82" font-weight="200"><tspan x="64" dy="0">{{STATEMENT}}</tspan><tspan x="64" dy="88">{{STATEMENT_LINE_2}}</tspan></text>
-  <text id="statement-note" x="704" y="220" fill="#0A0A0A" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="28" font-weight="300"><tspan x="704" dy="0">{{NOTE_LINE_1}}</tspan><tspan x="704" dy="44">{{NOTE_LINE_2}}</tspan><tspan x="704" dy="44">{{NOTE_LINE_3}}</tspan></text>
-</svg>

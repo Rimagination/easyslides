@@ -1,0 +1,98 @@
+<svg data-development-only="true" data-source-slide="13" data-variant-id="content_source_13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="4.71" dy="4.71" stdDeviation="10" flood-color="#000000" flood-opacity="0.3"/></filter><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="4.71" dy="4.71" stdDeviation="10" flood-color="#000000" flood-opacity="0.3"/></filter></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+<g id="master-shape-7" data-name="图片 6">
+<image href="../assets/image3.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none"/>
+</g>
+<g id="layout-shape-9" data-name="图片 8">
+<image href="../assets/image3.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none"/>
+</g>
+<g id="shape-2" data-name="图片 1">
+<svg x="789.65" y="419.56" width="364.55" height="217.17" viewBox="0 0.04959 1 0.82299" preserveAspectRatio="none"><image href="../assets/image22.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-18" data-name="图片 17">
+<svg x="143.07" y="136.47" width="363.91" height="217.63" viewBox="0.06902 0 0.93098 1" preserveAspectRatio="none"><image href="../assets/image23.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-19" data-name="矩形 18">
+<rect x="524.01" y="136.47" width="96.37" height="82.07" fill="#912C8D" stroke="none" stroke-width="1" filter="url(#fx1)"/>
+<text x="572.2" y="183.5" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="524.01" data-pptx-box-y="136.47" data-pptx-box-w="96.37" data-pptx-box-h="82.07" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;思源黑体 CN Bold&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="24" font-weight="bold">关键词</tspan></text>
+</g>
+<g id="shape-20" data-name="TextBox 76">
+<rect x="634.07" y="139.83" width="358.13" height="42.01" fill="none"/>
+<text x="643.67" y="167.3" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="634.07" data-pptx-box-y="139.83" data-pptx-box-w="358.13" data-pptx-box-h="42.01" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, +mn-cs, sans-serif" font-size="26.67" fill="#912C8D" font-weight="bold"><tspan fill="#912C8D" font-size="26.67" font-weight="bold">添加标题</tspan><tspan fill="#912C8D" font-size="26.67" font-weight="bold">内容</tspan></text>
+</g>
+<g id="shape-21" data-name="TextBox 76">
+<rect x="266.7" y="421.06" width="358.13" height="42.01" fill="none"/>
+<text x="615.24" y="448.53" text-anchor="end" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="266.7" data-pptx-box-y="421.06" data-pptx-box-w="358.13" data-pptx-box-h="42.01" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, +mn-cs, sans-serif" font-size="26.67" fill="#68A4C6" font-weight="bold"><tspan fill="#68A4C6" font-size="26.67" font-weight="bold">添加标题</tspan><tspan fill="#68A4C6" font-size="26.67" font-weight="bold">内容</tspan></text>
+</g>
+<g id="shape-22" data-name="直接连接符 21">
+<line x1="91.2" y1="386.45" x2="1161.55" y2="386.45" stroke-width="2" stroke="#BFBFBF" fill="#6637E9"/>
+</g>
+<g id="shape-23" data-name="矩形 22">
+<rect x="636.08" y="419.65" width="94.61" height="82.07" fill="#68A4C6" stroke="none" stroke-width="1" filter="url(#fx2)"/>
+<text x="683.39" y="466.68" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="636.08" data-pptx-box-y="419.65" data-pptx-box-w="94.61" data-pptx-box-h="82.07" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;思源黑体 CN Bold&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="24" font-weight="bold">关键词</tspan></text>
+</g>
+<g id="shape-24" data-name="Text1">
+<rect x="638.18" y="188.35" width="520.08" height="170.33" fill="none" stroke="none"/>
+<text x="647.63" y="209.13" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;HarmonyOS Sans SC&quot;, sans-serif" font-size="18.67" fill="#262626"><tspan fill="#262626" font-size="18.67">• </tspan><tspan fill="#262626" font-size="18.67">添加正文内容添加正文内容，添加正文</tspan><tspan fill="#262626" font-size="18.67">内容，添加</tspan><tspan fill="#262626" font-size="18.67">正文内</tspan><tspan x="647.63" dy="28" fill="#262626" font-size="18.67">容，添加正文内容添加正文内容，添加正文</tspan><tspan fill="#262626" font-size="18.67">内容。</tspan></text>
+<text x="647.63" y="265.13" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;HarmonyOS Sans SC&quot;, sans-serif" font-size="18.67" fill="#262626"><tspan fill="#262626" font-size="18.67">• </tspan><tspan fill="#262626" font-size="18.67">添加正文内容添加正文内容，添加正文内容，添加正文内</tspan><tspan x="647.63" dy="28" fill="#262626" font-size="18.67">容，添加正文内容添加正文内容，添加正文内容。</tspan></text>
+</g>
+<g id="shape-25" data-name="矩形 24">
+<rect x="103.64" y="136.47" width="41.01" height="217.33" fill="#912C8D" fill-opacity="0.91" stroke-width="2" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+<g id="shape-26" data-name="文本框 25">
+<rect x="103.64" y="289.61" width="114.87" height="74.32" fill="none"/>
+<text x="113.24" y="339.74" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="103.64" data-pptx-box-y="289.61" data-pptx-box-w="114.87" data-pptx-box-h="74.32" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="53.33" fill="#FFFFFF" fill-opacity="0" font-weight="bold"><tspan fill="#FFFFFF" font-size="53.33" fill-opacity="0" font-weight="bold">01</tspan></text>
+</g>
+<g id="shape-27" data-name="矩形 26">
+<rect x="748.69" y="419.4" width="41.01" height="217.33" fill="#68A4C6" stroke-width="2" stroke-linecap="butt" stroke="none" stroke-linejoin="miter"/>
+</g>
+<g id="shape-28" data-name="文本框 27">
+<rect x="747.75" y="573.64" width="114.87" height="74.32" fill="none"/>
+<text x="757.35" y="623.77" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="747.75" data-pptx-box-y="573.64" data-pptx-box-w="114.87" data-pptx-box-h="74.32" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="53.33" fill="#FFFFFF" fill-opacity="0" font-weight="bold"><tspan fill="#FFFFFF" font-size="53.33" fill-opacity="0" font-weight="bold">02</tspan></text>
+</g>
+<g id="shape-29" data-name="小李PPT1">
+<rect x="38.2" y="25.71" width="471.76" height="54.93" fill="none"/>
+<text x="47.8" y="62.24" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.2" data-pptx-box-y="25.71" data-pptx-box-w="471.76" data-pptx-box-h="54.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="37.33" fill="#6C2280" font-weight="bold"><tspan fill="#6C2280" font-size="37.33" font-weight="bold">添加标题文字（图文排版）</tspan></text>
+</g>
+<g id="shape-30" data-name="图片 29">
+<svg x="1076.56" y="17.35" width="155.26" height="60.06" viewBox="0 0.20586 1 0.51594" preserveAspectRatio="none"><image href="../assets/image20.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-31" data-name="Text1">
+<rect x="106.57" y="469.92" width="521.12" height="170.33" fill="none" stroke="none"/>
+<text x="116.01" y="490.7" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;HarmonyOS Sans SC&quot;, sans-serif" font-size="18.67" fill="#262626"><tspan fill="#262626" font-size="18.67">• </tspan><tspan fill="#262626" font-size="18.67">添加正文内容添加正文内容，添加正文内容，添加正文内容</tspan><tspan x="116.01" dy="28" fill="#262626" font-size="18.67">，添加正文内容添加正文内容，添加正文内容。</tspan></text>
+<text x="116.01" y="546.7" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;HarmonyOS Sans SC&quot;, sans-serif" font-size="18.67" fill="#262626"><tspan fill="#262626" font-size="18.67">• </tspan><tspan fill="#262626" font-size="18.67">添加正文内容添加正文内容，添加正文内容，添加正文内容</tspan><tspan x="116.01" dy="28" fill="#262626" font-size="18.67">，添加正文内容添加正文内容，添加正文内容</tspan><tspan fill="#262626" font-size="18.67">。</tspan></text>
+</g>
+<g id="shape-32" data-name="直线连接符 3">
+<line x1="47.74" y1="89.62" x2="1232.26" y2="89.62" fill="none" stroke-width="2" stroke-linecap="butt" stroke="#6C2280" stroke-linejoin="miter"/>
+</g>
+<g id="shape-48" data-name="组合 47">
+<g id="shape-49" data-name="椭圆 48">
+<ellipse cx="651.47" cy="213.99" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-50" data-name="椭圆 49">
+<ellipse cx="651.47" cy="213.99" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g id="shape-51" data-name="组合 50">
+<g id="shape-52" data-name="椭圆 51">
+<ellipse cx="651.47" cy="281.19" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-53" data-name="椭圆 52">
+<ellipse cx="651.47" cy="281.19" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g id="shape-54" data-name="组合 53">
+<g id="shape-55" data-name="椭圆 54">
+<ellipse cx="118.85" cy="495.49" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-56" data-name="椭圆 55">
+<ellipse cx="118.85" cy="495.49" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1"/>
+</g>
+</g>
+<g id="shape-57" data-name="组合 56">
+<g id="shape-58" data-name="椭圆 57">
+<ellipse cx="118.85" cy="562.69" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-59" data-name="椭圆 58">
+<ellipse cx="118.85" cy="562.69" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1"/>
+</g>
+</g></svg>

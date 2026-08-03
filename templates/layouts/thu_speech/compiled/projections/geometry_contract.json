@@ -1,0 +1,115 @@
+{
+  "schema_version": "easyslides.template_geometry_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "thu_speech",
+  "canvas": {
+    "width": 1280.0,
+    "height": 720.0,
+    "format": "ppt169"
+  },
+  "hard_invariants": [
+    "text_center_y_matches_container_center_y",
+    "declared_slots_stay_inside_canvas",
+    "body_variant_regions_stay_inside_body_canvas",
+    "image_slots_use_contain_unless_full_canvas_background",
+    "image_slots_have_subtle_frame_when_contained",
+    "functional_variant_selection_is_explicit"
+  ],
+  "pages": [
+    {
+      "page_id": "cover",
+      "svg": "templates/layouts/thu_speech/01_cover.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "toc",
+      "svg": "templates/layouts/thu_speech/02_toc.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "transition",
+      "svg": "templates/layouts/thu_speech/03_transition.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "content",
+      "svg": "templates/layouts/thu_speech/04_content.svg",
+      "regions": [
+        {
+          "region_id": "body_canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 120.0,
+            "width": 1280.0,
+            "height": 600.0
+          },
+          "z_index": 10,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "ending",
+      "svg": "templates/layouts/thu_speech/05_ending.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    }
+  ]
+}

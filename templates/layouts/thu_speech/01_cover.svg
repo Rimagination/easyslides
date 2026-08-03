@@ -1,0 +1,28 @@
+<svg data-functional-page-group="cover" data-functional-variant-id="cover_source_01" data-source-slide="1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0.3534" y1="1.0881" x2="0.6466" y2="-0.0881"><stop offset="0" stop-color="#441351"/><stop offset="0.62" stop-color="#912C8D" stop-opacity="0"/></linearGradient></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+<g id="shape-2" data-name="图片 1">
+<svg x="0" y="0" width="1280" height="720" viewBox="0.01884 0.17299 0.98116 0.82701" preserveAspectRatio="none"><image href="assets/image4.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-60" data-name="矩形 59">
+<rect x="0" y="0" width="1280" height="720" fill="url(#ggrad1)" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-20" data-name="矩形 19">
+<rect x="0" y="329.65" width="1280" height="302.9" fill="#FFFFFF" fill-opacity="0.8" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-21" data-name="文本框 20">
+<rect x="101.6" y="375.13" width="681.22" height="38.78" fill="none"/>
+<text x="111.2" y="400.33" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="101.6" data-pptx-box-y="375.13" data-pptx-box-w="681.22" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;阿里巴巴普惠体 Heavy&quot;, sans-serif" font-size="24" fill="#441351" font-weight="bold" letter-spacing="2.67" data-slot="COVER_SUBTITLE" data-slot-id="COVER_SUBTITLE" data-slot-kind="text" data-slot-placeholder="{{COVER_SUBTITLE}}"><tspan fill="#441351" font-size="24" font-weight="bold" letter-spacing="2.67" data-slot="COVER_SUBTITLE" data-slot-id="COVER_SUBTITLE" data-slot-kind="text" data-slot-placeholder="{{COVER_SUBTITLE}}">副标题</tspan></text>
+</g>
+<g id="shape-22" data-name="文本框 21">
+<rect x="97.65" y="418.61" width="684.82" height="87.24" fill="none"/>
+<text x="107.25" y="477.81" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="97.65" data-pptx-box-y="418.61" data-pptx-box-w="684.82" data-pptx-box-h="87.24" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;思源黑体 CN Bold&quot;, sans-serif" font-size="64" fill="#262626" font-weight="bold" data-slot="COVER_TITLE" data-slot-id="COVER_TITLE" data-slot-kind="text" data-slot-placeholder="{{COVER_TITLE}}"><tspan fill="#262626" font-size="64" font-weight="bold" data-slot="COVER_TITLE" data-slot-id="COVER_TITLE" data-slot-kind="text" data-slot-placeholder="{{COVER_TITLE}}">主标题</tspan></text>
+</g>
+<g id="shape-23" data-name="矩形 22">
+<rect x="101.6" y="542.65" width="705.4" height="43.9" fill="none"/>
+<text x="111.2" y="565.59" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="101.6" data-pptx-box-y="542.65" data-pptx-box-w="705.4" data-pptx-box-h="43.9" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Source Han Sans Regular&quot;, sans-serif" font-size="21.33" fill="#262626" font-weight="bold" letter-spacing="1.33" data-slot="COVER_META" data-slot-id="COVER_META" data-slot-kind="text" data-slot-placeholder="{{COVER_META}}"><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33" data-slot="COVER_META" data-slot-id="COVER_META" data-slot-kind="text" data-slot-placeholder="{{COVER_META}}">汇报人：姓名    日期：2025年1月</tspan></text>
+</g>
+<g id="shape-28" data-name="直接连接符 27" transform="translate(429.96 528.35) scale(-1 1) translate(-429.96 -528.35)">
+<line x1="111.33" y1="528.35" x2="748.6" y2="528.35" stroke-width="3" stroke-linecap="round" stroke="#441351" stroke-opacity="0.79" fill="#FFFFFF"/>
+</g>
+<g id="shape-33" data-name="图片 32">
+<svg x="1049.54" y="372.39" width="193.18" height="74.73" viewBox="0 0.20586 1 0.51594" preserveAspectRatio="none"><image href="assets/image5.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g></svg>

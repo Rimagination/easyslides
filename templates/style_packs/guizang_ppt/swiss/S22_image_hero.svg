@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" data-style="guizang-style-b" data-layout="S22" data-layout-name="Image Hero">
-  <rect id="background" width="1280" height="720" fill="#FAFAF8"/>
-  <rect id="image-slot" x="64" y="56" width="1152" height="330" fill="#F0F0EE" stroke="#D4D4D2"/>
-  <text id="image-label" x="640" y="228" text-anchor="middle" fill="#737373" font-family="Consolas, JetBrains Mono, monospace" font-size="18">{{IMAGE_SLOT_21_9}}</text>
-  <rect id="title-card" x="96" y="88" width="430" height="116" fill="#FFFFFF"/>
-  <text id="image-title" x="120" y="150" fill="#0A0A0A" font-family="Helvetica Neue, Inter, Arial, Microsoft YaHei, sans-serif" font-size="36" font-weight="300">{{PAGE_TITLE}}</text>
-  <g id="image-kpis"><rect x="64" y="480" width="352" height="120" fill="#FFFFFF" stroke="#D4D4D2"/><rect x="464" y="480" width="352" height="120" fill="#002FA7"/><rect x="864" y="480" width="352" height="120" fill="#FFFFFF" stroke="#D4D4D2"/></g>
-</svg>

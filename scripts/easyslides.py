@@ -41,6 +41,7 @@ DELEGATED_COMMANDS = {
     "deck-gates": "deck_gates.py",
     "review-contract": "review_contract.py",
     "template-package": "template_package.py",
+    "functional-variant-qa": "functional_page_variant_adapter.py",
     "template-capabilities": "template_capabilities.py",
     "template-compile": "template_compiler.py",
     "slide-compile": "slide_compiler.py",
@@ -79,6 +80,7 @@ def build_parser() -> argparse.ArgumentParser:
             "  deck-gates    Fail-closed deck delivery and handoff gate\n"
             "  review-contract Validate independent critic/arbiter reports\n"
             "  template-package Create, validate, and register reusable template packages\n"
+            "  functional-variant-qa Fail-closed named-slot QA for functional page variants\n"
             "  template-capabilities Validate and synchronize per-template composition boundaries\n"
             "  template-compile Compile canonical template sources into Template IR\n"
             "  slide-compile Resolve shell, body variant, components, and render Slide IR\n"

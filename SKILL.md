@@ -580,13 +580,12 @@ Content page sub-layouts:
 ### Academic Built-in Layout Library
 
 Use `templates/layouts/` when the user explicitly asks to use a template path
-or asks what academic templates are available. The directory contains 5 active
-academic layout packs: `academic_general`, `academic_scqa`, `defense_leftnav`,
-`defense_topnav`, and `literature_minimal`. Broader brand, government,
-enterprise, domain-specific, and special-style PPT Master packs are not part of the active
-library unless restored for a specific academic use case. This active inventory
-does not define the full academic scope; new or external templates may be bound
-to any academic `scenario_variant` if they preserve the hard rules.
+or asks what formal templates are available. The mandatory project policy is
+`templates/template_policy.json`; the official set is exactly
+`academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`,
+`literature_minimal`, and `nsfc_defense`. Package QA status such as `review`
+does not make `nsfc_defense` non-official. All other templates are development
+assets and require an explicit user request.
 
 Each classic pack contains `design_spec.md` and page shell SVGs such as
 `01_cover.svg`, `02_toc.svg`, `02_chapter.svg`, `03_content.svg`, and
@@ -604,61 +603,12 @@ Do not fuzzy-match a bare template name when following PPT Master's stricter
 template flow. Prefer an explicit directory path such as
 `templates/layouts/academic_general/`.
 
-### L001 Notebook Defense Style Pack
+### Archived Style Packs
 
-Use `templates/style_packs/l001_notebook_defense/` when the user asks for the L001
-notebook-defense / burgundy defense style. This is a minimal style pack, not a
-copy of the full EasyPPT asset registry.
-
-Key files:
-- `design_tokens.json`: locked wine-red palette, Microsoft YaHei typography,
-  fixed closing title, and coordinate contracts.
-- `layouts.json`: five lightweight page shells mapped to L001 source layouts.
-- `01_cover.svg` to `05_closing.svg`: SVG templates for the EasySlides
-  SVG-to-PPTX path.
-- `scripts/styles/l001.py`: reusable SVG helper functions.
-
-Validate after edits:
-
-```bash
-python scripts/validate_l001.py templates/style_packs/l001_notebook_defense
-python scripts/svg_quality_checker.py templates/style_packs/l001_notebook_defense
-```
-
-### Guizang PPT Editable Style Pack
-
-Use `templates/style_packs/guizang_ppt/` when the user asks for Guizang, electronic
-magazine, electronic ink, or Swiss internationalism styles while still needing
-editable PPTX output. This pack adapts
-`https://github.com/op7418/guizang-ppt-skill` from HTML/CSS deck templates into
-the EasySlides SVG-to-DrawingML path.
-
-Key files:
-- `design_tokens.json`: Style A's five ink/paper themes and Style B's four
-  Swiss accent themes.
-- `layouts.json`: Style A shell mapping plus the upstream Swiss `S01-S22`
-  layout registry mapped into editable shell families.
-- `style_a/01_cover.svg` to `style_a/04_closing.svg`: Style A native SVG shells.
-- `style_b/01_cover.svg` to `style_b/05_closing.svg`: Style B native SVG shells.
-- `swiss/S01_index_cover.svg` to `swiss/S22_image_hero.svg`:
-  one native SVG skeleton for each upstream Swiss locked layout.
-- `scripts/styles/guizang.py`: reusable SVG helper functions.
-- `scripts/style_pack_contract.py`: validates `spec_lock.md` `style_pack`
-  declarations and resolves Guizang `page_layouts` IDs to concrete SVG files.
-
-When using Guizang as a harness, write `## style_pack` in `spec_lock.md` with
-`package: guizang_ppt`, the locked `variant`, `theme`, `layout_source`, and
-`validator`. Style B pages should prefer `S01`-`S22` layout IDs when the content
-shape matches the upstream Swiss layout registry.
-
-Validate after edits:
-
-```bash
-python scripts/style_pack_contract.py <project_path>/spec_lock.md --json
-python scripts/validate_guizang.py templates/style_packs/guizang_ppt
-python scripts/validate_guizang.py templates/style_packs/guizang_ppt --spec-lock <project_path>/spec_lock.md --json
-python scripts/svg_quality_checker.py templates/style_packs/guizang_ppt
-```
+The L001 notebook-defense and Guizang style packs are not part of the current
+project template route. Their assets are managed in the external archive; do
+not select `templates/style_packs/...` paths because those paths are intentionally
+absent from this checkout.
 
 ### Chart Integration
 

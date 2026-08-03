@@ -62,22 +62,14 @@
   },
   "nsfc_defense": {
     "summary": "National Natural Science Foundation defense template distilled from a dense research-defense deck.",
-    "keywords": [
-      "academic_report",
-      "research_defense",
-      "nsfc_defense",
-      "source_geometry",
-      "evidence_dense",
-      "named_slots",
-      "production_gated"
-    ],
-    "capability_level": "production",
-    "status": "review"
-  },
-  "research_core": {
-    "summary": "A general research-report template with six controlled evidence and analysis scenes.",
     "keywords": [],
     "capability_level": "production",
     "status": "review"
+  },
+  "thu_speech": {
+    "summary": "Official Tsinghua speech template with five functional shells, one transition series, and fifteen reviewed content variants.",
+    "keywords": [],
+    "capability_level": "production",
+    "status": "production"
   }
 }

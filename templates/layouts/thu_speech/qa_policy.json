@@ -1,0 +1,47 @@
+{
+  "schema_version": "easyslides.template_qa_policy.v1",
+  "template_id": "thu_speech",
+  "promotion_policy": "fail_closed",
+  "alignment_invariants": [
+    "text_center_y_matches_container_center_y",
+    "declared_slots_stay_inside_canvas",
+    "body_variant_regions_stay_inside_body_canvas",
+    "image_slots_use_contain_unless_full_canvas_background",
+    "image_slots_have_subtle_frame_when_contained",
+    "functional_variant_selection_is_explicit"
+  ],
+  "required_gates": [
+    "template_package_validate",
+    "template_compile",
+    "body_variant_component_contract",
+    "functional_page_variant_geometry",
+    "svg_quality",
+    "native_pptx_roundtrip",
+    "placeholder_scan",
+    "human_visual_review"
+  ],
+  "source_faithful_contract": {
+    "shell_count": 5,
+    "functional_variant_groups": {
+      "cover": 3,
+      "toc": 3,
+      "transition": 4,
+      "ending": 3
+    },
+    "transition_series": "transition_series",
+    "content_variant_count": 15,
+    "excluded_source_slide": 22
+  },
+  "image_fit_policy": {
+    "scientific_images": "contain",
+    "decorative_photos": "cover",
+    "full_canvas_backgrounds": "stretch",
+    "contained_image_frame": {
+      "stroke": "#E5DDE8",
+      "opacity": 0.78,
+      "width": 1.2,
+      "radius": 3
+    }
+  },
+  "vertical_center_tolerance_px": 1.0
+}

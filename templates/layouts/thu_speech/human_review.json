@@ -1,0 +1,11 @@
+{
+  "schema_version": "easyslides.template_human_review.v1",
+  "template_id": "thu_speech",
+  "status": "pass",
+  "approved": true,
+  "review_basis": "The current THU speech visual system was reviewed after the image-fit, subtle-frame, content-shell, and component-alignment corrections.",
+  "review_artifacts": [
+    "tmp/thu_speech_production_fixture/thu_speech_production_fixture.pptx",
+    "projects/attention_all_you_need_thu_env_ppt169_20260525/thu_speech_paper_test_20260802/visual_review_imagefit_framed"
+  ]
+}

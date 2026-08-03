@@ -23,6 +23,7 @@ import hashlib
 import json
 from pathlib import Path
 from typing import Any
+import xml.etree.ElementTree as ET
 
 try:
     from scripts.body_variant_contract import normalize_component_refs
@@ -61,6 +62,24 @@ DEFAULT_SOURCE_OF_TRUTH = {
 
 class TemplateCompileError(ValueError):
     """Raised when canonical template sources cannot form an executable IR."""
+
+
+def _svg_slot_ids(path: Path) -> set[str]:
+    """Return the editable slot ids physically declared by an SVG shell.
+
+    Source-guided content shells intentionally contain only the shared header.
+    Their body slots live in body variants/components, so a legacy shell record
+    that lists the union of body slots must not become a runtime shell contract.
+    """
+    try:
+        root = ET.parse(path).getroot()
+    except (OSError, ET.ParseError) as exc:
+        raise TemplateCompileError(f"invalid SVG shell {path}: {exc}") from exc
+    return {
+        str(node.attrib.get("data-slot") or node.attrib.get("data-slot-id") or "")
+        for node in root.iter()
+        if node.attrib.get("data-slot") or node.attrib.get("data-slot-id")
+    }
 
 
 def read_json(path: Path, *, required: bool = True) -> dict[str, Any]:
@@ -323,6 +342,39 @@ def _shell_rows(
             model = slot_models.get(shell_id) or slot_models.get(str(source.get("layout_id") or ""))
             if isinstance(model, list):
                 declared_slots = model
+        if isinstance(declared_slots, list) and (
+            role in {"cover", "toc", "transition", "content", "ending"}
+            or str(source.get("content_shell_policy") or "")
+            == "source_guided_body_variant_required"
+        ):
+            # Source-derived shell records may contain the union of functional
+            # or body-variant slots for discoverability. The executable shell
+            # contract must be limited to slots that actually exist in its SVG.
+            physical_slot_ids = _svg_slot_ids(svg)
+            declared_slots = [
+                slot
+                for slot in declared_slots
+                if (
+                    str(slot).strip() in physical_slot_ids
+                    if isinstance(slot, str)
+                    else isinstance(slot, dict)
+                    and str(slot.get("slot_id") or "") in physical_slot_ids
+                )
+            ]
+            declared_ids = {
+                str(slot).strip() if isinstance(slot, str) else str(slot.get("slot_id") or "")
+                for slot in declared_slots
+            }
+            for slot_id in sorted(physical_slot_ids - declared_ids):
+                declared_slots.append(
+                    {
+                        "slot_id": slot_id,
+                        "role": slot_id.lower(),
+                        "kind": "text",
+                        "max_lines": 1,
+                        "max_chars_per_line": 24,
+                    }
+                )
         regions = _normalize_regions(source.get("regions"))
         if role == "content" and content_area and not any(
             row["region_id"] in {"content", "body_canvas"} for row in regions
@@ -401,6 +453,19 @@ def _variant_rows(
                 raise TemplateCompileError(
                     f"body variant recipe {variant_id!r} requires unresolved component {asset_id!r}"
                 )
+        variant_slots = source.get("slots")
+        slot_details = source.get("slot_details")
+        if (
+            isinstance(variant_slots, list)
+            and all(isinstance(slot, str) for slot in variant_slots)
+            and isinstance(slot_details, list)
+        ):
+            detail_map = {
+                str(detail.get("slot_id")): detail
+                for detail in slot_details
+                if isinstance(detail, dict) and detail.get("slot_id")
+            }
+            variant_slots = [detail_map.get(str(slot), slot) for slot in variant_slots]
         rows.append(
             {
                 "variant_id": variant_id,
@@ -419,7 +484,7 @@ def _variant_rows(
                     "story_roles": list(source.get("story_roles") or ["content"]),
                     "priority": int(source.get("priority") or 0),
                 },
-                "slots": _slot_rows(source.get("slots")),
+                "slots": _slot_rows(variant_slots),
                 "regions": _normalize_regions(source.get("regions")),
                 "clear_region": _frame(source.get("clear_region")),
                 "component_refs": refs,

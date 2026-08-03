@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" data-body-only="true" data-source-slide="23" data-variant-id="content_source_23" data-coordinate-space="body_canvas" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="4.71" dy="4.71" stdDeviation="6" flood-color="#68A4C6" flood-opacity="0.59" /></filter><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="4.71" dy="4.71" stdDeviation="7.33" flood-color="#6A69B6" flood-opacity="0.75" /></filter><filter id="fx3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="4.71" dy="4.71" stdDeviation="9.33" flood-color="#912C8D" flood-opacity="0.61" /></filter></defs><image href="../assets/image27.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="shape-40" data-name="组合 39">
+<g id="shape-29" data-name="任意多边形: 形状 5" transform="translate(775.45 519.95) scale(1 -1) translate(-775.45 -519.95)">
+<path d="M 713.21 541.62 L 727.16 498.28 L 837.68 498.28" fill="none" stroke="#912C8D" stroke-dasharray="4 4" stroke-width="1" />
+</g>
+<g id="shape-89" data-name="任意多边形: 形状 88">
+<path d="M 713.21 260.75 L 727.18 237.35 L 837.81 237.35" fill="none" stroke="#772274" stroke-dasharray="4 4" stroke-width="1" />
+</g>
+<g id="shape-5" data-name="组合 4">
+<g id="shape-6" data-name="图表 5">
+<rect x="462.81" y="225.35" width="345.6" height="330.27" fill="none" stroke="#999999" stroke-dasharray="4 4" /><text x="635.61" y="390.48" text-anchor="middle" font-size="14" fill="#999999" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}"><tspan data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}">正文内容</tspan></text>
+</g>
+<g id="shape-194" data-name="矩形 193">
+<rect x="504.68" y="351.68" width="111.53" height="37.8" fill="none" />
+<text x="560.45" y="385.88" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="504.68" data-pptx-box-y="351.68" data-pptx-box-w="111.53" data-pptx-box-h="37.8" data-pptx-valign="bottom" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}">小标题</tspan></text>
+</g>
+<g id="shape-3" data-name="矩形 2">
+<rect x="647.88" y="350.48" width="111.53" height="37.8" fill="none" />
+<text x="703.65" y="384.68" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="647.88" data-pptx-box-y="350.48" data-pptx-box-w="111.53" data-pptx-box-h="37.8" data-pptx-valign="bottom" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}">小标题</tspan></text>
+</g>
+<g id="shape-4" data-name="矩形 3">
+<rect x="578.68" y="469.22" width="111.53" height="37.8" fill="none" />
+<text x="634.45" y="503.42" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="578.68" data-pptx-box-y="469.22" data-pptx-box-w="111.53" data-pptx-box-h="37.8" data-pptx-valign="bottom" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}">小标题</tspan></text>
+</g>
+</g>
+<g id="shape-30" data-name="任意多边形: 形状 88" transform="translate(495.51 249.05) scale(-1 1) translate(-495.51 -249.05)">
+<path d="M 433.21 260.75 L 447.18 237.35 L 557.81 237.35" fill="none" stroke="#68A4C6" stroke-dasharray="4 4" stroke-width="1" />
+</g>
+</g>
+<g id="shape-11" data-name="矩形: 圆角 10" transform="translate(272.77 388.29) scale(-1 1) translate(-272.77 -388.29)">
+<rect x="99.34" y="141.07" width="346.85" height="494.44" rx="6.44" ry="6.44" fill="#FFFFFF" stroke-width="1" stroke="none" filter="url(#fx1)" />
+</g>
+<g id="shape-26" data-name="Text1">
+<rect x="145.51" y="223.44" width="264.37" height="100.03" fill="none" stroke="none" />
+<text x="180.96" y="244.22" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="171.51" data-pptx-box-y="223.44" data-pptx-box-w="238.37" data-pptx-box-h="100.03" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}">正文内容</tspan></text>
+</g>
+<g id="shape-17" data-name="Title">
+<rect x="134.66" y="154.59" width="232.33" height="75.6" fill="none" stroke="none" stroke-width="1" />
+<text x="144.26" y="195.05" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="134.66" data-pptx-box-y="154.59" data-pptx-box-w="232.33" data-pptx-box-h="75.6" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="26.67" fill="#68A4C6" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}"><tspan fill="#68A4C6" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}">小标题</tspan></text>
+</g>
+<g id="shape-8" data-name="直接连接符 7">
+<line x1="157.21" y1="377.31" x2="409.89" y2="377.31" stroke="#808080" stroke-opacity="0.29" fill="#FFFFFF" stroke-width="1" />
+</g>
+<g id="shape-10" data-name="矩形: 圆角 10" transform="translate(996.68 256.11) scale(-1 1) translate(-996.68 -256.11)">
+<rect x="824.1" y="141.07" width="345.16" height="230.08" rx="5.59" ry="5.59" fill="#FFFFFF" stroke-width="1" stroke="none" filter="url(#fx2)" />
+</g>
+<g id="shape-21" data-name="Title">
+<rect x="852.38" y="148.93" width="206.8" height="75.6" fill="none" stroke="none" stroke-width="1" />
+<text x="861.98" y="189.4" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="852.38" data-pptx-box-y="148.93" data-pptx-box-w="206.8" data-pptx-box-h="75.6" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="26.67" fill="#6A69B6" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}"><tspan fill="#6A69B6" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}">小标题</tspan></text>
+</g>
+<g id="shape-44" data-name="组合 43">
+<g id="shape-45" data-name="圆角矩形 44">
+<rect x="679.78" y="300.82" width="35.45" height="24.42" rx="4.07" ry="4.07" stroke-width="2.333" stroke="#FFFFFF" fill="#912C8D" />
+</g>
+<g id="shape-46" data-name="任意多边形 45">
+<path d="M 676.56 308.04 C 676.5 305.75 678.61 303.91 680.68 303.97 L 707.9 303.97 C 710.21 303.91 712.08 305.99 712.02 308.04 L 712.02 324.31 C 712.08 326.6 709.97 328.44 707.9 328.38 L 704.42 328.38 L 702.07 333.02 L 699.61 328.38 L 680.68 328.38 C 678.37 328.44 676.5 326.36 676.56 324.31 L 676.56 308.04 Z" stroke-width="2.333" stroke="#FFFFFF" fill="#912C8D" />
+</g>
+<g id="shape-47" data-name="椭圆 46">
+<ellipse cx="683.68" cy="314.75" rx="3.3" ry="3.27" stroke-width="2.333" stroke="#FFFFFF" fill="#912C8D" />
+</g>
+<g id="shape-48" data-name="椭圆 47">
+<ellipse cx="694.26" cy="314.75" rx="3.3" ry="3.27" stroke-width="2.333" stroke="#FFFFFF" fill="#912C8D" />
+</g>
+<g id="shape-49" data-name="椭圆 48">
+<ellipse cx="704.84" cy="314.75" rx="3.3" ry="3.27" stroke-width="2.333" stroke="#FFFFFF" fill="#912C8D" />
+</g>
+</g>
+<g id="shape-50" data-name="组合 49">
+<g id="shape-51" data-name="圆角矩形 50">
+<rect x="620.48" y="427.02" width="32.6" height="33" rx="2.98" ry="2.98" stroke-width="2" stroke="#FFFFFF" fill="#912C8D" />
+</g>
+<g id="shape-52" data-name="圆角矩形 51">
+<rect x="628.73" y="431.44" width="20.19" height="3.6" rx="1.8" ry="1.8" stroke-width="2" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round" fill="#912C8D" />
+</g>
+<g id="shape-53" data-name="圆角矩形 52">
+<rect x="628.73" y="441.18" width="20.19" height="3.6" rx="1.8" ry="1.8" stroke-width="2" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round" fill="#912C8D" />
+</g>
+<g id="shape-54" data-name="圆角矩形 53">
+<rect x="628.73" y="450.92" width="20.19" height="3.6" rx="1.8" ry="1.8" stroke-width="2" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round" fill="#912C8D" />
+</g>
+<g id="shape-55" data-name="圆角矩形 54">
+<rect x="622.75" y="431.44" width="3.78" height="3.44" rx="1.72" ry="1.72" stroke-width="2" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round" fill="#912C8D" />
+</g>
+<g id="shape-56" data-name="圆角矩形 55">
+<rect x="622.75" y="441.34" width="3.78" height="3.44" rx="1.72" ry="1.72" stroke-width="2" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round" fill="#912C8D" />
+</g>
+<g id="shape-57" data-name="圆角矩形 56">
+<rect x="622.75" y="451.08" width="3.78" height="3.44" rx="1.72" ry="1.72" stroke-width="2" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round" fill="#912C8D" />
+</g>
+</g>
+<g id="shape-58" data-name="组合 57">
+<g id="shape-59" data-name="组合 58">
+<g id="shape-60" data-name="组合 59">
+<g id="shape-61" data-name="圆角矩形 60">
+<rect x="561.96" y="301.13" width="30.65" height="30.23" rx="3.06" ry="3.06" fill="none" stroke-width="2.333" stroke="#FFFFFF" />
+</g>
+<g id="shape-62" data-name="任意多边形 61" transform="translate(573.15 320.86) scale(1 -1) translate(-573.15 -320.86)">
+<path d="M 581.51 312.64 L 581.51 305.8 L 588.38 312.64 L 581.51 312.64 Z M 581.51 305.79 L 581.51 305.7 L 581.6 305.79 L 581.51 305.79 Z M 588.47 312.62 L 588.48 312.64 L 588.47 312.64 L 588.47 312.62 Z M 557.81 332.96 L 557.81 333.03 L 557.81 333.12 C 557.77 334.77 559.62 336.07 560.78 336.02 L 560.83 336.02 L 560.92 336.02 L 585.38 336.02 L 585.46 336.02 L 585.53 336.02 C 587.21 336.06 588.52 334.23 588.47 333.09 L 588.47 333.03 L 588.47 332.96 L 588.47 312.72 L 581.5 312.72 L 581.5 305.79 L 560.92 305.79 L 560.83 305.79 L 560.75 305.79 C 559.07 305.75 557.77 307.57 557.81 308.72 L 557.81 308.79 L 557.81 308.86 L 557.81 332.96 Z M 588.47 312.72 L 588.47 312.64 L 588.38 312.64 L 588.47 312.72 Z M 588.47 312.62 L 588.47 312.5 L 581.7 305.79 L 581.6 305.79 L 588.47 312.62 Z M 581.51 305.79 L 581.5 305.79 L 581.51 305.8 L 581.51 305.79 Z" fill="none" stroke-width="2.333" stroke-linecap="round" stroke="#FFFFFF" stroke-linejoin="round" />
+</g>
+<g id="shape-63" data-name="直接连接符 62">
+<line x1="564.5" y1="316.22" x2="581.39" y2="316.22" stroke-width="2.333" stroke="#FFFFFF" fill="#FFFFFF" />
+</g>
+<g id="shape-64" data-name="任意多边形 63">
+<path d="M 581.43 300.91 L 581.43 310.96 C 581.49 311.65 580.73 312.17 580.27 312.11 L 575.68 312.11 C 574.98 312.17 574.46 311.42 574.52 310.96 L 574.52 300.91 L 581.43 300.91 Z" fill="none" stroke-width="2.333" stroke="#FFFFFF" />
+</g>
+</g>
+<g id="shape-65" data-name="直接连接符 64">
+<line x1="564.48" y1="322.56" x2="581.35" y2="322.56" stroke-width="2.333" stroke="#FFFFFF" fill="#FFFFFF" />
+</g>
+</g>
+<g id="shape-66" data-name="任意多边形 65">
+<path d="M 570.97 297.97 C 570.91 295.61 572.7 293.75 574.43 293.83 L 578.01 293.83 C 579.97 293.75 581.53 295.9 581.47 297.97 L 581.47 300.91 L 570.97 300.91 L 570.97 297.97 Z" fill="none" stroke-width="2.333" stroke="#FFFFFF" />
+</g>
+</g>
+<g id="shape-70" data-name="Text1">
+<rect x="147.97" y="482.31" width="261.92" height="117.73" fill="none" stroke="none" />
+<text x="183.42" y="503.09" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="173.97" data-pptx-box-y="482.31" data-pptx-box-w="235.92" data-pptx-box-h="117.73" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}">正文内容</tspan></text>
+</g>
+<g id="shape-71" data-name="Title">
+<rect x="134.27" y="411.26" width="244.72" height="75.6" fill="none" stroke="none" stroke-width="1" />
+<text x="143.87" y="451.73" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="134.27" data-pptx-box-y="411.26" data-pptx-box-w="244.72" data-pptx-box-h="75.6" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="26.67" fill="#68A4C6" font-weight="bold" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}"><tspan fill="#68A4C6" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}">小标题</tspan></text>
+</g>
+<g id="shape-72" data-name="Text1">
+<rect x="865.78" y="220.28" width="270.03" height="145.47" fill="none" stroke="none" />
+<text x="901.22" y="241.06" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="891.78" data-pptx-box-y="220.28" data-pptx-box-w="244.03" data-pptx-box-h="145.47" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}">正文内容</tspan></text>
+</g>
+
+
+
+<g id="shape-2" data-name="组合 1">
+<g id="shape-83" data-name="椭圆 82">
+<ellipse cx="158.16" cy="235.02" rx="7.86" ry="7.86" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-84" data-name="椭圆 83">
+<ellipse cx="158.23" cy="235.02" rx="4.42" ry="4.21" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-87" data-name="组合 86">
+<g id="shape-88" data-name="椭圆 87">
+<ellipse cx="158.67" cy="493.89" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-90" data-name="椭圆 89">
+<ellipse cx="158.67" cy="493.89" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-81" data-name="矩形: 圆角 10" transform="translate(996.68 520.47) scale(-1 1) translate(-996.68 -520.47)">
+<rect x="824.1" y="405.43" width="345.16" height="230.08" rx="5.59" ry="5.59" fill="#FFFFFF" stroke-width="1" stroke="none" filter="url(#fx3)" />
+</g>
+<g id="shape-73" data-name="Title">
+<rect x="852.02" y="411.26" width="206.8" height="75.6" fill="none" stroke="none" stroke-width="1" />
+<text x="861.62" y="451.73" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="852.02" data-pptx-box-y="411.26" data-pptx-box-w="206.8" data-pptx-box-h="75.6" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="26.67" fill="#912C8D" font-weight="bold" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}"><tspan fill="#912C8D" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}">小标题</tspan></text>
+</g>
+<g id="shape-74" data-name="Text1">
+<rect x="867.64" y="482.31" width="268.17" height="145.47" fill="none" stroke="none" />
+<text x="903.08" y="503.09" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="893.64" data-pptx-box-y="482.31" data-pptx-box-w="242.17" data-pptx-box-h="145.47" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}">正文内容</tspan></text>
+</g>
+<g id="shape-7" data-name="组合 6">
+<g id="shape-95" data-name="椭圆 94">
+<ellipse cx="881.07" cy="493.89" rx="7.86" ry="7.86" fill="#C1A3BF" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-96" data-name="椭圆 95">
+<ellipse cx="881.14" cy="493.89" rx="4.42" ry="4.21" stroke="none" fill="#912C8D" stroke-width="1" />
+</g>
+</g>
+<g id="shape-99" data-name="组合 98">
+<g id="shape-100" data-name="椭圆 99">
+<ellipse cx="880.73" cy="231.86" rx="7.35" ry="7.35" fill="#BDBCDE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-101" data-name="椭圆 100">
+<ellipse cx="880.73" cy="231.86" rx="4.2" ry="4.2" fill="#6A69B6" stroke="none" stroke-width="1" />
+</g>
+</g><rect x="0" y="0" width="1280" height="120" fill="#FFFFFF" data-body-header-mask="true" data-body-area-y="120" /></svg>
