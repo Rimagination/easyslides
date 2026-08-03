@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasySlides Examples</title>
+  <link rel="icon" type="image/png" href="assets/brand/scansci-app-icon-64.png">
   <link rel="preload" as="image" href="assets/seminar-hall.webp" type="image/webp" fetchpriority="high">
   <style>
     :root {
@@ -183,55 +184,50 @@
     }
 
     .home-hero {
-      min-height: calc(92svh - 73px);
-      display: grid;
-      align-items: center;
-      padding: 60px clamp(20px, 5vw, 72px) 48px;
+      min-height: calc(100svh - 73px);
+      height: calc(100svh - 73px);
+      display: block;
+      padding: 0;
       position: relative;
       overflow: hidden;
       isolation: isolate;
       border-bottom: 1px solid rgba(120, 70, 25, 0.22);
       background:
-        linear-gradient(180deg, rgba(255, 248, 229, 0.68), rgba(255, 227, 171, 0.48) 44%, rgba(95, 56, 24, 0.54)),
-        linear-gradient(90deg, rgba(45, 33, 24, 0.46), transparent 22%, transparent 78%, rgba(45, 33, 24, 0.42)),
+        #241812,
         image-set(
           url("assets/seminar-hall.webp") type("image/webp"),
           url("assets/seminar-hall.png") type("image/png")
-        ) center / cover no-repeat;
+        ) 0 0 / 100% 100% no-repeat;
     }
 
     .home-hero::before {
-      display: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(90deg, rgba(26, 17, 11, 0.72), rgba(26, 17, 11, 0.08) 39%, rgba(26, 17, 11, 0.04) 70%, rgba(26, 17, 11, 0.36)),
+        linear-gradient(0deg, rgba(21, 13, 9, 0.7), transparent 41%, rgba(21, 13, 9, 0.18));
+      pointer-events: none;
     }
 
     .home-hero::after {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      height: 34%;
-      background:
-        linear-gradient(180deg, transparent, rgba(77, 43, 17, 0.58));
+      inset: 0;
+      z-index: 1;
+      box-shadow: inset 0 0 160px rgba(18, 10, 5, 0.45);
       pointer-events: none;
     }
 
     .home-hero-inner {
-      width: min(980px, 100%);
-      min-height: min(640px, calc(92svh - 73px));
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 0;
-    }
-
-    .home-hero-inner > div:first-child {
-      width: min(560px, 82vw);
-      margin-top: clamp(18px, 7vh, 72px);
-      text-align: center;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      margin: 0;
     }
 
     .kicker {
@@ -259,127 +255,94 @@
       text-wrap: balance;
     }
 
-    .home-title {
-      max-width: none;
-      font-family: var(--font-latin);
-      font-size: clamp(42px, 7.2vw, 92px);
-      line-height: 0.94;
-      font-weight: 800;
-      letter-spacing: 0;
-      color: #2a170d;
-      text-shadow:
-        0 1px 0 rgba(255, 242, 203, 0.72),
-        0 14px 44px rgba(73, 42, 17, 0.2);
-    }
-
-    .home-slogan {
-      margin: clamp(18px, 2vw, 28px) auto 0;
-      max-width: 560px;
-      font-family: var(--font-serif);
-      color: rgba(53, 34, 19, 0.82);
-      font-size: clamp(20px, 2.8vw, 32px);
-      line-height: 1.24;
-      font-weight: 700;
-      text-align: center;
-      text-wrap: balance;
-    }
-
-    .hero-lower {
+    .hero-screen {
       position: absolute;
-      left: 0;
-      right: 0;
-      top: clamp(118px, 16vh, 168px);
-      bottom: auto;
       z-index: 2;
-      width: 100%;
-      min-height: clamp(300px, 48vh, 520px);
-      pointer-events: none;
-    }
-
-    .stats {
+      left: 24.1%;
+      top: 17.85%;
+      width: 52%;
+      height: 48.1%;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1px;
-      position: absolute;
-      left: clamp(82px, 7.5vw, 180px);
-      width: clamp(190px, 13vw, 260px);
-      height: 100%;
-      background: rgba(119, 70, 24, 0.28);
-      border: 1px solid rgba(125, 77, 30, 0.28);
-      box-shadow: 0 20px 50px rgba(70, 42, 18, 0.14);
-      pointer-events: auto;
-    }
-
-    .stat {
-      padding: 18px;
-      text-align: center;
+      place-items: center;
       background:
-        linear-gradient(180deg, rgba(255, 248, 227, 0.74), rgba(237, 206, 143, 0.58));
+        linear-gradient(135deg, rgba(255, 249, 231, 0.98), rgba(236, 215, 171, 0.94)),
+        #fff3d5;
+      border: 1px solid rgba(255, 244, 211, 0.42);
+      box-shadow: 0 24px 40px rgba(13, 8, 5, 0.54), 0 0 50px rgba(232, 190, 103, 0.16);
     }
 
-    .stat strong {
+    .hero-screen-copy {
+      width: 78%;
+      padding: 4% 0 3%;
+      color: #2c1e16;
+      text-align: center;
+      border-top: 1px solid rgba(93, 57, 24, 0.22);
+      border-bottom: 1px solid rgba(93, 57, 24, 0.22);
+    }
+
+    .hero-screen-kicker {
       display: block;
-      margin-bottom: 4px;
+      color: #8c672f;
       font-family: var(--font-latin);
-      font-size: 26px;
-      font-weight: 750;
-      color: var(--hall-walnut);
-    }
-
-    .stat span {
-      color: rgba(86, 54, 27, 0.72);
-      font-size: 12px;
-      letter-spacing: 0.08em;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      gap: 12px;
+    .hero-screen-slogan {
+      margin: 2.5% 0 2%;
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5vw, 76px);
+      font-weight: 650;
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-screen-slogan em { color: #9a6a28; font-style: normal; }
+
+    .hero-screen-rule { width: 22%; height: 2px; margin: 0 auto 2%; background: #b78a45; }
+    .hero-screen-subtitle { color: rgba(44, 30, 22, 0.62); font-size: 13px; letter-spacing: 0.12em; }
+
+    .hero-stats {
       position: absolute;
-      top: 50%;
-      right: clamp(72px, 5.5vw, 140px);
-      width: clamp(190px, 13vw, 260px);
-      flex: 0 0 auto;
-      transform: translateY(-50%);
-      pointer-events: auto;
+      z-index: 4;
+      left: 6.1%;
+      bottom: 8.1%;
+      display: flex;
+      align-items: stretch;
+      gap: 21px;
+      padding-top: 17px;
+      border-top: 1px solid rgba(239, 212, 154, 0.28);
     }
 
-    .hero-action {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      width: 100%;
-      padding: 0 20px;
-      border: 1px solid var(--line-strong);
+    .hero-stat { display: grid; gap: 3px; min-width: 67px; }
+    .hero-stat strong { font-family: var(--font-latin); font-size: 22px; font-weight: 800; line-height: 1; color: #fff3d5; }
+    .hero-stat span { color: rgba(255, 243, 213, 0.62); font-size: 10px; letter-spacing: 0.08em; }
+    .hero-stat + .hero-stat { padding-left: 21px; border-left: 1px solid rgba(239, 212, 154, 0.25); }
+
+    .next-entry {
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      bottom: 7.2%;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid rgba(239, 212, 154, 0.82);
       border-radius: 999px;
-      color: #2d2118;
-      text-decoration: none;
-      background:
-        linear-gradient(180deg, rgba(255, 248, 227, 0.82), rgba(231, 188, 100, 0.58));
-      font-size: 14px;
-      box-shadow: 0 12px 26px rgba(78, 45, 18, 0.12), inset 0 1px 0 rgba(255,255,255,0.72);
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      transform: translateX(-50%);
+      color: var(--hall-walnut);
+      background: rgba(37, 24, 16, 0.78);
+      box-shadow: 0 16px 36px rgba(15, 8, 4, 0.46), 0 0 22px rgba(214, 174, 98, 0.12), inset 0 1px 0 rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
     }
 
-    .hero-action:hover {
-      transform: translateY(-1px);
-      border-color: rgba(122, 77, 28, 0.54);
-      background:
-        linear-gradient(180deg, rgba(255, 252, 239, 0.94), rgba(237, 198, 111, 0.72));
-      box-shadow: 0 16px 34px rgba(78, 45, 18, 0.18), inset 0 1px 0 rgba(255,255,255,0.86);
-    }
-
-    .hero-action.primary {
-      background:
-        linear-gradient(180deg, #51321f, #22150f);
-      color: #fff1cb;
-      border-color: rgba(238, 195, 100, 0.58);
-    }
+    .next-entry::before { content: "↓"; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(180deg, #efd49a, #b77e33); font-family: var(--font-latin); font-size: 24px; font-weight: 800; line-height: 1; }
+    .next-entry:hover { box-shadow: 0 18px 40px rgba(15, 8, 4, 0.54), 0 0 30px rgba(214, 174, 98, 0.24), inset 0 1px 0 rgba(255,255,255,0.18); }
 
     .catalog {
       width: min(1320px, calc(100% - 40px));
@@ -1703,83 +1666,60 @@
       }
 
       .home-hero {
-        min-height: auto;
-        padding-top: 34px;
-        padding-bottom: 24px;
-        overflow: hidden;
+        min-height: calc(100svh - 62px);
+        height: calc(100svh - 62px);
+        padding: 0;
       }
 
       .home-hero-inner {
-        min-height: 520px;
+        min-height: 0;
       }
 
-      .hero-lower {
-        left: 50%;
-        right: auto;
-        top: auto;
-        bottom: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: calc(100% - 32px);
-        min-height: auto;
-        gap: 10px;
-        transform: translateX(-50%);
-        pointer-events: auto;
+      .hero-screen-kicker {
+        font-size: 8px;
       }
 
-      h1 {
-        max-width: 100%;
-        font-size: clamp(38px, 13.2vw, 52px);
-        line-height: 1.02;
+      .hero-screen-slogan {
+        font-size: clamp(22px, 5vw, 40px);
       }
 
-      .home-title {
-        font-size: clamp(34px, 10.6vw, 48px);
-        line-height: 0.96;
-        overflow-wrap: normal;
+      .hero-screen-subtitle {
+        font-size: 9px;
       }
 
-      .home-slogan {
-        font-size: 20px;
-        margin-top: 16px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(3, 1fr);
-        position: static;
-        width: min(62%, 286px);
-        height: auto;
-      }
-
-      .stat {
-        padding: 11px 8px;
-      }
-
-      .stat strong {
-        font-size: 21px;
-      }
-
-      .stat span {
-        font-size: 10px;
-        letter-spacing: 0.02em;
-      }
-
-      .hero-actions {
-        position: static;
-        top: auto;
-        right: auto;
-        width: min(35%, 156px);
+      .hero-stats {
+        left: 6.1%;
+        bottom: 8.1%;
         gap: 8px;
-        transform: none;
+        padding-top: 10px;
       }
 
-      .hero-action {
-        width: 100%;
-        min-height: 40px;
-        flex: 0 0 auto;
-        padding-inline: 12px;
-        font-size: 13px;
+      .hero-stat {
+        min-width: 44px;
+      }
+
+      .hero-stat strong {
+        font-size: 16px;
+      }
+
+      .hero-stat span {
+        font-size: 8px;
+      }
+
+      .hero-stat + .hero-stat {
+        padding-left: 8px;
+      }
+
+      .next-entry {
+        bottom: 5%;
+        width: 48px;
+        height: 48px;
+      }
+
+      .next-entry::before {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
       }
 
       .catalog {
@@ -1905,21 +1845,20 @@
   <main class="home">
     <section class="home-hero">
       <div class="home-hero-inner">
-        <div>
-        <p class="kicker" data-i18n="homeKicker">Golden hall research showcase</p>
-        <h1 class="home-title" data-i18n="homeTitle">EasySlides</h1>
-      </div>
-        <p class="home-slogan" data-i18n="homeSlogan">生成最懂学术的AI PPT</p>
-        <div class="hero-lower">
-          <div class="stats" aria-label="Gallery stats">
-            <div class="stat"><strong>5</strong><span data-i18n="statExamples">案例</span></div>
-            <div class="stat"><strong>104</strong><span data-i18n="statPages">Pages</span></div>
-            <div class="stat"><strong>5</strong><span data-i18n="statTemplates">Scenes</span></div>
-          </div>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="hero-action" href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer" data-i18n="githubAction">查看 GitHub 项目</a>
+        <div class="hero-screen" aria-label="EasySlides brand statement">
+          <div class="hero-screen-copy">
+            <span class="hero-screen-kicker">EasySlides · Academic Presentation</span>
+            <div class="hero-screen-slogan">生成最懂学术的<br><em>AI PPT</em></div>
+            <div class="hero-screen-rule"></div>
+            <span class="hero-screen-subtitle">From paper to presentation</span>
           </div>
         </div>
+        <div class="hero-stats" aria-label="Gallery stats">
+          <div class="hero-stat"><strong>05</strong><span data-i18n="statExamples">案例</span></div>
+          <div class="hero-stat"><strong>104</strong><span data-i18n="statPages">真实页图</span></div>
+          <div class="hero-stat"><strong>05</strong><span data-i18n="statTemplates">汇报场景</span></div>
+        </div>
+        <button class="next-entry" type="button" aria-label="进入下一页案例画廊"></button>
       </div>
     </section>
 
@@ -2366,6 +2305,10 @@
           : (activeSlideIndex + 1) % slideCount;
         updateDetail(activeWorkIndex);
       });
+    });
+
+    document.querySelector(".next-entry")?.addEventListener("click", () => {
+      document.querySelector("#catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     const initialLang = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "zh";
