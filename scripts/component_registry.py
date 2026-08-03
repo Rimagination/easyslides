@@ -609,9 +609,18 @@ def _body_variant_selection(template_id: str, variant: dict[str, Any]) -> dict[s
     content_shapes = sorted(
         dict.fromkeys(declared_shapes or (_strings(hints.get("content_shapes")) + inferred))
     )
+    raw_roles = variant.get("page_roles")
+    if raw_roles is None:
+        raw_roles = variant.get("story_roles")
+    if raw_roles is None:
+        raw_roles = variant.get("page_role")
+    if isinstance(raw_roles, str):
+        page_roles = [raw_roles]
+    else:
+        page_roles = _strings(raw_roles)
     return selection_from_source(
         content_shapes=content_shapes,
-        page_roles=_strings(variant.get("story_roles")),
+        page_roles=page_roles,
         item_count_min=variant.get("min_items", hints.get("item_count_min", 1)),
         item_count_max=variant.get("max_items", hints.get("item_count_max", 8)),
         density=str(variant.get("density") or hints.get("density") or "medium"),

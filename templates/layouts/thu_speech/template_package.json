@@ -1,0 +1,65 @@
+{
+  "schema_version": "easyslides.template_package.v1",
+  "package_id": "template/thu_speech",
+  "template_id": "thu_speech",
+  "version": "1.0.0",
+  "status": "production",
+  "display_name": "THU Speech",
+  "description": "Official Tsinghua speech template with five functional shells, one transition series, and fifteen reviewed content variants.",
+  "installability": "repo_relative_template_package",
+  "entrypoints": {
+    "template": "template.json",
+    "layouts": "layouts.json",
+    "body_variants": "body_variants.json",
+    "slots": "slot_contracts.json",
+    "geometry": "geometry_contract.json",
+    "components": "component_catalog.json",
+    "qa": "qa_policy.json",
+    "provenance": "source_page_roster.json",
+    "design_spec": "design_spec.md",
+    "rules": "rules.md"
+  },
+  "source_of_truth": {
+    "package": "template_package.json",
+    "shells": "layouts.json",
+    "body_variants": "body_variants.json",
+    "components": "component_catalog.json",
+    "qa": "qa_policy.json",
+    "provenance": "source_page_roster.json"
+  },
+  "derived_outputs": {
+    "template_ir": "compiled/template_ir.json",
+    "lock": "compiled/template.lock.json",
+    "projections": "compiled/projections",
+    "registry": "templates/template_registry.json"
+  },
+  "capability_level": "production",
+  "compatibility": {
+    "canvas_format": "ppt169",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "output_contract": "editable-native-pptx",
+    "layout_mode": "source_template_projection",
+    "required_renderer": "svg_to_pptx"
+  },
+  "capabilities": [
+    "named_slots",
+    "editable_native_pptx",
+    "component_asset_catalog",
+    "geometry_contract",
+    "text_capacity_contract"
+  ],
+  "scenarios": [
+    "source_faithful_template_reuse"
+  ],
+  "examples": [
+    "templates/layouts/thu_speech/04_content.svg"
+  ],
+  "layout_count": 5,
+  "source_template_id": "",
+  "production_eligible": true,
+  "last_gate_schema": "easyslides.template_production_gate.v1",
+  "last_gate_status": "pass"
+}

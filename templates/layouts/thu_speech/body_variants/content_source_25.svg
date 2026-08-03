@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" data-body-only="true" data-source-slide="25" data-variant-id="content_source_25" data-coordinate-space="body_canvas" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="-2.83" dy="2.83" stdDeviation="12.67" flood-color="#68A4C6" flood-opacity="0.4" /></filter><linearGradient id="ggrad1" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#260825" /><stop offset="0.5" stop-color="#551352" /><stop offset="1" stop-color="#7D1C7A" /></linearGradient><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="2.83" dy="2.83" stdDeviation="5.33" flood-color="#6D216A" flood-opacity="0.3" /></filter><filter id="fx3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="4.71" dy="4.71" stdDeviation="7.33" flood-color="#6A69B6" flood-opacity="0.75" /></filter><filter id="fx4" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.16" /></filter><filter id="fx5" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.16" /></filter><filter id="fx6" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.16" /></filter><filter id="fx7" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="2.67" flood-color="#000000" flood-opacity="0.16" /></filter></defs><image href="../assets/image27.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="shape-26" data-name="任意多边形: 形状 27" transform="translate(892.56 391.44) scale(-1 -1) translate(-892.56 -391.44)">
+<path d="M 618.51 163.8 L 618.51 619.07 C 618.02 636.67 633.59 650.87 648.78 650.47 L 1041.35 650.47 C 1055.75 650.94 1068.48 638.94 1070.94 625.67 L 1101.77 477.8 C 1074.39 463.07 1054.21 423.94 1055.38 391.94 C 1052.98 338.6 1099.61 294.74 1140.15 293.8 L 1165.87 170.4 C 1166.36 168.27 1166.61 164.67 1166.55 163.94 C 1167.29 146.67 1151.72 131.87 1136.28 132.4 L 648.78 132.4 C 631.8 131.87 618.08 148 618.51 163.8 Z" fill="#FFFFFF" stroke-width="1" stroke="none" filter="url(#fx1)" />
+</g>
+<g id="shape-32" data-name="任意多边形: 形状 27">
+<path d="M 717.23 390.89 C 717.23 437.3 679.61 474.93 633.2 474.93 C 586.79 474.93 549.16 437.3 549.16 390.89 C 549.16 344.48 586.79 306.86 633.2 306.86 C 679.61 306.86 717.23 344.48 717.23 390.89 Z" fill="url(#ggrad1)" stroke="none" stroke-width="1" filter="url(#fx2)" />
+<text x="633.2" y="386.09" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="32" fill="#FFFFFF" font-weight="bold" letter-spacing="1.33" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}"><tspan fill="#FFFFFF" font-size="32" font-weight="bold" letter-spacing="1.33" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}">正文内容</tspan></text>
+<text x="633.2" y="418.09" text-anchor="middle" xml:space="preserve" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="32" fill="#FFFFFF" font-weight="bold" letter-spacing="1.33" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}"><tspan fill="#FFFFFF" font-size="32" font-weight="bold" letter-spacing="1.33" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}">小标题</tspan></text>
+</g>
+<g id="shape-31" data-name="矩形 30" transform="translate(917.8 428.86) scale(-1 1) translate(-917.8 -428.86)">
+<rect x="687.07" y="261.96" width="461.47" height="333.8" fill="none" />
+</g>
+<g id="shape-9" data-name="任意多边形: 形状 27">
+<path d="M 98.79 163.8 L 98.79 619.07 C 98.29 636.67 113.86 650.87 129.05 650.47 L 521.62 650.47 C 536.02 650.94 548.75 638.94 551.22 625.67 L 582.04 477.8 C 554.66 463.07 534.48 423.94 535.65 391.94 C 533.25 338.6 579.88 294.74 620.43 293.8 L 646.14 170.4 C 646.64 168.27 646.88 164.67 646.82 163.94 C 647.56 146.67 631.99 131.87 616.55 132.4 L 129.05 132.4 C 112.07 131.87 98.35 148 98.79 163.8 Z" fill="#FFFFFF" stroke-width="1" stroke="none" filter="url(#fx3)" />
+</g>
+<g id="shape-11" data-name="矩形 10">
+<rect x="108.83" y="265.02" width="461.47" height="333.8" fill="none" />
+</g>
+<g id="shape-18" data-name="圆角矩形 17">
+<rect x="149.87" y="169" width="177.39" height="48.64" rx="24.32" ry="24.32" fill="#912C8D" stroke-width="1" stroke="none" filter="url(#fx4)" />
+<text x="238.57" y="201.72" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="149.87" data-pptx-box-y="169" data-pptx-box-w="177.39" data-pptx-box-h="48.64" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}">小标题</tspan></text>
+</g>
+<g id="shape-63" data-name="Text1">
+<rect x="150.43" y="231.96" width="331.81" height="166.4" fill="none" stroke="none" />
+<text x="185.87" y="252.74" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}">正文内容</tspan></text>
+<text x="185.87" y="308.74" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}">正文内容</tspan></text>
+
+</g>
+<g id="shape-68" data-name="圆角矩形 67">
+<rect x="149.87" y="407.79" width="179.48" height="48.64" rx="24.32" ry="24.32" fill="#7561D6" stroke-width="1" stroke="none" filter="url(#fx5)" />
+<text x="239.61" y="440.51" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="149.87" data-pptx-box-y="407.79" data-pptx-box-w="179.48" data-pptx-box-h="48.64" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}">小标题</tspan></text>
+</g>
+<g id="shape-72" data-name="圆角矩形 71">
+<rect x="934.74" y="169" width="178.43" height="48.64" rx="24.32" ry="24.32" fill="#68A4C6" stroke-width="1" stroke="none" filter="url(#fx6)" />
+<text x="1023.95" y="201.72" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="934.74" data-pptx-box-y="169" data-pptx-box-w="178.43" data-pptx-box-h="48.64" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}">小标题</tspan></text>
+</g>
+<g id="shape-76" data-name="圆角矩形 75">
+<rect x="934.74" y="404.66" width="177.39" height="48.64" rx="24.32" ry="24.32" fill="#6A69B6" stroke-width="1" stroke="none" filter="url(#fx7)" />
+<text x="1023.43" y="437.38" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="934.74" data-pptx-box-y="404.66" data-pptx-box-w="177.39" data-pptx-box-h="48.64" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}">小标题</tspan></text>
+</g>
+<g id="shape-77" data-name="Google Shape;9459;p77">
+<path d="M 566.55 178.01 C 568.5 178.01 570.07 179.44 570.07 181.4 C 570.07 183.36 568.5 184.93 566.55 184.93 C 564.72 184.93 563.15 183.36 563.15 181.4 C 563.15 179.44 564.59 178.01 566.55 178.01 Z M 589.8 170.04 L 589.8 188.33 L 574.26 188.33 C 573.47 187.55 572.56 186.63 571.64 186.24 C 572.82 184.93 573.6 183.23 573.6 181.4 C 573.6 177.75 570.47 174.61 566.68 174.61 C 563.02 174.61 559.88 177.75 559.88 181.4 C 559.88 183.23 560.54 184.93 561.84 186.24 C 560.8 186.63 559.88 187.55 559.23 188.33 L 544.07 188.33 L 544.07 170.04 Z M 566.55 188.33 C 570.33 188.33 573.47 191.46 573.47 195.12 L 559.75 195.12 C 559.75 191.46 562.76 188.33 566.55 188.33 Z M 574.78 198.65 L 571.9 215.77 L 561.19 215.77 L 558.18 198.65 Z M 542.11 166.64 C 541.07 166.64 540.42 167.42 540.42 168.21 L 540.42 189.9 C 540.42 190.94 541.2 191.59 542.11 191.59 L 556.88 191.59 C 556.61 192.77 556.22 193.82 556.22 194.99 L 552.83 194.99 C 551.91 194.99 551.26 195.78 551.26 196.69 C 551.26 197.61 552.04 198.39 552.83 198.39 L 554.79 198.39 L 558.05 217.46 C 558.18 218.38 558.84 219.03 559.75 219.03 L 573.47 219.03 C 574.26 219.03 575.04 218.38 575.04 217.46 L 578.3 198.39 L 580.27 198.39 C 581.31 198.39 581.96 197.61 581.96 196.56 C 581.96 195.64 581.05 194.99 580.27 194.99 L 576.87 194.99 C 576.87 193.82 576.74 192.64 576.21 191.59 L 591.11 191.59 C 592.02 191.59 592.68 190.68 592.68 189.9 L 592.68 168.21 C 592.81 167.42 592.02 166.64 591.24 166.64 Z" fill="#912C8D" stroke="none" />
+</g>
+
+
+
+<g id="shape-22" data-name="Text1">
+<rect x="150.43" y="471.45" width="336.03" height="166.4" fill="none" stroke="none" />
+<text x="185.87" y="492.23" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}">正文内容</tspan></text>
+<text x="185.87" y="548.23" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}">正文内容</tspan></text>
+</g>
+<g id="shape-24" data-name="Text1">
+<rect x="774.62" y="231.31" width="342.38" height="166.4" fill="none" stroke="none" />
+<text x="810.07" y="252.09" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}">正文内容</tspan></text>
+<text x="810.07" y="308.09" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}">正文内容</tspan></text>
+</g>
+<g id="shape-25" data-name="Text1">
+<rect x="774.62" y="470.8" width="342.38" height="166.4" fill="none" stroke="none" />
+<text x="810.07" y="491.58" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_13" data-slot-id="BODY_TEXT_13" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_13}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_13" data-slot-id="BODY_TEXT_13" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_13}}">正文内容</tspan></text>
+<text x="810.07" y="547.58" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;等线&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_14" data-slot-id="BODY_TEXT_14" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_14}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_14" data-slot-id="BODY_TEXT_14" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_14}}">正文内容</tspan></text>
+</g>
+<g id="shape-33" data-name="组合 32">
+<g id="shape-34" data-name="椭圆 33">
+<ellipse cx="165.5" cy="248.45" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-35" data-name="椭圆 34">
+<ellipse cx="165.5" cy="248.45" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-36" data-name="组合 35">
+<g id="shape-37" data-name="椭圆 36">
+<ellipse cx="165.5" cy="304.45" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-38" data-name="椭圆 37">
+<ellipse cx="165.5" cy="304.45" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-39" data-name="组合 38">
+<g id="shape-40" data-name="椭圆 39">
+<ellipse cx="786.85" cy="247.80" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-41" data-name="椭圆 40">
+<ellipse cx="786.85" cy="247.80" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-42" data-name="组合 41">
+<g id="shape-43" data-name="椭圆 42">
+<ellipse cx="786.85" cy="303.80" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-44" data-name="椭圆 43">
+<ellipse cx="786.85" cy="303.80" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-45" data-name="组合 44">
+<g id="shape-46" data-name="椭圆 45">
+<ellipse cx="165.5" cy="487.94" rx="7.35" ry="7.35" fill="#C4BCEE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-47" data-name="椭圆 46">
+<ellipse cx="165.5" cy="487.94" rx="4.2" ry="4.2" fill="#7561D6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-48" data-name="组合 47">
+<g id="shape-49" data-name="椭圆 48">
+<ellipse cx="165.5" cy="543.94" rx="7.35" ry="7.35" fill="#C4BCEE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-50" data-name="椭圆 49">
+<ellipse cx="165.5" cy="543.94" rx="4.2" ry="4.2" fill="#7561D6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-57" data-name="组合 56">
+<g id="shape-58" data-name="椭圆 57">
+<ellipse cx="786.85" cy="487.29" rx="7.35" ry="7.35" fill="#BDBCDE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-59" data-name="椭圆 58">
+<ellipse cx="786.85" cy="487.29" rx="4.2" ry="4.2" fill="#6A69B6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-60" data-name="组合 59">
+<g id="shape-61" data-name="椭圆 60">
+<ellipse cx="786.85" cy="543.29" rx="7.35" ry="7.35" fill="#BDBCDE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-62" data-name="椭圆 61">
+<ellipse cx="786.85" cy="543.29" rx="4.2" ry="4.2" fill="#6A69B6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-52" data-name="组合 51">
+<g id="shape-53" data-name="任意多边形: 形状 80">
+<path d="M 697.59 594.87 C 697.67 594.9 697.75 594.91 697.83 594.92 C 697.84 594.92 697.85 594.92 697.86 594.92 C 697.88 594.92 697.89 594.91 697.9 594.91 C 697.97 594.91 698.02 594.9 698.08 594.88 C 698.1 594.87 698.12 594.87 698.15 594.86 C 698.22 594.82 698.29 594.78 698.35 594.72 L 702.29 590.76 L 706.23 594.72 C 706.29 594.78 706.36 594.82 706.44 594.85 C 706.46 594.86 706.48 594.87 706.51 594.88 C 706.56 594.9 706.62 594.91 706.68 594.91 C 706.7 594.91 706.71 594.92 706.73 594.92 C 706.73 594.92 706.74 594.91 706.75 594.91 C 706.83 594.91 706.92 594.9 706.99 594.87 C 707.08 594.83 707.16 594.78 707.22 594.71 C 707.35 594.59 707.42 594.41 707.42 594.22 L 707.42 565.96 C 707.42 565.77 707.35 565.59 707.22 565.46 C 707.09 565.33 706.91 565.26 706.73 565.26 L 697.86 565.26 C 697.79 565.26 697.73 565.28 697.67 565.29 C 697.64 565.3 697.61 565.3 697.59 565.31 C 697.34 565.42 697.16 565.67 697.16 565.96 L 697.16 594.23 C 697.16 594.51 697.33 594.76 697.59 594.87 Z M 707.86 601.65 L 696.72 601.65 C 696.36 601.65 696.06 601.95 696.06 602.32 C 696.06 602.68 696.36 602.98 696.72 603.04 L 707.86 603.04 C 708.23 602.98 708.52 602.68 708.52 602.32 C 708.52 601.95 708.23 601.65 707.86 601.65 Z" stroke-width="0.195" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" fill="none" />
+</g>
+<g id="shape-54" data-name="任意多边形: 形状 81">
+<path d="M 709.4 570.39 L 709.4 573.82 C 710.58 574.15 711.32 574.51 711.6 574.79 L 711.6 609.34 C 705.74 608.53 698.69 608.53 692.83 609.34 L 692.83 574.79 C 693.12 574.5 693.92 574.11 695.18 573.77 L 695.18 570.35 C 693.59 570.72 692.19 571.22 691.18 571.91 C 688.79 570.29 684.23 569.66 680.14 569.66 C 674.29 569.66 667.45 570.95 667.45 574.58 L 667.45 611.27 C 667.45 611.76 667.67 612.22 668.04 612.54 C 668.41 612.85 668.91 612.98 669.39 612.9 C 672.63 612.34 676.35 612.04 680.14 612.04 C 683.93 612.04 687.65 612.34 690.9 612.9 C 690.94 612.91 690.99 612.91 691.03 612.91 L 691.13 612.92 C 691.15 612.92 691.16 612.93 691.18 612.93 C 691.27 612.93 691.36 612.92 691.44 612.91 L 691.46 612.91 C 694.7 612.34 698.42 612.04 702.21 612.04 C 706.01 612.04 709.73 612.34 712.97 612.91 C 713.06 612.92 713.16 612.93 713.25 612.93 C 713.64 612.93 714.02 612.79 714.31 612.54 C 714.69 612.22 714.9 611.76 714.9 611.27 L 714.9 574.58 C 714.9 572.44 712.54 571.12 709.4 570.39 Z M 685.6 600.85 L 674.46 600.85 C 674.09 600.85 673.8 600.55 673.8 600.19 C 673.8 599.82 674.09 599.52 674.46 599.52 L 685.6 599.52 C 685.96 599.52 686.26 599.82 686.25 600.19 C 686.25 600.55 685.96 600.85 685.6 600.85 Z M 685.6 595.39 L 674.46 595.39 C 674.09 595.39 673.8 595.09 673.8 594.72 C 673.8 594.35 674.09 594.06 674.46 594.06 L 685.6 594.06 C 685.96 594.06 686.25 594.35 686.25 594.72 C 686.25 595.09 685.96 595.39 685.6 595.39 Z M 685.6 589.92 L 674.46 589.92 C 674.09 589.92 673.8 589.62 673.8 589.26 C 673.8 588.89 674.09 588.59 674.46 588.59 L 685.6 588.59 C 685.96 588.59 686.25 588.89 686.25 589.26 C 686.25 589.62 685.96 589.92 685.6 589.92 Z M 685.6 584.3 L 674.46 584.3 C 674.09 584.3 673.8 584 673.8 583.64 C 673.8 583.27 674.09 582.97 674.46 582.97 L 685.6 582.97 C 685.96 582.97 686.25 583.27 686.25 583.64 C 686.25 584 685.96 584.3 685.6 584.3 Z" stroke-width="0.195" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" fill="none" />
+</g>
+</g><rect x="0" y="0" width="1280" height="120" fill="#FFFFFF" data-body-header-mask="true" data-body-area-y="120" /></svg>

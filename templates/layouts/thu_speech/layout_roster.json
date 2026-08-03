@@ -1,0 +1,87 @@
+{
+  "schema_version": "easyslides.template_layout_roster.v1",
+  "template_id": "thu_speech",
+  "source": "derived_from_layouts_page_catalog_and_story_structure",
+  "layouts": [
+    {
+      "layout_id": "ASDV-S01",
+      "source_slide": 1,
+      "page_id": "01_cover",
+      "name": "01 cover",
+      "role_fit": [
+        "cover"
+      ],
+      "page_archetype": "cover",
+      "density_score": 3,
+      "slot_model": "cover",
+      "svg_path": "templates/layouts/thu_speech/01_cover.svg",
+      "layout_contract": "asdv_s01_01_cover_contract",
+      "best_for": "opening slide that must preserve source title composition",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ASDV-S02",
+      "source_slide": 4,
+      "page_id": "02_toc",
+      "name": "02 toc",
+      "role_fit": [
+        "toc"
+      ],
+      "page_archetype": "toc",
+      "density_score": 2,
+      "slot_model": "toc",
+      "svg_path": "templates/layouts/thu_speech/02_toc.svg",
+      "layout_contract": "asdv_s02_02_toc_contract",
+      "best_for": "agenda, outline, or section roadmap",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ASDV-S03",
+      "source_slide": 7,
+      "page_id": "03_transition",
+      "name": "03 transition",
+      "role_fit": [
+        "transition"
+      ],
+      "page_archetype": "transition",
+      "density_score": 4,
+      "slot_model": "chapter",
+      "svg_path": "templates/layouts/thu_speech/03_transition.svg",
+      "layout_contract": "asdv_s03_03_transition_contract",
+      "best_for": "section opener or transition",
+      "avoid": "very sparse messages that would make dense source geometry feel empty"
+    },
+    {
+      "layout_id": "ASDV-S04",
+      "source_slide": 18,
+      "page_id": "04_content",
+      "name": "04 content",
+      "role_fit": [
+        "content"
+      ],
+      "page_archetype": "content",
+      "density_score": 3,
+      "slot_model": "content",
+      "svg_path": "templates/layouts/thu_speech/04_content.svg",
+      "layout_contract": "asdv_s04_04_content_contract",
+      "best_for": "content with a source figure, image, or visual exhibit",
+      "avoid": "content that requires moving fixed source chrome"
+    },
+    {
+      "layout_id": "ASDV-S05",
+      "source_slide": 27,
+      "page_id": "05_ending",
+      "name": "05 ending",
+      "role_fit": [
+        "ending"
+      ],
+      "page_archetype": "ending",
+      "density_score": 3,
+      "slot_model": "ending",
+      "svg_path": "templates/layouts/thu_speech/05_ending.svg",
+      "layout_contract": "asdv_s05_05_ending_contract",
+      "best_for": "closing or acknowledgement slide that must preserve source closing composition",
+      "avoid": "content that requires moving fixed source chrome"
+    }
+  ]
+}

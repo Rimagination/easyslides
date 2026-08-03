@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" data-body-only="true" data-source-slide="11" data-variant-id="content_cards_callout" data-coordinate-space="body_canvas" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="4.71" dy="4.71" stdDeviation="13.33" flood-color="#912C8D" flood-opacity="0.2" /></filter></defs><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+<g id="master-shape-7" data-name="图片 6">
+<image href="../assets/image3.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+</g>
+<g id="shape-20" data-name="矩形: 圆角 10" transform="translate(369.28 447.71) scale(-1 1) translate(-369.28 -447.71)">
+<rect x="74.23" y="233.28" width="590.09" height="428.85" rx="7.96" ry="7.96" fill="#FFFFFF" fill-opacity="0.83" stroke-width="1" stroke="none" filter="url(#fx1)" />
+</g>
+<g id="shape-19" data-name="文本框 18">
+<rect x="74.23" y="133.81" width="602.6" height="65.63" fill="none" />
+<text x="83.83" y="154.48" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="74.23" data-pptx-box-y="133.81" data-pptx-box-w="602.6" data-pptx-box-h="65.63" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#000000" data-slot="CALLOUT_TEXT" data-slot-id="CALLOUT_TEXT" data-slot-kind="text" data-slot-placeholder="{{CALLOUT_TEXT}}"><tspan fill="#000000" font-size="18.67" data-slot="CALLOUT_TEXT" data-slot-id="CALLOUT_TEXT" data-slot-kind="text" data-slot-placeholder="{{CALLOUT_TEXT}}">在此填写需要强调的结论或引用</tspan></text>
+</g>
+<g id="shape-23" data-name="文本框 22">
+<rect x="209.82" y="262.66" width="412.6" height="159.95" fill="none" />
+<text x="219.42" y="290.13" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#912C8D" font-weight="bold" data-slot="CARD_01_TITLE" data-slot-id="CARD_01_TITLE" data-slot-kind="text" data-slot-placeholder="{{CARD_01_TITLE}}"><tspan fill="#912C8D" font-size="26.67" font-weight="bold" data-slot="CARD_01_TITLE" data-slot-id="CARD_01_TITLE" data-slot-kind="text" data-slot-placeholder="{{CARD_01_TITLE}}">主要发现</tspan></text>
+<text x="219.42" y="323.33" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="CARD_01_BODY" data-slot-id="CARD_01_BODY" data-slot-kind="text" data-slot-placeholder="{{CARD_01_BODY}}"><tspan fill="#262626" font-size="18.67" data-slot="CARD_01_BODY" data-slot-id="CARD_01_BODY" data-slot-kind="text" data-slot-placeholder="{{CARD_01_BODY}}">此处填写与本页论点相关的证据与说明</tspan></text>
+</g>
+<g id="shape-24" data-name="菱形 23">
+<polygon points="150.4,276.38 190.72,316.13 150.4,355.89 110.08,316.13" fill="#912C8D" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+<text x="150.4" y="325.47" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="110.08" data-pptx-box-y="276.38" data-pptx-box-w="80.64" data-pptx-box-h="79.51" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">1</tspan></text>
+</g>
+<g id="shape-27" data-name="文本框 26">
+<rect x="209.82" y="449.92" width="419.32" height="159.95" fill="none" />
+<text x="219.42" y="477.38" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#68A4C6" font-weight="bold" data-slot="CARD_02_TITLE" data-slot-id="CARD_02_TITLE" data-slot-kind="text" data-slot-placeholder="{{CARD_02_TITLE}}"><tspan fill="#68A4C6" font-size="26.67" font-weight="bold" data-slot="CARD_02_TITLE" data-slot-id="CARD_02_TITLE" data-slot-kind="text" data-slot-placeholder="{{CARD_02_TITLE}}">主要发现</tspan></text>
+<text x="219.42" y="510.58" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="CARD_02_BODY" data-slot-id="CARD_02_BODY" data-slot-kind="text" data-slot-placeholder="{{CARD_02_BODY}}"><tspan fill="#262626" font-size="18.67" data-slot="CARD_02_BODY" data-slot-id="CARD_02_BODY" data-slot-kind="text" data-slot-placeholder="{{CARD_02_BODY}}">此处填写与本页论点相关的证据与说明</tspan></text>
+</g>
+<g id="shape-28" data-name="菱形 27">
+<polygon points="150.4,457.88 190.72,497.63 150.4,537.39 110.08,497.63" fill="#68A4C6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+<text x="150.4" y="506.97" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="110.08" data-pptx-box-y="457.88" data-pptx-box-w="80.64" data-pptx-box-h="79.51" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">2</tspan></text>
+</g>
+<g id="shape-4" data-name="图片 3">
+<rect x="720.8" y="126.72" width="460.17" height="541.37" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_01" data-easyslides-generated="true" /><image href="../assets/image19.jpeg" data-slot="IMAGE_01" data-slot-id="IMAGE_01" data-slot-kind="image" data-slot-placeholder="{{IMAGE_01}}" x="720.8" y="126.72" width="460.17" height="541.37" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
+<g id="shape-32" data-name="矩形 31">
+<rect x="720.8" y="594.68" width="460.17" height="73.41" fill="#912C8D" fill-opacity="0.84" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-33" data-name="文本框 32">
+<rect x="795.79" y="611.43" width="310.2" height="38.78" fill="none" />
+<text x="950.89" y="636.63" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="795.79" data-pptx-box-y="611.43" data-pptx-box-w="310.2" data-pptx-box-h="38.78" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="IMAGE_CAPTION" data-slot-id="IMAGE_CAPTION" data-slot-kind="text" data-slot-placeholder="{{IMAGE_CAPTION}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="IMAGE_CAPTION" data-slot-id="IMAGE_CAPTION" data-slot-kind="text" data-slot-placeholder="{{IMAGE_CAPTION}}">定义标签</tspan></text>
+</g>
+
+
+<rect x="0" y="0" width="1280" height="120" fill="#FFFFFF" data-body-header-mask="true" data-body-area-y="120" /></svg>

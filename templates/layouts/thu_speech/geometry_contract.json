@@ -1,0 +1,120 @@
+{
+  "schema_version": "easyslides.template_geometry_contract.v1",
+  "template_id": "thu_speech",
+  "canvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "pages": [
+    {
+      "id": "01_cover",
+      "svg": "01_cover.svg",
+      "source_slide": 1,
+      "story_role": "cover",
+      "protected_regions": [],
+      "content_bounds": {
+        "x": 24,
+        "y": 96,
+        "width": 1232,
+        "height": 600
+      },
+      "containers": [
+        {
+          "id": "container_01",
+          "x": 0.0,
+          "y": 329.65,
+          "width": 1280.0,
+          "height": 302.9,
+          "fill": "#FFFFFF",
+          "stroke": "none"
+        }
+      ]
+    },
+    {
+      "id": "02_toc",
+      "svg": "02_toc.svg",
+      "source_slide": 4,
+      "story_role": "toc",
+      "protected_regions": [],
+      "content_bounds": {
+        "x": 24,
+        "y": 96,
+        "width": 1232,
+        "height": 600
+      },
+      "containers": [
+        {
+          "id": "container_01",
+          "x": 0.0,
+          "y": 73.6,
+          "width": 1280.0,
+          "height": 570.53,
+          "fill": "#FFFFFF",
+          "stroke": "none"
+        }
+      ]
+    },
+    {
+      "id": "03_transition",
+      "svg": "03_transition.svg",
+      "source_slide": 7,
+      "story_role": "transition",
+      "protected_regions": [],
+      "content_bounds": {
+        "x": 24,
+        "y": 96,
+        "width": 1232,
+        "height": 600
+      },
+      "containers": []
+    },
+    {
+      "id": "04_content",
+      "svg": "04_content.svg",
+      "source_slide": 18,
+      "story_role": "content",
+      "protected_regions": [],
+      "content_bounds": {
+        "x": 24,
+        "y": 96,
+        "width": 1232,
+        "height": 600
+      },
+      "containers": [
+        {
+          "id": "container_01",
+          "x": -0.13,
+          "y": 0.0,
+          "width": 1279.87,
+          "height": 401.23,
+          "fill": "url(#ggrad1)",
+          "stroke": "none"
+        }
+      ]
+    },
+    {
+      "id": "05_ending",
+      "svg": "05_ending.svg",
+      "source_slide": 27,
+      "story_role": "ending",
+      "protected_regions": [],
+      "content_bounds": {
+        "x": 24,
+        "y": 96,
+        "width": 1232,
+        "height": 600
+      },
+      "containers": [
+        {
+          "id": "container_01",
+          "x": 0.0,
+          "y": 329.65,
+          "width": 1280.0,
+          "height": 302.9,
+          "fill": "#FFFFFF",
+          "stroke": "none"
+        }
+      ]
+    }
+  ]
+}

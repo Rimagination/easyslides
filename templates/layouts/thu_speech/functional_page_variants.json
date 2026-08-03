@@ -1,0 +1,358 @@
+{
+  "schema_version": "easyslides.functional_page_variants.v1",
+  "template_id": "thu_speech",
+  "selection_policy": "select_one_variant_per_functional_role",
+  "selection_rule": "Generation must choose exactly one variant from each requested functional group; no source page is silently treated as the only canonical form.",
+  "series_rule": "Transition slides 07-10 share one layout; select one transition series preset whose only differences are sequence number and photo.",
+  "groups": {
+    "cover": {
+      "role": "cover",
+      "root_svg": "01_cover.svg",
+      "selection_policy": "select_one_source_faithful_variant",
+      "variant_model": "source_page_variants",
+      "default_variant": "cover_source_01",
+      "variants": [
+        {
+          "variant_id": "cover_source_01",
+          "source_slide": 1,
+          "best_for": "wide photo cover with lower information band",
+          "role": "cover",
+          "preview_svg": "functional_variants/cover/cover_source_01.svg",
+          "slots": [
+            "COVER_SUBTITLE",
+            "COVER_TITLE",
+            "COVER_META"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "cover"
+          }
+        },
+        {
+          "variant_id": "cover_source_02",
+          "source_slide": 2,
+          "best_for": "alternate wide photo cover with lower information band",
+          "role": "cover",
+          "preview_svg": "functional_variants/cover/cover_source_02.svg",
+          "slots": [
+            "COVER_SUBTITLE",
+            "COVER_TITLE",
+            "COVER_META"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "cover"
+          }
+        },
+        {
+          "variant_id": "cover_source_03",
+          "source_slide": 3,
+          "best_for": "right-aligned title cover",
+          "role": "cover",
+          "preview_svg": "functional_variants/cover/cover_source_03.svg",
+          "slots": [
+            "PRESENTER",
+            "DATE",
+            "COVER_TITLE",
+            "COVER_SUBTITLE"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "cover"
+          }
+        }
+      ]
+    },
+    "toc": {
+      "role": "toc",
+      "root_svg": "02_toc.svg",
+      "selection_policy": "select_one_source_faithful_variant",
+      "variant_model": "source_page_variants",
+      "default_variant": "toc_source_04",
+      "variants": [
+        {
+          "variant_id": "toc_source_04",
+          "source_slide": 4,
+          "best_for": "four-item grid directory",
+          "role": "toc",
+          "preview_svg": "functional_variants/toc/toc_source_04.svg",
+          "slots": [
+            "TOC_TITLE",
+            "TOC_RAIL_LABEL",
+            "TOC_ITEM_01",
+            "TOC_ITEM_02",
+            "TOC_ITEM_03",
+            "TOC_ITEM_04",
+            "TOC_ITEM_01_DESC",
+            "TOC_ITEM_02_DESC",
+            "TOC_ITEM_03_DESC",
+            "TOC_ITEM_04_DESC"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "toc"
+          }
+        },
+        {
+          "variant_id": "toc_source_05",
+          "source_slide": 5,
+          "best_for": "vertical CONTENTS rail with four chapter rows",
+          "role": "toc",
+          "preview_svg": "functional_variants/toc/toc_source_05.svg",
+          "slots": [
+            "TOC_TITLE",
+            "TOC_ITEM_01_TITLE",
+            "TOC_ITEM_01_DESC",
+            "TOC_ITEM_01_NUMBER",
+            "TOC_RAIL_LABEL",
+            "TOC_ITEM_02_TITLE",
+            "TOC_ITEM_02_DESC",
+            "TOC_ITEM_02_NUMBER",
+            "TOC_ITEM_03_TITLE",
+            "TOC_ITEM_03_DESC",
+            "TOC_ITEM_03_NUMBER",
+            "TOC_ITEM_04_TITLE",
+            "TOC_ITEM_04_DESC",
+            "TOC_ITEM_04_NUMBER"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "toc"
+          }
+        },
+        {
+          "variant_id": "toc_source_06",
+          "source_slide": 6,
+          "best_for": "numbered directory with year marker",
+          "role": "toc",
+          "preview_svg": "functional_variants/toc/toc_source_06.svg",
+          "allowed_slot_overlaps": [
+            [
+              "TOC_RAIL_LABEL",
+              "TOC_TITLE"
+            ]
+          ],
+          "slots": [
+            "TOC_ITEM_01_NUMBER",
+            "TOC_ITEM_02_NUMBER",
+            "TOC_ITEM_03_NUMBER",
+            "TOC_ITEM_04_NUMBER",
+            "TOC_ITEM_01_TITLE",
+            "TOC_ITEM_01_DESC",
+            "TOC_ITEM_02_TITLE",
+            "TOC_ITEM_02_DESC",
+            "TOC_ITEM_03_TITLE",
+            "TOC_ITEM_03_DESC",
+            "TOC_ITEM_04_TITLE",
+            "TOC_ITEM_04_DESC",
+            "TOC_RAIL_LABEL",
+            "TOC_TITLE",
+            "TOC_YEAR"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "toc"
+          }
+        }
+      ]
+    },
+    "transition": {
+      "role": "transition",
+      "root_svg": "03_transition.svg",
+      "selection_policy": "select_one_series_preset",
+      "variant_model": "series_presets",
+      "series_id": "transition_series",
+      "shared_layout": "03_transition.svg",
+      "variation_dimensions": [
+        "TRANSITION_NUMBER",
+        "TRANSITION_PHOTO"
+      ],
+      "default_variant": "transition_source_07",
+      "variants": [
+        {
+          "variant_id": "transition_source_07",
+          "source_slide": 7,
+          "best_for": "series preset 01; only sequence number and photo change",
+          "role": "transition",
+          "preview_svg": "functional_variants/transition/transition_source_07.svg",
+          "slots": [
+            "TRANSITION_TITLE",
+            "TRANSITION_DESC",
+            "TRANSITION_NUMBER"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "transition"
+          },
+          "series_id": "transition_series",
+          "series_index": 1,
+          "variation_values": {
+            "TRANSITION_NUMBER": "01",
+            "TRANSITION_PHOTO": "transition_photo_07.png"
+          },
+          "variation_scope": [
+            "TRANSITION_NUMBER",
+            "TRANSITION_PHOTO"
+          ]
+        },
+        {
+          "variant_id": "transition_source_08",
+          "source_slide": 8,
+          "best_for": "series preset 02; only sequence number and photo change",
+          "role": "transition",
+          "preview_svg": "functional_variants/transition/transition_source_08.svg",
+          "slots": [
+            "TRANSITION_TITLE",
+            "TRANSITION_DESC",
+            "TRANSITION_NUMBER"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "transition"
+          },
+          "series_id": "transition_series",
+          "series_index": 2,
+          "variation_values": {
+            "TRANSITION_NUMBER": "02",
+            "TRANSITION_PHOTO": "transition_photo_08.png"
+          },
+          "variation_scope": [
+            "TRANSITION_NUMBER",
+            "TRANSITION_PHOTO"
+          ]
+        },
+        {
+          "variant_id": "transition_source_09",
+          "source_slide": 9,
+          "best_for": "series preset 03; only sequence number and photo change",
+          "role": "transition",
+          "preview_svg": "functional_variants/transition/transition_source_09.svg",
+          "slots": [
+            "TRANSITION_TITLE",
+            "TRANSITION_DESC",
+            "TRANSITION_NUMBER"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "transition"
+          },
+          "series_id": "transition_series",
+          "series_index": 3,
+          "variation_values": {
+            "TRANSITION_NUMBER": "03",
+            "TRANSITION_PHOTO": "transition_photo_09.png"
+          },
+          "variation_scope": [
+            "TRANSITION_NUMBER",
+            "TRANSITION_PHOTO"
+          ]
+        },
+        {
+          "variant_id": "transition_source_10",
+          "source_slide": 10,
+          "best_for": "series preset 04; only sequence number and photo change",
+          "role": "transition",
+          "preview_svg": "functional_variants/transition/transition_source_10.svg",
+          "slots": [
+            "TRANSITION_TITLE",
+            "TRANSITION_DESC",
+            "TRANSITION_NUMBER"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "transition"
+          },
+          "series_id": "transition_series",
+          "series_index": 4,
+          "variation_values": {
+            "TRANSITION_NUMBER": "04",
+            "TRANSITION_PHOTO": "transition_photo_10.png"
+          },
+          "variation_scope": [
+            "TRANSITION_NUMBER",
+            "TRANSITION_PHOTO"
+          ]
+        }
+      ]
+    },
+    "ending": {
+      "role": "ending",
+      "root_svg": "05_ending.svg",
+      "selection_policy": "select_one_source_faithful_variant",
+      "variant_model": "source_page_variants",
+      "default_variant": "ending_source_27",
+      "variants": [
+        {
+          "variant_id": "ending_source_27",
+          "source_slide": 27,
+          "best_for": "wide photo ending with lower information band",
+          "role": "ending",
+          "preview_svg": "functional_variants/ending/ending_source_27.svg",
+          "slots": [
+            "CLOSING_SUBTITLE",
+            "CLOSING_TITLE",
+            "ENDING_META"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "ending"
+          }
+        },
+        {
+          "variant_id": "ending_source_28",
+          "source_slide": 28,
+          "best_for": "alternate wide photo ending",
+          "role": "ending",
+          "preview_svg": "functional_variants/ending/ending_source_28.svg",
+          "slots": [
+            "ENDING_META",
+            "CLOSING_SUBTITLE",
+            "CLOSING_TITLE"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "ending"
+          }
+        },
+        {
+          "variant_id": "ending_source_29",
+          "source_slide": 29,
+          "best_for": "right-aligned thank-you ending",
+          "role": "ending",
+          "preview_svg": "functional_variants/ending/ending_source_29.svg",
+          "slots": [
+            "PRESENTER",
+            "DATE",
+            "CLOSING_TITLE",
+            "CLOSING_SUBTITLE"
+          ],
+          "selection": {
+            "mode": "explicit_variant_or_group_default",
+            "group": "ending"
+          }
+        }
+      ]
+    }
+  },
+  "content_page": {
+    "role": "content",
+    "body_variants": [
+      "content_cards_callout",
+      "content_metrics",
+      "content_source_13",
+      "content_source_14",
+      "content_source_15",
+      "content_source_16",
+      "content_source_17",
+      "content_two_panel",
+      "content_source_19",
+      "content_source_20",
+      "content_dual_panels",
+      "content_source_23",
+      "content_source_24",
+      "content_source_25",
+      "content_source_26"
+    ],
+    "selection_policy": "select_one_source_faithful_body_variant"
+  }
+}

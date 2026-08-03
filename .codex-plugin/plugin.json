@@ -1,6 +1,6 @@
 {
   "name": "easyslides",
-  "version": "0.1.1+codex.20260726164018",
+  "version": "1.0.0+codex.20260803080300",
   "description": "EasySlides creates editable academic PPTX decks and distills source PowerPoint files into content-free semantic templates, components, and symbols with fail-closed visual QA.",
   "author": {
     "name": "EasySlides contributors"

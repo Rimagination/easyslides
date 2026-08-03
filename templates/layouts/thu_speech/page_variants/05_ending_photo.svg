@@ -1,0 +1,28 @@
+<svg data-development-only="true" data-source-slide="28" data-variant-id="ending_photo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><linearGradient id="ggrad1" x1="0" y1="1" x2="1" y2="0"><stop offset="0.45" stop-color="#441351" stop-opacity="0"/><stop offset="0.94" stop-color="#441351" stop-opacity="0.72"/></linearGradient></defs><image href="../assets/image6.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="none"/>
+<g id="shape-13" data-name="图片 12">
+<svg x="-0.13" y="0" width="1280" height="403.88" viewBox="0 0.33541 1 0.42085" preserveAspectRatio="none"><image href="../assets/image7.jpeg" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-18" data-name="图片 17">
+<svg x="1055.04" y="436.48" width="185.22" height="71.65" viewBox="0 0.20586 1 0.51594" preserveAspectRatio="none"><image href="../assets/image8.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g>
+<g id="shape-20" data-name="矩形 19">
+<rect x="-0.13" y="0" width="1279.87" height="401.23" fill="url(#ggrad1)" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-25" data-name="矩形 24">
+<rect x="53.51" y="608.44" width="705.4" height="43.9" fill="none"/>
+<text x="63.11" y="631.38" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="53.51" data-pptx-box-y="608.44" data-pptx-box-w="705.4" data-pptx-box-h="43.9" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Source Han Sans Regular&quot;, sans-serif" font-size="21.33" fill="#262626" font-weight="bold" letter-spacing="1.33"><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33">汇报人：</tspan><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33">XXX</tspan><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33">      日期：</tspan><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33">XX</tspan><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33">年</tspan><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33">XX</tspan><tspan fill="#262626" font-size="21.33" font-weight="bold" letter-spacing="1.33">月</tspan></text>
+</g>
+<g id="shape-27" data-name="矩形 26">
+<rect x="-0.13" y="701.4" width="1280.13" height="18.17" fill="#441351" stroke="none" stroke-width="1"/>
+</g>
+<g id="shape-10" data-name="文本框 9">
+<rect x="53.42" y="437.72" width="681.22" height="38.78" fill="none"/>
+<text x="63.02" y="462.92" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="53.42" data-pptx-box-y="437.72" data-pptx-box-w="681.22" data-pptx-box-h="38.78" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;阿里巴巴普惠体 Heavy&quot;, sans-serif" font-size="24" fill="#441351" font-weight="bold" letter-spacing="2.67"><tspan fill="#441351" font-size="24" font-weight="bold" letter-spacing="2.67">添加标题描述添加标题描述添加标题描述</tspan></text>
+</g>
+<g id="shape-11" data-name="文本框 10">
+<rect x="51.51" y="479.88" width="684.82" height="87.24" fill="none"/>
+<text x="61.11" y="539.08" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="51.51" data-pptx-box-y="479.88" data-pptx-box-w="684.82" data-pptx-box-h="87.24" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;思源黑体 CN Bold&quot;, sans-serif" font-size="64" fill="#262626" font-weight="bold"><tspan fill="#262626" font-size="64" font-weight="bold">谢谢， 敬请批评指正！</tspan></text>
+</g>
+<g id="shape-12" data-name="直接连接符 11" transform="translate(369.66 587.43) scale(-1 1) translate(-369.66 -587.43)">
+<line x1="63.15" y1="587.43" x2="676.17" y2="587.43" stroke-width="3" stroke-linecap="round" stroke="#441351" stroke-opacity="0.79" fill="#FFFFFF"/>
+</g></svg>

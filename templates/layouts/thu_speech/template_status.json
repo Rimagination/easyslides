@@ -1,0 +1,20 @@
+{
+  "schema_version": "easyslides.template_status.v2",
+  "template_id": "thu_speech",
+  "status": "production",
+  "classification": "official",
+  "official_template": true,
+  "selection_requires_explicit_request": false,
+  "capability_level": "production",
+  "production_eligible": true,
+  "runtime_contract": "compiled/template_ir.json",
+  "source_digest": "654b31012d872500ccfc3e76c283ad8ccca1fae13278d7a78f81d11fc72f986a",
+  "source_faithful_content_variants": 15,
+  "functional_shells": 5,
+  "excluded_source_slides": [
+    22
+  ],
+  "reason": "all fail-closed production gates passed",
+  "last_gate_schema": "easyslides.template_production_gate.v1",
+  "last_gate_status": "pass"
+}

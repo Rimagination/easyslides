@@ -67,6 +67,19 @@ For PPTX-to-template work, use the same command hub:
 python scripts/easyslides.py distill "path\to\source.pptx" --template-id my_template
 ```
 
+Before selecting a cover, TOC, transition, or ending variant from a
+`functional_page_variants.json` registry, run the named-slot geometry gate:
+
+```powershell
+python scripts/functional_page_variant_adapter.py <template_dir> --role toc --check-all
+```
+
+This gate is fail-closed. It rejects variants whose editable text slots
+overlap or whose same slot id occupies multiple independent text boxes, because
+those defects otherwise become duplicated or mutually obscured text in the
+native PPTX export. Repair the SVG geometry or choose another variant before
+rendering content.
+
 The plugin is intentionally lightweight: the repository remains the runtime,
 template library, and source of truth. Add a dedicated MCP server only after a
 stable command contract is demonstrated by the existing CLI and tests.

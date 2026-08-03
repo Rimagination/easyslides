@@ -1,0 +1,30 @@
+{
+  "schema_version": "easyslides.template_policy.v1",
+  "policy": "official_templates_only",
+  "naming_rule": "lower_snake_case",
+  "official_template_ids": [
+    "academic_general",
+    "academic_scqa",
+    "defense_leftnav",
+    "defense_topnav",
+    "literature_minimal",
+    "nsfc_defense",
+    "thu_speech"
+  ],
+  "development_template_ids": [
+    "academic_red_nav6_distilled",
+    "annual_speech_2025_distilled",
+    "annual_speech_2025_distilled_5shell",
+    "env_college_2025_school",
+    "nsfc_defense_distilled",
+    "nsfc_defense_distilled_reusable",
+    "nsfc_defense_faithful_raster",
+    "nsfc_purple_semantic",
+    "research_core"
+  ],
+  "development_style_pack_ids": [
+    "guizang_ppt",
+    "l001_notebook_defense"
+  ],
+  "selection_rule": "Only official_template_ids may be selected without an explicit user request."
+}

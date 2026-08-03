@@ -222,6 +222,12 @@ def _variant_score(variant: BodyVariant, keywords: tuple[str, ...]) -> int:
     return sum(1 for keyword in keywords if keyword.lower() in haystack)
 
 
+def _is_automatic_content_variant(variant: BodyVariant) -> bool:
+    """Keep specialized page-role variants out of routine content matching."""
+    page_role = str(variant.raw.get("page_role") or "").strip().lower()
+    return not page_role or page_role == "content"
+
+
 def _shape_match(content_shape: object, registry: BodyVariantRegistry) -> str | None:
     if not isinstance(content_shape, str) or not content_shape.strip():
         return None
@@ -230,6 +236,7 @@ def _shape_match(content_shape: object, registry: BodyVariantRegistry) -> str | 
     scored = [
         (_variant_score(variant, keywords), variant.variant_id)
         for variant in registry.variants.values()
+        if _is_automatic_content_variant(variant)
     ]
     scored.sort(key=lambda item: (-item[0], item[1]))
     if scored and scored[0][0] > 0:

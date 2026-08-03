@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" data-template-shell="content_header_only" data-source-slide="18"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF" data-body-canvas="true"/><g id="content-header" data-source-groups="shape-41 shape-42 shape-43"><g id="shape-41" data-name="小李PPT1">
+<rect x="38.2" y="25.71" width="471.76" height="54.93" fill="none"/>
+<text x="47.8" y="62.24" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="38.2" data-pptx-box-y="25.71" data-pptx-box-w="471.76" data-pptx-box-h="54.93" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="37.33" fill="#6C2280" font-weight="bold" data-slot="PAGE_TITLE" data-slot-id="PAGE_TITLE" data-slot-kind="text" data-slot-placeholder="{{PAGE_TITLE}}"><tspan fill="#6C2280" font-size="37.33" font-weight="bold" data-slot="PAGE_TITLE" data-slot-id="PAGE_TITLE" data-slot-kind="text" data-slot-placeholder="{{PAGE_TITLE}}">页面标题</tspan></text>
+</g><g id="shape-42" data-name="直线连接符 3">
+<line x1="47.74" y1="89.62" x2="1232.26" y2="89.62" stroke="#6C2280" fill="#912C8D" stroke-width="1"/>
+</g><g id="shape-43" data-name="图片 42">
+<svg x="1076.56" y="17.35" width="155.26" height="60.06" viewBox="0 0.20586 1 0.51594" preserveAspectRatio="none"><image href="assets/image20.png" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/></svg>
+</g></g></svg>

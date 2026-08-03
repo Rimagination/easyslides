@@ -1,0 +1,9 @@
+{
+  "schema_version": "easyslides.template_status.v2",
+  "derived_from": "template_package.json+qa_policy.json+compiled/template_ir.json",
+  "template_id": "thu_speech",
+  "status": "production",
+  "capability_level": "production",
+  "production_eligible": true,
+  "source_digest": "61c454a2eb973eef40be091f577e88c05be07e60e64263679668082457068a29"
+}

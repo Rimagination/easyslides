@@ -1,0 +1,2532 @@
+{
+  "schema_version": "easyslides.page_catalog_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "thu_speech",
+  "pages": [
+    {
+      "shell_id": "cover",
+      "role": "cover",
+      "archetype": "",
+      "svg_path": "templates/layouts/thu_speech/01_cover.svg",
+      "slots": [
+        {
+          "slot_id": "COVER_SUBTITLE",
+          "role": "cover_subtitle",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "COVER_TITLE",
+          "role": "cover_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "COVER_META",
+          "role": "cover_meta",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "toc",
+      "role": "toc",
+      "archetype": "",
+      "svg_path": "templates/layouts/thu_speech/02_toc.svg",
+      "slots": [
+        {
+          "slot_id": "TOC_TITLE",
+          "role": "toc_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_RAIL_LABEL",
+          "role": "toc_rail_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_01",
+          "role": "toc_item_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_02",
+          "role": "toc_item_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_03",
+          "role": "toc_item_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_04",
+          "role": "toc_item_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_01_DESC",
+          "role": "toc_item_01_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_02_DESC",
+          "role": "toc_item_02_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_03_DESC",
+          "role": "toc_item_03_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_04_DESC",
+          "role": "toc_item_04_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "transition",
+      "role": "transition",
+      "archetype": "",
+      "svg_path": "templates/layouts/thu_speech/03_transition.svg",
+      "slots": [
+        {
+          "slot_id": "TRANSITION_TITLE",
+          "role": "transition_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TRANSITION_DESC",
+          "role": "transition_desc",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "TRANSITION_NUMBER",
+          "role": "transition_number",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "content",
+      "role": "content",
+      "archetype": "",
+      "svg_path": "templates/layouts/thu_speech/04_content.svg",
+      "slots": [
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "body_canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 120.0,
+            "width": 1280.0,
+            "height": 600.0
+          },
+          "z_index": 10,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "source_guided_body_variant_required",
+      "body_canvas": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "ending",
+      "role": "ending",
+      "archetype": "",
+      "svg_path": "templates/layouts/thu_speech/05_ending.svg",
+      "slots": [
+        {
+          "slot_id": "CLOSING_SUBTITLE",
+          "role": "closing_subtitle",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "CLOSING_TITLE",
+          "role": "closing_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        },
+        {
+          "slot_id": "ENDING_META",
+          "role": "ending_meta",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 24,
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    }
+  ],
+  "body_variants": [
+    {
+      "variant_id": "content_cards_callout",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "card-based evidence summary with a bottom callout",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "CARD_01_TITLE",
+          "role": "card_01_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "CARD_01_BODY",
+          "role": "card_01_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "CARD_02_TITLE",
+          "role": "card_02_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "CARD_02_BODY",
+          "role": "card_02_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "CALLOUT_TEXT",
+          "role": "callout_text",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_CAPTION",
+          "role": "image_caption",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/thu_speech/cards_group",
+          "instance_id": "cards",
+          "role": "cards_group",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "CARD_01_TITLE": "CARD_01_TITLE",
+            "CARD_01_BODY": "CARD_01_BODY",
+            "CARD_02_TITLE": "CARD_02_TITLE",
+            "CARD_02_BODY": "CARD_02_BODY"
+          },
+          "placement": {
+            "x": 74.23,
+            "y": 233.28,
+            "width": 590.09,
+            "height": 428.85
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/callout",
+          "instance_id": "callout",
+          "role": "callout",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "CALLOUT_TEXT": "CALLOUT_TEXT"
+          },
+          "placement": {
+            "x": 74.23,
+            "y": 133.81,
+            "width": 602.6,
+            "height": 65.63
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/side_image",
+          "instance_id": "image",
+          "role": "side_image",
+          "order": 3,
+          "required": true,
+          "slot_bindings": {
+            "IMAGE_01": "IMAGE_01",
+            "IMAGE_CAPTION": "IMAGE_CAPTION"
+          },
+          "placement": {
+            "x": 720.8,
+            "y": 126.72,
+            "width": 460.17,
+            "height": 541.37
+          }
+        }
+      ],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        11
+      ],
+      "composition_scene": "content_cards_callout",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_metrics",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "three metric values with supporting evidence",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "METRIC_01_VALUE",
+          "role": "metric_01_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_01_LABEL",
+          "role": "metric_01_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_02_VALUE",
+          "role": "metric_02_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_02_LABEL",
+          "role": "metric_02_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_03_VALUE",
+          "role": "metric_03_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_03_LABEL",
+          "role": "metric_03_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_04_VALUE",
+          "role": "metric_04_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_04_LABEL",
+          "role": "metric_04_label",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_TITLE_01",
+          "role": "evidence_title_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_TEXT_01",
+          "role": "evidence_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_TITLE_02",
+          "role": "evidence_title_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_TEXT_02",
+          "role": "evidence_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_CAPTION",
+          "role": "image_caption",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/thu_speech/metrics_strip",
+          "instance_id": "metrics",
+          "role": "metrics_strip",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "METRIC_01_VALUE": "METRIC_01_VALUE",
+            "METRIC_01_LABEL": "METRIC_01_LABEL",
+            "METRIC_02_VALUE": "METRIC_02_VALUE",
+            "METRIC_02_LABEL": "METRIC_02_LABEL",
+            "METRIC_03_VALUE": "METRIC_03_VALUE",
+            "METRIC_03_LABEL": "METRIC_03_LABEL",
+            "METRIC_04_VALUE": "METRIC_04_VALUE",
+            "METRIC_04_LABEL": "METRIC_04_LABEL"
+          },
+          "placement": {
+            "x": 482.88,
+            "y": 142.55,
+            "width": 722.4,
+            "height": 127.94
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/metric_evidence",
+          "instance_id": "evidence",
+          "role": "metric_evidence",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "EVIDENCE_TITLE_01": "EVIDENCE_TITLE_01",
+            "EVIDENCE_TEXT_01": "EVIDENCE_TEXT_01",
+            "EVIDENCE_TITLE_02": "EVIDENCE_TITLE_02",
+            "EVIDENCE_TEXT_02": "EVIDENCE_TEXT_02"
+          },
+          "placement": {
+            "x": 746.15,
+            "y": 301.68,
+            "width": 414.14,
+            "height": 340.88
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/image_caption",
+          "instance_id": "caption",
+          "role": "image_caption",
+          "order": 3,
+          "required": true,
+          "slot_bindings": {
+            "IMAGE_CAPTION": "IMAGE_CAPTION"
+          },
+          "placement": {
+            "x": 87.92,
+            "y": 583.08,
+            "width": 495.43,
+            "height": 83.1
+          }
+        }
+      ],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        12
+      ],
+      "composition_scene": "content_metrics",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_13",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "staggered keypoint text blocks",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        13
+      ],
+      "composition_scene": "content_source_13",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_14",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "three-column keypoint text",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        14
+      ],
+      "composition_scene": "content_source_14",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_15",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "three-stage timeline with text",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        15
+      ],
+      "composition_scene": "content_source_15",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_16",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "four-card text matrix",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        16
+      ],
+      "composition_scene": "content_source_16",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_17",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "milestone line with supporting text",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        17
+      ],
+      "composition_scene": "content_source_17",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_two_panel",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "keyword strip with paired evidence panels",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "HIGHLIGHT_VALUE",
+          "role": "highlight_value",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "HIGHLIGHT_IMAGE",
+          "role": "highlight_image",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "KEYWORD_01",
+          "role": "keyword_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "KEYWORD_02",
+          "role": "keyword_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "KEYWORD_03",
+          "role": "keyword_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "KEYWORD_04",
+          "role": "keyword_04",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_TITLE_01",
+          "role": "panel_title_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_TITLE_02",
+          "role": "panel_title_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_01_BODY_01",
+          "role": "panel_01_body_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_01_BODY_02",
+          "role": "panel_01_body_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_02_BODY_01",
+          "role": "panel_02_body_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_02_BODY_02",
+          "role": "panel_02_body_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_01_TAG_01",
+          "role": "panel_01_tag_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_01_TAG_02",
+          "role": "panel_01_tag_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_01_TAG_03",
+          "role": "panel_01_tag_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_02_TAG_01",
+          "role": "panel_02_tag_01",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_02_TAG_02",
+          "role": "panel_02_tag_02",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_02_TAG_03",
+          "role": "panel_02_tag_03",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/thu_speech/highlight_image",
+          "instance_id": "highlight",
+          "role": "highlight",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "HIGHLIGHT_IMAGE": "HIGHLIGHT_IMAGE",
+            "HIGHLIGHT_VALUE": "HIGHLIGHT_VALUE"
+          },
+          "placement": {
+            "x": 107.15,
+            "y": 134.65,
+            "width": 278.83,
+            "height": 103.69
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/keyword_strip",
+          "instance_id": "keywords",
+          "role": "keyword_strip",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "KEYWORD_01": "KEYWORD_01",
+            "KEYWORD_02": "KEYWORD_02",
+            "KEYWORD_03": "KEYWORD_03",
+            "KEYWORD_04": "KEYWORD_04"
+          },
+          "placement": {
+            "x": 404.29,
+            "y": 136.62,
+            "width": 761.23,
+            "height": 101.28
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/content_panel_01",
+          "instance_id": "panel_01",
+          "role": "content_panel",
+          "order": 3,
+          "required": true,
+          "slot_bindings": {
+            "PANEL_TITLE_01": "PANEL_TITLE_01",
+            "PANEL_01_BODY_01": "PANEL_01_BODY_01",
+            "PANEL_01_BODY_02": "PANEL_01_BODY_02",
+            "PANEL_01_TAG_01": "PANEL_01_TAG_01",
+            "PANEL_01_TAG_02": "PANEL_01_TAG_02",
+            "PANEL_01_TAG_03": "PANEL_01_TAG_03"
+          },
+          "placement": {
+            "x": 108.05,
+            "y": 276.23,
+            "width": 512.55,
+            "height": 358.93
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/content_panel_02",
+          "instance_id": "panel_02",
+          "role": "content_panel",
+          "order": 4,
+          "required": true,
+          "slot_bindings": {
+            "PANEL_TITLE_02": "PANEL_TITLE_02",
+            "PANEL_02_BODY_01": "PANEL_02_BODY_01",
+            "PANEL_02_BODY_02": "PANEL_02_BODY_02",
+            "PANEL_02_TAG_01": "PANEL_02_TAG_01",
+            "PANEL_02_TAG_02": "PANEL_02_TAG_02",
+            "PANEL_02_TAG_03": "PANEL_02_TAG_03"
+          },
+          "placement": {
+            "x": 653.59,
+            "y": 276.23,
+            "width": 512.54,
+            "height": 358.93
+          }
+        }
+      ],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        18
+      ],
+      "composition_scene": "content_two_panel",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_19",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "statement block with two supporting points",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        19
+      ],
+      "composition_scene": "content_source_19",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_20",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "four-quadrant relationship page",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_04",
+          "role": "image_04",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        20
+      ],
+      "composition_scene": "content_source_20",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_dual_panels",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "paired visual and text panels",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "PANEL_LEFT_TITLE",
+          "role": "panel_left_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_LEFT_BODY",
+          "role": "panel_left_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_LEFT_IMAGE",
+          "role": "panel_left_image",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_RIGHT_TITLE",
+          "role": "panel_right_title",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_RIGHT_BODY",
+          "role": "panel_right_body",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "PANEL_RIGHT_IMAGE",
+          "role": "panel_right_image",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/thu_speech/dual_panel_left",
+          "instance_id": "panel_left",
+          "role": "dual_panel",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "PANEL_LEFT_TITLE": "PANEL_LEFT_TITLE",
+            "PANEL_LEFT_BODY": "PANEL_LEFT_BODY",
+            "PANEL_LEFT_IMAGE": "PANEL_LEFT_IMAGE"
+          },
+          "placement": {
+            "x": 108.0,
+            "y": 155.0,
+            "width": 512.0,
+            "height": 465.0
+          }
+        },
+        {
+          "asset_id": "component/thu_speech/dual_panel_right",
+          "instance_id": "panel_right",
+          "role": "dual_panel",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "PANEL_RIGHT_TITLE": "PANEL_RIGHT_TITLE",
+            "PANEL_RIGHT_BODY": "PANEL_RIGHT_BODY",
+            "PANEL_RIGHT_IMAGE": "PANEL_RIGHT_IMAGE"
+          },
+          "placement": {
+            "x": 654.0,
+            "y": 155.0,
+            "width": 512.0,
+            "height": 465.0
+          }
+        }
+      ],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        21
+      ],
+      "composition_scene": "content_dual_panels",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_23",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "central relationship with four text panels",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        23
+      ],
+      "composition_scene": "content_source_23",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_24",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "three-period timeline with text",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_02",
+          "role": "image_02",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "IMAGE_03",
+          "role": "image_03",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        24
+      ],
+      "composition_scene": "content_source_24",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_25",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "hub-and-spoke four text panels",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_10",
+          "role": "body_text_10",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_11",
+          "role": "body_text_11",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_12",
+          "role": "body_text_12",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_13",
+          "role": "body_text_13",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_14",
+          "role": "body_text_14",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        25
+      ],
+      "composition_scene": "content_source_25",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "content_source_26",
+      "shell_id": "content",
+      "composition_mode": "source_faithful_page_variant",
+      "best_for": "two-column text with side statement",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "IMAGE_01",
+          "role": "image_01",
+          "kind": "image",
+          "image_fit": "contain",
+          "image_frame": "subtle",
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_01",
+          "role": "body_text_01",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_02",
+          "role": "body_text_02",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_03",
+          "role": "body_text_03",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_04",
+          "role": "body_text_04",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_05",
+          "role": "body_text_05",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_06",
+          "role": "body_text_06",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_07",
+          "role": "body_text_07",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_08",
+          "role": "body_text_08",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        },
+        {
+          "slot_id": "BODY_TEXT_09",
+          "role": "body_text_09",
+          "kind": "text",
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "required": true
+        }
+      ],
+      "regions": [],
+      "clear_region": {
+        "x": 0.0,
+        "y": 120.0,
+        "width": 1280.0,
+        "height": 600.0
+      },
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [
+        26
+      ],
+      "composition_scene": "content_source_26",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    }
+  ]
+}

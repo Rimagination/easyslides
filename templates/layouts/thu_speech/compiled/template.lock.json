@@ -1,0 +1,160 @@
+{
+  "schema_version": "easyslides.template_lock.v1",
+  "template_id": "thu_speech",
+  "package_version": "1.0.0",
+  "source_digest": "61c454a2eb973eef40be091f577e88c05be07e60e64263679668082457068a29",
+  "sources": {
+    "package": {
+      "path": "templates/layouts/thu_speech/template_package.json",
+      "sha256": "41c423d747c8193265749b01a4e8d0e217bd931ee14653c8fed604f5c31f81b7"
+    },
+    "shells": {
+      "path": "templates/layouts/thu_speech/layouts.json",
+      "sha256": "a8b1aa2337d378d336f4e1ae1232e879aa34d05e7ece897a736ea76be4a3a727"
+    },
+    "body_variants": {
+      "path": "templates/layouts/thu_speech/body_variants.json",
+      "sha256": "c0bd6d6a2250cae6e15d2b7e48efe90959acaf13e2b3154d889cbd28d580a360"
+    },
+    "components": {
+      "path": "templates/layouts/thu_speech/component_catalog.json",
+      "sha256": "f519b9f84e772815731fd70e225c77fd49231b600d289bd465e58ec86da3cba8"
+    },
+    "qa": {
+      "path": "templates/layouts/thu_speech/qa_policy.json",
+      "sha256": "4872ffb6c4ceb7a520844be4656273113e02b0fe9841321d0e76116b7f431603"
+    },
+    "provenance": {
+      "path": "templates/layouts/thu_speech/source_page_roster.json",
+      "sha256": "40e60762f8e5b9b2bc181c032783694206c8dbd048c34bf2265652808b4fbd6d"
+    },
+    "story": {
+      "path": "templates/layouts/thu_speech/story_structure.json",
+      "sha256": "2cbc23a067b1dbb5e29ac4dc82c7795f204fad7fc6e1a4695f6641f37107dde0"
+    },
+    "capability_profile": {
+      "path": "templates/layouts/thu_speech/capability_profile.json",
+      "sha256": "ef47cde86dcc10fe77a00a23bf94c05e4b0c7a9ad34dca668edf36e7e5b6e40b"
+    }
+  },
+  "component_dependencies": [
+    {
+      "asset_id": "component/thu_speech/callout",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/callout.svg",
+      "sha256": "43dd13a3064480b1e76e89f47581fb21d8ed4042807890b8b914823b80ca9286"
+    },
+    {
+      "asset_id": "component/thu_speech/cards_group",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/cards_group.svg",
+      "sha256": "729b3f45da0e665319a9d04001a1407979303539d27e62d1dc565451790096ad"
+    },
+    {
+      "asset_id": "component/thu_speech/content_panel_01",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_01.svg",
+      "sha256": "8874d8f48031363bf5fec45513e40e72ee2915912da9fb88c8b2f8d67b83be13"
+    },
+    {
+      "asset_id": "component/thu_speech/content_panel_02",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_02.svg",
+      "sha256": "0568fe6e6dcfe7b872dbb38fc42a9eba61a88933a9d48303883c061fb6f9b433"
+    },
+    {
+      "asset_id": "component/thu_speech/dual_panel_left",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_left.svg",
+      "sha256": "f99bf76999d04f325a6e4f71a0dec7c8eab3f60e3824bc0e67d29cc9ab332576"
+    },
+    {
+      "asset_id": "component/thu_speech/dual_panel_right",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_right.svg",
+      "sha256": "59ebb2be888e60504d4138bc152d3290ea02f1504ea34b49be0c78bc5ee57cc1"
+    },
+    {
+      "asset_id": "component/thu_speech/highlight_image",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/highlight_image.svg",
+      "sha256": "1b174b9937e41f4cde726020df8e58ad8295c460178e7e4b86a497922f7e77da"
+    },
+    {
+      "asset_id": "component/thu_speech/image_caption",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/image_caption.svg",
+      "sha256": "e80ac1bfc0956bf20dd6bf0b82a39d96411ef602aa3a2aed2bdf6637b3a817d2"
+    },
+    {
+      "asset_id": "component/thu_speech/keyword_strip",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/keyword_strip.svg",
+      "sha256": "9b0f19ec8fd07239bb158744064c530e24ee3dabb56d42e3f67fb0ee1c2b95f9"
+    },
+    {
+      "asset_id": "component/thu_speech/metric_evidence",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/metric_evidence.svg",
+      "sha256": "1e26e83aa1a6bb9c1da6e01a2b9ade5a605b01d18812da01203f67ebbaa6f193"
+    },
+    {
+      "asset_id": "component/thu_speech/metrics_strip",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/metrics_strip.svg",
+      "sha256": "1db7b1a0f0cbef57c0745d2747376bfcf15d40dc4add6cd9cb50d3911e363aef"
+    },
+    {
+      "asset_id": "component/thu_speech/side_image",
+      "scope": "template",
+      "renderer_id": "source_template_projection",
+      "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/side_image.svg",
+      "sha256": "54ebe40a81ce66553665b96901a79eaf30776e3922a6fc6da9af7d8b7d62d79c"
+    }
+  ],
+  "component_pack": {
+    "pack_id": "",
+    "version": "",
+    "scope": "",
+    "dependencies": [],
+    "design_tokens": {}
+  },
+  "capability_profile": {
+    "schema_version": "easyslides.template_capability_profile.v1",
+    "lifecycle": "production",
+    "generation_enabled": true,
+    "composition": {
+      "mode": "template_bounded",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module",
+        "template_component"
+      ],
+      "allow_global_component_fallback": false,
+      "allowed_component_packs": [],
+      "requires_declared_body_variant": true
+    },
+    "selection_policy": {
+      "template_affinity": "required",
+      "undeclared_assets": "reject",
+      "manual_selection": "must_be_declared",
+      "missing_profile": "block_named_template_component_selection"
+    },
+    "required_gates": [
+      "template_capability_profile",
+      "component_plan_contract",
+      "visual_measure_gate"
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" data-body-only="true" data-source-slide="24" data-variant-id="content_source_24" data-coordinate-space="body_canvas" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><image href="../assets/image27.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="shape-2" data-name="图片 1">
+<rect x="849.4" y="135.23" width="345.85" height="167.31" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_01" data-easyslides-generated="true" /><image href="../assets/image47.jpeg" data-slot="IMAGE_01" data-slot-id="IMAGE_01" data-slot-kind="image" data-slot-placeholder="{{IMAGE_01}}" x="849.4" y="135.23" width="345.85" height="167.31" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
+<g id="shape-7" data-name="图片 6">
+<rect x="471.87" y="135.78" width="342.1" height="165" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_02" data-easyslides-generated="true" /><image href="../assets/image48.jpeg" data-slot="IMAGE_02" data-slot-id="IMAGE_02" data-slot-kind="image" data-slot-placeholder="{{IMAGE_02}}" x="471.87" y="135.78" width="342.1" height="165" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
+<g id="shape-3" data-name="图片 2">
+<rect x="90.97" y="134.67" width="347.68" height="165.78" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_03" data-easyslides-generated="true" /><image href="../assets/image49.jpeg" data-slot="IMAGE_03" data-slot-id="IMAGE_03" data-slot-kind="image" data-slot-placeholder="{{IMAGE_03}}" x="90.97" y="134.67" width="347.68" height="165.78" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
+<g id="shape-19" data-name="任意形状 18">
+<path d="M 90.97 385.79 L 1195.26 385.79" stroke-width="2" stroke-linecap="butt" stroke="#E6E6E6" stroke-dasharray="4 4" stroke-linejoin="miter" fill="none" />
+</g>
+<g id="shape-20" data-name="任意形状 19">
+<path d="M 270.11 385.79 C 270.11 388.52 267.9 390.73 265.18 390.73 C 262.45 390.73 260.24 388.52 260.24 385.79 C 260.24 383.07 262.45 380.86 265.18 380.86 C 267.9 380.86 270.11 383.07 270.11 385.79 Z" fill="#581969" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-21" data-name="任意形状 20">
+<path d="M 647.86 386.35 C 647.86 389.07 645.65 391.28 642.92 391.28 C 640.2 391.28 637.99 389.07 637.99 386.35 C 637.99 383.62 640.2 381.41 642.92 381.41 C 645.65 381.41 647.86 383.62 647.86 386.35 Z" fill="#7030A0" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-22" data-name="任意形状 21">
+<path d="M 1027.05 385.83 C 1027.05 388.56 1024.84 390.77 1022.11 390.77 C 1019.39 390.77 1017.18 388.56 1017.18 385.83 C 1017.18 383.11 1019.39 380.9 1022.11 380.9 C 1024.84 380.9 1027.05 383.11 1027.05 385.83 Z" fill="#68A4C6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-23" data-name="文本框 22">
+<rect x="123.93" y="464.34" width="273.46" height="145.41" fill="none" stroke="none" />
+<text x="159.53" y="485" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="149.93" data-pptx-box-y="464.34" data-pptx-box-w="247.46" data-pptx-box-h="145.41" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#404040" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}"><tspan fill="#404040" font-size="18.67" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}">正文内容</tspan><tspan fill="#404040" font-size="18.67" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}" x="159.53" dy="28">正文内容</tspan></text>
+</g>
+<g id="shape-26" data-name="矩形 25">
+<rect x="91.36" y="300.45" width="347.3" height="48.93" fill="#581969" stroke="none" stroke-width="1" />
+<text x="265.01" y="330.25" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="91.36" data-pptx-box-y="300.45" data-pptx-box-w="347.3" data-pptx-box-h="48.93" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="21.33" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}"><tspan fill="#FFFFFF" font-size="21.33" font-weight="bold" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}">图片说明</tspan></text>
+</g>
+<g id="shape-56" data-name="文本框 55">
+<rect x="134.96" y="409.41" width="259.71" height="42.01" fill="none" />
+<text x="264.82" y="436.88" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="134.96" data-pptx-box-y="409.41" data-pptx-box-w="259.71" data-pptx-box-h="42.01" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#581969" font-weight="bold" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}"><tspan fill="#581969" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}">正文内容</tspan></text>
+</g>
+<g id="shape-57" data-name="文本框 56">
+<rect x="513.07" y="409.28" width="259.71" height="42.01" fill="none" />
+<text x="642.92" y="436.75" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="513.07" data-pptx-box-y="409.28" data-pptx-box-w="259.71" data-pptx-box-h="42.01" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#7030A0" font-weight="bold" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}"><tspan fill="#7030A0" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}">正文内容</tspan></text>
+</g>
+<g id="shape-58" data-name="文本框 57">
+<rect x="883.93" y="410" width="276.37" height="42.01" fill="none" />
+<text x="1022.11" y="437.47" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="883.93" data-pptx-box-y="410" data-pptx-box-w="276.37" data-pptx-box-h="42.01" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#68A4C6" font-weight="bold" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}"><tspan fill="#68A4C6" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}">正文内容</tspan></text>
+</g>
+<g id="shape-6" data-name="文本框 5">
+<rect x="92.16" y="267.6" width="114.87" height="74.32" fill="none" />
+<text x="101.76" y="317.73" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="92.16" data-pptx-box-y="267.6" data-pptx-box-w="114.87" data-pptx-box-h="74.32" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="53.33" fill="#FFFFFF" fill-opacity="0" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}"><tspan fill="#FFFFFF" font-size="53.33" fill-opacity="0" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}">01</tspan></text>
+</g>
+<g id="shape-8" data-name="矩形 7">
+<rect x="471.31" y="300.45" width="342.66" height="48.93" fill="#7030A0" stroke="none" stroke-width="1" />
+<text x="642.64" y="330.25" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="471.31" data-pptx-box-y="300.45" data-pptx-box-w="342.66" data-pptx-box-h="48.93" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="21.33" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}"><tspan fill="#FFFFFF" font-size="21.33" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}">图片说明</tspan></text>
+</g>
+<g id="shape-9" data-name="文本框 8">
+<rect x="472.06" y="267.6" width="114.87" height="74.32" fill="none" />
+<text x="481.66" y="317.73" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="472.06" data-pptx-box-y="267.6" data-pptx-box-w="114.87" data-pptx-box-h="74.32" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="53.33" fill="#FFFFFF" fill-opacity="0" font-weight="bold" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}"><tspan fill="#FFFFFF" font-size="53.33" fill-opacity="0" font-weight="bold" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}">02</tspan></text>
+</g>
+
+
+
+<g id="shape-38" data-name="组合 37" data-easyslides-bullet-for="BODY_TEXT_01" data-easyslides-bullet-index="1">
+<g id="shape-39" data-name="椭圆 38">
+<ellipse cx="136.72" cy="475.92" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-53" data-name="椭圆 52">
+<ellipse cx="136.72" cy="475.92" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-54" data-name="组合 53" data-easyslides-bullet-for="BODY_TEXT_01" data-easyslides-bullet-index="2">
+<g id="shape-55" data-name="椭圆 54">
+<ellipse cx="136.72" cy="498.58" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-59" data-name="椭圆 58">
+<ellipse cx="136.72" cy="498.58" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-60" data-name="文本框 59">
+<rect x="502.99" y="464.34" width="273.94" height="145.41" fill="none" stroke="none" />
+<text x="538.59" y="485" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="528.99" data-pptx-box-y="464.34" data-pptx-box-w="247.94" data-pptx-box-h="145.41" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#404040" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}"><tspan fill="#404040" font-size="18.67" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}">正文内容</tspan><tspan fill="#404040" font-size="18.67" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}" x="538.59" dy="28">正文内容</tspan></text>
+</g>
+<g id="shape-67" data-name="文本框 66">
+<rect x="882.04" y="464.34" width="273.31" height="145.41" fill="none" stroke="none" />
+<text x="917.64" y="485" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="908.04" data-pptx-box-y="464.34" data-pptx-box-w="247.31" data-pptx-box-h="145.41" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#404040" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}"><tspan fill="#404040" font-size="18.67" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}">正文内容</tspan><tspan fill="#404040" font-size="18.67" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}" x="917.64" dy="28">正文内容</tspan></text>
+</g>
+<g id="shape-74" data-name="组合 73" data-easyslides-bullet-for="BODY_TEXT_10" data-easyslides-bullet-index="1">
+<g id="shape-75" data-name="椭圆 74">
+<ellipse cx="893.32" cy="475.92" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-76" data-name="椭圆 75">
+<ellipse cx="893.32" cy="475.92" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-77" data-name="组合 76" data-easyslides-bullet-for="BODY_TEXT_10" data-easyslides-bullet-index="2">
+<g id="shape-78" data-name="椭圆 77">
+<ellipse cx="893.32" cy="498.58" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-79" data-name="椭圆 78">
+<ellipse cx="893.32" cy="498.58" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-80" data-name="组合 79" data-easyslides-bullet-for="BODY_TEXT_09" data-easyslides-bullet-index="1">
+<g id="shape-81" data-name="椭圆 80">
+<ellipse cx="519.36" cy="475.92" rx="7.35" ry="7.35" fill="#C4BCEE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-82" data-name="椭圆 81">
+<ellipse cx="519.36" cy="475.92" rx="4.2" ry="4.2" fill="#7561D6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-83" data-name="组合 82" data-easyslides-bullet-for="BODY_TEXT_09" data-easyslides-bullet-index="2">
+<g id="shape-84" data-name="椭圆 83">
+<ellipse cx="519.36" cy="498.58" rx="7.35" ry="7.35" fill="#C4BCEE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-85" data-name="椭圆 84">
+<ellipse cx="519.36" cy="498.58" rx="4.2" ry="4.2" fill="#7561D6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-11" data-name="矩形 10">
+<rect x="849.4" y="300.45" width="345.85" height="48.09" fill="#68A4C6" stroke="none" stroke-width="1" />
+<text x="1022.33" y="329.83" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="849.4" data-pptx-box-y="300.45" data-pptx-box-w="345.85" data-pptx-box-h="48.09" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="21.33" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}"><tspan fill="#FFFFFF" font-size="21.33" font-weight="bold" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}">图片说明</tspan></text>
+</g>
+<g id="shape-13" data-name="文本框 12">
+<rect x="850.53" y="267.6" width="114.87" height="74.32" fill="none" />
+<text x="860.13" y="317.73" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="850.53" data-pptx-box-y="267.6" data-pptx-box-w="114.87" data-pptx-box-h="74.32" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="53.33" fill="#FFFFFF" fill-opacity="0" font-weight="bold" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}"><tspan fill="#FFFFFF" font-size="53.33" fill-opacity="0" font-weight="bold" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}">03</tspan></text>
+</g><rect x="0" y="0" width="1280" height="120" fill="#FFFFFF" data-body-header-mask="true" data-body-area-y="120" /></svg>

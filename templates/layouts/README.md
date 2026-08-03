@@ -1,14 +1,16 @@
 # EasySlides Template Library
 
-`templates/layouts/` contains managed template packages and legacy-compatible
-layout packs. Discovery is generated from package manifests and layout
-contracts.
+`templates/layouts/` contains the formal template library. In this project,
+formal means one of the seven IDs in `templates/template_policy.json`.
 
-- **Canonical registry**: [template_registry.json](../template_registry.json)
-  records managed packages, capability levels, status, and legacy entries.
+- **Canonical policy**: [template_policy.json](../template_policy.json) defines
+  the seven official IDs and the development-only IDs.
+- **Package registry**: [template_registry.json](../template_registry.json)
+  records package metadata, capability levels, and QA status; QA status does
+  not override the official-template policy.
 - **Generated index**: [layouts_index.json](./layouts_index.json) is the
-  human-facing active-template projection of that registry. Quarantined and
-  legacy packages remain visible only in the canonical registry.
+  human-facing projection of the retained formal library. Non-legacy packages
+  are archived outside the project.
 - **Selection rule**: templates are opt-in. A deck uses a layout only when the
   user gives an explicit directory path such as
   `templates/layouts/literature_minimal/`. Bare names remain discovery hints, not
@@ -26,7 +28,7 @@ contracts.
 | `defense_leftnav` | Scenario | Thesis defense, graduation defense, proposal defense, research progress reports | `#8B0012` | Compact, formal, burgundy, left navigation, reusable |
 | `defense_topnav` | Scenario | Thesis defense, proposal defense, opening defense, research progress reports | `#183A6A` | Academic, calm, blue-white, structured, source-faithful |
 | `literature_minimal` | Scenario | Literature reports, paper reading, academic reports, research progress reviews | `#0D5DBE` | Minimal, blue-white, restrained, spacious, academic |
-| `nsfc_defense` | Scenario | NSFC defense, scientific project review, evidence-dense research reporting | `#751497` | Source-faithful, dense, component-composable, production-gated |
+| `thu_speech` | Scenario | Tsinghua annual speeches, academic talks, institutional research presentations | `#912C8D` | Purple-blue, source-faithful, image-led, structured |
 <!-- quick-index:end -->
 
 ## Active Families
@@ -40,7 +42,7 @@ contracts.
 | `defense_leftnav` | Compact left-navigation thesis defense shells with wine, academic-blue, academic-purple, and academic-green palettes. |
 | `defense_topnav` | Academic-blue thesis defense shells with dynamic top navigation and flexible content canvas. |
 | `literature_minimal` | Classic five-page minimal blue literature report shells. |
-| `nsfc_defense` | Five stable NSFC defense shells backed by executable body variants and component regions. |
+| `thu_speech` | Tsinghua speech shells with functional-page variants, a shared transition series, and fifteen reviewed content variants. |
 
 ## Template Modes
 
@@ -73,9 +75,9 @@ to the global component registry. A template with body variants must receive a
 declared local `layout_id` or explicit local component; distilled and raster
 reference directories are marked non-generative.
 
-The current active academic library uses compact classic shells for the defense,
-academic-report, and literature-report families. Retired slot-guided packs should stay outside
-`templates/layouts/` unless a future use case justifies restoring them.
+The current project route uses only the seven official templates in
+`template_policy.json`. Review, quarantined, distilled, and style-pack assets
+are development-only and must not be selected by default.
 
 ## Development
 

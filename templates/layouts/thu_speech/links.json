@@ -1,0 +1,16 @@
+{
+  "schema_version": "easyslides.template_links.v1",
+  "template_id": "thu_speech",
+  "runtime_template_dir": "templates/layouts/thu_speech",
+  "design_spec": "templates/layouts/thu_speech/design_spec.md",
+  "layouts": "templates/layouts/thu_speech/layouts.json",
+  "page_catalog": "templates/layouts/thu_speech/page_catalog.json",
+  "story_structure": "templates/layouts/thu_speech/story_structure.json",
+  "body_variants": "templates/layouts/thu_speech/body_variants.json",
+  "component_catalog": "templates/layouts/thu_speech/component_catalog.json",
+  "rules": "templates/layouts/thu_speech/rules.md",
+  "template": "templates/layouts/thu_speech/template.json",
+  "layout_roster": "templates/layouts/thu_speech/layout_roster.json",
+  "slot_contracts": "templates/layouts/thu_speech/slot_contracts.json",
+  "private_asset_bank_role": "build_reference_only"
+}

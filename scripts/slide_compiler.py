@@ -21,8 +21,12 @@ from zipfile import ZipFile
 
 try:
     from scripts.template_compiler import ROOT, TemplateCompileError, compile_template, read_json, write_json
+    from scripts.adaptive_bullets import sync_adaptive_bullets
+    from scripts.image_fit import apply_image_fit_policy
 except ModuleNotFoundError:  # pragma: no cover
     from template_compiler import ROOT, TemplateCompileError, compile_template, read_json, write_json
+    from adaptive_bullets import sync_adaptive_bullets
+    from image_fit import apply_image_fit_policy
 
 
 SVG_NS = "http://www.w3.org/2000/svg"
@@ -1353,6 +1357,11 @@ def _apply_payload(
             node.set(f"{{{XLINK_NS}}}href", href)
         else:
             raise SlideCompileError(f"unsupported slot kind {kind!r}")
+    # Contract metadata is authoritative for image geometry.  In particular,
+    # source-derived scientific figures declare ``image_fit=contain``; never
+    # let an imported ``preserveAspectRatio=none`` silently override that.
+    apply_image_fit_policy(root, contract_map)
+    sync_adaptive_bullets(root, payload)
 
 
 def _component_source(component: dict[str, Any]) -> Path:

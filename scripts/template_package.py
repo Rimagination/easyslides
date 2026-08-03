@@ -12,10 +12,11 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 LAYOUTS_ROOT = ROOT / "templates" / "layouts"
 REGISTRY_PATH = ROOT / "templates" / "template_registry.json"
+POLICY_PATH = ROOT / "templates" / "template_policy.json"
 PACKAGE_SCHEMA_VERSION = "easyslides.template_package.v1"
 REGISTRY_SCHEMA_VERSION = "easyslides.template_registry.v2"
 CAPABILITY_LEVELS = ("shell", "semantic", "composable", "production")
-ACTIVE_LAYOUT_IDS = frozenset(
+DEFAULT_OFFICIAL_TEMPLATE_IDS = frozenset(
     {
         "academic_general",
         "academic_scqa",
@@ -23,7 +24,7 @@ ACTIVE_LAYOUT_IDS = frozenset(
         "defense_topnav",
         "literature_minimal",
         "nsfc_defense",
-        "research_core",
+        "thu_speech",
     }
 )
 
@@ -49,6 +50,19 @@ def _read_json(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValueError(f"{path} must contain a JSON object")
     return value
+
+
+def _official_template_ids(root: Path) -> frozenset[str]:
+    """Load the project policy without allowing a broken policy to widen selection."""
+    policy_path = root / "templates" / "template_policy.json"
+    try:
+        policy = _read_json(policy_path)
+        values = policy.get("official_template_ids")
+        if isinstance(values, list) and all(isinstance(value, str) and value for value in values):
+            return frozenset(values)
+    except (OSError, ValueError, json.JSONDecodeError):
+        pass
+    return DEFAULT_OFFICIAL_TEMPLATE_IDS
 
 
 def _safe_relative(value: str) -> bool:
@@ -323,12 +337,14 @@ def rebuild_template_registry(
     legacy_index = _read_json(legacy_index_path) if legacy_index_path.is_file() else {}
     rows: list[dict[str, Any]] = []
     packages: list[dict[str, Any]] = []
+    official_template_ids = _official_template_ids(root)
     skipped = {"assets", "__pycache__"}
     for directory in sorted(path for path in layouts_root.iterdir() if path.is_dir() and path.name not in skipped):
         if not (directory / "layouts.json").is_file():
             continue
         manifest = _read_json(directory / "template_package.json") if (directory / "template_package.json").is_file() else None
         row = _registry_row(directory, root, manifest=manifest, legacy_index=legacy_index)
+        row["official"] = directory.name in official_template_ids
         rows.append(row)
         if manifest:
             packages.append(row)
@@ -340,7 +356,7 @@ def rebuild_template_registry(
         "template_count": len(rows),
         "package_count": len(packages),
     }
-    active_rows = [row for row in rows if row["template_id"] in ACTIVE_LAYOUT_IDS]
+    active_rows = [row for row in rows if row.get("official") is True]
     generated_index = {
         row["template_id"]: {
             "summary": row["description"],

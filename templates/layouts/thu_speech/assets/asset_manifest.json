@@ -1,0 +1,483 @@
+{
+  "schema_version": "easyslides.asset_manifest.v1",
+  "namespace": "thu_speech",
+  "asset_count": 68,
+  "assets": [
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/callout",
+      "path": "components/thu_speech/callout.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 762,
+      "sha256": "43dd13a3064480b1e76e89f47581fb21d8ed4042807890b8b914823b80ca9286"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/cards_group",
+      "path": "components/thu_speech/cards_group.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 2131,
+      "sha256": "729b3f45da0e665319a9d04001a1407979303539d27e62d1dc565451790096ad"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/content_panel_01",
+      "path": "components/thu_speech/content_panel_01.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 3145,
+      "sha256": "8874d8f48031363bf5fec45513e40e72ee2915912da9fb88c8b2f8d67b83be13"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/content_panel_02",
+      "path": "components/thu_speech/content_panel_02.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 3142,
+      "sha256": "0568fe6e6dcfe7b872dbb38fc42a9eba61a88933a9d48303883c061fb6f9b433"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/dual_panel_left",
+      "path": "components/thu_speech/dual_panel_left.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1486,
+      "sha256": "f99bf76999d04f325a6e4f71a0dec7c8eab3f60e3824bc0e67d29cc9ab332576"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/dual_panel_right",
+      "path": "components/thu_speech/dual_panel_right.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1496,
+      "sha256": "59ebb2be888e60504d4138bc152d3290ea02f1504ea34b49be0c78bc5ee57cc1"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/highlight_image",
+      "path": "components/thu_speech/highlight_image.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1092,
+      "sha256": "1b174b9937e41f4cde726020df8e58ad8295c460178e7e4b86a497922f7e77da"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/image_caption",
+      "path": "components/thu_speech/image_caption.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 721,
+      "sha256": "e80ac1bfc0956bf20dd6bf0b82a39d96411ef602aa3a2aed2bdf6637b3a817d2"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/keyword_strip",
+      "path": "components/thu_speech/keyword_strip.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 2234,
+      "sha256": "9b0f19ec8fd07239bb158744064c530e24ee3dabb56d42e3f67fb0ee1c2b95f9"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/metric_evidence",
+      "path": "components/thu_speech/metric_evidence.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 2093,
+      "sha256": "1e26e83aa1a6bb9c1da6e01a2b9ade5a605b01d18812da01203f67ebbaa6f193"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/metrics_strip",
+      "path": "components/thu_speech/metrics_strip.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 3915,
+      "sha256": "1db7b1a0f0cbef57c0745d2747376bfcf15d40dc4add6cd9cb50d3911e363aef"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/photo_statement",
+      "path": "components/thu_speech/photo_statement.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1869,
+      "sha256": "ab8000d09947ed9917da7fcb03df233a0df5670f8c2381af95980332d2f3abfe"
+    },
+    {
+      "asset_id": "media/thu_speech/components/thu_speech/side_image",
+      "path": "components/thu_speech/side_image.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1079,
+      "sha256": "54ebe40a81ce66553665b96901a79eaf30776e3922a6fc6da9af7d8b7d62d79c"
+    },
+    {
+      "asset_id": "media/thu_speech/image1",
+      "path": "image1.png",
+      "mime_type": "image/png",
+      "bytes": 1016879,
+      "sha256": "5bf70fef834ee2703739ccb8f4cf4839c6c57875462ddcaac45a48e69b0e6be8"
+    },
+    {
+      "asset_id": "media/thu_speech/image10",
+      "path": "image10.png",
+      "mime_type": "image/png",
+      "bytes": 884464,
+      "sha256": "f9896f6a0c8f5acaa9b783c746d16b6170c96cdada5a6d9bc22f8a03d9d33136"
+    },
+    {
+      "asset_id": "media/thu_speech/image11",
+      "path": "image11.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 557610,
+      "sha256": "752216ad330bfc949547c66a2b901e7556bd13bf7fd3a4f1c4fe2df66d4bbc4f"
+    },
+    {
+      "asset_id": "media/thu_speech/image12",
+      "path": "image12.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 38256,
+      "sha256": "f416d4f03b9a872c5b2775b16ffd1dd012a7e04f395eb64f95d3012577a77e0b"
+    },
+    {
+      "asset_id": "media/thu_speech/image13",
+      "path": "image13.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 109479,
+      "sha256": "d0ec28b7e3f5803bff66063a19a824e53c5ab343ae58b3ee6594a06bb5f23592"
+    },
+    {
+      "asset_id": "media/thu_speech/image14",
+      "path": "image14.png",
+      "mime_type": "image/png",
+      "bytes": 6808211,
+      "sha256": "67857d88bf64d40720f2c499275cf624a4b12888396b58ff4139d065ebd9cf35"
+    },
+    {
+      "asset_id": "media/thu_speech/image14_fx_ca5d10fe",
+      "path": "image14_fx_ca5d10fe.png",
+      "mime_type": "image/png",
+      "bytes": 2108820,
+      "sha256": "bb981f572458cc88b45449350b738afb43ce923c71e27c92571829a5ca434044"
+    },
+    {
+      "asset_id": "media/thu_speech/image15",
+      "path": "image15.png",
+      "mime_type": "image/png",
+      "bytes": 3113009,
+      "sha256": "cd73d2feddc84454c82dc11fc730f0fd5db9f7a9ef3e6ebf51178d638faed699"
+    },
+    {
+      "asset_id": "media/thu_speech/image16",
+      "path": "image16.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 281687,
+      "sha256": "5943344574345f4e8053a56d1ce6b9a675d581aa3f65fb984e2835ead64956ab"
+    },
+    {
+      "asset_id": "media/thu_speech/image17",
+      "path": "image17.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 494406,
+      "sha256": "4a164654971073976fe0693e50fb091fd92342852892ee3e7c6f95f42328ece6"
+    },
+    {
+      "asset_id": "media/thu_speech/image18",
+      "path": "image18.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 327999,
+      "sha256": "1243d92c97a1d1252f3fce8c5eca5b31faf0f5305aa12f83c839a2e301326fe8"
+    },
+    {
+      "asset_id": "media/thu_speech/image19",
+      "path": "image19.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 632451,
+      "sha256": "61c9917963d098a79a12f52f3e777c781c0396a8d1c943c41fc019552684245d"
+    },
+    {
+      "asset_id": "media/thu_speech/image2",
+      "path": "image2.png",
+      "mime_type": "image/png",
+      "bytes": 5622,
+      "sha256": "2f29d04418a3f5df814a3e63b1915d76c88ef78c30702d32187dee0257285ff7"
+    },
+    {
+      "asset_id": "media/thu_speech/image20",
+      "path": "image20.png",
+      "mime_type": "image/png",
+      "bytes": 40989,
+      "sha256": "67ff6e0688b1769e9773aacc1a070385e795976623f5fa92f8a3f7738676925e"
+    },
+    {
+      "asset_id": "media/thu_speech/image21",
+      "path": "image21.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 1317149,
+      "sha256": "12eac8090f6133200f4388b194805de79244d95122cfa7601887dfc1e4008e6e"
+    },
+    {
+      "asset_id": "media/thu_speech/image22",
+      "path": "image22.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 256161,
+      "sha256": "79bac950affa31dffa18d30fdc85d2879c1700687c7f668550692c28a36a773f"
+    },
+    {
+      "asset_id": "media/thu_speech/image23",
+      "path": "image23.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 184333,
+      "sha256": "471395c295355be2b4234579c48cbcaab694ca4de1e7ca957a7e76f32c11ddd0"
+    },
+    {
+      "asset_id": "media/thu_speech/image24",
+      "path": "image24.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 170939,
+      "sha256": "2388d41c7939cfb254e8a891748c10fe3f8c13aa0a398d8115ef30d43a1eb045"
+    },
+    {
+      "asset_id": "media/thu_speech/image25",
+      "path": "image25.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 191597,
+      "sha256": "4226e7f2963ba5bb52d9c8e31842b281a7e7267ec3c21d5f58abba28cef00bc0"
+    },
+    {
+      "asset_id": "media/thu_speech/image26",
+      "path": "image26.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 168235,
+      "sha256": "2fcf1729f2b42650186265f24579730fcfbb7c61f08f7def9fadd2f61ff17185"
+    },
+    {
+      "asset_id": "media/thu_speech/image27",
+      "path": "image27.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 19274,
+      "sha256": "3a3dada8197eb04aec38649f6dd1a13e427d53d27bbbbcda983e47e8db236760"
+    },
+    {
+      "asset_id": "media/thu_speech/image28",
+      "path": "image28.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 117559,
+      "sha256": "0f0bb0d55df76e8e53317c251573f5ecbb708d0b01f587259afa5abeb0fa135b"
+    },
+    {
+      "asset_id": "media/thu_speech/image29",
+      "path": "image29.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 99526,
+      "sha256": "d432e36c6ebd1d6fe7d1596499c5115d96b0d9ca176b3cf3a07ffccd57c1ee8b"
+    },
+    {
+      "asset_id": "media/thu_speech/image3",
+      "path": "image3.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 19179,
+      "sha256": "1c909cb5604e5408fbc568698bfef59e60ccc2b19f72d55b87b9ea032e5baf8d"
+    },
+    {
+      "asset_id": "media/thu_speech/image30",
+      "path": "image30.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 91201,
+      "sha256": "3ccecb6340cb3b27a36baeb764b552d117a66e79943249157dc428fb9078b754"
+    },
+    {
+      "asset_id": "media/thu_speech/image31",
+      "path": "image31.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 43894,
+      "sha256": "cbc9d63a9497a129e564fac3ab9c0bd3f0a0c3b76ee5c2346b5045d8ed091a8f"
+    },
+    {
+      "asset_id": "media/thu_speech/image32",
+      "path": "image32.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 49277,
+      "sha256": "22b330bfc9d000b9fc44bdd89f4d47594716b4f592d23ae4193b3c71f030a1ec"
+    },
+    {
+      "asset_id": "media/thu_speech/image33",
+      "path": "image33.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 145139,
+      "sha256": "539a1014fc0bf55d99e0f0b49a86d2d8d6eea906d6feecd9bde43b2fe0a56df2"
+    },
+    {
+      "asset_id": "media/thu_speech/image34",
+      "path": "image34.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 228702,
+      "sha256": "16b0d2651439e72f0da04cb30c4a41a7c8929df097b953909bc528dfb662d805"
+    },
+    {
+      "asset_id": "media/thu_speech/image35",
+      "path": "image35.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 181988,
+      "sha256": "aaff9b780c56b9d4988ec76292cd9686be921dd169c671d695229bdf0b2f5ae1"
+    },
+    {
+      "asset_id": "media/thu_speech/image36",
+      "path": "image36.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 261500,
+      "sha256": "fd3f8a6f98005d78b5cc55db749427351d9944ed45c273089ea3aadafa530b38"
+    },
+    {
+      "asset_id": "media/thu_speech/image37",
+      "path": "image37.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 126433,
+      "sha256": "e2b8824f9abb951a878c338b0c68e1dfab9ddb71b5d024220ad0be3d50af2b29"
+    },
+    {
+      "asset_id": "media/thu_speech/image38",
+      "path": "image38.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 367479,
+      "sha256": "ddda994ff88c59a4f3da2f48324ae1a88dbb25108b77789fa444ae71bce0844c"
+    },
+    {
+      "asset_id": "media/thu_speech/image39",
+      "path": "image39.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 165918,
+      "sha256": "fe79f45da33c0258e93808bfb8efe3a0698b0791e0d7fcc81f53ed30319d5f7a"
+    },
+    {
+      "asset_id": "media/thu_speech/image4",
+      "path": "image4.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 2337429,
+      "sha256": "907263ef1496369a84888f29a20861b760d817cbfd0a0d4630cc501ccb48386f"
+    },
+    {
+      "asset_id": "media/thu_speech/image40",
+      "path": "image40.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 181231,
+      "sha256": "142b27d3bf71d25c25a36291418c75cfa373083beeb30d7668602aa200cdbbb4"
+    },
+    {
+      "asset_id": "media/thu_speech/image41",
+      "path": "image41.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 26622,
+      "sha256": "9cd78e6db1d199ec0f6d6e4ae78aa8735d00f256cdbdf83e6be48738415c343e"
+    },
+    {
+      "asset_id": "media/thu_speech/image42",
+      "path": "image42.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 120501,
+      "sha256": "664b1206ba5f9a603c7d3664c1df795889b6507e1c13e14b9f1a4a6ca0093671"
+    },
+    {
+      "asset_id": "media/thu_speech/image43",
+      "path": "image43.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 40902,
+      "sha256": "24b92ad21f3a6939f5e79746a40568735fb8bfe4327caef4fb04c40383b8af25"
+    },
+    {
+      "asset_id": "media/thu_speech/image44",
+      "path": "image44.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 28278,
+      "sha256": "05c1250215a08f47c45074754c5447c38b3c70399026036a12a98de853ff54b4"
+    },
+    {
+      "asset_id": "media/thu_speech/image45",
+      "path": "image45.png",
+      "mime_type": "image/png",
+      "bytes": 7946416,
+      "sha256": "ba70d211021beed7f9f0036430b888f0a79e1ffd5c32ecfd54381f79484571cb"
+    },
+    {
+      "asset_id": "media/thu_speech/image46",
+      "path": "image46.png",
+      "mime_type": "image/png",
+      "bytes": 38577,
+      "sha256": "ffe0b900d7d350416639650ed598958d28d7537462654148cf0f112398e05ce0"
+    },
+    {
+      "asset_id": "media/thu_speech/image47",
+      "path": "image47.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 276212,
+      "sha256": "571b8df42649ab556bcf082759467f5f147a3e87918d293ecf59f81c818f1d50"
+    },
+    {
+      "asset_id": "media/thu_speech/image48",
+      "path": "image48.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 136845,
+      "sha256": "fa22be6b2a464c20a803de6ede13fba6e262e9d7ba11d5b05301399ce9953e17"
+    },
+    {
+      "asset_id": "media/thu_speech/image49",
+      "path": "image49.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 177688,
+      "sha256": "ca51980ebdd2b49af5678379f785c4ec057a90a98c7ec38e50f9ddc38acca8d3"
+    },
+    {
+      "asset_id": "media/thu_speech/image5",
+      "path": "image5.png",
+      "mime_type": "image/png",
+      "bytes": 61060,
+      "sha256": "a1759e6d969d8789d3e3e796d208d8f38290d08199041569b779f7d52479961f"
+    },
+    {
+      "asset_id": "media/thu_speech/image50",
+      "path": "image50.jpg",
+      "mime_type": "image/jpeg",
+      "bytes": 95390,
+      "sha256": "867fe008267bc9eb3344be0484e2aff1ac4c7851d826196edea06b007bf84723"
+    },
+    {
+      "asset_id": "media/thu_speech/image6",
+      "path": "image6.png",
+      "mime_type": "image/png",
+      "bytes": 923021,
+      "sha256": "51fda9fedde96875924ebcc7148823de3cabf101c831d41d2149c726a0065955"
+    },
+    {
+      "asset_id": "media/thu_speech/image7",
+      "path": "image7.jpeg",
+      "mime_type": "image/jpeg",
+      "bytes": 1885732,
+      "sha256": "1cc734b7889e51e666e963f03dfd59fd7348daf247acb018c897b3bd811ae453"
+    },
+    {
+      "asset_id": "media/thu_speech/image8",
+      "path": "image8.png",
+      "mime_type": "image/png",
+      "bytes": 56963,
+      "sha256": "f07b63b82eabef14eaf01ba3fd598917b7c9a7df1e6b484249ab9ef61ea4386e"
+    },
+    {
+      "asset_id": "media/thu_speech/image9",
+      "path": "image9.png",
+      "mime_type": "image/png",
+      "bytes": 2970493,
+      "sha256": "d240905436f633a8a13ee029b07648b5d951ea920a834809592cf5b9d2aec97e"
+    },
+    {
+      "asset_id": "media/thu_speech/transition_photo_07",
+      "path": "transition_photo_07.png",
+      "mime_type": "image/png",
+      "bytes": 823640,
+      "sha256": "374de7ef262c3a8575822904414a982051f90e6caf1dd41b20e5f7adeec50758"
+    },
+    {
+      "asset_id": "media/thu_speech/transition_photo_08",
+      "path": "transition_photo_08.png",
+      "mime_type": "image/png",
+      "bytes": 794886,
+      "sha256": "1e187c66e8df8f09892085ec8f02392657c221613ae4dfcc5400109d80735fbb"
+    },
+    {
+      "asset_id": "media/thu_speech/transition_photo_09",
+      "path": "transition_photo_09.png",
+      "mime_type": "image/png",
+      "bytes": 954807,
+      "sha256": "5dce9d55ea5e3d039be38257e41d5183dbcafd360691fca7cdf313266eb2db7f"
+    },
+    {
+      "asset_id": "media/thu_speech/transition_photo_10",
+      "path": "transition_photo_10.png",
+      "mime_type": "image/png",
+      "bytes": 788227,
+      "sha256": "889220c371791b7a0dcfb87c7637aca8ed0f199bbd331513eb419ae563586604"
+    }
+  ]
+}

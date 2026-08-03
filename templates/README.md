@@ -4,7 +4,7 @@
 
 - `layouts/`: page layout packs only.
 - `page_layouts/`: PPT Master-style whole-page layout recipes for SVG execution.
-- `style_packs/`: reusable visual systems and editable-PPT style migrations.
+- `style_packs/`: archived non-legacy style migrations; not part of the current project library.
 - `cards/`: fixed-size card components with slot capacity contracts and an agent assembly manual.
 - `charts/`: chart, diagram, and framework SVG templates.
 - `icons/`: shared icon libraries.
@@ -21,9 +21,11 @@
 
 ## Page Layout Templates
 
-The `layouts/` directory exposes a slim academic-only active library. It keeps
-six repeatable academic template packs: `academic_general`, `academic_scqa`,
-`defense_leftnav`, `defense_topnav`, `literature_minimal`, and `nsfc_defense`.
+The `layouts/` directory exposes the current formal template library. The
+canonical project policy is [template_policy.json](./template_policy.json):
+only `academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`,
+`literature_minimal`, `nsfc_defense`, and `thu_speech` are official and may be
+selected by default.
 
 The broader brand, government, enterprise, domain-specific, and special-style PPT Master packs
 were moved out of the active library for review because EasySlides is focused
@@ -32,17 +34,11 @@ on academic scenarios.
 - **Human browsing**: [layouts/README.md](./layouts/README.md)
 - **Slim lookup (discovery only)**: [layouts/layouts_index.json](./layouts/layouts_index.json) — used to answer "what academic templates exist?". Step 3 triggers on an explicit directory path supplied by the user, not on names from this index.
 
-## Local Style Packs
+## Archived Non-Legacy Templates
 
-These are lightweight editable-PPT style migrations kept outside
-`templates/layouts/` so they do not change the PPT Master page-template index:
-
-- `style_packs/l001_notebook_defense/`: wine-red notebook defense style pack.
-- `style_packs/guizang_ppt/`: Guizang HTML deck style migration, covering Style A
-  editorial ink and Style B Swiss internationalism as native SVG shells,
-  including 22 Swiss `S01-S22` skeletons under `swiss/`. It can be
-  bound through `spec_lock.md` `style_pack` and validated with
-  `scripts/style_pack_contract.py`.
+Review, quarantined, and unregistered style-pack assets are intentionally kept
+outside this project and managed as a separate archive. They are not selected
+by the default EasySlides template route.
 
 ## Template Asset Bank
 

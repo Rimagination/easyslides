@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" data-body-only="true" data-source-slide="15" data-variant-id="content_source_15" data-coordinate-space="body_canvas" version="1.1" width="1280" height="720" viewBox="0 0 1280 720"><defs><filter id="fx1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="-4" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.09" /></filter><filter id="fx2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="-4" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.09" /></filter><filter id="fx3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="-4" stdDeviation="5.33" flood-color="#000000" flood-opacity="0.09" /></filter><linearGradient id="ggrad1" x1="1" y1="0.5" x2="0" y2="0.5"><stop offset="0" stop-color="#912C8D" /><stop offset="0.99" stop-color="#6A69B6" /></linearGradient></defs><image href="../assets/image27.jpg" x="0" y="0" width="1280" height="720" preserveAspectRatio="none" />
+<g id="shape-57" data-name="任意形状 100">
+<path d="M 844.55 367.77 L 1178.98 367.77 L 1178.98 613.88 L 844.55 613.88 Z" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx1)" />
+</g>
+<g id="shape-56" data-name="任意形状 100">
+<path d="M 471.44 367.48 L 805.87 367.48 L 805.87 613.88 L 471.44 613.88 Z" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx2)" />
+</g>
+<g id="shape-9" data-name="图片 8">
+<rect x="97.01" y="247.15" width="334.34" height="104.81" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_01" data-easyslides-generated="true" /><image href="../assets/image28.jpeg" data-slot="IMAGE_01" data-slot-id="IMAGE_01" data-slot-kind="image" data-slot-placeholder="{{IMAGE_01}}" x="97.01" y="247.15" width="334.34" height="104.81" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
+<g id="shape-79" data-name="任意形状 78">
+<path d="M 285.94 247.19 L 264.23 232.11 L 242.32 247.19 L 96.91 247.19 L 96.91 351.96 L 431.35 351.96 L 431.35 247.19 Z" fill="#912C8D" fill-opacity="0.49" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-3" data-name="图片 2">
+<rect x="471.53" y="247.15" width="334.43" height="104.81" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_02" data-easyslides-generated="true" /><image href="../assets/image29.jpeg" data-slot="IMAGE_02" data-slot-id="IMAGE_02" data-slot-kind="image" data-slot-placeholder="{{IMAGE_02}}" x="471.53" y="247.15" width="334.43" height="104.81" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
+<g id="shape-107" data-name="任意形状 106">
+<path d="M 660.56 247.19 L 638.65 232.11 L 616.94 247.19 L 471.53 247.19 L 471.53 351.96 L 805.96 351.96 L 805.96 247.19 Z" fill="#68A4C6" fill-opacity="0.48" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-7" data-name="图片 6">
+<rect x="844.55" y="247.15" width="334.43" height="104.81" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_03" data-easyslides-generated="true" /><image href="../assets/image30.jpeg" data-slot="IMAGE_03" data-slot-id="IMAGE_03" data-slot-kind="image" data-slot-placeholder="{{IMAGE_03}}" x="844.55" y="247.15" width="334.43" height="104.81" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
+<g id="shape-101" data-name="任意形状 100">
+<path d="M 96.91 368.64 L 431.35 368.64 L 431.35 622.74 L 96.91 622.74 Z" fill="#FFFFFF" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" filter="url(#fx3)" />
+</g>
+<g id="shape-67" data-name="任意形状 66">
+<path d="M 1178.57 173.19 L 1153.66 147.08 L 1153.66 159.46 L 96.5 159.46 L 96.5 186.91 L 1153.66 186.91 L 1153.66 199.29 Z" fill="url(#ggrad1)" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-73" data-name="任意形状 72">
+<path d="M 307.38 171.52 C 307.38 195.59 287.87 215.1 263.8 215.1 C 239.74 215.1 220.23 195.59 220.23 171.52 C 220.23 147.46 239.74 127.95 263.8 127.95 C 287.87 127.95 307.38 147.46 307.38 171.52 Z" fill="#912C8D" stroke-width="4" stroke-linecap="butt" stroke="#FFFFFF" stroke-linejoin="miter" />
+<text x="263.8" y="179.92" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="220.23" data-pptx-box-y="127.95" data-pptx-box-w="87.14" data-pptx-box-h="87.14" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_01" data-slot-id="BODY_TEXT_01" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_01}}">时间</tspan></text>
+</g>
+<g id="shape-85" data-name="任意形状 84">
+<path d="M 96.5 613.88 L 430.93 613.88 L 430.93 631 L 96.5 631 Z" fill="#912C8D" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-111" data-name="任意形状 110">
+<path d="M 1033.58 248.03 L 1011.67 233.08 L 989.95 248.03 L 844.55 248.03 L 844.55 351.96 L 1178.98 351.96 L 1178.98 248.03 Z" fill="#6A69B6" fill-opacity="0.39" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-28" data-name="圆角矩形 27">
+<rect x="154.71" y="398.82" width="201.84" height="32.7" rx="16.35" ry="16.35" fill="#FFFFFF" stroke-width="1.333" stroke="none" />
+<text x="255.63" y="426.29" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="154.71" data-pptx-box-y="398.82" data-pptx-box-w="201.84" data-pptx-box-h="32.7" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#912C8D" font-weight="bold" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}"><tspan fill="#912C8D" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_02" data-slot-id="BODY_TEXT_02" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_02}}">小标题</tspan></text>
+</g>
+<g id="shape-40" data-name="文本框 39">
+<rect x="131.1" y="442.47" width="263.15" height="145.41" fill="none" />
+<text x="166.70" y="463.14" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_03" data-slot-id="BODY_TEXT_03" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_03}}">正文内容</tspan></text>
+<text x="166.70" y="519.14" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_04" data-slot-id="BODY_TEXT_04" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_04}}">正文内容</tspan></text>
+</g>
+<g id="shape-41" data-name="圆角矩形 40">
+<rect x="537.73" y="394.42" width="201.84" height="32.7" rx="16.35" ry="16.35" fill="#FFFFFF" stroke-width="1.333" stroke="none" />
+<text x="638.65" y="421.88" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="537.73" data-pptx-box-y="394.42" data-pptx-box-w="201.84" data-pptx-box-h="32.7" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#68A4C6" font-weight="bold" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}"><tspan fill="#68A4C6" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_05" data-slot-id="BODY_TEXT_05" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_05}}">小标题</tspan></text>
+</g>
+<g id="shape-45" data-name="圆角矩形 44">
+<rect x="910.84" y="394.42" width="201.84" height="32.7" rx="16.35" ry="16.35" fill="#FFFFFF" stroke-width="1.333" stroke="none" />
+<text x="1011.76" y="421.88" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="910.84" data-pptx-box-y="394.42" data-pptx-box-w="201.84" data-pptx-box-h="32.7" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="26.67" fill="#6A69B6" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}"><tspan fill="#6A69B6" font-size="26.67" font-weight="bold" data-slot="BODY_TEXT_06" data-slot-id="BODY_TEXT_06" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_06}}">小标题</tspan></text>
+</g>
+
+
+
+<g id="shape-58" data-name="任意形状 84">
+<path d="M 471.44 613.88 L 805.87 613.88 L 805.87 631 L 471.44 631 Z" fill="#68A4C6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-59" data-name="任意形状 84">
+<path d="M 844.14 613.88 L 1178.57 613.88 L 1178.57 631 L 844.14 631 Z" fill="#6A69B6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
+</g>
+<g id="shape-60" data-name="任意形状 72">
+<path d="M 682.22 171.52 C 682.22 195.59 662.72 215.1 638.65 215.1 C 614.59 215.1 595.08 195.59 595.08 171.52 C 595.08 147.46 614.59 127.95 638.65 127.95 C 662.72 127.95 682.22 147.46 682.22 171.52 Z" fill="#68A4C6" stroke-width="4" stroke-linecap="butt" stroke="#FFFFFF" stroke-linejoin="miter" />
+<text x="638.65" y="179.92" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="595.08" data-pptx-box-y="127.95" data-pptx-box-w="87.14" data-pptx-box-h="87.14" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_07" data-slot-id="BODY_TEXT_07" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_07}}">时间</tspan></text>
+</g>
+<g id="shape-61" data-name="任意形状 72">
+<path d="M 1055.34 171.52 C 1055.34 195.59 1035.83 215.1 1011.76 215.1 C 987.7 215.1 968.19 195.59 968.19 171.52 C 968.19 147.46 987.7 127.95 1011.76 127.95 C 1035.83 127.95 1055.34 147.46 1055.34 171.52 Z" fill="#6A69B6" stroke-width="4" stroke-linecap="butt" stroke="#FFFFFF" stroke-linejoin="miter" />
+<text x="1011.76" y="179.92" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="968.19" data-pptx-box-y="127.95" data-pptx-box-w="87.14" data-pptx-box-h="87.14" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="BODY_TEXT_08" data-slot-id="BODY_TEXT_08" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_08}}">时间</tspan></text>
+</g>
+<g id="shape-62" data-name="文本框 61">
+<rect x="507.25" y="442.47" width="263.15" height="141.41" fill="none" />
+<text x="542.85" y="463.14" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_09" data-slot-id="BODY_TEXT_09" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_09}}">正文内容</tspan></text>
+<text x="542.85" y="519.14" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_10" data-slot-id="BODY_TEXT_10" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_10}}">正文内容</tspan></text>
+</g>
+<g id="shape-63" data-name="文本框 62">
+<rect x="880.36" y="442.47" width="263.15" height="141.41" fill="none" />
+<text x="915.96" y="463.14" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_11" data-slot-id="BODY_TEXT_11" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_11}}">正文内容</tspan></text>
+<text x="915.96" y="519.14" text-anchor="start" xml:space="preserve" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#262626" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}"><tspan fill="#262626" font-size="18.67" data-slot="BODY_TEXT_12" data-slot-id="BODY_TEXT_12" data-slot-kind="text" data-slot-placeholder="{{BODY_TEXT_12}}">正文内容</tspan></text>
+</g>
+<g id="shape-72" data-name="组合 71">
+<g id="shape-74" data-name="椭圆 73">
+<ellipse cx="520.67" cy="458.85" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-75" data-name="椭圆 74">
+<ellipse cx="520.67" cy="458.85" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-76" data-name="组合 75">
+<g id="shape-77" data-name="椭圆 76">
+<ellipse cx="520.67" cy="514.85" rx="7.35" ry="7.35" fill="#C5DCE9" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-78" data-name="椭圆 77">
+<ellipse cx="520.67" cy="514.85" rx="4.2" ry="4.2" fill="#68A4C6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-93" data-name="组合 92">
+<g id="shape-94" data-name="椭圆 93">
+<ellipse cx="893.67" cy="458.85" rx="7.35" ry="7.35" fill="#BDBCDE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-95" data-name="椭圆 94">
+<ellipse cx="893.67" cy="458.85" rx="4.2" ry="4.2" fill="#6A69B6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-96" data-name="组合 95">
+<g id="shape-97" data-name="椭圆 96">
+<ellipse cx="893.67" cy="514.85" rx="7.35" ry="7.35" fill="#BDBCDE" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-98" data-name="椭圆 97">
+<ellipse cx="893.67" cy="514.85" rx="4.2" ry="4.2" fill="#6A69B6" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-112" data-name="组合 111">
+<g id="shape-113" data-name="椭圆 112">
+<ellipse cx="144.42" cy="458.85" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-114" data-name="椭圆 113">
+<ellipse cx="144.42" cy="458.85" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1" />
+</g>
+</g>
+<g id="shape-115" data-name="组合 114">
+<g id="shape-116" data-name="椭圆 115">
+<ellipse cx="144.42" cy="514.85" rx="7.35" ry="7.35" fill="#C1A3BF" stroke="none" stroke-width="1" />
+</g>
+<g id="shape-117" data-name="椭圆 116">
+<ellipse cx="144.42" cy="514.85" rx="4.2" ry="4.2" fill="#912C8D" stroke="none" stroke-width="1" />
+</g>
+</g><rect x="0" y="0" width="1280" height="120" fill="#FFFFFF" data-body-header-mask="true" data-body-area-y="120" /></svg>

@@ -1,0 +1,20 @@
+{
+  "schema_version": "easyslides.template_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "thu_speech",
+  "display_name": "THU Speech",
+  "description": "Official Tsinghua speech template with five functional shells, one transition series, and fifteen reviewed content variants.",
+  "version": "1.0.0",
+  "status": "production",
+  "capability_level": "production",
+  "roles": [
+    "cover",
+    "toc",
+    "transition",
+    "content",
+    "ending"
+  ],
+  "layout_count": 5,
+  "variant_count": 15,
+  "default_scenario": "source_faithful_template_reuse"
+}
