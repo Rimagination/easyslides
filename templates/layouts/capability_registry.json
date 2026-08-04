@@ -6,11 +6,13 @@
     {
       "template_id": "academic_general",
       "status": "pass",
-      "lifecycle": "legacy",
+      "lifecycle": "production",
       "generation_enabled": true,
-      "composition_mode": "shell_only",
+      "composition_mode": "template_composable",
       "allowed_granularities": [
-        "page_module"
+        "body_variant",
+        "page_module",
+        "template_component"
       ],
       "profile": "D:\\scansci\\easyslides\\templates\\layouts\\academic_general\\capability_profile.json",
       "issue_count": 0

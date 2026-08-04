@@ -2,39 +2,395 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "thu_speech",
   "package_version": "1.0.0",
-  "source_digest": "61c454a2eb973eef40be091f577e88c05be07e60e64263679668082457068a29",
+  "source_digest": "ff65f24fa675db005be67629d84bb03ddfa886d5287e70af94e2638ece970020",
   "sources": {
     "package": {
       "path": "templates/layouts/thu_speech/template_package.json",
-      "sha256": "41c423d747c8193265749b01a4e8d0e217bd931ee14653c8fed604f5c31f81b7"
+      "sha256": "056b0034b3f1719baf797ea24b90c084a2bafa8c1ca16bab67a58a5af0f6299f"
     },
     "shells": {
       "path": "templates/layouts/thu_speech/layouts.json",
-      "sha256": "a8b1aa2337d378d336f4e1ae1232e879aa34d05e7ece897a736ea76be4a3a727"
+      "sha256": "099a580247ef46bbf68fe0a53a4700a4be655c33c19c5be2d81713174d78d376"
     },
     "body_variants": {
       "path": "templates/layouts/thu_speech/body_variants.json",
-      "sha256": "c0bd6d6a2250cae6e15d2b7e48efe90959acaf13e2b3154d889cbd28d580a360"
+      "sha256": "3ff77a69dd156e8d73fb645ab38924fc4cdf41eb2bee4fcb7edaf91a33772f1a"
     },
     "components": {
       "path": "templates/layouts/thu_speech/component_catalog.json",
-      "sha256": "f519b9f84e772815731fd70e225c77fd49231b600d289bd465e58ec86da3cba8"
+      "sha256": "8b72238dacbc2c6dc9e083d8a66a22aad2dc3f97ce1651cb9a7138a7fe5b36bf"
     },
     "qa": {
       "path": "templates/layouts/thu_speech/qa_policy.json",
-      "sha256": "4872ffb6c4ceb7a520844be4656273113e02b0fe9841321d0e76116b7f431603"
+      "sha256": "778cc01b99497323090265d189e39615bdd020e12ca2360d310657b3b86d44c9"
     },
     "provenance": {
       "path": "templates/layouts/thu_speech/source_page_roster.json",
-      "sha256": "40e60762f8e5b9b2bc181c032783694206c8dbd048c34bf2265652808b4fbd6d"
+      "sha256": "d4f6b0ef88db4ec71baca4ae6f2650d64e223d07be8bafc18f68b567c9e4c6f1"
     },
     "story": {
       "path": "templates/layouts/thu_speech/story_structure.json",
-      "sha256": "2cbc23a067b1dbb5e29ac4dc82c7795f204fad7fc6e1a4695f6641f37107dde0"
+      "sha256": "5a93db1a128b0422f3301d071126d940ef24111d10ef5ccfb9dd75aaf31e65c9"
     },
     "capability_profile": {
       "path": "templates/layouts/thu_speech/capability_profile.json",
       "sha256": "ef47cde86dcc10fe77a00a23bf94c05e4b0c7a9ad34dca668edf36e7e5b6e40b"
+    },
+    "shell:cover": {
+      "path": "templates/layouts/thu_speech/01_cover.svg",
+      "sha256": "150f7b075ffc2e69749142e6d85fd1853ae4c1a681ba2648e82bd4f97bda2f7d"
+    },
+    "shell:toc": {
+      "path": "templates/layouts/thu_speech/02_toc.svg",
+      "sha256": "daf8846e5fa6e8812b169be8ce1ea1e996c4910e74d710851c1cdbf947c65a03"
+    },
+    "shell:transition": {
+      "path": "templates/layouts/thu_speech/03_transition.svg",
+      "sha256": "7872d61a546c8cb915e35ee3c641b9d629cd41194c60366382f37ea0a4d368a7"
+    },
+    "shell:content": {
+      "path": "templates/layouts/thu_speech/04_content.svg",
+      "sha256": "1c7afd182d2e67feb61c6db7af42fb5da43292c5ad05f8321155c4fcc05badb0"
+    },
+    "shell:ending": {
+      "path": "templates/layouts/thu_speech/05_ending.svg",
+      "sha256": "e9b39866d750aee06ba0b628829348d48984cfdaf45fd2a7bfaafca7e8f9c768"
+    },
+    "component:component/thu_speech/callout": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/callout.svg",
+      "sha256": "dcf5ccf506497362a6a18626a30eaa0441eeae3048ea6ae3806cf5a01995f8b9"
+    },
+    "component:component/thu_speech/cards_group": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/cards_group.svg",
+      "sha256": "d217bd4054525e0fa1eeb0aa5592c824babc369a1ca8d59ec3998030aecaaaa9"
+    },
+    "component:component/thu_speech/content_panel_01": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_01.svg",
+      "sha256": "2a8c0610d14fd814b7ab7d25c3e161e82e17691d81526dbeb3fe328ca5447dbd"
+    },
+    "component:component/thu_speech/content_panel_02": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_02.svg",
+      "sha256": "38f111666dd4e94e3b540fe3e274f54d410bf42a3b570888030a5ae16abf087e"
+    },
+    "component:component/thu_speech/dual_panel_left": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_left.svg",
+      "sha256": "bf5f8224f8845a726557f1762588aa01c145028202bdddb896f9904e12213dec"
+    },
+    "component:component/thu_speech/dual_panel_right": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_right.svg",
+      "sha256": "a139e974a19b6094285067d6ca4a6b163de06553b01e2776ea511c2b5f2e79af"
+    },
+    "component:component/thu_speech/highlight_image": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/highlight_image.svg",
+      "sha256": "89897a3d9078e31f863c3efab168a4e19c7c1d3543a467ef397f13633b7511a6"
+    },
+    "component:component/thu_speech/image_caption": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/image_caption.svg",
+      "sha256": "adc9776601afde8477354a90972897591eb90bf6205f3e190893c16a763129a3"
+    },
+    "component:component/thu_speech/keyword_strip": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/keyword_strip.svg",
+      "sha256": "0e93af9edea8ffe64172450a046e6f1d80d8970bc75ef1de0e8a888701602791"
+    },
+    "component:component/thu_speech/metric_evidence": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/metric_evidence.svg",
+      "sha256": "b7dec89412b01fd0d4973ca44aee46b59806b7103dc704e989aaa48ae19328fd"
+    },
+    "component:component/thu_speech/metrics_strip": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/metrics_strip.svg",
+      "sha256": "5b1a73eb9a02427e7801fd3844ae409d60f89ac3da0db19c37d0845188d65d5c"
+    },
+    "component:component/thu_speech/side_image": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/side_image.svg",
+      "sha256": "8db1c2418c328bad8a3135217e869b512e2f38c52225371e7e8369215755a766"
+    },
+    "asset:assets/asset_manifest.json": {
+      "path": "templates/layouts/thu_speech/assets/asset_manifest.json",
+      "sha256": "47e8706f88a0352b78519613aef651cefc8e4877ae039c73eaf4cc3dda08e890"
+    },
+    "asset:assets/components/thu_speech/callout.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/callout.svg",
+      "sha256": "dcf5ccf506497362a6a18626a30eaa0441eeae3048ea6ae3806cf5a01995f8b9"
+    },
+    "asset:assets/components/thu_speech/cards_group.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/cards_group.svg",
+      "sha256": "d217bd4054525e0fa1eeb0aa5592c824babc369a1ca8d59ec3998030aecaaaa9"
+    },
+    "asset:assets/components/thu_speech/content_panel_01.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_01.svg",
+      "sha256": "2a8c0610d14fd814b7ab7d25c3e161e82e17691d81526dbeb3fe328ca5447dbd"
+    },
+    "asset:assets/components/thu_speech/content_panel_02.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_02.svg",
+      "sha256": "38f111666dd4e94e3b540fe3e274f54d410bf42a3b570888030a5ae16abf087e"
+    },
+    "asset:assets/components/thu_speech/dual_panel_left.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_left.svg",
+      "sha256": "bf5f8224f8845a726557f1762588aa01c145028202bdddb896f9904e12213dec"
+    },
+    "asset:assets/components/thu_speech/dual_panel_right.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_right.svg",
+      "sha256": "a139e974a19b6094285067d6ca4a6b163de06553b01e2776ea511c2b5f2e79af"
+    },
+    "asset:assets/components/thu_speech/highlight_image.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/highlight_image.svg",
+      "sha256": "89897a3d9078e31f863c3efab168a4e19c7c1d3543a467ef397f13633b7511a6"
+    },
+    "asset:assets/components/thu_speech/image_caption.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/image_caption.svg",
+      "sha256": "adc9776601afde8477354a90972897591eb90bf6205f3e190893c16a763129a3"
+    },
+    "asset:assets/components/thu_speech/keyword_strip.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/keyword_strip.svg",
+      "sha256": "0e93af9edea8ffe64172450a046e6f1d80d8970bc75ef1de0e8a888701602791"
+    },
+    "asset:assets/components/thu_speech/metric_evidence.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/metric_evidence.svg",
+      "sha256": "b7dec89412b01fd0d4973ca44aee46b59806b7103dc704e989aaa48ae19328fd"
+    },
+    "asset:assets/components/thu_speech/metrics_strip.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/metrics_strip.svg",
+      "sha256": "5b1a73eb9a02427e7801fd3844ae409d60f89ac3da0db19c37d0845188d65d5c"
+    },
+    "asset:assets/components/thu_speech/photo_statement.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/photo_statement.svg",
+      "sha256": "28831e9bb38d3f3ccb82ff1ac280639d494f15eb6c94182bc5d93ff9b215cb50"
+    },
+    "asset:assets/components/thu_speech/side_image.svg": {
+      "path": "templates/layouts/thu_speech/assets/components/thu_speech/side_image.svg",
+      "sha256": "8db1c2418c328bad8a3135217e869b512e2f38c52225371e7e8369215755a766"
+    },
+    "asset:assets/figure_placeholder.svg": {
+      "path": "templates/layouts/thu_speech/assets/figure_placeholder.svg",
+      "sha256": "55164990f203444bc7be6fda484483ae30e545ed07445bb43436de7bbec22cac"
+    },
+    "asset:assets/hdphoto1.wdp": {
+      "path": "templates/layouts/thu_speech/assets/hdphoto1.wdp",
+      "sha256": "4ab43a14a5b315a74c1b29402b7fb7a01fdb4d7e1f66a90959eac58f29f5f955"
+    },
+    "asset:assets/hdphoto2.wdp": {
+      "path": "templates/layouts/thu_speech/assets/hdphoto2.wdp",
+      "sha256": "cb342d799f279692625871c34f883f8190fb7683961305ce6a5812a629fe0b2e"
+    },
+    "asset:assets/image1.png": {
+      "path": "templates/layouts/thu_speech/assets/image1.png",
+      "sha256": "5bf70fef834ee2703739ccb8f4cf4839c6c57875462ddcaac45a48e69b0e6be8"
+    },
+    "asset:assets/image10.png": {
+      "path": "templates/layouts/thu_speech/assets/image10.png",
+      "sha256": "f9896f6a0c8f5acaa9b783c746d16b6170c96cdada5a6d9bc22f8a03d9d33136"
+    },
+    "asset:assets/image11.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image11.jpeg",
+      "sha256": "752216ad330bfc949547c66a2b901e7556bd13bf7fd3a4f1c4fe2df66d4bbc4f"
+    },
+    "asset:assets/image12.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image12.jpg",
+      "sha256": "f416d4f03b9a872c5b2775b16ffd1dd012a7e04f395eb64f95d3012577a77e0b"
+    },
+    "asset:assets/image13.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image13.jpg",
+      "sha256": "d0ec28b7e3f5803bff66063a19a824e53c5ab343ae58b3ee6594a06bb5f23592"
+    },
+    "asset:assets/image14.png": {
+      "path": "templates/layouts/thu_speech/assets/image14.png",
+      "sha256": "67857d88bf64d40720f2c499275cf624a4b12888396b58ff4139d065ebd9cf35"
+    },
+    "asset:assets/image14_fx_ca5d10fe.png": {
+      "path": "templates/layouts/thu_speech/assets/image14_fx_ca5d10fe.png",
+      "sha256": "bb981f572458cc88b45449350b738afb43ce923c71e27c92571829a5ca434044"
+    },
+    "asset:assets/image15.png": {
+      "path": "templates/layouts/thu_speech/assets/image15.png",
+      "sha256": "cd73d2feddc84454c82dc11fc730f0fd5db9f7a9ef3e6ebf51178d638faed699"
+    },
+    "asset:assets/image16.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image16.jpg",
+      "sha256": "5943344574345f4e8053a56d1ce6b9a675d581aa3f65fb984e2835ead64956ab"
+    },
+    "asset:assets/image17.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image17.jpg",
+      "sha256": "4a164654971073976fe0693e50fb091fd92342852892ee3e7c6f95f42328ece6"
+    },
+    "asset:assets/image18.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image18.jpg",
+      "sha256": "1243d92c97a1d1252f3fce8c5eca5b31faf0f5305aa12f83c839a2e301326fe8"
+    },
+    "asset:assets/image19.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image19.jpeg",
+      "sha256": "61c9917963d098a79a12f52f3e777c781c0396a8d1c943c41fc019552684245d"
+    },
+    "asset:assets/image2.png": {
+      "path": "templates/layouts/thu_speech/assets/image2.png",
+      "sha256": "2f29d04418a3f5df814a3e63b1915d76c88ef78c30702d32187dee0257285ff7"
+    },
+    "asset:assets/image20.png": {
+      "path": "templates/layouts/thu_speech/assets/image20.png",
+      "sha256": "67ff6e0688b1769e9773aacc1a070385e795976623f5fa92f8a3f7738676925e"
+    },
+    "asset:assets/image21.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image21.jpeg",
+      "sha256": "12eac8090f6133200f4388b194805de79244d95122cfa7601887dfc1e4008e6e"
+    },
+    "asset:assets/image22.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image22.jpeg",
+      "sha256": "79bac950affa31dffa18d30fdc85d2879c1700687c7f668550692c28a36a773f"
+    },
+    "asset:assets/image23.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image23.jpeg",
+      "sha256": "471395c295355be2b4234579c48cbcaab694ca4de1e7ca957a7e76f32c11ddd0"
+    },
+    "asset:assets/image24.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image24.jpeg",
+      "sha256": "2388d41c7939cfb254e8a891748c10fe3f8c13aa0a398d8115ef30d43a1eb045"
+    },
+    "asset:assets/image25.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image25.jpeg",
+      "sha256": "4226e7f2963ba5bb52d9c8e31842b281a7e7267ec3c21d5f58abba28cef00bc0"
+    },
+    "asset:assets/image26.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image26.jpeg",
+      "sha256": "2fcf1729f2b42650186265f24579730fcfbb7c61f08f7def9fadd2f61ff17185"
+    },
+    "asset:assets/image27.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image27.jpg",
+      "sha256": "3a3dada8197eb04aec38649f6dd1a13e427d53d27bbbbcda983e47e8db236760"
+    },
+    "asset:assets/image28.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image28.jpeg",
+      "sha256": "0f0bb0d55df76e8e53317c251573f5ecbb708d0b01f587259afa5abeb0fa135b"
+    },
+    "asset:assets/image29.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image29.jpeg",
+      "sha256": "d432e36c6ebd1d6fe7d1596499c5115d96b0d9ca176b3cf3a07ffccd57c1ee8b"
+    },
+    "asset:assets/image3.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image3.jpg",
+      "sha256": "1c909cb5604e5408fbc568698bfef59e60ccc2b19f72d55b87b9ea032e5baf8d"
+    },
+    "asset:assets/image30.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image30.jpeg",
+      "sha256": "3ccecb6340cb3b27a36baeb764b552d117a66e79943249157dc428fb9078b754"
+    },
+    "asset:assets/image31.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image31.jpg",
+      "sha256": "cbc9d63a9497a129e564fac3ab9c0bd3f0a0c3b76ee5c2346b5045d8ed091a8f"
+    },
+    "asset:assets/image32.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image32.jpg",
+      "sha256": "22b330bfc9d000b9fc44bdd89f4d47594716b4f592d23ae4193b3c71f030a1ec"
+    },
+    "asset:assets/image33.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image33.jpeg",
+      "sha256": "539a1014fc0bf55d99e0f0b49a86d2d8d6eea906d6feecd9bde43b2fe0a56df2"
+    },
+    "asset:assets/image34.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image34.jpeg",
+      "sha256": "16b0d2651439e72f0da04cb30c4a41a7c8929df097b953909bc528dfb662d805"
+    },
+    "asset:assets/image35.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image35.jpeg",
+      "sha256": "aaff9b780c56b9d4988ec76292cd9686be921dd169c671d695229bdf0b2f5ae1"
+    },
+    "asset:assets/image36.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image36.jpeg",
+      "sha256": "fd3f8a6f98005d78b5cc55db749427351d9944ed45c273089ea3aadafa530b38"
+    },
+    "asset:assets/image37.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image37.jpeg",
+      "sha256": "e2b8824f9abb951a878c338b0c68e1dfab9ddb71b5d024220ad0be3d50af2b29"
+    },
+    "asset:assets/image38.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image38.jpg",
+      "sha256": "ddda994ff88c59a4f3da2f48324ae1a88dbb25108b77789fa444ae71bce0844c"
+    },
+    "asset:assets/image39.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image39.jpeg",
+      "sha256": "fe79f45da33c0258e93808bfb8efe3a0698b0791e0d7fcc81f53ed30319d5f7a"
+    },
+    "asset:assets/image4.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image4.jpeg",
+      "sha256": "907263ef1496369a84888f29a20861b760d817cbfd0a0d4630cc501ccb48386f"
+    },
+    "asset:assets/image40.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image40.jpeg",
+      "sha256": "142b27d3bf71d25c25a36291418c75cfa373083beeb30d7668602aa200cdbbb4"
+    },
+    "asset:assets/image41.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image41.jpg",
+      "sha256": "9cd78e6db1d199ec0f6d6e4ae78aa8735d00f256cdbdf83e6be48738415c343e"
+    },
+    "asset:assets/image42.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image42.jpeg",
+      "sha256": "664b1206ba5f9a603c7d3664c1df795889b6507e1c13e14b9f1a4a6ca0093671"
+    },
+    "asset:assets/image43.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image43.jpg",
+      "sha256": "24b92ad21f3a6939f5e79746a40568735fb8bfe4327caef4fb04c40383b8af25"
+    },
+    "asset:assets/image44.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image44.jpg",
+      "sha256": "05c1250215a08f47c45074754c5447c38b3c70399026036a12a98de853ff54b4"
+    },
+    "asset:assets/image45.png": {
+      "path": "templates/layouts/thu_speech/assets/image45.png",
+      "sha256": "ba70d211021beed7f9f0036430b888f0a79e1ffd5c32ecfd54381f79484571cb"
+    },
+    "asset:assets/image46.png": {
+      "path": "templates/layouts/thu_speech/assets/image46.png",
+      "sha256": "ffe0b900d7d350416639650ed598958d28d7537462654148cf0f112398e05ce0"
+    },
+    "asset:assets/image47.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image47.jpeg",
+      "sha256": "571b8df42649ab556bcf082759467f5f147a3e87918d293ecf59f81c818f1d50"
+    },
+    "asset:assets/image48.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image48.jpeg",
+      "sha256": "fa22be6b2a464c20a803de6ede13fba6e262e9d7ba11d5b05301399ce9953e17"
+    },
+    "asset:assets/image49.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image49.jpeg",
+      "sha256": "ca51980ebdd2b49af5678379f785c4ec057a90a98c7ec38e50f9ddc38acca8d3"
+    },
+    "asset:assets/image5.png": {
+      "path": "templates/layouts/thu_speech/assets/image5.png",
+      "sha256": "a1759e6d969d8789d3e3e796d208d8f38290d08199041569b779f7d52479961f"
+    },
+    "asset:assets/image50.jpg": {
+      "path": "templates/layouts/thu_speech/assets/image50.jpg",
+      "sha256": "867fe008267bc9eb3344be0484e2aff1ac4c7851d826196edea06b007bf84723"
+    },
+    "asset:assets/image6.png": {
+      "path": "templates/layouts/thu_speech/assets/image6.png",
+      "sha256": "51fda9fedde96875924ebcc7148823de3cabf101c831d41d2149c726a0065955"
+    },
+    "asset:assets/image7.jpeg": {
+      "path": "templates/layouts/thu_speech/assets/image7.jpeg",
+      "sha256": "1cc734b7889e51e666e963f03dfd59fd7348daf247acb018c897b3bd811ae453"
+    },
+    "asset:assets/image8.png": {
+      "path": "templates/layouts/thu_speech/assets/image8.png",
+      "sha256": "f07b63b82eabef14eaf01ba3fd598917b7c9a7df1e6b484249ab9ef61ea4386e"
+    },
+    "asset:assets/image9.png": {
+      "path": "templates/layouts/thu_speech/assets/image9.png",
+      "sha256": "d240905436f633a8a13ee029b07648b5d951ea920a834809592cf5b9d2aec97e"
+    },
+    "asset:assets/transition_photo_07.png": {
+      "path": "templates/layouts/thu_speech/assets/transition_photo_07.png",
+      "sha256": "374de7ef262c3a8575822904414a982051f90e6caf1dd41b20e5f7adeec50758"
+    },
+    "asset:assets/transition_photo_08.png": {
+      "path": "templates/layouts/thu_speech/assets/transition_photo_08.png",
+      "sha256": "1e187c66e8df8f09892085ec8f02392657c221613ae4dfcc5400109d80735fbb"
+    },
+    "asset:assets/transition_photo_09.png": {
+      "path": "templates/layouts/thu_speech/assets/transition_photo_09.png",
+      "sha256": "5dce9d55ea5e3d039be38257e41d5183dbcafd360691fca7cdf313266eb2db7f"
+    },
+    "asset:assets/transition_photo_10.png": {
+      "path": "templates/layouts/thu_speech/assets/transition_photo_10.png",
+      "sha256": "889220c371791b7a0dcfb87c7637aca8ed0f199bbd331513eb419ae563586604"
     }
   },
   "component_dependencies": [
@@ -43,84 +399,84 @@
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/callout.svg",
-      "sha256": "43dd13a3064480b1e76e89f47581fb21d8ed4042807890b8b914823b80ca9286"
+      "sha256": "dcf5ccf506497362a6a18626a30eaa0441eeae3048ea6ae3806cf5a01995f8b9"
     },
     {
       "asset_id": "component/thu_speech/cards_group",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/cards_group.svg",
-      "sha256": "729b3f45da0e665319a9d04001a1407979303539d27e62d1dc565451790096ad"
+      "sha256": "d217bd4054525e0fa1eeb0aa5592c824babc369a1ca8d59ec3998030aecaaaa9"
     },
     {
       "asset_id": "component/thu_speech/content_panel_01",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_01.svg",
-      "sha256": "8874d8f48031363bf5fec45513e40e72ee2915912da9fb88c8b2f8d67b83be13"
+      "sha256": "2a8c0610d14fd814b7ab7d25c3e161e82e17691d81526dbeb3fe328ca5447dbd"
     },
     {
       "asset_id": "component/thu_speech/content_panel_02",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/content_panel_02.svg",
-      "sha256": "0568fe6e6dcfe7b872dbb38fc42a9eba61a88933a9d48303883c061fb6f9b433"
+      "sha256": "38f111666dd4e94e3b540fe3e274f54d410bf42a3b570888030a5ae16abf087e"
     },
     {
       "asset_id": "component/thu_speech/dual_panel_left",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_left.svg",
-      "sha256": "f99bf76999d04f325a6e4f71a0dec7c8eab3f60e3824bc0e67d29cc9ab332576"
+      "sha256": "bf5f8224f8845a726557f1762588aa01c145028202bdddb896f9904e12213dec"
     },
     {
       "asset_id": "component/thu_speech/dual_panel_right",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/dual_panel_right.svg",
-      "sha256": "59ebb2be888e60504d4138bc152d3290ea02f1504ea34b49be0c78bc5ee57cc1"
+      "sha256": "a139e974a19b6094285067d6ca4a6b163de06553b01e2776ea511c2b5f2e79af"
     },
     {
       "asset_id": "component/thu_speech/highlight_image",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/highlight_image.svg",
-      "sha256": "1b174b9937e41f4cde726020df8e58ad8295c460178e7e4b86a497922f7e77da"
+      "sha256": "89897a3d9078e31f863c3efab168a4e19c7c1d3543a467ef397f13633b7511a6"
     },
     {
       "asset_id": "component/thu_speech/image_caption",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/image_caption.svg",
-      "sha256": "e80ac1bfc0956bf20dd6bf0b82a39d96411ef602aa3a2aed2bdf6637b3a817d2"
+      "sha256": "adc9776601afde8477354a90972897591eb90bf6205f3e190893c16a763129a3"
     },
     {
       "asset_id": "component/thu_speech/keyword_strip",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/keyword_strip.svg",
-      "sha256": "9b0f19ec8fd07239bb158744064c530e24ee3dabb56d42e3f67fb0ee1c2b95f9"
+      "sha256": "0e93af9edea8ffe64172450a046e6f1d80d8970bc75ef1de0e8a888701602791"
     },
     {
       "asset_id": "component/thu_speech/metric_evidence",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/metric_evidence.svg",
-      "sha256": "1e26e83aa1a6bb9c1da6e01a2b9ade5a605b01d18812da01203f67ebbaa6f193"
+      "sha256": "b7dec89412b01fd0d4973ca44aee46b59806b7103dc704e989aaa48ae19328fd"
     },
     {
       "asset_id": "component/thu_speech/metrics_strip",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/metrics_strip.svg",
-      "sha256": "1db7b1a0f0cbef57c0745d2747376bfcf15d40dc4add6cd9cb50d3911e363aef"
+      "sha256": "5b1a73eb9a02427e7801fd3844ae409d60f89ac3da0db19c37d0845188d65d5c"
     },
     {
       "asset_id": "component/thu_speech/side_image",
       "scope": "template",
       "renderer_id": "source_template_projection",
       "asset_path": "templates/layouts/thu_speech/assets/components/thu_speech/side_image.svg",
-      "sha256": "54ebe40a81ce66553665b96901a79eaf30776e3922a6fc6da9af7d8b7d62d79c"
+      "sha256": "8db1c2418c328bad8a3135217e869b512e2f38c52225371e7e8369215755a766"
     }
   ],
   "component_pack": {

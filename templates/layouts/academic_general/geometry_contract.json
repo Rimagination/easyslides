@@ -1,0 +1,153 @@
+{
+  "schema_version": "easyslides.template_geometry_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "academic_general",
+  "canvas": {
+    "width": 1280.0,
+    "height": 720.0,
+    "format": "ppt169"
+  },
+  "hard_invariants": [
+    "text_center_y_matches_container_center_y",
+    "declared_slots_stay_inside_canvas",
+    "component_regions_stay_inside_canvas",
+    "content_shell_owns_running_title_central_message_and_page_number",
+    "body_variant_regions_stay_inside_body_canvas",
+    "no_visible_content_area_planning_rectangle"
+  ],
+  "pages": [
+    {
+      "page_id": "cover",
+      "svg": "01_cover.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "toc",
+      "svg": "02_toc.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "chapter",
+      "svg": "02_chapter.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "content",
+      "svg": "03_content.svg",
+      "regions": [
+        {
+          "region_id": "running_title",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 70.0
+          },
+          "z_index": 10,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "central_message",
+          "frame": {
+            "x": 0.0,
+            "y": 70.0,
+            "width": 1280.0,
+            "height": 50.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "allow_overlap": false,
+          "purpose": "central_message_only"
+        },
+        {
+          "region_id": "body_canvas",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 1176.0,
+            "height": 515.0
+          },
+          "z_index": 10,
+          "fit": "contain",
+          "allow_overlap": false,
+          "purpose": "template_local_component_composition_only"
+        },
+        {
+          "region_id": "footer",
+          "frame": {
+            "x": 0.0,
+            "y": 665.0,
+            "width": 1280.0,
+            "height": 55.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    },
+    {
+      "page_id": "ending",
+      "svg": "04_ending.svg",
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "containers": []
+    }
+  ]
+}

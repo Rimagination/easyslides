@@ -3,18 +3,18 @@
   "generation_policy": "discover_template_packages_and_legacy_layouts",
   "templates": [
     {
-      "package_id": "",
+      "package_id": "template/academic_general",
       "template_id": "academic_general",
-      "version": "",
-      "status": "legacy",
-      "display_name": "academic_general",
-      "description": "General academic base for research talks, course reports, progress reviews, paper explainers, and scholarly exchange.",
+      "version": "2.0.0",
+      "status": "production",
+      "display_name": "Academic General",
+      "description": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
       "path": "templates/layouts/academic_general",
       "canvas_format": "ppt169",
       "layout_count": 5,
-      "capability_level": "shell",
-      "production_eligible": false,
-      "managed_package": false,
+      "capability_level": "production",
+      "production_eligible": true,
+      "managed_package": true,
       "keywords": [
         "general_academic",
         "Audience-State-Transfer",
@@ -22,7 +22,7 @@
         "research-oriented",
         "neutral_base"
       ],
-      "compiled_ir": "",
+      "compiled_ir": "compiled/template_ir.json",
       "official": true
     },
     {
@@ -155,6 +155,29 @@
   ],
   "packages": [
     {
+      "package_id": "template/academic_general",
+      "template_id": "academic_general",
+      "version": "2.0.0",
+      "status": "production",
+      "display_name": "Academic General",
+      "description": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
+      "path": "templates/layouts/academic_general",
+      "canvas_format": "ppt169",
+      "layout_count": 5,
+      "capability_level": "production",
+      "production_eligible": true,
+      "managed_package": true,
+      "keywords": [
+        "general_academic",
+        "Audience-State-Transfer",
+        "SCQA",
+        "research-oriented",
+        "neutral_base"
+      ],
+      "compiled_ir": "compiled/template_ir.json",
+      "official": true
+    },
+    {
       "package_id": "template/nsfc_defense",
       "template_id": "nsfc_defense",
       "version": "0.4.0",
@@ -190,5 +213,5 @@
     }
   ],
   "template_count": 7,
-  "package_count": 2
+  "package_count": 3
 }

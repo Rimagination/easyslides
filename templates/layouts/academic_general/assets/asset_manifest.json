@@ -1,0 +1,77 @@
+{
+  "schema_version": "easyslides.asset_manifest.v1",
+  "namespace": "academic_general",
+  "asset_count": 10,
+  "assets": [
+    {
+      "asset_id": "media/academic_general/components/canvas_anchor",
+      "path": "components/canvas_anchor.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 238,
+      "sha256": "2b107aa2612e3156f2cbf978c5002c8122b4ff569811440bebe90bc4b660d9b5"
+    },
+    {
+      "asset_id": "media/academic_general/components/comparison_column",
+      "path": "components/comparison_column.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1201,
+      "sha256": "6d070f6fddcc794ae90e99ec137f74bec4937490c82b6797d4a86d976d920f2e"
+    },
+    {
+      "asset_id": "media/academic_general/components/conclusion_bar",
+      "path": "components/conclusion_bar.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 680,
+      "sha256": "e12c7c31a54b5df6931b77534794b734e6e67ce9fc038716a366c12e9bd30dc7"
+    },
+    {
+      "asset_id": "media/academic_general/components/evidence_row",
+      "path": "components/evidence_row.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1392,
+      "sha256": "a6199e2c4275b8a3c2a7d72a35a25b8a91ae85a3275e715f1389b1306eb350c5"
+    },
+    {
+      "asset_id": "media/academic_general/components/evidence_stack",
+      "path": "components/evidence_stack.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1918,
+      "sha256": "38496ed26f23950af313c17e79f872036bb245643ae08fd261f7532b7d63cbe0"
+    },
+    {
+      "asset_id": "media/academic_general/components/media_panel",
+      "path": "components/media_panel.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1006,
+      "sha256": "faad251c0ce57ce4dad9cabbf1fc9c8ffe4f1ffacf915cb2f9758e59c4ca83e0"
+    },
+    {
+      "asset_id": "media/academic_general/components/metric_tile",
+      "path": "components/metric_tile.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1122,
+      "sha256": "f46e282900a847d909adfb990d61ee16b502593b43c33aa115ae9a98b6f322d9"
+    },
+    {
+      "asset_id": "media/academic_general/components/process_step",
+      "path": "components/process_step.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 1444,
+      "sha256": "5068206eaa4364c1e5bfc235ac428913b835fd162e3ad179020bebaf632b705b"
+    },
+    {
+      "asset_id": "media/academic_general/components/table_matrix",
+      "path": "components/table_matrix.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 4540,
+      "sha256": "4c910271fa8ecf1c956fcd0b3ca02317f950fb3ef18c9d8f5abe16abd46db6e5"
+    },
+    {
+      "asset_id": "media/academic_general/figure_placeholder",
+      "path": "figure_placeholder.svg",
+      "mime_type": "image/svg+xml",
+      "bytes": 707,
+      "sha256": "67ecf2eadee472db897e171fa0623b7596f783c9d6b8bca089ab6293e82c4577"
+    }
+  ]
+}

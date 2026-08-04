@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="368" height="190" viewBox="0 0 368 190" data-component-id="metric_tile">
+  <rect width="368" height="190" fill="#F5F7FA" stroke="#B8C7D6" stroke-width="1.2" rx="4"/>
+  <rect x="0" y="0" width="368" height="7" fill="#0066CC" rx="4"/>
+  <text x="184" y="93" text-anchor="middle" fill="#003366" font-family="Arial, Microsoft YaHei, sans-serif" font-size="42" font-weight="700" data-slot="VALUE" data-slot-id="VALUE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="28" data-pptx-box-y="35" data-pptx-box-w="312" data-pptx-box-h="75" data-pptx-valign="middle" data-center-lock="true">VALUE</text>
+  <line x1="52" y1="125" x2="316" y2="125" stroke="#D4E2EE"/>
+  <text x="184" y="158" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="LABEL" data-slot-id="LABEL" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="28" data-pptx-box-y="134" data-pptx-box-w="312" data-pptx-box-h="36" data-pptx-valign="middle" data-center-lock="true">LABEL</text>
+</svg>

@@ -1,0 +1,9 @@
+{
+  "schema_version": "easyslides.template_status.v2",
+  "derived_from": "template_package.json+qa_policy.json+compiled/template_ir.json",
+  "template_id": "academic_general",
+  "status": "production",
+  "capability_level": "production",
+  "production_eligible": true,
+  "source_digest": "24047351e230bdb092fd5e427748aba251de999e26a39d8255632424deab1e20"
+}

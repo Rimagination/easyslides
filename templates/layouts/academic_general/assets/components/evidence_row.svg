@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1176" height="135" viewBox="0 0 1176 135" data-component-id="evidence_row">
+  <rect width="1176" height="135" fill="#FFFFFF" stroke="#B8C7D6" stroke-width="1.2" rx="4"/>
+  <rect x="0" y="0" width="8" height="135" fill="#0066CC" rx="4"/>
+  <text x="48" y="78" text-anchor="middle" fill="#0066CC" font-family="Arial, sans-serif" font-size="22" font-weight="700" data-slot="INDEX" data-slot-id="INDEX" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="25" data-pptx-box-y="47" data-pptx-box-w="46" data-pptx-box-h="55" data-pptx-valign="middle" data-center-lock="true">01</text>
+  <text x="100" y="70" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="700" data-slot="LABEL" data-slot-id="LABEL" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="100" data-pptx-box-y="24" data-pptx-box-w="280" data-pptx-box-h="82" data-pptx-valign="middle">LABEL</text>
+  <line x1="406" y1="24" x2="406" y2="111" stroke="#D4E2EE"/>
+  <text x="440" y="70" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="19" data-slot="DETAIL" data-slot-id="DETAIL" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="440" data-pptx-box-y="24" data-pptx-box-w="690" data-pptx-box-h="82" data-pptx-valign="middle">DETAIL</text>
+</svg>

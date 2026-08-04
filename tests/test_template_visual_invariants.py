@@ -9,14 +9,14 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 NSFC = ROOT / "templates" / "layouts" / "nsfc_defense"
-RESEARCH_CORE = ROOT / "templates" / "layouts" / "research_core"
+ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_general"
 
 
 class TemplateVisualInvariantTests(unittest.TestCase):
     def test_production_templates_pass_declared_visual_invariants(self) -> None:
         from scripts.template_visual_invariants import validate_template_visual_invariants
 
-        for template in (NSFC, RESEARCH_CORE):
+        for template in (NSFC, ACADEMIC_GENERAL):
             report = validate_template_visual_invariants(template)
             self.assertEqual(report["status"], "pass", report["issues"])
 

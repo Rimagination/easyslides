@@ -14,6 +14,10 @@ TEMPLATE_DIR = ROOT / "templates" / "style_packs" / "l001_notebook_defense"
 VALIDATOR = ROOT / "scripts" / "validate_l001.py"
 
 
+@unittest.skipUnless(
+    TEMPLATE_DIR.is_dir(),
+    "L001 is an archived external style pack and is not part of this checkout.",
+)
 class L001StylePackTests(unittest.TestCase):
     def test_style_pack_contains_locked_tokens_and_layouts(self):
         tokens_path = TEMPLATE_DIR / "design_tokens.json"

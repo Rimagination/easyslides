@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NSFC = ROOT / "templates" / "layouts" / "nsfc_defense"
-RESEARCH_CORE = ROOT / "templates" / "layouts" / "research_core"
+ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_general"
 
 
 class TemplateCompilerTests(unittest.TestCase):
@@ -85,41 +85,62 @@ class TemplateCompilerTests(unittest.TestCase):
         by_id = {row["template_id"]: row for row in report["templates"]}
 
         self.assertEqual(report["status"], "pass")
-        self.assertGreaterEqual(report["template_count"], 10)
-        self.assertGreaterEqual(report["package_count"], 2)
+        self.assertEqual(report["template_count"], 7)
+        self.assertGreaterEqual(report["package_count"], 3)
         self.assertEqual(by_id["nsfc_defense"]["capability_level"], "production")
         self.assertTrue(by_id["nsfc_defense"]["managed_package"])
-        self.assertEqual(by_id["academic_general"]["capability_level"], "shell")
-        self.assertFalse(by_id["academic_general"]["managed_package"])
+        self.assertEqual(by_id["academic_general"]["capability_level"], "production")
+        self.assertTrue(by_id["academic_general"]["managed_package"])
 
-    def test_research_core_is_a_managed_template_package(self) -> None:
+    def test_academic_general_is_a_managed_component_template_package(self) -> None:
         from scripts.template_compiler import compile_template
 
-        report = compile_template(RESEARCH_CORE)
+        report = compile_template(ACADEMIC_GENERAL)
         template_ir = report["template_ir"]
 
         self.assertEqual(report["status"], "pass")
         self.assertEqual(report["capability_level"], "production")
         self.assertEqual(report["shell_count"], 5)
-        self.assertEqual(report["body_variant_count"], 6)
-        self.assertTrue(
-            all(
-                variant["clear_region"] == {"x": 0.0, "y": 0.0, "width": 1280.0, "height": 720.0}
-                for variant in template_ir["body_variants"]
-            )
-        )
+        self.assertEqual(report["body_variant_count"], 7)
         self.assertEqual(
             {variant["variant_id"] for variant in template_ir["body_variants"]},
             {
-                "three_card_summary",
-                "process_timeline",
-                "figure_with_notes",
-                "kpi_row_3",
-                "comparison_pair",
-                "evidence_stack",
+                "figure_evidence",
+                "comparison_synthesis",
+                "process_outcome",
+                "metrics_evidence",
+                "evidence_argument",
+                "table_decision",
+                "open_component_composition",
             },
         )
+        content = next(shell for shell in template_ir["shells"] if shell["shell_id"] == "content")
+        self.assertEqual(content["content_shell_policy"], "template_component_composition_required")
+        self.assertEqual(content["body_canvas"], {"x": 52.0, "y": 135.0, "width": 1176.0, "height": 515.0})
+        self.assertEqual(template_ir["component_pack"]["pack_id"], "template/academic_general/components")
+        self.assertEqual(template_ir["capability_profile"]["composition"]["mode"], "template_composable")
         self.assertFalse(template_ir["capability_profile"]["composition"]["allow_global_component_fallback"])
+
+    def test_template_lock_tracks_shell_and_component_assets(self) -> None:
+        from scripts.template_compiler import compile_template
+        from scripts.template_production_gate import validate_compiled_contract
+
+        with tempfile.TemporaryDirectory() as tmp:
+            template = Path(tmp) / "academic_general"
+            import shutil
+
+            shutil.copytree(ACADEMIC_GENERAL, template)
+            compile_template(template, write=True)
+            shell = template / "03_content.svg"
+            shell.write_text(
+                shell.read_text(encoding="utf-8").replace("#003366", "#003367", 1),
+                encoding="utf-8",
+            )
+
+            report = validate_compiled_contract(template)
+
+        self.assertEqual(report["status"], "fail")
+        self.assertIn("TEMPLATE-IR-STALE", {item["code"] for item in report["issues"]})
 
 
 if __name__ == "__main__":

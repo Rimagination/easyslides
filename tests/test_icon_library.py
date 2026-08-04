@@ -12,9 +12,9 @@ class IconLibraryTests(unittest.TestCase):
 
         self.assertEqual(report["status"], "pass", report)
         self.assertEqual(library["family_count"], 6)
-        self.assertEqual(library["icon_count"], 11634)
+        self.assertEqual(library["icon_count"], 11635)
         lucide = next(family for family in library["families"] if family["family"] == "lucide")
-        self.assertEqual(lucide["count"], 3)
+        self.assertEqual(lucide["count"], 4)
         self.assertEqual(lucide["role"], "stylistic")
 
     def test_search_supports_exact_and_semantic_aliases(self):

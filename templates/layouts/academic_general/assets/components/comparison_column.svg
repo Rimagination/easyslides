@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="568" height="420" viewBox="0 0 568 420" data-component-id="comparison_column">
+  <rect width="568" height="420" fill="#FFFFFF" stroke="#B8C7D6" stroke-width="1.2" rx="4"/>
+  <rect width="568" height="64" fill="#E8F4FC" rx="4"/>
+  <rect width="6" height="64" fill="#0066CC"/>
+  <text x="284" y="40" text-anchor="middle" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="23" font-weight="700" data-slot="HEADING" data-slot-id="HEADING" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="32" data-pptx-box-y="14" data-pptx-box-w="504" data-pptx-box-h="36" data-pptx-valign="middle" data-center-lock="true">HEADING</text>
+  <line x1="32" y1="104" x2="536" y2="104" stroke="#D4E2EE" stroke-width="2"/>
+  <text x="56" y="225" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" data-slot="BODY" data-slot-id="BODY" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="56" data-pptx-box-y="128" data-pptx-box-w="456" data-pptx-box-h="220" data-pptx-valign="middle">BODY</text>
+  <line x1="32" y1="380" x2="536" y2="380" stroke="#D4E2EE"/>
+</svg>

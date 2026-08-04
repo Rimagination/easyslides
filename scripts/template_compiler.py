@@ -764,6 +764,25 @@ def compile_template(
         }.items()
         if path is not None
     }
+    # A template's JSON contracts describe its runtime surface, but its shell
+    # SVGs and local component/media assets are equally authoritative.  Lock
+    # them too so a visual edit cannot silently leave compiled IR current.
+    for shell in shells:
+        shell_path = Path(str(shell.get("svg_path") or ""))
+        if not shell_path.is_absolute():
+            shell_path = (ROOT / shell_path).resolve()
+        if shell_path.is_file():
+            source_paths[f"shell:{shell['shell_id']}"] = shell_path
+    for component in component_records:
+        asset_path = Path(str(component.get("asset_path") or ""))
+        if not asset_path.is_absolute():
+            asset_path = (ROOT / asset_path).resolve()
+        if asset_path.is_file():
+            source_paths[f"component:{component['asset_id']}"] = asset_path
+    assets_root = directory / "assets"
+    if assets_root.is_dir():
+        for asset_path in sorted(path for path in assets_root.rglob("*") if path.is_file()):
+            source_paths[f"asset:{asset_path.relative_to(directory).as_posix()}"] = asset_path
     source_hashes = {
         key: {
             "path": path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path),

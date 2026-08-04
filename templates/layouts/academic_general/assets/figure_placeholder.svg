@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="410" viewBox="0 0 640 410">
+  <rect width="640" height="410" fill="#F5F7FA"/>
+  <line x1="70" y1="340" x2="590" y2="340" stroke="#8BA1B5" stroke-width="2"/>
+  <line x1="70" y1="70" x2="70" y2="340" stroke="#8BA1B5" stroke-width="2"/>
+  <path d="M90 300 C170 235 210 265 290 180 S420 155 560 95" fill="none" stroke="#0066CC" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="290" cy="180" r="9" fill="#CC0000"/>
+  <circle cx="430" cy="145" r="9" fill="#CC0000"/>
+  <text x="320" y="385" text-anchor="middle" fill="#52657A" font-family="Arial, sans-serif" font-size="18">FIGURE PLACEHOLDER</text>
+</svg>

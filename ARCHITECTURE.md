@@ -3,10 +3,11 @@
 ## Component Pack Contract
 
 EasySlides separates a template's page shells from reusable content expression.
-`research-core` is a versioned global component pack: every component declares
-an input schema, capacity, renderer contract, stories, and an error-level
-vertical-center invariant. It is a library of candidates, not an implicit
-fallback for a named template.
+`academic_general` is the production neutral-academic reference for bounded
+template-local composition: every component declares an input schema, capacity,
+renderer contract, semantic selection vocabulary, and an error-level
+vertical-center invariant. `research_core` is an archived development asset,
+not a default template or component fallback.
 
 Production templates may also declare `component_pack.json`. This is a
 template-scoped contract that locks the template component catalog, primitive
@@ -18,8 +19,9 @@ or incomplete variant coverage.
 The user-facing `deck_plan` stays semantic: it specifies the claim, evidence,
 content shape, density, and optional component preference. Component selection
 then resolves a shell/body variant and records both renderable component refs
-and source-derived recipe dependencies. It never asks a user to provide raw
-coordinates.
+and source-derived recipe dependencies. Direct local-component assembly is an
+explicit exception for a template's declared `open_component_composition`
+variant; it still never asks a user to provide raw coordinates.
 
 ### Template Capability Profiles
 

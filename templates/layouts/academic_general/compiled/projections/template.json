@@ -1,0 +1,19 @@
+{
+  "schema_version": "easyslides.template_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "academic_general",
+  "display_name": "Academic General",
+  "description": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
+  "version": "2.0.0",
+  "status": "production",
+  "capability_level": "production",
+  "roles": [
+    "cover",
+    "toc",
+    "chapter",
+    "content",
+    "ending"
+  ],
+  "layout_count": 5,
+  "variant_count": 7
+}

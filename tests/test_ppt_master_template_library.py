@@ -9,19 +9,16 @@ TEMPLATES = ROOT / "templates"
 
 
 class PptMasterTemplateLibraryTests(unittest.TestCase):
-    def test_templates_root_keeps_layouts_style_packs_and_shared_assets_separate(self):
+    def test_templates_root_keeps_layouts_and_shared_assets_separate(self):
         root_entries = {path.name for path in TEMPLATES.iterdir()}
         self.assertIn("layouts", root_entries)
-        self.assertIn("style_packs", root_entries)
         self.assertIn("charts", root_entries)
         self.assertIn("icons", root_entries)
         self.assertIn("reference", root_entries)
+        self.assertNotIn("style_packs", root_entries)
         self.assertNotIn("academic", root_entries)
         self.assertNotIn("l001_notebook_defense", root_entries)
         self.assertNotIn("guizang_ppt", root_entries)
-
-        style_packs = {path.name for path in (TEMPLATES / "style_packs").iterdir() if path.is_dir()}
-        self.assertEqual(style_packs, {"l001_notebook_defense", "guizang_ppt"})
 
     def test_layout_library_contains_only_active_academic_templates(self):
         layouts_root = TEMPLATES / "layouts"
@@ -33,7 +30,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
             "defense_topnav",
             "literature_minimal",
             "nsfc_defense",
-            "research_core",
+            "thu_speech",
         }
         retired_template_ids = {
             "academic01",
@@ -806,7 +803,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
         icons_root = TEMPLATES / "icons"
         expected_counts = {
             "chunk-filled": 640,
-            "lucide": 3,
+            "lucide": 4,
             "phosphor-duotone": 1248,
             "simple-icons": 3651,
             "tabler-filled": 1053,
@@ -818,7 +815,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
             for family in expected_counts
         }
         self.assertEqual(actual_counts, expected_counts)
-        self.assertEqual(sum(actual_counts.values()), 11634)
+        self.assertEqual(sum(actual_counts.values()), 11635)
 
 
 if __name__ == "__main__":

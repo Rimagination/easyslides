@@ -1,0 +1,27 @@
+{
+  "schema_version": "easyslides.template_design_tokens.v1",
+  "color": {
+    "primary": "#003366",
+    "accent": "#0066CC",
+    "emphasis": "#CC0000",
+    "ink": "#26384A",
+    "inverse": "#FFFFFF"
+  },
+  "surface": {
+    "canvas": "#FFFFFF",
+    "panel": "#F5F7FA",
+    "soft": "#E8F4FC",
+    "line": "#B8C7D6"
+  },
+  "text": {
+    "primary": "#26384A",
+    "muted": "#52657A",
+    "inverse": "#FFFFFF"
+  },
+  "typography": {
+    "title": {"font_size_px": 28, "line_height": 1.15},
+    "body": {"font_size_px": 20, "line_height": 1.25},
+    "caption": {"font_size_px": 18, "line_height": 1.2}
+  },
+  "layout": {"grid_px": 8, "rail_height_px": 70, "border_px": 1}
+}

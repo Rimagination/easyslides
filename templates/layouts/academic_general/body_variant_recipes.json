@@ -1,0 +1,13 @@
+{
+  "schema_version": "easyslides.academic_general.body_variant_recipes.v1",
+  "template_id": "academic_general",
+  "recipes": [
+    {"variant_id": "figure_evidence", "scene_component": "media_panel", "primitives": ["evidence_stack"]},
+    {"variant_id": "comparison_synthesis", "scene_component": "comparison_column", "primitives": ["conclusion_bar"]},
+    {"variant_id": "process_outcome", "scene_component": "process_step", "primitives": ["conclusion_bar"]},
+    {"variant_id": "metrics_evidence", "scene_component": "metric_tile", "primitives": ["evidence_row"]},
+    {"variant_id": "evidence_argument", "scene_component": "evidence_row", "primitives": ["conclusion_bar"]},
+    {"variant_id": "table_decision", "scene_component": "table_matrix", "primitives": []},
+    {"variant_id": "open_component_composition", "scene_component": "canvas_anchor", "primitives": []}
+  ]
+}

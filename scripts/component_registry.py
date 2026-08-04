@@ -602,16 +602,21 @@ def _body_variant_selection(template_id: str, variant: dict[str, Any]) -> dict[s
     variant_id = str(variant.get("variant_id") or "")
     hints = BODY_VARIANT_HINTS.get(variant_id, {})
     inferred = infer_content_shapes(variant_id, variant.get("best_for"), variant.get("layout"), variant)
-    # Managed template packages already declare their semantic selection
-    # vocabulary. Preserve it verbatim; name-based hints only keep legacy
-    # body_variants.json files discoverable during migration.
-    declared_shapes = _strings(variant.get("content_shapes"))
+    # Managed template packages declare their selection vocabulary in a nested
+    # object. Legacy variants used top-level fields, so retain that form as a
+    # fallback instead of making template-owned variants undiscoverable.
+    declared = variant.get("selection") if isinstance(variant.get("selection"), dict) else {}
+    declared_shapes = _strings(variant.get("content_shapes")) or _strings(declared.get("content_shapes"))
     content_shapes = sorted(
         dict.fromkeys(declared_shapes or (_strings(hints.get("content_shapes")) + inferred))
     )
     raw_roles = variant.get("page_roles")
     if raw_roles is None:
+        raw_roles = declared.get("page_roles")
+    if raw_roles is None:
         raw_roles = variant.get("story_roles")
+    if raw_roles is None:
+        raw_roles = declared.get("story_roles")
     if raw_roles is None:
         raw_roles = variant.get("page_role")
     if isinstance(raw_roles, str):
@@ -621,9 +626,9 @@ def _body_variant_selection(template_id: str, variant: dict[str, Any]) -> dict[s
     return selection_from_source(
         content_shapes=content_shapes,
         page_roles=page_roles,
-        item_count_min=variant.get("min_items", hints.get("item_count_min", 1)),
-        item_count_max=variant.get("max_items", hints.get("item_count_max", 8)),
-        density=str(variant.get("density") or hints.get("density") or "medium"),
+        item_count_min=variant.get("min_items", declared.get("item_count_min", hints.get("item_count_min", 1))),
+        item_count_max=variant.get("max_items", declared.get("item_count_max", hints.get("item_count_max", 8))),
+        density=str(variant.get("density") or declared.get("density") or hints.get("density") or "medium"),
         best_for=str(variant.get("best_for") or f"{template_id} body variant {variant_id}"),
     )
 
@@ -649,6 +654,10 @@ def assets_from_template_component_catalogs(
                 continue
             selection = component.get("selection") if isinstance(component.get("selection"), dict) else {}
             qa = component.get("qa") if isinstance(component.get("qa"), dict) else {}
+            declared_shapes = _strings(selection.get("content_shapes"))
+            declared_roles = selection.get("page_roles")
+            if declared_roles is None:
+                declared_roles = selection.get("story_roles")
             assets.append(
                 _base_asset(
                     asset_id=asset_id,
@@ -656,12 +665,17 @@ def assets_from_template_component_catalogs(
                     render_backend=str(component.get("render_backend") or "template_svg_component"),
                     source_path=path,
                     selection=selection_from_source(
-                        content_shapes=infer_content_shapes(
-                            component.get("component_id"),
-                            component.get("description"),
-                            selection.get("archetypes"),
+                        content_shapes=sorted(
+                            dict.fromkeys(
+                                declared_shapes
+                                + infer_content_shapes(
+                                    component.get("component_id"),
+                                    component.get("description"),
+                                    selection.get("archetypes"),
+                                )
+                            )
                         ),
-                        page_roles=selection.get("page_roles"),
+                        page_roles=declared_roles,
                         density=str(selection.get("density") or "medium"),
                         best_for=str(component.get("description") or component.get("component_id") or ""),
                     ),

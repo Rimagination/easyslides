@@ -1,0 +1,23 @@
+{
+  "schema_version": "easyslides.template_component_pack.v1",
+  "pack_id": "template/academic_general/components",
+  "template_id": "academic_general",
+  "version": "1.0.0",
+  "display_name": "Academic General Components",
+  "description": "Neutral blue research components reviewed for the Academic General body canvas.",
+  "license": "MIT",
+  "scope": "template",
+  "dependencies": {"component_packs": []},
+  "design_tokens": {
+    "source": "design_tokens.json",
+    "required": ["color.primary", "color.accent", "color.emphasis", "surface.panel", "text.primary", "typography.title.font_size_px", "layout.grid_px"]
+  },
+  "entrypoints": {
+    "catalog": "component_catalog.json",
+    "primitives": "component_primitives.json",
+    "recipes": "body_variant_recipes.json"
+  },
+  "qa": {
+    "required_gates": ["template_component_pack_contract", "component_catalog", "body_variant_component_contract", "vertical_center_alignment", "template_local_asset_affinity"]
+  }
+}

@@ -42,9 +42,9 @@ blocking choice remains unanswered.
 1. **Create from scratch**: Source content → SVG pages → DrawingML shapes → editable PPTX
 2. **Edit existing PPTX**: Unpack → edit XML → validate → repack
 3. **HTML/JSX authoring path**: Use HTML/JSX as an experimental upstream authoring layer, then normalize into EasySlides-compatible SVG or shape IR before the existing DrawingML backend
-4. **Academic scenario/template system**: Scenario-first academic planning with template-extensible output. The current active layout packs are `academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`, and `literature_minimal`; they are inventory, not scope limits.
+4. **Academic scenario/template system**: Scenario-first academic planning with template-extensible output. The official template set is `academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`, `literature_minimal`, `nsfc_defense`, and `thu_speech`; `templates/template_policy.json` is authoritative.
 5. **71 visualization templates**: Charts, infographics, diagrams, strategic frameworks, and tables
-6. **11,634 icons**: Six SVG icon families for consistent academic and business visuals, with `lucide` preferred for new generic icons and emoji replacement
+6. **11,635 icons**: Six SVG icon families for consistent academic and business visuals, with `lucide` preferred for new generic icons and emoji replacement
 7. **Template Asset Bank**: Convert many real PPTX templates into exact-reuse slide modules for manual-template-substitution quality
 8. **PPT Master Page Recipe Library**: whole-page SVG layout archetypes with fixed regions, text slots, diversity rules, and strict SVG slot measurement
 9. **Card Component Library**: 13 fixed-size card styles plus PPT Master-style visual recipes with slot capacity contracts, agent selection rules, prompt skeletons, and PPTX preview export
@@ -391,7 +391,7 @@ and fill `slot_payload` with exactly the slots declared by that variant. The
 `text_capacity`, `svg_quality_checker`, `preview_render`, `pptx_roundtrip`, and
 `visual_measure_gate`
 are blocking gates before SVG authoring. Do not let Executor bypass this by
-writing arbitrary SVG inside `CONTENT_AREA`.
+writing arbitrary SVG into a template body canvas.
 
 For managed template packages, compile the canonical sources before rendering:
 
@@ -408,7 +408,10 @@ body variant must bind each required component-local slot to a declared
 variant slot and resolve every instance to a named region or explicit
 placement. If several variants score equally and the user intent is unclear,
 block execution and ask the user to choose; do not silently pick the first
-variant.
+variant. A template may expose `open_component_composition` for an explicitly
+requested arrangement, but that route accepts only registered local components
+inside the declared body canvas and never permits global or cross-template
+assets.
 
 When the selected template exposes a `LOGO` slot, resolve it from
 user-provided assets and source-material image folders before SVG generation.
@@ -569,13 +572,15 @@ patterns:
 | Content | Main content pages | `03_content.svg` |
 | Ending | Thank you / Q&A | `04_ending.svg` |
 
-Content page sub-layouts:
-- **Single column**: Centered text for key points
-- **Two-column cards**: Side-by-side comparison
-- **Left-right split** (5:5 or 4:6): Text + image
-- **Card grid**: Multiple items in grid
-- **Timeline**: Process flow or chronological data
-- **Table**: Structured data comparison
+Content page variants:
+- **Figure evidence**: one primary figure and three observations
+- **Comparison synthesis**: two alternatives plus one decision
+- **Process outcome**: three ordered steps plus one outcome
+- **Metrics evidence**: three metrics plus two evidence rows
+- **Evidence argument**: a text-rich claim plus three auditable arguments
+- **Table decision**: compact three-by-three decision matrix
+- **Open local composition**: explicitly requested placement of registered
+  `academic_general` components, bounded by the invisible body canvas
 
 ### Academic Built-in Layout Library
 
@@ -583,7 +588,7 @@ Use `templates/layouts/` when the user explicitly asks to use a template path
 or asks what formal templates are available. The mandatory project policy is
 `templates/template_policy.json`; the official set is exactly
 `academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`,
-`literature_minimal`, and `nsfc_defense`. Package QA status such as `review`
+`literature_minimal`, `nsfc_defense`, and `thu_speech`. Package QA status such as `review`
 does not make `nsfc_defense` non-official. All other templates are development
 assets and require an explicit user request.
 
@@ -844,7 +849,7 @@ python scripts/office/pack.py unpacked/ output.pptx --original template.pptx
 │   │   └── 04_ending.svg             # Ending page
 │   ├── layouts/                      # 7 active academic layout template packs
 │   ├── charts/                       # 71 visualization SVG templates
-│   └── icons/                        # 11,634 icons across six libraries
+│   └── icons/                        # 11,635 icons across six libraries
 │       ├── chunk-filled/
 │       ├── phosphor-duotone/
 │       ├── simple-icons/

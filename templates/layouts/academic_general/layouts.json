@@ -2,6 +2,14 @@
   "schema_version": "easyslides.academic_general.layouts.v1",
   "template_id": "academic_general",
   "replication_mode": "classic",
+  "style_system": "academic_general_blue",
+  "colors": {
+    "primary": "#003366",
+    "accent": "#0066CC",
+    "emphasis": "#CC0000",
+    "surface": "#F5F7FA",
+    "ink": "#26384A"
+  },
   "canvas": {
     "width": 1280,
     "height": 720,
@@ -10,7 +18,7 @@
   "shells": [
     {
       "page_id": "cover",
-      "svg_path": "templates/layouts/academic_general/01_cover.svg",
+      "svg_path": "01_cover.svg",
       "role": "cover",
       "slots": [
         "LOGO",
@@ -24,7 +32,7 @@
     },
     {
       "page_id": "toc",
-      "svg_path": "templates/layouts/academic_general/02_toc.svg",
+      "svg_path": "02_toc.svg",
       "role": "toc",
       "slots": [
         "LOGO",
@@ -43,7 +51,7 @@
     },
     {
       "page_id": "chapter",
-      "svg_path": "templates/layouts/academic_general/02_chapter.svg",
+      "svg_path": "02_chapter.svg",
       "role": "chapter",
       "slots": [
         "CHAPTER_NUM",
@@ -54,14 +62,50 @@
     },
     {
       "page_id": "content",
-      "svg_path": "templates/layouts/academic_general/03_content.svg",
+      "svg_path": "03_content.svg",
       "role": "content",
+      "page_archetype": "bounded_component_composition",
+      "content_shell_policy": "template_component_composition_required",
+      "body_variants": [
+        "figure_evidence",
+        "comparison_synthesis",
+        "process_outcome",
+        "metrics_evidence",
+        "evidence_argument",
+        "table_decision",
+        "open_component_composition"
+      ],
+      "regions": [
+        {
+          "region_id": "running_title",
+          "frame": {"x": 0, "y": 0, "width": 1280, "height": 70},
+          "z_index": 0
+        },
+        {
+          "region_id": "central_message",
+          "frame": {"x": 0, "y": 70, "width": 1280, "height": 50},
+          "z_index": 1,
+          "purpose": "central_message_only"
+        },
+        {
+          "region_id": "body_canvas",
+          "frame": {"x": 52, "y": 135, "width": 1176, "height": 515},
+          "z_index": 10,
+          "fit": "contain",
+          "purpose": "template_local_component_composition_only"
+        },
+        {
+          "region_id": "footer",
+          "frame": {"x": 0, "y": 665, "width": 1280, "height": 55},
+          "z_index": 1
+        }
+      ],
+      "body_canvas": {"x": 52, "y": 135, "width": 1176, "height": 515},
       "slots": [
         "SECTION_NUM",
         "PAGE_TITLE",
         "LOGO",
         "KEY_MESSAGE",
-        "CONTENT_AREA",
         "SOURCE",
         "SECTION_NAME",
         "PAGE_NUM"
@@ -69,7 +113,7 @@
     },
     {
       "page_id": "ending",
-      "svg_path": "templates/layouts/academic_general/04_ending.svg",
+      "svg_path": "04_ending.svg",
       "role": "ending",
       "slots": [
         "LOGO",
@@ -365,7 +409,12 @@
       {
         "slot_id": "PAGE_TITLE",
         "role": "page_title",
-        "max_lines": 2
+        "max_lines": 1,
+        "capacity": {
+          "single_line_required": true,
+          "max_chars_per_line": 30,
+          "overflow_action": "shorten_or_split"
+        }
       },
       {
         "slot_id": "LOGO",
@@ -395,7 +444,8 @@
       {
         "slot_id": "PAGE_NUM",
         "role": "page_number",
-        "fixed_geometry": true
+        "fixed_geometry": true,
+        "value_policy": "automatic_slide_index"
       }
     ],
     "ending": [

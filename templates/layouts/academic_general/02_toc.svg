@@ -1,63 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
-  <!-- 背景 -->
   <rect width="1280" height="720" fill="#FFFFFF"/>
-  
-  <!-- ==================== 页眉区域 ==================== -->
-  <rect x="0" y="0" width="1280" height="70" fill="#003366"/>
-  <rect x="0" y="0" width="6" height="70" fill="#CC0000"/>
-  
-  <!-- 页面标题 -->
-  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="bold">
-    目 录
-  </text>
-  
-  <!-- 右上角 Logo -->
-  <text x="1200" y="46" text-anchor="end" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="1030" data-pptx-box-y="8.2" data-pptx-box-w="170" data-pptx-box-h="54">
-    {{LOGO}}
-  </text>
-  
-  <!-- ==================== 目录内容区域 ==================== -->
-  <!-- 目录项容器 -->
-  <rect x="80" y="100" width="1120" height="520" fill="none"/>
-  
-  <!-- 目录项 01 -->
-  <rect x="80" y="115" width="540" height="90" fill="#E8F4FC" rx="8"/>
-  <rect x="80" y="115" width="6" height="90" fill="#003366" rx="3"/>
-  <text x="120" y="160" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="bold">01</text>
-  <text x="185" y="160" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="185" data-pptx-box-y="134.8" data-pptx-box-w="520" data-pptx-box-h="37.2">{{TOC_ITEM_1_TITLE}}</text>
-  <text x="120" y="188" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="120" data-pptx-box-y="173.3" data-pptx-box-w="560" data-pptx-box-h="21.7">{{TOC_ITEM_1_DESC}}</text>
-  
-  <!-- 目录项 02 -->
-  <rect x="660" y="115" width="540" height="90" fill="#E8F4FC" rx="8"/>
-  <rect x="660" y="115" width="6" height="90" fill="#003366" rx="3"/>
-  <text x="700" y="160" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="bold">02</text>
-  <text x="765" y="160" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="134.8" data-pptx-box-w="520" data-pptx-box-h="37.2">{{TOC_ITEM_2_TITLE}}</text>
-  <text x="700" y="188" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="700" data-pptx-box-y="173.3" data-pptx-box-w="560" data-pptx-box-h="21.7">{{TOC_ITEM_2_DESC}}</text>
-  
-  <!-- 目录项 03 -->
-  <rect x="80" y="230" width="540" height="90" fill="#E8F4FC" rx="8"/>
-  <rect x="80" y="230" width="6" height="90" fill="#0066CC" rx="3"/>
-  <text x="120" y="275" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="bold">03</text>
-  <text x="185" y="275" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="185" data-pptx-box-y="249.8" data-pptx-box-w="520" data-pptx-box-h="37.2">{{TOC_ITEM_3_TITLE}}</text>
-  <text x="120" y="303" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="120" data-pptx-box-y="288.3" data-pptx-box-w="560" data-pptx-box-h="21.7">{{TOC_ITEM_3_DESC}}</text>
-  
-  <!-- 目录项 04 -->
-  <rect x="660" y="230" width="540" height="90" fill="#E8F4FC" rx="8"/>
-  <rect x="660" y="230" width="6" height="90" fill="#0066CC" rx="3"/>
-  <text x="700" y="275" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="36" font-weight="bold">04</text>
-  <text x="765" y="275" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="760" data-pptx-box-y="249.8" data-pptx-box-w="520" data-pptx-box-h="37.2">{{TOC_ITEM_4_TITLE}}</text>
-  <text x="700" y="303" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="700" data-pptx-box-y="288.3" data-pptx-box-w="560" data-pptx-box-h="21.7">{{TOC_ITEM_4_DESC}}</text>
-  
-  <!-- 目录项 05（可选） -->
-  <rect x="80" y="345" width="540" height="90" fill="none" stroke="#D0D7E0" stroke-width="1" stroke-dasharray="4,4" rx="8"/>
-  <text x="350" y="398" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="90" data-pptx-box-y="381.2" data-pptx-box-w="520" data-pptx-box-h="24.8">{{TOC_ITEM_5_TITLE}}</text>
-  
-  <!-- 目录项 06（可选） -->
-  <rect x="660" y="345" width="540" height="90" fill="none" stroke="#D0D7E0" stroke-width="1" stroke-dasharray="4,4" rx="8"/>
-  <text x="930" y="398" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="16" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="670" data-pptx-box-y="381.2" data-pptx-box-w="520" data-pptx-box-h="24.8">{{TOC_ITEM_6_TITLE}}</text>
-  
-  <!-- ==================== 页脚区域 ==================== -->
-  <line x1="40" y1="665" x2="1240" y2="665" stroke="#E8F4FC" stroke-width="1"/>
-  <text x="1220" y="698" text-anchor="end" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="top" data-pptx-box-x="1130" data-pptx-box-y="683.3" data-pptx-box-w="90" data-pptx-box-h="21.7">{{PAGE_NUM}}</text>
+  <rect width="1280" height="70" fill="#003366"/>
+  <rect width="6" height="70" fill="#CC0000"/>
+  <text x="40" y="46" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="700">目录</text>
+  <text x="1160" y="45" text-anchor="middle" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" data-slot="LOGO" data-slot-id="LOGO" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="1075" data-pptx-box-y="8" data-pptx-box-w="170" data-pptx-box-h="54" data-pptx-valign="middle" data-center-lock="true">LOGO</text>
+  <g font-family="Microsoft YaHei, Arial, sans-serif">
+    <rect x="80" y="115" width="540" height="90" fill="#E8F4FC" rx="4"/><rect x="80" y="115" width="6" height="90" fill="#003366"/>
+    <text x="118" y="160" fill="#003366" font-size="32" font-weight="700">01</text><text x="186" y="155" fill="#003366" font-size="23" font-weight="700" data-slot="TOC_ITEM_1_TITLE" data-slot-id="TOC_ITEM_1_TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="186" data-pptx-box-y="125" data-pptx-box-w="400" data-pptx-box-h="40" data-pptx-valign="middle">TOC_ITEM_1_TITLE</text><text x="120" y="188" fill="#52657A" font-size="14" data-slot="TOC_ITEM_1_DESC" data-slot-id="TOC_ITEM_1_DESC" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="120" data-pptx-box-y="168" data-pptx-box-w="450" data-pptx-box-h="28" data-pptx-valign="middle">TOC_ITEM_1_DESC</text>
+    <rect x="660" y="115" width="540" height="90" fill="#E8F4FC" rx="4"/><rect x="660" y="115" width="6" height="90" fill="#003366"/>
+    <text x="698" y="160" fill="#003366" font-size="32" font-weight="700">02</text><text x="766" y="155" fill="#003366" font-size="23" font-weight="700" data-slot="TOC_ITEM_2_TITLE" data-slot-id="TOC_ITEM_2_TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="766" data-pptx-box-y="125" data-pptx-box-w="400" data-pptx-box-h="40" data-pptx-valign="middle">TOC_ITEM_2_TITLE</text><text x="700" y="188" fill="#52657A" font-size="14" data-slot="TOC_ITEM_2_DESC" data-slot-id="TOC_ITEM_2_DESC" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="700" data-pptx-box-y="168" data-pptx-box-w="450" data-pptx-box-h="28" data-pptx-valign="middle">TOC_ITEM_2_DESC</text>
+    <rect x="80" y="235" width="540" height="90" fill="#F5F7FA" rx="4"/><rect x="80" y="235" width="6" height="90" fill="#0066CC"/>
+    <text x="118" y="280" fill="#003366" font-size="32" font-weight="700">03</text><text x="186" y="275" fill="#003366" font-size="23" font-weight="700" data-slot="TOC_ITEM_3_TITLE" data-slot-id="TOC_ITEM_3_TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="186" data-pptx-box-y="245" data-pptx-box-w="400" data-pptx-box-h="40" data-pptx-valign="middle">TOC_ITEM_3_TITLE</text><text x="120" y="308" fill="#52657A" font-size="14" data-slot="TOC_ITEM_3_DESC" data-slot-id="TOC_ITEM_3_DESC" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="120" data-pptx-box-y="288" data-pptx-box-w="450" data-pptx-box-h="28" data-pptx-valign="middle">TOC_ITEM_3_DESC</text>
+    <rect x="660" y="235" width="540" height="90" fill="#F5F7FA" rx="4"/><rect x="660" y="235" width="6" height="90" fill="#0066CC"/>
+    <text x="698" y="280" fill="#003366" font-size="32" font-weight="700">04</text><text x="766" y="275" fill="#003366" font-size="23" font-weight="700" data-slot="TOC_ITEM_4_TITLE" data-slot-id="TOC_ITEM_4_TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="766" data-pptx-box-y="245" data-pptx-box-w="400" data-pptx-box-h="40" data-pptx-valign="middle">TOC_ITEM_4_TITLE</text><text x="700" y="308" fill="#52657A" font-size="14" data-slot="TOC_ITEM_4_DESC" data-slot-id="TOC_ITEM_4_DESC" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="700" data-pptx-box-y="288" data-pptx-box-w="450" data-pptx-box-h="28" data-pptx-valign="middle">TOC_ITEM_4_DESC</text>
+    <rect x="80" y="355" width="540" height="70" fill="none" stroke="#D0D7E0" stroke-width="1" rx="4"/><text x="350" y="396" text-anchor="middle" fill="#6B7C8F" font-size="17" data-slot="TOC_ITEM_5_TITLE" data-slot-id="TOC_ITEM_5_TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="100" data-pptx-box-y="370" data-pptx-box-w="500" data-pptx-box-h="38" data-pptx-valign="middle" data-center-lock="true">TOC_ITEM_5_TITLE</text>
+    <rect x="660" y="355" width="540" height="70" fill="none" stroke="#D0D7E0" stroke-width="1" rx="4"/><text x="930" y="396" text-anchor="middle" fill="#6B7C8F" font-size="17" data-slot="TOC_ITEM_6_TITLE" data-slot-id="TOC_ITEM_6_TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="680" data-pptx-box-y="370" data-pptx-box-w="500" data-pptx-box-h="38" data-pptx-valign="middle" data-center-lock="true">TOC_ITEM_6_TITLE</text>
+  </g>
+  <line x1="40" y1="665" x2="1240" y2="665" stroke="#E8F4FC"/>
+  <text x="1175" y="698" text-anchor="middle" fill="#6B7C8F" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-slot="PAGE_NUM" data-slot-id="PAGE_NUM" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="1130" data-pptx-box-y="681" data-pptx-box-w="90" data-pptx-box-h="25" data-pptx-valign="middle" data-center-lock="true">PAGE_NUM</text>
 </svg>

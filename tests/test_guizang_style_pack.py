@@ -14,6 +14,10 @@ TEMPLATE_DIR = ROOT / "templates" / "style_packs" / "guizang_ppt"
 VALIDATOR = ROOT / "scripts" / "validate_guizang.py"
 
 
+@unittest.skipUnless(
+    TEMPLATE_DIR.is_dir(),
+    "Guizang is an archived external style pack and is not part of this checkout.",
+)
 class GuizangStylePackTests(unittest.TestCase):
     def test_style_pack_contains_upstream_tokens_and_layout_contracts(self):
         tokens = json.loads((TEMPLATE_DIR / "design_tokens.json").read_text(encoding="utf-8"))

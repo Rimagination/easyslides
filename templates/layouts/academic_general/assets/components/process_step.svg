@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="368" height="365" viewBox="0 0 368 365" data-component-id="process_step">
+  <rect width="368" height="365" fill="#FFFFFF" stroke="#B8C7D6" stroke-width="1.2" rx="4"/>
+  <circle cx="46" cy="47" r="25" fill="#0066CC"/>
+  <text x="46" y="54" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700" data-slot="NUMBER" data-slot-id="NUMBER" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="23" data-pptx-box-y="23" data-pptx-box-w="46" data-pptx-box-h="48" data-pptx-valign="middle" data-center-lock="true">01</text>
+  <text x="88" y="55" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700" data-slot="TITLE" data-slot-id="TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="86" data-pptx-box-y="25" data-pptx-box-w="244" data-pptx-box-h="45" data-pptx-valign="middle">TITLE</text>
+  <line x1="32" y1="94" x2="336" y2="94" stroke="#D4E2EE" stroke-width="2"/>
+  <text x="48" y="210" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-slot="BODY" data-slot-id="BODY" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="48" data-pptx-box-y="125" data-pptx-box-w="272" data-pptx-box-h="175" data-pptx-valign="middle">BODY</text>
+  <rect x="32" y="326" width="80" height="7" fill="#CC0000"/>
+</svg>

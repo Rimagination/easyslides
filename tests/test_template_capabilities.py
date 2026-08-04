@@ -13,8 +13,9 @@ class TemplateCapabilityTests(unittest.TestCase):
         self.assertEqual(report["status"], "pass", report)
         self.assertEqual(by_id["nsfc_defense"]["composition_mode"], "template_composable")
         self.assertEqual(by_id["defense_topnav"]["composition_mode"], "body_variant_only")
-        self.assertEqual(by_id["academic_general"]["composition_mode"], "shell_only")
-        self.assertFalse(by_id["nsfc_defense_distilled"]["generation_enabled"])
+        self.assertEqual(by_id["academic_general"]["composition_mode"], "template_composable")
+        self.assertTrue(by_id["academic_general"]["generation_enabled"])
+        self.assertNotIn("research_core", by_id)
 
     def test_named_template_rejects_global_and_cross_template_assets(self):
         from scripts.component_registry import build_component_registry

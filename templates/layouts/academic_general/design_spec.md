@@ -142,6 +142,32 @@ Decorative elements:
 
 ---
 
+## VII-A. Content Composition Contract
+
+`academic_general` is a bounded component-first template. A content page keeps
+the common running title, central message, footer, and page number, then selects
+one declared body variant:
+
+| Variant | Use when the page needs |
+|---|---|
+| `figure_evidence` | One primary figure and three concise observations |
+| `comparison_synthesis` | Two alternatives followed by a decision |
+| `process_outcome` | Three ordered steps and their shared outcome |
+| `metrics_evidence` | Three metrics explained by two evidence rows |
+| `evidence_argument` | A text-rich claim supported by three auditable arguments |
+| `table_decision` | A compact 3 by 3 decision matrix |
+| `open_component_composition` | An explicitly requested arrangement of registered local components |
+
+The last route is deliberately bounded: it may use only components registered
+by `academic_general`, and every component frame must remain inside the content
+body canvas. It is not a route for importing a global card library or changing
+the template's visual tokens.
+
+The body canvas is a planning region, not a visible rectangle. No helper frame,
+dashed outline, or placeholder label may appear in the exported slide.
+
+---
+
 ## VIII. Spacing Guidelines
 
 | Element | Value |
@@ -215,6 +241,12 @@ anchors, not visible slide copy.
 3. Keep one main idea per slide. If a slide contains two state shifts, split it.
 4. Prefer source-faithful figures, tables, and captions for academic evidence.
 5. Use decorative tags and arrows only when they clarify the argument path.
+6. Use the running title for the page topic and the key-message rail for the
+   smallest defensible conclusion. Do not repeat one as the other.
+7. Keep the content-page running title on one visual line. Shorten it rather
+   than wrapping it into the content area.
+8. Text in a declared centered container must use native middle vertical
+   alignment with its text center aligned to the container center.
 
 ---
 
@@ -227,3 +259,5 @@ anchors, not visible slide copy.
   source material define the argument.
 - For mature source materials, preserve source claims, figures, tables,
   captions, and citations. Add external material only when requested.
+- When the requested visual form is unclear, ask the user to choose between
+  the relevant declared variants before generating the page.

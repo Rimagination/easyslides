@@ -76,7 +76,7 @@ class IconGalleryTests(unittest.TestCase):
         manifest = parse_manifest_js(manifest_path)
         expected_counts = {
             "chunk-filled": 640,
-            "lucide": 3,
+            "lucide": 4,
             "phosphor-duotone": 1248,
             "simple-icons": 3651,
             "tabler-filled": 1053,
@@ -87,7 +87,7 @@ class IconGalleryTests(unittest.TestCase):
             for family in manifest["families"]
         }
         self.assertEqual(actual_counts, expected_counts)
-        self.assertEqual(manifest["total"], 11634)
+        self.assertEqual(manifest["total"], 11635)
 
 
 if __name__ == "__main__":

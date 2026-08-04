@@ -1,0 +1,1654 @@
+{
+  "schema_version": "easyslides.page_catalog_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "academic_general",
+  "pages": [
+    {
+      "shell_id": "cover",
+      "role": "cover",
+      "archetype": "",
+      "svg_path": "templates/layouts/academic_general/01_cover.svg",
+      "slots": [
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TITLE",
+          "role": "cover_title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "role": "subtitle",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "AUTHOR",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ADVISOR",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "INSTITUTION",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "DATE",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "toc",
+      "role": "toc",
+      "archetype": "",
+      "svg_path": "templates/layouts/academic_general/02_toc.svg",
+      "slots": [
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_1_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_2_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_3_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_4_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_5_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_6_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_1_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_2_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_3_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_4_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_number",
+          "fixed_geometry": true,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "chapter",
+      "role": "chapter",
+      "archetype": "",
+      "svg_path": "templates/layouts/academic_general/02_chapter.svg",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_NUM",
+          "role": "chapter_number",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "role": "chapter_title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "CHAPTER_DESC",
+          "role": "chapter_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TITLE",
+          "role": "title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "content",
+      "role": "content",
+      "archetype": "bounded_component_composition",
+      "svg_path": "templates/layouts/academic_general/03_content.svg",
+      "slots": [
+        {
+          "slot_id": "SECTION_NUM",
+          "role": "section_label",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "max_lines": 1,
+          "capacity": {
+            "single_line_required": true,
+            "max_chars_per_line": 30,
+            "overflow_action": "shorten_or_split"
+          },
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "SECTION_NAME",
+          "role": "source",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_number",
+          "fixed_geometry": true,
+          "value_policy": "automatic_slide_index",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "running_title",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 70.0
+          },
+          "z_index": 10,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "central_message",
+          "frame": {
+            "x": 0.0,
+            "y": 70.0,
+            "width": 1280.0,
+            "height": 50.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "allow_overlap": false,
+          "purpose": "central_message_only"
+        },
+        {
+          "region_id": "body_canvas",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 1176.0,
+            "height": 515.0
+          },
+          "z_index": 10,
+          "fit": "contain",
+          "allow_overlap": false,
+          "purpose": "template_local_component_composition_only"
+        },
+        {
+          "region_id": "footer",
+          "frame": {
+            "x": 0.0,
+            "y": 665.0,
+            "width": 1280.0,
+            "height": 55.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [
+        "figure_evidence",
+        "comparison_synthesis",
+        "process_outcome",
+        "metrics_evidence",
+        "evidence_argument",
+        "table_decision",
+        "open_component_composition"
+      ],
+      "content_shell_policy": "template_component_composition_required",
+      "body_canvas": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "ending",
+      "role": "ending",
+      "archetype": "",
+      "svg_path": "templates/layouts/academic_general/04_ending.svg",
+      "slots": [
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "THANK_YOU",
+          "role": "closing_title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ENDING_SUBTITLE",
+          "role": "subtitle",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "CONTACT_INFO",
+          "role": "contact",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EMAIL",
+          "role": "contact",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "INSTITUTION",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "COPYRIGHT",
+          "role": "source",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_number",
+          "fixed_geometry": true,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    }
+  ],
+  "body_variants": [
+    {
+      "variant_id": "figure_evidence",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "one primary scientific figure supported by three concise observations",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "FIGURE",
+          "kind": "image",
+          "required": true
+        },
+        {
+          "slot_id": "FIGURE_CAPTION",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 32,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "EVIDENCE_01",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 16,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "EVIDENCE_02",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 16,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "EVIDENCE_03",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 3,
+            "max_chars_per_line": 16,
+            "overflow_action": "shorten_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "figure",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 672.0,
+            "height": 515.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "evidence",
+          "frame": {
+            "x": 748.0,
+            "y": 135.0,
+            "width": 480.0,
+            "height": 515.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "clear_region": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/academic_general/media_panel",
+          "instance_id": "figure",
+          "role": "scientific_figure",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "IMAGE": "FIGURE",
+            "CAPTION": "FIGURE_CAPTION"
+          },
+          "region": "figure"
+        },
+        {
+          "asset_id": "component/academic_general/evidence_stack",
+          "instance_id": "evidence",
+          "role": "evidence",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "EVIDENCE_01": "EVIDENCE_01",
+            "EVIDENCE_02": "EVIDENCE_02",
+            "EVIDENCE_03": "EVIDENCE_03"
+          },
+          "region": "evidence"
+        }
+      ],
+      "component_recipe": {
+        "variant_id": "figure_evidence",
+        "scene_component": "media_panel",
+        "primitives": [
+          "evidence_stack"
+        ],
+        "source_slides": []
+      },
+      "component_dependency_asset_ids": [
+        "component/academic_general/media_panel",
+        "component/academic_general/evidence_stack"
+      ],
+      "source_slides": [],
+      "composition_scene": "figure_evidence_pair",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "comparison_synthesis",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "two approaches, conditions, or interpretations followed by one decision",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "LEFT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "LEFT_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 6,
+            "max_chars_per_line": 22,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "RIGHT_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 1,
+            "max_chars_per_line": 18,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "RIGHT_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 6,
+            "max_chars_per_line": 22,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 40,
+            "overflow_action": "shorten_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "left",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 568.0,
+            "height": 420.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "right",
+          "frame": {
+            "x": 660.0,
+            "y": 135.0,
+            "width": 568.0,
+            "height": 420.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "synthesis",
+          "frame": {
+            "x": 52.0,
+            "y": 575.0,
+            "width": 1176.0,
+            "height": 75.0
+          },
+          "z_index": 30,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "clear_region": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/academic_general/comparison_column",
+          "instance_id": "left",
+          "role": "comparison_left",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "HEADING": "LEFT_TITLE",
+            "BODY": "LEFT_BODY"
+          },
+          "region": "left"
+        },
+        {
+          "asset_id": "component/academic_general/comparison_column",
+          "instance_id": "right",
+          "role": "comparison_right",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "HEADING": "RIGHT_TITLE",
+            "BODY": "RIGHT_BODY"
+          },
+          "region": "right"
+        },
+        {
+          "asset_id": "component/academic_general/conclusion_bar",
+          "instance_id": "synthesis",
+          "role": "synthesis",
+          "order": 3,
+          "required": true,
+          "slot_bindings": {
+            "SYNTHESIS": "SYNTHESIS"
+          },
+          "region": "synthesis"
+        }
+      ],
+      "component_recipe": {
+        "variant_id": "comparison_synthesis",
+        "scene_component": "comparison_column",
+        "primitives": [
+          "conclusion_bar"
+        ],
+        "source_slides": []
+      },
+      "component_dependency_asset_ids": [
+        "component/academic_general/comparison_column",
+        "component/academic_general/conclusion_bar"
+      ],
+      "source_slides": [],
+      "composition_scene": "comparison_with_synthesis",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "process_outcome",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "three ordered method steps and the outcome they jointly enable",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "STEP_01_NUMBER",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "STEP_01_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_01_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 13,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_02_NUMBER",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "STEP_02_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_02_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 13,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_03_NUMBER",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "STEP_03_TITLE",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 10,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "STEP_03_BODY",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 5,
+            "max_chars_per_line": 13,
+            "overflow_action": "shorten_or_split"
+          }
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true,
+          "capacity": {
+            "max_lines": 2,
+            "max_chars_per_line": 40,
+            "overflow_action": "shorten_or_split"
+          }
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "step_01",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 368.0,
+            "height": 365.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "step_02",
+          "frame": {
+            "x": 456.0,
+            "y": 135.0,
+            "width": 368.0,
+            "height": 365.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "step_03",
+          "frame": {
+            "x": 860.0,
+            "y": 135.0,
+            "width": 368.0,
+            "height": 365.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "synthesis",
+          "frame": {
+            "x": 52.0,
+            "y": 575.0,
+            "width": 1176.0,
+            "height": 75.0
+          },
+          "z_index": 30,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "clear_region": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/academic_general/process_step",
+          "instance_id": "step_01",
+          "role": "process_step",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "NUMBER": "STEP_01_NUMBER",
+            "TITLE": "STEP_01_TITLE",
+            "BODY": "STEP_01_BODY"
+          },
+          "region": "step_01"
+        },
+        {
+          "asset_id": "component/academic_general/process_step",
+          "instance_id": "step_02",
+          "role": "process_step",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "NUMBER": "STEP_02_NUMBER",
+            "TITLE": "STEP_02_TITLE",
+            "BODY": "STEP_02_BODY"
+          },
+          "region": "step_02"
+        },
+        {
+          "asset_id": "component/academic_general/process_step",
+          "instance_id": "step_03",
+          "role": "process_step",
+          "order": 3,
+          "required": true,
+          "slot_bindings": {
+            "NUMBER": "STEP_03_NUMBER",
+            "TITLE": "STEP_03_TITLE",
+            "BODY": "STEP_03_BODY"
+          },
+          "region": "step_03"
+        },
+        {
+          "asset_id": "component/academic_general/conclusion_bar",
+          "instance_id": "synthesis",
+          "role": "synthesis",
+          "order": 4,
+          "required": true,
+          "slot_bindings": {
+            "SYNTHESIS": "SYNTHESIS"
+          },
+          "region": "synthesis"
+        }
+      ],
+      "component_recipe": {
+        "variant_id": "process_outcome",
+        "scene_component": "process_step",
+        "primitives": [
+          "conclusion_bar"
+        ],
+        "source_slides": []
+      },
+      "component_dependency_asset_ids": [
+        "component/academic_general/process_step",
+        "component/academic_general/conclusion_bar"
+      ],
+      "source_slides": [],
+      "composition_scene": "three_step_process_with_outcome",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "metrics_evidence",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "three measurable outcomes followed by the two pieces of evidence that explain them",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "METRIC_01_VALUE",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_01_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_02_VALUE",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_02_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_03_VALUE",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "METRIC_03_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_01_INDEX",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_01_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_01_DETAIL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_02_INDEX",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_02_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_02_DETAIL",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "metric_01",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 368.0,
+            "height": 190.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "metric_02",
+          "frame": {
+            "x": 456.0,
+            "y": 135.0,
+            "width": 368.0,
+            "height": 190.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "metric_03",
+          "frame": {
+            "x": 860.0,
+            "y": 135.0,
+            "width": 368.0,
+            "height": 190.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "evidence_01",
+          "frame": {
+            "x": 52.0,
+            "y": 370.0,
+            "width": 1176.0,
+            "height": 135.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "evidence_02",
+          "frame": {
+            "x": 52.0,
+            "y": 515.0,
+            "width": 1176.0,
+            "height": 135.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "clear_region": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/academic_general/metric_tile",
+          "instance_id": "metric_01",
+          "role": "metric",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "VALUE": "METRIC_01_VALUE",
+            "LABEL": "METRIC_01_LABEL"
+          },
+          "region": "metric_01"
+        },
+        {
+          "asset_id": "component/academic_general/metric_tile",
+          "instance_id": "metric_02",
+          "role": "metric",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "VALUE": "METRIC_02_VALUE",
+            "LABEL": "METRIC_02_LABEL"
+          },
+          "region": "metric_02"
+        },
+        {
+          "asset_id": "component/academic_general/metric_tile",
+          "instance_id": "metric_03",
+          "role": "metric",
+          "order": 3,
+          "required": true,
+          "slot_bindings": {
+            "VALUE": "METRIC_03_VALUE",
+            "LABEL": "METRIC_03_LABEL"
+          },
+          "region": "metric_03"
+        },
+        {
+          "asset_id": "component/academic_general/evidence_row",
+          "instance_id": "evidence_01",
+          "role": "evidence",
+          "order": 4,
+          "required": true,
+          "slot_bindings": {
+            "INDEX": "EVIDENCE_01_INDEX",
+            "LABEL": "EVIDENCE_01_LABEL",
+            "DETAIL": "EVIDENCE_01_DETAIL"
+          },
+          "region": "evidence_01"
+        },
+        {
+          "asset_id": "component/academic_general/evidence_row",
+          "instance_id": "evidence_02",
+          "role": "evidence",
+          "order": 5,
+          "required": true,
+          "slot_bindings": {
+            "INDEX": "EVIDENCE_02_INDEX",
+            "LABEL": "EVIDENCE_02_LABEL",
+            "DETAIL": "EVIDENCE_02_DETAIL"
+          },
+          "region": "evidence_02"
+        }
+      ],
+      "component_recipe": {
+        "variant_id": "metrics_evidence",
+        "scene_component": "metric_tile",
+        "primitives": [
+          "evidence_row"
+        ],
+        "source_slides": []
+      },
+      "component_dependency_asset_ids": [
+        "component/academic_general/metric_tile",
+        "component/academic_general/evidence_row"
+      ],
+      "source_slides": [],
+      "composition_scene": "three_metrics_with_two_evidence_rows",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "evidence_argument",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "a text-rich claim with three auditable supporting arguments",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "EVIDENCE_01_INDEX",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_01_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_01_DETAIL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_02_INDEX",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_02_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_02_DETAIL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_03_INDEX",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_03_LABEL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "EVIDENCE_03_DETAIL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "SYNTHESIS",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "synthesis",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 1176.0,
+            "height": 75.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "evidence_01",
+          "frame": {
+            "x": 52.0,
+            "y": 220.0,
+            "width": 1176.0,
+            "height": 135.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "evidence_02",
+          "frame": {
+            "x": 52.0,
+            "y": 375.0,
+            "width": 1176.0,
+            "height": 135.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        },
+        {
+          "region_id": "evidence_03",
+          "frame": {
+            "x": 52.0,
+            "y": 515.0,
+            "width": 1176.0,
+            "height": 135.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "clear_region": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/academic_general/conclusion_bar",
+          "instance_id": "synthesis",
+          "role": "claim",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "SYNTHESIS": "SYNTHESIS"
+          },
+          "region": "synthesis"
+        },
+        {
+          "asset_id": "component/academic_general/evidence_row",
+          "instance_id": "evidence_01",
+          "role": "evidence",
+          "order": 2,
+          "required": true,
+          "slot_bindings": {
+            "INDEX": "EVIDENCE_01_INDEX",
+            "LABEL": "EVIDENCE_01_LABEL",
+            "DETAIL": "EVIDENCE_01_DETAIL"
+          },
+          "region": "evidence_01"
+        },
+        {
+          "asset_id": "component/academic_general/evidence_row",
+          "instance_id": "evidence_02",
+          "role": "evidence",
+          "order": 3,
+          "required": true,
+          "slot_bindings": {
+            "INDEX": "EVIDENCE_02_INDEX",
+            "LABEL": "EVIDENCE_02_LABEL",
+            "DETAIL": "EVIDENCE_02_DETAIL"
+          },
+          "region": "evidence_02"
+        },
+        {
+          "asset_id": "component/academic_general/evidence_row",
+          "instance_id": "evidence_03",
+          "role": "evidence",
+          "order": 4,
+          "required": true,
+          "slot_bindings": {
+            "INDEX": "EVIDENCE_03_INDEX",
+            "LABEL": "EVIDENCE_03_LABEL",
+            "DETAIL": "EVIDENCE_03_DETAIL"
+          },
+          "region": "evidence_03"
+        }
+      ],
+      "component_recipe": {
+        "variant_id": "evidence_argument",
+        "scene_component": "evidence_row",
+        "primitives": [
+          "conclusion_bar"
+        ],
+        "source_slides": []
+      },
+      "component_dependency_asset_ids": [
+        "component/academic_general/evidence_row",
+        "component/academic_general/conclusion_bar"
+      ],
+      "source_slides": [],
+      "composition_scene": "three_argument_rows_with_conclusion",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "table_decision",
+      "shell_id": "content",
+      "composition_mode": "ordered_component_refs",
+      "best_for": "three criteria by three alternatives with a concise decision rule",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [
+        {
+          "slot_id": "HEAD_01",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "HEAD_02",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "HEAD_03",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_01_01",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_01_02",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_01_03",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_02_01",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_02_02",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_02_03",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_03_01",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_03_02",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ROW_03_03",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "CONCLUSION",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "matrix",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 1176.0,
+            "height": 515.0
+          },
+          "z_index": 20,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "clear_region": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/academic_general/table_matrix",
+          "instance_id": "matrix",
+          "role": "table",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {
+            "HEAD_01": "HEAD_01",
+            "HEAD_02": "HEAD_02",
+            "HEAD_03": "HEAD_03",
+            "ROW_01_01": "ROW_01_01",
+            "ROW_01_02": "ROW_01_02",
+            "ROW_01_03": "ROW_01_03",
+            "ROW_02_01": "ROW_02_01",
+            "ROW_02_02": "ROW_02_02",
+            "ROW_02_03": "ROW_02_03",
+            "ROW_03_01": "ROW_03_01",
+            "ROW_03_02": "ROW_03_02",
+            "ROW_03_03": "ROW_03_03",
+            "CONCLUSION": "CONCLUSION"
+          },
+          "region": "matrix"
+        }
+      ],
+      "component_recipe": {
+        "variant_id": "table_decision",
+        "scene_component": "table_matrix",
+        "primitives": [],
+        "source_slides": []
+      },
+      "component_dependency_asset_ids": [
+        "component/academic_general/table_matrix"
+      ],
+      "source_slides": [],
+      "composition_scene": "decision_matrix",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "open_component_composition",
+      "shell_id": "content",
+      "composition_mode": "open_component_composition",
+      "best_for": "an explicitly requested assembly of the registered Academic General local components",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [],
+      "regions": [
+        {
+          "region_id": "canvas_anchor",
+          "frame": {
+            "x": 52.0,
+            "y": 135.0,
+            "width": 1176.0,
+            "height": 515.0
+          },
+          "z_index": 1,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "clear_region": {
+        "x": 52.0,
+        "y": 135.0,
+        "width": 1176.0,
+        "height": 515.0
+      },
+      "component_refs": [
+        {
+          "asset_id": "component/academic_general/canvas_anchor",
+          "instance_id": "canvas_anchor",
+          "role": "layout_anchor",
+          "order": 1,
+          "required": true,
+          "slot_bindings": {},
+          "region": "canvas_anchor"
+        }
+      ],
+      "component_recipe": {
+        "variant_id": "open_component_composition",
+        "scene_component": "canvas_anchor",
+        "primitives": [],
+        "source_slides": []
+      },
+      "component_dependency_asset_ids": [
+        "component/academic_general/canvas_anchor"
+      ],
+      "source_slides": [],
+      "composition_scene": "open_template_local_component_canvas",
+      "coordinate_space": "body_canvas",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    }
+  ]
+}

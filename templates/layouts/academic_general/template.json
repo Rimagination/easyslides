@@ -1,0 +1,26 @@
+{
+  "schema_version": "easyslides.template_pack.v1",
+  "template_id": "academic_general",
+  "display_name": "Academic General",
+  "description": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
+  "mode": "template_component_composition",
+  "recommended_template_route": "semantic_named_slots_with_local_components",
+  "output_contract": "editable-native-pptx",
+  "style_system": "academic_general_blue",
+  "layout_source_format": "svg",
+  "runtime_source_of_truth": "content_shell_body_variants_and_template_local_components",
+  "scenarios": ["general_academic_presentation", "research_seminar", "project_update", "conference_talk"],
+  "roles": ["cover", "toc", "chapter", "content", "ending"],
+  "layout_count": 5,
+  "variant_count": 7,
+  "component_asset_model": {
+    "primitive_manifest": "component_primitives.json",
+    "recipe_manifest": "body_variant_recipes.json",
+    "policy": "choose_a_reviewed_body_variant_or_use_open_component_composition_with_template_local_components_only"
+  },
+  "primary_color": "#003366",
+  "emphasis_color": "#CC0000",
+  "content_information_hierarchy": ["running_title", "central_message", "body_variant_or_local_components", "page_number"],
+  "page_selection_inputs": ["body_variant_id", "content_shape", "story_role", "density", "figure_count"],
+  "forbidden_selection_inputs": ["cross_template_component", "unregistered_global_component", "undeclared_manual_asset"]
+}

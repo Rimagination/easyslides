@@ -1,49 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
-  <!-- 背景 -->
   <rect width="1280" height="720" fill="#FFFFFF"/>
-  
-  <!-- ==================== 顶部装饰区域 ==================== -->
-  <!-- 深蓝色主横条 -->
-  <rect x="0" y="0" width="1280" height="100" fill="#003366"/>
-  <!-- 左侧红色竖条装饰 -->
-  <rect x="0" y="0" width="6" height="100" fill="#CC0000"/>
-  
-  <!-- 右上角 Logo 区域占位 -->
-  <rect x="1080" y="25" width="160" height="50" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.3" rx="4"/>
-  <text x="1160" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="1075" data-pptx-box-y="20.2" data-pptx-box-w="170" data-pptx-box-h="54">
-    {{LOGO}}
-  </text>
-  
-  <!-- ==================== 主内容区域 ==================== -->
-  <!-- 主标题 -->
-  <text x="640" y="340" text-anchor="middle" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="bold" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="120" data-pptx-box-y="281.2" data-pptx-box-w="1040" data-pptx-box-h="86.8">
-    {{TITLE}}
-  </text>
-  
-  <!-- 副标题 -->
-  <text x="640" y="410" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="28" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="190" data-pptx-box-y="380.6" data-pptx-box-w="900" data-pptx-box-h="43.4">
-    {{SUBTITLE}}
-  </text>
-  
-  <!-- 装饰分割线 -->
-  <line x1="420" y1="450" x2="860" y2="450" stroke="#0066CC" stroke-width="2"/>
-  <circle cx="640" cy="450" r="5" fill="#0066CC"/>
-  
-  <!-- ==================== 答辩人信息区域 ==================== -->
-  <text x="640" y="520" text-anchor="middle" fill="#333333" font-family="Microsoft YaHei, Arial, sans-serif" font-size="24" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="460" data-pptx-box-y="494.8" data-pptx-box-w="360" data-pptx-box-h="37.2">
-    答辩人：{{AUTHOR}}
-  </text>
-  <text x="640" y="560" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="20" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="460" data-pptx-box-y="539" data-pptx-box-w="360" data-pptx-box-h="31">
-    指导老师：{{ADVISOR}}
-  </text>
-  <text x="640" y="600" text-anchor="middle" fill="#666666" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="380" data-pptx-box-y="581.1" data-pptx-box-w="520" data-pptx-box-h="27.9">
-    {{INSTITUTION}}
-  </text>
-  
-  <!-- ==================== 底部信息 ==================== -->
+  <rect width="1280" height="100" fill="#003366"/>
+  <rect width="6" height="100" fill="#CC0000"/>
+  <text x="1160" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" data-slot="LOGO" data-slot-id="LOGO" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="1075" data-pptx-box-y="20" data-pptx-box-w="170" data-pptx-box-h="54" data-pptx-valign="middle" data-center-lock="true">LOGO</text>
+  <text x="640" y="340" text-anchor="middle" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="700" data-slot="TITLE" data-slot-id="TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="120" data-pptx-box-y="270" data-pptx-box-w="1040" data-pptx-box-h="100" data-pptx-valign="middle" data-center-lock="true">TITLE</text>
+  <text x="640" y="408" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="27" data-slot="SUBTITLE" data-slot-id="SUBTITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="190" data-pptx-box-y="378" data-pptx-box-w="900" data-pptx-box-h="50" data-pptx-valign="middle" data-center-lock="true">SUBTITLE</text>
+  <line x1="420" y1="455" x2="860" y2="455" stroke="#0066CC" stroke-width="2"/>
+  <circle cx="640" cy="455" r="5" fill="#0066CC"/>
+  <text x="640" y="520" text-anchor="middle" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="23" data-slot="AUTHOR" data-slot-id="AUTHOR" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="390" data-pptx-box-y="495" data-pptx-box-w="500" data-pptx-box-h="42" data-pptx-valign="middle" data-center-lock="true">AUTHOR</text>
+  <text x="640" y="558" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="19" data-slot="ADVISOR" data-slot-id="ADVISOR" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="390" data-pptx-box-y="536" data-pptx-box-w="500" data-pptx-box-h="35" data-pptx-valign="middle" data-center-lock="true">ADVISOR</text>
+  <text x="640" y="596" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="INSTITUTION" data-slot-id="INSTITUTION" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="310" data-pptx-box-y="576" data-pptx-box-w="660" data-pptx-box-h="32" data-pptx-valign="middle" data-center-lock="true">INSTITUTION</text>
   <rect x="0" y="665" width="1280" height="55" fill="#F5F7FA"/>
-  <text x="640" y="698" text-anchor="middle" fill="#999999" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-pptx-textbox="true" data-pptx-valign="middle" data-pptx-box-x="460" data-pptx-box-y="683.3" data-pptx-box-w="360" data-pptx-box-h="21.7">
-    {{DATE}}
-  </text>
+  <text x="640" y="699" text-anchor="middle" fill="#6B7C8F" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-slot="DATE" data-slot-id="DATE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="681" data-pptx-box-w="360" data-pptx-box-h="25" data-pptx-valign="middle" data-center-lock="true">DATE</text>
 </svg>

@@ -120,7 +120,7 @@ The `icons/` directory contains 11,600+ vector icons across six libraries:
 | Library | Style | Count |
 |---------|-------|-------|
 | `chunk-filled` | fill / straight-line geometry | 640 |
-| `lucide` | stroke / clean interface icons | 3 |
+| `lucide` | stroke / clean interface icons | 4 |
 | `tabler-filled` | fill / bezier-curve forms | 1000+ |
 | `tabler-outline` | stroke / line | 5000+ |
 | `phosphor-duotone` | duotone / single color + 0.2 opacity backplate | 1200+ |

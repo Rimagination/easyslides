@@ -37,7 +37,7 @@ formal means one of the seven IDs in `templates/template_policy.json`.
 
 | Template | Role |
 |----------|------|
-| `academic_general` | Neutral general academic shells with shared Audience-State-Transfer and SCQA orchestration. |
+| `academic_general` | Neutral production academic template with shared Audience-State-Transfer and SCQA orchestration, seven reviewed content variants, and bounded template-local component composition. |
 | `academic_scqa` | Blue-cyan structured academic and technical report shells with AST/SCQA body-variant guidance. |
 | `defense_leftnav` | Compact left-navigation thesis defense shells with wine, academic-blue, academic-purple, and academic-green palettes. |
 | `defense_topnav` | Academic-blue thesis defense shells with dynamic top navigation and flexible content canvas. |

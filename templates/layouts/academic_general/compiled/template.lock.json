@@ -1,0 +1,254 @@
+{
+  "schema_version": "easyslides.template_lock.v1",
+  "template_id": "academic_general",
+  "package_version": "2.0.0",
+  "source_digest": "24047351e230bdb092fd5e427748aba251de999e26a39d8255632424deab1e20",
+  "sources": {
+    "package": {
+      "path": "templates/layouts/academic_general/template_package.json",
+      "sha256": "8d0306013df08b6ae5589536c333150b9abeabda92136545218f17e869623405"
+    },
+    "shells": {
+      "path": "templates/layouts/academic_general/layouts.json",
+      "sha256": "b02f00a70c79e8ab56f9981c562feb394845fc16ec94d9c8b5677109abc681ad"
+    },
+    "body_variants": {
+      "path": "templates/layouts/academic_general/body_variants.json",
+      "sha256": "75ed0f7adfcbfb3e77b6091c9bbb3a6f5f7e0b86c7fcccb8bdde71fc92b410eb"
+    },
+    "components": {
+      "path": "templates/layouts/academic_general/component_catalog.json",
+      "sha256": "d6ca4543138154542095957b46af3acd2ff145d8951ac006d52f8f18d68c242c"
+    },
+    "component_pack": {
+      "path": "templates/layouts/academic_general/component_pack.json",
+      "sha256": "f517d1be2faf0e9961e17df9cf05589a8154d00cc6ae392dec5f7c58bbc20c8e"
+    },
+    "design_tokens": {
+      "path": "templates/layouts/academic_general/design_tokens.json",
+      "sha256": "d69217f1f9287c707d6932edfcf2ba215148bc2497133cde13d045c327527b7d"
+    },
+    "qa": {
+      "path": "templates/layouts/academic_general/qa_policy.json",
+      "sha256": "8bba4bea6170b2185417c5b6a2e78d11042570ea0cb37d7b42d879c2dd3b3078"
+    },
+    "story": {
+      "path": "templates/layouts/academic_general/story_structure.json",
+      "sha256": "26473d833045e83fdf2b8c9276a3e2a10f83a0f8cb68ea84a80409a354439b82"
+    },
+    "capability_profile": {
+      "path": "templates/layouts/academic_general/capability_profile.json",
+      "sha256": "fb87adc39b182768041e6511b0aa162f0ba8fb1c5676d81070e671a110d01d9f"
+    },
+    "shell:cover": {
+      "path": "templates/layouts/academic_general/01_cover.svg",
+      "sha256": "5b595d7b2dedc55210628fe6d96e8a825cd553dc72bf508ce66d8dc814ca1748"
+    },
+    "shell:toc": {
+      "path": "templates/layouts/academic_general/02_toc.svg",
+      "sha256": "24182f771a650205db925411c4a86838dea2a4fb37f639ec2d7f6daf7e8c87b8"
+    },
+    "shell:chapter": {
+      "path": "templates/layouts/academic_general/02_chapter.svg",
+      "sha256": "484a279f44376b443b6d0460750599ec41e9b5d02375c97d47abc4e434366971"
+    },
+    "shell:content": {
+      "path": "templates/layouts/academic_general/03_content.svg",
+      "sha256": "d94463ece29a8e11ec5ae8397e2983f324c3c2a3ab4be4ee0267f7c5bf87b01a"
+    },
+    "shell:ending": {
+      "path": "templates/layouts/academic_general/04_ending.svg",
+      "sha256": "cd90d7d8de17ed1b40979f02c7900862fcfe19651e204542f00e5ed25a14cbbc"
+    },
+    "component:component/academic_general/canvas_anchor": {
+      "path": "templates/layouts/academic_general/assets/components/canvas_anchor.svg",
+      "sha256": "2b107aa2612e3156f2cbf978c5002c8122b4ff569811440bebe90bc4b660d9b5"
+    },
+    "component:component/academic_general/comparison_column": {
+      "path": "templates/layouts/academic_general/assets/components/comparison_column.svg",
+      "sha256": "6d070f6fddcc794ae90e99ec137f74bec4937490c82b6797d4a86d976d920f2e"
+    },
+    "component:component/academic_general/conclusion_bar": {
+      "path": "templates/layouts/academic_general/assets/components/conclusion_bar.svg",
+      "sha256": "e12c7c31a54b5df6931b77534794b734e6e67ce9fc038716a366c12e9bd30dc7"
+    },
+    "component:component/academic_general/evidence_row": {
+      "path": "templates/layouts/academic_general/assets/components/evidence_row.svg",
+      "sha256": "a6199e2c4275b8a3c2a7d72a35a25b8a91ae85a3275e715f1389b1306eb350c5"
+    },
+    "component:component/academic_general/evidence_stack": {
+      "path": "templates/layouts/academic_general/assets/components/evidence_stack.svg",
+      "sha256": "38496ed26f23950af313c17e79f872036bb245643ae08fd261f7532b7d63cbe0"
+    },
+    "component:component/academic_general/media_panel": {
+      "path": "templates/layouts/academic_general/assets/components/media_panel.svg",
+      "sha256": "faad251c0ce57ce4dad9cabbf1fc9c8ffe4f1ffacf915cb2f9758e59c4ca83e0"
+    },
+    "component:component/academic_general/metric_tile": {
+      "path": "templates/layouts/academic_general/assets/components/metric_tile.svg",
+      "sha256": "f46e282900a847d909adfb990d61ee16b502593b43c33aa115ae9a98b6f322d9"
+    },
+    "component:component/academic_general/process_step": {
+      "path": "templates/layouts/academic_general/assets/components/process_step.svg",
+      "sha256": "5068206eaa4364c1e5bfc235ac428913b835fd162e3ad179020bebaf632b705b"
+    },
+    "component:component/academic_general/table_matrix": {
+      "path": "templates/layouts/academic_general/assets/components/table_matrix.svg",
+      "sha256": "4c910271fa8ecf1c956fcd0b3ca02317f950fb3ef18c9d8f5abe16abd46db6e5"
+    },
+    "asset:assets/asset_manifest.json": {
+      "path": "templates/layouts/academic_general/assets/asset_manifest.json",
+      "sha256": "fc594bba7a5da636a450ef78f1b96f5a5de514da66013c447285b4ccb496fb96"
+    },
+    "asset:assets/components/canvas_anchor.svg": {
+      "path": "templates/layouts/academic_general/assets/components/canvas_anchor.svg",
+      "sha256": "2b107aa2612e3156f2cbf978c5002c8122b4ff569811440bebe90bc4b660d9b5"
+    },
+    "asset:assets/components/comparison_column.svg": {
+      "path": "templates/layouts/academic_general/assets/components/comparison_column.svg",
+      "sha256": "6d070f6fddcc794ae90e99ec137f74bec4937490c82b6797d4a86d976d920f2e"
+    },
+    "asset:assets/components/conclusion_bar.svg": {
+      "path": "templates/layouts/academic_general/assets/components/conclusion_bar.svg",
+      "sha256": "e12c7c31a54b5df6931b77534794b734e6e67ce9fc038716a366c12e9bd30dc7"
+    },
+    "asset:assets/components/evidence_row.svg": {
+      "path": "templates/layouts/academic_general/assets/components/evidence_row.svg",
+      "sha256": "a6199e2c4275b8a3c2a7d72a35a25b8a91ae85a3275e715f1389b1306eb350c5"
+    },
+    "asset:assets/components/evidence_stack.svg": {
+      "path": "templates/layouts/academic_general/assets/components/evidence_stack.svg",
+      "sha256": "38496ed26f23950af313c17e79f872036bb245643ae08fd261f7532b7d63cbe0"
+    },
+    "asset:assets/components/media_panel.svg": {
+      "path": "templates/layouts/academic_general/assets/components/media_panel.svg",
+      "sha256": "faad251c0ce57ce4dad9cabbf1fc9c8ffe4f1ffacf915cb2f9758e59c4ca83e0"
+    },
+    "asset:assets/components/metric_tile.svg": {
+      "path": "templates/layouts/academic_general/assets/components/metric_tile.svg",
+      "sha256": "f46e282900a847d909adfb990d61ee16b502593b43c33aa115ae9a98b6f322d9"
+    },
+    "asset:assets/components/process_step.svg": {
+      "path": "templates/layouts/academic_general/assets/components/process_step.svg",
+      "sha256": "5068206eaa4364c1e5bfc235ac428913b835fd162e3ad179020bebaf632b705b"
+    },
+    "asset:assets/components/table_matrix.svg": {
+      "path": "templates/layouts/academic_general/assets/components/table_matrix.svg",
+      "sha256": "4c910271fa8ecf1c956fcd0b3ca02317f950fb3ef18c9d8f5abe16abd46db6e5"
+    },
+    "asset:assets/figure_placeholder.svg": {
+      "path": "templates/layouts/academic_general/assets/figure_placeholder.svg",
+      "sha256": "67ecf2eadee472db897e171fa0623b7596f783c9d6b8bca089ab6293e82c4577"
+    }
+  },
+  "component_dependencies": [
+    {
+      "asset_id": "component/academic_general/canvas_anchor",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/canvas_anchor.svg",
+      "sha256": "2b107aa2612e3156f2cbf978c5002c8122b4ff569811440bebe90bc4b660d9b5"
+    },
+    {
+      "asset_id": "component/academic_general/comparison_column",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/comparison_column.svg",
+      "sha256": "6d070f6fddcc794ae90e99ec137f74bec4937490c82b6797d4a86d976d920f2e"
+    },
+    {
+      "asset_id": "component/academic_general/conclusion_bar",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/conclusion_bar.svg",
+      "sha256": "e12c7c31a54b5df6931b77534794b734e6e67ce9fc038716a366c12e9bd30dc7"
+    },
+    {
+      "asset_id": "component/academic_general/evidence_row",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/evidence_row.svg",
+      "sha256": "a6199e2c4275b8a3c2a7d72a35a25b8a91ae85a3275e715f1389b1306eb350c5"
+    },
+    {
+      "asset_id": "component/academic_general/evidence_stack",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/evidence_stack.svg",
+      "sha256": "38496ed26f23950af313c17e79f872036bb245643ae08fd261f7532b7d63cbe0"
+    },
+    {
+      "asset_id": "component/academic_general/media_panel",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/media_panel.svg",
+      "sha256": "faad251c0ce57ce4dad9cabbf1fc9c8ffe4f1ffacf915cb2f9758e59c4ca83e0"
+    },
+    {
+      "asset_id": "component/academic_general/metric_tile",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/metric_tile.svg",
+      "sha256": "f46e282900a847d909adfb990d61ee16b502593b43c33aa115ae9a98b6f322d9"
+    },
+    {
+      "asset_id": "component/academic_general/process_step",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/process_step.svg",
+      "sha256": "5068206eaa4364c1e5bfc235ac428913b835fd162e3ad179020bebaf632b705b"
+    },
+    {
+      "asset_id": "component/academic_general/table_matrix",
+      "scope": "template",
+      "renderer_id": "svg_fragment",
+      "asset_path": "templates/layouts/academic_general/assets/components/table_matrix.svg",
+      "sha256": "4c910271fa8ecf1c956fcd0b3ca02317f950fb3ef18c9d8f5abe16abd46db6e5"
+    }
+  ],
+  "component_pack": {
+    "pack_id": "template/academic_general/components",
+    "version": "1.0.0",
+    "scope": "template",
+    "dependencies": [],
+    "design_tokens": {
+      "source": "design_tokens.json",
+      "required": [
+        "color.primary",
+        "color.accent",
+        "color.emphasis",
+        "surface.panel",
+        "text.primary",
+        "typography.title.font_size_px",
+        "layout.grid_px"
+      ]
+    }
+  },
+  "capability_profile": {
+    "schema_version": "easyslides.template_capability_profile.v1",
+    "lifecycle": "production",
+    "generation_enabled": true,
+    "composition": {
+      "mode": "template_composable",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module",
+        "template_component"
+      ],
+      "allow_global_component_fallback": false,
+      "allowed_component_packs": [],
+      "requires_declared_body_variant": true
+    },
+    "selection_policy": {
+      "template_affinity": "required",
+      "undeclared_assets": "reject",
+      "manual_selection": "must_be_declared",
+      "missing_profile": "block_named_template_component_selection"
+    },
+    "required_gates": [
+      "template_capability_profile",
+      "component_plan_contract",
+      "visual_measure_gate"
+    ]
+  }
+}

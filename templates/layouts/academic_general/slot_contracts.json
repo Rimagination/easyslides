@@ -1,0 +1,895 @@
+{
+  "schema_version": "easyslides.template_slot_contracts.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "academic_general",
+  "replacement_rule": "replace_declared_slots_preserve_template_geometry",
+  "private_clone_required": false,
+  "text_fit_policy": {
+    "schema_version": "easyslides.template_text_fit_policy.v1",
+    "overflow_strategy_order": [
+      "compress_text_to_capacity",
+      "choose_lower_density_layout",
+      "split_across_slides",
+      "shrink_font_with_floor"
+    ],
+    "allowed_overflow_actions": [
+      "split",
+      "truncate"
+    ],
+    "role_defaults": {
+      "logo": {
+        "default_font_size_px": 18,
+        "min_font_size_px": 14,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 8,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "cover_title": {
+        "default_font_size_px": 56,
+        "min_font_size_px": 42,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "title": {
+        "default_font_size_px": 36,
+        "min_font_size_px": 26,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 20,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "subtitle": {
+        "default_font_size_px": 28,
+        "min_font_size_px": 20,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "metadata": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "toc_item": {
+        "default_font_size_px": 26,
+        "min_font_size_px": 18,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 18,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "toc_desc": {
+        "default_font_size_px": 17,
+        "min_font_size_px": 13,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 28,
+        "overflow_action": "truncate",
+        "max_lines": 2
+      },
+      "chapter_number": {
+        "default_font_size_px": 48,
+        "min_font_size_px": 36,
+        "line_height": 1.1,
+        "max_chars_per_line_zh": 4,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "chapter_title": {
+        "default_font_size_px": 56,
+        "min_font_size_px": 36,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 16,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "chapter_desc": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "page_title": {
+        "default_font_size_px": 30,
+        "min_font_size_px": 22,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 20,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "section_label": {
+        "default_font_size_px": 24,
+        "min_font_size_px": 16,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 10,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "key_message": {
+        "default_font_size_px": 21,
+        "min_font_size_px": 16,
+        "line_height": 1.25,
+        "max_chars_per_line_zh": 34,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "body": {
+        "default_font_size_px": 22,
+        "min_font_size_px": 16,
+        "line_height": 1.28,
+        "max_chars_per_line_zh": 30,
+        "overflow_action": "split",
+        "max_lines": 12
+      },
+      "source": {
+        "default_font_size_px": 14,
+        "min_font_size_px": 10,
+        "line_height": 1.15,
+        "max_chars_per_line_zh": 42,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      },
+      "closing_title": {
+        "default_font_size_px": 64,
+        "min_font_size_px": 42,
+        "line_height": 1.1,
+        "max_chars_per_line_zh": 10,
+        "overflow_action": "split",
+        "max_lines": 2
+      },
+      "contact": {
+        "default_font_size_px": 20,
+        "min_font_size_px": 14,
+        "line_height": 1.2,
+        "max_chars_per_line_zh": 24,
+        "overflow_action": "truncate",
+        "max_lines": 1
+      }
+    }
+  },
+  "hard_geometry_invariants": [
+    "text_center_y_matches_container_center_y",
+    "declared_slots_stay_inside_canvas",
+    "component_regions_stay_inside_canvas",
+    "content_shell_owns_running_title_central_message_and_page_number",
+    "body_variant_regions_stay_inside_body_canvas",
+    "no_visible_content_area_planning_rectangle"
+  ],
+  "layouts": [
+    {
+      "layout_id": "cover",
+      "page_id": "01_cover",
+      "svg_path": "templates/layouts/academic_general/01_cover.svg",
+      "slot_model": "cover",
+      "slots": [
+        "LOGO",
+        "TITLE",
+        "SUBTITLE",
+        "AUTHOR",
+        "ADVISOR",
+        "INSTITUTION",
+        "DATE"
+      ],
+      "text_slots": [
+        "LOGO",
+        "TITLE",
+        "SUBTITLE",
+        "AUTHOR",
+        "ADVISOR",
+        "INSTITUTION",
+        "DATE"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TITLE",
+          "role": "cover_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "role": "subtitle",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "AUTHOR",
+          "role": "metadata",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "ADVISOR",
+          "role": "metadata",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "INSTITUTION",
+          "role": "metadata",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "DATE",
+          "role": "metadata",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        }
+      ]
+    },
+    {
+      "layout_id": "toc",
+      "page_id": "02_toc",
+      "svg_path": "templates/layouts/academic_general/02_toc.svg",
+      "slot_model": "toc",
+      "slots": [
+        "LOGO",
+        "TOC_ITEM_1_TITLE",
+        "TOC_ITEM_2_TITLE",
+        "TOC_ITEM_3_TITLE",
+        "TOC_ITEM_4_TITLE",
+        "TOC_ITEM_5_TITLE",
+        "TOC_ITEM_6_TITLE",
+        "TOC_ITEM_1_DESC",
+        "TOC_ITEM_2_DESC",
+        "TOC_ITEM_3_DESC",
+        "TOC_ITEM_4_DESC",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "LOGO",
+        "TOC_ITEM_1_TITLE",
+        "TOC_ITEM_2_TITLE",
+        "TOC_ITEM_3_TITLE",
+        "TOC_ITEM_4_TITLE",
+        "TOC_ITEM_5_TITLE",
+        "TOC_ITEM_6_TITLE",
+        "TOC_ITEM_1_DESC",
+        "TOC_ITEM_2_DESC",
+        "TOC_ITEM_3_DESC",
+        "TOC_ITEM_4_DESC",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_1_TITLE",
+          "role": "toc_item",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_2_TITLE",
+          "role": "toc_item",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_3_TITLE",
+          "role": "toc_item",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_4_TITLE",
+          "role": "toc_item",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_5_TITLE",
+          "role": "toc_item",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_6_TITLE",
+          "role": "toc_item",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_1_DESC",
+          "role": "toc_desc",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_2_DESC",
+          "role": "toc_desc",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_3_DESC",
+          "role": "toc_desc",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TOC_ITEM_4_DESC",
+          "role": "toc_desc",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_number",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        }
+      ]
+    },
+    {
+      "layout_id": "chapter",
+      "page_id": "02_chapter",
+      "svg_path": "templates/layouts/academic_general/02_chapter.svg",
+      "slot_model": "chapter",
+      "slots": [
+        "CHAPTER_NUM",
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC",
+        "TITLE"
+      ],
+      "text_slots": [
+        "CHAPTER_NUM",
+        "CHAPTER_TITLE",
+        "CHAPTER_DESC",
+        "TITLE"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "CHAPTER_NUM",
+          "role": "chapter_number",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "role": "chapter_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "CHAPTER_DESC",
+          "role": "chapter_desc",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "TITLE",
+          "role": "title",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        }
+      ]
+    },
+    {
+      "layout_id": "content",
+      "page_id": "03_content",
+      "svg_path": "templates/layouts/academic_general/03_content.svg",
+      "slot_model": "content",
+      "slots": [
+        "SECTION_NUM",
+        "PAGE_TITLE",
+        "LOGO",
+        "KEY_MESSAGE",
+        "SOURCE",
+        "SECTION_NAME",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "SECTION_NUM",
+        "PAGE_TITLE",
+        "LOGO",
+        "KEY_MESSAGE",
+        "SOURCE",
+        "SECTION_NAME",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "SECTION_NUM",
+          "role": "section_label",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {},
+          "max_chars_per_line": 30,
+          "single_line_required": true,
+          "overflow_action": "shorten_or_split"
+        },
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "SECTION_NAME",
+          "role": "source",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_number",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        }
+      ]
+    },
+    {
+      "layout_id": "ending",
+      "page_id": "04_ending",
+      "svg_path": "templates/layouts/academic_general/04_ending.svg",
+      "slot_model": "ending",
+      "slots": [
+        "LOGO",
+        "THANK_YOU",
+        "ENDING_SUBTITLE",
+        "CONTACT_INFO",
+        "EMAIL",
+        "INSTITUTION",
+        "COPYRIGHT",
+        "PAGE_NUM"
+      ],
+      "text_slots": [
+        "LOGO",
+        "THANK_YOU",
+        "ENDING_SUBTITLE",
+        "CONTACT_INFO",
+        "EMAIL",
+        "INSTITUTION",
+        "COPYRIGHT",
+        "PAGE_NUM"
+      ],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry",
+      "slot_details": [
+        {
+          "slot_id": "LOGO",
+          "role": "logo",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "THANK_YOU",
+          "role": "closing_title",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "ENDING_SUBTITLE",
+          "role": "subtitle",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "CONTACT_INFO",
+          "role": "contact",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "EMAIL",
+          "role": "contact",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "INSTITUTION",
+          "role": "metadata",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "COPYRIGHT",
+          "role": "source",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_number",
+          "kind": "text",
+          "required": true,
+          "geometry": {}
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "slot_id": "LOGO",
+      "role": "logo",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "TITLE",
+      "role": "cover_title",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "SUBTITLE",
+      "role": "subtitle",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "AUTHOR",
+      "role": "metadata",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "ADVISOR",
+      "role": "metadata",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "INSTITUTION",
+      "role": "metadata",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "DATE",
+      "role": "metadata",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "cover"
+    },
+    {
+      "slot_id": "LOGO",
+      "role": "logo",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_1_TITLE",
+      "role": "toc_item",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_2_TITLE",
+      "role": "toc_item",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_3_TITLE",
+      "role": "toc_item",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_4_TITLE",
+      "role": "toc_item",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_5_TITLE",
+      "role": "toc_item",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_6_TITLE",
+      "role": "toc_item",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_1_DESC",
+      "role": "toc_desc",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_2_DESC",
+      "role": "toc_desc",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_3_DESC",
+      "role": "toc_desc",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "TOC_ITEM_4_DESC",
+      "role": "toc_desc",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "PAGE_NUM",
+      "role": "page_number",
+      "fixed_geometry": true,
+      "kind": "text",
+      "required": true,
+      "shell_id": "toc"
+    },
+    {
+      "slot_id": "CHAPTER_NUM",
+      "role": "chapter_number",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "chapter"
+    },
+    {
+      "slot_id": "CHAPTER_TITLE",
+      "role": "chapter_title",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "chapter"
+    },
+    {
+      "slot_id": "CHAPTER_DESC",
+      "role": "chapter_desc",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "chapter"
+    },
+    {
+      "slot_id": "TITLE",
+      "role": "title",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "chapter"
+    },
+    {
+      "slot_id": "SECTION_NUM",
+      "role": "section_label",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "PAGE_TITLE",
+      "role": "page_title",
+      "max_lines": 1,
+      "capacity": {
+        "single_line_required": true,
+        "max_chars_per_line": 30,
+        "overflow_action": "shorten_or_split"
+      },
+      "kind": "text",
+      "required": true,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "LOGO",
+      "role": "logo",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "KEY_MESSAGE",
+      "role": "key_message",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "SOURCE",
+      "role": "source",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "SECTION_NAME",
+      "role": "source",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "PAGE_NUM",
+      "role": "page_number",
+      "fixed_geometry": true,
+      "value_policy": "automatic_slide_index",
+      "kind": "text",
+      "required": true,
+      "shell_id": "content"
+    },
+    {
+      "slot_id": "LOGO",
+      "role": "logo",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "THANK_YOU",
+      "role": "closing_title",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "ENDING_SUBTITLE",
+      "role": "subtitle",
+      "max_lines": 2,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "CONTACT_INFO",
+      "role": "contact",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "EMAIL",
+      "role": "contact",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "INSTITUTION",
+      "role": "metadata",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "COPYRIGHT",
+      "role": "source",
+      "max_lines": 1,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    },
+    {
+      "slot_id": "PAGE_NUM",
+      "role": "page_number",
+      "fixed_geometry": true,
+      "kind": "text",
+      "required": true,
+      "shell_id": "ending"
+    }
+  ]
+}

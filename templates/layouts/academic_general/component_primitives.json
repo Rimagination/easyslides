@@ -1,0 +1,7 @@
+{
+  "schema_version": "easyslides.academic_general.component_primitives.v1",
+  "template_id": "academic_general",
+  "tokens": {},
+  "primitives": [],
+  "rule": "All runtime components are explicitly registered local SVG assets; no unscoped global component is available."
+}

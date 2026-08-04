@@ -135,6 +135,11 @@ def build_package_manifest(
     template_id = str(template.get("template_id") or directory.name)
     canvas = layouts.get("canvas") if isinstance(layouts.get("canvas"), dict) else {}
     layout_rows = layouts.get("layouts") if isinstance(layouts.get("layouts"), list) else []
+    if not layout_rows and isinstance(layouts.get("shells"), list):
+        # Managed template packages expose public pages as shells, while
+        # legacy packages keep them under layouts. Both are public layouts for
+        # registry and package-summary purposes.
+        layout_rows = layouts["shells"]
     return {
         "schema_version": PACKAGE_SCHEMA_VERSION,
         "package_id": f"template/{template_id}",

@@ -113,11 +113,11 @@ class PresentationContractTests(unittest.TestCase):
     def test_template_package_can_be_registered_and_validated(self):
         from scripts.template_package import build_package_manifest, validate_package
 
-        template_dir = ROOT / "templates" / "layouts" / "nsfc_purple_semantic"
+        template_dir = ROOT / "templates" / "layouts" / "academic_general"
         manifest = build_package_manifest(template_dir)
         report = validate_package(template_dir, manifest=manifest)
         self.assertEqual(report["status"], "pass", report["issues"])
-        self.assertEqual(manifest["layout_count"], 17)
+        self.assertEqual(manifest["layout_count"], 5)
 
     def test_draft_plan_builder_is_explicitly_not_production_ready(self):
         from scripts.presentation_plan_builder import build_content_plan, build_design_plan

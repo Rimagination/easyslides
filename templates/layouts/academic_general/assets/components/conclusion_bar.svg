@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1176" height="75" viewBox="0 0 1176 75" data-component-id="conclusion_bar">
+  <rect width="1176" height="75" fill="#003366" rx="4"/>
+  <rect x="0" y="0" width="8" height="75" fill="#CC0000" rx="4"/>
+  <text x="588" y="46" text-anchor="middle" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="700" data-slot="SYNTHESIS" data-slot-id="SYNTHESIS" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="40" data-pptx-box-y="14" data-pptx-box-w="1096" data-pptx-box-h="47" data-pptx-valign="middle" data-center-lock="true">SYNTHESIS</text>
+</svg>

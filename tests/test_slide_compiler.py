@@ -14,7 +14,7 @@ from pptx.util import Inches
 
 ROOT = Path(__file__).resolve().parents[1]
 NSFC = ROOT / "templates" / "layouts" / "nsfc_defense"
-RESEARCH_CORE = ROOT / "templates" / "layouts" / "research_core"
+ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_general"
 FIXTURE = ROOT / "tests" / "fixtures" / "nsfc_composable_deck_plan.json"
 
 
@@ -50,17 +50,106 @@ class SlideCompilerTests(unittest.TestCase):
             self.assertGreater(layer["frame"]["height"], 0)
 
     def test_template_owned_page_number_is_generalized_beyond_nsfc(self) -> None:
-        from scripts.render_research_core_gallery import build_plan
         from scripts.slide_compiler import compile_slides
         from scripts.template_compiler import compile_template
 
-        template_ir = compile_template(RESEARCH_CORE)["template_ir"]
-        slide_ir = compile_slides(build_plan(), template_ir)
+        template_ir = compile_template(ACADEMIC_GENERAL)["template_ir"]
+        slide_ir = compile_slides(
+            {
+                "template_id": "academic_general",
+                "slides": [
+                    {
+                        "page": "P01",
+                        "role": "content",
+                        "body_variant_id": "comparison_synthesis",
+                        "shell_payload": {
+                            "SECTION_NUM": "01",
+                            "PAGE_TITLE": "Two methods answer different questions",
+                            "LOGO": "LAB",
+                            "KEY_MESSAGE": "Method choice follows the evidence needed.",
+                            "SOURCE": "Source: study protocol",
+                            "SECTION_NAME": "Methods",
+                        },
+                        "slot_payload": {
+                            "LEFT_TITLE": "Method A",
+                            "LEFT_BODY": "Measures broad patterns across the cohort.",
+                            "RIGHT_TITLE": "Method B",
+                            "RIGHT_BODY": "Resolves the mechanism within each case.",
+                            "SYNTHESIS": "Use both methods when the claim needs scale and mechanism.",
+                        },
+                    },
+                    {
+                        "page": "P02",
+                        "role": "content",
+                        "body_variant_id": "comparison_synthesis",
+                        "shell_payload": {
+                            "SECTION_NUM": "01",
+                            "PAGE_TITLE": "The combined design reduces ambiguity",
+                            "LOGO": "LAB",
+                            "KEY_MESSAGE": "Complementary evidence makes the conclusion testable.",
+                            "SOURCE": "Source: analysis plan",
+                            "SECTION_NAME": "Methods",
+                        },
+                        "slot_payload": {
+                            "LEFT_TITLE": "Breadth",
+                            "LEFT_BODY": "Detects reproducible population-level signals.",
+                            "RIGHT_TITLE": "Depth",
+                            "RIGHT_BODY": "Tests the causal explanation for those signals.",
+                            "SYNTHESIS": "The joint design turns association into an auditable argument.",
+                        },
+                    },
+                ],
+            },
+            template_ir,
+        )
 
         self.assertEqual(
-            [slide["shell_payload"]["PAGE_NUMBER"] for slide in slide_ir["slides"]],
-            ["01", "02", "03", "04", "05", "06"],
+            [slide["shell_payload"]["PAGE_NUM"] for slide in slide_ir["slides"]],
+            ["01", "02"],
         )
+
+    def test_academic_general_open_composition_accepts_only_local_registered_components(self) -> None:
+        from scripts.slide_compiler import SlideCompileError, compile_slides
+        from scripts.template_compiler import compile_template
+
+        template_ir = compile_template(ACADEMIC_GENERAL)["template_ir"]
+        plan = {
+            "template_id": "academic_general",
+            "slides": [
+                {
+                    "page": "P01",
+                    "role": "content",
+                    "body_variant_id": "open_component_composition",
+                    "shell_payload": {
+                        "SECTION_NUM": "02",
+                        "PAGE_TITLE": "A selected metric clarifies the decision",
+                        "LOGO": "LAB",
+                        "KEY_MESSAGE": "Use a local metric component when a reviewed variant does not fit.",
+                        "SOURCE": "Source: decision memo",
+                        "SECTION_NAME": "Evidence",
+                    },
+                    "body_components": [
+                        {
+                            "component_id": "metric_tile",
+                            "instance_id": "primary_metric",
+                            "frame": {"x": 456, "y": 260, "width": 368, "height": 190},
+                            "slot_payload": {"VALUE": "86%", "LABEL": "Evidence coverage"},
+                        }
+                    ],
+                }
+            ],
+        }
+
+        slide_ir = compile_slides(plan, template_ir)
+        layers = slide_ir["slides"][0]["layers"]
+        metric = next(layer for layer in layers if layer.get("instance_id") == "primary_metric")
+
+        self.assertEqual(metric["asset_id"], "component/academic_general/metric_tile")
+        self.assertEqual(metric["composition_source"], "explicit_body_components")
+
+        plan["slides"][0]["body_components"][0]["component_id"] = "component/nsfc_defense/metric_tile"
+        with self.assertRaisesRegex(SlideCompileError, "unregistered component"):
+            compile_slides(plan, template_ir)
 
     def test_cover_uses_shared_title_and_date_payload_names_without_duplicate_dates(self) -> None:
         from scripts.slide_compiler import SlideCompileError, compile_slides

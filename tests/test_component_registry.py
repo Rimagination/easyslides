@@ -2,6 +2,10 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from xml.etree import ElementTree as ET
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class ComponentRegistryTests(unittest.TestCase):
@@ -29,8 +33,8 @@ class ComponentRegistryTests(unittest.TestCase):
 
         self.assertIn("card/three_card_summary", asset_ids)
         self.assertNotIn("component_package/three_card_summary", asset_ids)
-        self.assertIn("body_variant/research_core/three_card_summary", asset_ids)
-        self.assertIn("component/research_core/three_card_summary", asset_ids)
+        self.assertIn("body_variant/academic_general/comparison_synthesis", asset_ids)
+        self.assertIn("component/academic_general/comparison_column", asset_ids)
         self.assertIn("visual_recipe/pm_flow_strip", asset_ids)
         self.assertIn("page_recipe/pm_causal_map", asset_ids)
         self.assertIn("body_variant/defense_topnav/three_card_summary", asset_ids)
@@ -85,20 +89,24 @@ class ComponentRegistryTests(unittest.TestCase):
         self.assertIn("chart/bar_chart", {asset["asset_id"] for asset in registry["assets"]})
         self.assertEqual(registry["counts_by_granularity"]["chart_asset"], 71)
 
-    def test_migrated_research_core_scene_preserves_alignment_metadata(self):
+    def test_academic_general_component_preserves_centered_caption_contract(self):
         from scripts.component_registry import build_component_registry
 
         registry = build_component_registry(include_template_asset_bank=False)
         package_asset = next(
             asset
             for asset in registry["assets"]
-            if asset["asset_id"] == "component/research_core/three_card_summary"
+            if asset["asset_id"] == "component/academic_general/media_panel"
         )
-        invariants = package_asset["metadata"]["qa"]["alignment_invariants"]
+        root = ET.parse(
+            ROOT / "templates" / "layouts" / "academic_general" / "assets" / "components" / "media_panel.svg"
+        ).getroot()
+        caption = next(node for node in root.iter() if node.get("data-slot-id") == "CAPTION")
 
-        self.assertEqual(package_asset["metadata"]["template_id"], "research_core")
-        self.assertEqual(invariants[0]["rule"], "text_center_y_matches_container_center_y")
-        self.assertEqual(package_asset["slots"][0]["alignment"]["vertical"], "middle")
+        self.assertEqual(package_asset["metadata"]["template_id"], "academic_general")
+        self.assertIn("vertical_center_alignment", package_asset["required_gates"])
+        self.assertEqual(caption.get("data-pptx-valign"), "middle")
+        self.assertEqual(caption.get("data-center-lock"), "true")
 
     def test_cli_build_writes_registry(self):
         from scripts.component_registry import main

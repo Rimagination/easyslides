@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="515" viewBox="0 0 672 515" data-component-id="media_panel">
+  <rect width="672" height="515" fill="#FFFFFF" stroke="#B8C7D6" stroke-width="1.2" rx="4"/>
+  <rect x="16" y="16" width="640" height="410" fill="#F5F7FA" stroke="#D4E2EE" rx="2" data-easyslides-image-frame-for="IMAGE"/>
+  <image x="16" y="16" width="640" height="410" preserveAspectRatio="xMidYMid meet" href="" data-slot="IMAGE" data-slot-id="IMAGE" data-slot-kind="image" data-easyslides-image-fit="contain"/>
+  <line x1="24" y1="446" x2="648" y2="446" stroke="#D4E2EE"/>
+  <text x="336" y="482" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="CAPTION" data-slot-id="CAPTION" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="32" data-pptx-box-y="454" data-pptx-box-w="608" data-pptx-box-h="48" data-pptx-valign="middle" data-center-lock="true">CAPTION</text>
+</svg>

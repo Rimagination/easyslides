@@ -1,0 +1,151 @@
+{
+  "schema_version": "easyslides.academic_general.body_variants.v1",
+  "template_id": "academic_general",
+  "source_shell": "03_content.svg",
+  "content_area": {"x": 52, "y": 135, "width": 1176, "height": 515},
+  "coordinate_space": "body_canvas",
+  "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+  "selection_policy": "require_body_variant_id_when_intent_is_ambiguous; otherwise match_story_role_content_shape_density_and_figure_count.",
+  "composition_contract": "regions_required",
+  "body_component_policy": "template_local_components_only; open_component_composition accepts registered local components within body_canvas.",
+  "variants": [
+    {
+      "variant_id": "figure_evidence",
+      "composition_scene": "figure_evidence_pair",
+      "composition_mode": "ordered_component_refs",
+      "coordinate_space": "body_canvas",
+      "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+      "best_for": "one primary scientific figure supported by three concise observations",
+      "selection": {"content_shapes": ["figure_evidence", "figure"], "story_roles": ["evidence", "result", "mechanism"], "density": 3, "figure_count": 1, "priority": 10},
+      "slots": [
+        {"slot_id": "FIGURE", "kind": "image", "required": true},
+        {"slot_id": "FIGURE_CAPTION", "kind": "text", "required": true, "capacity": {"max_lines": 2, "max_chars_per_line": 32, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "EVIDENCE_01", "kind": "text", "required": true, "capacity": {"max_lines": 3, "max_chars_per_line": 16, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "EVIDENCE_02", "kind": "text", "required": true, "capacity": {"max_lines": 3, "max_chars_per_line": 16, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "EVIDENCE_03", "kind": "text", "required": true, "capacity": {"max_lines": 3, "max_chars_per_line": 16, "overflow_action": "shorten_or_split"}}
+      ],
+      "regions": [
+        {"region_id": "figure", "frame": {"x": 52, "y": 135, "width": 672, "height": 515}, "z_index": 20, "fit": "contain"},
+        {"region_id": "evidence", "frame": {"x": 748, "y": 135, "width": 480, "height": 515}, "z_index": 20, "fit": "contain"}
+      ],
+      "component_refs": [
+        {"asset_id": "component/academic_general/media_panel", "instance_id": "figure", "role": "scientific_figure", "order": 1, "region": "figure", "slot_bindings": {"IMAGE": "FIGURE", "CAPTION": "FIGURE_CAPTION"}},
+        {"asset_id": "component/academic_general/evidence_stack", "instance_id": "evidence", "role": "evidence", "order": 2, "region": "evidence", "slot_bindings": {"EVIDENCE_01": "EVIDENCE_01", "EVIDENCE_02": "EVIDENCE_02", "EVIDENCE_03": "EVIDENCE_03"}}
+      ]
+    },
+    {
+      "variant_id": "comparison_synthesis",
+      "composition_scene": "comparison_with_synthesis",
+      "composition_mode": "ordered_component_refs",
+      "coordinate_space": "body_canvas",
+      "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+      "best_for": "two approaches, conditions, or interpretations followed by one decision",
+      "selection": {"content_shapes": ["comparison", "two_column"], "story_roles": ["comparison", "decision", "tradeoff"], "density": 3, "figure_count": 0, "priority": 10},
+      "slots": [
+        {"slot_id": "LEFT_TITLE", "kind": "text", "required": true, "capacity": {"max_lines": 1, "max_chars_per_line": 18, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "LEFT_BODY", "kind": "text", "required": true, "capacity": {"max_lines": 6, "max_chars_per_line": 22, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "RIGHT_TITLE", "kind": "text", "required": true, "capacity": {"max_lines": 1, "max_chars_per_line": 18, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "RIGHT_BODY", "kind": "text", "required": true, "capacity": {"max_lines": 6, "max_chars_per_line": 22, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "SYNTHESIS", "kind": "text", "required": true, "capacity": {"max_lines": 2, "max_chars_per_line": 40, "overflow_action": "shorten_or_split"}}
+      ],
+      "regions": [
+        {"region_id": "left", "frame": {"x": 52, "y": 135, "width": 568, "height": 420}, "z_index": 20, "fit": "contain"},
+        {"region_id": "right", "frame": {"x": 660, "y": 135, "width": 568, "height": 420}, "z_index": 20, "fit": "contain"},
+        {"region_id": "synthesis", "frame": {"x": 52, "y": 575, "width": 1176, "height": 75}, "z_index": 30, "fit": "contain"}
+      ],
+      "component_refs": [
+        {"asset_id": "component/academic_general/comparison_column", "instance_id": "left", "role": "comparison_left", "order": 1, "region": "left", "slot_bindings": {"HEADING": "LEFT_TITLE", "BODY": "LEFT_BODY"}},
+        {"asset_id": "component/academic_general/comparison_column", "instance_id": "right", "role": "comparison_right", "order": 2, "region": "right", "slot_bindings": {"HEADING": "RIGHT_TITLE", "BODY": "RIGHT_BODY"}},
+        {"asset_id": "component/academic_general/conclusion_bar", "instance_id": "synthesis", "role": "synthesis", "order": 3, "region": "synthesis", "slot_bindings": {"SYNTHESIS": "SYNTHESIS"}}
+      ]
+    },
+    {
+      "variant_id": "process_outcome",
+      "composition_scene": "three_step_process_with_outcome",
+      "composition_mode": "ordered_component_refs",
+      "coordinate_space": "body_canvas",
+      "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+      "best_for": "three ordered method steps and the outcome they jointly enable",
+      "selection": {"content_shapes": ["process", "timeline", "workflow"], "story_roles": ["method", "workflow", "implementation"], "density": 3, "figure_count": 0, "priority": 10},
+      "slots": [
+        {"slot_id": "STEP_01_NUMBER", "kind": "text", "required": true}, {"slot_id": "STEP_01_TITLE", "kind": "text", "required": true, "capacity": {"max_lines": 2, "max_chars_per_line": 10, "overflow_action": "shorten_or_split"}}, {"slot_id": "STEP_01_BODY", "kind": "text", "required": true, "capacity": {"max_lines": 5, "max_chars_per_line": 13, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "STEP_02_NUMBER", "kind": "text", "required": true}, {"slot_id": "STEP_02_TITLE", "kind": "text", "required": true, "capacity": {"max_lines": 2, "max_chars_per_line": 10, "overflow_action": "shorten_or_split"}}, {"slot_id": "STEP_02_BODY", "kind": "text", "required": true, "capacity": {"max_lines": 5, "max_chars_per_line": 13, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "STEP_03_NUMBER", "kind": "text", "required": true}, {"slot_id": "STEP_03_TITLE", "kind": "text", "required": true, "capacity": {"max_lines": 2, "max_chars_per_line": 10, "overflow_action": "shorten_or_split"}}, {"slot_id": "STEP_03_BODY", "kind": "text", "required": true, "capacity": {"max_lines": 5, "max_chars_per_line": 13, "overflow_action": "shorten_or_split"}},
+        {"slot_id": "SYNTHESIS", "kind": "text", "required": true, "capacity": {"max_lines": 2, "max_chars_per_line": 40, "overflow_action": "shorten_or_split"}}
+      ],
+      "regions": [
+        {"region_id": "step_01", "frame": {"x": 52, "y": 135, "width": 368, "height": 365}, "z_index": 20, "fit": "contain"}, {"region_id": "step_02", "frame": {"x": 456, "y": 135, "width": 368, "height": 365}, "z_index": 20, "fit": "contain"}, {"region_id": "step_03", "frame": {"x": 860, "y": 135, "width": 368, "height": 365}, "z_index": 20, "fit": "contain"}, {"region_id": "synthesis", "frame": {"x": 52, "y": 575, "width": 1176, "height": 75}, "z_index": 30, "fit": "contain"}
+      ],
+      "component_refs": [
+        {"asset_id": "component/academic_general/process_step", "instance_id": "step_01", "role": "process_step", "order": 1, "region": "step_01", "slot_bindings": {"NUMBER": "STEP_01_NUMBER", "TITLE": "STEP_01_TITLE", "BODY": "STEP_01_BODY"}},
+        {"asset_id": "component/academic_general/process_step", "instance_id": "step_02", "role": "process_step", "order": 2, "region": "step_02", "slot_bindings": {"NUMBER": "STEP_02_NUMBER", "TITLE": "STEP_02_TITLE", "BODY": "STEP_02_BODY"}},
+        {"asset_id": "component/academic_general/process_step", "instance_id": "step_03", "role": "process_step", "order": 3, "region": "step_03", "slot_bindings": {"NUMBER": "STEP_03_NUMBER", "TITLE": "STEP_03_TITLE", "BODY": "STEP_03_BODY"}},
+        {"asset_id": "component/academic_general/conclusion_bar", "instance_id": "synthesis", "role": "synthesis", "order": 4, "region": "synthesis", "slot_bindings": {"SYNTHESIS": "SYNTHESIS"}}
+      ]
+    },
+    {
+      "variant_id": "metrics_evidence",
+      "composition_scene": "three_metrics_with_two_evidence_rows",
+      "composition_mode": "ordered_component_refs",
+      "coordinate_space": "body_canvas",
+      "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+      "best_for": "three measurable outcomes followed by the two pieces of evidence that explain them",
+      "selection": {"content_shapes": ["metrics", "dashboard", "kpi"], "story_roles": ["result", "impact", "evaluation"], "density": 4, "figure_count": 0, "priority": 10},
+      "slots": [
+        {"slot_id": "METRIC_01_VALUE", "kind": "text", "required": true}, {"slot_id": "METRIC_01_LABEL", "kind": "text", "required": true}, {"slot_id": "METRIC_02_VALUE", "kind": "text", "required": true}, {"slot_id": "METRIC_02_LABEL", "kind": "text", "required": true}, {"slot_id": "METRIC_03_VALUE", "kind": "text", "required": true}, {"slot_id": "METRIC_03_LABEL", "kind": "text", "required": true},
+        {"slot_id": "EVIDENCE_01_INDEX", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_01_LABEL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_01_DETAIL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_02_INDEX", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_02_LABEL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_02_DETAIL", "kind": "text", "required": true}
+      ],
+      "regions": [
+        {"region_id": "metric_01", "frame": {"x": 52, "y": 135, "width": 368, "height": 190}, "z_index": 20, "fit": "contain"}, {"region_id": "metric_02", "frame": {"x": 456, "y": 135, "width": 368, "height": 190}, "z_index": 20, "fit": "contain"}, {"region_id": "metric_03", "frame": {"x": 860, "y": 135, "width": 368, "height": 190}, "z_index": 20, "fit": "contain"}, {"region_id": "evidence_01", "frame": {"x": 52, "y": 370, "width": 1176, "height": 135}, "z_index": 20, "fit": "contain"}, {"region_id": "evidence_02", "frame": {"x": 52, "y": 515, "width": 1176, "height": 135}, "z_index": 20, "fit": "contain"}
+      ],
+      "component_refs": [
+        {"asset_id": "component/academic_general/metric_tile", "instance_id": "metric_01", "role": "metric", "order": 1, "region": "metric_01", "slot_bindings": {"VALUE": "METRIC_01_VALUE", "LABEL": "METRIC_01_LABEL"}}, {"asset_id": "component/academic_general/metric_tile", "instance_id": "metric_02", "role": "metric", "order": 2, "region": "metric_02", "slot_bindings": {"VALUE": "METRIC_02_VALUE", "LABEL": "METRIC_02_LABEL"}}, {"asset_id": "component/academic_general/metric_tile", "instance_id": "metric_03", "role": "metric", "order": 3, "region": "metric_03", "slot_bindings": {"VALUE": "METRIC_03_VALUE", "LABEL": "METRIC_03_LABEL"}}, {"asset_id": "component/academic_general/evidence_row", "instance_id": "evidence_01", "role": "evidence", "order": 4, "region": "evidence_01", "slot_bindings": {"INDEX": "EVIDENCE_01_INDEX", "LABEL": "EVIDENCE_01_LABEL", "DETAIL": "EVIDENCE_01_DETAIL"}}, {"asset_id": "component/academic_general/evidence_row", "instance_id": "evidence_02", "role": "evidence", "order": 5, "region": "evidence_02", "slot_bindings": {"INDEX": "EVIDENCE_02_INDEX", "LABEL": "EVIDENCE_02_LABEL", "DETAIL": "EVIDENCE_02_DETAIL"}}
+      ]
+    },
+    {
+      "variant_id": "evidence_argument",
+      "composition_scene": "three_argument_rows_with_conclusion",
+      "composition_mode": "ordered_component_refs",
+      "coordinate_space": "body_canvas",
+      "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+      "best_for": "a text-rich claim with three auditable supporting arguments",
+      "selection": {"content_shapes": ["evidence_stack", "argument", "text_rich"], "story_roles": ["argument", "rationale", "risk"], "density": 5, "figure_count": 0, "priority": 10},
+      "slots": [
+        {"slot_id": "EVIDENCE_01_INDEX", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_01_LABEL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_01_DETAIL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_02_INDEX", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_02_LABEL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_02_DETAIL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_03_INDEX", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_03_LABEL", "kind": "text", "required": true}, {"slot_id": "EVIDENCE_03_DETAIL", "kind": "text", "required": true}, {"slot_id": "SYNTHESIS", "kind": "text", "required": true}
+      ],
+      "regions": [
+        {"region_id": "synthesis", "frame": {"x": 52, "y": 135, "width": 1176, "height": 75}, "z_index": 20, "fit": "contain"}, {"region_id": "evidence_01", "frame": {"x": 52, "y": 220, "width": 1176, "height": 135}, "z_index": 20, "fit": "contain"}, {"region_id": "evidence_02", "frame": {"x": 52, "y": 375, "width": 1176, "height": 135}, "z_index": 20, "fit": "contain"}, {"region_id": "evidence_03", "frame": {"x": 52, "y": 515, "width": 1176, "height": 135}, "z_index": 20, "fit": "contain"}
+      ],
+      "component_refs": [
+        {"asset_id": "component/academic_general/conclusion_bar", "instance_id": "synthesis", "role": "claim", "order": 1, "region": "synthesis", "slot_bindings": {"SYNTHESIS": "SYNTHESIS"}}, {"asset_id": "component/academic_general/evidence_row", "instance_id": "evidence_01", "role": "evidence", "order": 2, "region": "evidence_01", "slot_bindings": {"INDEX": "EVIDENCE_01_INDEX", "LABEL": "EVIDENCE_01_LABEL", "DETAIL": "EVIDENCE_01_DETAIL"}}, {"asset_id": "component/academic_general/evidence_row", "instance_id": "evidence_02", "role": "evidence", "order": 3, "region": "evidence_02", "slot_bindings": {"INDEX": "EVIDENCE_02_INDEX", "LABEL": "EVIDENCE_02_LABEL", "DETAIL": "EVIDENCE_02_DETAIL"}}, {"asset_id": "component/academic_general/evidence_row", "instance_id": "evidence_03", "role": "evidence", "order": 4, "region": "evidence_03", "slot_bindings": {"INDEX": "EVIDENCE_03_INDEX", "LABEL": "EVIDENCE_03_LABEL", "DETAIL": "EVIDENCE_03_DETAIL"}}
+      ]
+    },
+    {
+      "variant_id": "table_decision",
+      "composition_scene": "decision_matrix",
+      "composition_mode": "ordered_component_refs",
+      "coordinate_space": "body_canvas",
+      "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+      "best_for": "three criteria by three alternatives with a concise decision rule",
+      "selection": {"content_shapes": ["table", "matrix", "decision"], "story_roles": ["comparison", "decision", "summary"], "density": 5, "figure_count": 0, "priority": 10},
+      "slots": [
+        {"slot_id": "HEAD_01", "kind": "text", "required": true}, {"slot_id": "HEAD_02", "kind": "text", "required": true}, {"slot_id": "HEAD_03", "kind": "text", "required": true}, {"slot_id": "ROW_01_01", "kind": "text", "required": true}, {"slot_id": "ROW_01_02", "kind": "text", "required": true}, {"slot_id": "ROW_01_03", "kind": "text", "required": true}, {"slot_id": "ROW_02_01", "kind": "text", "required": true}, {"slot_id": "ROW_02_02", "kind": "text", "required": true}, {"slot_id": "ROW_02_03", "kind": "text", "required": true}, {"slot_id": "ROW_03_01", "kind": "text", "required": true}, {"slot_id": "ROW_03_02", "kind": "text", "required": true}, {"slot_id": "ROW_03_03", "kind": "text", "required": true}, {"slot_id": "CONCLUSION", "kind": "text", "required": true}
+      ],
+      "regions": [{"region_id": "matrix", "frame": {"x": 52, "y": 135, "width": 1176, "height": 515}, "z_index": 20, "fit": "contain"}],
+      "component_refs": [{"asset_id": "component/academic_general/table_matrix", "instance_id": "matrix", "role": "table", "order": 1, "region": "matrix", "slot_bindings": {"HEAD_01": "HEAD_01", "HEAD_02": "HEAD_02", "HEAD_03": "HEAD_03", "ROW_01_01": "ROW_01_01", "ROW_01_02": "ROW_01_02", "ROW_01_03": "ROW_01_03", "ROW_02_01": "ROW_02_01", "ROW_02_02": "ROW_02_02", "ROW_02_03": "ROW_02_03", "ROW_03_01": "ROW_03_01", "ROW_03_02": "ROW_03_02", "ROW_03_03": "ROW_03_03", "CONCLUSION": "CONCLUSION"}}]
+    },
+    {
+      "variant_id": "open_component_composition",
+      "composition_scene": "open_template_local_component_canvas",
+      "composition_mode": "open_component_composition",
+      "coordinate_space": "body_canvas",
+      "clear_region": {"x": 52, "y": 135, "width": 1176, "height": 515},
+      "best_for": "an explicitly requested assembly of the registered Academic General local components",
+      "selection": {"content_shapes": ["custom_components"], "story_roles": ["custom"], "priority": 1},
+      "slots": [],
+      "regions": [{"region_id": "canvas_anchor", "frame": {"x": 52, "y": 135, "width": 1176, "height": 515}, "z_index": 1, "fit": "contain"}],
+      "component_refs": [{"asset_id": "component/academic_general/canvas_anchor", "instance_id": "canvas_anchor", "role": "layout_anchor", "order": 1, "region": "canvas_anchor", "slot_bindings": {}}]
+    }
+  ],
+  "constraint": "Every content page selects one declared body variant. The open composition variant is the only route for direct body_components, and it accepts only registered academic_general local components within the body canvas."
+}

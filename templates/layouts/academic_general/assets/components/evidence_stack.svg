@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="515" viewBox="0 0 480 515" data-component-id="evidence_stack">
+  <rect width="480" height="515" fill="#F5F7FA" stroke="#B8C7D6" stroke-width="1.2" rx="4"/>
+  <rect x="0" y="0" width="8" height="515" fill="#0066CC"/>
+  <rect x="28" y="28" width="424" height="132" fill="#FFFFFF" stroke="#D4E2EE" rx="2"/>
+  <rect x="28" y="191" width="424" height="132" fill="#FFFFFF" stroke="#D4E2EE" rx="2"/>
+  <rect x="28" y="354" width="424" height="132" fill="#FFFFFF" stroke="#D4E2EE" rx="2"/>
+  <text x="52" y="61" fill="#0066CC" font-family="Arial, sans-serif" font-size="15" font-weight="700">01</text>
+  <text x="52" y="224" fill="#0066CC" font-family="Arial, sans-serif" font-size="15" font-weight="700">02</text>
+  <text x="52" y="387" fill="#CC0000" font-family="Arial, sans-serif" font-size="15" font-weight="700">03</text>
+  <text x="76" y="109" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="19" data-slot="EVIDENCE_01" data-slot-id="EVIDENCE_01" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="76" data-pptx-box-y="56" data-pptx-box-w="348" data-pptx-box-h="76" data-pptx-valign="middle">EVIDENCE_01</text>
+  <text x="76" y="272" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="19" data-slot="EVIDENCE_02" data-slot-id="EVIDENCE_02" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="76" data-pptx-box-y="219" data-pptx-box-w="348" data-pptx-box-h="76" data-pptx-valign="middle">EVIDENCE_02</text>
+  <text x="76" y="435" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="19" data-slot="EVIDENCE_03" data-slot-id="EVIDENCE_03" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="76" data-pptx-box-y="382" data-pptx-box-w="348" data-pptx-box-h="76" data-pptx-valign="middle">EVIDENCE_03</text>
+</svg>

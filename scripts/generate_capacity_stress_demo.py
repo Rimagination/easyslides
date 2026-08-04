@@ -188,6 +188,7 @@ def fill_content_svg(
         "SECTION_NAME": "Text fit",
         "PAGE_NUM": str(slide_index),
     }
+    has_rendered_body_probe = False
 
     for elem in root.iter():
         if local_name(elem) != "text":
@@ -199,6 +200,7 @@ def fill_content_svg(
         if slot and slot.get("role") != "page_number":
             cap = resolve_slot_capacity(layouts, slot)
             if slot_id in stress_slot_ids:
+                has_rendered_body_probe = True
                 prepare_stress_textbox(elem, cap)
                 requested_chars = max(1, round(cap.capacity_chars * ratio))
                 raw = repeat_phrase(requested_chars)
@@ -227,6 +229,34 @@ def fill_content_svg(
         else:
             value = fallback_values.get(slot_id, slot_id)
             set_text_lines(elem, [value])
+
+    if not has_rendered_body_probe:
+        # Component-first templates deliberately keep their body canvas out of
+        # the shell SVG. Preserve one comparable body-capacity check without
+        # turning that invisible planning region back into visible slide copy.
+        cap = resolve_slot_capacity(
+            layouts,
+            {"slot_id": "BODY_CAPACITY_PROBE", "role": "body"},
+        )
+        requested_chars = max(1, round(cap.capacity_chars * ratio))
+        fit = fit_text_to_capacity(repeat_phrase(requested_chars), cap)
+        checks.append(
+            {
+                "slot_id": cap.slot_id,
+                "role": cap.role,
+                "case": case_id,
+                "requested_chars": requested_chars,
+                "rendered_chars": fit.rendered_chars,
+                "capacity_chars": cap.capacity_chars,
+                "rendered_lines": len(fit.lines),
+                "raw_lines": fit.raw_line_count,
+                "max_lines": cap.max_lines,
+                "max_chars_per_line_zh": cap.max_chars_per_line_zh,
+                "overflow": fit.output_overflow,
+                "input_over_capacity": fit.input_over_capacity,
+                "action": fit.action,
+            }
+        )
 
     if "CONTENT_AREA" in stress_slot_ids:
         remove_unbound_content_guides(root)

@@ -1,6 +1,6 @@
 {
   "academic_general": {
-    "summary": "General academic base for research talks, course reports, progress reviews, paper explainers, and scholarly exchange.",
+    "summary": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
     "keywords": [
       "general_academic",
       "Audience-State-Transfer",
@@ -8,8 +8,8 @@
       "research-oriented",
       "neutral_base"
     ],
-    "capability_level": "shell",
-    "status": "legacy"
+    "capability_level": "production",
+    "status": "production"
   },
   "academic_scqa": {
     "summary": "Blue-cyan academic and technical report template with Audience-State-Transfer and SCQA body-variant guidance.",
