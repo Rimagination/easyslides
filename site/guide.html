@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/brand/scansci-app-icon-64.png">
   <title>EasySlides 使用教程</title>
   <meta name="description" content="用自然语言将论文、网页、Markdown 或已有 PPT 制作成可编辑学术 PPTX 的 EasySlides 使用教程。">
   <style>
@@ -396,6 +397,53 @@
       grid-column: 1 / -1;
     }
 
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .template-card {
+      min-height: 154px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      background: rgba(255, 249, 237, 0.72);
+    }
+
+    .template-card:nth-child(2) { border-top-color: var(--purple); }
+    .template-card:nth-child(3) { border-top-color: var(--green); }
+    .template-card:nth-child(4) { border-top-color: var(--red); }
+    .template-card:nth-child(5) { border-top-color: #557c9b; }
+    .template-card:nth-child(6) { border-top-color: #ad6f2c; }
+    .template-card:nth-child(7) { border-top-color: #75608d; }
+
+    .template-card code {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: #fff3d1;
+      background: #2a1d14;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .template-card strong {
+      display: block;
+      color: #3a2718;
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .template-card p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
     .prompt-head {
       display: flex;
       align-items: center;
@@ -532,6 +580,7 @@
 
       .toc strong { grid-column: 1 / -1; }
       .scenario-grid { grid-template-columns: 1fr; }
+      .template-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 680px) {
@@ -547,6 +596,7 @@
       section + section { margin-top: 56px; padding-top: 48px; }
       .prompt-grid,
       .example-strip,
+      .template-grid,
       .toc { grid-template-columns: 1fr; }
       .prompt-grid .prompt-box:last-child:nth-child(odd) { grid-column: auto; }
     }
@@ -581,6 +631,7 @@
         <p>论文、网页、Markdown、已有 PPT 和几句需求都可以成为起点。若听众、时长、模板或表达重点会影响成品，Agent 会先用问题和选项向你确认，而不是替你猜。</p>
         <div class="quick-links">
           <a href="#install">安装一次</a>
+          <a href="#templates">选择模板</a>
           <a href="#first-deck">做第一份 PPT</a>
           <a href="#iterate">查看与迭代</a>
         </div>
@@ -593,12 +644,13 @@
       <strong>使用路径</strong>
       <a href="#start">1. 开始前，只做三件事</a>
       <a href="#install">2. 安装 EasySlides</a>
-      <a href="#first-deck">3. 用一句话启动</a>
-      <a href="#materials">4. 提供什么材料</a>
-      <a href="#clarify">5. 为什么会先提问</a>
-      <a href="#scenarios">6. 常用任务怎么说</a>
-      <a href="#iterate">7. 查看、修改与蒸馏</a>
-      <a href="#faq">8. 常见问题</a>
+      <a href="#templates">3. 指定模板 ID</a>
+      <a href="#first-deck">4. 用一句话启动</a>
+      <a href="#materials">5. 提供什么材料</a>
+      <a href="#clarify">6. 为什么会先提问</a>
+      <a href="#scenarios">7. 常用任务怎么说</a>
+      <a href="#iterate">8. 查看、修改与蒸馏</a>
+      <a href="#faq">9. 常见问题</a>
     </aside>
 
     <article class="article">
@@ -622,8 +674,8 @@
             </div>
           </div>
           <div class="note">
-            <strong>不需要指定模板代码或页面类型</strong>
-            <p>你可以直接说“做成国自然基金答辩风格”或“像我的参考 PPT 一样”。模板负责视觉语言、稳定页面壳和组件规则；内容页会根据图、表、流程、对比或结论自动选择合适的组织方式。</p>
+            <strong>通常不需要指定模板代码，但也可以精确指定</strong>
+            <p>你可以直接说“做成国自然基金答辩风格”或“像我的参考 PPT 一样”。如果你希望稳定复用某一套官方模板，只需在指令里写出模板 ID，不需要下载或上传 PPTX 模板；下一节会列出当前可用的 ID。</p>
           </div>
         </section>
 
@@ -642,9 +694,65 @@ Rimagination/easyslides</code></pre>
           <p>Agent 完成安装后，你可以直接上传材料并开始描述任务。需要了解项目背景或查看开源仓库时，再访问 <a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer">Rimagination/easyslides</a>。</p>
         </section>
 
-        <section id="first-deck">
+        <section id="templates">
           <span class="chapter-kicker">Section 03</span>
-          <h2>3. 第一次制作：上传材料，再说一句话</h2>
+          <h2>3. 指定模板：只写 ID，不用下载 PPTX</h2>
+          <p>模板 ID 是 EasySlides 识别官方模板的简写。把它直接写进你的任务描述即可调用对应模板；你不需要先下载模板文件，也不需要把模板 PPTX 再上传一遍。</p>
+          <div class="template-grid" aria-label="EasySlides official template IDs">
+            <div class="template-card">
+              <code>academic_general</code>
+              <strong>通用学术汇报</strong>
+              <p>适合常规的研究介绍、实验结果与学术分享。</p>
+            </div>
+            <div class="template-card">
+              <code>academic_scqa</code>
+              <strong>SCQA 学术叙事</strong>
+              <p>适合按背景、冲突、问题与答案组织内容。</p>
+            </div>
+            <div class="template-card">
+              <code>defense_leftnav</code>
+              <strong>左侧导航答辩</strong>
+              <p>适合学位论文答辩与章节较多的汇报。</p>
+            </div>
+            <div class="template-card">
+              <code>defense_topnav</code>
+              <strong>顶部导航答辩</strong>
+              <p>适合需要顶部章节导航的答辩展示。</p>
+            </div>
+            <div class="template-card">
+              <code>literature_minimal</code>
+              <strong>极简文献汇报</strong>
+              <p>适合组会、论文精读与研究进展分享。</p>
+            </div>
+            <div class="template-card">
+              <code>nsfc_defense</code>
+              <strong>国自然基金答辩</strong>
+              <p>适合围绕立项依据、科学问题与技术路线展开。</p>
+            </div>
+            <div class="template-card">
+              <code>thu_speech</code>
+              <strong>清华学术汇报</strong>
+              <p>适合清华风格的学术演讲与课程展示。</p>
+            </div>
+          </div>
+          <div class="prompt-box">
+            <div class="prompt-head">
+              <strong>直接调用示例</strong>
+              <button class="copy-button" type="button" data-copy-target="templatePrompt">复制</button>
+            </div>
+            <pre><code id="templatePrompt">请使用 EasySlides 的 nsfc_defense 模板，根据我上传的项目申请材料制作一份国自然基金答辩 PPT。
+不需要下载或上传 PPTX 模板，直接按 nsfc_defense 调用官方模板。
+如果模板与汇报场景不匹配，请先提醒我。</code></pre>
+          </div>
+          <div class="note">
+            <strong>模板 ID 要小写，并使用下划线</strong>
+            <p>例如 <code>nsfc_defense</code>、<code>thu_speech</code>。如果你不确定该选哪一个，也可以只描述用途，让 Agent 先给出选择。</p>
+          </div>
+        </section>
+
+        <section id="first-deck">
+          <span class="chapter-kicker">Section 04</span>
+          <h2>4. 第一次制作：上传材料，再说一句话</h2>
           <p>把一篇 PDF 拖进 Agent 对话，然后说明你要面对谁讲、想讲多长、最看重哪部分。下面这条可以直接作为第一份文献汇报的起点。</p>
           <div class="prompt-box">
             <div class="prompt-head">
@@ -668,8 +776,8 @@ Rimagination/easyslides</code></pre>
         </section>
 
         <section id="materials">
-          <span class="chapter-kicker">Section 04</span>
-          <h2>4. 什么材料最有用</h2>
+          <span class="chapter-kicker">Section 05</span>
+          <h2>5. 什么材料最有用</h2>
           <p>不必先整理成完美文件夹。先把你手头最接近事实和证据的材料给出来，随后再补充要求。EasySlides 会优先使用原始图表、关键数据和已有叙事，而不是用空泛文字替代它们。</p>
           <ul>
             <li><strong>论文或报告：</strong>PDF、补充材料、附录和图表说明。</li>
@@ -684,8 +792,8 @@ Rimagination/easyslides</code></pre>
         </section>
 
         <section id="clarify">
-          <span class="chapter-kicker">Section 05</span>
-          <h2>5. 为什么 Agent 有时会先问你</h2>
+          <span class="chapter-kicker">Section 06</span>
+          <h2>6. 为什么 Agent 有时会先问你</h2>
           <p>“做一份 PPT”通常还不足以确定成品。面对模糊任务，直接生成往往会造成页数、重点、模板或听众不对。EasySlides 会把这些会改变结果的问题提前问清楚。</p>
           <div class="step-list">
             <div>
@@ -704,8 +812,8 @@ Rimagination/easyslides</code></pre>
         </section>
 
         <section id="scenarios">
-          <span class="chapter-kicker">Section 06</span>
-          <h2>6. 常用任务，可以这样说</h2>
+          <span class="chapter-kicker">Section 07</span>
+          <h2>7. 常用任务，可以这样说</h2>
           <p>下面的指令不是格式要求，只是让你更容易开始。把其中的材料、页数和对象换成自己的即可。</p>
           <div class="scenario-grid" aria-label="Common EasySlides scenarios">
             <div class="scenario">
@@ -747,8 +855,8 @@ Rimagination/easyslides</code></pre>
         </section>
 
         <section id="iterate">
-          <span class="chapter-kicker">Section 07</span>
-          <h2>7. 查看、修改与继续迭代</h2>
+          <span class="chapter-kicker">Section 08</span>
+          <h2>8. 查看、修改与继续迭代</h2>
           <p>完成后得到的是可编辑的 PPTX，而不是一张张合成图片。先看完整预览，再在 PowerPoint 中改标题、替换图表或调整内容；需要回到 Agent 继续优化时，直接指出具体页面和问题即可。</p>
           <div class="step-list">
             <div>
@@ -771,8 +879,8 @@ Rimagination/easyslides</code></pre>
         </section>
 
         <section id="faq">
-          <span class="chapter-kicker">Section 08</span>
-          <h2>8. 常见问题</h2>
+          <span class="chapter-kicker">Section 09</span>
+          <h2>9. 常见问题</h2>
           <h3>我需要会 PowerPoint 或写代码吗？</h3>
           <p>不需要会代码。你只要能在对话里说明材料和要求即可。输出文件仍是普通的 PPTX，后续可以照常在 PowerPoint 中编辑。</p>
 
