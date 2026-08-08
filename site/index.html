@@ -362,6 +362,112 @@
       box-shadow: 0 -8px 0 rgba(255, 232, 176, 0.28);
     }
 
+    .home-guide-cta {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 0 0 94px;
+    }
+
+    .home-guide-cta-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(24px, 5vw, 72px);
+      overflow: hidden;
+      padding: clamp(28px, 4vw, 46px) clamp(24px, 5vw, 58px);
+      border: 1px solid rgba(239, 212, 154, 0.44);
+      border-radius: 10px;
+      background:
+        radial-gradient(circle at 88% 20%, rgba(222, 178, 90, 0.28), transparent 30%),
+        linear-gradient(115deg, rgba(44, 28, 18, 0.92), rgba(87, 52, 24, 0.88));
+      box-shadow:
+        0 22px 56px rgba(52, 30, 14, 0.26),
+        inset 0 1px 0 rgba(255, 245, 214, 0.18);
+    }
+
+    .home-guide-cta-inner::after {
+      content: "";
+      position: absolute;
+      right: 8%;
+      bottom: -86px;
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(239, 212, 154, 0.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(239, 212, 154, 0.04), 0 0 0 48px rgba(239, 212, 154, 0.03);
+      pointer-events: none;
+    }
+
+    .home-guide-cta-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 670px;
+    }
+
+    .home-guide-cta-kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: rgba(255, 224, 162, 0.72);
+      font-family: var(--font-latin);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .home-guide-cta h2 {
+      margin: 0;
+      color: #fff2ce;
+      font-family: var(--font-serif);
+      font-size: clamp(25px, 3vw, 40px);
+      line-height: 1.2;
+    }
+
+    .home-guide-cta p {
+      margin: 12px 0 0;
+      color: rgba(255, 244, 218, 0.72);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .home-guide-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 21px;
+      border: 1px solid rgba(255, 238, 194, 0.72);
+      border-radius: 999px;
+      color: #2d1d13;
+      background: linear-gradient(180deg, #f5d99a, #c88f3d);
+      box-shadow: 0 12px 26px rgba(26, 14, 7, 0.28), inset 0 1px 0 rgba(255,255,255,0.6);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+    }
+
+    .home-guide-link::after {
+      content: "→";
+      margin-left: 10px;
+      font-family: var(--font-latin);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .home-guide-link:hover,
+    .home-guide-link:focus-visible {
+      color: #2d1d13;
+      filter: brightness(1.06);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(26, 14, 7, 0.34), inset 0 1px 0 rgba(255,255,255,0.68);
+      outline: none;
+    }
+
     .filter-row {
       display: flex;
       flex-wrap: wrap;
@@ -1611,6 +1717,11 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .home-guide-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .audience {
         left: 0;
         right: 0;
@@ -1724,6 +1835,24 @@
 
       .catalog {
         width: calc(100% - 32px);
+      }
+
+      .home-guide-cta {
+        width: calc(100% - 32px);
+        padding-bottom: 64px;
+      }
+
+      .home-guide-cta-inner {
+        gap: 22px;
+        padding: 26px 22px 28px;
+      }
+
+      .home-guide-cta p {
+        font-size: 14px;
+      }
+
+      .home-guide-link {
+        width: 100%;
       }
 
       .filter-row,
@@ -1876,6 +2005,17 @@
 
       <div class="works-grid" id="worksGrid"></div>
     </section>
+
+    <section class="home-guide-cta" aria-labelledby="homeGuideTitle">
+      <div class="home-guide-cta-inner">
+        <div class="home-guide-cta-copy">
+          <span class="home-guide-cta-kicker" data-i18n="guideCtaKicker">Start with the guide</span>
+          <h2 id="homeGuideTitle" data-i18n="guideCtaTitle">第一次使用？先看一遍使用教程</h2>
+          <p data-i18n="guideCtaDescription">了解如何交给 Agent 材料、指定模板 ID，并直接生成可编辑的 PPTX。</p>
+        </div>
+        <a class="home-guide-link" href="guide.html" data-i18n="guideCtaAction">查看使用教程</a>
+      </div>
+    </section>
   </main>
 
   <main class="detail" id="detail">
@@ -1939,6 +2079,10 @@
         filterCourse: "课程展示",
         filterGrant: "基金申请",
         catalogNote: "让科研成果更快被看见",
+        guideCtaKicker: "Start with the guide",
+        guideCtaTitle: "第一次使用？先看一遍使用教程",
+        guideCtaDescription: "了解如何交给 Agent 材料、指定模板 ID，并直接生成可编辑的 PPTX。",
+        guideCtaAction: "查看使用教程",
         enter: "进入大屏展示",
         downloadPptx: "下载.pptx文件",
         templateLabel: "模板",
@@ -1968,6 +2112,10 @@
         filterCourse: "Course",
         filterGrant: "Grant",
         catalogNote: "Let research results be seen faster.",
+        guideCtaKicker: "Start with the guide",
+        guideCtaTitle: "New to EasySlides? Start with the guide.",
+        guideCtaDescription: "Learn how to provide materials, call a template by ID, and generate an editable PPTX.",
+        guideCtaAction: "Open the guide",
         enter: "Enter big screen",
         downloadPptx: "Download .pptx",
         templateLabel: "Template",
