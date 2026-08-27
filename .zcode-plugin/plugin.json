@@ -1,0 +1,23 @@
+{
+  "name": "easyslides",
+  "version": "1.0.0+zcode.20260827000000",
+  "description": "EasySlides creates editable academic PPTX decks and distills source PowerPoint files into content-free semantic templates, components, and symbols with fail-closed visual QA.",
+  "author": {
+    "name": "EasySlides contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "PowerPoint",
+    "PPTX",
+    "academic presentations",
+    "research presentations",
+    "editable slides",
+    "PPTX distillation",
+    "template extraction",
+    "EasySlides",
+    "蒸馏PPT",
+    "PPT模板",
+    "答辩PPT"
+  ],
+  "skills": "./skills/"
+}

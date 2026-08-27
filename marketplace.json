@@ -1,0 +1,30 @@
+{
+  "name": "easyslides",
+  "description": "EasySlides plugin marketplace: editable academic PPTX generation, template distillation, and visual QA for ZCode.",
+  "owner": {
+    "name": "Rimagination"
+  },
+  "plugins": [
+    {
+      "name": "easyslides",
+      "source": "./",
+      "icon": "https://raw.githubusercontent.com/Rimagination/easyslides/main/assets/icon.png",
+      "description": "Create, distill, edit, review, and export editable academic PPTX presentations (生成PPT、蒸馏PPT、复用模板、答辩PPT) with an SVG-to-DrawingML pipeline and fail-closed visual QA.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Rimagination"
+      },
+      "category": "productivity",
+      "keywords": [
+        "pptx",
+        "powerpoint",
+        "academic",
+        "presentation",
+        "template",
+        "蒸馏PPT",
+        "答辩PPT"
+      ],
+      "homepage": "https://github.com/Rimagination/easyslides"
+    }
+  ]
+}
