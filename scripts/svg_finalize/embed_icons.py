@@ -138,6 +138,30 @@ def resolve_icon_path(icon_name: str, icons_dir: Path) -> tuple[Path, float]:
     return icon_path, base_size
 
 
+def find_missing_icon_refs(svg_content: str, icons_dir: Path) -> list[str]:
+    """
+    Return data-icon references whose icon file does not exist on disk.
+
+    Scans ``<use data-icon="library/name" ...>`` placeholders and resolves
+    each through :func:`resolve_icon_path`. Export (svg_to_pptx) hard-fails
+    on unreplaced ``<use>`` elements, so a missing file here means the deck
+    cannot be exported — callers should treat this as an error, not a hint.
+
+    Returns a de-duplicated list of the original (unresolved) icon names.
+    """
+    missing: list[str] = []
+    seen: set[str] = set()
+    for match in re.finditer(r'data-icon="([^"]+)"', svg_content):
+        icon_name = match.group(1).strip()
+        if not icon_name or icon_name in seen:
+            continue
+        seen.add(icon_name)
+        icon_path, _base = resolve_icon_path(icon_name, icons_dir)
+        if not icon_path.exists():
+            missing.append(icon_name)
+    return missing
+
+
 def extract_paths_from_icon(icon_path: Path, target_color: str = '#000000') -> tuple[list[str], str, float]:
     """
     Extract drawable elements from an icon SVG file.
