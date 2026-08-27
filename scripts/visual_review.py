@@ -79,8 +79,10 @@ def _stage_slide_images(image_files: list[Path], output: Path) -> list[Path]:
     slides_dir = output / "slides"
     slides_dir.mkdir(parents=True, exist_ok=True)
     staged: list[Path] = []
-    for index, source in enumerate(image_files, start=1):
-        target = slides_dir / f"slide_{index:03d}.png"
+    for source in image_files:
+        # Keep the source page number so a filtered review (e.g. --slides 8)
+        # still refers to the deck's real slide numbers, not a re-numbered 1..N.
+        target = slides_dir / f"slide_{_slide_number(source):03d}.png"
         if source.resolve() != target.resolve():
             shutil.copy2(source, target)
         staged.append(target)
@@ -141,6 +143,7 @@ def build_review_package(
     skip_render: bool = False,
     dpi: int = 144,
     title: str | None = None,
+    only_pages: set[int] | None = None,
 ) -> dict[str, Any]:
     pptx = Path(pptx_path).resolve()
     output = Path(output_dir).resolve()
@@ -160,6 +163,11 @@ def build_review_package(
         }
 
     image_files = rendered_pngs(slides_dir)
+    if only_pages:
+        image_files = [
+            path for path in image_files
+            if _slide_number(path) in only_pages
+        ]
     if not image_files:
         raise ValueError(f"no rendered slide PNGs found: {slides_dir}")
     image_files = _stage_slide_images(image_files, output)
@@ -178,11 +186,11 @@ def build_review_package(
         "html": "index.html",
         "slides": [
             {
-                "slide": index,
+                "slide": _slide_number(path),
                 "image": path.relative_to(output).as_posix(),
                 "checks": ["readable", "aligned", "complete"],
             }
-            for index, path in enumerate(image_files, start=1)
+            for path in image_files
         ],
     }
     (output / "visual_review.json").write_text(
@@ -200,9 +208,33 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--rendered-dir", help="Use an existing rendered PNG directory.")
     parser.add_argument("--skip-render", action="store_true", help="Do not render; require --rendered-dir or existing --out/slides PNGs.")
     parser.add_argument("--dpi", type=int, default=144)
+    parser.add_argument("--slides", help=(
+        "Comma-separated 1-based slide numbers to keep in the review package, "
+        "e.g. --slides 1,8,14. Rendering still processes the whole deck "
+        "(the backend converts the file as a whole); the filter limits which "
+        "slides enter the manifest, contact sheet, and HTML — useful for "
+        "re-reviewing just the pages you fixed against --rendered-dir."
+    ))
     parser.add_argument("--title")
     parser.add_argument("--quiet", action="store_true")
     return parser
+
+
+def parse_slide_filter(spec: str | None) -> set[int] | None:
+    """'1,8-10' -> {1, 8, 9, 10}; None when no filter given."""
+    if not spec:
+        return None
+    pages: set[int] = set()
+    for part in spec.split(','):
+        part = part.strip()
+        if not part:
+            continue
+        if '-' in part:
+            lo, _, hi = part.partition('-')
+            pages.update(range(int(lo), int(hi) + 1))
+        else:
+            pages.add(int(part))
+    return pages or None
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -215,6 +247,7 @@ def main(argv: list[str] | None = None) -> int:
             skip_render=args.skip_render,
             dpi=args.dpi,
             title=args.title,
+            only_pages=parse_slide_filter(args.slides),
         )
     except Exception as exc:
         if not args.quiet:

@@ -34,6 +34,7 @@ Processing options:
 """
 
 import os
+import re
 import sys
 import shutil
 import argparse
@@ -161,6 +162,7 @@ def finalize_project(
         print()
 
     # Step 2: Embed icons
+    icons_residual: dict[str, int] = {}
     if options.get('embed_icons'):
         if not quiet:
             safe_print("[1/4] Embedding icons...")
@@ -168,11 +170,26 @@ def finalize_project(
         for svg_file in svg_final.glob('*.svg'):
             count = embed_icons_in_file(svg_file, icons_dir, dry_run=False, verbose=False)
             icons_count += count
+            residual = len(re.findall(r'<use[^>]*data-icon="', svg_file.read_text(encoding='utf-8')))
+            if residual:
+                icons_residual[svg_file.name] = residual
         if not quiet:
             if icons_count > 0:
                 safe_print(f"      {icons_count} icon(s) embedded")
             else:
                 safe_print("      No icons")
+        if icons_residual:
+            # Unresolved <use data-icon="..."> placeholders hard-fail PPTX
+            # export (SvgNativeConversionError). Fail here instead, with the
+            # full per-file list, so the problem is fixed in one round.
+            safe_print("")
+            safe_print("[ERROR] Unresolved icon placeholders remain after embedding:")
+            for name, count in sorted(icons_residual.items()):
+                safe_print(f"        {name}: {count} unresolved <use data-icon> element(s)")
+            safe_print(
+                "        Fix: correct the icon names, switch the library in "
+                "spec_lock.md, or run scripts/icon_inventory.py missing/fetch"
+            )
 
     # Step 3: Align (slice/meet) and Base64-embed all <image> in one pass.
     # Replaces the former crop-images / fix-aspect / embed-images trio: the
@@ -251,6 +268,11 @@ def finalize_project(
         print()
         print("Next steps:")
         print(f"  python scripts/svg_to_pptx.py \"{project_dir}\"")
+
+    # Unresolved icon placeholders would hard-fail the export step — treat
+    # the finalize run as failed so pipeline scripts stop here.
+    if icons_residual:
+        return False
 
     return True
 

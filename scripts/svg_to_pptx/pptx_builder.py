@@ -531,6 +531,10 @@ def create_pptx_with_native_svg(
         narration_slides_created: set[int] = set()
         audio_exts_used: set[str] = set()
         mixed_animation_offset = 0
+        # Native mode collects per-page failures and keeps converting the
+        # remaining slides, so one bad page surfaces every other bad page in
+        # a single run instead of one round-trip per fix.
+        native_failures: list[tuple[int, str, str]] = []
 
         for i, svg_path in enumerate(svg_files, 1):
             slide_num = i
@@ -831,9 +835,29 @@ def create_pptx_with_native_svg(
                 if verbose:
                     print(f"  [{i}/{len(svg_files)}] {svg_path.name} - Error: {e}")
                 if use_native_shapes:
-                    raise
+                    # Collect and continue: aborting on the first failure
+                    # hides every other broken page behind a fix-rerun loop.
+                    native_failures.append((i, svg_path.name, str(e)))
 
         # Update [Content_Types].xml
+        if native_failures:
+            # Never write a partial deck. Summarize every failed page — with
+            # the offending elements the converter named — then abort.
+            print()
+            print(f"[ERROR] Native conversion failed on {len(native_failures)} "
+                  f"of {len(svg_files)} page(s); no PPTX written:")
+            for page_num, name, message in native_failures:
+                print(f"  page {page_num:02d}  {name}")
+                print(f"          {message}")
+            print()
+            print("  Hint: run scripts/svg_quality_checker.py <project> — the "
+                  "icon preflight catches the most common cause (missing icon "
+                  "files) before export.")
+            raise RuntimeError(
+                f"native conversion failed on {len(native_failures)} page(s): "
+                + "; ".join(f"p{num} {name}" for num, name, _ in native_failures)
+            )
+
         content_types_path = extract_dir / '[Content_Types].xml'
         with open(content_types_path, 'r', encoding='utf-8') as f:
             content_types = f.read()

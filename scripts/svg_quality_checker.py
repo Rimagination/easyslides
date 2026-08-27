@@ -37,6 +37,56 @@ except ImportError:
     _parse_spec_lock = None  # spec_lock drift check will be skipped
 
 try:
+    from svg_finalize.embed_icons import find_missing_icon_refs as _find_missing_icon_refs
+except ImportError:
+    _find_missing_icon_refs = None  # icon preflight check will be skipped
+
+# Icons live in the repo's templates/icons directory regardless of which
+# project is being checked.
+_ICONS_DIR = Path(__file__).resolve().parent.parent / 'templates' / 'icons'
+
+
+def _decode_svg_entities(value: str) -> str:
+    """Decode the handful of XML entities SVG authors must escape.
+
+    Attribute values read as raw text still contain entities such as
+    ``&quot;`` (font-family stacks quote their family names). Comparisons
+    against spec_lock values — which hold the decoded characters — must run
+    on the decoded form, otherwise every quoted font stack drifts.
+    """
+    return (
+        value.replace('&quot;', '"')
+        .replace('&apos;', "'")
+        .replace('&lt;', '<')
+        .replace('&gt;', '>')
+        .replace('&amp;', '&')
+    )
+
+
+def _estimate_text_width_px(line: str, font_size: float) -> float:
+    """Cheap single-line width estimate in px.
+
+    CJK/fullwidth glyphs occupy ~1.0em; Latin digits ~0.6em; lowercase
+    ~0.5em; spaces ~0.3em; other punctuation ~0.45em. Deliberately crude —
+    the check is a warning-level tripwire for overflowing lines, not type
+    metrics.
+    """
+    width = 0.0
+    for ch in line:
+        code = ord(ch)
+        if code >= 0x2E80 or ch in '　，。：；！？、“”‘’（）《》【】':
+            width += font_size
+        elif ch == ' ':
+            width += font_size * 0.3
+        elif ch.isdigit() or ch.isupper():
+            width += font_size * 0.62
+        elif ch.islower():
+            width += font_size * 0.5
+        else:
+            width += font_size * 0.45
+    return width
+
+try:
     from svg_to_pptx.animation_config import (
         load_animation_config as _load_animation_config,
         validate_animation_config as _validate_animation_config,
@@ -259,6 +309,19 @@ class SVGQualityChecker:
                 #    image_sources.json; skip in template mode.
                 if not self.template_mode:
                     self._check_sourced_image_attribution(content, svg_path, result)
+
+                # 10. Check icon references against the on-disk library.
+                #     Unresolvable icons survive finalize as <use> placeholders
+                #     and hard-fail PPTX export, so this is an error, not a hint.
+                if not self.template_mode and _find_missing_icon_refs is not None:
+                    self._check_icon_references(content, result)
+
+                # 11. Warning-level text-overflow tripwire (CJK-aware width
+                #     estimate). Free-design pages have no slot capacity
+                #     contract, so this is the only early defense against
+                #     overflowing/overlapping single-line text.
+                if not self.template_mode:
+                    self._check_text_overflow(content, svg_path, result)
 
             # Determine pass/fail
             result['passed'] = len(result['errors']) == 0
@@ -626,6 +689,94 @@ class SVGQualityChecker:
                 return data
         return None
 
+    def _check_icon_references(self, content: str, result: Dict, icons_dir: Path = None):
+        """Error on <use data-icon="..."> refs whose icon file is missing.
+
+        finalize_svg leaves unresolved placeholders in place and PPTX export
+        then aborts with SvgNativeConversionError — catching this here moves
+        the failure to check time with a per-file, per-icon report.
+        """
+        if _find_missing_icon_refs is None:
+            return
+        base = icons_dir or _ICONS_DIR
+        for icon_name in _find_missing_icon_refs(content, base):
+            result['errors'].append(
+                f"Icon not found in library: {icon_name} "
+                f"(resolved under {base}) — PPTX export would fail; "
+                f"fix the name, switch the library in spec_lock.md, or run "
+                f"scripts/icon_inventory.py fetch"
+            )
+
+    def _check_text_overflow(self, content: str, svg_path: Path, result: Dict):
+        """Warn when a single logical text line likely overflows the canvas.
+
+        Free-design pages carry no slot capacity contract; this CJK-aware
+        width estimate is a tripwire, not a typesetter. Warn-level by design.
+        """
+        try:
+            root = ET.fromstring(content)
+        except ET.ParseError:
+            return  # well-formedness already reported by check 0
+
+        ns = '{http://www.w3.org/2000/svg}'
+        vb_match = re.search(r'viewBox="0\s+0\s+([\d.]+)\s+([\d.]+)"', content)
+        canvas_w = float(vb_match.group(1)) if vb_match else 1280.0
+        edge = canvas_w - 40.0  # 40px safe margin
+
+        def _lines(elem):
+            """Yield (x, anchor, font_size, text) per logical line."""
+            fs_raw = elem.get('font-size')
+            try:
+                fs = float(fs_raw) if fs_raw else None
+            except ValueError:
+                fs = None
+            anchor = elem.get('text-anchor', 'start')
+            line_tspans = [
+                t for t in elem.findall(f'{ns}tspan')
+                if t.get('x') is not None or t.get('dy') is not None
+            ]
+            if line_tspans:
+                head = (elem.text or '').strip()
+                if head:
+                    yield elem.get('x'), anchor, fs, head
+                for t in line_tspans:
+                    t_fs_raw = t.get('font-size')
+                    try:
+                        t_fs = float(t_fs_raw) if t_fs_raw else fs
+                    except ValueError:
+                        t_fs = fs
+                    yield (
+                        t.get('x'),
+                        t.get('text-anchor', anchor),
+                        t_fs,
+                        ''.join(t.itertext()),
+                    )
+            else:
+                yield elem.get('x'), anchor, fs, ''.join(elem.itertext())
+
+        for elem in root.iter(f'{ns}text'):
+            for x, anchor, fs, line in _lines(elem):
+                if not line.strip() or fs is None or x is None:
+                    continue  # unsizeable (inherited size) — leave to render QA
+                try:
+                    x_val = float(x)
+                except ValueError:
+                    continue
+                width = _estimate_text_width_px(line, fs)
+                if anchor == 'middle':
+                    left, right = x_val - width / 2, x_val + width / 2
+                elif anchor == 'end':
+                    left, right = x_val - width, x_val
+                else:
+                    left, right = x_val, x_val + width
+                if right > edge + 4 or left < -4:
+                    snippet = line.strip()[:24]
+                    result['warnings'].append(
+                        f"Possible text overflow: '{snippet}…' ~{width:.0f}px "
+                        f"@{fs:.0f}px spans [{left:.0f},{right:.0f}] vs canvas "
+                        f"{canvas_w:.0f}px (safe <={edge:.0f})"
+                    )
+
     def _check_spec_lock_drift(self, content: str, svg_path: Path, result: Dict):
         """Detect values used in the SVG that fall outside spec_lock.md.
 
@@ -689,8 +840,12 @@ class SVGQualityChecker:
         font_drifts = set()
         for m in re.finditer(r'font-family\s*=\s*["\']([^"\']+)["\']', content):
             val = m.group(1).strip()
-            if allowed_fonts and val not in allowed_fonts:
-                font_drifts.add(val)
+            # Attribute values read as raw text keep XML entities (&quot;…)
+            # while spec_lock holds decoded characters — compare on the
+            # decoded form to avoid flagging every quoted font stack.
+            val_decoded = _decode_svg_entities(val)
+            if allowed_fonts and val_decoded not in allowed_fonts and val not in allowed_fonts:
+                font_drifts.add(val_decoded)
 
         size_drifts = set()
         for m in re.finditer(r'font-size\s*=\s*["\']([^"\']+)["\']', content):
