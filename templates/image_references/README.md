@@ -33,7 +33,7 @@
 
 | ID | 显示名 |
 |---|---|
-| `rdp_blue_technology` | 重点研发-蓝色科技 |
+| `zdyf_blue` | 重点研发-蓝色科技 |
 | `nsfc_dark_blue` | 国自然-深蓝 |
 | `nsfc_bright_blue_white` | 国自然-亮蓝白 |
 | `nsfc_dark_blue_white` | 国自然-深蓝白 |
