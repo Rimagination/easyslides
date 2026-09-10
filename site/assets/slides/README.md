@@ -36,7 +36,7 @@ assets/slides/work-05/slide-02.jpg
 ...
 assets/slides/work-05/slide-16.jpg
 
-assets/slides/work-06/slide-01.jpg  image_full_rebuild
+assets/slides/work-06/slide-01.jpg  rdp_blue_technology
 assets/slides/work-06/slide-02.jpg
 ...
 assets/slides/work-06/slide-12.jpg
