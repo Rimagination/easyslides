@@ -35,6 +35,11 @@ assets/slides/work-05/slide-01.jpg  thu_speech
 assets/slides/work-05/slide-02.jpg
 ...
 assets/slides/work-05/slide-16.jpg
+
+assets/slides/work-06/slide-01.jpg  image_full_rebuild
+assets/slides/work-06/slide-02.jpg
+...
+assets/slides/work-06/slide-12.jpg
 ```
 
 Then register those paths in `slideAssets` inside `index.html`, and add the template id as the final field of the matching `copy.*.works` item. The detail page will place the selected image exactly inside the photo screen area and use the current mock slide only as a fallback.
