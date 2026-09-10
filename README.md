@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" id="中文">
 
 <p align="center">
   <img src="assets/logo.png" alt="EasySlides Logo" width="128" height="128">
@@ -6,21 +6,15 @@
 
 <h1 align="center">EasySlides</h1>
 
-[中文](#中文) | [English](#english)
-
 <p align="center">
-  <img alt="AI Agent Plugin" src="https://img.shields.io/badge/AI%20Agent-Plugin-2563EB?style=flat-square">
-  <img alt="Output: PPTX" src="https://img.shields.io/badge/Output-PPTX-D24726?style=flat-square">
+  <a href="CHANGELOG.md"><img alt="Version: 1.1.0" src="https://img.shields.io/badge/Version-v1.1.0-2563EB?style=flat-square"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-16A34A?style=flat-square"></a>
+  <img alt="Output: Editable PPTX" src="https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square">
 </p>
 
-<a id="中文"></a>
+让 Agent 把研究材料做成可编辑 PPT，支持直接制作、AI 生图后整页重建与局部重建。
 
-**用自然语言，把研究材料做成能讲、能改的 PPT。**
-
-EasySlides 是面向组会、文献精读、开题和答辩的 AI Agent 插件。提供论文、报告或参考 PPT，说明听众和重点，即可开始制作。
-
-当前版本：**1.1.0** · [更新与升级说明](CHANGELOG.md)
+[中文](#中文) | [English](#english)
 
 </div>
 
