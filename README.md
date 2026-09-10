@@ -1,3 +1,5 @@
+<div align="center">
+
 <p align="center">
   <img src="assets/logo.png" alt="EasySlides Logo" width="128" height="128">
 </p>
@@ -19,6 +21,8 @@
 EasySlides 是面向组会、文献精读、开题和答辩的 AI Agent 插件。提供论文、报告或参考 PPT，说明听众和重点，即可开始制作。
 
 当前版本：**1.1.0** · [更新与升级说明](CHANGELOG.md)
+
+</div>
 
 ### 模板与案例展厅
 
