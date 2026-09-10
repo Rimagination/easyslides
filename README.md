@@ -14,7 +14,7 @@
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-16A34A?style=flat-square"></a>
 </p>
 
-## 中文
+<a id="中文"></a>
 
 **用自然语言，把研究材料做成能讲、能改的 PPT。**
 
