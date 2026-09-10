@@ -80,7 +80,7 @@
     {"slot_id": "SUBTITLE", "role": "subtitle", "kind": "text", "required": true, "shell_id": "cover", "max_lines": 2},
     {"slot_id": "AUTHOR", "role": "metadata", "kind": "text", "required": true, "max_lines": 1},
     {"slot_id": "DATE", "role": "metadata", "kind": "text", "required": true, "max_lines": 1},
-    {"slot_id": "LOGO_IMAGE", "role": "logo", "kind": "image", "required": false, "shell_id": "toc", "image_fit": "contain"},
+    {"slot_id": "LOGO_IMAGE", "role": "logo", "kind": "image", "required": false, "image_fit": "contain", "image_frame": "none"},
     {"slot_id": "CHAPTER_NUM", "role": "chapter_number", "kind": "text", "required": true, "shell_id": "chapter", "max_lines": 1},
     {"slot_id": "CHAPTER_TITLE", "role": "chapter_title", "kind": "text", "required": true, "max_lines": 2},
     {"slot_id": "CHAPTER_DESC", "role": "chapter_desc", "kind": "text", "required": true, "shell_id": "chapter", "max_lines": 2},

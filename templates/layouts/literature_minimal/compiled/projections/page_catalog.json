@@ -64,6 +64,14 @@
       "svg_path": "templates/layouts/literature_minimal/02_toc.svg",
       "slots": [
         {
+          "slot_id": "LOGO_IMAGE",
+          "role": "logo",
+          "kind": "image",
+          "required": false,
+          "image_fit": "contain",
+          "image_frame": "none"
+        },
+        {
           "slot_id": "TOC_ITEM_1_TITLE",
           "role": "toc_item",
           "max_lines": 2,
@@ -132,14 +140,6 @@
           "max_lines": 2,
           "kind": "text",
           "required": true
-        },
-        {
-          "slot_id": "LOGO_IMAGE",
-          "role": "logo_image",
-          "kind": "text",
-          "max_lines": 1,
-          "max_chars_per_line": 24,
-          "required": true
         }
       ],
       "regions": [
@@ -167,6 +167,14 @@
       "archetype": "",
       "svg_path": "templates/layouts/literature_minimal/02_chapter.svg",
       "slots": [
+        {
+          "slot_id": "LOGO_IMAGE",
+          "role": "logo",
+          "kind": "image",
+          "required": false,
+          "image_fit": "contain",
+          "image_frame": "none"
+        },
         {
           "slot_id": "CHAPTER_NUM",
           "role": "chapter_number",

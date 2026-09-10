@@ -282,6 +282,14 @@
       "svg_path": "templates/layouts/literature_minimal/02_toc.svg",
       "slots": [
         {
+          "slot_id": "LOGO_IMAGE",
+          "role": "logo",
+          "kind": "image",
+          "required": false,
+          "image_fit": "contain",
+          "image_frame": "none"
+        },
+        {
           "slot_id": "TOC_ITEM_1_TITLE",
           "role": "toc_item",
           "max_lines": 2,
@@ -350,14 +358,6 @@
           "max_lines": 2,
           "kind": "text",
           "required": true
-        },
-        {
-          "slot_id": "LOGO_IMAGE",
-          "role": "logo_image",
-          "kind": "text",
-          "max_lines": 1,
-          "max_chars_per_line": 24,
-          "required": true
         }
       ],
       "regions": [
@@ -385,6 +385,14 @@
       "archetype": "",
       "svg_path": "templates/layouts/literature_minimal/02_chapter.svg",
       "slots": [
+        {
+          "slot_id": "LOGO_IMAGE",
+          "role": "logo",
+          "kind": "image",
+          "required": false,
+          "image_fit": "contain",
+          "image_frame": "none"
+        },
         {
           "slot_id": "CHAPTER_NUM",
           "role": "chapter_number",
@@ -629,7 +637,7 @@
     },
     "shells": {
       "path": "templates/layouts/literature_minimal/layouts.json",
-      "sha256": "7dbf500229533baa013e4223fbce137239c7be031c0c8af3854920a53a8818aa"
+      "sha256": "7e6503c6b0520afeda698be87c816077d17b59a890c834443fded7affa6be45e"
     },
     "body_variants": {
       "path": "templates/layouts/literature_minimal/body_variants.json",
@@ -716,5 +724,5 @@
     ],
     "status": "pass"
   },
-  "source_digest": "c24b7159c2b31e234bb9daaa4f6024ae59d164ceb71667ab7a31dd6b797e56c3"
+  "source_digest": "68f8e946a4947d70f10d6ed03edda9f8cd63f0129b742afaa4db482950bb9730"
 }

@@ -24,6 +24,7 @@
       "svg_path": "02_toc.svg",
       "role": "toc",
       "slots": [
+        "LOGO_IMAGE",
         "TOC_ITEM_1_TITLE",
         "TOC_ITEM_2_TITLE",
         "TOC_ITEM_3_TITLE",
@@ -41,6 +42,7 @@
       "svg_path": "02_chapter.svg",
       "role": "chapter",
       "slots": [
+        "LOGO_IMAGE",
         "CHAPTER_NUM",
         "CHAPTER_TITLE",
         "CHAPTER_DESC"
@@ -247,6 +249,14 @@
     ],
     "toc": [
       {
+        "slot_id": "LOGO_IMAGE",
+        "role": "logo",
+        "kind": "image",
+        "required": false,
+        "image_fit": "contain",
+        "image_frame": "none"
+      },
+      {
         "slot_id": "TOC_ITEM_1_TITLE",
         "role": "toc_item",
         "max_lines": 2
@@ -298,6 +308,14 @@
       }
     ],
     "chapter": [
+      {
+        "slot_id": "LOGO_IMAGE",
+        "role": "logo",
+        "kind": "image",
+        "required": false,
+        "image_fit": "contain",
+        "image_frame": "none"
+      },
       {
         "slot_id": "CHAPTER_NUM",
         "role": "chapter_number",

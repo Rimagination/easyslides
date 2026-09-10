@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- 修复 `literature_minimal` 目录页、章节页的可选 Logo：未提供时移除整个框组，提供时绑定框内图片；补充原生 PPTX 导出与编辑保存测试（[#1](https://github.com/Rimagination/easyslides/issues/1)）。
+- 修复组内文字槽位与作者、日期等行内槽位的填充，保留外框、字体和固定标签。
+- Both renderers now bind grouped image slots without replacing their frames. Raw templates still require placeholder filling before export; `*_svg.pptx` is the image-reference copy, while the primary `.pptx` contains editable shapes.
+
 ## 1.1.0 - 2026-09-10
 
 ### 面向用户

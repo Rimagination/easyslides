@@ -20,6 +20,11 @@ from pathlib import Path
 from typing import Any
 import xml.etree.ElementTree as ET
 
+try:
+    from scripts.svg_slot_binding import set_image_slot_href, slot_content_node
+except ModuleNotFoundError:  # direct script execution
+    from svg_slot_binding import set_image_slot_href, slot_content_node
+
 
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
@@ -183,8 +188,12 @@ def _remove_node(root: ET.Element, node: ET.Element) -> None:
 
 
 def _set_text(node: ET.Element, lines: list[str], *, bullet: bool, line_height: int) -> None:
+    node = slot_content_node(node, "text")
     for child in list(node):
         node.remove(child)
+    if _local_name(node.tag) == "tspan":
+        node.text = "\n".join(f"• {line}" if bullet else line for line in lines)
+        return
     node.text = None
     x = node.attrib.get("x", "0")
     for index, line in enumerate(lines):
@@ -278,8 +287,7 @@ def render_slide(
             if not source.is_file():
                 raise SemanticTemplateError(f"image slot {slot_id!r} references missing file: {source}")
             href = _copy_image(source, assets_dir)
-            node.set("href", href)
-            node.set(f"{{{XLINK_NS}}}href", href)
+            set_image_slot_href(node, href)
         else:
             raise SemanticTemplateError(f"unsupported slot kind {kind!r}")
         rendered_slots.append(slot_id)

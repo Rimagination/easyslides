@@ -23,11 +23,13 @@ try:
     from scripts.template_compiler import ROOT, TemplateCompileError, compile_template, read_json, write_json
     from scripts.adaptive_bullets import sync_adaptive_bullets
     from scripts.image_fit import apply_image_fit_policy
+    from scripts.svg_slot_binding import set_image_slot_href, slot_content_node
     from scripts.theme_tokens import apply_theme_overrides, theme_replacements_for_overrides
 except ModuleNotFoundError:  # pragma: no cover
     from template_compiler import ROOT, TemplateCompileError, compile_template, read_json, write_json
     from adaptive_bullets import sync_adaptive_bullets
     from image_fit import apply_image_fit_policy
+    from svg_slot_binding import set_image_slot_href, slot_content_node
     from theme_tokens import apply_theme_overrides, theme_replacements_for_overrides
 
 
@@ -1136,9 +1138,13 @@ def _text_lines(value: object) -> list[str]:
 
 
 def _set_centered_text(node: ET.Element, value: object) -> None:
+    node = slot_content_node(node, "text")
     lines = _text_lines(value) or [""]
     for child in list(node):
         node.remove(child)
+    if _local_name(node.tag) == "tspan":
+        node.text = "\n".join(lines)
+        return
     node.text = None
     font_size = float(node.attrib.get("font-size") or 24)
     line_height = font_size * float(node.attrib.get("data-pptx-line-height-ratio") or 1.15)
@@ -1465,8 +1471,7 @@ def _apply_payload(
             if not source.is_file():
                 raise SlideCompileError(f"image slot {slot_id!r} references missing file: {source}")
             href = _copy_asset(source, assets_dir)
-            node.set("href", href)
-            node.set(f"{{{XLINK_NS}}}href", href)
+            set_image_slot_href(node, href)
         else:
             raise SlideCompileError(f"unsupported slot kind {kind!r}")
     # Contract metadata is authoritative for image geometry.  In particular,

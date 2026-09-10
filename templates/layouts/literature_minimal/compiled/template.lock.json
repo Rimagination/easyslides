@@ -2,7 +2,7 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "literature_minimal",
   "package_version": "1.0.0",
-  "source_digest": "c24b7159c2b31e234bb9daaa4f6024ae59d164ceb71667ab7a31dd6b797e56c3",
+  "source_digest": "68f8e946a4947d70f10d6ed03edda9f8cd63f0129b742afaa4db482950bb9730",
   "sources": {
     "package": {
       "path": "templates/layouts/literature_minimal/template_package.json",
@@ -10,7 +10,7 @@
     },
     "shells": {
       "path": "templates/layouts/literature_minimal/layouts.json",
-      "sha256": "7dbf500229533baa013e4223fbce137239c7be031c0c8af3854920a53a8818aa"
+      "sha256": "7e6503c6b0520afeda698be87c816077d17b59a890c834443fded7affa6be45e"
     },
     "body_variants": {
       "path": "templates/layouts/literature_minimal/body_variants.json",
