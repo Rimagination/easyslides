@@ -4,6 +4,65 @@ description: Start the browser SVG editor when it is not running, and apply subm
 
 # Live Preview Workflow
 
+## Original imagegen preview and selective reconstruction
+
+When the user wants to mark elements on the imagegen version, preview the original
+generated images directly. Do not use reconstructed SVGs, editable PPTX renders,
+or a revised layout as the annotation reference. This mode runs before PPT export
+and does not require the Step 7 gate below.
+
+```powershell
+python scripts/svg_editor/server.py <project_path> --source-images <original_image_directory> --timeout 0
+```
+
+Use the Codex in-app browser's built-in annotations. The page is a read-only
+original-image viewer with thumbnails, page navigation and zoom. Do not add a
+second rectangle-drawing layer, annotation form, or submit button to the page.
+Open a specific slide with `?slide=slide_012.png`; page navigation updates the URL
+and document title so browser feedback identifies the source slide. The visible
+`#original` image exposes `data-source-slide`, `data-source-version`,
+`data-source-width` and `data-source-height`, and its `src` references the original
+image bytes. Leave the image unobstructed for browser annotation targeting.
+
+Built-in browser feedback arrives in the conversation. It is not automatically
+written to `source_image_review.json`, and the preview does not trigger a rebuild.
+The earlier JSON records and API remain compatible for already submitted work;
+the new viewer never saves, deletes, or resets those records.
+
+When the user asks to apply these annotations:
+
+1. Read the submitted browser feedback, source-page URL and any attached screenshot
+   or element context in the conversation. Resolve the exact original slide from
+   the filename, not the currently active browser tab. For earlier custom-form
+   submissions, run `python scripts/check_annotations.py <project_path>`. An empty
+   JSON queue does not mean that no built-in browser feedback was submitted.
+2. Inspect the original image and selected region. Use the note to determine the
+   semantic object; a rectangle can contain background or neighboring objects
+   that the user did not ask to rebuild. Compare source dimensions/version with
+   the submitted context when present; ask again if the source changed. For
+   screenshot-coordinate selections, account for the displayed image's position
+   and scale before mapping to original pixels. Browser element selection may
+   identify the whole slide image, so use the note and screenshot to locate the
+   requested object. If the exact object remains ambiguous, ask one concise
+   question; do not invent a bounding box or rebuild the whole page.
+3. Reconstruct only requested objects with `scansci-svg`, preserving their
+   original position, content and relationships. Unselected content remains from
+   the original image, except necessary local background recovery. Do not reuse
+   the previously simplified editable PPT as the visual reference.
+4. Preview the local replacement against the original, disclosing necessary
+   background recovery or simplification. For targets with unresolved boundaries,
+   obtain clarification before replacing nearby content.
+5. Assemble the accepted vectors/text with the retained image content using the
+   existing native PPT export path. Verify the replacement is editable and that
+   untouched areas have not changed. Report completion against the submitted
+   browser notes and show a comparison separately, leaving the preview on the
+   original. For legacy JSON records only, mark completed IDs as `applied` and
+   advance the revision to prevent stale writes. Do not claim to resolve a native
+   browser comment programmatically without a supported integration.
+
+The existing SVG-element workflow below remains available for editing an already
+constructed SVG. Its export prerequisite does not apply to original-image review.
+
 > **Purpose**: (1) start/reopen the browser SVG editor when no preview service is currently running, and (2) apply user-submitted annotations after Step 7 export completes.
 >
 > **Not in scope**: Executor's mandatory auto-startup — that lives in [`SKILL.md`](../SKILL.md) Step 6. Do not re-launch a preview that is already running.

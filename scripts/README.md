@@ -103,11 +103,14 @@ python3 scripts/project_manager.py validate <project_path>
 Slide image reconstruction:
 
 ```bash
-python3 scripts/image_reconstruction_pipeline.py init <project_path> <slide_001.png>
+python3 scripts/image_reconstruction_pipeline.py init <project_path> <slide_001.png> --production-scheme <confirmed_scheme> --reconstruction-mode <confirmed_mode>
 python3 scripts/slide_image_inventory.py validate <project_path>/analysis/_analysis.json --report <project_path>/reports/slide_image_inventory_report.json
 python3 scripts/image_reconstruction_pipeline.py qa <project_path> --pptx <project_path>/pptx/output.pptx --rendered-dir <project_path>/reports/rendered_png
 python3 scripts/image_reconstruction_pipeline.py qa <project_path> --mode pixel-strict --pptx <project_path>/pptx/output.pptx --rendered-dir <project_path>/reports/rendered_png
 ```
+
+For image reconstruction, use the user's confirmed scheme and mode from
+[`workflows/clarification-gate.md`](../workflows/clarification-gate.md).
 
 Template source import:
 

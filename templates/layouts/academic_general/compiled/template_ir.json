@@ -2632,6 +2632,14 @@
       "path": "templates/layouts/academic_general/capability_profile.json",
       "sha256": "fb87adc39b182768041e6511b0aa162f0ba8fb1c5676d81070e671a110d01d9f"
     },
+    "theme_palettes.json": {
+      "path": "templates/layouts/academic_general/theme_palettes.json",
+      "sha256": "e751f48853df4422fb3ed393e291826b08af92b863d770d537fe959fda4d13ba"
+    },
+    "design_spec.md": {
+      "path": "templates/layouts/academic_general/design_spec.md",
+      "sha256": "90ef5f4833393b9b4eb76d9c55fba358704753e01df0d48966e92fc4a977f40f"
+    },
     "shell:cover": {
       "path": "templates/layouts/academic_general/01_cover.svg",
       "sha256": "5b595d7b2dedc55210628fe6d96e8a825cd553dc72bf508ce66d8dc814ca1748"
@@ -2733,5 +2741,50 @@
       "sha256": "67ecf2eadee472db897e171fa0623b7596f783c9d6b8bca089ab6293e82c4577"
     }
   },
-  "source_digest": "24047351e230bdb092fd5e427748aba251de999e26a39d8255632424deab1e20"
+  "theme": {
+    "schema_version": "easyslides.theme_tokens.v1",
+    "template_id": "academic_general",
+    "palette_id": "academic_blue",
+    "source": "theme_palettes.json",
+    "tokens": {
+      "background": "#FFFFFF",
+      "surface": "#F5F7FA",
+      "primary": "#003366",
+      "primary_dark": "#002244",
+      "accent": "#0066CC",
+      "text_on_light": "#333333",
+      "text_on_dark": "#FFFFFF",
+      "muted_on_light": "#666666",
+      "muted_on_dark": "#E8F4FC",
+      "border": "#D0D7E0",
+      "scrim_dark": "#000000",
+      "scrim_light": "#FFFFFF"
+    },
+    "replacements": {
+      "#FFFFFF": "#FFFFFF",
+      "#F5F7FA": "#F5F7FA",
+      "#003366": "#003366",
+      "#002244": "#002244",
+      "#0066CC": "#0066CC",
+      "#CC0000": "#CC0000",
+      "#D0D7E0": "#D0D7E0",
+      "#333333": "#333333"
+    },
+    "required_roles": [
+      "background",
+      "surface",
+      "primary",
+      "primary_dark",
+      "accent",
+      "text_on_light",
+      "text_on_dark",
+      "muted_on_light",
+      "muted_on_dark",
+      "border",
+      "scrim_dark",
+      "scrim_light"
+    ],
+    "status": "pass"
+  },
+  "source_digest": "3597229c6c3406ab8b000897bac48db0924305c5ab56df526a4c937c45b2c4ce"
 }

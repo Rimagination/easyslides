@@ -1,0 +1,40 @@
+{
+  "schema_version": "easyslides.theme_palettes.v1",
+  "template_id": "literature_minimal",
+  "default_palette": "literature_blue",
+  "replace_roles": ["background", "surface", "primary", "primary_dark", "accent", "accent_secondary", "border", "text_on_light"],
+  "palettes": {
+    "literature_blue": {
+      "name": "Literature Blue",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F5F9FE",
+        "primary": "#0D5DBE",
+        "primary_dark": "#0E2841",
+        "accent": "#0D5DBE",
+        "accent_secondary": "#4B5563",
+        "text_on_light": "#1F2937",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#6B7280",
+        "muted_on_dark": "#E5EDF8",
+        "border": "#D9E4F2"
+      }
+    },
+    "literature_ink": {
+      "name": "Literature Ink",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F7F7F6",
+        "primary": "#242424",
+        "primary_dark": "#111111",
+        "accent": "#A23B3B",
+        "accent_secondary": "#C28B3C",
+        "text_on_light": "#1A1A1A",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#656565",
+        "muted_on_dark": "#E7E7E7",
+        "border": "#D9D9D9"
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "easyslides.template_lock.v1",
+  "template_id": "literature_minimal",
+  "package_version": "1.0.0",
+  "source_digest": "c24b7159c2b31e234bb9daaa4f6024ae59d164ceb71667ab7a31dd6b797e56c3",
+  "sources": {
+    "package": {
+      "path": "templates/layouts/literature_minimal/template_package.json",
+      "sha256": "7120a24a20d7b6f3a0912bc54c09509fb0c1f086ffc7067b6b07b2fab80e6dcc"
+    },
+    "shells": {
+      "path": "templates/layouts/literature_minimal/layouts.json",
+      "sha256": "7dbf500229533baa013e4223fbce137239c7be031c0c8af3854920a53a8818aa"
+    },
+    "body_variants": {
+      "path": "templates/layouts/literature_minimal/body_variants.json",
+      "sha256": "d69b5e6a6bca203a15074212f20f1c59ea98dcd728461a9b8c7128eeadb5453e"
+    },
+    "components": {
+      "path": "templates/layouts/literature_minimal/component_catalog.json",
+      "sha256": "631728250030edf1e77029761d79cbc326ad2ed27d4877526897fd3cb90d40da"
+    },
+    "capability_profile": {
+      "path": "templates/layouts/literature_minimal/capability_profile.json",
+      "sha256": "5672cfd28b72ed07da2ab1d875c80b58527507e748a28bdbd0b6633a4aa57864"
+    },
+    "theme_palettes.json": {
+      "path": "templates/layouts/literature_minimal/theme_palettes.json",
+      "sha256": "954dfcd99922c69e57bbf75e60a278a7036523672fe4cf830d768ceb49852aa1"
+    },
+    "design_spec.md": {
+      "path": "templates/layouts/literature_minimal/design_spec.md",
+      "sha256": "7370dc324a0a7f09cf354cdd65e63547f22625cd70e5ed9232ed2b682f68a9a9"
+    },
+    "shell:cover": {
+      "path": "templates/layouts/literature_minimal/01_cover.svg",
+      "sha256": "aaf96c9722daea7ee4464133211aecbab18f5a8d7cf5e09195baf87323a949ff"
+    },
+    "shell:toc": {
+      "path": "templates/layouts/literature_minimal/02_toc.svg",
+      "sha256": "5ea18cf4eb4a6e7df61a5439bfa5aaa524d4cd0a96b6688a6e9188993e7ceb9e"
+    },
+    "shell:chapter": {
+      "path": "templates/layouts/literature_minimal/02_chapter.svg",
+      "sha256": "3bbdab7341fc172dc65672b0643e9765bcaf5727bd20bd117414cd7bf041b2be"
+    },
+    "shell:content": {
+      "path": "templates/layouts/literature_minimal/03_content.svg",
+      "sha256": "2645d8bb1e2b598fc175a8cfd2f145ec3456d593b13055f1dd2844200c0baa66"
+    },
+    "shell:ending": {
+      "path": "templates/layouts/literature_minimal/04_ending.svg",
+      "sha256": "7b3ffe4aecb22e1144e1a45814dbd6597895e366db0affbec6a920bc0bbc63cd"
+    }
+  },
+  "component_dependencies": [],
+  "component_pack": {
+    "pack_id": "",
+    "version": "",
+    "scope": "",
+    "dependencies": [],
+    "design_tokens": {}
+  },
+  "capability_profile": {
+    "schema_version": "easyslides.template_capability_profile.v1",
+    "lifecycle": "legacy",
+    "generation_enabled": true,
+    "composition": {
+      "mode": "body_variant_only",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module"
+      ],
+      "allow_global_component_fallback": false,
+      "allowed_component_packs": [],
+      "requires_declared_body_variant": true
+    },
+    "selection_policy": {
+      "template_affinity": "required",
+      "undeclared_assets": "reject",
+      "manual_selection": "must_be_declared",
+      "missing_profile": "block_named_template_component_selection"
+    },
+    "required_gates": [
+      "template_capability_profile",
+      "component_plan_contract",
+      "visual_measure_gate"
+    ]
+  }
+}

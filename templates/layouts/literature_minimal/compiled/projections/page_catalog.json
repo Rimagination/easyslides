@@ -1,0 +1,400 @@
+{
+  "schema_version": "easyslides.page_catalog_projection.v1",
+  "derived_from": "compiled/template_ir.json",
+  "template_id": "literature_minimal",
+  "pages": [
+    {
+      "shell_id": "cover",
+      "role": "cover",
+      "archetype": "",
+      "svg_path": "templates/layouts/literature_minimal/01_cover.svg",
+      "slots": [
+        {
+          "slot_id": "TITLE",
+          "role": "cover_title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "role": "subtitle",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "AUTHOR",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "DATE",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "toc",
+      "role": "toc",
+      "archetype": "",
+      "svg_path": "templates/layouts/literature_minimal/02_toc.svg",
+      "slots": [
+        {
+          "slot_id": "TOC_ITEM_1_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_2_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_3_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_4_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_5_TITLE",
+          "role": "toc_item",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_1_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_2_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_3_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_4_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "TOC_ITEM_5_DESC",
+          "role": "toc_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "LOGO_IMAGE",
+          "role": "logo_image",
+          "kind": "text",
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "chapter",
+      "role": "chapter",
+      "archetype": "",
+      "svg_path": "templates/layouts/literature_minimal/02_chapter.svg",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_NUM",
+          "role": "chapter_number",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "role": "chapter_title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "CHAPTER_DESC",
+          "role": "chapter_desc",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "content",
+      "role": "content",
+      "archetype": "",
+      "svg_path": "templates/layouts/literature_minimal/03_content.svg",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "role": "section_label",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "role": "page_title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "role": "key_message",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "CONTENT_BODY",
+          "role": "body",
+          "max_lines": 10,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "SOURCE",
+          "role": "source",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "role": "page_number",
+          "fixed_geometry": true,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "body_canvas",
+          "frame": {
+            "x": 54.0,
+            "y": 208.0,
+            "width": 1172.0,
+            "height": 452.0
+          },
+          "z_index": 10,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    },
+    {
+      "shell_id": "ending",
+      "role": "ending",
+      "archetype": "",
+      "svg_path": "templates/layouts/literature_minimal/04_ending.svg",
+      "slots": [
+        {
+          "slot_id": "THANK_YOU",
+          "role": "closing_title",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "ENDING_SUBTITLE",
+          "role": "subtitle",
+          "max_lines": 2,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "AUTHOR",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        },
+        {
+          "slot_id": "DATE",
+          "role": "metadata",
+          "max_lines": 1,
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "regions": [
+        {
+          "region_id": "canvas",
+          "frame": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1280.0,
+            "height": 720.0
+          },
+          "z_index": 0,
+          "fit": "contain",
+          "allow_overlap": false
+        }
+      ],
+      "body_variant_ids": [],
+      "content_shell_policy": "",
+      "body_canvas": null,
+      "legacy_shadow_slots": []
+    }
+  ],
+  "body_variants": [
+    {
+      "variant_id": "flexible_content",
+      "shell_id": "content",
+      "composition_mode": "open_content_area",
+      "best_for": "Minimal literature-report content pages with one claim and concise body text.",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [],
+      "regions": [],
+      "clear_region": null,
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [],
+      "composition_scene": "",
+      "coordinate_space": "",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    },
+    {
+      "variant_id": "result_with_figure",
+      "shell_id": "content",
+      "composition_mode": "open_content_area",
+      "best_for": "Paper result, architecture, method, or table pages where one source figure is the main exhibit.",
+      "selection": {
+        "content_shapes": [],
+        "density": null,
+        "figure_count": null,
+        "min_items": null,
+        "max_items": null,
+        "story_roles": [
+          "content"
+        ],
+        "priority": 0
+      },
+      "slots": [],
+      "regions": [],
+      "clear_region": null,
+      "component_refs": [],
+      "component_recipe": {},
+      "component_dependency_asset_ids": [],
+      "source_slides": [],
+      "composition_scene": "",
+      "coordinate_space": "",
+      "source_guidance": {
+        "section": "",
+        "sections": [],
+        "narrative_step": null,
+        "source_page_purpose": ""
+      }
+    }
+  ]
+}

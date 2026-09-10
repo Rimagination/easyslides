@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EasySlides Examples</title>
+  <title>EasySlides · 模板与案例展厅</title>
   <link rel="icon" type="image/png" href="assets/brand/scansci-app-icon-64.png">
   <link rel="preload" as="image" href="assets/seminar-hall.webp" type="image/webp" fetchpriority="high">
   <style>
@@ -1948,6 +1948,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/image-gallery.css">
 </head>
 <body data-lang="zh" data-view="home">
   <header class="topbar">
@@ -1961,7 +1962,7 @@
     </div>
     <div class="top-actions">
       <nav class="nav">
-        <a href="#catalog" data-i18n="navCatalog">实例</a>
+        <a href="#catalog" data-i18n="navCatalog">模板与案例</a>
         <a href="guide.html" data-i18n="navDetail">使用教程</a>
       </nav>
       <div class="lang-toggle" aria-label="Language switcher">
@@ -1992,6 +1993,11 @@
     </section>
 
     <section class="catalog" id="catalog">
+      <div class="library-tabs" role="tablist" aria-label="Template libraries">
+        <button id="nativeTab" type="button" role="tab" aria-selected="true" aria-controls="nativePanel" data-library="native">原生模板</button>
+        <button id="imageTab" type="button" role="tab" aria-selected="false" aria-controls="imagePanel" data-library="image" tabindex="-1">图片参考模板</button>
+      </div>
+      <div id="nativePanel" role="tabpanel" aria-labelledby="nativeTab">
       <div class="filter-row">
         <div class="filter-tabs" aria-label="PPT type filters">
           <button type="button" class="active" data-filter="all" data-i18n="filterAll">全部</button>
@@ -2004,6 +2010,12 @@
       </div>
 
       <div class="works-grid" id="worksGrid"></div>
+      </div>
+      <div id="imagePanel" role="tabpanel" aria-labelledby="imageTab" hidden>
+        <p id="imageLibrarySummary"></p>
+        <div class="works-grid" id="imageGrid"></div>
+        <p id="imageLibraryStatus" role="status"></p>
+      </div>
     </section>
 
     <section class="home-guide-cta" aria-labelledby="homeGuideTitle">
@@ -2064,7 +2076,7 @@
   <script>
     const copy = {
       zh: {
-        navCatalog: "实例",
+        navCatalog: "模板与案例",
         navDetail: "使用教程",
         homeKicker: "Golden hall research showcase",
         homeTitle: "EasySlides",
@@ -2097,7 +2109,7 @@
         ],
       },
       en: {
-        navCatalog: "Catalog",
+        navCatalog: "Gallery",
         navDetail: "Guide",
         homeKicker: "Golden hall research showcase",
         homeTitle: "EasySlides",
@@ -2281,6 +2293,7 @@
       });
       renderWorks(document.querySelector(".filter-tabs button.active")?.dataset.filter || "all");
       updateDetail(activeWorkIndex);
+      window.renderImageReferences?.();
     }
 
     function renderWorks(filter) {
@@ -2467,5 +2480,7 @@
       openDetail(Number.isFinite(requested) ? requested : 0);
     }
   </script>
+  <script src="assets/image-references/catalog.js"></script>
+  <script src="assets/image-gallery.js"></script>
 </body>
 </html>

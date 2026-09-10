@@ -1,7 +1,7 @@
 {
   "name": "easyslides",
-  "version": "1.0.0+zcode.20260827000000",
-  "description": "EasySlides creates editable academic PPTX decks and distills source PowerPoint files into content-free semantic templates, components, and symbols with fail-closed visual QA.",
+  "version": "1.1.0",
+  "description": "Create editable research presentations, reuse native and image-reference templates, or rebuild approved images as whole slides or selected regions. New image generation requires a supported host; approved images can be supplied directly.",
   "author": {
     "name": "EasySlides contributors"
   },

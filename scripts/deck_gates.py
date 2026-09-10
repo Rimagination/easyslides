@@ -21,12 +21,14 @@ try:
     from scripts.deck_plan_contract import validate_deck_plan_file
     from scripts.design_plan_contract import validate_design_plan_file
     from scripts.review_contract import validate_review_file
+    from scripts.clarification_gate import validate_clarification_request
 except ModuleNotFoundError:  # pragma: no cover
     from component_plan_contract import validate_component_plan_file
     from content_plan_contract import validate_content_plan_file
     from deck_plan_contract import validate_deck_plan_file
     from design_plan_contract import validate_design_plan_file
     from review_contract import validate_review_file
+    from clarification_gate import validate_clarification_request
 
 
 SCHEMA_VERSION = "easyslides.deck_gates.v1"
@@ -108,7 +110,7 @@ def run_deck_gates(
     clarification = _read_json(clarification_path)
     if clarification is None:
         gates.append(_gate("clarification", "fail", issues=[issue("CLARIFICATION-MISSING", "clarification_request.json is required for production delivery", str(clarification_path))]))
-    elif clarification.get("status") != "confirmed":
+    elif clarification.get("status") != "confirmed" or validate_clarification_request(clarification)["status"] != "pass":
         gates.append(_gate("clarification", "fail", clarification, [issue("CLARIFICATION-UNCONFIRMED", "clarification request is not confirmed", str(clarification_path))]))
     else:
         gates.append(_gate("clarification", "pass", clarification))

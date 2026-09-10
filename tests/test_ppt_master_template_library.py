@@ -623,10 +623,12 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
             "story_structure.json",
             "template.json",
             "layout_roster.json",
-            "slot_contracts.json",
             "links.json",
         ]:
             self.assertFalse((template_dir / sidecar).exists(), sidecar)
+
+        for contract in ("slot_contracts.json", "template_package.json", "component_catalog.json"):
+            self.assertIsInstance(json.loads((template_dir / contract).read_text(encoding="utf-8")), dict)
 
         content_text = (template_dir / "03_content.svg").read_text(encoding="utf-8")
         for slot in ("PAGE_TITLE", "CHAPTER_TITLE", "KEY_MESSAGE", "CONTENT_BODY", "SOURCE", "PAGE_NUM"):

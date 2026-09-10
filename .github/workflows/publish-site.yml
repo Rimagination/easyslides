@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - site/**
+      - templates/image_references/**
+      - scripts/build_image_reference_site.py
       - .github/workflows/publish-site.yml
   workflow_dispatch:
 
@@ -30,6 +32,9 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
+      - name: Build image-reference gallery assets
+        run: python3 scripts/build_image_reference_site.py
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v5

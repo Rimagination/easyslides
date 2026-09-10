@@ -9,6 +9,56 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class PluginDistillContractTests(unittest.TestCase):
+    def test_choice_options_disclose_relative_cost_and_time(self):
+        gate = (ROOT / "workflows/clarification-gate.md").read_text(encoding="utf-8")
+        options = [line for line in gate.splitlines() if line.startswith("> ") and "**" in line]
+        self.assertEqual(len(options), 5)
+        for option in options:
+            self.assertIn("Token 消耗：", option)
+            self.assertIn("耗时：", option)
+        self.assertIn("relative planning", gate)
+        self.assertIn("Image-generation", gate)
+        for relative in ("SKILL.md", "skills/easyslides/SKILL.md", "skills/easyslides-clarify/SKILL.md"):
+            self.assertIn("MUST show Token 消耗 and 耗时", (ROOT / relative).read_text(encoding="utf-8"))
+
+    def test_reconstruction_mode_and_text_line_contract(self):
+        for relative in ("SKILL.md", "skills/easyslides/SKILL.md",
+                         "skills/easyslides-clarify/SKILL.md",
+                         "workflows/clarification-gate.md",
+                         "workflows/slide-image-to-editable-pptx.md"):
+            with self.subTest(path=relative):
+                text = (ROOT / relative).read_text(encoding="utf-8")
+                self.assertIn("Mandatory reconstruction-mode choice", text)
+                self.assertIn("full_vector", text)
+                self.assertIn("preserve_complex_images", text)
+                self.assertIn("text runs", text)
+                self.assertIn("OCR", text)
+        gate = (ROOT / "workflows/clarification-gate.md").read_text(encoding="utf-8")
+        self.assertIn("wait for the user's answer", gate)
+        self.assertIn("one source line in one text box", gate)
+        self.assertIn("快点做", gate)
+        self.assertIn("raster exception", gate)
+
+    def test_chinese_closing_wording_default(self):
+        for relative in ("SKILL.md", "skills/easyslides/SKILL.md"):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn("Chinese wording defaults", text)
+            self.assertIn("感谢垂听，敬请讨论", text)
+            self.assertIn("imagegen prompts", text)
+
+    def test_production_scheme_is_a_mandatory_startup_choice(self):
+        for relative in ("SKILL.md", "skills/easyslides/SKILL.md",
+                         "skills/easyslides-clarify/SKILL.md", "workflows/routing.md"):
+            with self.subTest(path=relative):
+                text = (ROOT / relative).read_text(encoding="utf-8")
+                self.assertIn("Mandatory production-scheme choice", text)
+                self.assertIn("workflows/clarification-gate.md", text)
+        workflow = (ROOT / "workflows/clarification-gate.md").read_text(encoding="utf-8")
+        for required in ("直接生成可编辑 PPT", "图片整页重建", "图片局部重建",
+                         "MUST ask", "wait for the user's answer", "No automatic default",
+                         "production_scheme", "imagegen alone", "same task"):
+            self.assertIn(required, workflow)
+
     def test_plugin_metadata_discovers_distill_skill_and_declared_assets(self):
         metadata = json.loads((ROOT / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
 

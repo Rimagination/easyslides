@@ -28,6 +28,7 @@ def load_builder():
     return module
 
 
+@unittest.skipUnless(BUILDER.is_file(), "Optional external comparison checkout is not installed")
 class BuildPptxSuperscriptTests(unittest.TestCase):
     def test_caret_exponent_becomes_native_superscript_runs(self):
         builder = load_builder()

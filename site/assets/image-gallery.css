@@ -1,0 +1,17 @@
+.library-tabs { display: flex; gap: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
+.library-tabs button { border: 0; border-bottom: 3px solid transparent; padding: 14px 0; background: none; color: var(--muted); font: inherit; font-size: 20px; cursor: pointer; }
+.library-tabs button[aria-selected="true"] { color: var(--ink, #30251c); border-bottom-color: currentColor; font-weight: 700; }
+.library-tabs button:focus-visible, .image-card a:focus-visible, .image-card button:focus-visible { outline: 2px solid #287c76; outline-offset: 4px; }
+#nativePanel[hidden], #imagePanel[hidden] { display: none; }
+#imageLibrarySummary { margin: 0 0 24px; color: var(--muted); font-size: 16px; }
+.image-card { cursor: default; align-content: start; min-width: 0; }
+.image-card:hover { transform: none; }
+.image-sheet { display: block; aspect-ratio: 4 / 3; background: #f5f5f5; border: 1px solid var(--line); overflow: hidden; }
+.image-sheet img { width: 100%; height: 100%; display: block; object-fit: contain; }
+.image-card h3 { font-size: 19px; margin: 6px 0 0; letter-spacing: 0; overflow-wrap: anywhere; }
+.image-card p { font-size: 14px; line-height: 1.6; margin: 0; }
+.image-card code { font-size: 12px; overflow-wrap: anywhere; }
+.image-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.image-actions a, .image-actions button { font: inherit; font-size: 14px; color: inherit; }
+.image-actions button { background: none; border: 1px solid var(--line); border-radius: 4px; padding: 7px 10px; cursor: pointer; }
+@media (max-width: 600px) { .library-tabs { gap: 24px; } .library-tabs button { font-size: 18px; } }

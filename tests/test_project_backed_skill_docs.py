@@ -22,7 +22,8 @@ class ProjectBackedSkillDocsTests(unittest.TestCase):
         self.assertIn("Minimal Skill Install", text)
         self.assertIn("Full Local Runtime", text)
         self.assertIn("Developer Mode", text)
-        self.assertIn("Real PPTX generation requires the full repository", text)
+        self.assertIn("Portable Plugin Bundle", text)
+        self.assertIn("Real PPTX generation requires the repository runtime or its complete portable bundle", text)
         self.assertIn("EasySlides is a project-backed skill", text)
 
     def test_readme_and_skill_link_architecture_and_install(self):
@@ -30,9 +31,10 @@ class ProjectBackedSkillDocsTests(unittest.TestCase):
         skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
 
         for text in (readme, skill):
-            self.assertIn("project-backed", text)
             self.assertIn("ARCHITECTURE.md", text)
             self.assertIn("INSTALL.md", text)
+        self.assertIn("full repository and dependencies", readme)
+        self.assertIn("project-backed", skill)
 
 
 if __name__ == "__main__":

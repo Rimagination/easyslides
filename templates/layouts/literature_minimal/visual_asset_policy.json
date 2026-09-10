@@ -1,0 +1,99 @@
+{
+  "schema_version": "easyslides.visual_asset_policy.v1",
+  "template_id": "literature_minimal",
+  "principles": [
+    "Generated visuals are decorative atmosphere only and never replace source evidence.",
+    "Keep the title safe area quiet; place optional local art on the right.",
+    "Use the selected semantic palette as guidance without recoloring user evidence.",
+    "Treat safe areas and decorative frames as non-overlapping layout contracts, not prompt suggestions."
+  ],
+  "theme_binding": {
+    "prompt_roles": ["background", "primary", "primary_dark", "accent"],
+    "user_override_source": "deck_plan.theme_tokens",
+    "palette_precedence": ["user_theme_tokens", "selected_palette", "template_defaults"],
+    "generated_asset_must_not_recolor_source_evidence": true
+  },
+  "readability": {
+    "text_tone": "auto",
+    "contrast_target": 4.5,
+    "sample_text_safe_area": true,
+    "select_semantic_text_token": true,
+    "fallback_on_low_contrast": "template_shell",
+    "scrim_allowed": true
+  },
+  "fallback": {
+    "when_imagegen_unavailable": "template_shell",
+    "when_generation_fails": "template_shell",
+    "when_asset_is_unreadable": "template_shell",
+    "evidence_roles": ["content", "toc"]
+  },
+  "roles": {
+    "cover": {
+      "background": {
+        "enabled": true,
+        "safe_area": {
+          "side": "left",
+          "box": {"x": 100, "y": 220, "width": 740, "height": 250}
+        }
+      },
+      "local_illustration": {
+        "enabled": true,
+        "frame": {"x": 1000, "y": 150, "width": 200, "height": 300},
+        "layer": "shell_overlay"
+      }
+    },
+    "chapter": {
+      "background": {
+        "enabled": true,
+        "safe_area": {
+          "side": "left",
+          "box": {"x": 100, "y": 220, "width": 700, "height": 260}
+        }
+      },
+      "local_illustration": {
+        "enabled": true,
+        "frame": {"x": 1000, "y": 150, "width": 200, "height": 300},
+        "layer": "shell_overlay"
+      }
+    },
+    "transition": {
+      "background": {
+        "enabled": true,
+        "safe_area": {
+          "side": "left",
+          "box": {"x": 100, "y": 220, "width": 700, "height": 260}
+        }
+      },
+      "local_illustration": {
+        "enabled": true,
+        "frame": {"x": 1000, "y": 150, "width": 200, "height": 300},
+        "layer": "shell_overlay"
+      }
+    },
+    "ending": {
+      "background": {
+        "enabled": true,
+        "safe_area": {
+          "side": "center",
+          "box": {"x": 170, "y": 210, "width": 680, "height": 250}
+        },
+        "readability_mode": "template_shell",
+        "text_tone": "light",
+        "text_color_role": "text_on_dark"
+      },
+      "local_illustration": {
+        "enabled": true,
+        "frame": {"x": 1000, "y": 150, "width": 200, "height": 300},
+        "layer": "shell_overlay"
+      }
+    },
+    "content": {
+      "background": {"enabled": false},
+      "local_illustration": {"enabled": false}
+    },
+    "toc": {
+      "background": {"enabled": false},
+      "local_illustration": {"enabled": false}
+    }
+  }
+}

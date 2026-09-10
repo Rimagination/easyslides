@@ -31,6 +31,9 @@ backend or MCP server is introduced in this first version.
 The supported user-facing capabilities are:
 
 - create an academic presentation from source material;
+- choose direct editable creation, AI-generated full-slide reconstruction, or
+  reconstruction of selected regions, with relative time and token costs;
+- browse separate native-template and image-reference libraries;
 - edit or enhance an existing PPTX;
 - reuse and fill PPTX/SVG templates;
 - distill a source PPTX into reusable template language, component slots, and

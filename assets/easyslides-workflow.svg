@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="990" viewBox="0 0 1600 990" role="img" aria-labelledby="title desc">
+  <title id="title">EasySlides 三种制作路线</title>
+  <desc id="desc">直接生成可编辑 PPT，或使用 Codex 的 imagegen 生成页面后整页或局部重建。生图路线的配图处理方式需用户选择。</desc>
+  <defs>
+    <style>
+      text { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; letter-spacing: 0; fill: #253346; }
+      .heading { font-size: 42px; font-weight: 700; }
+      .route { font-size: 29px; font-weight: 600; fill: white; }
+      .step { font-size: 27px; font-weight: 600; text-anchor: middle; }
+      .option { font-size: 29px; font-weight: 600; }
+      .arrow { fill: none; stroke: #8094a8; stroke-width: 2.5; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M2 1 L8 5 L2 9" fill="none" stroke="#8094a8" stroke-width="1.6"/></marker>
+  </defs>
+  <rect id="background" width="1600" height="990" fill="#ffffff"/>
+  <g id="header">
+    <text x="64" y="76" class="heading">EasySlides：三种制作路线</text>
+  </g>
+  <g id="direct-route">
+    <rect x="64" y="157" width="1472" height="190" rx="8" fill="#f1f6fc" stroke="#b7cfe5" stroke-width="1.5"/>
+    <rect x="64" y="157" width="450" height="57" rx="6" fill="#2666a5"/>
+    <text x="90" y="196" class="route">01　直接生成可编辑 PPT</text>
+    <g id="direct-material"><rect x="94" y="245" width="300" height="70" rx="6" fill="white" stroke="#b7cfe5"/><text x="244" y="290" class="step">材料＋原生模板</text></g>
+    <g id="direct-layout"><rect x="464" y="245" width="300" height="70" rx="6" fill="white" stroke="#b7cfe5"/><text x="614" y="290" class="step">内容编排</text></g>
+    <g id="direct-build"><rect x="834" y="245" width="300" height="70" rx="6" fill="white" stroke="#b7cfe5"/><text x="984" y="290" class="step">原生对象构建</text></g>
+    <g id="direct-output"><rect x="1204" y="245" width="300" height="70" rx="6" fill="white" stroke="#b7cfe5"/><text x="1354" y="290" class="step">可编辑 PPTX</text></g>
+    <g id="direct-connections"><path class="arrow" d="M408 280 H450"/><path class="arrow" d="M778 280 H820"/><path class="arrow" d="M1148 280 H1190"/></g>
+  </g>
+  <g id="full-route">
+    <rect x="64" y="374" width="1472" height="190" rx="8" fill="#eff8f7" stroke="#b2d7d2" stroke-width="1.5"/>
+    <rect x="64" y="374" width="450" height="57" rx="6" fill="#287c76"/>
+    <text x="90" y="413" class="route">02　AI 生图后整页重建</text>
+    <g id="full-material"><rect x="94" y="456" width="300" height="80" rx="6" fill="white" stroke="#b2d7d2"/><text x="244" y="505" class="step">材料＋图片模板</text></g>
+    <g id="full-imagegen"><rect x="464" y="456" width="300" height="80" rx="6" fill="white" stroke="#b2d7d2"/><text x="614" y="505" class="step">imagegen 生图</text></g>
+    <g id="full-preview"><rect x="834" y="456" width="300" height="80" rx="6" fill="white" stroke="#b2d7d2"/><text x="984" y="503" class="step">原图预览确认</text></g>
+    <g id="full-output"><rect x="1204" y="456" width="300" height="80" rx="6" fill="white" stroke="#b2d7d2"/><text x="1354" y="505" class="step">整页重建为 PPT</text></g>
+    <g id="full-connections"><path class="arrow" d="M408 496 H450"/><path class="arrow" d="M778 496 H820"/><path class="arrow" d="M1148 496 H1190"/></g>
+  </g>
+  <g id="partial-route">
+    <rect x="64" y="591" width="1472" height="190" rx="8" fill="#f4f6f9" stroke="#c3ccda" stroke-width="1.5"/>
+    <rect x="64" y="591" width="450" height="57" rx="6" fill="#596d8a"/>
+    <text x="90" y="630" class="route">03　AI 生图后局部重建</text>
+    <g id="partial-material"><rect x="94" y="673" width="300" height="80" rx="6" fill="white" stroke="#c3ccda"/><text x="244" y="722" class="step">材料＋图片模板</text></g>
+    <g id="partial-imagegen"><rect x="464" y="673" width="300" height="80" rx="6" fill="white" stroke="#c3ccda"/><text x="614" y="722" class="step">imagegen 生图</text></g>
+    <g id="partial-preview"><rect x="834" y="673" width="300" height="80" rx="6" fill="white" stroke="#c3ccda"/><text x="984" y="722" class="step">原图批注</text></g>
+    <g id="partial-output"><rect x="1204" y="673" width="300" height="80" rx="6" fill="white" stroke="#c3ccda"/><text x="1354" y="722" class="step">局部重建为 PPT</text></g>
+    <g id="partial-connections"><path class="arrow" d="M408 713 H450"/><path class="arrow" d="M778 713 H820"/><path class="arrow" d="M1148 713 H1190"/></g>
+  </g>
+  <g id="rebuild-options">
+    <text x="64" y="847" font-size="27" font-weight="600">生图路线的重建选项</text>
+    <g id="vector-option"><rect x="64" y="876" width="714" height="72" rx="8" fill="#f9f4f3" stroke="#dcc9c5"/><text x="94" y="922" class="option">A　全图矢量重建</text></g>
+    <g id="preserve-option"><rect x="802" y="876" width="734" height="72" rx="8" fill="#f9f4f3" stroke="#dcc9c5"/><text x="832" y="922" class="option">B　保留复杂配图</text></g>
+  </g>
+</svg>

@@ -90,7 +90,7 @@ def _inline_icons(content: str) -> str:
     return new_content
 
 
-def create_app(project_dir: str, idle_timeout: int = 900, live: bool = False) -> Flask:
+def create_app(project_dir: str, idle_timeout: int = 900, live: bool = False, source_images: str | None = None) -> Flask:
     """Create and configure the Flask app for a given project directory."""
     project_path = Path(project_dir).resolve()
     svg_dir = project_path / 'svg_output'
@@ -101,6 +101,9 @@ def create_app(project_dir: str, idle_timeout: int = 900, live: bool = False) ->
     app.config['PROJECT_PATH'] = project_path
     app.config['SVG_DIR'] = svg_dir
     app.config['LIVE_MODE'] = live
+    if source_images:
+        from image_review import register_image_review
+        register_image_review(app, source_images)
 
     # In-memory annotation store: {filename: {element_id: annotation_text}}
     app.config['ANNOTATIONS'] = {}
@@ -142,7 +145,7 @@ def create_app(project_dir: str, idle_timeout: int = 900, live: bool = False) ->
 
     @app.route('/')
     def index():
-        return send_from_directory(app.static_folder, 'index.html')
+        return send_from_directory(app.static_folder, 'image_review.html' if source_images else 'index.html')
 
     @app.route('/api/config')
     def get_config():
@@ -369,6 +372,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument('project_dir', help='Path to project directory (contains svg_output/)')
     parser.add_argument('--port', type=int, default=5050, help='Port to listen on (default: 5050)')
     parser.add_argument('--no-browser', action='store_true', help='Do not auto-open browser')
+    parser.add_argument('--source-images', help='Read-only imagegen originals directory; enables region annotations before PPT export')
     parser.add_argument(
         '--live',
         action='store_true',
@@ -389,7 +393,11 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     project_path = Path(args.project_dir).resolve()
     svg_output = project_path / 'svg_output'
-    if not svg_output.exists():
+    if args.source_images:
+        if not project_path.is_dir() or not Path(args.source_images).is_dir():
+            print('Error: project and source image directories must exist', file=sys.stderr)
+            return 1
+    elif not svg_output.exists():
         if args.live:
             svg_output.mkdir(parents=True, exist_ok=True)
         else:
@@ -403,7 +411,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     if idle_timeout is None:
         idle_timeout = 0 if args.live else 900
 
-    app = create_app(str(project_path), idle_timeout=idle_timeout, live=args.live)
+    app = create_app(str(project_path), idle_timeout=idle_timeout, live=args.live, source_images=args.source_images)
 
     url = f'http://localhost:{args.port}'
     if not args.no_browser:

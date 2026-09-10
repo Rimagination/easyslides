@@ -1,0 +1,40 @@
+{
+  "schema_version": "easyslides.theme_palettes.v1",
+  "template_id": "nsfc_defense",
+  "default_palette": "nsfc_purple",
+  "replace_roles": ["background", "surface", "primary", "primary_dark", "accent", "accent_secondary", "border", "text_on_light"],
+  "palettes": {
+    "nsfc_purple": {
+      "name": "NSFC Purple",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#FAF8FC",
+        "primary": "#751497",
+        "primary_dark": "#4B0D62",
+        "accent": "#C00000",
+        "accent_secondary": "#A76BB8",
+        "text_on_light": "#2E2433",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#6B6170",
+        "muted_on_dark": "#EADCF0",
+        "border": "#D9CEDD"
+      }
+    },
+    "nsfc_blue": {
+      "name": "NSFC Blue",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F5F8FC",
+        "primary": "#183A6A",
+        "primary_dark": "#10284A",
+        "accent": "#C00000",
+        "accent_secondary": "#426C9A",
+        "text_on_light": "#1F2D3D",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#607080",
+        "muted_on_dark": "#DCE7F4",
+        "border": "#C8D4E3"
+      }
+    }
+  }
+}

@@ -7,6 +7,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SitePublicAssetsTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from scripts.build_image_reference_site import build
+        build(ROOT / "site" / "assets" / "image-references")
+
     def test_public_asset_urls_are_ascii_and_exist(self):
         site = ROOT / "site"
         checked = []

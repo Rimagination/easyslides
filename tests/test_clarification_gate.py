@@ -14,7 +14,8 @@ class ClarificationGateTests(unittest.TestCase):
         self.assertEqual(request["route"], "new_deck")
         self.assertEqual(request["status"], "needs_confirmation")
         self.assertEqual(len(request["questions"]), 3)
-        self.assertEqual(len(request["pending_question_ids"]), 5)
+        self.assertEqual(len(request["pending_question_ids"]), 6)
+        self.assertEqual(request["questions"][0]["id"], "production_scheme")
         self.assertEqual(validate_clarification_request(request)["status"], "pass")
 
     def test_answering_rounds_eventually_confirms_and_records_decisions(self):
@@ -23,7 +24,7 @@ class ClarificationGateTests(unittest.TestCase):
         request = build_clarification_request("new_deck")
         request = answer_clarification_request(
             request,
-            {"purpose": "defense", "audience": "peers", "story_policy": "restructure"},
+            {"production_scheme": "direct_editable", "purpose": "defense", "audience": "peers", "story_policy": "restructure"},
         )
 
         self.assertEqual(request["status"], "needs_confirmation")
@@ -42,7 +43,7 @@ class ClarificationGateTests(unittest.TestCase):
 
         request = build_clarification_request(
             "new_deck",
-            known={"purpose": "defense", "audience": "peers", "story_policy": "restructure"},
+            known={"production_scheme": "direct_editable", "purpose": "defense", "audience": "peers", "story_policy": "restructure"},
         )
 
         self.assertEqual([item["id"] for item in request["questions"]], ["page_budget", "canvas_format"])
@@ -61,7 +62,7 @@ class ClarificationGateTests(unittest.TestCase):
             path = Path(temp_dir) / "clarification_request.json"
             request = build_clarification_request("new_deck")
             for answers in (
-                {"purpose": "defense", "audience": "peers", "story_policy": "restructure"},
+                {"production_scheme": "direct_editable", "purpose": "defense", "audience": "peers", "story_policy": "restructure"},
                 {"page_budget": "standard", "canvas_format": "16:9"},
             ):
                 request = answer_clarification_request(request, answers)
@@ -70,6 +71,25 @@ class ClarificationGateTests(unittest.TestCase):
             confirmed = require_confirmed(path)
 
         self.assertEqual(confirmed["status"], "confirmed")
+
+    def test_image_choice_inserts_second_round_without_default(self):
+        from scripts.clarification_gate import build_clarification_request, answer_clarification_request, validate_clarification_request
+        request = build_clarification_request("image_reconstruction")
+        request = answer_clarification_request(request, {"production_scheme": "image_partial_rebuild"})
+        self.assertEqual(request["status"], "needs_confirmation")
+        self.assertEqual(request["questions"][0]["id"], "reconstruction_mode")
+        self.assertNotIn("reconstruction_mode", request["decisions"])
+        request = answer_clarification_request(request, {"reconstruction_mode": "full_vector"})
+        self.assertEqual(validate_clarification_request(request)["status"], "pass")
+        self.assertEqual(request["status"], "confirmed")
+        request["decisions"].pop("reconstruction_mode")
+        self.assertEqual(validate_clarification_request(request)["status"], "fail")
+
+    def test_old_confirmed_state_cannot_bypass_scheme_choice(self):
+        from scripts.clarification_gate import build_clarification_request, validate_clarification_request
+        request = build_clarification_request("new_deck")
+        request.update(status="confirmed", question_bank=[], questions=[], pending_question_ids=[])
+        self.assertEqual(validate_clarification_request(request)["status"], "fail")
 
 
 if __name__ == "__main__":

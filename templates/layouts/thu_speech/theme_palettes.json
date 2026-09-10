@@ -1,0 +1,40 @@
+{
+  "schema_version": "easyslides.theme_palettes.v1",
+  "template_id": "thu_speech",
+  "default_palette": "thu_purple_blue",
+  "replace_roles": ["background", "surface", "primary", "primary_dark", "accent", "accent_secondary", "border", "text_on_light"],
+  "palettes": {
+    "thu_purple_blue": {
+      "name": "THU Purple Blue",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F7F7FA",
+        "primary": "#912C8D",
+        "primary_dark": "#55225C",
+        "accent": "#2B5CA8",
+        "accent_secondary": "#D19A2A",
+        "text_on_light": "#262626",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#6B6B6B",
+        "muted_on_dark": "#E9E5ED",
+        "border": "#D8D4DF"
+      }
+    },
+    "thu_blue": {
+      "name": "THU Blue",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F4F8FC",
+        "primary": "#1E4E8C",
+        "primary_dark": "#12345F",
+        "accent": "#912C8D",
+        "accent_secondary": "#C28B3C",
+        "text_on_light": "#262626",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#626A73",
+        "muted_on_dark": "#DCE8F4",
+        "border": "#CBD9E8"
+      }
+    }
+  }
+}

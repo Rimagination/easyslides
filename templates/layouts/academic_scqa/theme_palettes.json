@@ -1,0 +1,40 @@
+{
+  "schema_version": "easyslides.theme_palettes.v1",
+  "template_id": "academic_scqa",
+  "default_palette": "scqa_blue",
+  "replace_roles": ["background", "surface", "primary", "primary_dark", "accent", "accent_secondary", "border", "text_on_light"],
+  "palettes": {
+    "scqa_blue": {
+      "name": "SCQA Blue",
+      "colors": {
+        "background": "#F7FAFF",
+        "surface": "#F1F6FF",
+        "primary": "#0046A5",
+        "primary_dark": "#0B2F6B",
+        "accent": "#00A6D6",
+        "accent_secondary": "#17A889",
+        "text_on_light": "#334155",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#64748B",
+        "muted_on_dark": "#D9F4FB",
+        "border": "#D6E4F5"
+      }
+    },
+    "scqa_teal": {
+      "name": "SCQA Teal",
+      "colors": {
+        "background": "#F4FBFA",
+        "surface": "#EAF7F5",
+        "primary": "#0B5D5A",
+        "primary_dark": "#073B3A",
+        "accent": "#17A889",
+        "accent_secondary": "#00A6D6",
+        "text_on_light": "#243B3A",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#5F7673",
+        "muted_on_dark": "#D7F1EC",
+        "border": "#C6E2DD"
+      }
+    }
+  }
+}

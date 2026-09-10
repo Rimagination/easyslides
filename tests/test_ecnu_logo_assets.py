@@ -25,6 +25,7 @@ class EcnuLogoAssetsTests(unittest.TestCase):
         self.assertEqual(entries["ecnu_logo_wordmark"]["school_name_zh"], "华东师范大学")
         self.assertIn("ECNU", entries["ecnu_logo_wordmark"]["aliases"])
 
+    @unittest.skipUnless((PROJECT / "build_deck.py").is_file(), "Optional local project is not installed")
     def test_defense_project_uses_ecnu_wordmark_asset_not_web_fallback(self):
         build_script = (PROJECT / "build_deck.py").read_text(encoding="utf-8")
 
@@ -32,6 +33,7 @@ class EcnuLogoAssetsTests(unittest.TestCase):
         self.assertNotRegex(build_script, r'BRAND_LOGO_FILE\s*=\s*"ecnu_logo_urongda\.png"')
         self.assertTrue((PROJECT / "assets" / "figures" / "ecnu_logo_wordmark.png").exists())
 
+    @unittest.skipUnless((PROJECT / "build_deck.py").is_file(), "Optional local project is not installed")
     def test_defense_project_places_chapter_logo_in_upper_left_only(self):
         build_script = (PROJECT / "build_deck.py").read_text(encoding="utf-8")
 

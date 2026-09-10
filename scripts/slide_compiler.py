@@ -23,10 +23,12 @@ try:
     from scripts.template_compiler import ROOT, TemplateCompileError, compile_template, read_json, write_json
     from scripts.adaptive_bullets import sync_adaptive_bullets
     from scripts.image_fit import apply_image_fit_policy
+    from scripts.theme_tokens import apply_theme_overrides, theme_replacements_for_overrides
 except ModuleNotFoundError:  # pragma: no cover
     from template_compiler import ROOT, TemplateCompileError, compile_template, read_json, write_json
     from adaptive_bullets import sync_adaptive_bullets
     from image_fit import apply_image_fit_policy
+    from theme_tokens import apply_theme_overrides, theme_replacements_for_overrides
 
 
 SVG_NS = "http://www.w3.org/2000/svg"
@@ -855,6 +857,26 @@ def _compile_content_layers(
     return sorted(layers, key=lambda row: (int(row["z_index"]), str(row["instance_id"])))
 
 
+def _slide_theme(deck_plan: dict[str, Any], template_ir: dict[str, Any]) -> dict[str, Any]:
+    theme = deepcopy(template_ir.get("theme") or {})
+    if not theme:
+        if deck_plan.get("theme_tokens"):
+            raise SlideCompileError("recompile Template IR before applying theme overrides")
+        return theme
+    base = theme["tokens"]
+    overrides = deck_plan.get("theme_tokens") or {}
+    theme["tokens"] = apply_theme_overrides(base, overrides)
+    for role in overrides:
+        shared = [name for name, color in base.items() if color == base[role]]
+        if len({theme["tokens"][name] for name in shared}) > 1:
+            raise SlideCompileError(f"theme roles share a source color: {', '.join(shared)}; override them consistently or use a named palette")
+    changes = theme_replacements_for_overrides(base, overrides)
+    replacements = theme.get("replacements") or {}
+    theme["replacements"] = {old: changes.get(new, new) for old, new in replacements.items()}
+    theme["replacements"].update(changes)
+    return theme
+
+
 def compile_slides(
     deck_plan: dict[str, Any],
     template_ir: dict[str, Any],
@@ -1020,6 +1042,8 @@ def compile_slides(
                 "body_variant_id": variant.get("variant_id") if variant else "",
                 "body_variant_reason": variant_reason,
                 "body_payload": body_payload,
+                "image_resource_id": str(raw.get("image_resource_id") or ""),
+                "image_bindings": deepcopy(raw.get("image_bindings", [])),
                 "clear_region": variant.get("clear_region") if variant else None,
                 "layers": layers,
             }
@@ -1032,6 +1056,7 @@ def compile_slides(
         "canvas": template_ir["canvas"],
         "slide_count": len(compiled),
         "scenario_audit": scenario_audit,
+        "theme": _slide_theme(deck_plan, template_ir),
         "slides": compiled,
     }
 
@@ -1044,19 +1069,31 @@ def compile_deck(
     component_plan_path: str | Path | None = None,
     write: bool = False,
     output_path: str | Path | None = None,
+    palette_id: str | None = None,
 ) -> dict[str, Any]:
     plan_path = Path(deck_plan_path).resolve()
     deck_plan = read_json(plan_path)
     if template_ir_path:
         template_ir = read_json(Path(template_ir_path).resolve())
+        if palette_id and template_ir.get("theme", {}).get("palette_id") != palette_id:
+            raise SlideCompileError("requested palette does not match the supplied Template IR")
     else:
         template_value = template or deck_plan.get("template_id")
         if not template_value:
             raise SlideCompileError("template id or template IR is required")
-        template_report = compile_template(template_value)
+        template_report = compile_template(template_value, palette_id=palette_id or deck_plan.get("palette_id") or deck_plan.get("theme_palette"))
         template_ir = template_report["template_ir"]
     component_plan = read_json(Path(component_plan_path).resolve()) if component_plan_path else None
     slide_ir = compile_slides(deck_plan, template_ir, component_plan=component_plan)
+    if deck_plan.get("image_manifest"):
+        try:
+            from scripts.image_acquisition import apply_manifest_to_slide_ir
+        except ModuleNotFoundError:  # pragma: no cover
+            from image_acquisition import apply_manifest_to_slide_ir
+        manifest = Path(str(deck_plan["image_manifest"]))
+        if not manifest.is_absolute():
+            manifest = plan_path.parent / manifest
+        apply_manifest_to_slide_ir(slide_ir, manifest)
     target = Path(output_path).resolve() if output_path else plan_path.parent / "slide_ir.json"
     if write:
         write_json(target, slide_ir)
@@ -1304,6 +1341,81 @@ def _copy_asset(source: Path, assets_dir: Path) -> str:
     return f"assets/{target.name}"
 
 
+def _render_image_assets(root: ET.Element, slide: dict[str, Any], assets_dir: Path) -> list[dict[str, Any]]:
+    if not slide.get("image_assets") and not slide.get("background_asset"):
+        return []
+    from PIL import Image, ImageOps
+    try:
+        from scripts.readability_gate import analyze_region
+    except ModuleNotFoundError:  # pragma: no cover
+        from readability_gate import analyze_region
+
+    _, _, width, height = map(float, root.attrib["viewBox"].split())
+    reports = []
+    background = slide.get("background_asset")
+    bindings = list(slide.get("image_assets", []))
+    if background and background not in bindings:
+        bindings.insert(0, background)
+    for index, binding in enumerate(bindings):
+        if binding.get("status") != "Generated" or not binding.get("path"):
+            continue
+        source = Path(binding["path"])
+        placement = _as_dict(binding.get("placement"))
+        is_background = binding.get("asset_role") == "background"
+        frame = {"x": 0.0, "y": 0.0, "width": width, "height": height} if is_background else _frame(placement.get("frame"))
+        if frame is None:
+            raise SlideCompileError(f"image {binding.get('resource_id')!r} requires a placement frame")
+        fit = str(binding.get("fit") or placement.get("fit") or "contain")
+        scrim_fill = str(binding.get("scrim_fill") or "#FFFFFF")
+        scrim_opacity = float(binding.get("scrim_opacity", 0))
+        region = _as_dict(binding.get("safe_area"))
+        if is_background and binding.get("readability_mode") != "template_shell":
+            with Image.open(source) as source_image:
+                image = ImageOps.fit(source_image.convert("RGB"), (round(width), round(height))) if fit in {"slice", "cover"} else source_image.convert("RGB").resize((round(width), round(height)))
+            analysis = analyze_region(image, region, light=binding.get("text_on_dark", "#FFFFFF"), dark=binding.get("text_on_light", "#18212B"), target=float(binding.get("contrast_target", 4.5)))
+            reports.append({"page": slide["page"], "resource_id": binding.get("resource_id"), "fallback": not analysis["passes"], **analysis})
+            if not analysis["passes"]:
+                continue
+            # Keep the requested veil only when the selected text still passes on it.
+            veiled = Image.blend(image, Image.new("RGB", image.size, scrim_fill), scrim_opacity)
+            verified = analyze_region(veiled, region, light=analysis["text_color"], dark=analysis["text_color"], target=float(binding.get("contrast_target", 4.5)))
+            if not verified["passes_before_scrim"]:
+                scrim_fill, scrim_opacity = analysis["scrim_fill"], analysis["scrim_opacity"]
+            x0, y0, x1, y1 = analysis["box"]
+            for node in root.iter():
+                if _local_name(node.tag) != "text":
+                    continue
+                x = float(node.get("x", 0))
+                y = float(node.get("y", 0))
+                if x0 <= x <= x1 and y0 <= y <= y1:
+                    node.set("fill", analysis["text_color"])
+                    for child in node.iter():
+                        if "fill" in child.attrib:
+                            child.set("fill", analysis["text_color"])
+        href = _copy_asset(source, assets_dir)
+        group = ET.Element(f"{{{SVG_NS}}}g")
+        attrs = {key: str(value) for key, value in frame.items()}
+        attrs.update({"href": href, f"{{{XLINK_NS}}}href": href,
+                      "preserveAspectRatio": "xMidYMid slice" if fit in {"slice", "cover"} else "xMidYMid meet",
+                      "opacity": str(float(placement.get("opacity", 1))),
+                      "data-easyslides-background" if is_background else "data-easyslides-asset": "true"})
+        radius = float(placement.get("corner_radius", 0))
+        if radius > 0:
+            clip_id = f"es_image_clip_{index}"
+            clip = ET.SubElement(ET.SubElement(group, f"{{{SVG_NS}}}defs"), f"{{{SVG_NS}}}clipPath", {"id": clip_id})
+            ET.SubElement(clip, f"{{{SVG_NS}}}rect", {**{key: str(value) for key, value in frame.items()}, "rx": str(radius)})
+            attrs["clip-path"] = f"url(#{clip_id})"
+        ET.SubElement(group, f"{{{SVG_NS}}}image", attrs)
+        if is_background:
+            ET.SubElement(group, f"{{{SVG_NS}}}rect", {"width": str(width), "height": str(height), "fill": scrim_fill, "fill-opacity": f"{scrim_opacity:.4f}", "data-easyslides-background-scrim": "true"})
+            # Keep the template's header/footer and native text above the image.
+            base = next((i for i, node in enumerate(root) if _local_name(node.tag) == "rect" and float(node.get("width", 0)) == width and float(node.get("height", 0)) == height), -1)
+            root.insert(base + 1, group)
+        else:
+            root.append(group)
+    return reports
+
+
 def _apply_payload(
     root: ET.Element,
     contracts: object,
@@ -1479,6 +1591,7 @@ def render_slide_ir_to_svg(
     if template_assets.is_dir():
         shutil.copytree(template_assets, assets_dir, dirs_exist_ok=True)
     outputs: list[str] = []
+    readability_rows: list[dict[str, Any]] = []
     for slide in slide_ir.get("slides", []):
         shell = slide["shell"]
         shell_path = Path(str(shell["svg_path"]))
@@ -1499,14 +1612,27 @@ def render_slide_ir_to_svg(
             if isinstance(layer, dict) and layer.get("layer_type") == "component":
                 _append_component(root, layer, assets_dir=assets_dir)
         output = target / f"{int(slide['slide_index']):02d}_{slide['shell_id']}.svg"
+        replacements = slide_ir.get("theme", {}).get("replacements", {})
+        for node in root.iter():
+            for attr in ("fill", "stroke", "color", "stop-color", "style"):
+                if attr in node.attrib:
+                    node.set(attr, re.sub(r"#[0-9a-fA-F]{6}\b", lambda m: replacements.get(m[0].upper(), m[0]), node.attrib[attr]))
+            if _local_name(node.tag) == "style" and node.text:
+                node.text = re.sub(r"#[0-9a-fA-F]{6}\b", lambda m: replacements.get(m[0].upper(), m[0]), node.text)
+        readability_rows.extend(_render_image_assets(root, slide, assets_dir))
         ET.ElementTree(root).write(output, encoding="utf-8", xml_declaration=True)
         outputs.append(str(output))
+    readability_path = target / "readability_report.json"
+    fallback_count = sum(row["fallback"] for row in readability_rows)
+    write_json(readability_path, {"status": "pass", "fallback_count": fallback_count, "regions": readability_rows})
     return {
         "schema_version": "easyslides.slide_ir_svg_render.v1",
         "status": "pass",
         "output_dir": str(target),
         "slide_count": len(outputs),
         "svg_files": outputs,
+        "readability_report": str(readability_path),
+        "fallback_count": fallback_count,
     }
 
 

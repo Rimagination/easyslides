@@ -16,7 +16,7 @@
   "contracts": {
     "layouts": true,
     "body_variants": true,
-    "component_catalog": false,
+    "component_catalog": true,
     "component_pack": false,
     "design_tokens": false
   },

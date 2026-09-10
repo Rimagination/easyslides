@@ -2,7 +2,7 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "nsfc_defense",
   "package_version": "0.4.0",
-  "source_digest": "5743771fefcba5a899f6dd37c7d1a822a81493d172f8747a4a751a81962e9352",
+  "source_digest": "079d099a4437da1e72619bafaccc0b048d68db3f1193592fde24cb57b7fd8d18",
   "sources": {
     "package": {
       "path": "templates/layouts/nsfc_defense/template_package.json",
@@ -47,6 +47,14 @@
     "capability_profile": {
       "path": "templates/layouts/nsfc_defense/capability_profile.json",
       "sha256": "dbbc470b497082b48f4e8e2832c6ce584f2f9e65903767a826e62bf0fcceb838"
+    },
+    "theme_palettes.json": {
+      "path": "templates/layouts/nsfc_defense/theme_palettes.json",
+      "sha256": "f8c2aee81fd0401b5675306b69a421034dd394f8224871385759d8dc68ca654d"
+    },
+    "design_spec.md": {
+      "path": "templates/layouts/nsfc_defense/design_spec.md",
+      "sha256": "6df6bfa8f7bd8a0cb29c230f1e2324477d8900690ce58a84b3671861a8aaaca8"
     },
     "shell:cover": {
       "path": "templates/layouts/nsfc_defense/01_cover.svg",

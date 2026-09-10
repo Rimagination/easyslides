@@ -10,8 +10,32 @@ description: >
 
 # EasySlides Clarification Gate
 
-Use this skill only when an EasySlides request still contains a blocking,
-result-affecting ambiguity.
+Use this skill whenever a PPT production scheme has not been explicitly selected,
+or when another result-affecting ambiguity remains.
+
+## Mandatory production-scheme choice
+
+An unspecified scheme is always blocking for a new or regenerated PPT. MUST ask
+the user to choose directly generated editable PPT, full-image reconstruction,
+or partial-image reconstruction, using the exact user-facing labels in
+`workflows/clarification-gate.md`. No automatic default; wait for the user's answer
+before slide planning, image generation, SVG reconstruction or PPTX production.
+An explicit choice already made for the same task must not be asked again.
+
+## Mandatory reconstruction-mode choice
+
+In both choice rounds, MUST show Token 消耗 and 耗时 levels for every option
+before the user chooses. Explain that levels are relative estimates adjusted for
+scope and complexity, not exact usage or promised time; disclose image generation
+separately. Follow the cost and time disclosure in the clarification workflow.
+
+For image reconstruction, confirm 全图矢量重建 (`full_vector`) or 保留复杂配图
+(`preserve_complex_images`) through `workflows/clarification-gate.md` before
+execution. No automatic default, even for “快点做”; reuse only an explicit choice
+in the same task. Both modes require native PPT text boxes. Preserve one source
+line in one text box, merging OCR fragments and using text runs for mixed styling;
+keep independent labels and table cells separate. Full-vector mode needs approval
+before any raster exception. Partial rebuilds apply this within selected regions.
 
 ## Blocking rule
 

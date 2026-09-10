@@ -38,6 +38,36 @@ skills such as `ppt-distill`, `easyppt`, or `easyslides-template-reuse` as
 compatibility references only; do not let them replace this canonical route or
 reintroduce source-slide-order filling.
 
+## Mandatory production-scheme choice
+
+Before making a new or regenerated PPT, MUST ask which production scheme to use
+unless the user already explicitly selected one for this task. Wait for the
+answer; do not silently pick a route from the input format, a template, imagegen,
+or a general request for editability. No automatic default.
+Use the exact three-option question in `workflows/clarification-gate.md`.
+This is required even when the rest of the request is unambiguous.
+
+## Mandatory reconstruction-mode choice
+
+In both choice rounds, MUST show Token 消耗 and 耗时 levels for every option
+before the user chooses. Explain that levels are relative estimates adjusted for
+scope and complexity, not exact usage or promised time; disclose image generation
+separately. Follow the cost and time disclosure in the clarification workflow.
+
+For image reconstruction, confirm 全图矢量重建 (`full_vector`) or 保留复杂配图
+(`preserve_complex_images`) through `workflows/clarification-gate.md` before
+execution. No automatic default, even for “快点做”; reuse only an explicit choice
+in the same task. Both modes require native PPT text boxes. Preserve one source
+line in one text box, merging OCR fragments and using text runs for mixed styling;
+keep independent labels and table cells separate. Full-vector mode needs approval
+before any raster exception. Partial rebuilds apply this within selected regions.
+
+## Chinese wording defaults
+
+Default to “垂听”, not “聆听”, in authored Chinese PPT text, including closings
+such as “感谢垂听，敬请讨论”. Apply this preference to imagegen prompts and
+editable slide text alike; see the full rule in `../../SKILL.md`.
+
 ## Runtime conventions
 
 - Run commands from the plugin/repository root.

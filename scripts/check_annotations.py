@@ -18,6 +18,7 @@ Dependencies:
 """
 
 import argparse
+import json
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -55,12 +56,28 @@ def scan_svg_file(svg_path: Path) -> list[dict]:
 
 
 def scan_directory(dir_path: Path) -> dict[str, list[dict]]:
-    """Scan all SVG files in svg_output/ for edit annotations."""
+    """Read source-image regions and existing SVG element annotations."""
+    results = {}
+    review_path = dir_path / 'source_image_review.json'
+    if review_path.exists():
+        review = json.loads(review_path.read_text(encoding='utf-8'))
+        if review.get('schema_version') != 'easyslides.source_image_review.v1':
+            raise ValueError('Unsupported source-image review schema')
+        for item in review.get('annotations', []):
+            if item.get('status') != 'pending':
+                continue
+            key = f"imagegen original: {item['slide']}"
+            results.setdefault(key, []).append({
+                'element_id': item['id'], 'tag': 'source-region',
+                'annotation': item['annotation'],
+                'content_preview': f"pixels {item['box']}",
+                'source_image': item['source_image'],
+                'preserve_unselected': True,
+            })
     svg_dir = dir_path / 'svg_output'
     if not svg_dir.exists():
-        return {}
+        return results
 
-    results = {}
     for svg_file in sorted(svg_dir.glob('*.svg')):
         annotations = scan_svg_file(svg_file)
         if annotations:
@@ -87,6 +104,9 @@ def print_results(results: dict[str, list[dict]]) -> None:
             content = f' "{ann["content_preview"]}"' if ann['content_preview'] else ''
             print(f"  [{i}] <{ann['tag']} id=\"{ann['element_id']}\">{content}")
             print(f"      → {ann['annotation']}")
+            if ann.get('source_image'):
+                print(f"      Source: {ann['source_image']}")
+                print('      Reconstruct from the original image. Preserve unselected content; do not use editable PPTX as reference.')
         print()
 
 

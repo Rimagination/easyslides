@@ -286,6 +286,40 @@ class ClarificationError(ValueError):
     """Raised when clarification state cannot authorize execution."""
 
 
+PRODUCTION_SCHEMES = {"direct_editable", "image_full_rebuild", "image_partial_rebuild"}
+RECONSTRUCTION_MODES = {"full_vector", "preserve_complex_images"}
+PRODUCTION_ROUTES = {"new_deck", "paper_deck", "template_fill", "image_reconstruction"}
+PRODUCTION_QUESTION = _question(
+    "production_scheme", "production_scheme", "选择 PPT 制作方案（消耗和耗时为相对估计）",
+    [
+        _option("direct_editable", "直接生成可编辑 PPT", "Token 消耗：中；耗时：中。"),
+        _option("image_full_rebuild", "AI 生图后整页重建", "Token 消耗：高；耗时：长。生图消耗另行说明。"),
+        _option("image_partial_rebuild", "AI 生图后局部重建", "已有图片、少量选区时 Token 消耗：低至中；耗时：短至中。首次生图另计。"),
+    ], "direct_editable", "确认制作路线后再开始；不自动采用推荐项。",
+)
+RECONSTRUCTION_QUESTION = _question(
+    "reconstruction_mode", "reconstruction_mode", "选择配图重建方式（仅估计选定范围的重建工作）",
+    [
+        _option("full_vector", "全图矢量重建", "Token 消耗：高至很高；耗时：长至很长。细节可能与原图有差异。"),
+        _option("preserve_complex_images", "保留复杂配图", "Token 消耗：中；耗时：中。文字和简单结构可编辑。"),
+    ], "preserve_complex_images", "两种方式均使用原生文本框；生图额外说明，用户确认后执行。",
+)
+QUESTION_CATALOG["image_reconstruction"] = []
+for _route in PRODUCTION_ROUTES:
+    QUESTION_CATALOG[_route].insert(0, copy.deepcopy(PRODUCTION_QUESTION))
+
+
+def require_production_decisions(decisions: dict[str, Any], *, expected_scheme: str | None = None) -> dict[str, Any]:
+    if not isinstance(decisions, dict) or decisions.get("production_scheme") not in PRODUCTION_SCHEMES:
+        raise ClarificationError("explicit production_scheme is required before production")
+    scheme = decisions["production_scheme"]
+    if expected_scheme and scheme != expected_scheme:
+        raise ClarificationError(f"this entry point requires {expected_scheme}, got {scheme}")
+    if scheme != "direct_editable" and decisions.get("reconstruction_mode") not in RECONSTRUCTION_MODES:
+        raise ClarificationError("explicit reconstruction_mode is required before image reconstruction")
+    return decisions
+
+
 def canonical_route(route: str) -> str:
     value = str(route or "").strip()
     value = ROUTE_ALIASES.get(value, value)
@@ -320,6 +354,10 @@ def _unanswered_ids(request: dict[str, Any]) -> list[str]:
 
 
 def _refresh_round(request: dict[str, Any]) -> dict[str, Any]:
+    scheme = request.get("decisions", {}).get("production_scheme")
+    if scheme in PRODUCTION_SCHEMES - {"direct_editable"} and not request["decisions"].get("reconstruction_mode"):
+        if "reconstruction_mode" not in _question_ids(request):
+            request["question_bank"].insert(0, copy.deepcopy(RECONSTRUCTION_QUESTION))
     unanswered = _unanswered_ids(request)
     by_id = {str(item["id"]): item for item in request.get("question_bank", []) if isinstance(item, dict)}
     current_ids = unanswered[:MAX_QUESTIONS_PER_ROUND]
@@ -344,6 +382,10 @@ def build_clarification_request(
 ) -> dict[str, Any]:
     canonical = canonical_route(route)
     known_fields = known or {}
+    if "production_scheme" in known_fields and known_fields["production_scheme"] not in PRODUCTION_SCHEMES:
+        raise ClarificationError("invalid production_scheme")
+    if "reconstruction_mode" in known_fields and known_fields["reconstruction_mode"] not in RECONSTRUCTION_MODES:
+        raise ClarificationError("invalid reconstruction_mode")
     question_bank = [
         copy.deepcopy(question)
         for question in QUESTION_CATALOG[canonical]
@@ -427,6 +469,15 @@ def validate_clarification_request(request: dict[str, Any]) -> dict[str, Any]:
 
     unanswered = [question_id for question_id in ordered_ids if question_id not in answers]
     status = request.get("status")
+    if status == "confirmed" and request.get("route") in PRODUCTION_ROUTES:
+        try:
+            require_production_decisions(request.get("decisions", {}))
+        except ClarificationError as exc:
+            issues.append({"code": "PRODUCTION-CHOICE-MISSING", "message": str(exc)})
+    for question in bank:
+        if isinstance(question, dict) and question.get("id") in answers:
+            if request.get("decisions", {}).get(question.get("field")) != answers[question["id"]]:
+                issues.append({"code": "DECISION-ANSWER-MISMATCH", "message": "decisions must match explicit answers"})
     if status not in {"needs_confirmation", "confirmed", "cancelled"}:
         issues.append({"code": "REQUEST-STATUS", "message": "status must be needs_confirmation, confirmed, or cancelled"})
     if status == "confirmed" and unanswered:

@@ -24,6 +24,9 @@ ROOT_FILES = (
     "PLUGIN.md",
     "README.md",
     "requirements.txt",
+    "INSTALL.md",
+    "CHANGELOG.md",
+    "LICENSE",
 )
 RUNTIME_TEMPLATE_DIRS = (
     "brands",
@@ -60,11 +63,12 @@ def _copy_tree(source: Path, target: Path) -> None:
 
 def _selected_layout_ids() -> list[str]:
     layouts_root = ROOT / "templates" / "layouts"
-    payload = json.loads((layouts_root / "layouts_index.json").read_text(encoding="utf-8"))
-    aliases = json.loads((layouts_root / "aliases.json").read_text(encoding="utf-8"))
-    selected = set(payload)
-    selected.update(str(value) for value in aliases.values())
-    return sorted(layout_id for layout_id in selected if (layouts_root / layout_id).is_dir())
+    policy = json.loads((ROOT / "templates" / "template_policy.json").read_text(encoding="utf-8"))
+    selected = policy["official_template_ids"]
+    for layout_id in selected:
+        if not re.fullmatch(r"[a-z][a-z0-9_]*", layout_id) or not (layouts_root / layout_id).is_dir():
+            raise ValueError(f"Missing or invalid official template: {layout_id}")
+    return sorted(selected)
 
 
 def _copy_references(target_root: Path) -> None:
@@ -87,7 +91,7 @@ def _copy_references(target_root: Path) -> None:
 def _copy_templates(target_root: Path) -> list[str]:
     source_root = ROOT / "templates"
     target_root.mkdir(parents=True, exist_ok=True)
-    for filename in ("README.md",):
+    for filename in ("README.md", "template_policy.json", "template_registry.json"):
         source = source_root / filename
         if source.is_file():
             shutil.copy2(source, target_root / filename)
@@ -105,11 +109,28 @@ def _copy_templates(target_root: Path) -> list[str]:
 
     components_source = source_root / "components"
     components_target = target_root / "components"
+    components_target.mkdir(parents=True, exist_ok=True)
+    # The runtime rebuilds its component registry from packaged assets when absent.
+    # The development cache can reference private distillation workspaces.
+    for filename in ("marketplace.json",):
+        shutil.copy2(components_source / filename, components_target / filename)
     for dirname in ("gallery", "packages", "packs"):
         _copy_tree(components_source / dirname, components_target / dirname)
 
     for dirname in RUNTIME_TEMPLATE_DIRS:
         _copy_tree(source_root / dirname, target_root / dirname)
+
+    image_source = source_root / "image_references"
+    image_target = target_root / "image_references"
+    image_target.mkdir(parents=True, exist_ok=True)
+    # Copy only registered public assets; local caches/provenance never enter the bundle.
+    try:
+        from scripts.build_image_reference_site import build as build_image_gallery
+    except ModuleNotFoundError:  # direct CLI invocation
+        from build_image_reference_site import build as build_image_gallery
+    build_image_gallery(image_target, source=image_source)
+    for filename in ("registry.json", "README.md", "index.html"):
+        shutil.copy2(image_source / filename, image_target / filename)
 
     # Keep a useful lightweight icon set in the installed plugin. The complete
     # 11k+ icon repository remains available in the development checkout.
@@ -175,8 +196,11 @@ def build_bundle(output_dir: Path) -> dict[str, object]:
     output_dir = output_dir.resolve()
     if output_dir == ROOT or output_dir in ROOT.parents:
         raise ValueError("refusing to replace the repository or one of its parents")
+    for source in ("scripts", "templates", "skills", "workflows", "assets", "references", ".codex-plugin"):
+        if output_dir.is_relative_to(ROOT / source):
+            raise ValueError("bundle output must be outside runtime source directories")
     if output_dir.exists():
-        shutil.rmtree(output_dir)
+        raise FileExistsError(f"bundle destination already exists; choose a new directory: {output_dir}")
     output_dir.mkdir(parents=True)
 
     _copy_tree(ROOT / ".codex-plugin", output_dir / ".codex-plugin")

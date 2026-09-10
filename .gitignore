@@ -30,6 +30,8 @@ Thumbs.db
 .codex_tmp/
 tmp/
 outputs/
+/output/
+/.playwright-cli/
 downloads/
 tools/pdffigures2/
 *.log
@@ -49,6 +51,7 @@ tools/pdffigures2/
 # Local review renders, analysis bundles, and generated release previews.
 /analysis_*
 /build/
+/site/assets/image-references/
 
 # Generated deck/project artifacts. Keep curated tracked project scripts,
 # ignore imported source material, rendered decks, previews, unpacked OOXML,

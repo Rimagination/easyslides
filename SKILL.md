@@ -37,6 +37,51 @@ template, visible wording, or visual fidelity, ask the user to choose from
 explicit options. Do not write a deck plan or generate slide files while a
 blocking choice remains unanswered.
 
+## Mandatory production-scheme choice
+
+For every new or regenerated PPT, an unspecified production scheme is a blocking
+choice even when the topic, template and content are otherwise clear. MUST ask
+the user to choose and wait before planning slides or generating images/SVG/PPTX.
+Follow `workflows/clarification-gate.md` for the exact three options and examples.
+No automatic default. Reuse only the user's explicit choice for the same task.
+
+## Mandatory reconstruction-mode choice
+
+In both choice rounds, MUST show Token 消耗 and 耗时 levels for every option
+before the user chooses. Explain that levels are relative estimates adjusted for
+scope and complexity, not exact usage or promised time; disclose image generation
+separately. Follow the cost and time disclosure in the clarification workflow.
+
+For image reconstruction, confirm 全图矢量重建 (`full_vector`) or 保留复杂配图
+(`preserve_complex_images`) through `workflows/clarification-gate.md` before
+execution. No automatic default, even for “快点做”; reuse only an explicit choice
+in the same task. Both modes require native PPT text boxes. Preserve one source
+line in one text box, merging OCR fragments and using text runs for mixed styling;
+keep independent labels and table cells separate. Full-vector mode needs approval
+before any raster exception. Partial rebuilds apply this within selected regions.
+
+## Image-reference templates
+
+Read the lightweight registry metadata first; load only the user's selected
+reference PNG. Do not preload the whole image library or batch-OCR templates.
+Use compressed previews for browsing. The installed library shares the project
+directory via a local junction; do not duplicate assets when syncing the plugin.
+
+For the image-based schemes, select visual references from
+`templates/image_references/registry.json` or user-supplied images, independently
+of the native editable template library. Follow the image-reference routing in
+`workflows/routing.md`; reference PPT-to-contact-sheet work does not distill a
+native template or generate a new deck.
+
+## Chinese wording defaults
+
+Use “垂听” instead of “聆听” in assistant-authored Chinese PPT text by default.
+For example, write “感谢垂听，敬请讨论”. This user wording preference applies
+to all three production schemes, including slide copy, imagegen prompts,
+SVG/native text, speaker notes and final wording checks. It is a user preference,
+not a claim about universal language usage. A later explicit user instruction
+can override it; do not rewrite verbatim source quotations or archived files.
+
 ## Core Capabilities
 
 1. **Create from scratch**: Source content → SVG pages → DrawingML shapes → editable PPTX

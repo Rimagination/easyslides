@@ -1,0 +1,191 @@
+{
+  "schema_version": "easyslides.image_reference_library.v1",
+  "library_kind": "image_style_reference",
+  "native_template_library": false,
+  "route": "image_full_rebuild",
+  "loading_policy": "index_then_selected_image",
+  "templates": [
+    {
+      "id": "rdp_blue_technology",
+      "name": "重点研发-蓝色科技",
+      "image": "rdp_blue_technology.png",
+      "source_filename": "重点研发计划（太赫兹运用 蓝色）.pptx",
+      "slide_count": 19,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "rdp_blue_technology_preview.jpg",
+      "version": 1,
+      "style_summary": "蓝白主色、科技背景、竖排目录、密集项目申报布局"
+    },
+    {
+      "id": "nsfc_dark_blue",
+      "name": "国自然-深蓝",
+      "image": "nsfc_dark_blue.png",
+      "source_filename": "1深蓝色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 17,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_dark_blue_preview.jpg",
+      "version": 1,
+      "style_summary": "深蓝科技封面、竖排目录、蓝色细线标题、成果汇报布局"
+    },
+    {
+      "id": "nsfc_bright_blue_white",
+      "name": "国自然-亮蓝白",
+      "image": "nsfc_bright_blue_white.png",
+      "source_filename": "2亮蓝白色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 17,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_bright_blue_white_preview.jpg",
+      "version": 1,
+      "style_summary": "亮蓝白主色、弧形页角、编号标题栏、科研图文分区"
+    },
+    {
+      "id": "nsfc_dark_blue_white",
+      "name": "国自然-深蓝白",
+      "image": "nsfc_dark_blue_white.png",
+      "source_filename": "3深蓝白色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 19,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_dark_blue_white_preview.jpg",
+      "version": 1,
+      "style_summary": "深蓝白主色、宽标题栏、底部色带、项目论证布局"
+    },
+    {
+      "id": "nsfc_white_blue",
+      "name": "国自然-白蓝",
+      "image": "nsfc_white_blue.png",
+      "source_filename": "4白蓝色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 17,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_white_blue_preview.jpg",
+      "version": 1,
+      "style_summary": "白底蓝色条带、竖排目录、紧凑成果与研究计划布局"
+    },
+    {
+      "id": "nsfc_green",
+      "name": "国自然-绿色",
+      "image": "nsfc_green.png",
+      "source_filename": "5绿色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 17,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_green_preview.jpg",
+      "version": 1,
+      "style_summary": "绿色分区、侧栏目录、研究问题与技术路线布局"
+    },
+    {
+      "id": "nsfc_red",
+      "name": "国自然-红色",
+      "image": "nsfc_red.png",
+      "source_filename": "6红色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 19,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_red_preview.jpg",
+      "version": 1,
+      "style_summary": "红白主色、竖排目录、居中标题、项目分解与团队布局"
+    },
+    {
+      "id": "nsfc_purple",
+      "name": "国自然-紫色",
+      "image": "nsfc_purple.png",
+      "source_filename": "7紫色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 17,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_purple_preview.jpg",
+      "version": 1,
+      "style_summary": "紫白主色、弧形页角、编号标题栏、科研图文分区"
+    },
+    {
+      "id": "afm_dark_blue",
+      "name": "科研报告-深蓝",
+      "image": "afm_dark_blue.png",
+      "source_filename": "基于原子力显微镜 -深蓝色.pptx",
+      "slide_count": 18,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "afm_dark_blue_preview.jpg",
+      "version": 1,
+      "style_summary": "深蓝白主色、细线标题、连续技术内容页、仪器图与对比图布局"
+    },
+    {
+      "id": "defense_academic_blue_topnav",
+      "name": "毕业答辩-学术蓝上导航",
+      "image": "defense_academic_blue_topnav.png",
+      "source_filename": "毕业答辩-学术蓝上导航栏.pptx",
+      "slide_count": 19,
+      "version": 1,
+      "style_summary": "学术蓝主色、顶部导航、毕业答辩章节与图文布局",
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "defense_academic_blue_topnav_preview.jpg"
+    },
+    {
+      "id": "defense_dark_blue_leftnav",
+      "name": "毕业答辩-深蓝左导航",
+      "image": "defense_dark_blue_leftnav.png",
+      "source_filename": "毕业答辩-深蓝左侧导航栏.pptx",
+      "slide_count": 30,
+      "version": 1,
+      "style_summary": "深蓝主色、左侧导航、毕业答辩连续内容布局",
+      "image_size": [
+        3384,
+        4176
+      ],
+      "preview": "defense_dark_blue_leftnav_preview.jpg"
+    },
+    {
+      "id": "defense_burgundy_leftnav",
+      "name": "毕业答辩-酒红左导航",
+      "image": "defense_burgundy_leftnav.png",
+      "source_filename": "毕业答辩-酒红左侧导航栏.pptx",
+      "slide_count": 29,
+      "version": 1,
+      "style_summary": "酒红主色、左侧导航、毕业答辩连续内容布局",
+      "image_size": [
+        3384,
+        4176
+      ],
+      "preview": "defense_burgundy_leftnav_preview.jpg"
+    },
+    {
+      "id": "proposal_blue_white",
+      "name": "开题答辩-蓝白",
+      "image": "proposal_blue_white.png",
+      "source_filename": "开题答辩PPT模版.pptx",
+      "slide_count": 18,
+      "version": 1,
+      "style_summary": "蓝白主色、开题答辩背景与研究方案图文布局",
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "proposal_blue_white_preview.jpg"
+    }
+  ]
+}

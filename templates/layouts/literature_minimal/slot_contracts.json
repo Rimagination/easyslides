@@ -1,0 +1,95 @@
+{
+  "schema_version": "easyslides.template_slot_contracts.v1",
+  "template_id": "literature_minimal",
+  "replacement_rule": "replace_declared_slots_preserve_template_geometry",
+  "private_clone_required": false,
+  "hard_geometry_invariants": [
+    "declared_slots_stay_inside_canvas",
+    "text_center_y_matches_container_center_y",
+    "cover_metadata_remains_two_centered_lines",
+    "ending_metadata_columns_are_non_overlapping_and_centered_as_a_group",
+    "content_shell_owns_header_key_message_body_and_footer"
+  ],
+  "layouts": [
+    {
+      "layout_id": "cover",
+      "page_id": "cover",
+      "svg_path": "01_cover.svg",
+      "slot_model": "cover",
+      "slots": ["TITLE", "SUBTITLE", "AUTHOR", "DATE"],
+      "text_slots": ["TITLE", "SUBTITLE", "AUTHOR", "DATE"],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry"
+    },
+    {
+      "layout_id": "toc",
+      "page_id": "toc",
+      "svg_path": "02_toc.svg",
+      "slot_model": "toc",
+      "slots": [
+        "LOGO_IMAGE",
+        "TOC_ITEM_1_TITLE", "TOC_ITEM_1_DESC",
+        "TOC_ITEM_2_TITLE", "TOC_ITEM_2_DESC",
+        "TOC_ITEM_3_TITLE", "TOC_ITEM_3_DESC",
+        "TOC_ITEM_4_TITLE", "TOC_ITEM_4_DESC",
+        "TOC_ITEM_5_TITLE", "TOC_ITEM_5_DESC"
+      ],
+      "text_slots": [
+        "TOC_ITEM_1_TITLE", "TOC_ITEM_1_DESC",
+        "TOC_ITEM_2_TITLE", "TOC_ITEM_2_DESC",
+        "TOC_ITEM_3_TITLE", "TOC_ITEM_3_DESC",
+        "TOC_ITEM_4_TITLE", "TOC_ITEM_4_DESC",
+        "TOC_ITEM_5_TITLE", "TOC_ITEM_5_DESC"
+      ],
+      "image_slots": ["LOGO_IMAGE"],
+      "replacement": "replace_declared_slots_preserve_template_geometry"
+    },
+    {
+      "layout_id": "chapter",
+      "page_id": "chapter",
+      "svg_path": "02_chapter.svg",
+      "slot_model": "chapter",
+      "slots": ["LOGO_IMAGE", "CHAPTER_NUM", "CHAPTER_TITLE", "CHAPTER_DESC"],
+      "text_slots": ["CHAPTER_NUM", "CHAPTER_TITLE", "CHAPTER_DESC"],
+      "image_slots": ["LOGO_IMAGE"],
+      "replacement": "replace_declared_slots_preserve_template_geometry"
+    },
+    {
+      "layout_id": "content",
+      "page_id": "content",
+      "svg_path": "03_content.svg",
+      "slot_model": "content",
+      "slots": ["CHAPTER_TITLE", "PAGE_TITLE", "KEY_MESSAGE", "CONTENT_BODY", "SOURCE", "PAGE_NUM"],
+      "text_slots": ["CHAPTER_TITLE", "PAGE_TITLE", "KEY_MESSAGE", "CONTENT_BODY", "SOURCE", "PAGE_NUM"],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry"
+    },
+    {
+      "layout_id": "ending",
+      "page_id": "ending",
+      "svg_path": "04_ending.svg",
+      "slot_model": "ending",
+      "slots": ["THANK_YOU", "ENDING_SUBTITLE", "AUTHOR", "DATE"],
+      "text_slots": ["THANK_YOU", "ENDING_SUBTITLE", "AUTHOR", "DATE"],
+      "image_slots": [],
+      "replacement": "replace_declared_slots_preserve_template_geometry"
+    }
+  ],
+  "slots": [
+    {"slot_id": "TITLE", "role": "cover_title", "kind": "text", "required": true, "shell_id": "cover", "max_lines": 2},
+    {"slot_id": "SUBTITLE", "role": "subtitle", "kind": "text", "required": true, "shell_id": "cover", "max_lines": 2},
+    {"slot_id": "AUTHOR", "role": "metadata", "kind": "text", "required": true, "max_lines": 1},
+    {"slot_id": "DATE", "role": "metadata", "kind": "text", "required": true, "max_lines": 1},
+    {"slot_id": "LOGO_IMAGE", "role": "logo", "kind": "image", "required": false, "shell_id": "toc", "image_fit": "contain"},
+    {"slot_id": "CHAPTER_NUM", "role": "chapter_number", "kind": "text", "required": true, "shell_id": "chapter", "max_lines": 1},
+    {"slot_id": "CHAPTER_TITLE", "role": "chapter_title", "kind": "text", "required": true, "max_lines": 2},
+    {"slot_id": "CHAPTER_DESC", "role": "chapter_desc", "kind": "text", "required": true, "shell_id": "chapter", "max_lines": 2},
+    {"slot_id": "PAGE_TITLE", "role": "page_title", "kind": "text", "required": true, "shell_id": "content", "max_lines": 1},
+    {"slot_id": "KEY_MESSAGE", "role": "key_message", "kind": "text", "required": true, "shell_id": "content", "max_lines": 2},
+    {"slot_id": "CONTENT_BODY", "role": "body", "kind": "text", "required": true, "shell_id": "content", "max_lines": 12},
+    {"slot_id": "SOURCE", "role": "source", "kind": "text", "required": true, "shell_id": "content", "max_lines": 1},
+    {"slot_id": "PAGE_NUM", "role": "page_number", "kind": "text", "required": true, "shell_id": "content", "max_lines": 1},
+    {"slot_id": "THANK_YOU", "role": "closing_title", "kind": "text", "required": true, "shell_id": "ending", "max_lines": 2},
+    {"slot_id": "ENDING_SUBTITLE", "role": "subtitle", "kind": "text", "required": true, "shell_id": "ending", "max_lines": 2}
+  ]
+}

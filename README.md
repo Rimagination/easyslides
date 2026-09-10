@@ -1,129 +1,102 @@
+<p align="center">
+  <img src="assets/logo.png" alt="EasySlides Logo" width="128" height="128">
+</p>
+
 # EasySlides
 
 [中文](#中文) | [English](#english)
 
-![EasySlides: Research to editable slides](assets/easyslides-github-hero.png)
-
 <p align="center">
   <img alt="AI Agent Plugin" src="https://img.shields.io/badge/AI%20Agent-Plugin-2563EB?style=flat-square">
-  <img alt="Output: Editable PPTX" src="https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square">
+  <img alt="Output: PPTX" src="https://img.shields.io/badge/Output-PPTX-D24726?style=flat-square">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-16A34A?style=flat-square"></a>
 </p>
 
 ## 中文
 
-EasySlides 是一个面向学术报告与研究型演示的 AI Agent 插件。你只需用自然语言说明任务，并提供论文、网页、Markdown 或已有 PPT 等材料；它会在本地生成结构清晰、风格统一、可在 PowerPoint 中继续编辑的 PPTX。
+**用自然语言，把研究材料做成能讲、能改的 PPT。**
 
-它的核心特点是：
+EasySlides 是面向组会、文献精读、开题和答辩的 AI Agent 插件。提供论文、报告或参考 PPT，说明听众和重点，即可开始制作。
 
-- **自然语言协作**：你只需要说明要做什么、给谁讲、手头有什么材料。信息不清楚时，Agent 会先追问确认，再继续制作，而不是自行猜测。
-- **先读懂材料，再排版**：先梳理论点、证据、图表、引用和叙事顺序，再决定每一页该讲什么，避免把论文内容机械塞进模板。
-- **模板不限制内容表达**：模板提供统一的设计语言、页面壳、内容变体和组件资产。它能在保持风格一致的同时，选择适合图文、对比、流程、数据或结论的表达方式。
-- **可蒸馏现有 PPT**：参考 PPT 可以被提炼为可复用模板，继承其内容组织、页面结构、组件语言和视觉节奏，而不是变成几张不可编辑的图片。
-- **交付原生可编辑 PPTX**：文字、形状、颜色、图表和页面结构都可以继续在 PowerPoint 中修改；文字容量、垂直居中、对齐、几何关系与视觉质量会经过交付检查。
+当前版本：**1.1.0** · [更新与升级说明](CHANGELOG.md)
 
-它的目标不是生成一份“看起来像 PPT”的图片，而是和你一起完成一套真正能讲、能改、能复用的学术演示文稿。
+### 模板与案例展厅
 
-## 适合什么
+**[进入展厅，先看看效果](http://easyslides.scansci.com/)**
 
-- 把论文、报告、网页或 Markdown 做成组会汇报、文献精读、课程展示、开题或答辩 PPT。
-- 依据已有 PPT 的风格制作一套新的汇报，并将这份风格沉淀为今后可复用的模板。
-- 把零散材料组织成有研究问题、有证据、有结论的演讲叙事。
-- 在需要严格保留图表、引用、编辑能力和本地资料控制权的研究场景中制作 PPT。
+| [原生模板](http://easyslides.scansci.com/?library=native#catalog) | [图片参考模板](http://easyslides.scansci.com/?library=image#catalog) |
+| --- | --- |
+| 用于直接制作可编辑 PPT，含真实案例 | 用整套缩略图指导 AI 生图风格 |
 
-## 你会得到什么
+也可以提供自己的 PPT 或参考图片。
 
-一次完整协作会得到一套可以继续工作的演示成果：
+### 开始使用
 
-- **可演讲的内容结构**：明确每一页的角色、标题、要点、图表与前后逻辑，而不是只给一串摘要。
-- **风格一致的页面**：根据模板和材料选择恰当的内容变体，避免所有页面套用同一个大文本框。
-- **原生 PPTX 文件**：可以在 PowerPoint 中改字、换图、增删页面和继续完善，而不是只能导出为图片或 PDF。
+把下面这句话发给 Codex 或支持技能安装的 AI Agent：
 
-## 与常见 AI 制作 PPT 方法有什么不同
+> 请帮我安装 EasySlides 的完整仓库和运行依赖，并检查能否生成 PPT：[Rimagination/easyslides](https://github.com/Rimagination/easyslides)
 
-| 制作方法 | 擅长什么 | 常见限制 | EasySlides 的选择 |
+安装完成后，直接提出任务：
+
+> 把这篇论文做成 15 页的组会汇报，突出研究问题、方法和实验结论。先让我选择制作方案。
+
+需要完整仓库和本地依赖，详见 [安装指南](INSTALL.md)。下方生图路线使用 Codex 的 `imagegen`，需在宿主中可用。
+
+### 选择制作方式
+
+未指定方案时，会先请你选择，确认后再制作。
+
+![EasySlides 三种制作路线：直接生成可编辑 PPT、AI 生图后整页重建、AI 生图后局部重建](assets/easyslides-workflow.svg)
+
+| 方案 | 适合你的情况 | Token 消耗 | 耗时 |
 | --- | --- | --- | --- |
-| **让 AI 生成 HTML 或网页演示** | 视觉自由度高，适合网页展示、交互效果和技术演示 | 最终产物通常不是原生 PPTX；转回 PowerPoint 后常需要重新排版，编辑和复用成本较高 | 直接生成原生可编辑 PPTX，同时保留模板、组件与页面结构 |
-| **让 AI 直接生成一份 PPTX** | 很快得到一版可以浏览的初稿 | 往往更依赖通用版式；复杂研究材料、既有模板和页面细节仍需要人工反复校正 | 先理解材料和叙事，再在受约束的模板内选择页面变体与组件 |
-| **让 AI 写提纲或文案，再手工排版** | 人可以完全掌控版式，适合愿意投入排版时间的用户 | 从资料到页面的组织、找图、对齐和修改仍主要靠人工完成 | Agent 同时承担内容组织和页面编排，用户只需在关键选择处确认方向 |
-| **用代码或标记语言生成幻灯片** | 可复现、适合开发者批量生成和版本管理 | 普通用户需要学习代码；交付给 PowerPoint 使用者时，继续编辑往往不顺手 | 用自然语言协作，交付可在 PowerPoint 继续修改的文件 |
+| **直接生成可编辑 PPT** | 需要频繁修改文字、图表和布局 | 中 | 中 |
+| **AI 生图后整页重建** | 先确认整页视觉效果，再重建为可编辑内容 | 高 | 长 |
+| **AI 生图后局部重建** | 保留原图，仅编辑批注指定的部分 | 低至中 | 短至中 |
 
-EasySlides 并不把网页演示或代码型幻灯片视为替代品。它更适合这样的场景：你要用 AI 制作一套研究型 PPT，但最后仍要在 PowerPoint 中讲、改、协作和复用。
+### 选择重建方式
 
-## 快速使用
+生图路线以你确认的 `imagegen` 原图为准，支持浏览器批注选区。重建前还需选择：
 
-### 1. 安装
+| 选项 | 你会得到什么 | Token 消耗 | 耗时 |
+| --- | --- | --- | --- |
+| **全图矢量重建** | 图形可拆分编辑，细节可能与原图有差异 | 高至很高 | 长至很长 |
+| **保留复杂配图** | 文字和简单结构可编辑，复杂配图保留原图 | 中 | 中 |
 
-把下面这句话发给 Codex 或支持安装技能的 AI Agent：
+**重建范围内的文字均为原生文本框**，同一行不随意拆框，并检查对齐。局部重建的未选区域、保留配图的内部元素仍不可单独编辑。已有确认图可跳过生图；矢量化困难时会先与你确认处理方式。
 
-> 请帮我安装这个插件：
-> [Rimagination/easyslides](https://github.com/Rimagination/easyslides)
+两表等级均为相对估计，随页数、复杂度和修改次数变化。局部路线按已有图片、少量选区估计；第二表仅计重建，生图消耗与时间另行说明。
 
-### 2. 开始制作 PPT
+### 交付与消耗
 
-安装完成后，直接像与研究助理沟通一样提出任务：
+交付 PPTX、页面预览和编辑范围说明，并报告已知视觉差异。有可用统计时附上耗时、生图调用次数与额度变化；精确 Token 或生图额度不可获取时明确标注，不用账户百分比推算本次消耗。
 
-> 把这篇论文做成 15 页的组会汇报，突出研究问题、方法和实验结论。
+### 资料与隐私
 
-> 参考这份答辩 PPT 的风格，蒸馏出一个可复用模板，再用我的开题材料做一套新 PPT。
-
-> 如果材料里没有说清汇报对象、时长或模板，先问我再开始。
-
-### 3. 补充你的偏好
-
-你可以继续告诉 Agent 需要强调的结果、必须保留的图表、希望避开的表达方式，或直接提供一份参考 PPT。它会把这些要求纳入内容组织与页面选择，而不是在完成后才被动修改。
-
-## 应用案例：从论文到组会汇报
-
-例如，用户可以说：“我要做一次面向实验室同学的 *Attention Is All You Need* 论文精读汇报，重点讲 Transformer 为什么有效。”
-
-EasySlides 会先确认听众背景、汇报时长和讲述重点，然后围绕问题背景、核心方法、关键结构、实验结果、局限与讨论组织页面。论文中的图表和引用可以被保留在相应页面中，每一页再根据内容选择恰当的图文、流程、对比或结论表达。
-
-最终得到的是一套可以在 PowerPoint 中修改标题、替换图表、补充实验并继续演讲的 PPTX，而不是一份只能观看的长图。
-
-## 模板与案例展厅
-
-访问 [EasySlides 模板与案例展厅](http://easyslides.scansci.com/) 查看真实页图、模板名称、Transformer 文献汇报、两种答辩版式，以及可下载的 PPTX 案例。
-
-在 EasySlides 中，模板由四层内容共同构成：
-
-- **设计语言**：字体、色彩、留白、标题层级和视觉节奏。
-- **稳定页面壳**：封面、目录、章节、内容和结束页。参考 PPT 没有目录时，不会被强行补上目录。
-- **内容变体**：图文并列、流程、对比、研究路径、数据洞察、方法拆解和结论聚焦等页面组织方式。
-- **组件资产**：标题栏、导航、卡片、图表、图标、标注和局部装饰；每个组件都有明确的用途、容量与对齐规则。
-
-## 隐私与资料控制
-
-EasySlides 在本地项目工作区组织材料与生成结果。论文原文、参考 PPT、预览图、导出的演示文件和本地质量检查结果默认不提交到 Git。请只在明确授权后再发布包含私人研究材料的内容。
+文件在本地管理；使用云端 AI 时，提交的文字和图片由对应服务处理。请确认敏感材料的使用权限，私人资料经你授权后再发布。
 
 <details>
-<summary><strong>项目结构、开发信息与致谢</strong></summary>
+<summary><strong>想了解技术实现？</strong></summary>
 
-<br>
+- **直接制作**：材料 → SVG／图形描述 → DrawingML 原生对象 → PPTX；已有 PPTX 模板可直接填充。
+- **生图重建**：Codex `imagegen` → 页面位图 → 文字／布局识别 → 重建 → PPTX。矢量方案使用 `scansci-svg` 重绘；保留配图方案组合原生文字、简单图形和原图。
+- **局部处理**：仅在批注选区执行重建，清除对应旧像素，再与未选区域合成。
 
-日常使用不需要直接操作这些目录；它们用于让 Agent、模板和质量检查协同工作。
+更多实现细节见 [架构说明](ARCHITECTURE.md) 和 [工作流入口](workflows/index.md)。
 
-EasySlides 是一个由本地项目支撑的 **project-backed skill**：技能文件负责理解和路由自然语言任务，真正的 PPTX 生成依赖本仓库的模板、脚本和质量检查。安装方式见 [INSTALL.md](INSTALL.md)，分层设计见 [ARCHITECTURE.md](ARCHITECTURE.md)。
+</details>
 
-| 目录或文件 | 用途 |
-| --- | --- |
-| `SKILL.md` | Agent 的主操作说明与任务路由。 |
-| `scripts/` | 材料转换、项目管理、模板蒸馏、渲染、PPTX 导出与检查工具。 |
-| `templates/` | 页面模板、内容变体、组件、图表与图标资产。 |
-| `assets/` | README 与产品视觉资源。 |
-| `references/` | 写作、叙事、设计与质量规则。 |
-| `workflows/` | 预览、模板创建、图表验证等扩展工作流。 |
-| `tests/` | 模板契约、命令入口与核心能力的回归测试。 |
+<details>
+<summary><strong>开发与致谢</strong></summary>
 
-EasySlides 的公开借鉴按能力分层记录如下：
+EasySlides 的开发借鉴了以下公开项目的实践：
 
-- **工程底座 / Engineering foundation**：[hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 与 [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill) 启发了可编辑 PPTX、模板约束和本地交付的工程实践。
-- **学术表达 / Academic communication**：[LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt) 及 Audience-State-Transfer（观众状态转移）帮助定义研究演示中的信息层级与表达目标。
-- **叙事编排 / Narrative orchestration**：[hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 的页面组织实践启发了“页面职责先于排版”的工作方式。
-- **风格与模板治理 / Style and template governance**：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) 促成了风格资产、模板包和质量门禁的分层管理。
-- **论文与文献报告流程 / Paper and literature report workflows**：[xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill) 与 [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder) 为论文材料到演示叙事的流程提供参考。
+- 可编辑 PPTX 与本地生成：[hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)、[Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill)。
+- 学术表达：[LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt)。
+- 风格与模板管理：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)。
+- 论文与文献报告：[xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill)、[fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder)。
 
-上述致谢不代表这些项目对 EasySlides 的正式背书。
+致谢不代表这些项目对 EasySlides 的正式背书。代码许可见 [LICENSE](LICENSE)；引用、上传或再分发第三方模板与图片时，请确认对应素材的授权。
 
 </details>
 
@@ -133,51 +106,69 @@ EasySlides 的公开借鉴按能力分层记录如下：
 
 ## English
 
-EasySlides is an AI Agent plugin for academic talks and research presentations. Describe the task in natural language and provide papers, web pages, Markdown, or reference decks; it creates a locally generated, coherent, and PowerPoint-editable PPTX.
+**Turn research material into slides you can present and edit, using natural language.**
 
-Its core characteristics are:
+EasySlides is an AI Agent plugin for research talks, journal clubs, proposals, and thesis defenses. Provide your material, audience, and key points to get started.
 
-- **Natural-language collaboration**: describe the task, audience, and material. The Agent asks clarifying questions rather than guessing when the brief is incomplete.
-- **Material before layout**: claims, evidence, figures, citations, and narrative sequence are organized before page design begins.
-- **Templates with range**: templates provide a visual language, stable page shells, body variants, and components instead of a small fixed page set.
-- **Reusable distillation**: a reference deck can become reusable template assets that preserve its organization, hierarchy, and visual rhythm.
-- **Editable, reviewed delivery**: text, shapes, colors, charts, and structure remain editable in PowerPoint, with capacity, alignment, geometry, and visual checks before delivery.
+Current version: **1.1.0** · [Release notes](CHANGELOG.md)
 
-### How It Differs From Common AI Slide Methods
+### Template and Example Gallery
 
-| Method | Best at | Common limitation | EasySlides approach |
+**[Explore the gallery](http://easyslides.scansci.com/)**
+
+| [Native Templates](http://easyslides.scansci.com/?library=native#catalog) | [Image References](http://easyslides.scansci.com/?library=image#catalog) |
+| --- | --- |
+| Editable PPT creation, with real examples | Whole-deck thumbnails to guide AI-generated slide design |
+
+You can also supply your own PPTX or reference images.
+
+### Get Started
+
+In Codex or an Agent that supports skill installation, say:
+
+> Please install the full [EasySlides repository](https://github.com/Rimagination/easyslides) and its runtime dependencies, and check that it can generate PPTX files.
+
+Then ask:
+
+> Turn this paper into a 15-slide journal-club presentation. Focus on the research question, methods, and results. Ask me to choose a production method first.
+
+See the [installation guide](INSTALL.md) for the full repository and dependencies. Image-based methods require Codex `imagegen` in your host.
+
+### Choose Your Method
+
+EasySlides asks you to choose before starting unless you have already specified a method.
+
+| Method | Best for | Token Usage | Time |
 | --- | --- | --- | --- |
-| **AI-generated HTML or web slides** | Web display, interaction, and visual freedom | The result is usually not a native PPTX; returning to PowerPoint can make editing and reuse costly | Generates native editable PPTX while retaining template, component, and page structure |
-| **AI-generated PPTX** | Producing a fast visual first draft | Generic layouts often need extensive correction for research material, existing templates, and detail work | Understands the material and narrative before selecting controlled template variants and components |
-| **AI outline or copy, then manual layout** | Full human control of layout | Material organization, page composition, alignment, and iteration remain manual work | The Agent organizes content and composes pages, with the user confirming key choices |
-| **Code- or markup-generated slides** | Reproducibility and developer workflows | Requires technical fluency and may be awkward to continue editing in PowerPoint | Natural-language collaboration with a PowerPoint-editable deliverable |
+| **Direct editable PPT** | Editing text, diagrams, and layouts directly in PowerPoint | Medium | Medium |
+| **AI images, then full-slide reconstruction** | Approving the generated visual design before rebuilding the whole slide | High | Long |
+| **AI images, then selected-region reconstruction** | Making only annotated parts of an approved image editable | Low to medium | Short to medium |
 
-### Best for
+For image-based methods, approve the actual `imagegen` output, then choose:
 
-- Journal clubs, literature reviews, research updates, courses, proposals, and thesis defenses.
-- Creating a new deck in the style of an existing presentation, then retaining that style as a reusable template.
-- Turning scattered research material into an evidence-based story that can be presented and edited.
+- **Full vector reconstruction**: editable shapes, with possible differences in detail. Token usage: high to very high; time: long to very long.
+- **Preserve complex images**: editable text and simple shapes; pictures stay intact. Token usage and time: medium.
 
-### Get started
+Rebuilt text uses native text boxes with logical lines kept together and alignment checked. Unselected regions and picture internals remain uneditable. Approved images skip generation; difficult vector work requires your confirmation.
 
-In Codex or an AI Agent that supports skill installation, say:
+All levels are relative to scope and complexity. Selected-region estimates assume existing images and a few annotations; reconstruction estimates exclude image generation.
 
-> Please install this plugin: [Rimagination/easyslides](https://github.com/Rimagination/easyslides)
+### Results
 
-Then describe the deck in natural language: “Turn this paper into a 15-slide journal-club deck and focus on the research question, method, and results.”
+Delivery includes PPTX, previews, editable scope, and known differences. Available usage statistics are reported; missing exact token or image-quota figures are marked unavailable, never inferred from account percentages.
 
-### Gallery
+### Privacy
 
-See real slide pages, templates, and downloadable examples in the [EasySlides gallery](http://easyslides.scansci.com/).
+Files stay in your workspace; cloud AI processes the material you send to it. Confirm permission before sharing sensitive research or publishing private files.
 
 <details>
-<summary><strong>Repository structure and credits</strong></summary>
+<summary><strong>Implementation and Credits</strong></summary>
 
-<br>
+Direct creation converts SVG/shape descriptions into DrawingML objects or fills an existing PPTX. Image reconstruction uses `imagegen` pages, text/layout recognition, and either `scansci-svg` redrawing or original picture regions. Partial rebuilding replaces only selected regions and their old pixels.
 
-`SKILL.md` routes Agent tasks; `scripts/` contains conversion, distillation, rendering, export, and QA utilities; `templates/` contains layouts, variants, components, charts, and icons; `references/` records authoring and design rules; and `tests/` protects the core contracts.
+See [ARCHITECTURE.md](ARCHITECTURE.md) and [INSTALL.md](INSTALL.md) for development details.
 
-EasySlides builds on public practice and inspiration from [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master), [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill), [LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt), [op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill), [xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill), and [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder). These acknowledgements do not imply formal endorsement.
+EasySlides draws on public practice from [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master), [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill), [LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt), [op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill), [xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill), and [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder). Acknowledgement does not imply endorsement. See [LICENSE](LICENSE) for the code license; third-party templates and images require their own permissions.
 
 </details>
 

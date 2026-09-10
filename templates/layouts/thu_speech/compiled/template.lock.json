@@ -2,7 +2,7 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "thu_speech",
   "package_version": "1.0.0",
-  "source_digest": "ff65f24fa675db005be67629d84bb03ddfa886d5287e70af94e2638ece970020",
+  "source_digest": "5703e02949dae0f32df879fea6bc51c2f4c82df9bac1eda3a8ab065f1931922d",
   "sources": {
     "package": {
       "path": "templates/layouts/thu_speech/template_package.json",
@@ -34,7 +34,15 @@
     },
     "capability_profile": {
       "path": "templates/layouts/thu_speech/capability_profile.json",
-      "sha256": "ef47cde86dcc10fe77a00a23bf94c05e4b0c7a9ad34dca668edf36e7e5b6e40b"
+      "sha256": "920ad00704aef7c3e4060dd0aa69f94e8cf45feec818eefbb7d50d7bc891c98a"
+    },
+    "theme_palettes.json": {
+      "path": "templates/layouts/thu_speech/theme_palettes.json",
+      "sha256": "93bf1c59d0e7417d736bb44542d07a3a817bea201af4b2b92aed522fc3bd50b2"
+    },
+    "design_spec.md": {
+      "path": "templates/layouts/thu_speech/design_spec.md",
+      "sha256": "7060de395b5994100a516bc432981a0cce752b1deffe9914e9b5fcdc85cc61a6"
     },
     "shell:cover": {
       "path": "templates/layouts/thu_speech/01_cover.svg",

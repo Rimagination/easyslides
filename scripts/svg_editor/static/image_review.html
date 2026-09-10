@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>imagegen 原图预览</title>
+<link rel="icon" href="data:,">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font:14px "Microsoft YaHei",sans-serif;color:#253038;background:#f2f4f5;letter-spacing:0}
+button,select{font:inherit;color:inherit;background:white;border:1px solid #cbd2d7;border-radius:4px}
+button{cursor:pointer}button:hover{background:#e9f3f0}button:disabled{opacity:.4;cursor:default}
+button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #26856f;outline-offset:2px}
+::selection{background:#c9e7de}a{color:#176b59;text-underline-offset:3px}
+header{height:56px;display:flex;align-items:center;gap:20px;padding:12px 20px;border-bottom:1px solid #d9dfe2;background:white}
+h1{font-size:18px;margin:0;white-space:nowrap}#project{color:#5f6b72;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+main{height:calc(100dvh - 56px);display:grid;grid-template-columns:156px minmax(0,1fr)}
+nav{overflow:auto;border-right:1px solid #d9dfe2;padding:12px;background:#fafbfc;scrollbar-color:#b5c0c5 transparent;scrollbar-width:thin}
+.thumb{display:block;width:100%;padding:5px;margin-bottom:12px}.thumb[aria-current="page"]{outline:2px solid #147c67;outline-offset:-2px;background:#edf6f3}
+.thumb img{display:block;width:100%;height:72px;object-fit:contain}.thumb span{display:block;font-size:12px;padding:5px 0 1px;font-variant-numeric:tabular-nums}
+.workspace{min-width:0;min-height:0;display:flex;flex-direction:column}
+.toolbar{min-height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:10px;background:white;border-bottom:1px solid #d9dfe2}
+.icon{display:grid;place-items:center;width:36px;height:36px;padding:0}.icon svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#page-label{min-width:76px;text-align:center;font-variant-numeric:tabular-nums}select{height:36px;padding:4px;max-width:140px}
+.viewport{flex:1;min-height:0;overflow:auto;padding:20px;scrollbar-color:#b5c0c5 transparent}
+.canvas{margin:auto;line-height:0}.canvas img{width:100%;height:auto;display:block;background:white}
+footer{min-height:38px;flex-shrink:0;display:flex;gap:16px;align-items:center;padding:8px 20px;background:white;border-top:1px solid #d9dfe2;font-size:12px}
+#source-name{white-space:nowrap}#status{min-width:0;overflow-wrap:anywhere;color:#5f6b72}.error{color:#a51c26!important}
+[hidden]{display:none!important}
+@media(max-width:720px){
+header{padding:10px 12px;height:52px;gap:12px}h1{font-size:17px}#project{font-size:12px}
+main{height:calc(100dvh - 52px);display:flex;flex-direction:column}
+nav{display:flex;flex-shrink:0;gap:10px;height:90px;overflow-x:auto;padding:8px;border-right:0;border-bottom:1px solid #d9dfe2}
+.thumb{flex:0 0 108px;margin:0;padding:4px}.thumb img{height:48px}.thumb span{padding:2px 0}
+.workspace{flex:1}.toolbar{gap:8px;padding:6px 8px}.viewport{padding:12px}footer{gap:8px;padding:8px 12px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<header><h1>imagegen 原图</h1><span id="project"></span></header>
+<main>
+<nav id="slides" aria-label="原图页码"></nav>
+<section class="workspace" aria-label="原图预览">
+<div class="toolbar">
+<!-- Lucide icons: chevron-left, chevron-right, refresh-cw (ISC). -->
+<button id="prev" class="icon" title="上一页" aria-label="上一页" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+<span id="page-label" aria-live="polite">0 / 0</span>
+<button id="next" class="icon" title="下一页" aria-label="下一页" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+<select id="zoom" aria-label="缩放" disabled><option value="fit">整页</option><option value="width">适合宽度</option><option value="1">100%</option><option value="1.5">150%</option></select>
+<button id="reload" class="icon" title="刷新原图" aria-label="刷新原图"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16M8 16H3v5"/></svg></button>
+</div>
+<div class="viewport"><div class="canvas" id="canvas"><img id="original" alt="imagegen 原始幻灯片" hidden></div></div>
+<footer><a id="source-name" hidden target="_blank" rel="noopener" title="打开原始图片"></a><span id="status" role="status">正在读取原图</span></footer>
+</section>
+</main>
+<script src="/static/image_review.js"></script>
+</body></html>

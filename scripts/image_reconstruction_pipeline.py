@@ -9,12 +9,18 @@ PPTX output still goes through the existing SVG/shape-IR/DrawingML backend.
 from __future__ import annotations
 
 import argparse
+import filecmp
 import json
+import math
 import shutil
 from pathlib import Path
 from typing import Any
 
-from PIL import Image
+from PIL import Image, ImageChops, ImageDraw
+try:
+    from scripts.clarification_gate import require_production_decisions
+except ModuleNotFoundError:  # pragma: no cover
+    from clarification_gate import require_production_decisions
 
 try:
     from scripts import (
@@ -64,15 +70,21 @@ def _ensure_project_dirs(project: Path) -> None:
 def _copy_source_images(project: Path, source_images: list[Path]) -> list[dict[str, Any]]:
     copied: list[dict[str, Any]] = []
     source_dir = project / "sources"
+    pending = []
+    if not source_images:
+        raise ValueError("at least one source image is required")
+    # Validate the entire batch before copying; even an analysis reset preserves sources.
     for index, source in enumerate(source_images, start=1):
         if not source.exists():
             raise FileNotFoundError(f"source image not found: {source}")
         suffix = source.suffix.lower() if source.suffix.lower() in IMAGE_SUFFIXES else ".png"
         target = source_dir / f"slide_{index:03d}{suffix}"
-        if source.resolve() != target.resolve():
-            shutil.copy2(source, target)
-        with Image.open(target) as image:
+        with Image.open(source) as image:
             width, height = image.size
+            image.verify()
+        if target.exists() and source.resolve() != target.resolve() and not filecmp.cmp(source, target, shallow=False):
+            raise FileExistsError(f"source already exists with different content: {target}; use a new project")
+        pending.append((source, target))
         copied.append(
             {
                 "slide_id": f"s{index:02d}",
@@ -87,28 +99,38 @@ def _copy_source_images(project: Path, source_images: list[Path]) -> list[dict[s
                 },
             }
         )
+    for source, target in pending:
+        if not target.exists():
+            with source.open("rb") as reader, target.open("xb") as writer:
+                shutil.copyfileobj(reader, writer)
     return copied
 
 
-def init_project(project: str | Path, source_images: list[str | Path], *, overwrite_analysis: bool = False) -> dict[str, Any]:
+def init_project(project: str | Path, source_images: list[str | Path], *, overwrite_analysis: bool = False,
+                 production_scheme: str | None = None, reconstruction_mode: str | None = None) -> dict[str, Any]:
     project_path = Path(project)
+    analysis_path = project_path / "analysis" / "_analysis.json"
+    if analysis_path.exists() and not overwrite_analysis:
+        raise FileExistsError(f"analysis already exists: {analysis_path}")
+    decisions = require_production_decisions({"production_scheme": production_scheme, "reconstruction_mode": reconstruction_mode})
+    if production_scheme == "direct_editable":
+        raise ValueError("image reconstruction requires an image production scheme")
     project_path.mkdir(parents=True, exist_ok=True)
     _ensure_project_dirs(project_path)
     slides = _copy_source_images(project_path, [Path(path) for path in source_images])
 
     inventory = {
         "schema_version": slide_image_inventory.INVENTORY_SCHEMA_VERSION,
-        "reconstruction_mode": "faithful-practical",
+        **decisions,
+        "quality_mode": "faithful-practical",
         "slides": slides,
     }
-    analysis_path = project_path / "analysis" / "_analysis.json"
-    if analysis_path.exists() and not overwrite_analysis:
-        raise FileExistsError(f"analysis already exists: {analysis_path}")
     _write_json(analysis_path, inventory)
 
     run_manifest = {
         "schema_version": RUN_SCHEMA_VERSION,
         "project_kind": "slide_image_reconstruction",
+        "decisions": decisions,
         "analysis": _relative(analysis_path, project_path),
         "sources": [slide["source_image"] for slide in slides],
         "paths": {
@@ -204,7 +226,7 @@ def _count(report: dict[str, Any], severity: str) -> int:
 
 
 def _gate(name: str, report: dict[str, Any], report_path: Path, *, advisory: bool = False) -> dict[str, Any]:
-    blocking = 0 if advisory else _count(report, "blocking")
+    blocking = 0 if advisory else max(_count(report, "blocking"), int(report.get("status") != "pass"))
     return {
         "name": name,
         "status": str(report.get("status") or "fail"),
@@ -229,6 +251,8 @@ def qa_project(
     fail_source_mae: float = 18.0,
     fail_source_changed_pct: float = 35.0,
     source_fit_mode: str = "contain",
+    production_scheme: str | None = None,
+    reconstruction_mode: str | None = None,
 ) -> dict[str, Any]:
     if mode not in {"faithful-practical", "pixel-strict"}:
         raise ValueError("mode must be faithful-practical or pixel-strict")
@@ -243,15 +267,76 @@ def qa_project(
     source_paths = [Path(path) for path in source_images] if source_images else _default_source_images(project_path, inventory_path)
 
     gates: list[dict[str, Any]] = []
+    inventory_data = _load_json(inventory_path) if inventory_path.is_file() else {}
+    decisions = {key: value for key, value in (
+        ("production_scheme", production_scheme or inventory_data.get("production_scheme")),
+        ("reconstruction_mode", reconstruction_mode or inventory_data.get("reconstruction_mode")),
+    )}
+    required = []
+    rendered_files = compare_source_render.rendered_pngs(rendered_path) if rendered_path.is_dir() else []
+    try:
+        require_production_decisions(decisions)
+        if decisions["production_scheme"] == "direct_editable":
+            raise ValueError("image QA requires an image production scheme")
+        for key, value in decisions.items():
+            if inventory_data.get(key) and inventory_data[key] != value:
+                raise ValueError(f"{key} differs from the recorded user choice")
+    except ValueError as exc:
+        required.append({"code": "QA-DECISIONS", "severity": "blocking", "message": str(exc)})
+    for name, exists in (
+        ("inventory", inventory_path.is_file()),
+        ("PPTX", bool(pptx_path and pptx_path.is_file())),
+        ("source images", bool(source_paths) and all(path.is_file() for path in source_paths)),
+        ("rendered images", bool(rendered_files)),
+    ):
+        if not exists:
+            required.append({"code": "QA-INPUT-MISSING", "severity": "blocking", "message": f"Required {name} missing"})
+    if len(source_paths) != len(rendered_files) or len(source_paths) != len(inventory_data.get("slides", [])):
+        required.append({"code": "QA-SLIDE-COUNT", "severity": "blocking", "message": "Source, inventory and rendered slide counts must match"})
+    if decisions["production_scheme"] == "image_partial_rebuild":
+        selected_count = 0
+        for slide in inventory_data.get("slides", []):
+            regions = slide.get("reconstruction_regions")
+            if not isinstance(regions, list):
+                required.append({"code": "QA-PARTIAL-SCOPE", "severity": "blocking", "message": "Partial rebuild requires explicit reconstruction_regions per slide"})
+                continue
+            selected_count += len(regions)
+            for region in regions:
+                valid = isinstance(region, dict) and all(type(region.get(k)) in (int, float) and math.isfinite(region[k]) for k in ("x", "y", "w", "h"))
+                if not valid or not (region["x"] >= 0 and region["y"] >= 0 and region["w"] > 0 and region["h"] > 0 and region["x"] + region["w"] <= 100 and region["y"] + region["h"] <= 100):
+                    required.append({"code": "QA-PARTIAL-SCOPE", "severity": "blocking", "message": "reconstruction_regions must be finite in-bounds percentage boxes"})
+        if not selected_count:
+            required.append({"code": "QA-PARTIAL-SCOPE", "severity": "blocking", "message": "Select at least one region in the deck"})
+        if not required:
+            for source, rendered, slide in zip(source_paths, rendered_files, inventory_data["slides"]):
+                with Image.open(source) as original, Image.open(rendered) as actual:
+                    if abs(original.width / original.height - actual.width / actual.height) > 0.01:
+                        required.append({"code": "QA-PARTIAL-ASPECT", "severity": "blocking", "message": "Partial reconstruction must preserve source aspect ratio"})
+                        continue
+                    before = original.convert("RGB").resize(actual.size)
+                    difference = ImageChops.difference(before, actual.convert("RGB")).convert("L")
+                    draw = ImageDraw.Draw(difference)
+                    for region in slide["reconstruction_regions"]:
+                        x, y = region["x"] * actual.width / 100, region["y"] * actual.height / 100
+                        draw.rectangle((x, y, x + region["w"] * actual.width / 100, y + region["h"] * actual.height / 100), fill=0)
+                    changed = sum(difference.histogram()[11:]) / (actual.width * actual.height)
+                    if changed > 0.001:
+                        required.append({"code": "QA-UNSELECTED-CHANGED", "severity": "blocking", "message": f"Unselected content changed: {source.name} ({changed:.2%})"})
+    required_report = {"status": "fail" if required else "pass", "issues": required, "blocking_count": len(required)}
+    required_path = reports_dir / "required_inputs_report.json"
+    _write_json(required_path, required_report)
+    gates.append(_gate("required_inputs", required_report, required_path))
 
     if inventory_path.exists():
-        inventory_report = slide_image_inventory.validate_inventory(_load_json(inventory_path))
+        inventory_report = slide_image_inventory.validate_inventory(inventory_data)
         inventory_report_path = reports_dir / "slide_image_inventory_report.json"
         _write_json(inventory_report_path, inventory_report)
         gates.append(_gate("slide_image_inventory", inventory_report, inventory_report_path))
 
-    if pptx_path and pptx_path.exists():
-        structure_report = validate_image_reconstruction_pptx.validate_image_reconstruction_pptx(pptx_path)
+    if pptx_path and pptx_path.is_file() and not any(item["code"] == "QA-DECISIONS" for item in required):
+        structure_report = validate_image_reconstruction_pptx.validate_image_reconstruction_pptx(
+            pptx_path, **decisions, inventory=inventory_data, require_source_text_lines=True,
+        )
         structure_report_path = reports_dir / "image_reconstruction_pptx_report.json"
         _write_json(structure_report_path, structure_report)
         gates.append(_gate("image_reconstruction_structure", structure_report, structure_report_path))
@@ -267,7 +352,7 @@ def qa_project(
         _write_json(split_report_path, split_report)
         gates.append(_gate("split_assets", split_report, split_report_path))
 
-    if source_paths and rendered_path.exists():
+    if source_paths and all(path.is_file() for path in source_paths) and rendered_files:
         diff_dir = reports_dir / "source_render_diff"
         diff_report = compare_source_render.compare_source_images_to_render_dir(
             source_paths,
@@ -311,6 +396,8 @@ def build_parser() -> argparse.ArgumentParser:
     init_parser.add_argument("project", help="Project directory.")
     init_parser.add_argument("source_images", nargs="+", help="Source slide image(s), in slide order.")
     init_parser.add_argument("--overwrite-analysis", action="store_true", help="Overwrite an existing analysis/_analysis.json.")
+    init_parser.add_argument("--production-scheme", choices=["image_full_rebuild", "image_partial_rebuild"], required=True)
+    init_parser.add_argument("--reconstruction-mode", choices=["full_vector", "preserve_complex_images"], required=True)
 
     qa_parser = subparsers.add_parser("qa", help="Run image reconstruction QA gates for a project.")
     qa_parser.add_argument("project", help="Project directory.")
@@ -325,6 +412,8 @@ def build_parser() -> argparse.ArgumentParser:
     qa_parser.add_argument("--source-fit-mode", choices=["contain", "stretch"], default="contain")
     qa_parser.add_argument("--report", help="Output report path. Defaults to reports/image_reconstruction_pipeline_report.json.")
     qa_parser.add_argument("--quiet", action="store_true")
+    qa_parser.add_argument("--production-scheme", choices=["image_full_rebuild", "image_partial_rebuild"])
+    qa_parser.add_argument("--reconstruction-mode", choices=["full_vector", "preserve_complex_images"])
 
     return parser
 
@@ -332,7 +421,8 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     if args.command == "init":
-        report = init_project(args.project, args.source_images, overwrite_analysis=args.overwrite_analysis)
+        report = init_project(args.project, args.source_images, overwrite_analysis=args.overwrite_analysis,
+                              production_scheme=args.production_scheme, reconstruction_mode=args.reconstruction_mode)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0
 
@@ -347,6 +437,8 @@ def main(argv: list[str] | None = None) -> int:
         fail_source_mae=args.fail_source_mae,
         fail_source_changed_pct=args.fail_source_changed_pct,
         source_fit_mode=args.source_fit_mode,
+        production_scheme=args.production_scheme,
+        reconstruction_mode=args.reconstruction_mode,
     )
     report_path = Path(args.report) if args.report else Path(args.project) / "reports" / "image_reconstruction_pipeline_report.json"
     _write_json(report_path, report)

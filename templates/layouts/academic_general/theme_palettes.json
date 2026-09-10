@@ -1,0 +1,56 @@
+{
+  "schema_version": "easyslides.theme_palettes.v1",
+  "template_id": "academic_general",
+  "default_palette": "academic_blue",
+  "replace_roles": ["background", "surface", "primary", "primary_dark", "accent", "accent_secondary", "border", "text_on_light"],
+  "palettes": {
+    "academic_blue": {
+      "name": "Academic Blue",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F5F7FA",
+        "primary": "#003366",
+        "primary_dark": "#002244",
+        "accent": "#0066CC",
+        "accent_secondary": "#CC0000",
+        "text_on_light": "#333333",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#666666",
+        "muted_on_dark": "#E8F4FC",
+        "border": "#D0D7E0"
+      }
+    },
+    "academic_green": {
+      "name": "Academic Green",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F2F8F4",
+        "primary": "#146B4A",
+        "primary_dark": "#0C4932",
+        "accent": "#2A9D8F",
+        "accent_secondary": "#D97706",
+        "text_on_light": "#1F2937",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#5B6B64",
+        "muted_on_dark": "#D7F0E3",
+        "border": "#C9DED3"
+      }
+    },
+    "academic_purple": {
+      "name": "Academic Purple",
+      "colors": {
+        "background": "#FFFFFF",
+        "surface": "#F7F3F9",
+        "primary": "#6B2A7A",
+        "primary_dark": "#451A52",
+        "accent": "#9B59B6",
+        "accent_secondary": "#C00000",
+        "text_on_light": "#2D2533",
+        "text_on_dark": "#FFFFFF",
+        "muted_on_light": "#6F6375",
+        "muted_on_dark": "#EADCF0",
+        "border": "#DCCCE2"
+      }
+    }
+  }
+}

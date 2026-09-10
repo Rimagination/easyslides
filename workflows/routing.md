@@ -8,6 +8,41 @@ Use this file before entering the main EasySlides pipeline or any standalone
 workflow. If this file conflicts with a short route summary elsewhere, this
 file wins for route selection; the selected workflow then owns execution.
 
+## Mandatory production-scheme choice
+
+Before routing any new or regenerated PPT, require an explicit user choice among
+the three production schemes in `workflows/clarification-gate.md`. An unspecified
+scheme MUST trigger that question even when all other requirements are clear.
+No automatic default; recommendations do not authorize execution. Preserve an
+explicit choice already made for the same task. Apply deterministic technical
+routing only after this choice, subject to the selected route's prerequisites.
+
+## Image-reference template routing
+
+The `image_full_rebuild` scheme uses reference images as its visual template,
+not the native editable template library. Built-in image references are listed
+in `templates/image_references/registry.json`; let the user select one or supply
+their own image. Do not apply `templates/template_policy.json` as an image-style
+selector or silently substitute a native layout for the selected reference.
+
+Reference style + user content -> imagegen pages -> original-image preview and
+confirmation -> mandatory reconstruction-mode choice -> editable PPTX. Existing
+final slide images skip imagegen. Partial reconstruction uses the confirmed
+images and selected regions. Both choice rounds must disclose token/time levels
+as specified in `workflows/clarification-gate.md`.
+
+A request to turn PPTs into single-image style references uses rendering plus
+contact-sheet assembly only. It does not trigger native-template distillation,
+deck generation, or a production-scheme choice. Register these assets only in
+the separate image-reference catalog, preserving source page order and count.
+Read registry metadata first (`name`, `style_summary`, `version`); load only the
+user-selected full reference image. Do not preload all template images or OCR
+the catalog. Use compressed previews for the user-facing gallery. The installed
+plugin shares the project image-reference directory via a local junction; avoid
+copying assets through that link during synchronization. Source renders are
+disposable caches, not required runtime template assets.
+See `templates/image_references/README.md` for usage and source-content boundaries.
+
 ## Routing Discipline
 
 | Rule | Behavior |
@@ -58,7 +93,7 @@ request is confirmed.
 | Continue an existing split-mode project | `resume-execute` | Phase A artifacts exist | SVG generation and export continue without re-running planning |
 | Data chart calibration | `verify-charts` | Generated SVG pages contain charts | Fixed chart geometry before export |
 | Object-level animation tuning | `customize-animations` | SVG groups or exported context exist | Validated animation config |
-| Browser preview or annotations | `live-preview` | Project exists; SVGs exist for annotation apply | Running preview or applied annotations |
+| Browser preview or annotations | `live-preview` | Project exists; original images for source-image review, or exported SVGs for SVG editing | Read-only originals with built-in browser feedback, or SVG editor annotations |
 | Confirmation page/checklist before execution | `confirm-ui` | Project exists | Confirmation JSON and local HTML page |
 | Visual review/self-check/shareable preview | `visual-review` | PPTX exists or rendered slide PNGs exist | Review manifest, HTML page, and contact sheet |
 | Brand preset creation or inspection | `create-brand` | Brand name, palette, logo, or existing brand id exists | Brand JSON and registry entry |

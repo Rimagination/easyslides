@@ -658,6 +658,7 @@ def compile_template(
     *,
     write: bool = False,
     output_dir: str | Path | None = None,
+    palette_id: str | None = None,
 ) -> dict[str, Any]:
     directory = Path(template_dir).resolve()
     if not directory.is_dir():
@@ -764,6 +765,9 @@ def compile_template(
         }.items()
         if path is not None
     }
+    for name in ("theme_palettes.json", "design_spec.md"):
+        if (directory / name).is_file():
+            source_paths[name] = directory / name
     # A template's JSON contracts describe its runtime surface, but its shell
     # SVGs and local component/media assets are equally authoritative.  Lock
     # them too so a visual edit cannot silently leave compiled IR current.
@@ -847,6 +851,11 @@ def compile_template(
         },
         source_hashes=source_hashes,
     )
+    try:
+        from scripts.theme_tokens import resolve_template_tokens
+    except ModuleNotFoundError:  # pragma: no cover - direct CLI
+        from theme_tokens import resolve_template_tokens
+    template_ir["theme"] = resolve_template_tokens(directory, palette_id)
     if feedback_contract_path is not None:
         template_ir["feedback_contract"] = feedback_contract
     template_ir["source_digest"] = _json_sha256(source_hashes)

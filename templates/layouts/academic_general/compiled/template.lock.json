@@ -2,7 +2,7 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "academic_general",
   "package_version": "2.0.0",
-  "source_digest": "24047351e230bdb092fd5e427748aba251de999e26a39d8255632424deab1e20",
+  "source_digest": "3597229c6c3406ab8b000897bac48db0924305c5ab56df526a4c937c45b2c4ce",
   "sources": {
     "package": {
       "path": "templates/layouts/academic_general/template_package.json",
@@ -39,6 +39,14 @@
     "capability_profile": {
       "path": "templates/layouts/academic_general/capability_profile.json",
       "sha256": "fb87adc39b182768041e6511b0aa162f0ba8fb1c5676d81070e671a110d01d9f"
+    },
+    "theme_palettes.json": {
+      "path": "templates/layouts/academic_general/theme_palettes.json",
+      "sha256": "e751f48853df4422fb3ed393e291826b08af92b863d770d537fe959fda4d13ba"
+    },
+    "design_spec.md": {
+      "path": "templates/layouts/academic_general/design_spec.md",
+      "sha256": "90ef5f4833393b9b4eb76d9c55fba358704753e01df0d48966e92fc4a977f40f"
     },
     "shell:cover": {
       "path": "templates/layouts/academic_general/01_cover.svg",

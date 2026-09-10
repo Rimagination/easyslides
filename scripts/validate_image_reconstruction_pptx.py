@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -69,29 +70,53 @@ def validate_image_reconstruction_pptx(
     pptx_path: str | Path,
     *,
     full_slide_picture_threshold: float = FULL_SLIDE_PICTURE_THRESHOLD,
+    production_scheme: str = "image_full_rebuild",
+    reconstruction_mode: str = "preserve_complex_images",
+    inventory: dict[str, Any] | None = None,
+    require_source_text_lines: bool = False,
 ) -> dict[str, Any]:
+    if production_scheme not in {"image_full_rebuild", "image_partial_rebuild"}:
+        raise ValueError("expected an image reconstruction production_scheme")
+    if reconstruction_mode not in {"full_vector", "preserve_complex_images"}:
+        raise ValueError("invalid reconstruction_mode")
     prs = Presentation(str(pptx_path))
     slide_w = _inches(prs.slide_width)
     slide_h = _inches(prs.slide_height)
     slide_area = slide_w * slide_h
     issues: list[dict[str, Any]] = []
     slides: list[dict[str, Any]] = []
+    expected_slides = (inventory or {}).get("slides", [])
+    if not prs.slides or (inventory is not None and len(expected_slides) != len(prs.slides)):
+        issues.append(_issue("PPTX-SLIDE-COUNT", "blocking", "Nonempty PPTX and inventory slide counts must match.", slide_number=0))
 
     for slide_number, slide in enumerate(prs.slides, start=1):
         text_frame_count = 0
         native_shape_count = 0
         picture_count = 0
         max_picture_area_fraction = 0.0
+        text_boxes = []
+        expected = expected_slides[slide_number - 1] if slide_number <= len(expected_slides) else {}
+        untouched = production_scheme == "image_partial_rebuild" and expected.get("reconstruction_regions") == []
+        exceptions = expected.get("approved_raster_exceptions", [])
+        approved = {item["shape_name"] for item in exceptions if isinstance(item, dict) and item.get("shape_name") and item.get("approval")}
 
         for shape in _iter_shapes(slide.shapes):
             shape_type = getattr(shape, "shape_type", None)
+            if getattr(shape, "has_table", False):
+                cells = [cell.text for row in shape.table.rows for cell in row.cells if cell.text.strip()]
+                text_boxes.extend(cells)
+                text_frame_count += len(cells)
             if _has_visible_text(shape):
                 text_frame_count += 1
+                text_boxes.append(shape.text_frame.text)
             if shape_type == MSO_SHAPE_TYPE.PICTURE:
                 picture_count += 1
                 area_fraction = _shape_area_fraction(shape, slide_area)
                 max_picture_area_fraction = max(max_picture_area_fraction, area_fraction)
-                if area_fraction >= full_slide_picture_threshold:
+                retained_background = production_scheme == "image_partial_rebuild" and shape.name == "source_background"
+                if reconstruction_mode == "full_vector" and not retained_background and shape.name not in approved:
+                    issues.append(_issue("PPTX-UNAPPROVED-RASTER", "blocking", "Full-vector reconstruction contains an unapproved picture.", slide_number=slide_number, shape_name=shape.name))
+                if area_fraction >= full_slide_picture_threshold and not retained_background:
                     issues.append(
                         _issue(
                             "PPTX-FULL-SLIDE-PICTURE",
@@ -125,15 +150,38 @@ def validate_image_reconstruction_pptx(
                     suggestion="Simple panels, arrows, dividers, and badges should be rebuilt as native DrawingML/PPT shapes.",
                 )
             )
-        if picture_count == 1 and text_frame_count == 0 and native_shape_count == 0:
+        if text_frame_count == 0 and native_shape_count == 0 and not untouched:
             issues.append(
                 _issue(
-                    "PPTX-SINGLE-PICTURE-ONLY",
+                    "PPTX-SINGLE-PICTURE-ONLY" if picture_count == 1 else "PPTX-NO-EDITABLE-OBJECTS",
                     "blocking",
-                    "Slide appears to contain only one picture and no editable text or native structure.",
+                    "Slide has no editable text or native structure.",
                     slide_number=slide_number,
                 )
             )
+
+        if inventory is not None:
+            normalize = lambda value: "".join(str(value).split())
+            actual_lines = Counter(normalize(line) for box in text_boxes for line in box.splitlines() if line.strip())
+            element_lines = [line for element in expected.get("elements", []) if element.get("layer") == "C"
+                             for line in str(element.get("text", "")).splitlines() if line.strip()]
+            source_lines = expected.get("source_text_lines")
+            has_text = any(element.get("layer") == "C" for element in expected.get("elements", []))
+            if "source_text_lines" in expected or (require_source_text_lines and has_text):
+                valid = isinstance(source_lines, list) and all(
+                    isinstance(line, str) and line.strip() and len(line.splitlines()) == 1 for line in source_lines
+                ) and (bool(source_lines) or not has_text)
+                if not valid:
+                    issues.append(_issue("PPTX-SOURCE-TEXT-LINES", "blocking", "Record source_text_lines as complete, source-reviewed text lines before acceptance.", slide_number=slide_number))
+                    source_lines = element_lines
+                elif Counter(normalize("".join(element_lines))) - Counter(normalize("".join(source_lines))):
+                    issues.append(_issue("PPTX-SOURCE-TEXT-LINES", "blocking", "Source-reviewed lines omit text from Layer C; reconcile the inventory against the source.", slide_number=slide_number))
+            else:
+                source_lines = element_lines
+            expected_lines = Counter(normalize(line) for line in source_lines)
+            for line, count in expected_lines.items():
+                if actual_lines[line] < count:
+                    issues.append(_issue("PPTX-TEXT-COVERAGE", "blocking", f"Expected source line missing or split across text boxes: {line}", slide_number=slide_number))
 
         slides.append(
             {
@@ -155,6 +203,8 @@ def validate_image_reconstruction_pptx(
         "blocking_count": blocking_count,
         "warning_count": warning_count,
         "thresholds": {"full_slide_picture_area_fraction": full_slide_picture_threshold},
+        "production_scheme": production_scheme,
+        "reconstruction_mode": reconstruction_mode,
         "slides": slides,
         "issues": issues,
     }
@@ -171,6 +221,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--report", help="Optional JSON report path.")
     parser.add_argument("--full-slide-picture-threshold", type=float, default=FULL_SLIDE_PICTURE_THRESHOLD)
     parser.add_argument("--quiet", action="store_true")
+    parser.add_argument("--production-scheme", choices=["image_full_rebuild", "image_partial_rebuild"], default="image_full_rebuild")
+    parser.add_argument("--reconstruction-mode", choices=["full_vector", "preserve_complex_images"], default="preserve_complex_images")
+    parser.add_argument("--inventory", type=Path)
     return parser
 
 
@@ -179,6 +232,9 @@ def main(argv: list[str] | None = None) -> int:
     report = validate_image_reconstruction_pptx(
         args.pptx,
         full_slide_picture_threshold=args.full_slide_picture_threshold,
+        production_scheme=args.production_scheme,
+        reconstruction_mode=args.reconstruction_mode,
+        inventory=json.loads(args.inventory.read_text(encoding="utf-8")) if args.inventory else None,
     )
     if args.report:
         _write_json(Path(args.report), report)

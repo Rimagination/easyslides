@@ -1,0 +1,65 @@
+{
+  "schema_version": "easyslides.template_package.v1",
+  "package_id": "template/literature_minimal",
+  "template_id": "literature_minimal",
+  "version": "1.0.0",
+  "status": "review",
+  "display_name": "Literature Minimal",
+  "description": "Minimal literature-report template with generous whitespace, restrained typography, and optional source or decorative imagery.",
+  "installability": "repo_relative_template_package",
+  "entrypoints": {
+    "slots": "slot_contracts.json",
+    "geometry": "geometry_contract.json",
+    "components": "component_catalog.json",
+    "layouts": "layouts.json",
+    "body_variants": "body_variants.json",
+    "theme_palettes": "theme_palettes.json",
+    "visual_asset_policy": "visual_asset_policy.json",
+    "design_spec": "design_spec.md",
+    "capability_profile": "capability_profile.json"
+  },
+  "source_of_truth": {
+    "package": "template_package.json",
+    "shells": "layouts.json",
+    "body_variants": "body_variants.json",
+    "components": "component_catalog.json",
+    "slots": "slot_contracts.json",
+    "geometry": "geometry_contract.json",
+    "visual_assets": "visual_asset_policy.json"
+  },
+  "derived_outputs": {
+    "template_ir": "compiled/template_ir.json",
+    "lock": "compiled/template.lock.json",
+    "projections": "compiled/projections"
+  },
+  "capability_level": "semantic",
+  "compatibility": {
+    "canvas_format": "ppt169",
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
+    "output_contract": "editable-native-pptx",
+    "layout_mode": "body_variant_only",
+    "required_renderer": "svg_to_pptx"
+  },
+  "capabilities": [
+    "named_slots",
+    "editable_native_pptx",
+    "text_capacity_contract",
+    "source_or_decorative_image_bindings"
+  ],
+  "scenarios": [
+    "literature_report",
+    "paper_reading",
+    "research_seminar"
+  ],
+  "examples": [
+    "templates/layouts/literature_minimal/03_content.svg"
+  ],
+  "layout_count": 5,
+  "source_template_id": "",
+  "production_eligible": false,
+  "runtime_contract": "compiled/template_ir.json",
+  "dependency_lock": "compiled/template.lock.json"
+}

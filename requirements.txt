@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # PPT Master Dependencies / PPT Master 依赖
 # =============================================
 #
@@ -113,3 +114,6 @@ flask>=3.0.0
 # EasySlides local additions for OOXML-safe parsing and packaging.
 defusedxml
 lxml
+
+# Native Windows PowerPoint rendering; Office itself is installed separately.
+pywin32>=306; sys_platform == "win32"

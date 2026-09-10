@@ -39,7 +39,7 @@ Recommended for normal users who want real decks.
 Install or clone the whole repository:
 
 ```powershell
-git clone <easyslides-repo-url>
+git clone https://github.com/Rimagination/easyslides.git
 cd easyslides
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -52,7 +52,7 @@ Verify the local runtime:
 ```powershell
 python scripts/project_manager.py help
 python scripts/image_reconstruction_pipeline.py --help
-python -m pytest tests/test_cli_entrypoints.py
+python scripts/easyslides.py doctor --json
 ```
 
 Capabilities:
@@ -66,6 +66,28 @@ Capabilities:
 
 This is the default installation mode.
 
+Python 3.10 or newer is required. On macOS/Linux activate the environment with
+`source .venv/bin/activate`. On Windows, requirements include the PowerPoint COM
+bridge; Microsoft PowerPoint itself must be installed separately. LibreOffice
+is the alternative renderer. `doctor` reports unavailable or unverified optional
+capabilities explicitly; it does not generate images or consume an image quota.
+
+### Portable Plugin Bundle
+
+Maintainers can build a physical plugin directory without local materials:
+
+```powershell
+python scripts/build_plugin_bundle.py --out build/plugin-bundle/easyslides
+```
+
+Use a new output directory each time; existing directories are never replaced.
+The bundle contains the runtime, three skills, seven native templates, thirteen
+image-reference styles, and installation/license documents. It excludes private
+source documents, local projects, browser caches, tests, and deck outputs.
+Install its `requirements.txt` in a fresh environment and run the commands above
+from the bundle root. Building a bundle does not register it in Codex, install
+host tools, or publish anything online.
+
 ### Level 3: Developer Mode
 
 Use this when editing EasySlides itself.
@@ -74,6 +96,7 @@ Start with Full Local Runtime, then run the broader test set relevant to your
 change:
 
 ```powershell
+python -m pip install pytest opencv-python-headless
 python -m pytest
 ```
 
@@ -148,6 +171,10 @@ Slide-image reconstruction may benefit from OCR and image processing backends.
 Keep API keys in environment variables or local `.env`; never commit real
 tokens.
 
+The optional annotation-assisted tracing scripts additionally need
+`opencv-python-headless` and `vtracer`. These experiment helpers are separate
+from the default SVG/DrawingML export and do not replace source-image review.
+
 ## Common Workflows
 
 ### Create A Normal Deck Project
@@ -169,8 +196,12 @@ python scripts/svg_to_pptx.py projects/my_presentation
 
 ```powershell
 python scripts/project_manager.py init screenshot_case --format ppt169 --kind slide_image_reconstruction
-python scripts/image_reconstruction_pipeline.py init projects/screenshot_case_ppt169_<date> slide_001.png
+python scripts/image_reconstruction_pipeline.py init projects/screenshot_case_ppt169_<date> slide_001.png --production-scheme <confirmed_scheme> --reconstruction-mode <confirmed_mode>
 ```
+
+Ask the user first. `confirmed_scheme` is `image_full_rebuild` or
+`image_partial_rebuild`; `confirmed_mode` is `full_vector` or
+`preserve_complex_images`. Neither choice has an automatic default.
 
 After assembly/export:
 
@@ -186,12 +217,19 @@ python scripts/image_reconstruction_pipeline.py qa projects/screenshot_case_ppt1
 
 ## Skill Installation Boundary
 
+Run `python scripts/easyslides.py doctor` for environment diagnostics.
+`needs_verification` means a capability still needs a real invocation, such as
+PowerPoint rendering. Installing `win32com` or an imagegen skill file alone does
+not establish that the corresponding application/tool is callable. The host may
+explicitly declare native imagegen with `EASYSLIDES_HOST_IMAGEGEN=1`; this declares
+a handoff path and does not test generation or report an image quota.
+
 If a platform asks to install "the EasySlides skill", be explicit about what is
 being installed:
 
 - Installing only `SKILL.md` installs the routing guide.
 - Installing the full repository installs the runtime.
-- Real PPTX generation requires the full repository.
+- Real PPTX generation requires the repository runtime or its complete portable bundle.
 
 Recommended wording:
 

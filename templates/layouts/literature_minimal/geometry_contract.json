@@ -1,0 +1,40 @@
+{
+  "schema_version": "easyslides.template_geometry_contract.v1",
+  "template_id": "literature_minimal",
+  "canvas": {"width": 1280, "height": 720, "format": "ppt169"},
+  "hard_invariants": [
+    "declared_slots_stay_inside_canvas",
+    "text_center_y_matches_container_center_y",
+    "content_body_stays_inside_body_canvas",
+    "ending_metadata_columns_have_at_least_64px_clearance",
+    "ending_metadata_group_is_centered_on_canvas",
+    "generated_decorative_art_stays_inside_declared_right_frame"
+  ],
+  "pages": [
+    {"page_id": "cover", "svg": "01_cover.svg", "regions": [{"region_id": "canvas", "x": 0, "y": 0, "width": 1280, "height": 720, "z_index": 0, "fit": "contain", "allow_overlap": false}], "containers": []},
+    {"page_id": "toc", "svg": "02_toc.svg", "regions": [{"region_id": "canvas", "x": 0, "y": 0, "width": 1280, "height": 720, "z_index": 0, "fit": "contain", "allow_overlap": false}], "containers": []},
+    {"page_id": "chapter", "svg": "02_chapter.svg", "regions": [{"region_id": "canvas", "x": 0, "y": 0, "width": 1280, "height": 720, "z_index": 0, "fit": "contain", "allow_overlap": false}], "containers": []},
+    {
+      "page_id": "content",
+      "svg": "03_content.svg",
+      "regions": [
+        {"region_id": "header", "x": 0, "y": 0, "width": 1280, "height": 90, "z_index": 10, "fit": "contain", "allow_overlap": false},
+        {"region_id": "key_message", "x": 54, "y": 116, "width": 1172, "height": 74, "z_index": 10, "fit": "contain", "allow_overlap": false},
+        {"region_id": "body_canvas", "x": 54, "y": 208, "width": 1172, "height": 452, "z_index": 10, "fit": "contain", "allow_overlap": false},
+        {"region_id": "footer", "x": 0, "y": 665, "width": 1280, "height": 55, "z_index": 1, "fit": "contain", "allow_overlap": false}
+      ],
+      "containers": [
+        {"id": "body_canvas", "x": 54, "y": 208, "width": 1172, "height": 452}
+      ]
+    },
+    {
+      "page_id": "ending",
+      "svg": "04_ending.svg",
+      "regions": [{"region_id": "canvas", "x": 0, "y": 0, "width": 1280, "height": 720, "z_index": 0, "fit": "contain", "allow_overlap": false}],
+      "containers": [
+        {"id": "presenter_metadata", "x": 330, "y": 576.1, "width": 400, "height": 64},
+        {"id": "date_metadata", "x": 780, "y": 579.66, "width": 340, "height": 60}
+      ]
+    }
+  ]
+}

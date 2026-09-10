@@ -10,7 +10,7 @@
   "shells": [
     {
       "page_id": "cover",
-      "svg_path": "templates/layouts/literature_minimal/01_cover.svg",
+      "svg_path": "01_cover.svg",
       "role": "cover",
       "slots": [
         "TITLE",
@@ -21,7 +21,7 @@
     },
     {
       "page_id": "toc",
-      "svg_path": "templates/layouts/literature_minimal/02_toc.svg",
+      "svg_path": "02_toc.svg",
       "role": "toc",
       "slots": [
         "TOC_ITEM_1_TITLE",
@@ -38,7 +38,7 @@
     },
     {
       "page_id": "chapter",
-      "svg_path": "templates/layouts/literature_minimal/02_chapter.svg",
+      "svg_path": "02_chapter.svg",
       "role": "chapter",
       "slots": [
         "CHAPTER_NUM",
@@ -48,7 +48,7 @@
     },
     {
       "page_id": "content",
-      "svg_path": "templates/layouts/literature_minimal/03_content.svg",
+      "svg_path": "03_content.svg",
       "role": "content",
       "slots": [
         "CHAPTER_TITLE",
@@ -61,7 +61,7 @@
     },
     {
       "page_id": "ending",
-      "svg_path": "templates/layouts/literature_minimal/04_ending.svg",
+      "svg_path": "04_ending.svg",
       "role": "ending",
       "slots": [
         "THANK_YOU",

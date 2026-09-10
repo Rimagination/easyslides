@@ -1,0 +1,10 @@
+{
+  "schema_version": "easyslides.semantic_component_catalog.v1",
+  "template_id": "literature_minimal",
+  "primitive_manifest": "",
+  "selection_policy": "No promoted body components. Use the declared shell and body variant geometry; source figures remain source-linked and decorative AI visuals remain page-module assets.",
+  "components": [],
+  "symbols": [],
+  "unknown_component_count": 0,
+  "component_asset_root": "assets/components"
+}
