@@ -514,6 +514,14 @@
       line-height: 1.65;
     }
 
+    .route-visuals {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .route-visuals figcaption {
+      min-height: 72px;
+    }
+
     .scenario-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -598,6 +606,7 @@
       .example-strip,
       .template-grid,
       .toc { grid-template-columns: 1fr; }
+      .route-visuals { grid-template-columns: 1fr; }
       .prompt-grid .prompt-box:last-child:nth-child(odd) { grid-column: auto; }
     }
   </style>
@@ -633,6 +642,7 @@
           <a href="#install">安装一次</a>
           <a href="#templates">选择模板</a>
           <a href="#first-deck">做第一份 PPT</a>
+          <a href="#image-to-editable">生图到可编辑</a>
           <a href="#iterate">查看与迭代</a>
         </div>
       </aside>
@@ -649,8 +659,9 @@
       <a href="#materials">5. 提供什么材料</a>
       <a href="#clarify">6. 为什么会先提问</a>
       <a href="#scenarios">7. 常用任务怎么说</a>
-      <a href="#iterate">8. 查看、修改与蒸馏</a>
-      <a href="#faq">9. 常见问题</a>
+      <a href="#image-to-editable">8. 生图到可编辑 PPT</a>
+      <a href="#iterate">9. 查看、修改与蒸馏</a>
+      <a href="#faq">10. 常见问题</a>
     </aside>
 
     <article class="article">
@@ -854,9 +865,70 @@ Rimagination/easyslides</code></pre>
           </div>
         </section>
 
-        <section id="iterate">
+        <section id="image-to-editable">
           <span class="chapter-kicker">Section 08</span>
-          <h2>8. 查看、修改与继续迭代</h2>
+          <h2>8. 生图路线：从基金材料到可编辑 PPT</h2>
+          <p>下面用“社会学习促进听觉学习”这份 NIH/NIDCD R01 基金申请材料演示完整路线。先用 <code>zdyf_blue</code> 图片参考模板确定视觉方向，再由 Codex 中的 imagegen 生成整套页面预览，最后按你确认的范围重建为可编辑 PowerPoint。</p>
+
+          <div class="example-strip route-visuals">
+            <figure>
+              <img src="assets/image-references/rdp_blue_technology_preview.jpg" alt="zdyf_blue 重点研发蓝色科技整套缩略图" loading="lazy" decoding="async">
+              <figcaption><strong>1. 图片参考模板</strong><br>整套缩略图提供配色、导航和页面节奏。</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/slides/work-06/slide-01.jpg" alt="社会学习促进听觉学习基金案例生成页面" loading="lazy" decoding="async">
+              <figcaption><strong>2. 先看生成结果</strong><br>先确认封面、章节和视觉方向，再进入重建。</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/slides/work-06/slide-03.jpg" alt="社会学习促进听觉学习基金案例可编辑页面" loading="lazy" decoding="async">
+              <figcaption><strong>3. 交付可编辑 PPT</strong><br>标题、正文、表格和导航进入原生 PowerPoint 元素。</figcaption>
+            </figure>
+          </div>
+
+          <div class="step-list">
+            <div>
+              <h4>准备材料与风格</h4>
+              <p>上传基金申请书、研究图表和必要的补充材料；指定图片参考模板 <code>zdyf_blue</code>，或在<a href="index.html?library=image#catalog">图片参考模板展厅</a>选择其他整套缩略图。</p>
+            </div>
+            <div>
+              <h4>生成整套页面预览</h4>
+              <p>Agent 先组织立项依据、科学问题、研究内容、技术路线和预期产出，再调用 imagegen 逐页生成页面图。先看整套缩略图，确认叙事和风格。</p>
+            </div>
+            <div>
+              <h4>批注需要重建的区域</h4>
+              <p>你可以直接指出页码和对象，例如“第 3 页保留右侧脑图，只重建标题、三栏文字和底部结论条”。重建以已确认的图片版本为依据，不从另一份 PPT 反推。</p>
+            </div>
+            <div>
+              <h4>选择重建深度并导出</h4>
+              <p>默认建议保留复杂配图为图片，把标题、正文、表格、导航和单行文字转成 PowerPoint 原生元素；也可以选择全图 SVG 重建，或只重建批注区域。</p>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>开始前会先确认方案、耗时和消耗</strong>
+            <p>全图 SVG 重建的可编辑范围最大，耗时和 Token 消耗最高；保留复杂配图、重建文字与结构的路线更快；局部重建适合只修改少数页面。Agent 会在开始前给出选项，完成后汇报实际生成与重建消耗。</p>
+          </div>
+
+          <div class="prompt-box">
+            <div class="prompt-head">
+              <strong>基金材料 · 生图到可编辑 PPT</strong>
+              <button class="copy-button" type="button" data-copy-target="imageRebuildPrompt">复制</button>
+            </div>
+            <pre><code id="imageRebuildPrompt">请用 EasySlides 根据我上传的 NIH/NIDCD R01“社会学习促进听觉学习”基金申请材料，调用 Codex 中的 imagegen，走“AI 生图 → 可编辑 PPT”路线。
+使用图片参考模板 zdyf_blue（重点研发-蓝色科技），先生成 12 页左右的整套页面预览，重点讲清立项依据、科学问题、研究内容、技术路线和预期产出。
+预览后请让我选择：
+1. 复杂配图保留原图，标题、正文、表格、导航和单行文字转为 PowerPoint 原生元素；
+2. 全图重建为 SVG/矢量，尽量扩大可编辑范围；
+3. 我批注指定页面和区域，只重建选中的元素。
+请在开始前说明预计耗时和 Token 消耗；确认后再导出 PPTX，并保留生成页面作为对照。</code></pre>
+          </div>
+
+          <p>示例成品：<a href="assets/decks/nih-social-learning-image-rebuild-editable.pptx" download>下载这份 12 页可编辑 PPTX</a>，或在<a href="index.html#catalog">成品展示</a>中查看完整页面。</p>
+        </section>
+
+        <section id="iterate">
+          <span class="chapter-kicker">Section 09</span>
+          <h2>9. 查看、修改与继续迭代</h2>
           <p>完成后得到的是可编辑的 PPTX，而不是一张张合成图片。先看完整预览，再在 PowerPoint 中改标题、替换图表或调整内容；需要回到 Agent 继续优化时，直接指出具体页面和问题即可。</p>
           <div class="step-list">
             <div>
@@ -879,8 +951,8 @@ Rimagination/easyslides</code></pre>
         </section>
 
         <section id="faq">
-          <span class="chapter-kicker">Section 09</span>
-          <h2>9. 常见问题</h2>
+          <span class="chapter-kicker">Section 10</span>
+          <h2>10. 常见问题</h2>
           <h3>我需要会 PowerPoint 或写代码吗？</h3>
           <p>不需要会代码。你只要能在对话里说明材料和要求即可。输出文件仍是普通的 PPTX，后续可以照常在 PowerPoint 中编辑。</p>
 

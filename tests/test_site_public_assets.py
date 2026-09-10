@@ -66,6 +66,13 @@ class SitePublicAssetsTests(unittest.TestCase):
         self.assertIn("如果时长、模板或内容重点仍不明确，请先问我并给出选项", text)
         self.assertIn("从参考 PPT 蒸馏模板", text)
         self.assertIn("模板不会把内容锁死", text)
+        self.assertIn("生图路线：从基金材料到可编辑 PPT", text)
+        self.assertIn("zdyf_blue", text)
+        self.assertIn("imageRebuildPrompt", text)
+        self.assertIn(
+            "assets/decks/nih-social-learning-image-rebuild-editable.pptx",
+            text,
+        )
         self.assertIn("assets/slides/work-04/slide-01.jpg", text)
         self.assertNotIn("有道龙虾路线", text)
         self.assertNotIn("准备模型 API Key", text)
