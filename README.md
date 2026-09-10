@@ -2,7 +2,7 @@
   <img src="assets/logo.png" alt="EasySlides Logo" width="128" height="128">
 </p>
 
-# EasySlides
+<h1 align="center">EasySlides</h1>
 
 [中文](#中文) | [English](#english)
 
