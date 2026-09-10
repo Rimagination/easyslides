@@ -24,7 +24,7 @@
 
   function render() {
     const en = english();
-    tabs[0].textContent = en ? 'Native templates' : '原生模板';
+    tabs[0].textContent = en ? 'Showcase decks' : '成品展示';
     tabs[1].textContent = en ? 'Image references' : '图片参考模板';
     if (selected !== 'image') return;
     grid.replaceChildren();

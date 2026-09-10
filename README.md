@@ -22,7 +22,7 @@
 
 **[进入展厅，先看看效果](http://easyslides.scansci.com/)**
 
-| [原生模板](http://easyslides.scansci.com/?library=native#catalog) | [图片参考模板](http://easyslides.scansci.com/?library=image#catalog) |
+| [成品展示](http://easyslides.scansci.com/?library=native#catalog) | [图片参考模板](http://easyslides.scansci.com/?library=image#catalog) |
 | --- | --- |
 | 用于直接制作可编辑 PPT，含真实案例 | 用整套缩略图指导 AI 生图风格 |
 
@@ -78,7 +78,7 @@ Turn research material into editable PPT with an AI Agent.
 
 **[Explore the gallery](http://easyslides.scansci.com/)**
 
-| [Native Templates](http://easyslides.scansci.com/?library=native#catalog) | [Image References](http://easyslides.scansci.com/?library=image#catalog) |
+| [Showcase Decks](http://easyslides.scansci.com/?library=native#catalog) | [Image References](http://easyslides.scansci.com/?library=image#catalog) |
 | --- | --- |
 | Editable PPT creation, with real examples | Whole-deck thumbnails to guide AI-generated slide design |
 
