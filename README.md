@@ -34,11 +34,16 @@
 
 在 Codex 或支持技能安装的 AI Agent 中发送：
 
-> 请帮我安装 EasySlides 的完整仓库和运行依赖，并检查能否生成 PPT：[Rimagination/easyslides](https://github.com/Rimagination/easyslides)
+```text
+请帮我安装 EasySlides 的完整仓库和运行依赖，并检查能否生成 PPT：
+https://github.com/Rimagination/easyslides
+```
 
 安装后，上传材料并说出目标：
 
-> 用 easyslides 把这篇论文做成组会汇报，先逐项弹窗问清需求，再开始制作。
+```text
+用 easyslides 把这篇论文做成组会汇报，先逐项弹窗问清需求，再开始制作。
+```
 
 插件会询问尚未明确的材料来源、听众、目标、时长、风格与制作路径，说明相对耗时和
 Token 消耗；已知信息不重复问，无需浏览器或填表。安装细节见 [安装指南](INSTALL.md)。
@@ -53,19 +58,30 @@ Token 消耗；已知信息不重复问，无需浏览器或填表。安装细�
 
 文字与布局直接构建为可编辑元素，论文原图作为图片保留。
 
-> 用 easyslides 基于我上传的多模态城市交通论文，使用 `literature_minimal` 模板直接制作 12 页可编辑综述，保留原图和来源，不补充外部资料。
+```text
+用 easyslides 基于我上传的多模态城市交通论文，
+使用 literature_minimal 模板直接制作 12 页可编辑综述，
+保留原图和来源，不补充外部资料。
+```
 
 #### 2. 整页重建：先确定完整图片页，再忠实重建
 
 以下案例重建整页文字与简单结构，复杂配图保留为图片；已有完整图片页时可跳过生图。
 
-> 先用联网工具搜集多模态城市交通流量预测的论文与原图，再用 easyslides 制作 12 页综述：每次 ImageGen 附上“国自然-绿色”模板参考图和适用的论文原图，逐页生成完整图片 PPT，再忠实整页重建为可编辑 PPT，保留复杂配图。
+```text
+先用联网工具搜集多模态城市交通流量预测的论文与原图，再用 easyslides 制作 12 页综述：
+每次 ImageGen 附上“国自然-绿色”模板参考图和适用的论文原图，逐页生成完整图片 PPT，
+再忠实整页重建为可编辑 PPT，保留复杂配图。
+```
 
 #### 3. 局部重建：只让指定区域可编辑
 
 选中区域内的文字与简单结构可编辑，其余部分保持图片。
 
-> 用 easyslides 局部重建我上传的多模态城市交通汇报图片，只让标题、正文和页码可编辑，保留复杂配图；先确认重建区域，其余部分保持原貌。
+```text
+用 easyslides 局部重建我上传的多模态城市交通汇报图片，
+只让标题、正文和页码可编辑，保留复杂配图；先确认重建区域，其余部分保持原貌。
+```
 
 ### 使用须知
 
@@ -108,11 +124,18 @@ Native templates support direct creation; image references guide image generatio
 
 In Codex or an Agent that supports skill installation, say:
 
-> Please install the full [EasySlides repository](https://github.com/Rimagination/easyslides) and its runtime dependencies, and check that it can generate PPTX files.
+```text
+Please install the full EasySlides repository and its runtime dependencies,
+and check that it can generate PPTX files:
+https://github.com/Rimagination/easyslides
+```
 
 Then ask:
 
-> Use easyslides to turn this paper into a journal-club presentation. Ask me about the requirements step by step before creating it.
+```text
+Use easyslides to turn this paper into a journal-club presentation.
+Ask me about the requirements step by step before creating it.
+```
 
 EasySlides asks about missing source, audience, goal, timing, style and production choices, with relative time and token estimates. Known answers are reused; no browser form is required. See the [installation guide](INSTALL.md).
 
@@ -120,17 +143,31 @@ EasySlides asks about missing source, audience, goal, timing, style and producti
 
 #### 1. Direct creation — revise content and layouts freely
 
-> Use easyslides to create a 12-slide editable review from my uploaded multimodal traffic papers with `literature_minimal`. Preserve original figures and citations; do not add external sources.
+```text
+Use easyslides to create a 12-slide editable review from my uploaded
+multimodal traffic papers with literature_minimal.
+Preserve original figures and citations; do not add external sources.
+```
 
 #### 2. Full-slide reconstruction — establish the image, then rebuild it
 
-> First use web tools to collect multimodal traffic prediction papers and original figures. Then use easyslides to make a 12-slide review: attach the “国自然-绿色” template references and relevant paper figures to each ImageGen call, generate complete slide images, and faithfully rebuild them with editable text and simple structures, preserving complex pictures.
+```text
+First use web tools to collect multimodal traffic prediction papers and original figures.
+Then use easyslides to make a 12-slide review: attach the “国自然-绿色” template references
+and relevant paper figures to each ImageGen call, generate complete slide images,
+and faithfully rebuild them with editable text and simple structures,
+preserving complex pictures.
+```
 
 Approved slide images can also be supplied directly, without new image generation.
 
 #### 3. Partial reconstruction — edit selected regions only
 
-> Use easyslides to rebuild only the titles, body text and page numbers in my traffic presentation images. Confirm the regions first; preserve complex pictures and leave everything else unchanged.
+```text
+Use easyslides to rebuild only the titles, body text and page numbers
+in my traffic presentation images. Confirm the regions first;
+preserve complex pictures and leave everything else unchanged.
+```
 
 ### Before You Use It
 
