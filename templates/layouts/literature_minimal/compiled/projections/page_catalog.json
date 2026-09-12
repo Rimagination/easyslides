@@ -74,70 +74,70 @@
         {
           "slot_id": "TOC_ITEM_1_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_2_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_3_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_4_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_5_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_1_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_2_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_3_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_4_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_5_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         }
@@ -232,7 +232,7 @@
         {
           "slot_id": "PAGE_TITLE",
           "role": "page_title",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
@@ -293,14 +293,14 @@
         {
           "slot_id": "THANK_YOU",
           "role": "closing_title",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "ENDING_SUBTITLE",
           "role": "subtitle",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },

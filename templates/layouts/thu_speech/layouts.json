@@ -30,6 +30,22 @@
     "height": 720,
     "format": "ppt169"
   },
+  "native_text_policy": {
+    "schema_version": "easyslides.native_text_policy.v1",
+    "required_textbox_attributes": [
+      "data-pptx-box-x",
+      "data-pptx-box-y",
+      "data-pptx-box-w",
+      "data-pptx-box-h",
+      "data-pptx-valign"
+    ],
+    "default_vertical_anchor": "middle",
+    "center_lock_requires_middle": true,
+    "minimum_box_height_ratio": 1.6,
+    "single_line_requires_no_wrap": true,
+    "body_slots_allowed_top_anchor": ["CONTENT_BODY", "CONTENT_AREA"],
+    "minimum_inter_slot_gap_px": 8
+  },
   "style_system": "thu_speech",
   "colors": {
     "primary": "#912C8D",

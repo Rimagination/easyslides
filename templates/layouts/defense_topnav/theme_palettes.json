@@ -30,6 +30,25 @@
         "primary_light": "#D9E2EE"
       }
     },
+    "thesis_navy_v4": {
+      "name": "Thesis Navy v4",
+      "primary_hex": "#0A3476",
+      "colors": {
+        "primary": "#0A3476",
+        "primary_dark": "#062557",
+        "soft_surface": "#F5F6F8",
+        "border": "#C8D5E6",
+        "emphasis_text": "#333333",
+        "primary_mid": "#1C8B92",
+        "primary_light": "#E7EEF7",
+        "accent": "#1C8B92",
+        "background": "#FFFFFF",
+        "surface": "#F5F6F8",
+        "body_text": "#000000",
+        "secondary_text": "#333333",
+        "light_border": "#C8D5E6"
+      }
+    },
     "wine": {
       "name": "Academic Red",
       "primary_hex": "#8B0012",

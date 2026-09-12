@@ -112,7 +112,9 @@ def build_component_selection_review(
         )
     return {
         "schema_version": SCHEMA_VERSION,
-        "status": "pass" if all(slide["recommended"] for slide in slides) else "fail",
+        "status": "pass"
+        if all(slide["recommended"] or slide["selection_status"] == "shell_owned" for slide in slides)
+        else "fail",
         "template_id": component_plan.get("template_id", ""),
         "slide_count": len(slides),
         "slides": slides,

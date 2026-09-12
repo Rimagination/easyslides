@@ -3,7 +3,7 @@
 
   <g id="page-number">
     <rect x="1233.33" y="673.33" width="46.67" height="46.67" fill="#8B0012"/>
-    <text x="1256.67" y="704.64" text-anchor="middle" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="PAGE_NUM" data-slot-token="{{PAGE_NUM}}" data-pptx-textbox="true" data-pptx-box-x="1233.33" data-pptx-box-y="673.33" data-pptx-box-w="46.67" data-pptx-box-h="46.67" data-pptx-valign="middle"><tspan>1</tspan></text>
+    <text x="1256.67" y="704.64" text-anchor="middle" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="PAGE_NUM" data-slot-token="{{PAGE_NUM}}" data-pptx-textbox="true" data-pptx-box-x="1233.33" data-pptx-box-y="673.33" data-pptx-box-w="46.67" data-pptx-box-h="46.67" data-pptx-valign="middle" data-center-lock="true"><tspan>1</tspan></text>
   </g>
 
   <g id="left-navigation" data-slot="ACTIVE_SECTION" data-component="left-navigation" data-style-ref="component_styles.navigation_styles.left_navigation">
@@ -38,7 +38,7 @@
         <polygon id="nav-active-pointer" points="291.04,224.54 252.90,224.54 252.90,241.13" fill="#68000D" stroke="none" stroke-width="1"/>
       </g>
       <path id="nav-active-icon" data-icon-id="research-background" d="M 47.18 201.94 L 38.71 193.47 C 40.99 189.46 40.42 184.25 37 180.83 C 32.9 176.72 26.23 176.72 22.13 180.83 C 18.02 184.93 18.02 191.6 22.13 195.7 C 25.55 199.12 30.76 199.69 34.77 197.41 L 43.24 205.88 C 44.32 206.96 46.09 206.96 47.18 205.88 C 48.26 204.79 48.26 203.02 47.18 201.94 Z M 34.91 193.61 C 31.96 196.55 27.17 196.55 24.22 193.61 C 21.27 190.66 21.27 185.87 24.22 182.92 C 27.17 179.98 31.96 179.98 34.91 182.92 C 37.85 185.87 37.85 190.66 34.91 193.61 Z" fill="#FFFFFF" stroke="none" stroke-width="1"/>
-      <text id="nav-active-label" x="72.54" y="201.55" text-anchor="start" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="ACTIVE_SECTION_LABEL" data-slot-token="{{ACTIVE_SECTION_LABEL}}" data-pptx-box-x="72.54" data-pptx-box-y="159.13" data-pptx-box-w="202" data-pptx-box-h="65.42" data-pptx-valign="middle" data-pptx-textbox="true"><tspan>研究背景</tspan></text>
+      <text id="nav-active-label" x="72.54" y="201.55" text-anchor="start" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold" letter-spacing="4" data-slot="ACTIVE_SECTION_LABEL" data-slot-token="{{ACTIVE_SECTION_LABEL}}" data-pptx-box-x="72.54" data-pptx-box-y="159.13" data-pptx-box-w="202" data-pptx-box-h="65.42" data-pptx-valign="middle" data-pptx-textbox="true" data-center-lock="true"><tspan>研究背景</tspan></text>
     </g>
   </g>
 
@@ -46,18 +46,18 @@
     <g id="title-marker">
       <polygon points="360,62 332,78 332,46" fill="#8B0012"/>
     </g>
-    <text x="392" y="72.4" text-anchor="start" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="32" fill="#000000" font-weight="bold" data-slot="PAGE_TITLE" data-pptx-box-x="388" data-pptx-box-y="40" data-pptx-box-w="620" data-pptx-box-h="44" data-pptx-valign="middle" data-pptx-textbox="true"><tspan>{{PAGE_TITLE}}</tspan></text>
+    <text x="392" y="72.4" text-anchor="start" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="32" fill="#000000" font-weight="bold" data-slot="PAGE_TITLE" data-pptx-box-x="388" data-pptx-box-y="40" data-pptx-box-w="620" data-pptx-box-h="44" data-pptx-valign="middle" data-pptx-textbox="true" data-center-lock="true"><tspan>{{PAGE_TITLE}}</tspan></text>
     <rect id="header-separator" x="310" y="90" width="910" height="2.4" fill="#8B0012"/>
   </g>
 
   <g id="key-message">
     <rect x="310" y="112" width="910" height="48" rx="4" ry="4" fill="#F8F2F3" stroke="#8B0012" stroke-width="1" stroke-opacity="0.18"/>
     <rect x="310" y="112" width="7" height="48" fill="#8B0012"/>
-    <text x="334" y="142.5" text-anchor="start" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="20" fill="#3A0008" font-weight="bold" data-slot="KEY_MESSAGE" data-pptx-box-x="334" data-pptx-box-y="120" data-pptx-box-w="862" data-pptx-box-h="32" data-pptx-valign="middle" data-pptx-textbox="true"><tspan>{{KEY_MESSAGE}}</tspan></text>
+    <text x="334" y="142.5" text-anchor="start" xml:space="preserve" font-family="微软雅黑, Microsoft YaHei, sans-serif" font-size="20" fill="#3A0008" font-weight="bold" data-slot="KEY_MESSAGE" data-pptx-box-x="334" data-pptx-box-y="120" data-pptx-box-w="862" data-pptx-box-h="32" data-pptx-valign="middle" data-pptx-textbox="true" data-center-lock="true"><tspan>{{KEY_MESSAGE}}</tspan></text>
   </g>
 
   <g id="body-region">
     <rect id="content-area" data-slot="CONTENT_AREA" x="310" y="210" width="910" height="440" rx="12" ry="12" fill="none" stroke="none"/>
-    <text x="334" y="252" text-anchor="start" xml:space="preserve" font-family="微软雅黑 Light, Microsoft YaHei, sans-serif" font-size="23" fill="#000000" data-slot="CONTENT_BODY" data-pptx-box-x="334" data-pptx-box-y="230" data-pptx-box-w="862" data-pptx-box-h="390" data-pptx-textbox="true" data-pptx-valign="top"><tspan>{{CONTENT_BODY}}</tspan></text>
+    <text x="334" y="252" text-anchor="start" xml:space="preserve" font-family="微软雅黑 Light, Microsoft YaHei, sans-serif" font-size="23" fill="#000000" data-slot="CONTENT_BODY" data-pptx-box-x="334" data-pptx-box-y="230" data-pptx-box-w="862" data-pptx-box-h="390" data-pptx-textbox="true" data-pptx-valign="middle" data-center-lock="true"><tspan>{{CONTENT_BODY}}</tspan></text>
   </g>
 </svg>

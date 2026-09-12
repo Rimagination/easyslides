@@ -788,6 +788,71 @@ def _control_container_for_text(
     return shape
 
 
+def _pagination_issues(prs: Presentation) -> list[dict[str, Any]]:
+    """Check explicit native footer counters; never interpret body fractions as pages."""
+    pattern = re.compile(r"(?:[Pp]age\s*)?(\d{1,3})(\s*/\s*)(\d{1,3})")
+    entries = []
+    issues = []
+    def native_shapes(shapes, transform=(1, 1, 0, 0)):
+        sx, sy, ox, oy = transform
+        for shape in shapes:
+            geometry = (ox + shape.left * sx, oy + shape.top * sy,
+                        shape.width * sx, shape.height * sy)
+            if hasattr(shape, 'shapes'):
+                xfrm = shape._element.grpSpPr.xfrm
+                if xfrm is not None and xfrm.chExt.cx and xfrm.chExt.cy:
+                    gx, gy = geometry[2] / xfrm.chExt.cx, geometry[3] / xfrm.chExt.cy
+                    yield from native_shapes(shape.shapes, (gx, gy,
+                        geometry[0] - xfrm.chOff.x * gx, geometry[1] - xfrm.chOff.y * gy))
+            else:
+                yield shape, geometry
+    for index, slide in enumerate(prs.slides, 1):
+        for shape, geometry in native_shapes(slide.shapes):
+            if not shape.has_text_frame or geometry[1] < prs.slide_height * .90:
+                continue
+            text = shape.text.strip()
+            match = pattern.fullmatch(text)
+            if not match:
+                continue
+            # Compare explicit DrawingML styling, including color and paragraph alignment.
+            visual_attributes = {'sz', 'b', 'i', 'u', 'strike', 'spc', 'baseline', 'typeface', 'val', 'algn'}
+            style = tuple(sorted(set((node.tag, tuple(sorted((k, v) for k, v in node.attrib.items()
+                                                                          if k in visual_attributes)))
+                          for node in shape._element.iter()
+                          if node.tag.rsplit('}', 1)[-1] in
+                          ('rPr', 'defRPr', 'latin', 'ea', 'srgbClr', 'schemeClr', 'pPr'))))
+            signature = (re.sub(r'\d+', '#', text),
+                         len(match[1]) if match[1].startswith('0') else 0, style, len(match[3]))
+            entries.append((index, shape, match, signature, geometry))
+    if not entries:
+        return issues
+    first, base, _, signature, base_geometry = entries[0]
+    offset = int(entries[0][2][1]) - first
+    total = int(entries[0][2][3])
+    valid_totals = {len(prs.slides) + offset, max(e[0] for e in entries) + offset}
+    seen = set()
+    for index, shape, match, current, geometry in entries:
+        reasons = []
+        if index in seen: reasons.append('duplicate footer')
+        seen.add(index)
+        if int(match[1]) != index + offset: reasons.append('non-sequential counter')
+        if int(match[3]) != total or total not in valid_totals: reasons.append('incorrect total')
+        # A zero-padded format remains valid when the counter reaches two digits.
+        normalized = (current[0], signature[1] if len(match[1]) == signature[1] else current[1], current[2], current[3])
+        if normalized != signature: reasons.append('format or typography drift')
+        if any(abs(a - b) > 914400 * .025 for a, b in zip(geometry, base_geometry)):
+            reasons.append('footer geometry drift')
+        if reasons:
+            issues.append({'code': 'PAGE-NUMBER-INCONSISTENT', 'severity': 'blocking',
+                           'slide_number': index, 'shape_name': shape.name,
+                           'message': '; '.join(reasons)})
+    for index in range(first, max(seen) + 1):
+        if index not in seen:
+            issues.append({'code': 'PAGE-NUMBER-MISSING', 'severity': 'blocking',
+                           'slide_number': index, 'message': 'Missing native footer inside numbered sequence.'})
+    return issues
+
+
 def _is_page_number_like(box: TextBox) -> bool:
     text = box.text.strip()
     return len(text) <= 4 and text.replace("/", "").replace("-", "").isdigit()
@@ -853,6 +918,7 @@ def validate_pptx_text_layout(pptx_path: str | Path) -> dict[str, Any]:
         shapes = []
         text_box_source = "python-pptx_fallback"
     issues: list[dict[str, Any]] = _negative_extent_issues_from_xml(pptx_path)
+    issues.extend(_pagination_issues(prs))
 
     for box in boxes:
         width_pt = box.usable_w * PT_PER_INCH

@@ -75,7 +75,7 @@ def test_materialize_template_palette_recolors_svgs_and_style_sidecars(tmp_path)
     assert nav["colors"]["active_pointer"] == "#10284A"
 
 
-def test_defense_topnav_palette_catalog_and_materialization_support_four_themes(tmp_path):
+def test_defense_topnav_palette_catalog_and_materialization_support_declared_themes(tmp_path):
     catalog = read_palette_catalog(DEFENSE02)
 
     assert catalog["schema_version"] == "easyslides.theme_palettes.v1"
@@ -86,7 +86,11 @@ def test_defense_topnav_palette_catalog_and_materialization_support_four_themes(
         "wine",
         "academic_purple",
         "academic_green",
+        "thesis_navy_v4",
     }
+    assert catalog["palettes"]["thesis_navy_v4"]["colors"]["primary"] == "#0A3476"
+    assert catalog["palettes"]["thesis_navy_v4"]["colors"]["accent"] == "#1C8B92"
+    assert catalog["palettes"]["thesis_navy_v4"]["colors"]["body_text"] == "#000000"
 
     output_dir = tmp_path / "defense_topnav_wine"
     written = materialize_template_palette(DEFENSE02, "wine", output_dir)

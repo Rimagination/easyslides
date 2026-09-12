@@ -2,7 +2,7 @@
   "schema_version": "easyslides.template_package.v1",
   "package_id": "template/literature_minimal",
   "template_id": "literature_minimal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "review",
   "display_name": "Literature Minimal",
   "description": "Minimal literature-report template with generous whitespace, restrained typography, and optional source or decorative imagery.",

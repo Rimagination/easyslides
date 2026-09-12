@@ -42,6 +42,7 @@ BASE_REQUIRED_GATES = (
     "visual_measure_gate",
     "validate_pptx_text_layout",
 )
+PAGE_MODULE_ROLES = {"cover", "toc", "chapter", "ending"}
 
 
 def issue(code: str, message: str, path: str) -> dict[str, str]:
@@ -335,8 +336,15 @@ def validate_component_plan(
             )
 
         selected_assets = slide.get("selected_assets")
-        if not isinstance(selected_assets, list) or not selected_assets:
-            issues.append(issue("COMPONENT-PLAN-ASSETS", "each slide must select at least one component asset", f"{slide_path}.selected_assets"))
+        role = str(slide.get("role") or "").strip()
+        shell_owned = (
+            role in PAGE_MODULE_ROLES
+            and slide.get("selection_status") == "shell_owned"
+            and isinstance(selected_assets, list)
+            and not selected_assets
+        )
+        if not isinstance(selected_assets, list) or (not selected_assets and not shell_owned):
+            issues.append(issue("COMPONENT-PLAN-ASSETS", "each content slide must select at least one component asset", f"{slide_path}.selected_assets"))
             continue
 
         page_report = {"page": page, "asset_reports": []}
@@ -350,6 +358,10 @@ def validate_component_plan(
             families = {str(row.get("family") or "") for row in candidates or [] if isinstance(row, dict) and row.get("family")}
             if not isinstance(candidates, list) or len(candidates) < 2 or len(families) < 2:
                 issues.append(issue("COMPONENT-PLAN-FORM-DIVERGENCE", "form_selection needs at least two candidates from different families", f"{slide_path}.form_selection.candidates"))
+        if shell_owned:
+            page_report["ownership"] = "template_shell"
+            slide_reports.append(page_report)
+            continue
         for asset_index, selected in enumerate(selected_assets):
             selected_path = f"{slide_path}.selected_assets[{asset_index}]"
             if not isinstance(selected, dict):

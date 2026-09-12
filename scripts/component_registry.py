@@ -737,6 +737,8 @@ def assets_from_body_variants(layouts_root: Path = LAYOUTS_ROOT) -> list[dict[st
                         "variant_id": variant_id,
                         "content_area": payload.get("content_area", {}),
                         "layout": variant.get("layout", ""),
+                        "composition_scene": variant.get("composition_scene", ""),
+                        "source_recipe": variant.get("source_recipe", ""),
                         "composition_mode": (
                             "ordered_component_refs"
                             if component_refs

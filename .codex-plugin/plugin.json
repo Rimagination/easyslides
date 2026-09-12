@@ -1,6 +1,6 @@
 {
   "name": "easyslides",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Create editable research presentations directly, or approve AI-generated slide images and rebuild whole slides or selected regions. Includes native templates, image references, and PPTX distillation.",
   "author": {
     "name": "EasySlides contributors"

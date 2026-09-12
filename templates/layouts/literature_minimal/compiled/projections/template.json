@@ -4,7 +4,7 @@
   "template_id": "literature_minimal",
   "display_name": "Literature Minimal",
   "description": "Minimal literature-report template with generous whitespace, restrained typography, and optional source or decorative imagery.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "review",
   "capability_level": "semantic",
   "roles": [

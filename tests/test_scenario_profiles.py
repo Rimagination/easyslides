@@ -61,6 +61,28 @@ class ScenarioProfileTests(unittest.TestCase):
         self.assertIn("action_titles", workshop["recommended_rules"])
         self.assertNotIn("action_titles", workshop["required_rules"])
 
+    def test_thesis_defense_v4_variant_declares_duration_and_visual_policies(self):
+        from scripts.scenario_profiles import (
+            duration_page_band,
+            get_scenario_variant,
+            load_profiles,
+        )
+
+        catalog = load_profiles()
+        variant = get_scenario_variant("thesis_defense", catalog=catalog)
+
+        self.assertEqual(variant["display_name"], "中文硕博士毕业答辩 v4")
+        self.assertFalse(variant["visual_exploration"]["default_enabled"])
+        self.assertTrue(variant["visual_exploration"]["explicit_opt_in"])
+        self.assertEqual(
+            duration_page_band("thesis_defense", 20, catalog=catalog)["min_pages"],
+            24,
+        )
+        self.assertEqual(
+            duration_page_band("thesis_defense", 20, catalog=catalog)["max_pages"],
+            32,
+        )
+
     def test_cli_lists_profiles_as_json(self):
         from scripts.scenario_profiles import main
 

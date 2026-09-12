@@ -31,6 +31,11 @@ final slide images skip imagegen. Partial reconstruction uses the confirmed
 images and selected regions. Both choice rounds must disclose token/time levels
 as specified in `workflows/clarification-gate.md`.
 
+Execution follows `workflows/slide-image-to-editable-pptx.md`, including actual
+reference attachments, full-page content generation, recorded host-call results
+and the locked generation-manifest handoff. Background-only acquisition and
+native template-shell fallback are prohibited for this route.
+
 A request to turn PPTs into single-image style references uses rendering plus
 contact-sheet assembly only. It does not trigger native-template distillation,
 deck generation, or a production-scheme choice. Register these assets only in
@@ -44,6 +49,13 @@ disposable caches, not required runtime template assets.
 See `templates/image_references/README.md` for usage and source-content boundaries.
 
 ## Routing Discipline
+
+For "how do I use EasySlides?" or an undecided first-time user, start the adaptive
+native-popup interview in `workflows/clarification-gate.md`. Read their context,
+ask one consequential question, and choose follow-ups from each answer. Existing
+explicit choices skip questions. Do not open a browser or require a form.
+`guide --html` and `confirm --pilot-pages` are opt-in only; show source/render
+pairs inline by default.
 
 | Rule | Behavior |
 |---|---|

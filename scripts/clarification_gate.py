@@ -348,12 +348,59 @@ def _question_ids(request: dict[str, Any]) -> list[str]:
     return [str(item["id"]) for item in request.get("question_bank", []) if isinstance(item, dict)]
 
 
+def _brief_question(field: str, prompt: str, *, inspect: bool = False) -> dict[str, Any]:
+    return {"id": field, "field": field, "prompt": prompt,
+            "input_type": "text", "blocking": True, "agent_inspection": inspect}
+
+
+ACADEMIC_QUESTIONS = [
+    _brief_question("academic_goal", "这次汇报的主题、场合是什么，希望听众听完理解或决定什么？"),
+    _question("source_policy", "source_policy", "这次汇报的内容从哪里来？", [
+        _option("supplied_only", "仅基于提供的材料", "读取原文和原图，不补充外部研究。"),
+        _option("research", "请先调研", "先确定检索范围，再收集论文和原始图文资料。"),
+        _option("hybrid", "材料加补充调研", "以提供的材料为基础，在约定范围内补充。"),
+    ], "supplied_only", "决定证据来源；推荐不代表授权。"),
+    _brief_question("audience", "听众是谁，对这个领域熟悉到什么程度，主要关心什么？"),
+    _brief_question("talk_timing", "希望讲多久，是否包括问答？用于现场讲述还是独立阅读？"),
+    _brief_question("style_intent", "希望是什么视觉风格，有指定的模板或参考图吗？也可以授权我推荐。"),
+    _brief_question("content_boundaries", "哪些内容或原图必须保留，有哪些不能展示或不能改动？没有特殊限制也请说明。"),
+]
+
+
+def _add_academic_dependencies(request: dict[str, Any]) -> None:
+    if not request.get("academic_intake"):
+        return
+    policy = request["decisions"].get("source_policy")
+    questions = []
+    if policy in {"research", "hybrid"}:
+        questions.append(_brief_question("research_scope", "调研聚焦什么问题、哪些领域和年份？希望覆盖到什么深度，有来源限制吗？"))
+    if policy in {"supplied_only", "hybrid"}:
+        questions.append(_brief_question("material_inventory", "检查已提供文件的内容、角色、原图及来源定位；记录缺失或不可读的材料。", inspect=True))
+    inactive = {"research_scope", "material_inventory"} - {q["id"] for q in questions}
+    request["question_bank"] = [q for q in request["question_bank"] if q["id"] not in inactive]
+    for field in inactive:
+        request.get("answers", {}).pop(field, None)
+        request["decisions"].pop(field, None)
+        request.get("answer_origins", {}).pop(field, None)
+    for question in questions:
+        if question["id"] not in _question_ids(request) and not _known_value(request["decisions"], question["field"]):
+            request["question_bank"].append(question)
+
+
+def _invalid_academic_text(decisions: dict[str, Any]) -> list[str]:
+    fields = {q["field"] for q in ACADEMIC_QUESTIONS if q.get("input_type") == "text"}
+    fields.update({"research_scope", "material_inventory"})
+    return [field for field in fields if field in decisions and
+            (not isinstance(decisions[field], str) or not decisions[field].strip())]
+
+
 def _unanswered_ids(request: dict[str, Any]) -> list[str]:
     answers = request.get("answers", {})
     return [question_id for question_id in _question_ids(request) if question_id not in answers]
 
 
 def _refresh_round(request: dict[str, Any]) -> dict[str, Any]:
+    _add_academic_dependencies(request)
     scheme = request.get("decisions", {}).get("production_scheme")
     if scheme in PRODUCTION_SCHEMES - {"direct_editable"} and not request["decisions"].get("reconstruction_mode"):
         if "reconstruction_mode" not in _question_ids(request):
@@ -379,6 +426,7 @@ def build_clarification_request(
     *,
     known: dict[str, Any] | None = None,
     title: str | None = None,
+    academic: bool = False,
 ) -> dict[str, Any]:
     canonical = canonical_route(route)
     known_fields = known or {}
@@ -386,9 +434,18 @@ def build_clarification_request(
         raise ClarificationError("invalid production_scheme")
     if "reconstruction_mode" in known_fields and known_fields["reconstruction_mode"] not in RECONSTRUCTION_MODES:
         raise ClarificationError("invalid reconstruction_mode")
+    catalog = QUESTION_CATALOG[canonical]
+    if academic:
+        invalid = _invalid_academic_text(known_fields)
+        if invalid:
+            raise ClarificationError(f"academic text fields require non-empty strings: {', '.join(sorted(invalid))}")
+        replaced = {q["field"] for q in ACADEMIC_QUESTIONS}
+        catalog = ACADEMIC_QUESTIONS + [q for q in catalog if q["field"] not in replaced]
+        if known_fields.get("source_policy") not in {None, "supplied_only", "research", "hybrid"}:
+            raise ClarificationError("invalid source_policy")
     question_bank = [
         copy.deepcopy(question)
-        for question in QUESTION_CATALOG[canonical]
+        for question in catalog
         if not _known_value(known_fields, str(question["field"]))
     ]
     request: dict[str, Any] = {
@@ -405,6 +462,7 @@ def build_clarification_request(
         "answers": {},
         "decisions": copy.deepcopy(known_fields),
         "assumptions": [],
+        "academic_intake": academic,
     }
     return _refresh_round(request)
 
@@ -446,6 +504,9 @@ def validate_clarification_request(request: dict[str, Any]) -> dict[str, Any]:
         ids.add(question_id)
         if question_id:
             ordered_ids.append(question_id)
+        if question.get("input_type") == "text":
+            option_map[question_id] = set()
+            continue
         options = question.get("options")
         option_ids: set[str] = set()
         if not isinstance(options, list) or len(options) < 2:
@@ -464,6 +525,9 @@ def validate_clarification_request(request: dict[str, Any]) -> dict[str, Any]:
     for question_id, answer in answers.items():
         if question_id not in ids:
             issues.append({"code": "ANSWER-QUESTION", "message": f"answer refers to unknown question {question_id!r}"})
+        elif next((q.get("input_type") for q in bank if q.get("id") == question_id), None) == "text":
+            if not isinstance(answer, str) or not answer.strip():
+                issues.append({"code": "ANSWER-TEXT", "message": "free-text answers must be non-empty strings"})
         elif answer not in option_map.get(question_id, set()):
             issues.append({"code": "ANSWER-OPTION", "message": f"answer {answer!r} is not valid for {question_id!r}"})
 
@@ -482,6 +546,18 @@ def validate_clarification_request(request: dict[str, Any]) -> dict[str, Any]:
         issues.append({"code": "REQUEST-STATUS", "message": "status must be needs_confirmation, confirmed, or cancelled"})
     if status == "confirmed" and unanswered:
         issues.append({"code": "REQUEST-UNANSWERED", "message": "confirmed request still has blocking questions"})
+    if request.get("academic_intake"):
+        for field in _invalid_academic_text(request.get("decisions", {})):
+            issues.append({"code": "ACADEMIC-TEXT", "message": f"{field} requires a non-empty string"})
+        expected = copy.deepcopy(request)
+        _add_academic_dependencies(expected)
+        required = {q["field"] for q in ACADEMIC_QUESTIONS + expected["question_bank"]}
+        for field in required:
+            if not _known_value(request.get("decisions", {}), field) and field not in ids:
+                issues.append({"code": "ACADEMIC-MISSING", "message": f"missing academic requirement: {field}"})
+        policy = request.get("decisions", {}).get("source_policy")
+        if policy is not None and policy not in {"supplied_only", "research", "hybrid"}:
+            issues.append({"code": "ACADEMIC-POLICY", "message": "invalid source_policy"})
     if status == "needs_confirmation" and not unanswered:
         issues.append({"code": "REQUEST-STALE-STATUS", "message": "all questions are answered but status is not confirmed"})
 
@@ -520,6 +596,11 @@ def answer_clarification_request(
     for question_id, option_id in answers.items():
         if question_id not in by_id:
             raise ClarificationError(f"unknown question id: {question_id}")
+        if by_id[question_id].get("input_type") == "text":
+            if not isinstance(option_id, str) or not option_id.strip():
+                raise ClarificationError(f"empty text answer for {question_id}")
+            next_answers[question_id] = option_id
+            continue
         valid_options = {str(option["id"]) for option in by_id[question_id]["options"]}
         if option_id in {"recommended", "recommendation", "按推荐"}:
             option_id = str(by_id[question_id]["recommended_option_id"])
@@ -534,6 +615,9 @@ def answer_clarification_request(
         if question_id in next_answers:
             decisions[str(question["field"])] = next_answers[question_id]
     request["decisions"] = decisions
+    origins = request.setdefault("answer_origins", {})
+    for question_id in answers:
+        origins[question_id] = {"by": confirmed_by, "at": _now()}
     request["last_answered_by"] = confirmed_by
     return _refresh_round(request)
 
@@ -575,9 +659,12 @@ def build_parser() -> argparse.ArgumentParser:
     init.add_argument("--out", required=True, type=Path)
     init.add_argument("--known-json", type=Path, help="JSON object of values already explicitly supplied by the user.")
     init.add_argument("--title")
+    init.add_argument("--academic", action="store_true", help="Enable evidence-aware academic intake for a new content task.")
 
     validate = subparsers.add_parser("validate", help="Validate a clarification request.")
     validate.add_argument("request", type=Path)
+    next_question = subparsers.add_parser('next', help='Prepare one native chat question from unresolved choices; does not answer or open a browser.')
+    next_question.add_argument('request', type=Path)
 
     answer = subparsers.add_parser("answer", help="Apply selected options to a request and advance its round.")
     answer.add_argument("request", type=Path)
@@ -587,6 +674,38 @@ def build_parser() -> argparse.ArgumentParser:
     require = subparsers.add_parser("require", help="Exit successfully only when a request is confirmed.")
     require.add_argument("request", type=Path)
     return parser
+
+
+def next_clarification_question(request: dict[str, Any]) -> dict[str, Any]:
+    """Read-only chat adapter: one unresolved question, never a browser handoff."""
+    report = validate_clarification_request(request)
+    if report['status'] != 'pass':
+        raise ClarificationError('repair invalid clarification state before asking the next question')
+    if request.get('status') == 'cancelled':
+        return {'status': 'cancelled', 'questions': []}
+    unanswered = set(_unanswered_ids(request))
+    if not unanswered:
+        return {'status': 'ready_for_summary', 'questions': [], 'decisions': request['decisions']}
+    # Establish purpose before technical options; an image choice immediately
+    # exposes its dependent mode question. Existing batch-state remains compatible.
+    priority = ['reconstruction_mode', 'purpose', 'presentation_mode', 'audience', 'production_scheme']
+    if request.get('academic_intake'):
+        priority = ['academic_goal', 'source_policy', 'material_inventory', 'research_scope', 'audience', 'talk_timing', 'style_intent', 'content_boundaries', 'reconstruction_mode', 'production_scheme']
+    bank = [q for q in request['question_bank'] if q['id'] in unanswered]
+    question = min(bank, key=lambda q: priority.index(q['id']) if q['id'] in priority else len(priority))
+    if question.get('input_type') == 'text':
+        return {'status': 'needs_material_inspection' if question.get('agent_inspection') else 'needs_answer',
+                'question_id': question['id'], 'field': question['field'],
+                'instruction': question['prompt'],
+                'questions': [] if question.get('agent_inspection') else [{'title': question['prompt']}]}
+    options = sorted(question['options'], key=lambda o: o['id'] != question['recommended_option_id'])
+    labels = [f"{o['label']}{'（推荐）' if o['id'] == question['recommended_option_id'] else ''}：{o['impact']}" for o in options]
+    title = question['prompt']
+    if question['id'] in ('production_scheme', 'reconstruction_mode'):
+        title += ' Token 与耗时为相对估计，随任务复杂度变化；如需生图，另有生成阶段和用量。'
+    return {'status': 'needs_answer', 'question_id': question['id'], 'field': question['field'],
+            'option_ids': [o['id'] for o in options],
+            'questions': [{'title': title, 'options': labels}]}
 
 
 def _parse_answers(values: list[str]) -> dict[str, str]:
@@ -613,7 +732,7 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "init":
             known = _read_json(args.known_json) if args.known_json else {}
-            request = build_clarification_request(args.route, known=known, title=args.title)
+            request = build_clarification_request(args.route, known=known, title=args.title, academic=args.academic)
             _write_json(args.out, request)
             print(json.dumps(request, ensure_ascii=False, indent=2))
             return 0
@@ -621,6 +740,9 @@ def main(argv: list[str] | None = None) -> int:
             report = validate_clarification_request(_read_json(args.request))
             print(json.dumps(report, ensure_ascii=False, indent=2))
             return 0 if report["status"] == "pass" else 2
+        if args.command == 'next':
+            print(json.dumps(next_clarification_question(_read_json(args.request)), ensure_ascii=False, indent=2))
+            return 0
         if args.command == "answer":
             request = _read_json(args.request)
             updated = answer_clarification_request(request, _parse_answers(args.answer), confirmed_by=args.by)

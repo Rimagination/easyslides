@@ -96,3 +96,62 @@ def test_projection_preserves_horizontal_anchor_while_center_locking_vertical_po
     assert text.attrib["text-anchor"] == "start"
     assert text.attrib["x"] == "20.0"
     assert text.attrib["data-pptx-valign"] == "middle"
+
+
+def test_single_line_projection_disables_native_text_reflow(tmp_path: Path):
+    from scripts.source_template_renderer import project_source_template_svg
+
+    source = tmp_path / "source.svg"
+    output = tmp_path / "projected.svg"
+    source.write_text(
+        '<svg xmlns="http://www.w3.org/2000/svg"><text data-pptx-textbox="true" data-pptx-box-x="20" data-pptx-box-y="40" data-pptx-box-w="120" data-pptx-box-h="40" x="20" y="60" font-size="20">Old</text></svg>',
+        encoding="utf-8",
+    )
+    report = project_source_template_svg(
+        source,
+        output,
+        slots=[
+            {
+                "slot_id": "title",
+                "kind": "text",
+                "geometry": {"x": 20, "y": 40, "width": 120, "height": 40},
+                "max_lines": 1,
+                "max_chars_per_line": 12,
+            }
+        ],
+        values={"title": "Aligned"},
+    )
+    root = ET.parse(output).getroot()
+    text = next(element for element in root.iter() if element.tag.endswith("text"))
+
+    assert report["status"] == "pass"
+    assert text.attrib["data-pptx-no-wrap"] == "true"
+
+
+def test_projection_can_run_shared_alignment_contract(tmp_path: Path):
+    from scripts.alignment_contract import default_contract
+    from scripts.source_template_renderer import project_source_template_svg
+
+    source = tmp_path / "source.svg"
+    output = tmp_path / "projected.svg"
+    source.write_text(
+        '<svg xmlns="http://www.w3.org/2000/svg"><text data-pptx-textbox="true" data-pptx-box-x="20" data-pptx-box-y="40" data-pptx-box-w="120" data-pptx-box-h="40" x="80" y="60" text-anchor="middle" data-pptx-valign="middle">Old</text></svg>',
+        encoding="utf-8",
+    )
+
+    report = project_source_template_svg(
+        source,
+        output,
+        slots=[
+            {
+                "slot_id": "title",
+                "kind": "text",
+                "geometry": {"x": 20, "y": 40, "width": 120, "height": 40},
+            }
+        ],
+        values={"title": "Aligned"},
+        alignment_spec=default_contract(),
+    )
+
+    assert report["status"] == "pass"
+    assert report["alignment_contract"] == "easyslides.alignment_contract.v1"

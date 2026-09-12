@@ -1,6 +1,6 @@
 {
   "name": "easyslides",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Create editable research presentations, reuse native and image-reference templates, or rebuild approved images as whole slides or selected regions. New image generation requires a supported host; approved images can be supplied directly.",
   "author": {
     "name": "EasySlides contributors"

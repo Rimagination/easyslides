@@ -14,6 +14,11 @@ from pathlib import Path
 from typing import Any, Callable
 
 try:
+    from scripts.artifact_receipt import fingerprint
+except ModuleNotFoundError:
+    from artifact_receipt import fingerprint
+
+try:
     from scripts.office.soffice import get_soffice_env
 except ImportError:  # pragma: no cover - direct script execution
     from office.soffice import get_soffice_env
@@ -301,6 +306,9 @@ def render_pptx_to_png(
     output = Path(output_dir).resolve()
     if not pptx.exists():
         raise FileNotFoundError(f"PPTX not found: {pptx}")
+    input_identity = fingerprint(pptx)
+    receipt_path = output / 'render_receipt.json'
+    _write_json(receipt_path, {'status': 'running', 'pptx_identity': input_identity})
     _clear_prior_slide_pngs(output)
 
     backend = _select_renderer_backend(renderer_backend, powerpoint_executable, soffice_executable)
@@ -362,6 +370,11 @@ def render_pptx_to_png(
     }
     if fallback_reason:
         report["fallback_reason"] = fallback_reason
+    if fingerprint(pptx) != input_identity:
+        raise ValueError('PPTX changed while rendering; rerender the stable artifact')
+    report['pptx_identity'] = input_identity
+    report['render_identities'] = [fingerprint(path) for path in files]
+    _write_json(receipt_path, report)
     return report
 
 

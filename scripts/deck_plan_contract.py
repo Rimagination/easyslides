@@ -341,6 +341,14 @@ def validate_deck_plan_file(path: Path, *, repo_root: Path | None = None) -> dic
         else:
             report["clarification_status"] = "confirmed"
             report["clarification_decisions"] = request.get("decisions", {})
+            if request.get("academic_intake") and plan.get("academic_brief") != request.get("decisions"):
+                report["issues"].append(issue(
+                    "DECK-PLAN-ACADEMIC-BRIEF",
+                    "academic_brief must preserve the confirmed clarification decisions",
+                    "academic_brief",
+                ))
+                report["status"] = "fail"
+                report["issue_count"] = len(report["issues"])
     else:
         report["clarification_status"] = "not_initialized"
     return report

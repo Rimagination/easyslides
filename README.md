@@ -7,7 +7,7 @@
 <h1 align="center">EasySlides</h1>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img alt="Version: 1.1.0" src="https://img.shields.io/badge/Version-v1.1.0-2563EB?style=flat-square"></a>
+  <a href="CHANGELOG.md"><img alt="Version: 1.2.0" src="https://img.shields.io/badge/Version-v1.2.0-2563EB?style=flat-square"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-16A34A?style=flat-square"></a>
   <img alt="Output: Editable PPTX" src="https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square">
 </p>
@@ -17,6 +17,45 @@
 [中文](#中文) | [English](#english)
 
 </div>
+
+### 快速得到稳定的科研 PPT
+
+直接说目标，EasySlides 会逐项弹窗问清材料、听众、目标、时长、风格和制作路径；
+已明确的信息不重复问，无需浏览器或填表。
+
+EasySlides 负责材料组织与 PPT 制作；联网搜集依赖宿主工具，未内置 Deep Research 引擎。
+
+### 按制作路径选择一句话案例
+
+复制一句，替换主题或材料即可。缺失信息由插件继续询问。
+
+#### 1. 直接生成可编辑 PPT
+
+适合反复修改文字和布局，论文原图作为图片保留。
+
+> 用 easyslides 基于我上传的多模态城市交通论文，使用 `literature_minimal` 模板直接制作12页可编辑综述，保留原图和来源，不补充外部资料。
+
+#### 2. 图片整页重建
+
+适合先确定整页视觉效果，再重建文字与简单结构；复杂配图保留为图片。
+
+> 先用联网工具搜集多模态城市交通流量预测的论文与原图，再用 easyslides 制作12页综述：每次 ImageGen 附上“国自然-绿色”模板参考图和适用的论文原图，逐页生成完整图片PPT，再忠实整页重建为可编辑PPT，保留复杂配图。
+
+已有完整图片页时，可直接提供图片进行重建。
+
+#### 3. 图片局部重建
+
+适合只修改指定区域，其余部分保持图片。
+
+> 用 easyslides 局部重建我上传的多模态城市交通汇报图片，只让标题、正文和页码可编辑，保留复杂配图；先确认重建区域，其余部分保持原貌。
+
+**还不知道选哪条？** 直接说：
+
+> 用 easyslides 帮我做一个多模态城市交通研究汇报，先逐项弹窗问清材料来源、听众、目标、时长和风格，再让我选择合适的制作路径。
+
+原生模板用于直接制作，图片模板用于生图参考。图片重建建议先确认样页效果，
+再扩展整套；交付前检查来源、页码与实际渲染。详见
+[重建工作流](workflows/slide-image-to-editable-pptx.md)。
 
 ### 模板与案例展厅
 

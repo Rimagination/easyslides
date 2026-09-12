@@ -40,6 +40,17 @@ reintroduce source-slide-order filling.
 
 ## Mandatory production-scheme choice
 
+The default intake is an adaptive native-popup conversation. Ask one meaningful
+question, use its answer to choose the next, and skip already explicit facts.
+Do not open a browser guide or require a form unless the user explicitly asks.
+When the brief is executable, summarize it and proceed without repeated approval.
+
+For academic content, read `references/academic-orchestration.md` before intake.
+Inspect supplied material contents and roles; establish research permission,
+audience, intended outcome, speaking time, visual preference and preservation
+boundaries. Its evidence and storytelling workflow applies to every template
+and production scheme, subject to the requested editing scope.
+
 Before making a new or regenerated PPT, MUST ask which production scheme to use
 unless the user already explicitly selected one for this task. Wait for the
 answer; do not silently pick a route from the input format, a template, imagegen,
@@ -63,6 +74,12 @@ keep independent labels and table cells separate. Full-vector mode needs approva
 before any raster exception. Partial rebuilds apply this within selected regions.
 
 ## Chinese wording defaults
+
+For complete ImageGen slides, use the reference-image payload, recorded result,
+and generation-manifest handoff in `workflows/slide-image-to-editable-pptx.md`.
+An existing image file alone is insufficient proof of generation. Each approved
+image is the visual source for its reconstructed page. Never substitute another
+template shell. Require `delivery_ready=true` plus actual source/render review.
 
 Default to “垂听”, not “聆听”, in authored Chinese PPT text, including closings
 such as “感谢垂听，敬请讨论”. Apply this preference to imagegen prompts and

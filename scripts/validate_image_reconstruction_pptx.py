@@ -8,13 +8,15 @@ import json
 from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
+import zipfile
 
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 
 try:
-    from scripts import layout_metrics
+    from scripts import alignment_contract, layout_metrics
 except ImportError:  # pragma: no cover - direct script execution
+    import alignment_contract
     import layout_metrics
 
 
@@ -193,6 +195,24 @@ def validate_image_reconstruction_pptx(
             }
         )
 
+    alignment_report: dict[str, Any] | None = None
+    if inventory is not None and (
+        isinstance(inventory.get("alignment_contract"), dict)
+        or str(inventory.get("production_scheme") or "").startswith("image_")
+    ):
+        try:
+            alignment_report = alignment_contract.validate_pptx_alignment(pptx_path, inventory)
+            issues.extend(alignment_report.get("issues", []))
+        except (OSError, ValueError, KeyError, zipfile.BadZipFile) as exc:
+            issues.append(
+                _issue(
+                    "PPTX-ALIGNMENT-READ",
+                    "blocking",
+                    f"Unable to inspect native text geometry against the alignment contract: {exc}",
+                    slide_number=0,
+                )
+            )
+
     blocking_count = sum(1 for issue in issues if issue["severity"] == "blocking")
     warning_count = sum(1 for issue in issues if issue["severity"] == "warning")
     return {
@@ -205,6 +225,11 @@ def validate_image_reconstruction_pptx(
         "thresholds": {"full_slide_picture_area_fraction": full_slide_picture_threshold},
         "production_scheme": production_scheme,
         "reconstruction_mode": reconstruction_mode,
+        "alignment": {
+            "checked": alignment_report is not None,
+            "status": alignment_report.get("status") if alignment_report else "skipped",
+            "checked_text_count": alignment_report.get("checked_text_count", 0) if alignment_report else 0,
+        },
         "slides": slides,
         "issues": issues,
     }

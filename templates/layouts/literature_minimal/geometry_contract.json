@@ -5,6 +5,10 @@
   "hard_invariants": [
     "declared_slots_stay_inside_canvas",
     "text_center_y_matches_container_center_y",
+    "editable_shell_text_uses_middle_anchor_except_content_body",
+    "single_line_shell_slots_use_no_wrap",
+    "toc_row_text_boxes_do_not_intersect",
+    "ending_metadata_columns_do_not_intersect",
     "content_body_stays_inside_body_canvas",
     "ending_metadata_columns_have_at_least_64px_clearance",
     "ending_metadata_group_is_centered_on_canvas",
@@ -32,8 +36,8 @@
       "svg": "04_ending.svg",
       "regions": [{"region_id": "canvas", "x": 0, "y": 0, "width": 1280, "height": 720, "z_index": 0, "fit": "contain", "allow_overlap": false}],
       "containers": [
-        {"id": "presenter_metadata", "x": 330, "y": 576.1, "width": 400, "height": 64},
-        {"id": "date_metadata", "x": 780, "y": 579.66, "width": 340, "height": 60}
+        {"id": "presenter_metadata", "x": 419.35, "y": 584, "width": 280, "height": 44},
+        {"id": "date_metadata", "x": 773.49, "y": 585, "width": 280, "height": 44}
       ]
     }
   ]

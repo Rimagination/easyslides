@@ -10,6 +10,16 @@ from pptx.util import Inches
 CHOICES = {"production_scheme": "image_full_rebuild", "reconstruction_mode": "preserve_complex_images"}
 
 
+def fixture_render_receipt(project):
+    """Bind synthetic fixture images; production receipts are written by the renderer."""
+    from scripts.artifact_receipt import fingerprint
+    folder = project / 'reports/rendered_png'
+    (folder/'render_receipt.json').write_text(json.dumps({
+        'status':'pass', 'pptx_identity':fingerprint(project/'pptx/output.pptx'),
+        'render_identities':[fingerprint(p) for p in sorted(folder.glob('slide_*.png'))],
+    }), encoding='utf-8')
+
+
 def complete_project(root):
     from scripts.image_reconstruction_pipeline import init_project
     source = root / "source.png"
@@ -23,12 +33,16 @@ def complete_project(root):
     inventory["slides"][0]["source_text_lines"] = ["Title"]
     path.write_text(json.dumps(inventory), encoding="utf-8")
     prs = Presentation()
+    prs.slide_width, prs.slide_height = Inches(10), Inches(5.625)
     slide = prs.slides.add_slide(prs.slide_layouts[6])
-    slide.shapes.add_textbox(Inches(1), Inches(1), Inches(3), Inches(1)).text = "Title"
+    # The reconstruction contract maps source percentages onto the 1280x720
+    # canvas.  Keep the fixture's native frame on that same geometry.
+    slide.shapes.add_textbox(Inches(1), Inches(0.5625), Inches(3), Inches(0.5625)).text = "Title"
     prs.save(project / "pptx/output.pptx")
     rendered = project / "reports/rendered_png"
     rendered.mkdir()
     Image.new("RGB", (320, 180), "black").save(rendered / "slide_001.png")
+    fixture_render_receipt(project)
     return project
 
 
@@ -78,6 +92,8 @@ class ImageReconstructionPipelineTests(unittest.TestCase):
             self.assertTrue((project / "pages" / "page_001" / "assets" / "split").is_dir())
             self.assertTrue((project / "pptx").is_dir())
             self.assertTrue((project / "reports").is_dir())
+            inventory = json.loads((project / "analysis" / "_analysis.json").read_text(encoding="utf-8"))
+            self.assertEqual(inventory["alignment_contract"]["schema_version"], "easyslides.alignment_contract.v1")
 
     def test_practical_mode_treats_source_diff_as_advisory(self):
         from scripts.image_reconstruction_pipeline import qa_project
@@ -110,8 +126,9 @@ class ImageReconstructionPipelineTests(unittest.TestCase):
         from scripts.image_reconstruction_pipeline import qa_project
         with tempfile.TemporaryDirectory() as tmp:
             project = complete_project(Path(tmp))
-            practical = qa_project(project)
+            practical = qa_project(project, mode='faithful-practical')
             self.assertEqual(practical["status"], "pass", practical)
+            self.assertFalse(practical['delivery_ready'])
             self.assertEqual(qa_project(project, mode="pixel-strict")["status"], "fail")
 
     def test_missing_pptx_inventory_or_render_always_blocks(self):
@@ -168,8 +185,16 @@ class ImageReconstructionPipelineTests(unittest.TestCase):
             slide = prs.slides.add_slide(prs.slide_layouts[6])
             slide.shapes.add_picture(str(project / "sources/slide_002.png"), 0, 0, width=prs.slide_width, height=prs.slide_height).name = "source_background"
             prs.save(project / "pptx/output.pptx")
+            from scripts.artifact_receipt import fingerprint
+            run_path = project/'image_reconstruction_run.json'
+            run = json.loads(run_path.read_text(encoding='utf-8'))
+            run['decisions']['production_scheme'] = 'image_partial_rebuild'
+            run['source_identities'] = [fingerprint(project/'sources'/name) for name in ('slide_001.png','slide_002.png')]
+            run_path.write_text(json.dumps(run), encoding='utf-8')
+            fixture_render_receipt(project)
             self.assertEqual(qa_project(project)["status"], "pass")
             Image.new("RGB", (320, 180), "black").save(project / "reports/rendered_png/slide_002.png")
+            fixture_render_receipt(project)
             report = qa_project(project)
             self.assertEqual(report["status"], "fail")
             self.assertTrue(any(i["code"] == "QA-UNSELECTED-CHANGED" for i in json.loads((project / "reports/required_inputs_report.json").read_text())["issues"]))
@@ -198,6 +223,27 @@ class ImageReconstructionPipelineTests(unittest.TestCase):
             diff_gate = next(gate for gate in report["gates"] if gate["name"] == "source_render_diff")
             self.assertFalse(diff_gate["advisory"])
             self.assertGreater(diff_gate["blocking_count"], 0)
+
+    def test_authored_page_svg_alignment_gate_blocks_parent_transform(self):
+        from scripts.image_reconstruction_pipeline import qa_project
+
+        with tempfile.TemporaryDirectory() as tmp:
+            project = complete_project(Path(tmp))
+            page_svg = project / "pages/page_001/slide_001.svg"
+            page_svg.write_text(
+                """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <g transform="translate(40 0)">
+    <text data-pptx-textbox="true" data-pptx-box-x="128" data-pptx-box-y="72" data-pptx-box-w="384" data-pptx-box-h="72" x="320" y="108" text-anchor="middle" data-pptx-valign="middle">Title</text>
+  </g>
+</svg>""",
+                encoding="utf-8",
+            )
+
+            report = qa_project(project)
+
+        gate = next(gate for gate in report["gates"] if gate["name"] == "alignment_contract_svg")
+        self.assertEqual(gate["status"], "fail")
+        self.assertGreater(gate["blocking_count"], 0)
 
 
 if __name__ == "__main__":

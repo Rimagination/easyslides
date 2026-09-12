@@ -37,6 +37,17 @@ figures, and immediately validates the result through
 `scripts/deck_plan_contract.py`. Treat this as an intake draft: Strategist must
 still verify the title, figure captions, claims, and per-page action titles.
 
+For a Chinese degree-defense deck, use the thesis-defense variant:
+
+python scripts/paper_intake.py <project_dir> --scenario-profile thesis_defense --json
+
+This emits scenario_variant `cn_degree_defense_v4`, thesis heading hierarchy,
+an A-D source-figure index with high-resolution review flags, a duration-based
+page budget, and the four-stage editable workflow. The default route does not
+generate Image2 visuals. Add --visual-exploration only when the user explicitly
+wants visual exploration; those images remain style references and never
+replace source figures.
+
 ### Literature-report flow selection
 
 For `single_paper_report`, read
@@ -134,6 +145,15 @@ traceable `evidence_sources` pointing into `source_map`, the chosen `layout_id`,
 the page `rhythm`, and the `speaker_note` intent. `design_spec.md` may explain
 the deck in prose, but the page contract belongs here so QA can check it later.
 
+Source-backed content pages should additionally carry `content_contract`
+(`conclusion`, `evidence`, `explanation`) and `content_quality` (status,
+evidence count, source-text length, and material types). These fields let the
+planner distinguish a supported argument from a placeholder and pass useful
+signals into component selection. Choose the verified body variant from the
+content shape and evidence: argument stack, evidence split, overview mosaic,
+process roadmap, comparison, or matrix. Keep the open content area available
+for a real claim; avoid padding a page with generic cards.
+
 If the selected template provides `body_variants.json`, `layout_id` must point
 to a verified body variant or carry enough `content_shape` for
 `scripts/body_variant_adapter.py` to select one. Each checked slide must include
@@ -159,8 +179,9 @@ python scripts/academic_qa_gate.py <project_dir>/deck_plan.json --json
 ```
 
 The gate checks action-title quality, result-page evidence type, References /
-source-provenance planning, and whether applicable academic scenarios end on
-Conclusions. Fix errors before SVG generation; review warnings explicitly.
+source-provenance planning, content structure/quality, body-layout diversity,
+and whether applicable academic scenarios end on Conclusions. Fix errors before
+SVG generation; review warnings explicitly.
 
 ## Step 3: Design Specification Structure
 

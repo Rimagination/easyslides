@@ -2,7 +2,7 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "academic_general",
   "package_version": "2.0.0",
-  "source_digest": "3597229c6c3406ab8b000897bac48db0924305c5ab56df526a4c937c45b2c4ce",
+  "source_digest": "050ada274465611d5891b59eca500384a348183153f2b6f911e8a4a5339b6a76",
   "sources": {
     "package": {
       "path": "templates/layouts/academic_general/template_package.json",
@@ -10,7 +10,7 @@
     },
     "shells": {
       "path": "templates/layouts/academic_general/layouts.json",
-      "sha256": "b02f00a70c79e8ab56f9981c562feb394845fc16ec94d9c8b5677109abc681ad"
+      "sha256": "e513324ffec19946caf4a5f76e5686afc4ae7c0a584af0ecd2bc209670018e66"
     },
     "body_variants": {
       "path": "templates/layouts/academic_general/body_variants.json",
@@ -54,15 +54,15 @@
     },
     "shell:toc": {
       "path": "templates/layouts/academic_general/02_toc.svg",
-      "sha256": "24182f771a650205db925411c4a86838dea2a4fb37f639ec2d7f6daf7e8c87b8"
+      "sha256": "2e1d6165020bc42b871e251fc81485c114e4c60dc148ca9af3174475bf7601fb"
     },
     "shell:chapter": {
       "path": "templates/layouts/academic_general/02_chapter.svg",
-      "sha256": "484a279f44376b443b6d0460750599ec41e9b5d02375c97d47abc4e434366971"
+      "sha256": "b74d29da4ba05532bb887af1ca6250c9a8d0509d49e5b869ae9f709b83bcdbc8"
     },
     "shell:content": {
       "path": "templates/layouts/academic_general/03_content.svg",
-      "sha256": "d94463ece29a8e11ec5ae8397e2983f324c3c2a3ab4be4ee0267f7c5bf87b01a"
+      "sha256": "226730d6f45e28956dd998701ec79c275c166b2dfd1106809659950ff154fa62"
     },
     "shell:ending": {
       "path": "templates/layouts/academic_general/04_ending.svg",
@@ -74,7 +74,7 @@
     },
     "component:component/academic_general/comparison_column": {
       "path": "templates/layouts/academic_general/assets/components/comparison_column.svg",
-      "sha256": "6d070f6fddcc794ae90e99ec137f74bec4937490c82b6797d4a86d976d920f2e"
+      "sha256": "f88a499fba5d8060ce2dc6097eb1d43bd520f4edc43d752d96a824c02f4ac1a8"
     },
     "component:component/academic_general/conclusion_bar": {
       "path": "templates/layouts/academic_general/assets/components/conclusion_bar.svg",
@@ -82,11 +82,11 @@
     },
     "component:component/academic_general/evidence_row": {
       "path": "templates/layouts/academic_general/assets/components/evidence_row.svg",
-      "sha256": "a6199e2c4275b8a3c2a7d72a35a25b8a91ae85a3275e715f1389b1306eb350c5"
+      "sha256": "67fce5c87c279ff1fe208dee04298f0448c94a903c8a081c0005481a6045a047"
     },
     "component:component/academic_general/evidence_stack": {
       "path": "templates/layouts/academic_general/assets/components/evidence_stack.svg",
-      "sha256": "38496ed26f23950af313c17e79f872036bb245643ae08fd261f7532b7d63cbe0"
+      "sha256": "ccfaa80bf077f8868882f949d6d6861834b1396b136b696bcdae0ce7152e2a4a"
     },
     "component:component/academic_general/media_panel": {
       "path": "templates/layouts/academic_general/assets/components/media_panel.svg",
@@ -98,7 +98,7 @@
     },
     "component:component/academic_general/process_step": {
       "path": "templates/layouts/academic_general/assets/components/process_step.svg",
-      "sha256": "5068206eaa4364c1e5bfc235ac428913b835fd162e3ad179020bebaf632b705b"
+      "sha256": "0f0ecb4028cebc9b2344de53c1fadf75b656966293557ef6f5c68ae5456c0c99"
     },
     "component:component/academic_general/table_matrix": {
       "path": "templates/layouts/academic_general/assets/components/table_matrix.svg",
@@ -106,7 +106,7 @@
     },
     "asset:assets/asset_manifest.json": {
       "path": "templates/layouts/academic_general/assets/asset_manifest.json",
-      "sha256": "fc594bba7a5da636a450ef78f1b96f5a5de514da66013c447285b4ccb496fb96"
+      "sha256": "61e24059891e98c07ffd6e80c22c23dd54e368976b723e44a5dfaf8ad1e8ffa2"
     },
     "asset:assets/components/canvas_anchor.svg": {
       "path": "templates/layouts/academic_general/assets/components/canvas_anchor.svg",
@@ -114,7 +114,7 @@
     },
     "asset:assets/components/comparison_column.svg": {
       "path": "templates/layouts/academic_general/assets/components/comparison_column.svg",
-      "sha256": "6d070f6fddcc794ae90e99ec137f74bec4937490c82b6797d4a86d976d920f2e"
+      "sha256": "f88a499fba5d8060ce2dc6097eb1d43bd520f4edc43d752d96a824c02f4ac1a8"
     },
     "asset:assets/components/conclusion_bar.svg": {
       "path": "templates/layouts/academic_general/assets/components/conclusion_bar.svg",
@@ -122,11 +122,11 @@
     },
     "asset:assets/components/evidence_row.svg": {
       "path": "templates/layouts/academic_general/assets/components/evidence_row.svg",
-      "sha256": "a6199e2c4275b8a3c2a7d72a35a25b8a91ae85a3275e715f1389b1306eb350c5"
+      "sha256": "67fce5c87c279ff1fe208dee04298f0448c94a903c8a081c0005481a6045a047"
     },
     "asset:assets/components/evidence_stack.svg": {
       "path": "templates/layouts/academic_general/assets/components/evidence_stack.svg",
-      "sha256": "38496ed26f23950af313c17e79f872036bb245643ae08fd261f7532b7d63cbe0"
+      "sha256": "ccfaa80bf077f8868882f949d6d6861834b1396b136b696bcdae0ce7152e2a4a"
     },
     "asset:assets/components/media_panel.svg": {
       "path": "templates/layouts/academic_general/assets/components/media_panel.svg",
@@ -138,7 +138,7 @@
     },
     "asset:assets/components/process_step.svg": {
       "path": "templates/layouts/academic_general/assets/components/process_step.svg",
-      "sha256": "5068206eaa4364c1e5bfc235ac428913b835fd162e3ad179020bebaf632b705b"
+      "sha256": "0f0ecb4028cebc9b2344de53c1fadf75b656966293557ef6f5c68ae5456c0c99"
     },
     "asset:assets/components/table_matrix.svg": {
       "path": "templates/layouts/academic_general/assets/components/table_matrix.svg",
@@ -162,7 +162,7 @@
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/academic_general/assets/components/comparison_column.svg",
-      "sha256": "6d070f6fddcc794ae90e99ec137f74bec4937490c82b6797d4a86d976d920f2e"
+      "sha256": "f88a499fba5d8060ce2dc6097eb1d43bd520f4edc43d752d96a824c02f4ac1a8"
     },
     {
       "asset_id": "component/academic_general/conclusion_bar",
@@ -176,14 +176,14 @@
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/academic_general/assets/components/evidence_row.svg",
-      "sha256": "a6199e2c4275b8a3c2a7d72a35a25b8a91ae85a3275e715f1389b1306eb350c5"
+      "sha256": "67fce5c87c279ff1fe208dee04298f0448c94a903c8a081c0005481a6045a047"
     },
     {
       "asset_id": "component/academic_general/evidence_stack",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/academic_general/assets/components/evidence_stack.svg",
-      "sha256": "38496ed26f23950af313c17e79f872036bb245643ae08fd261f7532b7d63cbe0"
+      "sha256": "ccfaa80bf077f8868882f949d6d6861834b1396b136b696bcdae0ce7152e2a4a"
     },
     {
       "asset_id": "component/academic_general/media_panel",
@@ -204,7 +204,7 @@
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/academic_general/assets/components/process_step.svg",
-      "sha256": "5068206eaa4364c1e5bfc235ac428913b835fd162e3ad179020bebaf632b705b"
+      "sha256": "0f0ecb4028cebc9b2344de53c1fadf75b656966293557ef6f5c68ae5456c0c99"
     },
     {
       "asset_id": "component/academic_general/table_matrix",

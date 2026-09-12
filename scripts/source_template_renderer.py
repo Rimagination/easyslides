@@ -11,6 +11,11 @@ from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree as ET
 
+try:
+    from scripts import alignment_contract
+except ImportError:  # pragma: no cover
+    import alignment_contract
+
 
 SVG_NS = "http://www.w3.org/2000/svg"
 XLINK_NS = "http://www.w3.org/1999/xlink"
@@ -103,8 +108,13 @@ def _replace_text(element: ET.Element, slot: dict[str, Any], value: Any) -> None
     width = float(geometry.get("width") or 0)
     height = float(geometry.get("height") or 0)
     capacity = slot.get("capacity") if isinstance(slot.get("capacity"), dict) else {}
-    max_chars = capacity.get("max_chars_per_line") or capacity.get("max_chars_per_line_zh")
-    max_lines = capacity.get("max_lines")
+    max_chars = (
+        capacity.get("max_chars_per_line")
+        or capacity.get("max_chars_per_line_zh")
+        or slot.get("max_chars_per_line")
+        or slot.get("max_chars_per_line_zh")
+    )
+    max_lines = capacity.get("max_lines") or slot.get("max_lines")
     try:
         max_chars = int(max_chars) if max_chars is not None else None
     except (TypeError, ValueError):
@@ -147,6 +157,10 @@ def _replace_text(element: ET.Element, slot: dict[str, Any], value: Any) -> None
     element.set("data-pptx-valign", "middle")
     element.set("data-center-lock", "true")
     element.set("data-slot-id", str(slot.get("slot_id") or "text"))
+    if max_lines == 1 or bool(capacity.get("single_line_required") or slot.get("single_line_required")):
+        # Keep one-line shell labels inside their declared geometry after
+        # PowerPoint reopens the native text box.
+        element.set("data-pptx-no-wrap", "true")
     if len(lines) == 1:
         element.text = html.unescape(lines[0])
         return
@@ -220,6 +234,7 @@ def project_source_template_svg(
     slots: list[dict[str, Any]],
     values: dict[str, Any],
     asset_root: str | Path | None = None,
+    alignment_spec: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Replace declared text/image slots while preserving source geometry."""
     source_svg = Path(source_svg)
@@ -227,6 +242,10 @@ def project_source_template_svg(
     if not source_svg.exists():
         raise FileNotFoundError(source_svg)
     root = ET.parse(source_svg).getroot()
+    alignment_issues: list[dict[str, Any]] = []
+    if alignment_spec is not None:
+        alignment_issues.extend(alignment_contract.validate_contract(alignment_spec, required=True))
+        root.set("data-easyslides-alignment-contract", alignment_contract.CONTRACT_SCHEMA_VERSION)
     asset_root_path = Path(asset_root).resolve() if asset_root else None
     if asset_root_path:
         _rewrite_fixed_asset_hrefs(root, asset_root_path, output_svg.parent.resolve())
@@ -255,6 +274,12 @@ def project_source_template_svg(
     ET.register_namespace("", SVG_NS)
     ET.register_namespace("xlink", XLINK_NS)
     ET.ElementTree(root).write(output_svg, encoding="utf-8", xml_declaration=True)
+    if alignment_spec is not None and not alignment_issues:
+        alignment_issues.extend(alignment_contract.validate_svg_alignment([output_svg], alignment_spec)["issues"])
+    issues.extend(
+        {"slot_id": "", "code": item["code"], "message": item["message"]}
+        for item in alignment_issues
+    )
     return {
         "status": "pass" if not issues else "fail",
         "source_svg": str(source_svg),
@@ -262,6 +287,7 @@ def project_source_template_svg(
         "replaced_slots": replaced,
         "issue_count": len(issues),
         "issues": issues,
+        "alignment_contract": alignment_contract.CONTRACT_SCHEMA_VERSION if alignment_spec is not None else None,
         "hard_geometry_rule": "text_center_y_matches_container_center_y",
     }
 
@@ -272,6 +298,7 @@ def render_source_template_projection(
     slots: list[dict[str, Any]],
     values: dict[str, Any],
     asset_root: str | Path | None = None,
+    alignment_spec: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     return project_source_template_svg(
         source_svg,
@@ -279,6 +306,7 @@ def render_source_template_projection(
         slots=slots,
         values=values,
         asset_root=asset_root,
+        alignment_spec=alignment_spec,
     )
 
 

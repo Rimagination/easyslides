@@ -24,6 +24,70 @@ def save_deck(build):
 
 
 class ValidatePptxTextLayoutTests(unittest.TestCase):
+    def test_deck_pagination_contract(self):
+        from scripts.validate_pptx_text_layout import _pagination_issues
+
+        prs = Presentation()
+        footers = []
+        for n in range(1, 13):
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            if n > 1:
+                footers.append(add_textbox(slide, 8.6, 7.0, 1, .3, f'{n:02d} / 12', 10))
+        self.assertEqual(_pagination_issues(prs), [])
+        footers[1].left += Inches(.1)
+        footers[2].text = 'Page 04/99'
+        footers[3].text = ''
+        footers[4].text_frame.paragraphs[0].runs[0].font.size = Pt(16)
+        issues = _pagination_issues(prs)
+        self.assertEqual({i['slide_number'] for i in issues}, {3, 4, 5, 6})
+        self.assertTrue(all(i['severity'] == 'blocking' for i in issues))
+
+    def test_body_fractions_are_not_pagination(self):
+        from scripts.validate_pptx_text_layout import _pagination_issues
+
+        prs = Presentation()
+        for text in ('01 / 12', 'Page 07/99'):
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            add_textbox(slide, 2, 3, 2, 1, text, 24)
+        self.assertEqual(_pagination_issues(prs), [])
+
+    def test_logical_pagination_with_omitted_cover_and_ending(self):
+        from scripts.validate_pptx_text_layout import _pagination_issues
+
+        prs = Presentation()
+        for n in range(12):
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            if 0 < n < 11:
+                add_textbox(slide, 8.6, 7, 1, .3, f'{n:02d} / 10', 10)
+        self.assertEqual(_pagination_issues(prs), [])
+
+    def test_grouped_footer_and_denominator_padding(self):
+        from scripts.validate_pptx_text_layout import _pagination_issues
+
+        prs = Presentation()
+        for text in ('01 / 2', '02 / 02'):
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            box = add_textbox(slide, 8.6, 7, 1, .3, text, 10)
+            slide.shapes.add_group_shape([box])
+        issues = _pagination_issues(prs)
+        self.assertEqual([i['slide_number'] for i in issues], [2])
+
+    def test_equivalent_run_splits_do_not_change_footer_style(self):
+        from scripts.validate_pptx_text_layout import _pagination_issues
+
+        prs = Presentation()
+        for n in (1, 2):
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            box = add_textbox(slide, 8.6, 7, 1, .3, f'0{n} / 2', 10)
+            if n == 2:
+                paragraph = box.text_frame.paragraphs[0]
+                paragraph.runs[0].text = '02'
+                run = paragraph.add_run()
+                run.text = ' / 2'
+                run.font.size = Pt(10)
+                run._r.get_or_add_rPr().set('dirty', '0')
+        self.assertEqual(_pagination_issues(prs), [])
+
     def test_clean_text_layout_passes(self):
         from scripts.validate_pptx_text_layout import validate_pptx_text_layout
 

@@ -89,6 +89,48 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
                 f"{template_id} should provide at least five SVG page shells",
             )
 
+    def test_official_templates_use_center_locked_native_text_slots(self):
+        official_template_ids = {
+            "academic_general",
+            "academic_scqa",
+            "defense_leftnav",
+            "defense_topnav",
+            "literature_minimal",
+            "nsfc_defense",
+            "thu_speech",
+        }
+        for template_id in official_template_ids:
+            template_dir = TEMPLATES / "layouts" / template_id
+            layouts = json.loads((template_dir / "layouts.json").read_text(encoding="utf-8"))
+            text_policy = layouts.get("native_text_policy")
+            self.assertIsInstance(text_policy, dict)
+            self.assertEqual(text_policy.get("default_vertical_anchor"), "middle")
+            self.assertTrue(text_policy.get("center_lock_requires_middle"))
+            svg_paths = [
+                path
+                for path in template_dir.rglob("*.svg")
+                if "compiled" not in path.relative_to(template_dir).parts
+            ]
+            self.assertTrue(svg_paths, template_id)
+            for svg_path in svg_paths:
+                root = ET.fromstring(svg_path.read_text(encoding="utf-8"))
+                for node in root.iter():
+                    if node.tag.split("}")[-1] != "text":
+                        continue
+                    if node.attrib.get("data-pptx-textbox") != "true":
+                        continue
+                    with self.subTest(template_id=template_id, svg=svg_path.name):
+                        for attr in (
+                            "data-pptx-box-x",
+                            "data-pptx-box-y",
+                            "data-pptx-box-w",
+                            "data-pptx-box-h",
+                            "data-pptx-valign",
+                        ):
+                            self.assertIn(attr, node.attrib)
+                        self.assertEqual(node.attrib["data-pptx-valign"], "middle")
+                        self.assertEqual(node.attrib.get("data-center-lock"), "true")
+
     def test_l001_left_nav_is_not_an_active_layout_template(self):
         layouts_root = TEMPLATES / "layouts"
         index = json.loads((layouts_root / "layouts_index.json").read_text(encoding="utf-8"))
@@ -270,12 +312,13 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
         self.assertEqual(palettes["default_palette"], "academic_blue")
         self.assertEqual(
             sorted(palettes["palettes"]),
-            ["academic_blue", "academic_green", "academic_purple", "wine"],
+            ["academic_blue", "academic_green", "academic_purple", "thesis_navy_v4", "wine"],
         )
         self.assertEqual(palettes["palettes"]["academic_blue"]["colors"]["primary"], "#183A6A")
         self.assertEqual(palettes["palettes"]["wine"]["colors"]["primary"], "#8B0012")
         self.assertEqual(palettes["palettes"]["academic_purple"]["colors"]["primary"], "#80308B")
         self.assertEqual(palettes["palettes"]["academic_green"]["colors"]["primary"], "#016F35")
+        self.assertEqual(palettes["palettes"]["thesis_navy_v4"]["colors"]["primary"], "#0A3476")
         self.assertIn("恳请老师批评指正！", spec_text + rules_text)
         self.assertIn("English `listening` remains allowed", spec_text + rules_text)
         root = ET.fromstring(content_text)
@@ -287,6 +330,24 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
         self.assertLessEqual(float(content_area.attrib["y"]), 190)
         self.assertGreaterEqual(float(content_area.attrib["width"]), 1170)
         self.assertGreaterEqual(float(content_area.attrib["height"]), 430)
+
+        for svg_name, slots, box_y in [
+            ("01_cover.svg", ("PRESENTER", "ADVISOR", "DATE"), 651.1),
+            ("04_ending.svg", ("PRESENTER", "ADVISOR", "CONTACT"), 641.1),
+        ]:
+            metadata_root = ET.fromstring((template_dir / svg_name).read_text(encoding="utf-8"))
+            for index, slot in enumerate(slots):
+                text_node = next(
+                    node
+                    for node in metadata_root.iter()
+                    if node.tag.split("}")[-1] == "text" and node.attrib.get("data-slot") == slot
+                )
+                expected_center = 320 + index * 320
+                self.assertAlmostEqual(float(text_node.attrib["x"]), expected_center)
+                self.assertAlmostEqual(float(text_node.attrib["data-pptx-box-x"]), expected_center - 180)
+                self.assertAlmostEqual(float(text_node.attrib["data-pptx-box-y"]), box_y)
+                self.assertEqual(text_node.attrib["data-pptx-box-w"], "360")
+                self.assertEqual(text_node.attrib["data-pptx-box-h"], "27.9")
         self.assertEqual(content_area.attrib["fill"], "none")
         self.assertEqual(content_area.attrib["stroke"], "none")
         self.assertNotIn("stroke-dasharray", content_area.attrib)

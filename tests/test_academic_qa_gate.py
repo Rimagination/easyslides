@@ -156,6 +156,49 @@ class AcademicQaGateTests(unittest.TestCase):
         self.assertIn("AQA-REFERENCES", codes)
         self.assertIn("AQA-CONCLUSION-LAST", codes)
 
+    def test_content_contract_gate_flags_thin_pages_and_repeated_layouts(self):
+        from scripts.academic_qa_gate import run_academic_qa
+
+        plan = valid_academic_plan()
+        slides = []
+        for index in range(6):
+            slides.append(
+                {
+                    "page": f"P{index + 1:02d}",
+                    "role": "evidence_summary",
+                    "action_title": f"Finding {index + 1} changes the interpretation",
+                    "claim": "The finding needs source evidence and explanation.",
+                    "evidence_sources": [
+                        {"source_id": "paper:main", "locator": f"section {index + 1}", "kind": "paper_section"}
+                    ],
+                    "layout_id": "defense_topnav/flexible_canvas",
+                    "rhythm": "dense",
+                    "speaker_note": "Explain the finding.",
+                    "slot_payload": {"CONTENT_BODY": "The finding needs more detail."},
+                    "content_contract": {
+                        "conclusion": "The finding changes the interpretation.",
+                        "evidence": [{"label": "Source", "text": "Short source."}],
+                        "explanation": "The source needs more detail.",
+                        "status": "thin",
+                    },
+                    "content_quality": {
+                        "status": "thin",
+                        "evidence_count": 1,
+                        "source_text_chars": 12,
+                        "material_types": ["text"],
+                    },
+                }
+            )
+        plan["slides"] = slides
+
+        report = run_academic_qa(plan, repo_root=ROOT)
+        codes = {item["code"] for item in report["issues"]}
+
+        self.assertEqual(report["status"], "warn", report["issues"])
+        self.assertIn("AQA-CONTENT-THIN", codes)
+        self.assertIn("AQA-LAYOUT-DIVERSITY", codes)
+        self.assertEqual(report["content_quality_summary"]["distinct_layouts"], 1)
+
     def test_cli_validates_deck_plan_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             plan_path = Path(tmp) / "deck_plan.json"

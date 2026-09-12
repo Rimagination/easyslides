@@ -24,6 +24,12 @@ modes.
 
 ## Route Authority
 
+Default onboarding is a conversation, not a browser workflow. Ask targeted
+native popup questions, one consequential question at a time, adapting to each
+answer until the brief is executable. Skip known facts; resolve conflicting
+requirements; then summarize and proceed. Follow `skills/easyslides-clarify/SKILL.md`.
+Open HTML guides or browser confirmation pages only when explicitly requested.
+
 Before choosing an implementation path, read `workflows/routing.md`. It owns
 deterministic route selection for main generation, raw PPTX template fill,
 native PPTX enhancement, reusable template creation, slide-image
@@ -204,13 +210,23 @@ layout and render-diff gates.
 
 Use `scripts/project_manager.py init <name> --kind slide_image_reconstruction`
 and `scripts/image_reconstruction_pipeline.py init/qa` as the standard project
-facade for this path. Default QA mode is `faithful-practical`: editable text,
-native structure, and split-asset safety are blocking gates, while
-source-vs-render pixel difference is measured and reported for inspection. Use
-`--mode pixel-strict` only when near-pixel source matching is required. Complex
+facade for this path. Default QA mode is `pixel-strict`: editable text,
+native structure, asset safety, provenance and source-render differences block
+delivery. `--mode faithful-practical` is diagnostic only; a visual failure sets
+`delivery_ready=false` and a failing CLI exit code. Always inspect actual renders.
+For generated complete slides, follow the host-call and generation-manifest
+contract in `workflows/slide-image-to-editable-pptx.md`. Attach the selected
+template image and original evidence to the actual ImageGen call. Reconstruct
+each approved output as its sole visual source; do not reuse native page shells.
+Complex
 raster illustrations that become ugly as vectors should use
 `preserve_source_frame`; closed/circular source assets should use masked source
-assets with clipping checks.
+assets with clipping checks. The image route also carries a shared alignment
+contract: Layer C source boxes map to absolute 1280x720 canvas coordinates,
+editable text stays outside transformed parent groups, and center-locked labels
+are checked against the actual native PPTX frame after export. Cover, content,
+navigation, and ending-page chrome use the same contract, so a visually hidden
+SVG offset cannot pass the final gate.
 
 ### Path F: Native PPTX Template Fill
 
@@ -258,17 +274,18 @@ and reusable slide modules.
   Use free academic design, a general academic pack,
   a domain pack, or a user-provided template path while keeping source
   traceability, citation retention, text fit, and PPTX deliverability intact.
-- When `academic_general` or `academic_scqa` is selected, read
-  `references/academic-orchestration.md` and apply Audience-State-Transfer plus
-  SCQA before selecting layouts. These templates are for audience-facing
-  academic orchestration, not developer-facing production notes.
+- For every academic task, read `references/academic-orchestration.md` before
+  intake and planning. Audience-State-Transfer and source-backed narrative are
+  shared planning capabilities across templates and production schemes; SCQA
+  is an optional spine. Respect user outlines and approved image pages.
 
 ## Source Material Policy
 
 Before planning or generating a deck, classify the user's input:
 
-- **No supplied source materials**: if the user gives only a topic,
-  requirements, or a request to research before making the PPT, run
+- **No supplied source materials**: establish whether the user will supply
+  materials or wants agent research. An explicit research request already
+  resolves this choice. For authorized research, run
   `workflows/topic-research.md`. You may gather web text and download relevant
   openly licensed images as PPT assets, then import the research document and
   image folder as source materials with provenance.
@@ -318,6 +335,23 @@ figures, then validates the draft with `scripts/deck_plan_contract.py`.
 Strategist should treat the output as a traceable starting point: verify the
 paper title, figure captions, claims, and slide roles before writing the final
 `design_spec.md` and `spec_lock.md`.
+
+The intake also records source-located evidence blocks in each page's
+`content_contract` (`conclusion`, `evidence`, `explanation`) and summarizes
+`content_quality` (`status`, evidence count, source-text length, and material
+types). The component planner uses these signals to select an argument stack,
+evidence split, overview mosaic, process roadmap, comparison, or matrix from
+the template's verified body variants. Thin and placeholder pages remain
+explicit review items; generic filler should not be used to make a page look
+full.
+
+For Chinese硕博士毕业答辩, pass
+--scenario-profile thesis_defense to activate scenario_variant
+`cn_degree_defense_v4`. The intake then records thesis chapter hierarchy,
+duration-based page bands, an A-D source-figure index, high-resolution figure
+review flags, and the four stages source planning -> editable master ->
+editable sample -> full editable deck. Image2 is off by default; use the
+explicit --visual-exploration flag only for upstream style exploration.
 
 ### Single-Paper Literature-Report Flow Selection
 
@@ -479,22 +513,19 @@ The gate checks the deck-plan contract plus academic expression rules:
 pages need figure/table/data/chart evidence, source-linked decks should include
 a References/source-provenance slide, and scenarios that recommend
 `conclusion_last` should end on Conclusions rather than a generic thank-you
-page. Errors block execution; warnings should be resolved or consciously
-accepted before writing final SVGs.
+page. It also checks the content contract, source-material density, and body
+layout diversity. Errors block execution; warnings should be resolved or
+consciously accepted before writing final SVGs.
 
-For academic content, run the general clarification gate first. Then present
-the **Five Confirmations** (blocking) only for academic values that are still
-unresolved; do not repeat a value the user already selected:
+For academic content, combine the general clarification gate with the academic
+intake in `references/academic-orchestration.md`. Resolve source acquisition,
+material roles, audience, desired outcome, speaking time, style and content
+boundaries using adaptive native questions. Do not substitute a five-item design
+checklist for this brief, infer duration from page count, or automatically choose
+a blue palette. Skip explicit facts and inspectable file contents.
 
-| # | Confirmation | Default for Academic |
-|---|-------------|---------------------|
-| 1 | Canvas format | 16:9 (1280x720) |
-| 2 | Page count | Based on source volume |
-| 3 | Target audience | Committee / peers / general |
-| 4 | Style objective | Mode B (data clarity) or C (logical persuasion) |
-| 5 | Color scheme | Academic blue `#003366` + accent `#0066CC` |
-
-After user confirms, output `deck_plan.json`, `deck_execution_lock.json`,
+Once consequential questions are resolved, summarize the brief and output
+`deck_plan.json` (including `academic_brief`), `deck_execution_lock.json`,
 `design_spec.md`, and `spec_lock.md`.
 
 ### Step 2: Template and Design Foundation
@@ -846,9 +877,13 @@ python scripts/office/pack.py unpacked/ output.pptx --original template.pptx
 
 1. **Wrong viewBox**: Must match canvas dimensions exactly
 2. **Missing `spec_lock` re-read**: Re-read before every page
-3. **Script-generated SVG**: Forbidden — each page must be hand-written
+3. **Authoring scope**: PPT Master compatibility requires hand-written pages.
+   Existing template compilers and measured image-reconstruction IR may reuse
+   deterministic assembly helpers; do not rebuild their export backend per deck.
 4. **Using `rgba()`**: Use hex colors with opacity attributes instead
-5. **SVG `<text>` labels**: Use HTML labels, not SVG text in diagrams
+5. **Editable labels**: Use boxed native SVG text for the DrawingML backend.
+   HTML labels are only an upstream authoring option and must be normalized;
+   never put `foreignObject` into production SVG.
 6. **Template porting overflow**: Compact templates such as `defense_leftnav` cannot
    safely reuse long card/process copy from larger templates. Shorten at the
    source content layer and use punctuation-aware Chinese wrapping before
@@ -870,7 +905,12 @@ python scripts/office/pack.py unpacked/ output.pptx --original template.pptx
 1. **Monotonous layouts**: Vary layout types across the deck
 2. **Inconsistent spacing**: Use the template's spacing system
 3. **Mixed icon styles**: Stick to one library per deck
-4. **No visual rhythm**: Alternate between light, dark, and hero pages
+4. **Visual rhythm within the selected design**: vary page roles where the
+   template allows; preserve approved ImageGen pages during reconstruction.
+   A rhythm preference never authorizes swapping templates or page shells.
+5. **Per-page chrome drift**: lock pagination once for the deck and run the
+   shared PPTX layout check. The image workflow includes generation-time chrome
+   constraints, batch reuse and a cover-plus-dense-page reconstruction pilot.
 
 ---
 

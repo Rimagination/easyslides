@@ -17,6 +17,33 @@
     "font_stack": "\"Microsoft YaHei\", \"Source Han Sans CN\", Arial, sans-serif",
     "content_area": {"x": 54.0, "y": 188.0, "width": 1172.0, "height": 486.0}
   },
+  "presentation_profiles": {
+    "cn_degree_defense_v4": {
+      "font_family": {
+        "cjk": "Microsoft YaHei",
+        "latin": "Arial"
+      },
+      "font_size_pt": {
+        "cover_title": 36,
+        "page_title": 32,
+        "body": 21,
+        "caption": 14,
+        "table": 14
+      },
+      "colors": {
+        "title": "#0A3476",
+        "body": "#000000",
+        "caption": "#000000",
+        "table_text": "#000000",
+        "secondary_text": "#333333",
+        "accent": "#1C8B92",
+        "light_border": "#C8D5E6",
+        "page_background": "#FFFFFF",
+        "panel_background": "#F5F6F8"
+      },
+      "source_of_truth": "references/scenario_profiles.json#profiles.thesis_defense.scenario_variants.cn_degree_defense_v4"
+    }
+  },
   "navigation_styles": {
     "top_navigation": {
       "surface": {"x": 0, "y": 0, "width": 1280, "height": 100, "fill": "#183A6A"},

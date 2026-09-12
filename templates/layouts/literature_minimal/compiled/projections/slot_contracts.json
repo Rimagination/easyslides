@@ -61,9 +61,9 @@
         "default_font_size_px": 26,
         "min_font_size_px": 18,
         "line_height": 1.2,
-        "max_chars_per_line_zh": 18,
-        "overflow_action": "split",
-        "max_lines": 2
+        "max_chars_per_line_zh": 17,
+        "overflow_action": "truncate",
+        "max_lines": 1
       },
       "toc_desc": {
         "default_font_size_px": 17,
@@ -71,7 +71,7 @@
         "line_height": 1.2,
         "max_chars_per_line_zh": 28,
         "overflow_action": "truncate",
-        "max_lines": 2
+        "max_lines": 1
       },
       "chapter_number": {
         "default_font_size_px": 48,
@@ -101,9 +101,9 @@
         "default_font_size_px": 30,
         "min_font_size_px": 22,
         "line_height": 1.15,
-        "max_chars_per_line_zh": 20,
-        "overflow_action": "split",
-        "max_lines": 2
+        "max_chars_per_line_zh": 12,
+        "overflow_action": "truncate",
+        "max_lines": 1
       },
       "section_label": {
         "default_font_size_px": 24,
@@ -133,7 +133,7 @@
         "default_font_size_px": 14,
         "min_font_size_px": 10,
         "line_height": 1.15,
-        "max_chars_per_line_zh": 42,
+        "max_chars_per_line_zh": 36,
         "overflow_action": "truncate",
         "max_lines": 1
       },
@@ -142,8 +142,8 @@
         "min_font_size_px": 42,
         "line_height": 1.1,
         "max_chars_per_line_zh": 10,
-        "overflow_action": "split",
-        "max_lines": 2
+        "overflow_action": "truncate",
+        "max_lines": 1
       },
       "contact": {
         "default_font_size_px": 20,
@@ -536,7 +536,7 @@
     {
       "slot_id": "TOC_ITEM_1_TITLE",
       "role": "toc_item",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -544,7 +544,7 @@
     {
       "slot_id": "TOC_ITEM_2_TITLE",
       "role": "toc_item",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -552,7 +552,7 @@
     {
       "slot_id": "TOC_ITEM_3_TITLE",
       "role": "toc_item",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -560,7 +560,7 @@
     {
       "slot_id": "TOC_ITEM_4_TITLE",
       "role": "toc_item",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -568,7 +568,7 @@
     {
       "slot_id": "TOC_ITEM_5_TITLE",
       "role": "toc_item",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -576,7 +576,7 @@
     {
       "slot_id": "TOC_ITEM_1_DESC",
       "role": "toc_desc",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -584,7 +584,7 @@
     {
       "slot_id": "TOC_ITEM_2_DESC",
       "role": "toc_desc",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -592,7 +592,7 @@
     {
       "slot_id": "TOC_ITEM_3_DESC",
       "role": "toc_desc",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -600,7 +600,7 @@
     {
       "slot_id": "TOC_ITEM_4_DESC",
       "role": "toc_desc",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -608,7 +608,7 @@
     {
       "slot_id": "TOC_ITEM_5_DESC",
       "role": "toc_desc",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "toc"
@@ -657,7 +657,7 @@
     {
       "slot_id": "PAGE_TITLE",
       "role": "page_title",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "content"
@@ -697,7 +697,7 @@
     {
       "slot_id": "THANK_YOU",
       "role": "closing_title",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "ending"
@@ -705,7 +705,7 @@
     {
       "slot_id": "ENDING_SUBTITLE",
       "role": "subtitle",
-      "max_lines": 2,
+      "max_lines": 1,
       "kind": "text",
       "required": true,
       "shell_id": "ending"

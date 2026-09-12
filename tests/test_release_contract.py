@@ -15,11 +15,11 @@ class ReleaseContractTests(unittest.TestCase):
         zcode = json.loads((ROOT / '.zcode-plugin/plugin.json').read_text(encoding='utf-8'))
         market = json.loads((ROOT / 'marketplace.json').read_text(encoding='utf-8'))
         versions = [codex['version'], zcode['version'], market['plugins'][0]['version']]
-        self.assertEqual({v.split('+')[0] for v in versions}, {'1.1.0'})
+        self.assertEqual({v.split('+')[0] for v in versions}, {'1.2.0'})
         for text in (codex['description'], zcode['description'], market['plugins'][0]['description']):
             self.assertIn('selected', text)
         self.assertIn('imagegen', codex['interface']['longDescription'])
-        self.assertIn('1.1.0', (ROOT / 'CHANGELOG.md').read_text(encoding='utf-8'))
+        self.assertIn('1.2.0', (ROOT / 'CHANGELOG.md').read_text(encoding='utf-8'))
 
     @unittest.skipUnless(shutil.which('git'), 'Git needed to check ignore semantics')
     def test_private_outputs_ignored_but_public_templates_included(self):

@@ -63,6 +63,18 @@ python3 ${SKILL_DIR}/scripts/source_to_md/web_to_md.py <URL>
 
 **Source priority**:
 
+For academic reviews and defense decks, prioritize original papers, supplements,
+author/institutional project pages and official datasets over encyclopedia or
+news summaries. Record publication status (including preprints), task/target,
+dataset, metric, comparison conditions and limitations. Retrieve the original
+figures/tables for the selected evidence pages during research, before ImageGen;
+text-only literature notes are not a complete research-slide handoff.
+Keep figure IDs, captions, source page/URL and permission/license notes with each
+asset. Do not assume that a publicly readable paper grants unrestricted reuse.
+Compare quantitative results only under compatible tasks, splits and metrics.
+Stop when the planned claims have sufficient traceable evidence and remaining
+gaps are explicit; do not invent metrics or illustrations that look like results.
+
 | Tier | Source |
 |---|---|
 | 1 | Wikipedia / Wikimedia Commons |

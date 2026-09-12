@@ -16,9 +16,11 @@ from workflow_manifest import main as workflow_manifest_main  # noqa: E402
 
 
 DELEGATED_COMMANDS = {
+    "guide": "user_guide.py",
     "build": "build_pipeline.py",
     "doctor": "easyslides_doctor.py",
     "image-reconstruct": "image_reconstruction_pipeline.py",
+    "image-acquire": "image_acquisition.py",
     "project": "project_manager.py",
     "source-to-md": "source_to_md.py",
     "distill": "pptx_template_distill.py",
@@ -58,9 +60,11 @@ def build_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Product commands:\n"
+            "  guide         Conversation-first onboarding; optional --html reference\n"
             "  build         Build a deck with explicit production decisions\n"
             "  doctor        Diagnose dependencies and unverified capabilities\n"
             "  image-reconstruct Initialize or validate an image reconstruction project\n"
+            "  image-acquire Prepare full-slide ImageGen requests and record actual results\n"
             "  project       Project creation, source import, validation\n"
             "  source-to-md  Convert files, directories, or URLs to Markdown\n"
             "  distill       Distill PPTX evidence and gated template assets\n"

@@ -514,9 +514,12 @@ For image reconstruction projects:
 python scripts/image_reconstruction_pipeline.py qa <project> --pptx <project>/pptx/output.pptx --rendered-dir <project>/reports/rendered_png
 ```
 
-Default image reconstruction mode is `faithful-practical`: text, structure, and
-asset safety are blocking; source-vs-render pixel difference is measured and
-reported. Use `--mode pixel-strict` only when near-pixel matching is required.
+Default image reconstruction QA is `pixel-strict`. Text, structure, asset safety,
+source/render provenance and visual differences block delivery. Diagnostic
+`faithful-practical` retains advisory differences but cannot authorize delivery
+when visual checks fail. Host-native acquisition records complete-slide requests
+and results; the existing SVG/shape IR backend remains unchanged. See the image
+reconstruction workflow for the generation-manifest handoff and visual review.
 
 ## Repository Layout
 

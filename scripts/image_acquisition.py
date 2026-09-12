@@ -215,6 +215,8 @@ def validate_image_manifest(data: Mapping[str, Any], *, source: str = "manifest"
             )
         item["page_role"] = page_role
         item["text_policy"] = text_policy
+        if data.get("purpose") == "slide_reconstruction" and text_policy != "embedded":
+            raise ImageAcquisitionError(f"{prefix}: full slides require text_policy=embedded")
 
         default_asset_role = "background" if page_role == "hero_page" else "illustration"
         asset_role = str(item.get("asset_role") or default_asset_role).strip().lower()
@@ -260,6 +262,14 @@ def validate_image_manifest(data: Mapping[str, Any], *, source: str = "manifest"
         normalized_items.append(item)
 
     normalized["items"] = normalized_items
+    if data.get("purpose") == "slide_reconstruction":
+        if not isinstance(data.get("reference_image"), str) or not data["reference_image"].strip():
+            raise ImageAcquisitionError("slide reconstruction requires reference_image")
+        if path != PATH_HOST_NATIVE:
+            raise ImageAcquisitionError("full-slide ImageGen requests require acquisition.path=host-native")
+        ids = [item['id'] for item in normalized_items]
+        if len(set(ids)) != len(ids):
+            raise ImageAcquisitionError("full-slide item ids must be unique")
     return normalized
 
 
@@ -303,11 +313,27 @@ def reconcile_manifest(
 ) -> dict[str, Any]:
     """Reconcile status with files on disk using evidence-driven transitions."""
     manifest = load_image_resource_manifest(manifest_path)
+    if manifest.get('purpose') == 'slide_reconstruction' and output_dir and Path(output_dir).resolve() != Path(manifest_path).resolve().parent:
+        raise ImageAcquisitionError('Place the full-slide manifest beside its generated outputs; alternate output directories are unsupported')
     changed = False
     for item in manifest["items"]:
         output = output_path_for_item(manifest_path, item, output_dir=output_dir)
         exists = output.is_file()
         status = item["status"]
+        if manifest.get('purpose') == 'slide_reconstruction':
+            try:
+                from scripts.image_generation_contract import validate_result
+            except ModuleNotFoundError:
+                from image_generation_contract import validate_result
+            try:
+                validate_result(manifest_path, manifest, item, output)
+                item['status'] = STATUS_GENERATED
+                item.pop('last_error', None)
+            except (ValueError, OSError) as exc:
+                item['status'] = STATUS_FAILED if status == STATUS_GENERATED else status
+                item['last_error'] = str(exc)
+            changed = True
+            continue
         if exists and status != STATUS_GENERATED:
             item["status"] = STATUS_GENERATED
             item.pop("last_error", None)
@@ -502,6 +528,8 @@ def apply_manifest_to_slide_ir(
     output_dir: str | Path | None = None,
 ) -> dict[str, Any]:
     """Attach optional background and local image bindings to Slide IR."""
+    if load_image_resource_manifest(manifest_path).get('purpose') == 'slide_reconstruction':
+        raise ImageAcquisitionError('Full slide images must enter image-reconstruct; direct background binding is forbidden')
     image_root = Path(output_dir).resolve() if output_dir else Path(manifest_path).resolve().parent
     # Reconcile before binding so a host-native tool can simply place a file
     # and resume compilation; a stale Pending status must not hide valid work.
@@ -617,6 +645,7 @@ def write_host_native_request(
     request_path: str | Path | None = None,
 ) -> Path:
     """Write a durable handoff for a host-native image tool."""
+    manifest = validate_image_manifest(manifest)
     root = Path(output_dir).resolve() if output_dir else Path(manifest_path).resolve().parent
     pending = []
     for item in manifest.get("items", []):
@@ -640,6 +669,15 @@ def write_host_native_request(
                 "safe_area": dict(item.get("safe_area") or {}),
             }
         )
+        if manifest.get('purpose') == 'slide_reconstruction':
+            try:
+                from scripts.image_generation_contract import tool_arguments, fingerprint
+            except ModuleNotFoundError:
+                from image_generation_contract import tool_arguments, fingerprint
+            pending[-1]['tool_arguments'] = tool_arguments(manifest_path, manifest, item)
+            pending[-1]['reference_identities'] = [fingerprint(p) for p in pending[-1]['tool_arguments']['referenced_image_paths']]
+            pending[-1]['output_kind'] = 'complete_slide_image'
+            pending[-1]['next_route'] = 'slide-image-to-editable-pptx'
     target = Path(request_path).resolve() if request_path else Path(manifest_path).with_name("image_acquisition_request.json")
     target.write_text(
         json.dumps(
@@ -789,6 +827,8 @@ def prepare_acquisition(
         explicit_path=explicit_path,
         host_native_available=host_native_available,
     )
+    if manifest.get('purpose') == 'slide_reconstruction' and resolution['path'] != PATH_HOST_NATIVE:
+        raise ImageAcquisitionError('The selected full-slide ImageGen route cannot fall back to API/background/template-shell generation')
     request = None
     api_returncode = None
     if resolution["path"] == PATH_API and execute_api:
@@ -829,7 +869,7 @@ def prepare_acquisition(
         "sidecar": sidecar,
         "api_returncode": api_returncode,
         "fallback": {
-            "mode": "template_shell",
+            "mode": "blocked_no_route_substitution" if manifest.get('purpose') == 'slide_reconstruction' else "template_shell",
             "pending_count": sum(
                 1
                 for item in load_image_resource_manifest(manifest_path).get("items", [])
@@ -877,6 +917,12 @@ def _build_parser() -> argparse.ArgumentParser:
     prepare.add_argument("--output-dir", default=None)
     prepare.add_argument("--request-path", default=None)
     prepare.add_argument("--execute-api", action="store_true", help="Run existing image_gen.py when the selected path is api.")
+    record = sub.add_parser('record-result', help='Record the actual full-slide ImageGen arguments and output.')
+    record.add_argument('manifest')
+    record.add_argument('--item', required=True)
+    record.add_argument('--image', required=True)
+    record.add_argument('--call', required=True, help='JSON with tool_name and actual tool_arguments.')
+    record.add_argument('--output-dir')
     return parser
 
 
@@ -884,6 +930,14 @@ def main(argv: list[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
     try:
         _load_image_env()
+        if args.command == 'record-result':
+            try:
+                from scripts.image_generation_contract import record_result
+            except ModuleNotFoundError:
+                from image_generation_contract import record_result
+            call = json.loads(Path(args.call).read_text(encoding='utf-8'))
+            print(json.dumps(record_result(args.manifest, args.item, args.image, call, output_dir=args.output_dir), ensure_ascii=False, indent=2))
+            return 0
         if args.command == "capabilities":
             print(
                 json.dumps(

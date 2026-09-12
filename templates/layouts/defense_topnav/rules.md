@@ -2,7 +2,15 @@
 
 - `defense_topnav` is a source-faithful academic-blue defense template with a dynamic top navigation bar.
 - Default palette is `academic_blue`; alternate palettes must come from `theme_palettes.json` and replace `primary`, `primary_dark`, `soft_surface`, `border`, and `emphasis_text` as a semantic set.
+- `thesis_navy_v4` is an opt-in style profile for the Chinese degree-defense
+  variant. It exposes `#0A3476` title navy, black body/caption/table text,
+  `#333333` secondary text, `#1C8B92` accent, and `#C8D5E6` light borders
+  without changing the template's default `academic_blue` palette.
+- The v4 defense workflow defaults to editable master design and does not
+  generate Image2 visuals. Visual exploration is an explicit upstream choice;
+  when enabled, it is a style reference only and never replaces source figures.
 - Preserve the source PPT fixed geometry for the cover band, TOC left blue panel, six top-navigation labels, gray key-message bar, open content canvas, and bottom page number.
+- Keep cover and ending metadata text boxes in absolute canvas coordinates centered at x=320, 640, and 960; translated groups are reserved for the decorative icons so native PPTX text boxes stay aligned with their icons.
 - Keep the ending page intentionally different from the cover: use the asymmetric left blue panel and right-side closing text composition.
 - The closing page must not contain the Chinese word `聆听` or any Chinese expression containing `聆听`. English `listening` remains allowed.
 - The default Chinese ending title is `恳请老师批评指正！` unless the user provides another academically appropriate line.

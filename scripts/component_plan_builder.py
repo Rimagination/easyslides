@@ -76,6 +76,10 @@ def _is_nonempty_string(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
+def _is_page_module_role(slide: dict[str, Any]) -> bool:
+    return str(slide.get("role") or "").strip() in PAGE_MODULE_ROLES
+
+
 def _as_dict(value: Any) -> dict[str, Any]:
     return value if isinstance(value, dict) else {}
 
@@ -178,6 +182,12 @@ def _item_count(slide: dict[str, Any]) -> int:
             if numbered:
                 return numbered
 
+    content_contract = slide.get("content_contract")
+    if isinstance(content_contract, dict):
+        evidence = content_contract.get("evidence")
+        if isinstance(evidence, list) and evidence:
+            return len(evidence)
+
     evidence_sources = slide.get("evidence_sources")
     if isinstance(evidence_sources, list) and evidence_sources:
         return len(evidence_sources)
@@ -242,12 +252,44 @@ def _evidence_confidence(slide: dict[str, Any]) -> str:
     explicit = _first_nonempty(requirements.get("evidence_confidence"), slide.get("evidence_confidence"))
     if explicit:
         return explicit.lower()
+    quality = slide.get("content_quality")
+    if isinstance(quality, dict):
+        status = str(quality.get("status") or "").strip().lower()
+        if status == "adequate":
+            return "high"
+        if status == "thin":
+            return "medium"
+        if status == "placeholder":
+            return "low"
     sources = slide.get("evidence_sources")
     if isinstance(sources, list) and sources:
         return "high" if len(sources) >= 2 else "medium"
     if slide.get("chart_data") or slide.get("table_data"):
         return "medium"
     return "low"
+
+
+def _content_quality_signal(slide: dict[str, Any]) -> dict[str, Any]:
+    quality = slide.get("content_quality") if isinstance(slide.get("content_quality"), dict) else {}
+    contract = slide.get("content_contract") if isinstance(slide.get("content_contract"), dict) else {}
+    evidence = contract.get("evidence") if isinstance(contract.get("evidence"), list) else []
+    status = str(quality.get("status") or contract.get("status") or "").strip().lower()
+    evidence_count = quality.get("evidence_count")
+    if not isinstance(evidence_count, int):
+        evidence_count = len(evidence)
+    source_text_chars = quality.get("source_text_chars")
+    if not isinstance(source_text_chars, int):
+        source_text_chars = sum(
+            len(str(item.get("text") or ""))
+            for item in evidence
+            if isinstance(item, dict)
+        )
+    return {
+        "status": status,
+        "evidence_count": evidence_count,
+        "source_text_chars": source_text_chars,
+        "structure": [key for key in ("conclusion", "evidence", "explanation") if key in contract],
+    }
 
 
 def _material_types(slide: dict[str, Any]) -> list[str]:
@@ -262,6 +304,9 @@ def _material_types(slide: dict[str, Any]) -> list[str]:
         values.append("image")
     if slide.get("evidence_sources"):
         values.append("evidence")
+    quality = slide.get("content_quality")
+    if isinstance(quality, dict):
+        values.extend(str(item).strip() for item in quality.get("material_types", []) if str(item).strip())
     if not values:
         values.append("text")
     return sorted({value for value in values if value})
@@ -618,6 +663,7 @@ def _select_for_slide(
     narrative_role = _narrative_role(slide)
     evidence_confidence = _evidence_confidence(slide)
     material_types = _material_types(slide)
+    content_quality = _content_quality_signal(slide)
     preferred_granularity = _preferred_granularity(
         slide,
         template_id=template_id,
@@ -656,6 +702,9 @@ def _select_for_slide(
         "narrative_role": narrative_role or None,
         "evidence_confidence": evidence_confidence or None,
         "material_types": material_types,
+        "content_quality": content_quality,
+        "content_structure": content_quality["structure"],
+        "information_density": density or None,
         "recent_asset_ids": recent_asset_ids,
         "recent_form_families": recent_form_families,
         "avoid": _avoid_assets(slide),
@@ -694,9 +743,21 @@ def _select_for_slide(
         selection_candidates = [_selected_from_direct(direct, slide, registry)]
         selected_assets = selection_candidates
         query["direct_asset_id"] = direct["asset_id"]
+    elif template_id and _is_page_module_role(slide) and not _has_template_page_module(template_id, registry):
+        # Classic templates own these shell pages through layouts.json. They
+        # do not need a body component selection when no page-module asset is
+        # registered for the template.
+        selection_candidates = []
+        selected_assets = []
+        selection_status = "shell_owned"
+        query["shell_owned"] = True
     else:
         selector_limit = max(limit, 50)
-        selector_query = {key: value for key, value in query.items() if key != "template_capability"}
+        selector_query = {
+            key: value
+            for key, value in query.items()
+            if key not in {"template_capability", "content_quality", "content_structure", "information_density"}
+        }
         selection = select_components(limit=selector_limit, registry=registry, **selector_query)
         matches = _template_filtered_matches(
             selection.get("matches", []),
@@ -734,6 +795,9 @@ def _select_for_slide(
             "narrative_role": narrative_role,
             "evidence_confidence": evidence_confidence,
             "material_types": material_types,
+            "content_quality": content_quality,
+            "content_structure": content_quality["structure"],
+            "information_density": density,
             "recent_asset_ids": recent_asset_ids,
             "recent_form_families": recent_form_families,
         },
@@ -797,7 +861,11 @@ def build_report(
     validation_report: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     slides = [slide for slide in component_plan.get("slides", []) if isinstance(slide, dict)]
-    misses = [slide.get("page", "") for slide in slides if slide.get("selection_status") != "found"]
+    misses = [
+        slide.get("page", "")
+        for slide in slides
+        if slide.get("selection_status") not in {"found", "shell_owned"}
+    ]
     validation_status = validation_report.get("status") if isinstance(validation_report, dict) else "skipped"
     status = "fail" if misses or validation_status == "fail" else "pass"
     return {

@@ -10,7 +10,7 @@
       "source": "./",
       "icon": "https://raw.githubusercontent.com/Rimagination/easyslides/main/assets/icon.png",
       "description": "Choose direct editable PPT creation or full/selected-region reconstruction of approved images. Includes native templates, image-reference styles, PPTX distillation, and QA. New AI images require a supported host.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": {
         "name": "Rimagination"
       },

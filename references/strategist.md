@@ -75,6 +75,14 @@ retention, text fit, and deliverability.
 Record the chosen profile id and any user override in `design_spec.md` section
 I, then carry its rule layers into section V or XI as scenario constraints.
 
+For `thesis_defense`, the default variant is `cn_degree_defense_v4`. Read its
+duration page bands, four-stage editable workflow, introduction minimum,
+chapter/layout rhythm, figure-index, visible-text, and ending policies before
+writing the plan. Treat `thesis_navy_v4` as the opt-in style profile. Image2
+visual exploration is off by default and may be inserted only when the user
+explicitly requests upstream visual exploration; source figures remain the
+scientific evidence.
+
 For `academic_general` or `academic_scqa`, also read
 `references/academic-orchestration.md` before writing the outline. Capture the
 Audience-State-Transfer contract in the deck plan and use SCQA as the default
@@ -106,6 +114,16 @@ page number, section, figure id, table id, or user-provided asset path. Use
 `layout_id` to carry the planned template/free-design choice that will later
 feed `spec_lock.md` `page_layouts`; use `rhythm` to feed `spec_lock.md`
 `page_rhythm`.
+
+For source-backed content pages, also record a `content_contract` with
+`conclusion`, `evidence`, and `explanation`, plus `content_quality` with its
+evidence count, source-text length, and material types. Use the quality result
+to flag thin or placeholder pages before visual execution. Select a body
+variant from the meaning of the evidence: argument stack for a claim with
+reasons, evidence split for a dominant figure, overview mosaic for genuinely
+parallel points, process roadmap for ordered steps, and comparison or matrix
+for two-sided or tabular material. Do not fill a card grid when the source
+does not supply parallel items.
 
 When the chosen template has `body_variants.json`, bind content pages to its
 verified body variants instead of inventing free layouts. Record
@@ -143,7 +161,9 @@ without figure/table/data/chart evidence, or a broken deck-plan contract means
 the plan is not ready. Treat warnings as deliberate review points: missing
 References/source provenance or failing to end on Conclusions may be acceptable
 for informal workshops, but for paper reports and defenses they should usually
-be fixed before SVG generation.
+be fixed before SVG generation. The gate also reports thin/placeholder content
+and low body-layout diversity so sparse copy and repeated shells are visible
+before SVG generation.
 
 ⛔ **BLOCKING**: After the read, present professional recommendations for the eight items below as a bundled package and wait for explicit user confirmation.
 

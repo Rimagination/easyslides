@@ -64,6 +64,28 @@ def sample_deck_plan() -> dict:
 
 
 class ComponentPlanBuilderTests(unittest.TestCase):
+    def test_classic_template_shell_pages_are_owned_by_template_shell(self):
+        from scripts.component_plan_builder import build_component_plan
+        from scripts.component_plan_contract import validate_component_plan
+        from scripts.component_registry import build_component_registry
+
+        deck_plan = {
+            "schema_version": "easyslides.deck_plan.v1",
+            "template_id": "defense_topnav",
+            "slides": [
+                {"page": "P01", "role": "cover", "action_title": "Cover", "claim": "Cover", "layout_id": "defense_topnav/cover"},
+                {"page": "P02", "role": "toc", "action_title": "Roadmap", "claim": "Roadmap", "layout_id": "defense_topnav/toc"},
+            ],
+        }
+        registry = build_component_registry(include_template_asset_bank=False)
+
+        plan = build_component_plan(deck_plan, registry=registry, limit=1)
+        report = validate_component_plan(plan, registry=registry)
+
+        self.assertEqual([slide["selection_status"] for slide in plan["slides"]], ["shell_owned", "shell_owned"])
+        self.assertEqual(report["status"], "pass", report["issues"])
+        self.assertEqual(report["slides"][0]["ownership"], "template_shell")
+
     def test_named_template_requires_declared_local_body_variants(self):
         from scripts.component_plan_builder import build_component_plan
         from scripts.component_plan_contract import validate_component_plan
@@ -236,6 +258,45 @@ class ComponentPlanBuilderTests(unittest.TestCase):
         self.assertEqual(plan["slides"][0]["selection_query"]["editable_target"], "evidence_items")
         self.assertEqual(plan["slides"][0]["selection_query"]["visual_complexity"], "high")
         self.assertFalse(plan["slides"][0]["selected_assets"][0]["asset_id"].startswith("component_package/"))
+
+    def test_builder_carries_content_quality_into_selection_context(self):
+        from scripts.component_plan_builder import build_component_plan
+        from scripts.component_registry import build_component_registry
+
+        deck_plan = {
+            "schema_version": "easyslides.deck_plan.v1",
+            "slides": [
+                {
+                    "page": "P01",
+                    "role": "evidence_summary",
+                    "content_shape": "argument",
+                    "item_count": 2,
+                    "content_contract": {
+                        "conclusion": "The pattern is consistent across sites.",
+                        "evidence": [
+                            {"label": "Observation", "text": "The response increases in both samples."},
+                            {"label": "Check", "text": "The sensitivity test preserves the direction."},
+                        ],
+                        "explanation": "The two checks support the same interpretation.",
+                        "status": "adequate",
+                    },
+                    "content_quality": {
+                        "status": "adequate",
+                        "evidence_count": 2,
+                        "source_text_chars": 88,
+                        "material_types": ["text"],
+                    },
+                }
+            ],
+        }
+        registry = build_component_registry(include_template_asset_bank=False)
+
+        plan = build_component_plan(deck_plan, registry=registry, limit=1)
+        row = plan["slides"][0]
+
+        self.assertEqual(row["selection_query"]["content_quality"]["status"], "adequate")
+        self.assertEqual(row["selection_query"]["content_structure"], ["conclusion", "evidence", "explanation"])
+        self.assertEqual(row["narrative_context"]["evidence_confidence"], "high")
 
     def test_untemplated_selection_does_not_borrow_template_assets(self):
         from scripts.component_plan_builder import build_component_plan

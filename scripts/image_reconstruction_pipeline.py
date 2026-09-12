@@ -18,12 +18,19 @@ from typing import Any
 
 from PIL import Image, ImageChops, ImageDraw
 try:
+    from scripts.artifact_receipt import fingerprint, matches
+    from scripts.image_generation_contract import generation_sources
+except ModuleNotFoundError:
+    from artifact_receipt import fingerprint, matches
+    from image_generation_contract import generation_sources
+try:
     from scripts.clarification_gate import require_production_decisions
 except ModuleNotFoundError:  # pragma: no cover
     from clarification_gate import require_production_decisions
 
 try:
     from scripts import (
+        alignment_contract,
         compare_source_render,
         slide_image_inventory,
         validate_image_reconstruction_pptx,
@@ -31,6 +38,7 @@ try:
         validate_split_assets,
     )
 except ImportError:  # pragma: no cover - direct script execution
+    import alignment_contract
     import compare_source_render
     import slide_image_inventory
     import validate_image_reconstruction_pptx
@@ -73,6 +81,8 @@ def _copy_source_images(project: Path, source_images: list[Path]) -> list[dict[s
     pending = []
     if not source_images:
         raise ValueError("at least one source image is required")
+    if len({path.resolve() for path in source_images}) != len(source_images):
+        raise ValueError('source image paths must be unique and ordered')
     # Validate the entire batch before copying; even an analysis reset preserves sources.
     for index, source in enumerate(source_images, start=1):
         if not source.exists():
@@ -91,6 +101,7 @@ def _copy_source_images(project: Path, source_images: list[Path]) -> list[dict[s
                 "source_image": _relative(target, project),
                 "width_px": width,
                 "height_px": height,
+                "source_identity": fingerprint(source),
                 "elements": [],
                 "completeness_check": {
                     "performed": False,
@@ -107,7 +118,8 @@ def _copy_source_images(project: Path, source_images: list[Path]) -> list[dict[s
 
 
 def init_project(project: str | Path, source_images: list[str | Path], *, overwrite_analysis: bool = False,
-                 production_scheme: str | None = None, reconstruction_mode: str | None = None) -> dict[str, Any]:
+                 production_scheme: str | None = None, reconstruction_mode: str | None = None,
+                 generation_manifest: str | Path | None = None) -> dict[str, Any]:
     project_path = Path(project)
     analysis_path = project_path / "analysis" / "_analysis.json"
     if analysis_path.exists() and not overwrite_analysis:
@@ -115,6 +127,24 @@ def init_project(project: str | Path, source_images: list[str | Path], *, overwr
     decisions = require_production_decisions({"production_scheme": production_scheme, "reconstruction_mode": reconstruction_mode})
     if production_scheme == "direct_editable":
         raise ValueError("image reconstruction requires an image production scheme")
+    previous_run = project_path / 'image_reconstruction_run.json'
+    if analysis_path.exists() and not previous_run.is_file():
+        raise ValueError('Existing project run is missing; restore it or use a new project')
+    if previous_run.is_file():
+        prior = _load_json(previous_run)
+        generation_manifest = generation_manifest or prior.get('generation_manifest')
+        if prior.get('decisions') != decisions:
+            raise ValueError('Initialized production decisions are locked; use a new project for a changed route')
+        locked = prior.get('source_identities', [])
+        if locked and (len(locked) != len(source_images) or any(
+            not matches(row, image) for row, image in zip(locked, source_images)
+        )):
+            raise FileExistsError('Initialized source images are locked; use a new project for changed pages')
+    generated = None
+    if generation_manifest:
+        generated = generation_sources(generation_manifest)
+        if len(generated) != len(source_images) or any(not matches(row, image) for row, image in zip(generated, source_images)):
+            raise ValueError('source images must match the recorded ImageGen outputs in page order')
     project_path.mkdir(parents=True, exist_ok=True)
     _ensure_project_dirs(project_path)
     slides = _copy_source_images(project_path, [Path(path) for path in source_images])
@@ -122,24 +152,30 @@ def init_project(project: str | Path, source_images: list[str | Path], *, overwr
     inventory = {
         "schema_version": slide_image_inventory.INVENTORY_SCHEMA_VERSION,
         **decisions,
-        "quality_mode": "faithful-practical",
+        "quality_mode": "pixel-strict",
+        "alignment_contract": alignment_contract.default_contract(),
         "slides": slides,
     }
+    if generation_manifest:
+        inventory['generation_manifest'] = str(Path(generation_manifest).resolve())
     _write_json(analysis_path, inventory)
 
     run_manifest = {
         "schema_version": RUN_SCHEMA_VERSION,
         "project_kind": "slide_image_reconstruction",
         "decisions": decisions,
+        "alignment_contract": alignment_contract.CONTRACT_SCHEMA_VERSION,
         "analysis": _relative(analysis_path, project_path),
         "sources": [slide["source_image"] for slide in slides],
+        "source_identities": [slide['source_identity'] for slide in slides],
+        "generation_manifest": inventory.get('generation_manifest'),
         "paths": {
             "pages": "pages/",
             "pptx": "pptx/",
             "reports": "reports/",
         },
         "quality_modes": {
-            "faithful-practical": "Text, structure, and asset gates are blocking; source-render pixel diff is advisory.",
+            "faithful-practical": "Diagnostic mode; advisory visual failures never authorize delivery.",
             "pixel-strict": "Source-render pixel diff is blocking.",
         },
     }
@@ -157,7 +193,10 @@ def init_project(project: str | Path, source_images: list[str | Path], *, overwr
 
 
 def _load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError(f'Expected a JSON object: {path}')
+    return value
 
 
 def _default_source_images(project: Path, inventory_path: Path | None) -> list[Path]:
@@ -185,19 +224,34 @@ def _first_existing(paths: list[Path]) -> Path | None:
 
 
 def _default_pptx(project: Path) -> Path | None:
-    direct = _first_existing([project / "pptx" / "output.pptx", project / "exports" / "output.pptx"])
-    if direct:
-        return direct
     candidates = sorted((project / "pptx").glob("*.pptx")) + sorted((project / "exports").glob("*.pptx"))
+    candidates = [path for path in candidates if not path.name.startswith('~$')]
+    if len(candidates) > 1:
+        raise ValueError('Multiple PPTX outputs exist; select the intended artifact with --pptx')
     return candidates[0] if candidates else None
 
 
-def _default_split_manifest(project: Path) -> Path | None:
-    candidates = [
-        project / "pages" / "page_001" / "assets" / "split_manifest_refined.json",
-        project / "pages" / "page_001" / "assets" / "split_manifest.json",
-    ]
-    return _first_existing(candidates)
+def _default_split_manifests(project: Path) -> list[Path]:
+    manifests = []
+    for assets in sorted((project / 'pages').glob('page_*/assets')):
+        selected = _first_existing([assets / 'split_manifest_refined.json', assets / 'split_manifest.json'])
+        if selected:
+            manifests.append(selected)
+    return manifests
+
+
+def _reconstruction_svgs(project: Path) -> list[Path]:
+    """Return authored page SVGs without scanning unrelated project assets."""
+    pages_dir = project / "pages"
+    if not pages_dir.exists():
+        return []
+    return sorted(
+        path
+        for page_dir in pages_dir.glob("page_*")
+        if page_dir.is_dir()
+        for path in page_dir.rglob("*.svg")
+        if path.is_file() and "assets" not in path.parts
+    )
 
 
 def _summarize_report(report: dict[str, Any]) -> dict[str, Any]:
@@ -247,7 +301,7 @@ def qa_project(
     source_images: list[str | Path] | None = None,
     inventory: str | Path | None = None,
     split_assets_manifest: str | Path | None = None,
-    mode: str = "faithful-practical",
+    mode: str = "pixel-strict",
     fail_source_mae: float = 18.0,
     fail_source_changed_pct: float = 35.0,
     source_fit_mode: str = "contain",
@@ -262,7 +316,9 @@ def qa_project(
 
     inventory_path = Path(inventory) if inventory else project_path / "analysis" / "_analysis.json"
     pptx_path = Path(pptx) if pptx else _default_pptx(project_path)
-    split_path = Path(split_assets_manifest) if split_assets_manifest else _default_split_manifest(project_path)
+    split_paths = _default_split_manifests(project_path)
+    if split_assets_manifest and Path(split_assets_manifest).resolve() not in {p.resolve() for p in split_paths}:
+        split_paths.append(Path(split_assets_manifest))
     rendered_path = Path(rendered_dir) if rendered_dir else project_path / "reports" / "rendered_png"
     source_paths = [Path(path) for path in source_images] if source_images else _default_source_images(project_path, inventory_path)
 
@@ -273,7 +329,45 @@ def qa_project(
         ("reconstruction_mode", reconstruction_mode or inventory_data.get("reconstruction_mode")),
     )}
     required = []
+    for split_path in split_paths:
+        if not split_path.is_file():
+            required.append({'code':'QA-SPLIT-MISSING', 'severity':'blocking', 'message':f'Split manifest missing: {split_path}'})
     rendered_files = compare_source_render.rendered_pngs(rendered_path) if rendered_path.is_dir() else []
+    if [p.name.lower() for p in rendered_files] != [f'slide_{i:03}.png' for i in range(1, len(rendered_files)+1)]:
+        required.append({'code':'QA-RENDER-ORDER', 'severity':'blocking', 'message':'Rendered files must be contiguous slide_001.png ... in page order'})
+    if len({p.resolve() for p in source_paths}) != len(source_paths):
+        required.append({'code':'QA-SOURCE-DUPLICATE', 'severity':'blocking', 'message':'Source page paths must be unique'})
+    run_path = project_path / 'image_reconstruction_run.json'
+    run = _load_json(run_path) if run_path.is_file() else {}
+    if not run.get('source_identities') or set(run.get('decisions', {})) != {'production_scheme', 'reconstruction_mode'}:
+        required.append({'code':'QA-RUN-MISSING', 'severity':'blocking', 'message':'Initialized source/decision record is missing or incomplete; restore the project run or initialize a new project'})
+    for key, value in run.get('decisions', {}).items():
+        if decisions.get(key) != value:
+            required.append({'code':'QA-DECISIONS', 'severity':'blocking', 'message':f'{key} differs from initialized project decisions'})
+    locked_sources = run.get('source_identities', [])
+    if locked_sources and (len(locked_sources) != len(source_paths) or any(not matches(row, path) for row, path in zip(locked_sources, source_paths))):
+        required.append({'code':'QA-SOURCE-DRIFT', 'severity':'blocking', 'message':'Source images differ from the initialized page order/content'})
+    generation_manifest = run.get('generation_manifest') or inventory_data.get('generation_manifest')
+    if generation_manifest:
+        try:
+            generated = generation_sources(generation_manifest)
+            if len(generated) != len(source_paths) or any(not matches(row, path) for row, path in zip(generated, source_paths)):
+                raise ValueError('Reconstruction sources differ from recorded ImageGen pages')
+        except (ValueError, OSError) as exc:
+            required.append({'code':'QA-GENERATION-PROVENANCE', 'severity':'blocking', 'message':str(exc)})
+    receipt_path = rendered_path / 'render_receipt.json'
+    try:
+        receipt = _load_json(receipt_path)
+        identities = receipt.get('render_identities', [])
+        if receipt.get('status') != 'pass' or not pptx_path or not matches(receipt.get('pptx_identity'), pptx_path):
+            raise ValueError('Render receipt does not match the selected PPTX')
+        if len(identities) != len(rendered_files) or any(
+            Path(row.get('path', '')).name != path.name or not matches(row, path)
+            for row, path in zip(identities, rendered_files)
+        ):
+            raise ValueError('Rendered pages changed or differ from the render receipt')
+    except (OSError, ValueError, TypeError, AttributeError) as exc:
+        required.append({'code':'QA-RENDER-PROVENANCE', 'severity':'blocking', 'message':f'{exc}; rerender the selected PPTX with render_pptx_png.py'})
     try:
         require_production_decisions(decisions)
         if decisions["production_scheme"] == "direct_editable":
@@ -333,6 +427,16 @@ def qa_project(
         _write_json(inventory_report_path, inventory_report)
         gates.append(_gate("slide_image_inventory", inventory_report, inventory_report_path))
 
+        svg_paths = _reconstruction_svgs(project_path)
+        if svg_paths:
+            contract = inventory_data.get("alignment_contract")
+            if not isinstance(contract, dict):
+                contract = alignment_contract.default_contract()
+            svg_alignment_report = alignment_contract.validate_svg_alignment(svg_paths, contract)
+            svg_alignment_path = reports_dir / "alignment_contract_svg_report.json"
+            _write_json(svg_alignment_path, svg_alignment_report)
+            gates.append(_gate("alignment_contract_svg", svg_alignment_report, svg_alignment_path))
+
     if pptx_path and pptx_path.is_file() and not any(item["code"] == "QA-DECISIONS" for item in required):
         structure_report = validate_image_reconstruction_pptx.validate_image_reconstruction_pptx(
             pptx_path, **decisions, inventory=inventory_data, require_source_text_lines=True,
@@ -346,11 +450,13 @@ def qa_project(
         _write_json(text_report_path, text_report)
         gates.append(_gate("pptx_text_layout", text_report, text_report_path))
 
-    if split_path and split_path.exists():
+    for index, split_path in enumerate(split_paths, start=1):
+        if not split_path.is_file():
+            continue
         split_report = validate_split_assets.validate_split_assets(split_path)
-        split_report_path = reports_dir / "split_assets_report.json"
+        split_report_path = reports_dir / f"split_assets_{index:03d}_report.json"
         _write_json(split_report_path, split_report)
-        gates.append(_gate("split_assets", split_report, split_report_path))
+        gates.append(_gate(f"split_assets_{index:03d}", split_report, split_report_path))
 
     if source_paths and all(path.is_file() for path in source_paths) and rendered_files:
         diff_dir = reports_dir / "source_render_diff"
@@ -376,9 +482,15 @@ def qa_project(
 
     blocking_count = sum(gate["blocking_count"] for gate in gates)
     warning_count = sum(gate["warning_count"] for gate in gates)
+    visual_gate = next((gate for gate in gates if gate['name'] == 'source_render_diff'), {})
+    visual_status = visual_gate.get('status', 'missing')
     report = {
         "schema_version": SCHEMA_VERSION,
         "status": "fail" if blocking_count else "pass",
+        "delivery_ready": not blocking_count and visual_status == 'pass',
+        "visual_status": visual_status,
+        "visual_review": "Automated comparison only; inspect full-size source/render pairs before delivery.",
+        "pptx": str(pptx_path) if pptx_path else None,
         "mode": mode,
         "project": str(project_path),
         "blocking_count": blocking_count,
@@ -398,15 +510,16 @@ def build_parser() -> argparse.ArgumentParser:
     init_parser.add_argument("--overwrite-analysis", action="store_true", help="Overwrite an existing analysis/_analysis.json.")
     init_parser.add_argument("--production-scheme", choices=["image_full_rebuild", "image_partial_rebuild"], required=True)
     init_parser.add_argument("--reconstruction-mode", choices=["full_vector", "preserve_complex_images"], required=True)
+    init_parser.add_argument('--generation-manifest', help='Full-slide image acquisition manifest with recorded host-call receipts.')
 
     qa_parser = subparsers.add_parser("qa", help="Run image reconstruction QA gates for a project.")
     qa_parser.add_argument("project", help="Project directory.")
-    qa_parser.add_argument("--pptx", help="Reconstructed PPTX. Defaults to pptx/output.pptx or the first PPTX in pptx/exports.")
+    qa_parser.add_argument("--pptx", help="Reconstructed PPTX. Required if multiple candidates exist in pptx/exports.")
     qa_parser.add_argument("--rendered-dir", help="Directory containing rendered slide PNGs.")
     qa_parser.add_argument("--source-image", action="append", default=[], help="Source image; repeat in slide order.")
     qa_parser.add_argument("--inventory", help="Inventory JSON. Defaults to analysis/_analysis.json.")
     qa_parser.add_argument("--split-assets-manifest", help="Split asset manifest JSON.")
-    qa_parser.add_argument("--mode", choices=["faithful-practical", "pixel-strict"], default="faithful-practical")
+    qa_parser.add_argument("--mode", choices=["faithful-practical", "pixel-strict"], default="pixel-strict")
     qa_parser.add_argument("--fail-source-mae", type=float, default=18.0)
     qa_parser.add_argument("--fail-source-changed-pct", type=float, default=35.0)
     qa_parser.add_argument("--source-fit-mode", choices=["contain", "stretch"], default="contain")
@@ -422,7 +535,8 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     if args.command == "init":
         report = init_project(args.project, args.source_images, overwrite_analysis=args.overwrite_analysis,
-                              production_scheme=args.production_scheme, reconstruction_mode=args.reconstruction_mode)
+                              production_scheme=args.production_scheme, reconstruction_mode=args.reconstruction_mode,
+                              generation_manifest=args.generation_manifest)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0
 
@@ -444,7 +558,7 @@ def main(argv: list[str] | None = None) -> int:
     _write_json(report_path, report)
     if not args.quiet:
         print(json.dumps(report, ensure_ascii=False, indent=2))
-    return 0 if report["status"] == "pass" else 1
+    return 0 if report["delivery_ready"] else 1
 
 
 if __name__ == "__main__":

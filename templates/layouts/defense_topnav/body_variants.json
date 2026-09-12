@@ -34,6 +34,12 @@
       "best_for": "default text, mixed text/image, or custom figure composition",
       "layout": "one open content canvas inside CONTENT_AREA; compose content according to the slide claim",
       "slots": ["CONTENT_BODY"],
+      "composition_scene": "argument_stack",
+      "source_recipe": "pm_argument_stack",
+      "content_shapes": ["argument", "mixed_content", "text_panel"],
+      "min_items": 1,
+      "max_items": 8,
+      "density": "high",
       "text_capacity": {"font_size_px": 22, "max_lines": 13}
     },
     {
@@ -41,6 +47,12 @@
       "best_for": "three parallel findings, needs, contributions, risks, or feasibility points",
       "layout": "optional three solid rounded cards generated inside CONTENT_AREA, not fixed in the base SVG shell",
       "slots": ["CARD_1_TITLE", "CARD_1_BODY", "CARD_2_TITLE", "CARD_2_BODY", "CARD_3_TITLE", "CARD_3_BODY"],
+      "composition_scene": "overview_mosaic",
+      "source_recipe": "pm_overview_mosaic",
+      "content_shapes": ["parallel_points", "three_findings"],
+      "min_items": 3,
+      "max_items": 3,
+      "density": "medium",
       "card_boxes": [
         {"x": 54.0, "y": 188.0, "width": 372.0, "height": 486.0},
         {"x": 454.0, "y": 188.0, "width": 372.0, "height": 486.0},
@@ -52,33 +64,66 @@
       "variant_id": "figure_with_notes",
       "best_for": "one dominant figure with concise interpretation notes",
       "layout": "figure occupies 58-68% of CONTENT_AREA; notes sit in a right or bottom annotation band",
+      "composition_scene": "evidence_split",
+      "source_recipe": "pm_evidence_split",
+      "content_shapes": ["image_evidence", "figure_explanation"],
+      "min_items": 1,
+      "max_items": 4,
+      "density": "medium",
       "image_policy": "preserve aspect ratio; crop only when the user requests it"
     },
     {
       "variant_id": "two_column_compare",
       "best_for": "domestic versus foreign research, before/after, method comparison, or ablation explanation",
-      "layout": "two balanced columns with shared title rows and one short synthesis line"
+      "layout": "two balanced columns with shared title rows and one short synthesis line",
+      "composition_scene": "comparison_pair",
+      "content_shapes": ["comparison"],
+      "min_items": 2,
+      "max_items": 2,
+      "density": "medium"
     },
     {
       "variant_id": "figure_left_text_right",
       "best_for": "one evidence figure plus methods, observations, or implications",
-      "layout": "left figure block, right structured text or callout stack"
+      "layout": "left figure block, right structured text or callout stack",
+      "composition_scene": "evidence_split",
+      "source_recipe": "pm_evidence_split",
+      "content_shapes": ["image_evidence", "figure_explanation"],
+      "min_items": 1,
+      "max_items": 4,
+      "density": "medium"
     },
     {
       "variant_id": "process_timeline",
       "best_for": "technical route, workflow, experiment pipeline, or schedule",
-      "layout": "3-5 horizontal or vertical steps using primary blue labels and light gray connectors"
+      "layout": "3-5 horizontal or vertical steps using primary blue labels and light gray connectors",
+      "composition_scene": "process_roadmap",
+      "source_recipe": "pm_process_roadmap",
+      "content_shapes": ["workflow", "causal_chain"],
+      "min_items": 3,
+      "max_items": 5,
+      "density": "medium"
     },
     {
       "variant_id": "table_matrix",
       "best_for": "research content, work plan, innovation comparison, feasibility matrix",
       "layout": "compact matrix with a primary-blue header row and readable body text",
+      "composition_scene": "table_matrix",
+      "content_shapes": ["matrix", "comparison"],
+      "min_items": 3,
+      "max_items": 8,
+      "density": "high",
       "constraint": "table text should stay >=14px; split dense tables"
     },
     {
       "variant_id": "four_quadrant_grid",
       "best_for": "four research questions, metrics, modules, or contribution blocks",
-      "layout": "2x2 grid inside CONTENT_AREA with consistent gutters and restrained blue headers"
+      "layout": "2x2 grid inside CONTENT_AREA with consistent gutters and restrained blue headers",
+      "composition_scene": "quad_modules",
+      "content_shapes": ["parallel_points", "four_modules", "matrix"],
+      "min_items": 4,
+      "max_items": 4,
+      "density": "medium"
     }
   ]
 }

@@ -14,6 +14,11 @@ import re
 from pathlib import Path
 from typing import Any
 
+try:
+    from scripts import alignment_contract
+except ImportError:  # pragma: no cover
+    import alignment_contract
+
 
 INVENTORY_SCHEMA_VERSION = "easyslides.slide_image_inventory.v1"
 REPORT_SCHEMA_VERSION = "easyslides.slide_image_inventory_report.v1"
@@ -259,6 +264,26 @@ def _layer_a_no_text_declared(element: dict[str, Any]) -> bool:
     return isinstance(asset_policy, dict) and asset_policy.get("no_text") is True
 
 
+def _is_declared_original_figure_with_text(element: dict[str, Any]) -> bool:
+    """Allow source-authored labels on a preserved scientific figure.
+
+    Original paper figures are evidence assets rather than generated
+    illustrations. Their axis labels, legends, and panel letters must stay
+    attached to the figure to preserve the source evidence. The exception is
+    intentionally explicit so generated decorative assets still require the
+    normal no-text contract.
+    """
+    object_class = _object_class(element)
+    return bool(
+        object_class in {"original_figure", "scientific_figure", "paper_figure"}
+        and element.get("preserve_original_text") is True
+        and str(element.get("source_asset") or "").strip()
+        and str(element.get("citation") or "").strip()
+        and isinstance(_asset_policy(element), dict)
+        and _asset_policy(element).get("embedded_source_text") is True
+    )
+
+
 def _implementation(element: dict[str, Any]) -> str:
     return str(element.get("implementation", "")).strip().lower()
 
@@ -396,7 +421,8 @@ def _has_text_geometry_contract(element: dict[str, Any]) -> bool:
 
 
 def validate_inventory(inventory: dict[str, Any]) -> dict[str, Any]:
-    issues: list[dict[str, Any]] = []
+    alignment_report = alignment_contract.validate_inventory_alignment(inventory)
+    issues: list[dict[str, Any]] = list(alignment_report["issues"])
     if inventory.get("schema_version") != INVENTORY_SCHEMA_VERSION:
         issues.append(
             _issue(
@@ -552,7 +578,7 @@ def validate_inventory(inventory: dict[str, Any]) -> dict[str, Any]:
                             suggestion="Split into visual assets, native structure, and editable text layers.",
                         )
                     )
-                if element.get("contains_text") is True:
+                if element.get("contains_text") is True and not _is_declared_original_figure_with_text(element):
                     issues.append(
                         _issue(
                             "INVENTORY-A-ASSET-CONTAINS-TEXT",
@@ -563,7 +589,7 @@ def validate_inventory(inventory: dict[str, Any]) -> dict[str, Any]:
                             suggestion="Extract the text as Layer C and regenerate or mask the asset without text.",
                         )
                     )
-                elif not _layer_a_no_text_declared(element):
+                elif not _layer_a_no_text_declared(element) and not _is_declared_original_figure_with_text(element):
                     issues.append(
                         _issue(
                             "INVENTORY-A-ASSET-NO-TEXT-POLICY-MISSING",
@@ -731,6 +757,10 @@ def validate_inventory(inventory: dict[str, Any]) -> dict[str, Any]:
         "slide_count": len(slides),
         "element_count": element_count,
         "layer_counts": layer_counts,
+        "alignment_contract": {
+            "schema_version": alignment_report.get("contract_schema_version"),
+            "checked_text_count": alignment_report.get("checked_text_count", 0),
+        },
         "issues": issues,
     }
 

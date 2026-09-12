@@ -5,7 +5,7 @@
   "package": {
     "package_id": "template/literature_minimal",
     "template_id": "literature_minimal",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "status": "review",
     "display_name": "Literature Minimal",
     "description": "Minimal literature-report template with generous whitespace, restrained typography, and optional source or decorative imagery.",
@@ -117,9 +117,9 @@
           "default_font_size_px": 26,
           "min_font_size_px": 18,
           "line_height": 1.2,
-          "max_chars_per_line_zh": 18,
-          "overflow_action": "split",
-          "max_lines": 2
+          "max_chars_per_line_zh": 17,
+          "overflow_action": "truncate",
+          "max_lines": 1
         },
         "toc_desc": {
           "default_font_size_px": 17,
@@ -127,7 +127,7 @@
           "line_height": 1.2,
           "max_chars_per_line_zh": 28,
           "overflow_action": "truncate",
-          "max_lines": 2
+          "max_lines": 1
         },
         "chapter_number": {
           "default_font_size_px": 48,
@@ -157,9 +157,9 @@
           "default_font_size_px": 30,
           "min_font_size_px": 22,
           "line_height": 1.15,
-          "max_chars_per_line_zh": 20,
-          "overflow_action": "split",
-          "max_lines": 2
+          "max_chars_per_line_zh": 12,
+          "overflow_action": "truncate",
+          "max_lines": 1
         },
         "section_label": {
           "default_font_size_px": 24,
@@ -189,7 +189,7 @@
           "default_font_size_px": 14,
           "min_font_size_px": 10,
           "line_height": 1.15,
-          "max_chars_per_line_zh": 42,
+          "max_chars_per_line_zh": 36,
           "overflow_action": "truncate",
           "max_lines": 1
         },
@@ -198,8 +198,8 @@
           "min_font_size_px": 42,
           "line_height": 1.1,
           "max_chars_per_line_zh": 10,
-          "overflow_action": "split",
-          "max_lines": 2
+          "overflow_action": "truncate",
+          "max_lines": 1
         },
         "contact": {
           "default_font_size_px": 20,
@@ -292,70 +292,70 @@
         {
           "slot_id": "TOC_ITEM_1_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_2_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_3_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_4_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_5_TITLE",
           "role": "toc_item",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_1_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_2_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_3_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_4_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "TOC_ITEM_5_DESC",
           "role": "toc_desc",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         }
@@ -450,7 +450,7 @@
         {
           "slot_id": "PAGE_TITLE",
           "role": "page_title",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
@@ -511,14 +511,14 @@
         {
           "slot_id": "THANK_YOU",
           "role": "closing_title",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
         {
           "slot_id": "ENDING_SUBTITLE",
           "role": "subtitle",
-          "max_lines": 2,
+          "max_lines": 1,
           "kind": "text",
           "required": true
         },
@@ -633,11 +633,11 @@
   "source_hashes": {
     "package": {
       "path": "templates/layouts/literature_minimal/template_package.json",
-      "sha256": "7120a24a20d7b6f3a0912bc54c09509fb0c1f086ffc7067b6b07b2fab80e6dcc"
+      "sha256": "535d743b337f85ffbffada2589f052696743d2c13e5d5a80f739e9fb50ba4fef"
     },
     "shells": {
       "path": "templates/layouts/literature_minimal/layouts.json",
-      "sha256": "7e6503c6b0520afeda698be87c816077d17b59a890c834443fded7affa6be45e"
+      "sha256": "13b3a647de6f655c71163723de99eaa4a083065b56a0d7e69f6650ba9c56b828"
     },
     "body_variants": {
       "path": "templates/layouts/literature_minimal/body_variants.json",
@@ -657,27 +657,27 @@
     },
     "design_spec.md": {
       "path": "templates/layouts/literature_minimal/design_spec.md",
-      "sha256": "7370dc324a0a7f09cf354cdd65e63547f22625cd70e5ed9232ed2b682f68a9a9"
+      "sha256": "6ee18d97472b63df02c69a24a8bf9dfeaae58b5b75edec475cfd64146b970fc9"
     },
     "shell:cover": {
       "path": "templates/layouts/literature_minimal/01_cover.svg",
-      "sha256": "aaf96c9722daea7ee4464133211aecbab18f5a8d7cf5e09195baf87323a949ff"
+      "sha256": "f8798a4b01d15a4497a190c8ac9777eda391e12f7a1e6fd3ff347fd8fa61189e"
     },
     "shell:toc": {
       "path": "templates/layouts/literature_minimal/02_toc.svg",
-      "sha256": "5ea18cf4eb4a6e7df61a5439bfa5aaa524d4cd0a96b6688a6e9188993e7ceb9e"
+      "sha256": "89bfe501c279a9522c1b39467acce228295ddda45d65931da2cb64dd3e5fe704"
     },
     "shell:chapter": {
       "path": "templates/layouts/literature_minimal/02_chapter.svg",
-      "sha256": "3bbdab7341fc172dc65672b0643e9765bcaf5727bd20bd117414cd7bf041b2be"
+      "sha256": "79f5878c9a635ad7529abe4546f5cdb6fd2650ba8c56a3f507e3677aff4a7e90"
     },
     "shell:content": {
       "path": "templates/layouts/literature_minimal/03_content.svg",
-      "sha256": "2645d8bb1e2b598fc175a8cfd2f145ec3456d593b13055f1dd2844200c0baa66"
+      "sha256": "9dc318fd4d53fa478cf235ad7dabe9d50d91e70c3be1195b8304b88e9e6fe5d7"
     },
     "shell:ending": {
       "path": "templates/layouts/literature_minimal/04_ending.svg",
-      "sha256": "7b3ffe4aecb22e1144e1a45814dbd6597895e366db0affbec6a920bc0bbc63cd"
+      "sha256": "dcd529b89a87f4fc55f4d5ef0a2385938b03efc5384f9ffdb4ca0bf2b396151f"
     }
   },
   "theme": {
@@ -724,5 +724,5 @@
     ],
     "status": "pass"
   },
-  "source_digest": "68f8e946a4947d70f10d6ed03edda9f8cd63f0129b742afaa4db482950bb9730"
+  "source_digest": "86c17d80df284e62ad04d13eb1426a7be2e195dea632425c1e5835728f9bd96d"
 }

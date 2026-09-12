@@ -82,6 +82,17 @@ Use blue as structural punctuation only. Do not turn the deck into a heavy blue 
 
 Body text should not be reduced below 18px in final generated decks. Split dense material across slides instead.
 
+### Native text-slot safety contract
+
+The editable PPTX layer must preserve the shell geometry after PowerPoint reflows text:
+
+- Every editable text element declares all four `data-pptx-box-*` coordinates and an explicit `data-pptx-valign`.
+- Shell labels, compact controls, titles, metadata, and footer text use `data-pptx-valign="middle"` with `data-center-lock="true"`.
+- `CONTENT_BODY` is the only shell slot that may use top anchoring; it remains inside the body frame and follows the declared line budget.
+- One-line slots use `data-pptx-no-wrap="true"`; the slot contract truncates or redirects over-capacity copy before export.
+- A text slot reserves at least 1.6 times its font size in height for one line, and multiline slots reserve the declared line count plus the line-height ratio.
+- Adjacent title/description rows and ending metadata columns keep a measurable gap. Native PPTX rendering is required before delivery.
+
 ---
 
 ## V. Page Structure And Page Types
@@ -157,6 +168,7 @@ Keep one defensible claim per content page. If a page needs multiple figures or 
 6. Image placeholders such as `{{LOGO_IMAGE}}` must remain inside the existing logo frame when provided. If no logo is specified, remove the whole logo group and do not render a default logo.
 7. Rounded rectangles are hard content bounds. Any text visually paired with or overlapping a rounded rectangle must use a PowerPoint text box whose `data-pptx-box-x/y/w/h` stays fully inside that rectangle. If the text would not fit, shorten it; if there is enough space, wrap inside the same bounded text box.
 8. The ending page must not use the Chinese word `聆听`; it sounds top-down in this context. Prefer `敬请批评指正！` as the default Chinese closing title. English `Thank you for listening!` is acceptable as a secondary line when useful.
+9. Do not rely on PowerPoint's default top anchor or normal auto-fit to place shell text. The native text-slot safety contract above is mandatory for every new template fill.
 
 ---
 

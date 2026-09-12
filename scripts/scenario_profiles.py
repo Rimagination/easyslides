@@ -79,6 +79,53 @@ def get_profile(profile_id: str, catalog: dict[str, Any] | None = None) -> dict[
     return profile
 
 
+def get_scenario_variant(
+    profile_id: str,
+    variant_id: str | None = None,
+    catalog: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Return a declared scenario variant, using the profile default when omitted."""
+    profile = get_profile(profile_id, catalog)
+    variants = profile.get("scenario_variants")
+    if not isinstance(variants, dict) or not variants:
+        raise ScenarioProfileError(f"profile {profile_id} has no scenario variants")
+    selected = str(variant_id or profile.get("default_scenario_variant") or "").strip()
+    if selected not in variants:
+        raise ScenarioProfileError(
+            f"unknown scenario variant {selected!r} for profile {profile_id!r}"
+        )
+    variant = variants[selected]
+    if not isinstance(variant, dict):
+        raise ScenarioProfileError(f"scenario variant {profile_id}/{selected} must be an object")
+    return variant
+
+
+def duration_page_band(
+    profile_id: str,
+    duration_minutes: int | float,
+    *,
+    variant_id: str | None = None,
+    catalog: dict[str, Any] | None = None,
+) -> dict[str, Any] | None:
+    """Resolve a presentation duration to the declared page-budget band."""
+    try:
+        minutes = float(duration_minutes)
+    except (TypeError, ValueError):
+        return None
+    if minutes <= 0:
+        return None
+    variant = get_scenario_variant(profile_id, variant_id, catalog)
+    bands = variant.get("duration_page_bands")
+    if not isinstance(bands, list):
+        return None
+    for band in bands:
+        if not isinstance(band, dict):
+            continue
+        if float(band.get("min_minutes", 0)) <= minutes <= float(band.get("max_minutes", 0)):
+            return band
+    return None
+
+
 def validate_profiles(catalog: dict[str, Any]) -> None:
     """Validate the catalog shape and rule-layer separation."""
     if catalog.get("schema_version") != "easyslides.scenario_profiles.v1":
@@ -125,6 +172,7 @@ def validate_profiles(catalog: dict[str, Any]) -> None:
             ["default_story_spine", "required_rules", "recommended_rules", "relaxable_rules"],
         )
         _validate_template_policy(profile_id, profile["template_policy"], hard_rule_ids)
+        _validate_scenario_variants(profile_id, profile)
 
 
 def _validate_slide_count(profile_id: str, value: Any) -> None:
@@ -136,6 +184,54 @@ def _validate_slide_count(profile_id: str, value: Any) -> None:
         raise ScenarioProfileError(f"profile {profile_id} slide count min/max must be integers")
     if minimum <= 0 or maximum < minimum:
         raise ScenarioProfileError(f"profile {profile_id} has invalid slide count range")
+
+
+def _validate_scenario_variants(profile_id: str, profile: dict[str, Any]) -> None:
+    variants = profile.get("scenario_variants")
+    if variants is None:
+        return
+    if not isinstance(variants, dict) or not variants:
+        raise ScenarioProfileError(f"profile {profile_id} scenario_variants must be a non-empty object")
+    default = profile.get("default_scenario_variant")
+    if not isinstance(default, str) or default not in variants:
+        raise ScenarioProfileError(
+            f"profile {profile_id} default_scenario_variant must name a declared variant"
+        )
+
+    for variant_id, variant in variants.items():
+        if not isinstance(variant_id, str) or not variant_id:
+            raise ScenarioProfileError(f"profile {profile_id} has an invalid scenario variant id")
+        if not isinstance(variant, dict):
+            raise ScenarioProfileError(f"scenario variant {profile_id}/{variant_id} must be an object")
+        workflow = variant.get("workflow_stages")
+        if not isinstance(workflow, list) or not workflow or not all(
+            isinstance(item, str) and item for item in workflow
+        ):
+            raise ScenarioProfileError(
+                f"scenario variant {profile_id}/{variant_id} workflow_stages must be a non-empty list"
+            )
+        bands = variant.get("duration_page_bands")
+        if not isinstance(bands, list) or not bands:
+            raise ScenarioProfileError(
+                f"scenario variant {profile_id}/{variant_id} duration_page_bands must be a non-empty list"
+            )
+        previous_max = 0
+        for index, band in enumerate(bands):
+            path = f"{profile_id}/{variant_id}.duration_page_bands[{index}]"
+            if not isinstance(band, dict):
+                raise ScenarioProfileError(f"{path} must be an object")
+            required = ("min_minutes", "max_minutes", "min_pages", "max_pages")
+            if not all(isinstance(band.get(key), int) for key in required):
+                raise ScenarioProfileError(f"{path} min/max minutes and pages must be integers")
+            if (
+                band["min_minutes"] <= 0
+                or band["max_minutes"] < band["min_minutes"]
+                or band["min_pages"] <= 0
+                or band["max_pages"] < band["min_pages"]
+                or band["min_minutes"] <= previous_max
+            ):
+                raise ScenarioProfileError(f"{path} has invalid or overlapping bounds")
+            previous_max = band["max_minutes"]
 
 
 def _validate_rule_lists(owner: str, data: dict[str, Any], keys: list[str]) -> None:

@@ -8,6 +8,49 @@ Run this workflow before selecting a presentation route or starting visual
 execution. It applies to new decks, paper-to-PPT work, template filling,
 PPTX beautification, PPTX distillation, and native enhancement.
 
+## Default: adaptive conversational interview
+
+Use native popup questions in the current conversation. Do not open the browser
+or send the user to a form unless they explicitly ask. Follow the conversation
+protocol in `skills/easyslides-clarify/SKILL.md`; a catalog supplies possible
+questions, not a mandatory questionnaire. Inspect available materials first.
+
+For academic work, also read `references/academic-orchestration.md`: it defines
+the evidence-aware brief, conditional research/file questions and handoffs into
+existing source maps and deck plans. Resolve those contextual requirements even
+when `clarify next` reports `ready_for_summary`; that status covers only the
+option catalog. Storytelling is shared planning, independent of visual templates.
+
+Maintain a compact brief: purpose/outcome, audience, sources and supplementation
+permission, duration/page budget, production scheme, applicable reconstruction
+mode, reference template and protected content/regions. Ask only unresolved,
+consequential questions, normally one per turn. If the request is complete,
+skip the interview. Once the route is clear, select the matching catalog and
+carry explicit facts through `--known-json`.
+
+Examples of follow-up reasoning:
+
+- “做一个论文汇报” → ask who will listen and what the report is for if unknown;
+  inspect the supplied paper before asking which evidence matters.
+- “给跨专业组员讲，10 分钟” → prioritize explanation and a short narrative;
+  ask whether the priority is understanding the method or evaluating its value.
+  Do not ask again for audience/duration or invent a precise slide count.
+- “所有图都要，但只有五分钟” → explain the conflict and ask whether to put
+  secondary figures in backup slides or extend the talk; do not silently drop them.
+- “整页重建，保留复杂配图，12 页，严格参考这张图” → skip route/mode/count/template
+  questions; only resolve missing source materials or research permission.
+- “只改备注，页面别动” → preserve visible slides; no generation-method question.
+
+Use `clarify next <request.json>` to prepare one unresolved catalog question for
+the native popup. It never records an answer or opens a browser. The agent
+adapts wording and adds contextual follow-ups; a validated catalog alone cannot
+establish that the actual brief is complete. Save a faithful free-text answer
+as a known fact instead of forcing an unrelated option ID.
+
+Present sample images and editable renders inline or as attachments by default.
+Ask for feedback with the same native question tool. Sample-direction acceptance
+does not replace final QA. HTML comparison pages are opt-in auxiliary artifacts.
+
 ## Mandatory production-scheme choice
 
 For every new or regenerated PPT, if the user has not explicitly selected a
@@ -96,8 +139,9 @@ Do not block on harmless implementation details. Record those as assumptions.
 
 ## Question format
 
-Each round contains no more than three questions. Every question must provide
-two to four choices, one recommendation, and the impact of the choice. Use
+Prefer one question per round; use at most three for independent issues. For
+decisions, provide two to four choices, a recommendation and their impact;
+for missing facts or source files, allow a direct free-text answer. Use
 the route-specific catalog in `scripts/clarification_gate.py`.
 
 Good question:
@@ -117,6 +161,12 @@ The user may answer with option numbers, ids, a combination of choices, or
 `按推荐`. Echo the resulting decision summary before execution. A missing,
 conflicting, or unanswered blocking choice keeps the workflow at
 `needs_confirmation`.
+
+An explicit answer confirms that choice. Echo it and continue without asking
+the user to confirm the echo. On “继续”, recover the persisted choices and last
+valid artifacts, then execute the next incomplete stage. Ask again only for a
+new result-affecting decision or an actual conflict. Dependency checks, font
+measurement, filename selection and ordinary local QA are implementation work.
 
 Do not create or modify final slide files while the gate is unresolved. The
 state is stored in `<project>/clarification_request.json` and can be checked:

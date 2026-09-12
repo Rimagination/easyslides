@@ -2,51 +2,51 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "nsfc_defense",
   "package_version": "0.4.0",
-  "source_digest": "079d099a4437da1e72619bafaccc0b048d68db3f1193592fde24cb57b7fd8d18",
+  "source_digest": "e58c1c91543e31f78ff7b15806530ebe87234a3956b16c8b98ecb056145a4555",
   "sources": {
     "package": {
       "path": "templates/layouts/nsfc_defense/template_package.json",
-      "sha256": "bd3ef040623c190627eeee4db153eb7a3035684956c67fb0c3ec62d62902ac9e"
+      "sha256": "1207ac7599cf80b930fb116a2ea23ed4a8749315fd26e198eff33a97956aa982"
     },
     "shells": {
       "path": "templates/layouts/nsfc_defense/layouts.json",
-      "sha256": "c751d3f03deabc0896be7aef7bfe301fae998020c81a0a49b8e0066ce5a053cb"
+      "sha256": "0c284dce97b8528b3eba1ae991c557394cdd73f1ff96f5402878c850e308a79c"
     },
     "body_variants": {
       "path": "templates/layouts/nsfc_defense/body_variants.json",
-      "sha256": "ea9ca019d55637407275a75d9cbad2af22954645b1deda2e7c59d8209bd67841"
+      "sha256": "bdbba8eb9168a3117d14f481027d6439d8eb4d739aa426bcde2d30b0dfac12f0"
     },
     "components": {
       "path": "templates/layouts/nsfc_defense/component_catalog.json",
-      "sha256": "b3ff8783cb9684d9b35322072f5c8a2b88153e5e70375c02105e6443cc6f76e1"
+      "sha256": "166b117b38bca19ad713cb36ee427b767814ba3fb3d7333ed66351d7c5375431"
     },
     "component_pack": {
       "path": "templates/layouts/nsfc_defense/component_pack.json",
-      "sha256": "a932177830b66a3807e317354ad0c8fd2d34781110d87d70758cbbb808de46f4"
+      "sha256": "2582a568acdc9b9f6d7ae5b2760a9f03218e80801bcaa363d333e43f48ea57c7"
     },
     "design_tokens": {
       "path": "templates/layouts/nsfc_defense/design_tokens.json",
-      "sha256": "43b4372f2eb8ebe5846d3c8c9f1d9ecaa474963a1ed0ff9fe5f8fe700ade2f1f"
+      "sha256": "a89204777661f00ec3c405a11e7ce80bc7d4e32d51231afac085cfd11670aec2"
     },
     "qa": {
       "path": "templates/layouts/nsfc_defense/qa_policy.json",
-      "sha256": "e91def90a4a415d56beab60d33ce10e0600615ae9b48ddaceb0b977f5d3a3b38"
+      "sha256": "018526bcb4e1c424cd617da813a5c1df57d9b19e76ddfb2e870351b91c430220"
     },
     "provenance": {
       "path": "templates/layouts/nsfc_defense/source_page_roster.json",
-      "sha256": "1030a9fab4d9e383ddc4260c907f24837ad472597bb3510eb67c35f2a29a64bc"
+      "sha256": "63dc325dc013bc9ed1bfe1bfbc4b49328bfb598dad825c72cc91cd8c701189a4"
     },
     "story": {
       "path": "templates/layouts/nsfc_defense/story_structure.json",
-      "sha256": "2d0323ffceedffaf3111bd6857bcfa141dd6df2c44e364ce45e79afd2099cdf2"
+      "sha256": "08a05f064bc734efadcbe731af44e701f5662b0eebe4ee3f4330b066bafd6901"
     },
     "feedback_contract": {
       "path": "templates/layouts/nsfc_defense/feedback_contract.json",
-      "sha256": "100b6fef8f8b989e8c7685cf1a43d741876426f0cbc606bfe7cd4218db843fa2"
+      "sha256": "56e11aa447653b539b282699ded8b50b1620cadfe584c627fff5e7e84e240ef9"
     },
     "capability_profile": {
       "path": "templates/layouts/nsfc_defense/capability_profile.json",
-      "sha256": "dbbc470b497082b48f4e8e2832c6ce584f2f9e65903767a826e62bf0fcceb838"
+      "sha256": "1d6d08dea0f7fde78c7a3ace7b31c02951d25aef989d4c189d37304e17a2e039"
     },
     "theme_palettes.json": {
       "path": "templates/layouts/nsfc_defense/theme_palettes.json",
@@ -54,147 +54,147 @@
     },
     "design_spec.md": {
       "path": "templates/layouts/nsfc_defense/design_spec.md",
-      "sha256": "6df6bfa8f7bd8a0cb29c230f1e2324477d8900690ce58a84b3671861a8aaaca8"
+      "sha256": "588e739e248d0a0254d538c9e7d8e57ff2776e61ab960a55fdf0b54ec557f8bb"
     },
     "shell:cover": {
       "path": "templates/layouts/nsfc_defense/01_cover.svg",
-      "sha256": "2920ad5c01e1d17f3018da0d29967fbb22001e7d1900e1218a715381290bf846"
+      "sha256": "dacab11a8942e407e367256c3eed98993a41c150ca62d154d814d1b1ef438270"
     },
     "shell:toc": {
       "path": "templates/layouts/nsfc_defense/02_toc.svg",
-      "sha256": "a9b89d50d39d89b82a7ad515211ed6a9d7656df45dc71c129bee8fcfe9b3dc28"
+      "sha256": "c8f3d62b49a6d236cc3e90f784a44c788fbc1fa84631aec944f208e30f330660"
     },
     "shell:chapter": {
       "path": "templates/layouts/nsfc_defense/03_chapter.svg",
-      "sha256": "337ac6d7f405dab404421369107ca748a39e1ac7665aebbed3ef9d4741b649e3"
+      "sha256": "07ef2770ec5a6d78b51c8dd5782105b184464fea020fb04c738111c8c36bc8c5"
     },
     "shell:content": {
       "path": "templates/layouts/nsfc_defense/04_content.svg",
-      "sha256": "d7cfea37107071602fdbcc1dbb9be7161e8105036319a1cccc409a595f1132a1"
+      "sha256": "3d3876b2645f35a0c1d54f0d0292786a1c8253931976d2e530b32e28bbf30bb7"
     },
     "shell:ending": {
       "path": "templates/layouts/nsfc_defense/05_ending.svg",
-      "sha256": "7cbdecd089e966fbae5dbcd764b600178c10b9f2342511f54dbb83ec612efed4"
+      "sha256": "296255709f1b2084a69119f21b22036180e137c67711405ba2f71bc1c4c25ba6"
     },
     "component:component/nsfc_defense/application_metric_card": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/application_metric_card.svg",
-      "sha256": "0c505683b6fab2870b0cc1296afcc44d4396e63de941ef330da56454355104b3"
+      "sha256": "0bf42357094d668f2599f478dc2b3c903a09f4a511519bf7577613b7af721e2b"
     },
     "component:component/nsfc_defense/callout_media_panel": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/callout_media_panel.svg",
-      "sha256": "7d9a6884aa54a4ea2b28b958027fff1894b6a5b4f747826b9c6dd7d9885f7c3d"
+      "sha256": "8b83491e6cf1afc7004aaa112f751ab956710b8942ee7aa4a7b10f7298075f63"
     },
     "component:component/nsfc_defense/comparison_matrix": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/comparison_matrix.svg",
-      "sha256": "5a47b10050eeb998610bcaba3fa38747b401d898e7f27e7ca08918078f62975b"
+      "sha256": "833690d76d821f30802635c7faebc2b9b235a794805d3e717460f70adbc2bf96"
     },
     "component:component/nsfc_defense/evidence_tile": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/evidence_tile.svg",
-      "sha256": "2f111460334b522bdd90a5835c719ee0bddbadbe1c1a30579f1f2b3e673ada77"
+      "sha256": "d4668f1bf46f020f11473dd5dfe9885dd7cd1987a38464d463d3ecfd4c0a7c98"
     },
     "component:component/nsfc_defense/grant_text_evidence_stack": {
       "path": "templates/layouts/nsfc_defense/assets/components/imported/grant_text_evidence_stack.svg",
-      "sha256": "4251c79223f37089d0c4216898142e9a076c5c59397b20300e4339dddfedf617"
+      "sha256": "a54c6973d6a9c20940fdddc8f34d180d77f11197f7b0fd2914ca61295211b959"
     },
     "component:component/nsfc_defense/image_footer_card": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/image_footer_card.svg",
-      "sha256": "a8894fcf9d5e5d336e1f6dcf366fef422c3480a016537f8abb981785d81642c8"
+      "sha256": "f4312077db71d4483df681ea16bcf960671619c1ebb8da0a5e54412012d41be0"
     },
     "component:component/nsfc_defense/media_caption_card": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/media_caption_card.svg",
-      "sha256": "fe9732645f27a34e51e0096dfa4649d6bfaf4672bb7c6870406e2271ce4acc3e"
+      "sha256": "473307fad689c7ad7eb7f532c8d0c106c78d19b4264c34124467a7e2f430e101"
     },
     "component:component/nsfc_defense/metric_group_header": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/metric_group_header.svg",
-      "sha256": "600890d011a69f786cbe9510896f722a111ac0790faf3d03bf504fd29657be38"
+      "sha256": "7ef9add4871b0c6e39f7c05d8edd1f7ea997cb94e41501d873c2c35a3016d37d"
     },
     "component:component/nsfc_defense/metric_tile": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/metric_tile.svg",
-      "sha256": "81ebac20e4321fa267188036c1fe60457e028369cac83c0465e34e8c0e681d56"
+      "sha256": "cd5b7a97d6934a783e52be6c368c5b92577ee8935a784a2c0d1ecfe1614be8c6"
     },
     "component:component/nsfc_defense/relationship_arrow_label": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/relationship_arrow_label.svg",
-      "sha256": "a1424e00896172e5d8ab3cf663ad3c7571086bbb2280d0989438f9f3d8839fe6"
+      "sha256": "3d127b098873b9fedbcd841b7d3090b0bb1a3d6ec56eb1047fdd5598f9cd7428"
     },
     "component:component/nsfc_defense/research_track_card": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/research_track_card.svg",
-      "sha256": "698068c5798775efe8afe089ba40a5803679cbffe8c3731854a83f551524d45c"
+      "sha256": "aa74d99ba05acbe880c7900a1fb329e70219cde1cdd72925275d30b53bdd305b"
     },
     "component:component/nsfc_defense/statement_panel": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/statement_panel.svg",
-      "sha256": "29ad32c5a30b9c91ab99da15d7d6b6ac10fff0f13738ecf25ec91490a9f67cac"
+      "sha256": "c0d2da979890b99f009885801285d6bbb18d7983d9dd2dcfe3e9e07b3fde4125"
     },
     "component:component/nsfc_defense/vertical_feature_image_panel": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/vertical_feature_image_panel.svg",
-      "sha256": "83122e75c47495ba2eb771e6e801aee9531593229f67dac0d6d0bbfa9bdfdc6b"
+      "sha256": "dcd36598ece44a5c37c6c5e6afc98ae736da31e4595b737b282a1c7e1cd48278"
     },
     "component:component/nsfc_defense/vertical_key_tag": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/vertical_key_tag.svg",
-      "sha256": "af1bc77ce7dc010d6748569ac6029a3bea6831f2318b770323842e3fbf9110bf"
+      "sha256": "538270627eaaf88c05698851299d921695db966c70e4c64f607a9fc331365a06"
     },
     "asset:assets/asset_manifest.json": {
       "path": "templates/layouts/nsfc_defense/assets/asset_manifest.json",
-      "sha256": "d8b61e4910f52fb77916d69861d24a7cf2f954bf587b033d2e425b4a065a3c92"
+      "sha256": "9ebd42104e054f8e4af2090b6100913ae39a64e2260365bae3e42a9ce3c1d562"
     },
     "asset:assets/components/imported/grant_text_evidence_stack.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/imported/grant_text_evidence_stack.svg",
-      "sha256": "4251c79223f37089d0c4216898142e9a076c5c59397b20300e4339dddfedf617"
+      "sha256": "a54c6973d6a9c20940fdddc8f34d180d77f11197f7b0fd2914ca61295211b959"
     },
     "asset:assets/components/source_derived/application_metric_card.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/application_metric_card.svg",
-      "sha256": "0c505683b6fab2870b0cc1296afcc44d4396e63de941ef330da56454355104b3"
+      "sha256": "0bf42357094d668f2599f478dc2b3c903a09f4a511519bf7577613b7af721e2b"
     },
     "asset:assets/components/source_derived/callout_media_panel.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/callout_media_panel.svg",
-      "sha256": "7d9a6884aa54a4ea2b28b958027fff1894b6a5b4f747826b9c6dd7d9885f7c3d"
+      "sha256": "8b83491e6cf1afc7004aaa112f751ab956710b8942ee7aa4a7b10f7298075f63"
     },
     "asset:assets/components/source_derived/comparison_matrix.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/comparison_matrix.svg",
-      "sha256": "5a47b10050eeb998610bcaba3fa38747b401d898e7f27e7ca08918078f62975b"
+      "sha256": "833690d76d821f30802635c7faebc2b9b235a794805d3e717460f70adbc2bf96"
     },
     "asset:assets/components/source_derived/evidence_tile.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/evidence_tile.svg",
-      "sha256": "2f111460334b522bdd90a5835c719ee0bddbadbe1c1a30579f1f2b3e673ada77"
+      "sha256": "d4668f1bf46f020f11473dd5dfe9885dd7cd1987a38464d463d3ecfd4c0a7c98"
     },
     "asset:assets/components/source_derived/image_footer_card.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/image_footer_card.svg",
-      "sha256": "a8894fcf9d5e5d336e1f6dcf366fef422c3480a016537f8abb981785d81642c8"
+      "sha256": "f4312077db71d4483df681ea16bcf960671619c1ebb8da0a5e54412012d41be0"
     },
     "asset:assets/components/source_derived/media_caption_card.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/media_caption_card.svg",
-      "sha256": "fe9732645f27a34e51e0096dfa4649d6bfaf4672bb7c6870406e2271ce4acc3e"
+      "sha256": "473307fad689c7ad7eb7f532c8d0c106c78d19b4264c34124467a7e2f430e101"
     },
     "asset:assets/components/source_derived/metric_group_header.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/metric_group_header.svg",
-      "sha256": "600890d011a69f786cbe9510896f722a111ac0790faf3d03bf504fd29657be38"
+      "sha256": "7ef9add4871b0c6e39f7c05d8edd1f7ea997cb94e41501d873c2c35a3016d37d"
     },
     "asset:assets/components/source_derived/metric_tile.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/metric_tile.svg",
-      "sha256": "81ebac20e4321fa267188036c1fe60457e028369cac83c0465e34e8c0e681d56"
+      "sha256": "cd5b7a97d6934a783e52be6c368c5b92577ee8935a784a2c0d1ecfe1614be8c6"
     },
     "asset:assets/components/source_derived/relationship_arrow_label.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/relationship_arrow_label.svg",
-      "sha256": "a1424e00896172e5d8ab3cf663ad3c7571086bbb2280d0989438f9f3d8839fe6"
+      "sha256": "3d127b098873b9fedbcd841b7d3090b0bb1a3d6ec56eb1047fdd5598f9cd7428"
     },
     "asset:assets/components/source_derived/research_track_card.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/research_track_card.svg",
-      "sha256": "698068c5798775efe8afe089ba40a5803679cbffe8c3731854a83f551524d45c"
+      "sha256": "aa74d99ba05acbe880c7900a1fb329e70219cde1cdd72925275d30b53bdd305b"
     },
     "asset:assets/components/source_derived/statement_panel.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/statement_panel.svg",
-      "sha256": "29ad32c5a30b9c91ab99da15d7d6b6ac10fff0f13738ecf25ec91490a9f67cac"
+      "sha256": "c0d2da979890b99f009885801285d6bbb18d7983d9dd2dcfe3e9e07b3fde4125"
     },
     "asset:assets/components/source_derived/vertical_feature_image_panel.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/vertical_feature_image_panel.svg",
-      "sha256": "83122e75c47495ba2eb771e6e801aee9531593229f67dac0d6d0bbfa9bdfdc6b"
+      "sha256": "dcd36598ece44a5c37c6c5e6afc98ae736da31e4595b737b282a1c7e1cd48278"
     },
     "asset:assets/components/source_derived/vertical_key_tag.svg": {
       "path": "templates/layouts/nsfc_defense/assets/components/source_derived/vertical_key_tag.svg",
-      "sha256": "af1bc77ce7dc010d6748569ac6029a3bea6831f2318b770323842e3fbf9110bf"
+      "sha256": "538270627eaaf88c05698851299d921695db966c70e4c64f607a9fc331365a06"
     },
     "asset:assets/figure_placeholder.svg": {
       "path": "templates/layouts/nsfc_defense/assets/figure_placeholder.svg",
-      "sha256": "3f2c292cb56dc760cba6e83ad1effec779ca0a9ed9ef94d4bd99d537244114e5"
+      "sha256": "a96abc431b100fb78b9bcdcf93646281820050ce30432547c7668119731cbc6d"
     },
     "asset:assets/image1_fx_1bd44e6e.webp": {
       "path": "templates/layouts/nsfc_defense/assets/image1_fx_1bd44e6e.webp",
@@ -234,7 +234,7 @@
     },
     "asset:assets/transparent.svg": {
       "path": "templates/layouts/nsfc_defense/assets/transparent.svg",
-      "sha256": "410c245e53b4eecd696a8a3b11a8e3bc081ba89c6ddb4b9c9e371e2a216c03a2"
+      "sha256": "f125040df06ed5623b76c1b60c7ff7f096cef6afe1b764b28075d92b164de1aa"
     }
   },
   "component_dependencies": [
@@ -243,98 +243,98 @@
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/application_metric_card.svg",
-      "sha256": "0c505683b6fab2870b0cc1296afcc44d4396e63de941ef330da56454355104b3"
+      "sha256": "0bf42357094d668f2599f478dc2b3c903a09f4a511519bf7577613b7af721e2b"
     },
     {
       "asset_id": "component/nsfc_defense/callout_media_panel",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/callout_media_panel.svg",
-      "sha256": "7d9a6884aa54a4ea2b28b958027fff1894b6a5b4f747826b9c6dd7d9885f7c3d"
+      "sha256": "8b83491e6cf1afc7004aaa112f751ab956710b8942ee7aa4a7b10f7298075f63"
     },
     {
       "asset_id": "component/nsfc_defense/comparison_matrix",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/comparison_matrix.svg",
-      "sha256": "5a47b10050eeb998610bcaba3fa38747b401d898e7f27e7ca08918078f62975b"
+      "sha256": "833690d76d821f30802635c7faebc2b9b235a794805d3e717460f70adbc2bf96"
     },
     {
       "asset_id": "component/nsfc_defense/evidence_tile",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/evidence_tile.svg",
-      "sha256": "2f111460334b522bdd90a5835c719ee0bddbadbe1c1a30579f1f2b3e673ada77"
+      "sha256": "d4668f1bf46f020f11473dd5dfe9885dd7cd1987a38464d463d3ecfd4c0a7c98"
     },
     {
       "asset_id": "component/nsfc_defense/grant_text_evidence_stack",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/imported/grant_text_evidence_stack.svg",
-      "sha256": "4251c79223f37089d0c4216898142e9a076c5c59397b20300e4339dddfedf617"
+      "sha256": "a54c6973d6a9c20940fdddc8f34d180d77f11197f7b0fd2914ca61295211b959"
     },
     {
       "asset_id": "component/nsfc_defense/image_footer_card",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/image_footer_card.svg",
-      "sha256": "a8894fcf9d5e5d336e1f6dcf366fef422c3480a016537f8abb981785d81642c8"
+      "sha256": "f4312077db71d4483df681ea16bcf960671619c1ebb8da0a5e54412012d41be0"
     },
     {
       "asset_id": "component/nsfc_defense/media_caption_card",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/media_caption_card.svg",
-      "sha256": "fe9732645f27a34e51e0096dfa4649d6bfaf4672bb7c6870406e2271ce4acc3e"
+      "sha256": "473307fad689c7ad7eb7f532c8d0c106c78d19b4264c34124467a7e2f430e101"
     },
     {
       "asset_id": "component/nsfc_defense/metric_group_header",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/metric_group_header.svg",
-      "sha256": "600890d011a69f786cbe9510896f722a111ac0790faf3d03bf504fd29657be38"
+      "sha256": "7ef9add4871b0c6e39f7c05d8edd1f7ea997cb94e41501d873c2c35a3016d37d"
     },
     {
       "asset_id": "component/nsfc_defense/metric_tile",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/metric_tile.svg",
-      "sha256": "81ebac20e4321fa267188036c1fe60457e028369cac83c0465e34e8c0e681d56"
+      "sha256": "cd5b7a97d6934a783e52be6c368c5b92577ee8935a784a2c0d1ecfe1614be8c6"
     },
     {
       "asset_id": "component/nsfc_defense/relationship_arrow_label",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/relationship_arrow_label.svg",
-      "sha256": "a1424e00896172e5d8ab3cf663ad3c7571086bbb2280d0989438f9f3d8839fe6"
+      "sha256": "3d127b098873b9fedbcd841b7d3090b0bb1a3d6ec56eb1047fdd5598f9cd7428"
     },
     {
       "asset_id": "component/nsfc_defense/research_track_card",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/research_track_card.svg",
-      "sha256": "698068c5798775efe8afe089ba40a5803679cbffe8c3731854a83f551524d45c"
+      "sha256": "aa74d99ba05acbe880c7900a1fb329e70219cde1cdd72925275d30b53bdd305b"
     },
     {
       "asset_id": "component/nsfc_defense/statement_panel",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/statement_panel.svg",
-      "sha256": "29ad32c5a30b9c91ab99da15d7d6b6ac10fff0f13738ecf25ec91490a9f67cac"
+      "sha256": "c0d2da979890b99f009885801285d6bbb18d7983d9dd2dcfe3e9e07b3fde4125"
     },
     {
       "asset_id": "component/nsfc_defense/vertical_feature_image_panel",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/vertical_feature_image_panel.svg",
-      "sha256": "83122e75c47495ba2eb771e6e801aee9531593229f67dac0d6d0bbfa9bdfdc6b"
+      "sha256": "dcd36598ece44a5c37c6c5e6afc98ae736da31e4595b737b282a1c7e1cd48278"
     },
     {
       "asset_id": "component/nsfc_defense/vertical_key_tag",
       "scope": "template",
       "renderer_id": "svg_fragment",
       "asset_path": "templates/layouts/nsfc_defense/assets/components/source_derived/vertical_key_tag.svg",
-      "sha256": "af1bc77ce7dc010d6748569ac6029a3bea6831f2318b770323842e3fbf9110bf"
+      "sha256": "538270627eaaf88c05698851299d921695db966c70e4c64f607a9fc331365a06"
     }
   ],
   "component_pack": {

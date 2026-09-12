@@ -8,7 +8,7 @@
 </g>
 <g id="shape-19" data-name="文本框 18">
 <rect x="74.23" y="133.81" width="602.6" height="65.63" fill="none" />
-<text x="83.83" y="154.48" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="74.23" data-pptx-box-y="133.81" data-pptx-box-w="602.6" data-pptx-box-h="65.63" data-pptx-valign="top" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#000000" data-slot="CALLOUT_TEXT" data-slot-id="CALLOUT_TEXT" data-slot-kind="text" data-slot-placeholder="{{CALLOUT_TEXT}}"><tspan fill="#000000" font-size="18.67" data-slot="CALLOUT_TEXT" data-slot-id="CALLOUT_TEXT" data-slot-kind="text" data-slot-placeholder="{{CALLOUT_TEXT}}">在此填写需要强调的结论或引用</tspan></text>
+<text x="83.83" y="154.48" text-anchor="start" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="74.23" data-pptx-box-y="133.81" data-pptx-box-w="602.6" data-pptx-box-h="65.63" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="18.67" fill="#000000" data-slot="CALLOUT_TEXT" data-slot-id="CALLOUT_TEXT" data-slot-kind="text" data-slot-placeholder="{{CALLOUT_TEXT}}" data-center-lock="true"><tspan fill="#000000" font-size="18.67" data-slot="CALLOUT_TEXT" data-slot-id="CALLOUT_TEXT" data-slot-kind="text" data-slot-placeholder="{{CALLOUT_TEXT}}">在此填写需要强调的结论或引用</tspan></text>
 </g>
 <g id="shape-23" data-name="文本框 22">
 <rect x="209.82" y="262.66" width="412.6" height="159.95" fill="none" />
@@ -17,7 +17,7 @@
 </g>
 <g id="shape-24" data-name="菱形 23">
 <polygon points="150.4,276.38 190.72,316.13 150.4,355.89 110.08,316.13" fill="#912C8D" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
-<text x="150.4" y="325.47" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="110.08" data-pptx-box-y="276.38" data-pptx-box-w="80.64" data-pptx-box-h="79.51" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">1</tspan></text>
+<text x="150.4" y="325.47" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="110.08" data-pptx-box-y="276.38" data-pptx-box-w="80.64" data-pptx-box-h="79.51" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold" data-center-lock="true"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">1</tspan></text>
 </g>
 <g id="shape-27" data-name="文本框 26">
 <rect x="209.82" y="449.92" width="419.32" height="159.95" fill="none" />
@@ -26,7 +26,7 @@
 </g>
 <g id="shape-28" data-name="菱形 27">
 <polygon points="150.4,457.88 190.72,497.63 150.4,537.39 110.08,497.63" fill="#68A4C6" stroke-width="1.333" stroke-linecap="butt" stroke="none" stroke-linejoin="miter" />
-<text x="150.4" y="506.97" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="110.08" data-pptx-box-y="457.88" data-pptx-box-w="80.64" data-pptx-box-h="79.51" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">2</tspan></text>
+<text x="150.4" y="506.97" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="110.08" data-pptx-box-y="457.88" data-pptx-box-w="80.64" data-pptx-box-h="79.51" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, sans-serif" font-size="26.67" fill="#FFFFFF" font-weight="bold" data-center-lock="true"><tspan fill="#FFFFFF" font-size="26.67" font-weight="bold">2</tspan></text>
 </g>
 <g id="shape-4" data-name="图片 3">
 <rect x="720.8" y="126.72" width="460.17" height="541.37" rx="3" ry="3" fill="none" stroke="#E5DDE8" stroke-opacity="0.78" stroke-width="1.2" data-easyslides-image-frame-for="IMAGE_01" data-easyslides-generated="true" /><image href="../assets/image19.jpeg" data-slot="IMAGE_01" data-slot-id="IMAGE_01" data-slot-kind="image" data-slot-placeholder="{{IMAGE_01}}" x="720.8" y="126.72" width="460.17" height="541.37" preserveAspectRatio="xMidYMid meet" data-easyslides-image-fit="contain" /></g>
@@ -35,7 +35,7 @@
 </g>
 <g id="shape-33" data-name="文本框 32">
 <rect x="795.79" y="611.43" width="310.2" height="38.78" fill="none" />
-<text x="950.89" y="636.63" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="795.79" data-pptx-box-y="611.43" data-pptx-box-w="310.2" data-pptx-box-h="38.78" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="IMAGE_CAPTION" data-slot-id="IMAGE_CAPTION" data-slot-kind="text" data-slot-placeholder="{{IMAGE_CAPTION}}"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="IMAGE_CAPTION" data-slot-id="IMAGE_CAPTION" data-slot-kind="text" data-slot-placeholder="{{IMAGE_CAPTION}}">定义标签</tspan></text>
+<text x="950.89" y="636.63" text-anchor="middle" xml:space="preserve" data-pptx-textbox="true" data-pptx-box-x="795.79" data-pptx-box-y="611.43" data-pptx-box-w="310.2" data-pptx-box-h="38.78" data-pptx-valign="middle" font-family="&quot;微软雅黑&quot;, &quot;Alibaba PuHuiTi&quot;, sans-serif" font-size="24" fill="#FFFFFF" font-weight="bold" data-slot="IMAGE_CAPTION" data-slot-id="IMAGE_CAPTION" data-slot-kind="text" data-slot-placeholder="{{IMAGE_CAPTION}}" data-center-lock="true"><tspan fill="#FFFFFF" font-size="24" font-weight="bold" data-slot="IMAGE_CAPTION" data-slot-id="IMAGE_CAPTION" data-slot-kind="text" data-slot-placeholder="{{IMAGE_CAPTION}}">定义标签</tspan></text>
 </g>
 
 

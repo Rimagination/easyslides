@@ -50,6 +50,14 @@ placeholders:
 | `academic_purple` | Academic Purple | `#80308B` |
 | `academic_green` | Academic Green | `#016F35` |
 
+The opt-in `thesis_navy_v4` style profile is declared in
+`component_styles.json`. It is intended for the `cn_degree_defense_v4`
+scenario variant and keeps the editable SVG/DrawingML route unchanged. Its
+content typography target is 32pt page titles, 21pt body text, and 14pt
+captions/tables; its semantic colors are title `#0A3476`, body/caption/table
+text `#000000`, secondary text `#333333`, accent `#1C8B92`, light border
+`#C8D5E6`, white page background, and `#F5F6F8` panels.
+
 Palette switching is semantic. Replace the five theme roles as a set: `primary`, `primary_dark`, `soft_surface`, `border`, and `emphasis_text`. Do not recolor immutable white surfaces, black body text, muted gray inactive text, or raster source figures when applying an alternate palette.
 
 ## Page Shells
@@ -107,6 +115,7 @@ When source material includes a figure or table image, preserve a short visible 
 ## Visual Rules
 
 - Preserve source coordinates for the TOC left panel, top navigation, key-message bar, page number, and cover band. Keep the ending page visually distinct from the cover by using the left-panel closing composition.
+- Keep cover and ending metadata text in the canvas coordinate system: the three text boxes must be centered on x=320, 640, and 960, while decorative icons may remain in translated groups. Do not place an editable metadata text box with `data-pptx-box-x="0"` inside a translated column group.
 - Use `#183A6A` for all primary bars, card labels, metadata icons, and active navigation text.
 - Use `#E7E6E6` only for the key-message bar and restrained internal composition surfaces.
 - Use `theme_palettes.json` as the source of truth when generating an alternate colorway; keep the default `academic_blue` source-faithful.

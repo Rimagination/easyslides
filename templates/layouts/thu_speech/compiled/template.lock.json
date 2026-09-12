@@ -2,7 +2,7 @@
   "schema_version": "easyslides.template_lock.v1",
   "template_id": "thu_speech",
   "package_version": "1.0.0",
-  "source_digest": "5703e02949dae0f32df879fea6bc51c2f4c82df9bac1eda3a8ab065f1931922d",
+  "source_digest": "a7237b9ec7891f083d45b5b29d89c98a78ef04c02404a152c98802ef6a7e763c",
   "sources": {
     "package": {
       "path": "templates/layouts/thu_speech/template_package.json",
@@ -10,7 +10,7 @@
     },
     "shells": {
       "path": "templates/layouts/thu_speech/layouts.json",
-      "sha256": "099a580247ef46bbf68fe0a53a4700a4be655c33c19c5be2d81713174d78d376"
+      "sha256": "2c3de3a47d4fa9e14b303f1ab524e0d6b403cf4715761359e69784f9af1171b4"
     },
     "body_variants": {
       "path": "templates/layouts/thu_speech/body_variants.json",
@@ -46,23 +46,23 @@
     },
     "shell:cover": {
       "path": "templates/layouts/thu_speech/01_cover.svg",
-      "sha256": "150f7b075ffc2e69749142e6d85fd1853ae4c1a681ba2648e82bd4f97bda2f7d"
+      "sha256": "d553471ee182b95cfccf78a7ba0416f3ed6743bdb2c4d994e82904b061eeda39"
     },
     "shell:toc": {
       "path": "templates/layouts/thu_speech/02_toc.svg",
-      "sha256": "daf8846e5fa6e8812b169be8ce1ea1e996c4910e74d710851c1cdbf947c65a03"
+      "sha256": "892bf6d6430b128d0952c3727f4f951dbac3051ce423ac04ea5120c80532fce3"
     },
     "shell:transition": {
       "path": "templates/layouts/thu_speech/03_transition.svg",
-      "sha256": "7872d61a546c8cb915e35ee3c641b9d629cd41194c60366382f37ea0a4d368a7"
+      "sha256": "2063f6de6baa072c09508dd07154dc2a84feb8a9b0c13833152061af565ef554"
     },
     "shell:content": {
       "path": "templates/layouts/thu_speech/04_content.svg",
-      "sha256": "1c7afd182d2e67feb61c6db7af42fb5da43292c5ad05f8321155c4fcc05badb0"
+      "sha256": "a8c03e3713cf0dce68704e20e2fa359b66cc6b1f59640ed93135ae2ed84dc3f6"
     },
     "shell:ending": {
       "path": "templates/layouts/thu_speech/05_ending.svg",
-      "sha256": "e9b39866d750aee06ba0b628829348d48984cfdaf45fd2a7bfaafca7e8f9c768"
+      "sha256": "0ecd61090f2fa6d4b10b0dbc080eb7cb8ee30ed0cabe370751d5adf20e9441e6"
     },
     "component:component/thu_speech/callout": {
       "path": "templates/layouts/thu_speech/assets/components/thu_speech/callout.svg",

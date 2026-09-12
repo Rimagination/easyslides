@@ -238,7 +238,7 @@
         "action_titles",
         "ghost_deck_test",
         "appendix_for_qa",
-        "conclusion_last"
+        "conclusion_before_ending"
       ],
       "relaxable_rules": [
         "one_exhibit_per_results_slide",
@@ -260,6 +260,136 @@
           "text_fit",
           "template_geometry_integrity"
         ]
+      },
+      "default_scenario_variant": "cn_degree_defense_v4",
+      "scenario_variants": {
+        "cn_degree_defense_v4": {
+          "display_name": "中文硕博士毕业答辩 v4",
+          "workflow_stages": [
+            "source_planning",
+            "editable_master_design",
+            "editable_sample_3_to_5",
+            "full_editable_deck"
+          ],
+          "visual_exploration": {
+            "default_enabled": false,
+            "explicit_opt_in": true,
+            "allowed_scope": [
+              "cover",
+              "chapter_divider",
+              "ending",
+              "conclusion",
+              "non_scientific_reference"
+            ],
+            "source_of_truth": "style_reference_only"
+          },
+          "page_budget_policy": "user_declared_duration_or_page_count_has_priority",
+          "duration_page_bands": [
+            {"min_minutes": 1, "max_minutes": 10, "label": "10分钟", "min_pages": 12, "max_pages": 16},
+            {"min_minutes": 11, "max_minutes": 15, "label": "15分钟", "min_pages": 18, "max_pages": 24},
+            {"min_minutes": 16, "max_minutes": 20, "label": "20分钟", "min_pages": 24, "max_pages": 32},
+            {"min_minutes": 21, "max_minutes": 30, "label": "30分钟", "min_pages": 32, "max_pages": 45}
+          ],
+          "intro_policy": {
+            "min_pages": 4,
+            "recommended_min_pages_by_duration": {"20": 5, "30": 5}
+          },
+          "section_weights": {
+            "introduction": {"min_percent": 20, "max_percent": 25},
+            "background_method": {"min_percent": 15, "max_percent": 20},
+            "main_results": {"min_percent": 40, "max_percent": 50},
+            "discussion_mechanism": {"min_percent": 10, "max_percent": 15},
+            "conclusion_outlook": {"min_percent": 5, "max_percent": 10}
+          },
+          "figure_policy": {
+            "classification": ["A", "B", "C", "D"],
+            "primary_grouping_key": "scientific_question",
+            "complex_figure_width_percent": {"min": 60, "max": 85},
+            "max_complex_figures_per_page": 2,
+            "max_micro_photo_group_items": 4,
+            "source_figures_only": true,
+            "a_class_low_resolution_action": "request_high_res_original"
+          },
+          "layout_policy": {
+            "toc_required": true,
+            "toc_top_level_sections": {"min": 4, "max": 7},
+            "max_consecutive_identical_content_layouts": 3,
+            "min_distinct_content_layouts_per_chapter": 2,
+            "min_distinct_content_layouts": 4,
+            "min_layout_diversity_ratio": 0.35,
+            "layout_diversity_min_pages": 6
+          },
+          "content_quality_policy": {
+            "required_structure": ["conclusion", "evidence", "explanation"],
+            "min_evidence_blocks": 1,
+            "min_source_text_chars": 80,
+            "thin_severity": "warning",
+            "placeholder_severity": "warning"
+          },
+          "visible_text_policy": {
+            "banned_phrases": [
+              "答辩作用",
+              "答辩提示",
+              "支撑问题",
+              "证据链特点",
+              "页面任务",
+              "制作注意事项",
+              "演讲者备注",
+              "该页用于",
+              "本页用于",
+              "该页回答",
+              "为后续提供",
+              "为后续奠定基础",
+              "该图连接",
+              "该图说明",
+              "该结果提供证据链",
+              "此处放置",
+              "建议放入",
+              "可进一步补入",
+              "用于答辩追问",
+              "答辩主线",
+              "逻辑主线",
+              "研究主线",
+              "图中看什么",
+              "解释与认识",
+              "Take-home message",
+              "本页小结",
+              "Any questions",
+              "Q&A"
+            ]
+          },
+          "style_profile": {
+            "id": "cn_degree_defense_v4",
+            "palette_id": "thesis_navy_v4",
+            "font_family": {
+              "cjk": "Microsoft YaHei",
+              "latin": "Arial"
+            },
+            "font_size_pt": {
+              "cover_title": 36,
+              "page_title": 32,
+              "body": 21,
+              "caption": 14,
+              "table": 14
+            },
+            "colors": {
+              "title": "#0A3476",
+              "body": "#000000",
+              "caption": "#000000",
+              "table_text": "#000000",
+              "secondary_text": "#333333",
+              "accent": "#1C8B92",
+              "light_border": "#C8D5E6",
+              "page_background": "#FFFFFF",
+              "panel_background": "#F5F6F8"
+            }
+          },
+          "ending_policy": {
+            "requires_conclusion_before_ending": true,
+            "default_title": "请老师同学们批评指正！谢谢！",
+            "metadata_labels": ["汇报人：", "时间："]
+          }
+        }
       }
     },
     "proposal_or_fund": {
