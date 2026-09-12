@@ -154,6 +154,27 @@ class SitePublicAssetsTests(unittest.TestCase):
         )
         self.assertNotRegex(body, r'type === "defense".*return "classroom"')
 
+    def test_research_cases_have_complete_previews_and_public_decks(self):
+        import zipfile
+        from pptx import Presentation
+        site = ROOT / "site"
+        text = (site / "index.html").read_text(encoding="utf-8")
+        for work, count, filename in [
+            ("work-07", 14, "plant-functional-ecology-editable.pptx"),
+            ("work-08", 12, "urban-multimodal-traffic-editable.pptx"),
+        ]:
+            deck = site / "assets/decks" / filename
+            self.assertEqual(len(Presentation(deck).slides), count)
+            self.assertIn(f"assets/decks/{filename}", text)
+            for index in range(1, count + 1):
+                relative = f"assets/slides/{work}/slide-{index:02d}.jpg"
+                self.assertIn(relative, text)
+                self.assertTrue((site / relative).is_file())
+            with zipfile.ZipFile(deck) as archive:
+                for name in archive.namelist():
+                    if name.endswith((".xml", ".rels")):
+                        self.assertNotRegex(archive.read(name).decode("utf-8"), r"file:/|(?<![A-Za-z])[A-Za-z]:[\\/]")
+
 
 if __name__ == "__main__":
     unittest.main()

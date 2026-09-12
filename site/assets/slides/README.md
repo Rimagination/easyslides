@@ -40,7 +40,20 @@ assets/slides/work-06/slide-01.jpg  zdyf_blue
 assets/slides/work-06/slide-02.jpg
 ...
 assets/slides/work-06/slide-12.jpg
+
+assets/slides/work-07/slide-01.jpg  nsfc_green — plant functional ecology
+...
+assets/slides/work-07/slide-14.jpg
+
+assets/slides/work-08/slide-01.jpg  nsfc_bright_blue_white — multimodal traffic
+...
+assets/slides/work-08/slide-12.jpg
 ```
+
+The two new galleries use actual PowerPoint renders of their downloadable PPTX
+files. The traffic public copy removes local machine path prefixes from speaker
+notes only; slide XML and media are unchanged. Original paper citations remain.
+Its five source-comparison threshold failures are disclosed in the gallery.
 
 Then register those paths in `slideAssets` inside `index.html`, and add the template id as the final field of the matching `copy.*.works` item. The detail page will place the selected image exactly inside the photo screen area and use the current mock slide only as a fallback.
 

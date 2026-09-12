@@ -12,82 +12,67 @@
   <img alt="Output: Editable PPTX" src="https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square">
 </p>
 
-让 Agent 把研究材料做成可编辑 PPT，支持直接制作、AI 生图后整页重建与局部重建。
+面向论文汇报、研究综述与答辩的 AI PPT 插件，让 Agent 基于研究材料制作可编辑 PPT。
 
 [中文](#中文) | [English](#english)
 
 </div>
 
-### 快速得到稳定的科研 PPT
+### 先看效果
 
-直接说目标，EasySlides 会逐项弹窗问清材料、听众、目标、时长、风格和制作路径；
-已明确的信息不重复问，无需浏览器或填表。
-
-EasySlides 负责材料组织与 PPT 制作；联网搜集依赖宿主工具，未内置 Deep Research 引擎。
-
-### 按制作路径选择一句话案例
-
-复制一句，替换主题或材料即可。缺失信息由插件继续询问。
-
-#### 1. 直接生成可编辑 PPT
-
-适合反复修改文字和布局，论文原图作为图片保留。
-
-> 用 easyslides 基于我上传的多模态城市交通论文，使用 `literature_minimal` 模板直接制作12页可编辑综述，保留原图和来源，不补充外部资料。
-
-#### 2. 图片整页重建
-
-适合先确定整页视觉效果，再重建文字与简单结构；复杂配图保留为图片。
-
-> 先用联网工具搜集多模态城市交通流量预测的论文与原图，再用 easyslides 制作12页综述：每次 ImageGen 附上“国自然-绿色”模板参考图和适用的论文原图，逐页生成完整图片PPT，再忠实整页重建为可编辑PPT，保留复杂配图。
-
-已有完整图片页时，可直接提供图片进行重建。
-
-#### 3. 图片局部重建
-
-适合只修改指定区域，其余部分保持图片。
-
-> 用 easyslides 局部重建我上传的多模态城市交通汇报图片，只让标题、正文和页码可编辑，保留复杂配图；先确认重建区域，其余部分保持原貌。
-
-**还不知道选哪条？** 直接说：
-
-> 用 easyslides 帮我做一个多模态城市交通研究汇报，先逐项弹窗问清材料来源、听众、目标、时长和风格，再让我选择合适的制作路径。
-
-原生模板用于直接制作，图片模板用于生图参考。图片重建建议先确认样页效果，
-再扩展整套；交付前检查来源、页码与实际渲染。详见
-[重建工作流](workflows/slide-image-to-editable-pptx.md)。
-
-### 模板与案例展厅
-
-**[进入展厅，先看看效果](http://easyslides.scansci.com/)**
-
-| [成品展示](http://easyslides.scansci.com/?library=native#catalog) | [图片参考模板](http://easyslides.scansci.com/?library=image#catalog) |
+| 原生可编辑 · `literature_minimal` | 图片整页重建 · `zdyf_blue` |
 | --- | --- |
-| 用于直接制作可编辑 PPT，含真实案例 | 用整套缩略图指导 AI 生图风格 |
+| [![literature_minimal：Transformer 论文汇报成品](site/assets/slides/work-01/slide-01.jpg)](http://easyslides.scansci.com/?view=detail&work=0) | [![zdyf_blue：社会学习与听觉学习汇报成品](site/assets/slides/work-06/slide-01.jpg)](http://easyslides.scansci.com/?view=detail&work=5) |
 
-也可以提供自己的 PPT 或参考图片。
+点击缩略图查看整套 PPT；展厅支持逐页预览与下载可编辑文件。
 
-### 开始使用
+[成品与原生模板](http://easyslides.scansci.com/?library=native#catalog) · [图片参考模板](http://easyslides.scansci.com/?library=image#catalog)
 
-把下面这句话发给 Codex 或支持技能安装的 AI Agent：
+原生模板用于直接制作，图片模板用于指导生图。也支持提供自己的 PPT 或参考图片。
+
+### 安装与开始
+
+在 Codex 或支持技能安装的 AI Agent 中发送：
 
 > 请帮我安装 EasySlides 的完整仓库和运行依赖，并检查能否生成 PPT：[Rimagination/easyslides](https://github.com/Rimagination/easyslides)
 
-安装完成后，直接提出任务：
+安装后，上传材料并说出目标：
 
-> 把这篇论文做成 15 页的组会汇报，突出研究问题、方法和实验结论。先让我选择制作方案。
+> 用 easyslides 把这篇论文做成组会汇报，先逐项弹窗问清需求，再开始制作。
 
-需要完整仓库和本地依赖，详见 [安装指南](INSTALL.md)。下方生图路线使用 Codex 的 `imagegen`，需在宿主中可用。
+插件会询问尚未明确的材料来源、听众、目标、时长、风格与制作路径，说明相对耗时和
+Token 消耗；已知信息不重复问，无需浏览器或填表。安装细节见 [安装指南](INSTALL.md)。
 
-### 选择制作方式
-
-制作前会请你确认方案，并说明预计耗时与 Token 消耗。
+### 三条制作路径
 
 ![EasySlides 三种制作路线：直接生成可编辑 PPT、AI 生图后整页重建、AI 生图后局部重建](assets/easyslides-workflow.svg)
 
-重建范围内的文字可直接编辑；保留的配图与未选区域仍为图片。详见 [重建说明](workflows/slide-image-to-editable-pptx.md)。
+复制下面一句，替换主题、材料或篇幅即可。
 
-文件在本地管理；提交给云端 AI 的材料由对应服务处理，私人资料经你授权后再发布。
+#### 1. 直接制作：便于反复修改内容与布局
+
+文字与布局直接构建为可编辑元素，论文原图作为图片保留。
+
+> 用 easyslides 基于我上传的多模态城市交通论文，使用 `literature_minimal` 模板直接制作 12 页可编辑综述，保留原图和来源，不补充外部资料。
+
+#### 2. 整页重建：先确定完整图片页，再忠实重建
+
+以下案例重建整页文字与简单结构，复杂配图保留为图片；已有完整图片页时可跳过生图。
+
+> 先用联网工具搜集多模态城市交通流量预测的论文与原图，再用 easyslides 制作 12 页综述：每次 ImageGen 附上“国自然-绿色”模板参考图和适用的论文原图，逐页生成完整图片 PPT，再忠实整页重建为可编辑 PPT，保留复杂配图。
+
+#### 3. 局部重建：只让指定区域可编辑
+
+选中区域内的文字与简单结构可编辑，其余部分保持图片。
+
+> 用 easyslides 局部重建我上传的多模态城市交通汇报图片，只让标题、正文和页码可编辑，保留复杂配图；先确认重建区域，其余部分保持原貌。
+
+### 使用须知
+
+- **工具依赖**：联网搜集依赖宿主工具，EasySlides 未内置 Deep Research 引擎；新图片生成需要可调用的 ImageGen。
+- **质量检查**：图片重建先确认样页，再扩展整套；交付前核对原文证据、页码和实际渲染。详见 [重建工作流](workflows/slide-image-to-editable-pptx.md)。
+- **隐私与授权**：文件在本地管理，提交给云端 AI 的材料由对应服务处理；发布私人材料及复用第三方图片前需确认授权。
+
 
 <details>
 <summary><strong>开发与致谢</strong></summary>
@@ -111,19 +96,15 @@ EasySlides 的开发借鉴了以下公开项目的实践：
 
 ## English
 
-Turn research material into editable PPT with an AI Agent.
+A research-focused AI PPT plugin for paper presentations, literature reviews and thesis defenses.
 
-### Template and Example Gallery
+### See the Results
 
-**[Explore the gallery](http://easyslides.scansci.com/)**
+[Examples and native templates](http://easyslides.scansci.com/?library=native#catalog) · [Image-reference templates](http://easyslides.scansci.com/?library=image#catalog)
 
-| [Showcase Decks](http://easyslides.scansci.com/?library=native#catalog) | [Image References](http://easyslides.scansci.com/?library=image#catalog) |
-| --- | --- |
-| Editable PPT creation, with real examples | Whole-deck thumbnails to guide AI-generated slide design |
+Native templates support direct creation; image references guide image generation. You can also supply your own PPTX or reference images.
 
-You can also supply your own PPTX or reference images.
-
-### Get Started
+### Install and Start
 
 In Codex or an Agent that supports skill installation, say:
 
@@ -131,19 +112,31 @@ In Codex or an Agent that supports skill installation, say:
 
 Then ask:
 
-> Turn this paper into a 15-slide journal-club presentation. Focus on the research question, methods, and results. Ask me to choose a production method first.
+> Use easyslides to turn this paper into a journal-club presentation. Ask me about the requirements step by step before creating it.
 
-See the [installation guide](INSTALL.md) for the full repository and dependencies. Image-based methods require Codex `imagegen` in your host.
+EasySlides asks about missing source, audience, goal, timing, style and production choices, with relative time and token estimates. Known answers are reused; no browser form is required. See the [installation guide](INSTALL.md).
 
-### Choose Your Method
+### Three Methods, Three Examples
 
-EasySlides confirms your method and explains expected time and token usage before starting.
+#### 1. Direct creation — revise content and layouts freely
 
-Choose **direct editable PPT**, **AI images with full-slide reconstruction**, or **AI images with annotated-region reconstruction**. Image-based methods offer full-vector rebuilding or preservation of complex pictures.
+> Use easyslides to create a 12-slide editable review from my uploaded multimodal traffic papers with `literature_minimal`. Preserve original figures and citations; do not add external sources.
 
-Rebuilt text stays editable; preserved pictures and unselected regions remain images. See the [reconstruction guide](workflows/slide-image-to-editable-pptx.md).
+#### 2. Full-slide reconstruction — establish the image, then rebuild it
 
-Files stay in your workspace; cloud AI processes the material you send to it. Confirm permission before sharing sensitive research or publishing private files.
+> First use web tools to collect multimodal traffic prediction papers and original figures. Then use easyslides to make a 12-slide review: attach the “国自然-绿色” template references and relevant paper figures to each ImageGen call, generate complete slide images, and faithfully rebuild them with editable text and simple structures, preserving complex pictures.
+
+Approved slide images can also be supplied directly, without new image generation.
+
+#### 3. Partial reconstruction — edit selected regions only
+
+> Use easyslides to rebuild only the titles, body text and page numbers in my traffic presentation images. Confirm the regions first; preserve complex pictures and leave everything else unchanged.
+
+### Before You Use It
+
+- **Dependencies:** web research uses host tools; EasySlides has no built-in Deep Research engine. New image generation requires a callable ImageGen tool.
+- **Quality:** review representative rebuilt slides before expanding the deck, then check evidence, pagination and actual renders. Preserved pictures and unselected regions remain images. See the [reconstruction guide](workflows/slide-image-to-editable-pptx.md).
+- **Privacy:** files stay in your workspace; cloud AI processes submitted material. Confirm permission before publishing private files or reusing third-party images.
 
 <details>
 <summary><strong>Implementation and Credits</strong></summary>
