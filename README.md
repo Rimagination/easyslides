@@ -14,6 +14,8 @@
 
 面向论文汇报、研究综述与答辩的 AI PPT 插件，让 Agent 基于研究材料制作可编辑 PPT。
 
+继续开发前请先读 [项目交接入口](docs/agent-handoff.md)，再按其中的工作流与验证入口执行。
+
 [中文](#中文) | [English](#english)
 
 </div>

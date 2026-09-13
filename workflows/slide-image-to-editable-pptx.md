@@ -63,6 +63,20 @@ Keep raw pixel QA unchanged. Original-figure restoration and agreed chrome
 normalization must be documented; they do not justify weakening global thresholds
 or claiming delivery-ready while the full-page fidelity check still fails.
 
+### Semantic tables
+
+Rebuild tabular content as a native PowerPoint table (`a:tbl`), with real rows,
+columns and cells. Separate rectangles and text boxes do not satisfy table
+editability: users must be able to edit a whole row or column, resize columns,
+and paste a rectangular range. Preserve cell fills, borders, paragraph breaks,
+emphasis and alignment; keep complex scientific figures as separate assets.
+Only convert explicitly identified table regions, never arbitrary page panels.
+Record each complete cell as one Layer C inventory element with its source cell
+rectangle, retaining source ink bounds separately when available. Validate native
+cell text and grid geometry, then exercise row formatting and column resizing on
+a copy, save and reload it, and confirm all values remain intact. Inspect the
+actual rendered table after conversion.
+
 ### Complete-slide generation handoff
 
 For new ImageGen pages, use the existing `image-acquire` host-native path. Set
