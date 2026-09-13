@@ -20,6 +20,7 @@ from .drawingml_elements import (
     convert_polygon, convert_polyline,
     convert_text, convert_image, convert_nested_svg,
 )
+from .native_table import convert_native_table, is_native_table
 
 
 class SvgNativeConversionError(RuntimeError):
@@ -363,6 +364,12 @@ def collect_defs(root: ET.Element) -> dict[str, ET.Element]:
 def convert_element(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     """Dispatch an SVG element to the appropriate converter."""
     tag = elem.tag.replace(f'{{{SVG_NS}}}', '')
+
+    if tag == 'g' and is_native_table(elem):
+        try:
+            return convert_native_table(elem, ctx)
+        except Exception as exc:
+            raise SvgNativeConversionError(f'Failed to convert native table: {exc}') from exc
 
     converter = _CONVERTERS.get(tag)
     if converter:

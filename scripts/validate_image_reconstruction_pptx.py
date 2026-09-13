@@ -94,6 +94,7 @@ def validate_image_reconstruction_pptx(
     for slide_number, slide in enumerate(prs.slides, start=1):
         text_frame_count = 0
         native_shape_count = 0
+        native_table_count = 0
         picture_count = 0
         max_picture_area_fraction = 0.0
         text_boxes = []
@@ -105,6 +106,7 @@ def validate_image_reconstruction_pptx(
         for shape in _iter_shapes(slide.shapes):
             shape_type = getattr(shape, "shape_type", None)
             if getattr(shape, "has_table", False):
+                native_table_count += 1
                 cells = [cell.text for row in shape.table.rows for cell in row.cells if cell.text.strip()]
                 text_boxes.extend(cells)
                 text_frame_count += len(cells)
@@ -190,6 +192,7 @@ def validate_image_reconstruction_pptx(
                 "slide_number": slide_number,
                 "text_frame_count": text_frame_count,
                 "native_shape_count": native_shape_count,
+                "native_table_count": native_table_count,
                 "picture_count": picture_count,
                 "max_picture_area_fraction": round(max_picture_area_fraction, 4),
             }

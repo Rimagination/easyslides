@@ -10,6 +10,33 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class SlideImageInventoryTests(unittest.TestCase):
+    def test_native_table_is_accepted_as_native_structure(self):
+        from scripts.slide_image_inventory import validate_inventory
+
+        report = validate_inventory(
+            {
+                "schema_version": "easyslides.slide_image_inventory.v1",
+                "slides": [
+                    {
+                        "slide_id": "s01",
+                        "elements": [
+                            {
+                                "element_id": "s01_table",
+                                "description": "comparison table frame",
+                                "bbox_percent": {"x": 10, "y": 20, "w": 80, "h": 45},
+                                "layer": "B",
+                                "implementation": "native_table",
+                                "z_order": 2,
+                            }
+                        ],
+                        "completeness_check": {"performed": True, "layer_a_count": 0},
+                    }
+                ],
+            }
+        )
+
+        self.assertNotIn("INVENTORY-B-STRUCTURE-NOT-NATIVE", {issue["code"] for issue in report["issues"]})
+
     def test_valid_inventory_passes(self):
         from scripts.slide_image_inventory import validate_inventory
 
