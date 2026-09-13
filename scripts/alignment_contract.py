@@ -401,7 +401,7 @@ def _iter_pptx_text_frames(pptx_path: Path) -> list[list[dict[str, Any]]]:
                         table_box = _pptx_box(xfrm)
                         table = child.find(".//a:tbl", PPTX_NS)
                         if table_box is not None and table is not None:
-                            columns = [layout_metrics.emu_to_px(col.get("cx")) for col in table.findall("a:tblGrid/a:gridCol", PPTX_NS)]
+                            columns = [layout_metrics.emu_to_px(col.get("w")) for col in table.findall("a:tblGrid/a:gridCol", PPTX_NS)]
                             rows = [layout_metrics.emu_to_px(row.get("h")) for row in table.findall("a:tr", PPTX_NS)]
                             if columns and rows:
                                 y = table_box.y

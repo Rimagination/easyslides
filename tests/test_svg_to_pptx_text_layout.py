@@ -64,6 +64,39 @@ class SvgToPptxTextLayoutTests(unittest.TestCase):
         self.assertNotIn('cx="-', slide_xml)
         self.assertNotIn('cy="-', slide_xml)
 
+    def test_explicit_table_exports_as_native_graphic_frame_with_merges(self):
+        svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<g id="comparison-table" data-pptx-table="true" data-pptx-table-x="100" data-pptx-table-y="120" data-pptx-table-w="500" data-pptx-table-h="140" data-pptx-table-rows="2" data-pptx-table-cols="2" data-pptx-table-col-widths="200 300" data-pptx-table-row-heights="60 80">
+  <g data-pptx-table-cell="true" data-pptx-table-row="1" data-pptx-table-col="1" data-pptx-table-row-span="2" data-pptx-table-align="center">
+    <rect x="100" y="120" width="200" height="140" fill="#E4F1FC" stroke="#B8D8ED" stroke-width="1"/>
+    <text x="150" y="190" data-pptx-textbox="true" data-pptx-box-x="100" data-pptx-box-y="120" data-pptx-box-w="200" data-pptx-box-h="140" data-pptx-valign="middle" font-family="Arial, sans-serif" font-size="20" fill="#0869C0">A</text>
+  </g>
+  <g data-pptx-table-cell="true" data-pptx-table-row="1" data-pptx-table-col="2">
+    <rect x="300" y="120" width="300" height="60" fill="#FFFFFF" stroke="#B8D8ED" stroke-width="1"/>
+    <text x="310" y="150" data-pptx-textbox="true" data-pptx-box-x="300" data-pptx-box-y="120" data-pptx-box-w="300" data-pptx-box-h="60" data-pptx-valign="middle" font-family="Arial, sans-serif" font-size="20" fill="#182437">B</text>
+  </g>
+  <g data-pptx-table-cell="true" data-pptx-table-row="2" data-pptx-table-col="2">
+    <rect x="300" y="180" width="300" height="80" fill="#FFFFFF" stroke="#B8D8ED" stroke-width="1"/>
+    <text x="310" y="210" data-pptx-textbox="true" data-pptx-box-x="300" data-pptx-box-y="180" data-pptx-box-w="300" data-pptx-box-h="80" data-pptx-valign="middle" font-family="Arial, sans-serif" font-size="20" fill="#182437">C</text>
+  </g>
+</g>
+</svg>"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "table.svg"
+            path.write_text(svg, encoding="utf-8")
+            slide_xml, _, _, _ = convert_svg_to_slide_shapes(path)
+
+        self.assertEqual(slide_xml.count("<p:graphicFrame>"), 1)
+        self.assertIn('uri="http://schemas.openxmlformats.org/drawingml/2006/table"', slide_xml)
+        self.assertIn('<a:gridCol w="1905000"/>', slide_xml)
+        self.assertIn('<a:gridCol w="2857500"/>', slide_xml)
+        self.assertIn('<a:tc><a:txBody>', slide_xml)
+        self.assertNotIn('<a:tc><p:txBody>', slide_xml)
+        self.assertIn('<a:tcPr anchor="ctr"', slide_xml)
+        self.assertIn('rowSpan="2"', slide_xml)
+        self.assertIn('vMerge="1"', slide_xml)
+        self.assertIn('<a:t>A</a:t>', slide_xml)
+
 
 if __name__ == "__main__":
     unittest.main()

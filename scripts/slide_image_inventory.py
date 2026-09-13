@@ -36,7 +36,14 @@ RECTANGULAR_CROP_IMPLEMENTATIONS = {
     "source_crop",
     "cropped_source",
 }
-NATIVE_STRUCTURE_IMPLEMENTATIONS = {"native_shape", "ppt_shape", "drawingml_shape"}
+NATIVE_STRUCTURE_IMPLEMENTATIONS = {
+    "native_shape",
+    "ppt_shape",
+    "drawingml_shape",
+    "native_table",
+    "ppt_table",
+    "drawingml_table",
+}
 PRESERVED_SOURCE_IMPLEMENTATIONS = {
     "preserve_masked_source",
     "masked_source",

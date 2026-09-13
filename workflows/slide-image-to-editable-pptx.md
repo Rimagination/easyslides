@@ -63,6 +63,40 @@ Keep raw pixel QA unchanged. Original-figure restoration and agreed chrome
 normalization must be documented; they do not justify weakening global thresholds
 or claiming delivery-ready while the full-page fidelity check still fails.
 
+### Native tables
+
+When the source contains a real table, record the table as a Layer B
+`native_table` region and each complete cell as its own Layer C element. The SVG
+handoff marks that region with `data-pptx-table="true"`; each cell group declares
+1-based `data-pptx-table-row` and `data-pptx-table-col` values, and may declare
+`data-pptx-table-row-span` or `data-pptx-table-col-span`. Declare the table frame
+and its measured `data-pptx-table-col-widths` and
+`data-pptx-table-row-heights` in source-canvas pixels. The native exporter emits
+one PowerPoint `a:tbl` with real rows, columns, cells and merge metadata.
+
+```xml
+<g id="evidence-table" data-pptx-table="true"
+   data-pptx-table-x="100" data-pptx-table-y="180"
+   data-pptx-table-w="1080" data-pptx-table-h="360"
+   data-pptx-table-rows="3" data-pptx-table-cols="3"
+   data-pptx-table-col-widths="180 450 450"
+   data-pptx-table-row-heights="72 144 144">
+  <g data-pptx-table-cell="true" data-pptx-table-row="1" data-pptx-table-col="1">
+    <rect x="100" y="180" width="180" height="72" fill="#E4F1FC" stroke="#B8D8ED"/>
+    <text data-pptx-textbox="true" data-pptx-valign="middle"
+          data-pptx-box-x="100" data-pptx-box-y="180"
+          data-pptx-box-w="180" data-pptx-box-h="72"
+          text-anchor="middle">路径</text>
+  </g>
+</g>
+```
+
+Keep table cells separate in the inventory, preserve measured column and row
+geometry, and inspect the exported table after row formatting and column
+resizing on a copy. Cards, panels and complex scientific figures keep their
+existing native-shape or source-asset treatment unless the inventory identifies
+them as tabular content.
+
 ### Complete-slide generation handoff
 
 For new ImageGen pages, use the existing `image-acquire` host-native path. Set

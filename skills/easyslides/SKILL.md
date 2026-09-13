@@ -72,6 +72,10 @@ in the same task. Both modes require native PPT text boxes. Preserve one source
 line in one text box, merging OCR fragments and using text runs for mixed styling;
 keep independent labels and table cells separate. Full-vector mode needs approval
 before any raster exception. Partial rebuilds apply this within selected regions.
+When a source region is identified as tabular, declare it as `native_table` in
+the inventory and mark its SVG handoff with `data-pptx-table="true"`; the
+exporter emits a real PowerPoint table with measured rows, columns, cells and
+merge metadata.
 
 ## Chinese wording defaults
 

@@ -14,6 +14,8 @@
 
 面向论文汇报、研究综述与答辩的 AI PPT 插件，让 Agent 基于研究材料制作可编辑 PPT。
 
+继续开发前请先读 [项目交接入口](docs/agent-handoff.md)，再按其中的工作流与验证入口执行。
+
 [中文](#中文) | [English](#english)
 
 </div>
@@ -94,6 +96,7 @@ Token 消耗；已知信息不重复问，无需浏览器或填表。安装细�
 <summary><strong>开发与致谢</strong></summary>
 
 开发文档：[架构说明](ARCHITECTURE.md) · [工作流入口](workflows/index.md)。
+贡献者名单见 [CONTRIBUTORS.md](CONTRIBUTORS.md)。
 
 EasySlides 的开发借鉴了以下公开项目的实践：
 
@@ -137,7 +140,7 @@ Use easyslides to turn this paper into a journal-club presentation.
 Ask me about the requirements step by step before creating it.
 ```
 
-EasySlides asks about missing source, audience, goal, timing, style and production choices, with relative time and token estimates. Known answers are reused; no browser form is required. See the [installation guide](INSTALL.md).
+EasySlides asks about missing source, audience, goal, timing, style and production choices, with relative time and token estimates. Known answers are reused; no browser form is required. See the [installation guide](INSTALL.md) for the full repository and dependencies.
 
 ### Three Methods, Three Examples
 
@@ -179,6 +182,7 @@ preserve complex pictures and leave everything else unchanged.
 <summary><strong>Implementation and Credits</strong></summary>
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) and [INSTALL.md](INSTALL.md) for development details.
+Contributors are listed in [CONTRIBUTORS.md](CONTRIBUTORS.md).
 
 EasySlides draws on public practice from [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master), [Gabberflast/academic-pptx-skill](https://github.com/Gabberflast/academic-pptx-skill), [LearnPrompt/humanize-ppt](https://github.com/LearnPrompt/humanize-ppt), [op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill), [xiao634zhang/paper-ppt-skill](https://github.com/xiao634zhang/paper-ppt-skill), and [fangyuanopus/literature-report-ppt-builder](https://github.com/fangyuanopus/literature-report-ppt-builder). Acknowledgement does not imply endorsement. See [LICENSE](LICENSE) for the code license; third-party templates and images require their own permissions.
 

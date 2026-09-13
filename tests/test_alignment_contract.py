@@ -31,6 +31,34 @@ def inventory_for(*, contract=None, element=None):
 
 
 class AlignmentContractTests(unittest.TestCase):
+    def test_native_table_columns_use_grid_width_and_keep_multiline_cells(self):
+        from scripts.alignment_contract import _iter_pptx_text_frames, validate_pptx_alignment
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "table.pptx"
+            prs = Presentation()
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            table = slide.shapes.add_table(1, 2, Inches(1), Inches(.75), Inches(5), Inches(.75)).table
+            table.columns[0].width = Inches(2)
+            table.columns[1].width = Inches(3)
+            table.cell(0, 0).text = "First"
+            table.cell(0, 1).text = "Two\nlines"
+            prs.save(path)
+            frames = _iter_pptx_text_frames(path)[0]
+            self.assertAlmostEqual(frames[0]["box"].width, 192)
+            self.assertAlmostEqual(frames[1]["box"].x, 288)
+            self.assertAlmostEqual(frames[1]["box"].width, 288)
+            inventory = inventory_for(element={
+                "element_id": "cell", "layer": "C", "text": "Two\nlines",
+                "bbox_percent": {"x": 30, "y": 10, "w": 30, "h": 10},
+            })
+            self.assertEqual(validate_pptx_alignment(path, inventory)["status"], "pass")
+            table.columns[0].width = Inches(2.5)
+            table.columns[1].width = Inches(2.5)
+            prs.save(path)
+            report = validate_pptx_alignment(path, inventory)
+            self.assertIn("ALIGNMENT-PPTX-BOX-DRIFT", {i["code"] for i in report["issues"]})
+
     def test_slide_relationship_targets_resolve_from_package_or_part(self):
         import io
         import zipfile
