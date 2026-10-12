@@ -7,7 +7,7 @@
 <h1 align="center">EasySlides</h1>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img alt="Version: 1.2.0" src="https://img.shields.io/badge/Version-v1.2.0-2563EB?style=flat-square"></a>
+  <a href="CHANGELOG.md"><img alt="Version: 1.2.1" src="https://img.shields.io/badge/Version-v1.2.1-2563EB?style=flat-square"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-16A34A?style=flat-square"></a>
   <img alt="Output: Editable PPTX" src="https://img.shields.io/badge/Output-Editable%20PPTX-D24726?style=flat-square">
 </p>
