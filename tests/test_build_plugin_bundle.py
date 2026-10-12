@@ -21,6 +21,8 @@ class BuildPluginBundleTests(unittest.TestCase):
             )
             self.assertTrue((output / "skills" / "easyslides" / "SKILL.md").is_file())
             self.assertTrue((output / "scripts" / "semantic_template_renderer.py").is_file())
+            self.assertTrue((output / "scripts" / "institution_logo.py").is_file())
+            self.assertTrue((output / "references" / "institution-logos.md").is_file())
             from scripts.easyslides_doctor import _template_checks
             from unittest.mock import patch
             with patch("scripts.easyslides_doctor.ROOT", output):

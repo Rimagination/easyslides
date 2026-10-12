@@ -41,6 +41,7 @@ DELEGATED_COMMANDS = {
     "cross-renderer-regression": "cross_renderer_visual_regression.py",
     "chart": "chart_library.py",
     "icon": "icon_library.py",
+    "logo": "institution_logo.py",
     "content-contract": "content_plan_contract.py",
     "design-contract": "design_plan_contract.py",
     "deck-gates": "deck_gates.py",
@@ -85,6 +86,7 @@ def build_parser() -> argparse.ArgumentParser:
             "  cross-renderer-regression Compare native PowerPoint and LibreOffice rendering\n"
             "  chart         PPT Master-compatible chart asset catalog and lookup\n"
             "  icon          Icon family catalog, semantic lookup, and project sync\n"
+            "  logo          ScanSci logo lookup for an identified user institution\n"
             "  content-contract Validate source-facing content_plan.json\n"
             "  design-contract Validate design-facing design_plan.json\n"
             "  deck-gates    Fail-closed deck delivery and handoff gate\n"

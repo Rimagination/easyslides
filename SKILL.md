@@ -492,12 +492,22 @@ requested arrangement, but that route accepts only registered local components
 inside the declared body canvas and never permits global or cross-template
 assets.
 
-When the selected template exposes a `LOGO` slot, resolve it from
-user-provided assets and source-material image folders before SVG generation.
-Prefer an actual institutional, laboratory, project, or paper-source logo. If
-no suitable logo is available, keep the template's built-in degree-cap icon
-fallback; when a real logo is inserted, replace the full `LOGO` group or hide
-the fallback drawing.
+When a template needs an institutional logo or uses a degree-cap icon as its
+`LOGO` placeholder, first identify the user's institution from explicit user
+statements or an unambiguous presenter affiliation in supplied materials.
+Use user-provided matching assets first, then [ScanSci Logos](https://www.scansci.com/logos/)
+through `python scripts/easyslides.py logo <project> --institution "<name or domain>"`.
+Follow [references/institution-logos.md](references/institution-logos.md) for
+variant selection, provenance, and placement across production schemes.
+During normal generation, proactively match the logo to the existing frame,
+page role, and background contrast. Keep one institution identity and consistent
+assets/placement within each page role; roles may use different reviewed variants.
+Only a `resolved` ScanSci lookup may supply an online replacement. Template
+names/styles, example labels, topic words, and affiliations in cited papers do
+not identify the user. Unknown, ambiguous, unavailable, or conflicting
+institutions retain the template's existing degree-cap/LOGO placeholder.
+Replace the full `LOGO` group or hide its fallback drawing when inserting the
+real logo, preserving the slot frame, aspect ratio, and original logo colors.
 
 ### Academic QA Gate
 

@@ -36,6 +36,15 @@ class EasySlidesCliTests(unittest.TestCase):
         self.assertIn("component", result.stdout)
         self.assertIn("chart", result.stdout)
         self.assertIn("icon", result.stdout)
+        self.assertIn("logo", result.stdout)
+
+    def test_logo_help_delegates_to_institution_resource(self):
+        result = run_cli("scripts/easyslides.py", "logo", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("explicitly identified user institution", result.stdout)
+        self.assertIn("--institution", result.stdout)
+
 
     def test_component_pack_help_delegates_to_pack_manager(self):
         result = run_cli("scripts/easyslides.py", "component", "--help")

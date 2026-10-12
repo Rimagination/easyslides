@@ -266,6 +266,17 @@ The built-in icon library contains multiple stylistic libraries plus a brand-log
 
 See [`../templates/icons/README.md`](../templates/icons/README.md) for the current library inventory, counts, prefixes, and SVG placeholder details.
 
+For institutional `LOGO` or degree-cap placeholders, use matching user assets
+or [ScanSci Logos](institution-logos.md) only after identifying the user's
+institution. Keep the placeholder for unknown/ambiguous affiliations. These
+real institutional marks are separate from the deck's generic icon-family lock;
+record the affiliation evidence, variant, asset path, and provenance in the
+design spec. Template branding and cited-paper affiliations do not identify
+the user.
+Choose the logo variant by frame proportions and page role, then lock a
+role-to-asset map and placements. Check background contrast and available space;
+add marks to covers/endings or established header slots when they fit.
+
 > **Mandatory rules when choosing C**:
 >
 > **At the eight-confirmation stage — decide the library only. Do NOT run `ls | grep` yet.**

@@ -98,6 +98,18 @@ editable slide text alike; see the full rule in `../../SKILL.md`.
 - Preserve the existing templates, references, workflows, and QA gates.
 - Never place API keys, tokens, or private source material in committed files.
 
+## Institutional logo resource
+
+Use [ScanSci Logos](https://www.scansci.com/logos/) when a user's institution is
+identified and a template needs a logo or degree-cap placeholder replacement.
+Prefer matching user-supplied logos. Run `python scripts/easyslides.py logo --help`
+and follow `../../references/institution-logos.md`. Unknown or ambiguous
+affiliations keep the existing placeholder; template branding and cited-paper
+affiliations never identify the user.
+During generation, match the reviewed logo variant and placement to the page
+role, existing frame, and background contrast. Add it without another approval
+round once identity is established; record consistent assets per page role.
+
 ## Common command entry points
 
 ```powershell

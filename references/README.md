@@ -7,3 +7,4 @@ Strategist, Executor, and template-building workflows.
 - `spec_lock_reference.md`: canonical execution-lock skeleton.
 - `template_asset_bank.json`: generated exact-reuse template asset bank.
 - `assets/university_emblems/`: transparent PNG university emblem assets exported from a source PPTX, with manifest and contact sheet.
+- `institution-logos.md`: ScanSci Logos lookup and placeholder replacement when the user's institution is identified.
