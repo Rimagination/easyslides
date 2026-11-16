@@ -1,0 +1,44 @@
+/* Shared website chrome. Actual slides retain their original colors. */
+:root {
+  --site-walnut: #241b15;
+  --site-surface: #30251d;
+  --site-ink: #f4ebdb;
+  --site-muted: #c1af96;
+  --site-gold: #d4b173;
+  --site-line: rgba(212, 177, 115, .24);
+}
+html, body, .detail { background: var(--site-walnut); }
+body { color: var(--site-ink); }
+.topbar { background: #241b15; border-bottom-color: var(--site-line); }
+:focus-visible { outline: 2px solid var(--site-gold); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Guide: the same walnut canvas and warm, readable text. */
+body:has(.page-shell) {
+  --ink: var(--site-ink);
+  --muted: var(--site-muted);
+  --quiet: var(--site-muted);
+  --paper: var(--site-walnut);
+  --paper-soft: var(--site-surface);
+  --line: var(--site-line);
+  --line-strong: rgba(212, 177, 115, .45);
+  --red: var(--site-gold);
+  --gold-deep: var(--site-gold);
+}
+.page-shell a { color: var(--site-gold); text-decoration-color: var(--site-line); }
+.page-shell a:hover { color: #fff0ce; }
+.page-shell .article { background: transparent; box-shadow: none; }
+.page-shell .article h3, .page-shell .article h4,
+.page-shell .template-card strong { color: var(--site-ink); }
+.page-shell .article p, .page-shell .article li { color: #ded0ba; }
+.page-shell code { color: #edd09c; background: rgba(212,177,115,.09); }
+.page-shell .step-list > div, .page-shell .template-card,
+.page-shell .scenario, .page-shell .note, .page-shell .warning { background: var(--site-surface); }
+.page-shell .warning { border-color: rgba(212,177,115,.45); }
+.page-shell .example-strip figure { background: var(--site-surface); }
+.page-shell .template-card code { color: #edd09c; background: #241b15; }
+.page-shell pre code { color: inherit; background: transparent; }
+.guide-hero { background: linear-gradient(110deg, #241b15, #352619); }

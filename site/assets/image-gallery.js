@@ -1,104 +1,121 @@
 (() => {
-  const tabs = [...document.querySelectorAll('[data-library]')];
-  const grid = document.querySelector('#imageGrid');
-  const status = document.querySelector('#imageLibraryStatus');
-  const base = 'assets/image-references/';
-  let selected = new URLSearchParams(location.search).get('library') === 'image' ? 'image' : 'native';
+  const nativeGrid = document.querySelector('#nativeTemplateGrid');
+  const imageGrid = document.querySelector('#imageGrid');
   const english = () => document.documentElement.lang === 'en';
+  const nativeTemplates = [
+    ['academic_general', '默认增强学术', 'Enhanced academic', '高信息密度 · 学科主题图 · 自定配色', 'Dense evidence · discipline imagery · custom colors', 'assets/slides/work-09/slide-09.jpg'],
+    ['academic_classic', '经典通用学术', 'Classic academic', '研究背景 · 方法 · 结果 · 讨论', 'Background · methods · results · discussion', 'assets/native-templates/template-academic-classic.png'],
+    ['academic_scqa', 'SCQA 学术叙事', 'SCQA academic', '情境 · 冲突 · 问题 · 回答', 'Situation · complication · question · answer', 'assets/native-templates/template-academic-scqa.png'],
+    ['defense_leftnav', '左侧导航答辩', 'Defense / side navigation', '章节常驻左侧，突出答辩进程', 'Persistent side navigation for thesis defenses', 'assets/slides/work-02/slide-08.jpg'],
+    ['defense_topnav', '顶部导航答辩', 'Defense / top navigation', '顶部章节导航，正文空间完整', 'Top chapter navigation with a full-width body', 'assets/slides/work-03/slide-08.jpg'],
+    ['literature_minimal', '简洁文献汇报', 'Minimal literature report', '清晰的图文关系与论文证据', 'Clear figure–text relationships and paper evidence', 'assets/slides/work-01/slide-08.jpg'],
+    ['nsfc_defense', '国自然基金答辩', 'NSFC grant defense', '研究问题 · 技术路线 · 创新与基础', 'Research questions · methods · novelty · track record', 'assets/slides/work-04/slide-05.jpg'],
+    ['thu_speech', '清华学术汇报', 'Tsinghua academic talk', '学术演讲与正式汇报', 'Academic talks and formal presentations', 'assets/slides/work-05/slide-08.jpg'],
+  ];
 
-  function selectLibrary(value, updateUrl = true) {
-    selected = value;
-    tabs.forEach(tab => {
-      const active = tab.dataset.library === value;
-      tab.setAttribute('aria-selected', String(active));
-      tab.tabIndex = active ? 0 : -1;
-      document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
+  function previewLink(source, thumbnail, title, className, width, height) {
+    const link = document.createElement('a');
+    link.className = className;
+    link.href = source;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.setAttribute('aria-label', (english() ? 'View full size: ' : '查看大图：') + title);
+    const img = document.createElement('img');
+    Object.assign(img, { src: thumbnail, alt: title, loading: 'lazy', decoding: 'async', width, height });
+    link.append(img);
+    return link;
+  }
+
+  function copyButton(id, code, status) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'copy-id';
+    button.textContent = english() ? 'Copy ID' : '复制 ID';
+    button.setAttribute('aria-label', (english() ? 'Copy template ID: ' : '复制模板 ID：') + id);
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(id);
+        button.textContent = english() ? 'Copied' : '已复制';
+        status.textContent = (english() ? 'Copied: ' : '已复制：') + id;
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        status.textContent = (english() ? 'Copy the selected ID: ' : '请复制选中的 ID：') + id;
+      }
     });
-    if (updateUrl) {
-      const url = new URL(location.href);
-      url.searchParams.set('library', value);
-      history.replaceState(null, '', url);
-    }
-    render();
+    return button;
   }
 
   function render() {
     const en = english();
-    tabs[0].textContent = en ? 'Showcase decks' : '成品展示';
-    tabs[1].textContent = en ? 'Image references' : '图片参考模板';
-    if (selected !== 'image') return;
-    grid.replaceChildren();
+    nativeGrid.replaceChildren();
+    imageGrid.replaceChildren();
+    const nativeStatus = document.querySelector('#nativeTemplateStatus');
+    const imageStatus = document.querySelector('#imageLibraryStatus');
+    nativeStatus.textContent = imageStatus.textContent = '';
+    nativeTemplates.forEach(([id, zh, name, zhDescription, description, source]) => {
+      const title = en ? name : zh;
+      const card = document.createElement('article');
+      card.className = 'template-card';
+      card.dataset.template = id;
+      const preview = previewLink(source, `assets/native-templates/template-${id.replaceAll('_', '-')}.webp`, title, 'template-preview', 480, 270);
+      const heading = document.createElement('div');
+      heading.className = 'template-title';
+      const h3 = document.createElement('h3');
+      h3.textContent = title;
+      heading.append(h3);
+      if (id === 'academic_general') {
+        const label = document.createElement('span');
+        label.className = 'default-label';
+        label.textContent = en ? 'DEFAULT' : '默认';
+        heading.append(label);
+      }
+      const p = document.createElement('p');
+      p.textContent = en ? description : zhDescription;
+      const code = document.createElement('code');
+      code.textContent = id;
+      const actions = document.createElement('div');
+      actions.className = 'template-actions';
+      actions.append(code, copyButton(id, code, nativeStatus));
+      card.append(preview, heading, p, actions);
+      nativeGrid.append(card);
+    });
+
     const entries = window.imageReferenceTemplates;
-    status.textContent = '';
-    document.querySelector('#imageLibrarySummary').textContent = en
-      ? 'Whole-deck visual references for AI image generation.'
-      : '整套缩略图，用于 AI 生图的配色、版式与背景参考。';
     if (!Array.isArray(entries) || !entries.length) {
-      status.textContent = en ? 'Image references are currently unavailable. Please try again later.' : '图片模板暂时无法加载，请稍后重试。';
+      imageStatus.textContent = en ? 'Style sheets are unavailable. Please try again later.' : '参考风格暂时无法加载，请稍后重试。';
       return;
     }
     entries.forEach(entry => {
       const card = document.createElement('article');
       card.className = 'work-card image-card';
-      const link = document.createElement('a');
-      link.className = 'image-sheet';
-      link.href = base + entry.image;
-      link.target = '_blank';
-      link.rel = 'noopener';
-      link.setAttribute('aria-label', (en ? 'View original: ' : '查看原图：') + entry.name);
-      const img = document.createElement('img');
-      img.src = base + entry.preview;
-      img.alt = entry.name;
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      link.append(img);
-      const title = document.createElement('h3');
-      title.textContent = entry.name;
-      const description = document.createElement('p');
-      description.textContent = entry.style_summary;
-      const id = document.createElement('code');
-      id.textContent = entry.id;
+      const source = 'assets/image-references/' + entry.image;
+      const preview = previewLink(source, `assets/style-previews/${entry.id}.webp`, entry.name, 'image-sheet', 640, 498);
+      const h3 = document.createElement('h3');
+      h3.textContent = entry.name;
+      const p = document.createElement('p');
+      p.textContent = entry.style_summary;
+      const code = document.createElement('code');
+      code.textContent = entry.id;
       const actions = document.createElement('div');
       actions.className = 'image-actions';
       const original = document.createElement('a');
-      original.href = link.href;
-      original.target = '_blank';
-      original.rel = 'noopener';
-      original.textContent = en ? `View original · ${entry.slide_count} slides` : `查看原图 · ${entry.slide_count} 页`;
-      const copy = document.createElement('button');
-      copy.type = 'button';
-      copy.textContent = en ? 'Copy template ID' : '复制模板 ID';
-      copy.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(entry.id);
-          copy.textContent = english() ? 'Copied' : '已复制';
-          status.textContent = english() ? `Copied: ${entry.id}` : `已复制：${entry.id}`;
-        } catch {
-          status.textContent = english() ? `Copy this template ID: ${entry.id}` : `请复制此模板 ID：${entry.id}`;
-          const range = document.createRange();
-          range.selectNodeContents(id);
-          const selection = window.getSelection();
-          selection.removeAllRanges();
-          selection.addRange(range);
-          copy.textContent = english() ? 'ID selected' : '已选中 ID';
-        }
-      });
-      actions.append(original, copy);
-      card.append(link, title, description, id, actions);
-      grid.append(card);
+      Object.assign(original, { href: source, target: '_blank', rel: 'noopener', textContent: en ? `Full size · ${entry.slide_count} slides` : `查看大图 · ${entry.slide_count} 页` });
+      actions.append(original, copyButton(entry.id, code, imageStatus));
+      card.append(preview, h3, p, code, actions);
+      imageGrid.append(card);
     });
   }
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => selectLibrary(tab.dataset.library));
-    tab.addEventListener('keydown', event => {
-      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-      event.preventDefault();
-      const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + 1) % tabs.length;
-      tabs[next].focus();
-      selectLibrary(tabs[next].dataset.library);
-    });
-  });
   window.renderImageReferences = render;
-  selectLibrary(selected, false);
+  render();
+  // Old category URLs now lead to an open section without hiding the others.
+  const params = new URLSearchParams(location.search);
+  if (params.get('view') !== 'detail' && (!location.hash || location.hash === '#catalog')) {
+    const target = params.get('library') === 'image' ? 'image-references' : params.get('route') === 'rebuild' ? 'rebuild-work' : null;
+    if (target) requestAnimationFrame(() => document.getElementById(target).scrollIntoView());
+  }
 })();
