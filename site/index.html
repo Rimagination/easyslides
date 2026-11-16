@@ -1990,9 +1990,9 @@
           </div>
         </div>
         <div class="hero-stats" aria-label="Gallery stats">
-          <div class="hero-stat"><strong>06</strong><span data-i18n="statExamples">案例</span></div>
-          <div class="hero-stat"><strong>116</strong><span data-i18n="statPages">真实页图</span></div>
-          <div class="hero-stat"><strong>05</strong><span data-i18n="statTemplates">汇报场景</span></div>
+          <div class="hero-stat"><strong data-stat="cases">09</strong><span data-i18n="statExamples">案例</span></div>
+          <div class="hero-stat"><strong data-stat="pages">158</strong><span data-i18n="statPages">真实页图</span></div>
+          <div class="hero-stat"><strong data-stat="routes">02</strong><span data-i18n="statTemplates">生成路线</span></div>
         </div>
         <button class="next-entry" type="button" aria-label="进入下一页案例画廊"></button>
       </div>
@@ -2004,6 +2004,15 @@
         <button id="imageTab" type="button" role="tab" aria-selected="false" aria-controls="imagePanel" data-library="image" tabindex="-1">图片参考模板</button>
       </div>
       <div id="nativePanel" role="tabpanel" aria-labelledby="nativeTab">
+      <div class="showcase-routes" role="group" aria-label="生成路线">
+        <button type="button" data-route="native" aria-pressed="true" aria-controls="worksGrid">
+          <span data-i18n="routeNative">原生生成</span><span class="route-count" data-route-count="native">6</span>
+        </button>
+        <button type="button" data-route="rebuild" aria-pressed="false" aria-controls="worksGrid">
+          <span data-i18n="routeRebuild">生图重建</span><span class="route-count" data-route-count="rebuild">3</span>
+        </button>
+      </div>
+      <p class="route-description" id="routeDescription">文字与图形直接生成为 PowerPoint 可编辑对象。</p>
       <div class="filter-row">
         <div class="filter-tabs" aria-label="PPT type filters">
           <button type="button" class="active" data-filter="all" data-i18n="filterAll">全部</button>
@@ -2089,7 +2098,12 @@
         homeSlogan: "生成最懂学术的AI PPT",
         statExamples: "案例",
         statPages: "真实页图",
-        statTemplates: "汇报场景",
+        statTemplates: "生成路线",
+        routeNative: "原生生成",
+        routeRebuild: "生图重建",
+        routeNativeDescription: "文字与图形直接生成为 PowerPoint 可编辑对象。",
+        routeRebuildDescription: "先生成整页图片，再重建文字与结构；复杂配图保留为图片。",
+        noMatchingWorks: "这个类别下暂无对应场景的案例。",
         githubAction: "查看 GitHub 项目",
         filterAll: "全部",
         filterJournal: "组会",
@@ -2114,7 +2128,8 @@
           ["journal", "清华学术汇报", "16 页", "Attention Is All You Need（清华版）", "同一篇 Transformer 论文的清华大学学术汇报样例，使用 thu_speech 正式模板生成，并接入真实导出的 PPT 页面。", "清华学术汇报", "thu_speech", "assets/decks/attention-all-you-need-thu-speech.pptx"],
           ["grant", "基金申请", "12 页", "社会学习促进听觉学习（图片整页重建·可编辑）", "采用图片整页重建路线，参考“重点研发-蓝色科技”图片模板；复杂配图保留为图片，标题、正文、表格与导航重建为可编辑 PowerPoint 元素。", "重点研发-蓝色科技", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
           ["journal", "文献综述", "14 页", "植物功能性状与生态系统", "参考“国自然-绿色”图片模板的整页重建案例，涵盖叶经济谱、根系策略与全球变化；文字和部分结构可编辑，论文原图与复杂插画保留为图片。", "国自然-绿色", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
-          ["journal", "研究综述", "12 页", "基于多模态数据的城市交通流量预测", "参考“国自然-亮蓝白”图片模板，比较交通时序、事件文本与空间信息融合。文字与简单结构可编辑，保留论文原图；当前示例有5页原图对比超阈值记录，使用前请复核。", "国自然-亮蓝白", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"]
+          ["journal", "研究综述", "12 页", "基于多模态数据的城市交通流量预测", "参考“国自然-亮蓝白”图片模板，比较交通时序、事件文本与空间信息融合。文字与简单结构可编辑，保留论文原图；当前示例有5页原图对比超阈值记录，使用前请复核。", "国自然-亮蓝白", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
+          ["journal", "论文汇报", "16 页", "生物多样性与生产力", "基于 Duffy 等发表于 Nature 的 2017 年论文，使用增强版 academic_general 模板：绿色主题、高信息密度、论文原图对比与方法图示。文字与图形直接构建为可编辑对象。", "学术论文汇报", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
         ],
       },
       en: {
@@ -2125,7 +2140,12 @@
         homeSlogan: "Generate AI PPTs that understand academia.",
         statExamples: "Cases",
         statPages: "Pages",
-        statTemplates: "Scenes",
+        statTemplates: "Production routes",
+        routeNative: "Native generation",
+        routeRebuild: "Image rebuild",
+        routeNativeDescription: "Text and graphics are created directly as editable PowerPoint objects.",
+        routeRebuildDescription: "Generate full-slide images, then rebuild text and structures; complex figures remain images.",
+        noMatchingWorks: "No decks match this scene in the selected category.",
         githubAction: "View GitHub project",
         filterAll: "All",
         filterJournal: "Journal Club",
@@ -2150,7 +2170,8 @@
           ["journal", "Tsinghua Academic Talk", "16 slides", "Attention Is All You Need (Tsinghua)", "A real exported Transformer paper deck generated with the official thu_speech template and placed inside presentation scenes.", "Tsinghua Academic Talk", "thu_speech", "assets/decks/attention-all-you-need-thu-speech.pptx"],
           ["grant", "Grant Proposal", "12 slides", "Social Learning Facilitates Auditory Learning (Image Rebuild · Editable)", "An image-reconstruction case study based on the “重点研发-蓝色科技” image template; complex figures remain images while headings, body copy, tables, and navigation are rebuilt as editable PowerPoint elements.", "ZDYF Blue Technology", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
           ["journal", "Literature Review", "14 slides", "Plant Functional Traits and Ecosystems", "Full-slide reconstruction using the NSFC Green image reference, covering leaf economics, root strategies and global change. Text and some structures are editable; original paper figures and complex illustrations remain images.", "NSFC Green", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
-          ["journal", "Research Review", "12 slides", "Multimodal Urban Traffic Flow Prediction", "An NSFC Bright Blue White reconstruction comparing traffic time series, event text and spatial information. Text and simple structures are editable; paper figures remain images. Five pages exceed source-comparison thresholds; review before reuse.", "NSFC Bright Blue White", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"]
+          ["journal", "Research Review", "12 slides", "Multimodal Urban Traffic Flow Prediction", "An NSFC Bright Blue White reconstruction comparing traffic time series, event text and spatial information. Text and simple structures are editable; paper figures remain images. Five pages exceed source-comparison thresholds; review before reuse.", "NSFC Bright Blue White", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
+          ["journal", "Paper Report", "16 slides", "Biodiversity and Productivity", "Duffy et al.'s 2017 Nature paper, presented with the enhanced academic_general template: a green theme, dense evidence, original-figure comparisons and method diagrams. Text and graphics are created as editable objects.", "Academic Paper Report", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
         ],
       }
     };
@@ -2160,6 +2181,11 @@
     let activeSlideIndex = 0;
     let activeSceneId = "seminar";
     let activeTemplateFilter = "";
+    let activeRoute = new URLSearchParams(location.search).get("route") === "rebuild" ? "rebuild" : "native";
+
+    // Keep published work indices stable so existing detail links continue to work.
+    const workRoutes = ["native", "native", "native", "native", "native", "rebuild", "rebuild", "rebuild", "native"];
+    const workDisplayOrder = [8, 0, 1, 2, 3, 4, 5, 6, 7];
 
     const slideAssets = {
       0: [
@@ -2319,6 +2345,24 @@
         "assets/slides/work-08/slide-10.jpg",
         "assets/slides/work-08/slide-11.jpg",
         "assets/slides/work-08/slide-12.jpg"
+      ],
+      8: [
+        "assets/slides/work-09/slide-01.jpg",
+        "assets/slides/work-09/slide-02.jpg",
+        "assets/slides/work-09/slide-03.jpg",
+        "assets/slides/work-09/slide-04.jpg",
+        "assets/slides/work-09/slide-05.jpg",
+        "assets/slides/work-09/slide-06.jpg",
+        "assets/slides/work-09/slide-07.jpg",
+        "assets/slides/work-09/slide-08.jpg",
+        "assets/slides/work-09/slide-09.jpg",
+        "assets/slides/work-09/slide-10.jpg",
+        "assets/slides/work-09/slide-11.jpg",
+        "assets/slides/work-09/slide-12.jpg",
+        "assets/slides/work-09/slide-13.jpg",
+        "assets/slides/work-09/slide-14.jpg",
+        "assets/slides/work-09/slide-15.jpg",
+        "assets/slides/work-09/slide-16.jpg"
       ]
     };
 
@@ -2355,11 +2399,26 @@
     function renderWorks(filter) {
       const grid = document.querySelector("#worksGrid");
       grid.innerHTML = "";
-      copy[currentLang].works.forEach((work, index) => {
+      document.querySelector(".showcase-routes").setAttribute("aria-label", t("statTemplates"));
+      document.querySelectorAll(".showcase-routes button").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.route === activeRoute));
+      });
+      document.querySelectorAll("[data-route-count]").forEach((node) => {
+        node.textContent = workRoutes.filter((route) => route === node.dataset.routeCount).length;
+      });
+      document.querySelector("#routeDescription").textContent = t(activeRoute === "native" ? "routeNativeDescription" : "routeRebuildDescription");
+      document.querySelector('[data-stat="cases"]').textContent = String(workRoutes.length).padStart(2, "0");
+      document.querySelector('[data-stat="pages"]').textContent = Object.values(slideAssets).reduce((total, images) => total + images.length, 0);
+      document.querySelector('[data-stat="routes"]').textContent = String(new Set(workRoutes).size).padStart(2, "0");
+      workDisplayOrder.forEach((index) => {
+        const work = copy[currentLang].works[index];
+        if (workRoutes[index] !== activeRoute) return;
         if (filter !== "all" && work[0] !== filter) return;
         if (activeTemplateFilter && (work[6] || "custom") !== activeTemplateFilter) return;
         const card = document.createElement("article");
         card.className = "work-card";
+        card.dataset.work = index;
+        card.dataset.route = workRoutes[index];
         card.tabIndex = 0;
         const images = getSlideImages(index);
         const cover = images[0] || scenePhotos[sceneForType(work[0])];
@@ -2370,7 +2429,7 @@
             <button class="work-template-tag" type="button" data-template="${work[6] || "custom"}">${work[6] || "custom"}</button>
           </div>
           <div class="slide-preview ${previewClass}">
-            <img class="preview-image" src="${cover}" alt="">
+            <img class="preview-image" src="${cover}" alt="${work[3]}" loading="lazy" decoding="async">
           </div>
           <div>
             <h3>${work[3]}</h3>
@@ -2398,6 +2457,29 @@
         });
         grid.appendChild(card);
       });
+      if (!grid.children.length) {
+        const empty = document.createElement("p");
+        empty.className = "gallery-empty";
+        empty.setAttribute("role", "status");
+        empty.textContent = t("noMatchingWorks");
+        grid.appendChild(empty);
+      }
+    }
+
+    function selectRoute(route, updateUrl = true) {
+      activeRoute = route;
+      activeTemplateFilter = "";
+      document.querySelectorAll(".filter-tabs button").forEach((button) => {
+        button.classList.toggle("active", button.dataset.filter === "all");
+      });
+      renderWorks("all");
+      if (updateUrl) {
+        const url = new URL(location.href);
+        url.searchParams.set("route", route);
+        url.searchParams.delete("view");
+        url.searchParams.delete("work");
+        history.replaceState(null, "", url);
+      }
     }
 
     function showTemplateGroup(templateName) {
@@ -2409,6 +2491,8 @@
     }
 
     function openDetail(index) {
+      if (!copy[currentLang].works[index]) index = 0;
+      if (workRoutes[index] !== activeRoute) selectRoute(workRoutes[index], false);
       activeWorkIndex = index;
       activeSlideIndex = 0;
       activeSceneId = sceneForType((copy[currentLang].works[index] || copy[currentLang].works[0])[0]);
@@ -2507,6 +2591,10 @@
         button.classList.add("active");
         renderWorks(button.dataset.filter);
       });
+    });
+
+    document.querySelectorAll(".showcase-routes button").forEach((button) => {
+      button.addEventListener("click", () => selectRoute(button.dataset.route));
     });
 
     document.querySelector(".back-button").addEventListener("click", () => {

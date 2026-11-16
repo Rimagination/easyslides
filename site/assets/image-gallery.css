@@ -4,6 +4,13 @@
 .library-tabs button:focus-visible, .image-card a:focus-visible, .image-card button:focus-visible { outline: 2px solid #287c76; outline-offset: 4px; }
 #nativePanel[hidden], #imagePanel[hidden] { display: none; }
 #imageLibrarySummary { margin: 0 0 24px; color: var(--muted); font-size: 16px; }
+.showcase-routes { display: flex; flex-wrap: wrap; gap: 12px 30px; margin: 0 0 12px; }
+.showcase-routes button { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 0 8px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--muted); font: inherit; font-size: 20px; cursor: pointer; }
+.showcase-routes button[aria-pressed="true"] { border-bottom-color: var(--ink); color: var(--ink); font-weight: 700; }
+.showcase-routes button:focus-visible { outline: 2px solid var(--green); outline-offset: 5px; }
+.route-count { font-family: var(--font-latin); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--muted); }
+.route-description { margin: 0 0 26px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.gallery-empty { grid-column: 1 / -1; margin: 0; padding: 24px 0; color: var(--muted); }
 .image-card { cursor: default; align-content: start; min-width: 0; }
 .image-card:hover { transform: none; }
 .image-sheet { display: block; aspect-ratio: 4 / 3; background: #f5f5f5; border: 1px solid var(--line); overflow: hidden; }
@@ -14,4 +21,4 @@
 .image-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
 .image-actions a, .image-actions button { font: inherit; font-size: 14px; color: inherit; }
 .image-actions button { background: none; border: 1px solid var(--line); border-radius: 4px; padding: 7px 10px; cursor: pointer; }
-@media (max-width: 600px) { .library-tabs { gap: 24px; } .library-tabs button { font-size: 18px; } }
+@media (max-width: 600px) { .library-tabs { gap: 24px; } .library-tabs button { font-size: 18px; } .showcase-routes { gap: 10px 22px; } .showcase-routes button { gap: 7px; font-size: 17px; } }
