@@ -36,7 +36,7 @@ EasySlides 是面向科研汇报的 Agent 插件，用于论文组会、学术�
 
 </details>
 
-[浏览更多成稿](http://easyslides.scansci.com/) · 示例包含仓库未发布增强，npm 以[已发布版本](CHANGELOG.md)为准。
+[浏览更多成稿](http://easyslides.scansci.com/) · [更新记录](CHANGELOG.md)
 
 <a id="get-started"></a>
 

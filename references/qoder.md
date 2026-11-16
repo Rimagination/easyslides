@@ -38,6 +38,12 @@ production scheme. See `INSTALL.md` for the shared runtime prerequisites.
 
 ## Build and publish
 
+Check the account and publication list in the user's Qoder region. The
+international portal is `qoder.com`; use
+[the China portal](https://qoder.cn/account/apphub-publications) only for
+a China-site account. A publication list on one portal does not establish
+submission or review status on the other.
+
 From a source checkout:
 
 ```sh
@@ -52,11 +58,11 @@ source papers, credentials, development-only templates and other hosts' active
 plugin manifests. Validate both the directory and the ZIP with Qoder's bundled
 `create-plugin` validator before submitting a release.
 
-Submit through [My publications](https://qoder.cn/account/apphub-publications),
+Submit through [My publications](https://qoder.com/account/apphub-publications),
 choosing Plugin. Provide the archive, listing and logo, then follow the current
 form's requirements. Submission does not guarantee approval or public listing.
 The repository's `marketplace.json` is for the existing host marketplace and is
 not a substitute for submitting to Qoder.
 
 Official references: [Plugin format](https://docs.qoder.cn/qoder-plugins),
-[publication and review](https://docs.qoder.cn/qoderwork/user-guide/qoderwork-extension-release-guide-skill-plugin-connector).
+[publication and review](https://docs.qoder.com/zh/qoderwork/skill-marketplace-guidelines).

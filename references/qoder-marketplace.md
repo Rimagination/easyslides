@@ -36,7 +36,13 @@ Python 3.10+ 和运行依赖用于实际制作；预览需要 PowerPoint 或 Lib
 
 ## Submission
 
-Sign in at [My publications](https://qoder.cn/account/apphub-publications), choose
+Check the account and publication list in the user's Qoder region. The
+international portal is `qoder.com`; use
+[the China portal](https://qoder.cn/account/apphub-publications) only for
+a China-site account. A publication list on one portal does not establish
+submission or review status on the other.
+
+Sign in at [My publications](https://qoder.com/account/apphub-publications), choose
 Plugin, upload the package and logo, and adapt the copy above to the live form's
 fields and limits. Select the closest available productivity or document category.
 The account owner supplies publisher identity when requested by the platform.
@@ -45,4 +51,4 @@ Run Qoder's bundled `create-plugin` offline validator against both the plugin
 directory and the final ZIP before submission. Record runtime validation
 separately from marketplace review; a passing package check is not approval.
 
-Reference: [Qoder publication guide](https://docs.qoder.cn/qoderwork/user-guide/qoderwork-extension-release-guide-skill-plugin-connector).
+Reference: [Qoder publication guide](https://docs.qoder.com/zh/qoderwork/skill-marketplace-guidelines).

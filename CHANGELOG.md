@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## 1.2.2 — 2026-11-16
 
-### 1.2.2 — native academic authoring (local candidate)
+### Native academic authoring
 
 - Make expert-level page arguments, complementary scientific evidence and
   source permissions explicit in the default skill and DSH bootstrap.
