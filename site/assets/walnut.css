@@ -1,15 +1,16 @@
 /* Shared website chrome. Actual slides retain their original colors. */
 :root {
-  --site-walnut: #241b15;
-  --site-surface: #30251d;
-  --site-ink: #f4ebdb;
-  --site-muted: #c1af96;
-  --site-gold: #d4b173;
-  --site-line: rgba(212, 177, 115, .24);
+  --site-walnut: #594837;
+  --site-surface: #65513f;
+  --site-ink: #fff6e8;
+  --site-muted: #dfd0bc;
+  --site-gold: #e9c88c;
+  --site-line: rgba(233, 200, 140, .32);
 }
 html, body, .detail { background: var(--site-walnut); }
+html, body { overflow-x: clip; }
 body { color: var(--site-ink); }
-.topbar { background: #241b15; border-bottom-color: var(--site-line); }
+.topbar { width: 100%; max-width: 100%; background: var(--site-walnut); border-bottom-color: var(--site-line); }
 :focus-visible { outline: 2px solid var(--site-gold); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -39,6 +40,7 @@ body:has(.page-shell) {
 .page-shell .scenario, .page-shell .note, .page-shell .warning { background: var(--site-surface); }
 .page-shell .warning { border-color: rgba(212,177,115,.45); }
 .page-shell .example-strip figure { background: var(--site-surface); }
-.page-shell .template-card code { color: #edd09c; background: #241b15; }
+.page-shell .template-card code { color: #edd09c; background: #554232; }
+.page-shell .prompt-box { background: var(--site-surface); }
 .page-shell pre code { color: inherit; background: transparent; }
-.guide-hero { background: linear-gradient(110deg, #241b15, #352619); }
+.guide-hero { background: linear-gradient(110deg, #554232, #5f4d3d); }
