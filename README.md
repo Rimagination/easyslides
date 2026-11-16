@@ -25,18 +25,18 @@ EasySlides 是面向科研汇报的 Agent 插件，用于论文组会、学术�
 
 | 原生可编辑 | 先生图，再重建为可编辑 PPT |
 | --- | --- |
-| [![原生路线示例：绿色学术论文汇报，比较两幅原图，文字和版式直接构建为可编辑对象](assets/readme/native-editable.png)](assets/readme/native-editable.png) | [![图片整页重建示例：蓝色研究计划汇报，保留复杂实验配图，重建标题、文字和简单结构](site/assets/slides/work-06/slide-06.jpg)](http://easyslides.scansci.com/?view=detail&work=5) |
+| [![原生路线示例：绿色学术论文汇报，比较两幅原图，文字和版式直接构建为可编辑对象](assets/readme/previews/native-editable.webp)](assets/readme/native-editable.png) | [![图片整页重建示例：蓝色研究计划汇报，保留复杂实验配图，重建标题、文字和简单结构](assets/readme/previews/image-rebuild.webp)](https://easyslides.scansci.com/?view=detail&work=5) |
 
 **近期重点增强：默认原生模板 `academic_general`**，支持多图比较、可编辑方法图示、灵活图文组合与统一对齐。其他模板尚未全部同步这些增强。
 
 <details>
 <summary><strong>展开看原生方法页</strong></summary>
 
-![原生方法页：用矩阵、公式和分组表达 Duffy 2017 的三个统计分析分支](assets/readme/native-method.png)
+[![原生方法页：用矩阵、公式和分组表达 Duffy 2017 的三个统计分析分支](assets/readme/previews/native-method.webp)](assets/readme/native-method.png)
 
 </details>
 
-[浏览更多成稿](http://easyslides.scansci.com/) · [更新记录](CHANGELOG.md)
+[浏览更多成稿](https://easyslides.scansci.com/) · [更新记录](CHANGELOG.md)
 
 <a id="get-started"></a>
 
@@ -80,6 +80,14 @@ dsh plugin --profile desktop add easyslides
 
 ## 模板与主题
 
+### 默认模板与学科主题图
+
+`academic_general` 按材料中的学科匹配十四类主题图，裁剪复用于封面、目录、页眉和结尾；主题色由用户指定，文字与图形保持原生可编辑。也可生成专属主题图或使用自带图片。
+
+<p align="center">
+  <a href="assets/readme/discipline-themes.jpg"><img src="assets/readme/previews/discipline-themes.webp" width="640" alt="十四类学科主题图的无文字拼图，点击查看大图"></a>
+</p>
+
 <a id="choose-color"></a>
 
 ### 主题色示例
@@ -88,11 +96,11 @@ dsh plugin --profile desktop add easyslides
 
 | 学术深蓝 · 历史学 | 清华风紫 · 文学 |
 | --- | --- |
-| [![学术深蓝主题：考古遗址配图与深蓝标题横幅](assets/readme/theme-academic-blue.jpg)](assets/readme/theme-academic-blue.jpg) | [![清华风紫主题：书桌阅读配图与紫色标题横幅](assets/readme/theme-academic-purple.jpg)](assets/readme/theme-academic-purple.jpg) |
+| [![学术深蓝主题：考古遗址配图与深蓝标题横幅](assets/readme/previews/theme-academic-blue.webp)](assets/readme/theme-academic-blue.jpg) | [![清华风紫主题：书桌阅读配图与紫色标题横幅](assets/readme/previews/theme-academic-purple.webp)](assets/readme/theme-academic-purple.jpg) |
 
 | 深绿色 · 农学 | 科技蓝 · 工学 |
 | --- | --- |
-| [![深绿色主题：农业试验田配图与绿色标题横幅](assets/readme/theme-academic-green.jpg)](assets/readme/theme-academic-green.jpg) | [![科技蓝主题：晶圆与精密设备配图、亮蓝色标题横幅](assets/readme/theme-technology-blue.jpg)](assets/readme/theme-technology-blue.jpg) |
+| [![深绿色主题：农业试验田配图与绿色标题横幅](assets/readme/previews/theme-academic-green.webp)](assets/readme/theme-academic-green.jpg) | [![科技蓝主题：晶圆与精密设备配图、亮蓝色标题横幅](assets/readme/previews/theme-technology-blue.webp)](assets/readme/theme-technology-blue.jpg) |
 
 配色与学科不绑定。[查看整套示例](templates/layouts/academic_general/assets/theme_palette_preview.png)
 
@@ -100,43 +108,35 @@ dsh plugin --profile desktop add easyslides
 
 ### 风格模板
 
-八套正式原生模板；以下是四套其他模板的成稿，点击查看整套 PPT。
+八套正式原生模板，点击缩略图查看大图。
 
-| 文献汇报 | 导航答辩 |
-| --- | --- |
-| [![literature_minimal 实际成稿：Transformer 文献汇报](site/assets/slides/work-01/slide-08.jpg)](http://easyslides.scansci.com/?view=detail&work=0) | [![defense_topnav 实际成稿：顶部章节导航的学位论文答辩](site/assets/slides/work-03/slide-08.jpg)](http://easyslides.scansci.com/?view=detail&work=2) |
-
-| 基金答辩 | 清华汇报 |
-| --- | --- |
-| [![nsfc_defense 实际成稿：科学问题、总体目标与三项研究内容](site/assets/slides/work-04/slide-05.jpg)](http://easyslides.scansci.com/?view=detail&work=3) | [![thu_speech 实际成稿：清华风格 Transformer 机制汇报](site/assets/slides/work-05/slide-08.jpg)](http://easyslides.scansci.com/?view=detail&work=4) |
-
-<details>
+<details open>
 <summary><strong>查看全部八套原生模板</strong></summary>
 
-| 模板 ID | 页面组织 |
+| 模板与页面组织 | 预览 |
 | --- | --- |
-| `academic_general` | 默认增强学术模板 |
-| `academic_classic` | 经典通用学术版式 |
-| `academic_scqa` | 情境、冲突、问题与回答 |
-| `defense_leftnav` | 左侧章节导航答辩 |
-| `defense_topnav` | 顶部章节导航答辩 |
-| `literature_minimal` | 简洁文献汇报 |
-| `nsfc_defense` | 国家自然科学基金项目答辩 |
-| `thu_speech` | 清华学术汇报风格 |
+| `academic_general`<br>默认增强学术模板 | [<img src="assets/readme/previews/template-academic-general.webp" width="160" alt="默认增强学术模板的多图证据比较页">](site/assets/slides/work-09/slide-09.jpg) |
+| `academic_classic`<br>经典通用学术版式 | [<img src="assets/readme/previews/template-academic-classic.webp" width="160" alt="经典通用学术模板的封面示例">](assets/readme/template-academic-classic.png) |
+| `academic_scqa`<br>情境、冲突、问题与回答 | [<img src="assets/readme/previews/template-academic-scqa.webp" width="160" alt="SCQA 学术模板的封面示例">](assets/readme/template-academic-scqa.png) |
+| `defense_leftnav`<br>左侧章节导航答辩 | [<img src="assets/readme/previews/template-defense-leftnav.webp" width="160" alt="左侧章节导航答辩成稿">](site/assets/slides/work-02/slide-08.jpg) |
+| `defense_topnav`<br>顶部章节导航答辩 | [<img src="assets/readme/previews/template-defense-topnav.webp" width="160" alt="顶部章节导航答辩成稿">](site/assets/slides/work-03/slide-08.jpg) |
+| `literature_minimal`<br>简洁文献汇报 | [<img src="assets/readme/previews/template-literature-minimal.webp" width="160" alt="简洁文献汇报的 Transformer 论文页面">](site/assets/slides/work-01/slide-08.jpg) |
+| `nsfc_defense`<br>国家自然科学基金项目答辩 | [<img src="assets/readme/previews/template-nsfc-defense.webp" width="160" alt="国自然基金答辩的科学问题与研究内容页">](site/assets/slides/work-04/slide-05.jpg) |
+| `thu_speech`<br>清华学术汇报风格 | [<img src="assets/readme/previews/template-thu-speech.webp" width="160" alt="清华学术汇报的 Transformer 机制页">](site/assets/slides/work-05/slide-08.jpg) |
 
 </details>
 
-<details>
+<details open>
 <summary><strong>图片路线：十三套参考风格</strong></summary>
 
 三例预览，点击查看完整参考图：
 
 | 国自然 · 绿色 | 国自然 · 紫色 | 重点研发 · 蓝色科技 |
 | --- | --- | --- |
-| [![国自然绿色图片参考风格](templates/image_references/nsfc_green_preview.jpg)](templates/image_references/nsfc_green.png) | [![国自然紫色图片参考风格](templates/image_references/nsfc_purple_preview.jpg)](templates/image_references/nsfc_purple.png) | [![重点研发蓝色科技图片参考风格](templates/image_references/rdp_blue_technology_preview.jpg)](templates/image_references/rdp_blue_technology.png) |
+| [![国自然绿色图片参考风格](assets/readme/previews/reference-nsfc-green.webp)](templates/image_references/nsfc_green.png) | [![国自然紫色图片参考风格](assets/readme/previews/reference-nsfc-purple.webp)](templates/image_references/nsfc_purple.png) | [![重点研发蓝色科技图片参考风格](assets/readme/previews/reference-zdyf-blue.webp)](templates/image_references/rdp_blue_technology.png) |
 | `nsfc_green` | `nsfc_purple` | `zdyf_blue` |
 
-支持自带 PPT 或参考图片。[浏览全部风格](http://easyslides.scansci.com/?library=image#catalog)
+支持自带 PPT 或参考图片。[浏览全部风格](https://easyslides.scansci.com/?library=image#catalog)
 
 </details>
 
@@ -183,7 +183,7 @@ Theme colors are user-defined. The four palettes above are examples and are not 
 
 The default `academic_general` has recently gained richer figure comparisons, editable method diagrams and varied content layouts. Other templates have not all received these enhancements. Preserved research figures remain images; final visual review needs a human or an image-capable model.
 
-[Examples](http://easyslides.scansci.com/) · [Release status](CHANGELOG.md) · [中文](#中文)
+[Examples](https://easyslides.scansci.com/) · [Release status](CHANGELOG.md) · [中文](#中文)
 
 Credits are listed above; third-party templates and images require their own permissions. Code license: [MIT](LICENSE).
 
