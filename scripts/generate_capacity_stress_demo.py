@@ -22,7 +22,7 @@ except ModuleNotFoundError:  # pragma: no cover - direct script execution fallba
 ROOT = Path(__file__).resolve().parents[1]
 LAYOUTS_ROOT = ROOT / "templates" / "layouts"
 ACTIVE_TEMPLATES = (
-    "academic_general",
+    "academic_classic",
     "academic_scqa",
     "defense_leftnav",
     "defense_topnav",

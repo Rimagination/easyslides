@@ -1,0 +1,305 @@
+"""Source-led academic body compositions for the existing SVG/DrawingML backend.
+
+The model selects evidence and writes the argument. This module handles shared
+geometry, explicit text frames and scientific structures, without card chrome.
+It checks declared evidence/structure, not whether a scientific claim is true.
+"""
+from __future__ import annotations
+
+import re
+from typing import Callable, Any
+from xml.etree import ElementTree as ET
+
+try:
+    from scripts.layout_metrics import estimate_text_width_px
+except ModuleNotFoundError:
+    from layout_metrics import estimate_text_width_px
+
+
+CONTRACT = 'academic_native.v1'
+NS = 'http://www.w3.org/2000/svg'
+KINDS = {'figure_analysis', 'figure_comparison', 'method_diagram', 'evidence_matrix', 'evidence_atlas'}
+FUNCTIONAL_ROLES = {'cover', 'toc', 'chapter', 'ending', 'paper_identity', 'references', 'title'}
+TEACHING_COPY = re.compile(r'如何解读|读图指南|这页告诉我们|一图看懂|给小白')
+
+
+def _node(parent: ET.Element | None, tag: str, **attrs) -> ET.Element:
+    el = ET.Element(f'{{{NS}}}{tag}', {key.replace('_', '-'): str(value) for key, value in attrs.items()})
+    if parent is not None:
+        parent.append(el)
+    return el
+
+
+def _wrap(value: str, width: float, size: float) -> list[str]:
+    result = []
+    for paragraph in str(value).split('\n'):
+        line = ''
+        # Keep author-year citations together; never strand a year or bracket.
+        for token in re.findall(r'\([^()\n]*\bet al\.[^()\n]*\)|[A-Za-z0-9_]+|\s+|.', paragraph):
+            if line and estimate_text_width_px(line + token, size) > width - 6:
+                result.append(line.rstrip()); line = token.lstrip()
+            else:
+                line += token
+        result.append(line.rstrip())
+    if len(result) > 1 and re.fullmatch(r'[\u4e00-\u9fff]{1,2}[。，；！？]?', result[-1]):
+        # Avoid a one-character final line without splitting a Latin word.
+        tail = re.search(r'[\u4e00-\u9fff]{3}$', result[-2])
+        if tail:
+            result[-1] = tail.group() + result[-1]
+            result[-2] = result[-2][:-3]
+    return result
+
+
+def _text(parent, x, y, w, h, value, *, role='body', bold=False, color='#17251F', align='left'):
+    size = {'body': 24, 'body_heading': 24, 'secondary': 64 / 3, 'caption': 56 / 3, 'display': 40}[role]
+    lines = _wrap(value, w, size)
+    step = size * 1.3
+    if len(lines) * step > h + 1 or any(estimate_text_width_px(v, size) > w for v in lines):
+        raise ValueError(f'Text exceeds {role} capacity; shorten or change composition, never shrink: {str(value)[:65]}')
+    tx = x + w / 2 if align == 'center' else x
+    node = _node(parent, 'text', x=tx, y=y + size, font_family='KaiTi, Times New Roman' if role == 'caption' else 'Microsoft YaHei',
+                 font_size=size, font_weight='700' if bold else '400', fill=color,
+                 text_anchor='middle' if align == 'center' else 'start',
+                 data_pptx_textbox='true', data_pptx_box_x=x, data_pptx_box_y=y,
+                 data_pptx_box_w=w, data_pptx_box_h=h, data_pptx_valign='top',
+                 data_pptx_no_wrap='true', data_pptx_line_height_ratio='1.3',
+                 data_pptx_line_spacing_pct='130', data_text_role=role)
+    for i, line in enumerate(lines):
+        span = _node(node, 'tspan', x=tx, y=y + size + i * step)
+        if role == 'caption':
+            for run in re.findall(r'[\u2e80-\u9fff\uf900-\ufaff\u3000-\u303f\uff00-\uffef]+|[^\u2e80-\u9fff\uf900-\ufaff\u3000-\u303f\uff00-\uffef]+', line):
+                font = 'KaiTi' if re.match(r'[\u2e80-\u9fff\uf900-\ufaff\u3000-\u303f\uff00-\uffef]', run) else 'Times New Roman'
+                _node(span, 'tspan', font_family=font).text = run
+        else:
+            span.text = line
+    return node
+
+
+def _arrow(parent, x1, x2, y, color):
+    # One closed silhouette: no overlapping shafts/triangles or exposed stubs.
+    shoulder = x2 - min(13, (x2-x1)*.36)
+    d = f'M {x1} {y-4} H {shoulder} V {y-10} L {x2} {y} L {shoulder} {y+10} V {y+4} H {x1} Z'
+    _node(parent, 'path', d=d, fill=color, filter='url(#layout-arrow-shadow)', data_layout_arrow='solid-block')
+
+
+def _figure(parent, box, figure, resolve):
+    x, y, w, h = box
+    if not figure.get('path') or not figure.get('caption'):
+        raise ValueError('Scientific figure requires path and substantive caption with author/year')
+    href = resolve(str(figure['path']))
+    _node(parent, 'image', x=x, y=y, width=w, height=h, href=href,
+          preserveAspectRatio='xMidYMid meet', data_evidence_source=figure.get('source_id', ''))
+
+
+def _facts(parent, x, y, w, height, facts, color):
+    if not isinstance(facts, list) or not facts:
+        raise ValueError('Figure analysis needs complementary facts, estimates or comparisons')
+    step = height / len(facts)
+    for i, fact in enumerate(facts):
+        if isinstance(fact, str):
+            _text(parent, x, y+i*step, w, step-12, fact)
+        else:
+            _text(parent, x, y+i*step, w, 56, str(fact['value']), role='display', bold=True, color=color)
+            _text(parent, x, y+i*step+62, w, step-74, str(fact['label']))
+
+
+def _method(parent, composition, color):
+    stages = composition.get('stages', [])
+    if not 2 <= len(stages) <= 4:
+        raise ValueError('Method diagram requires 2–4 meaningful stages')
+    gap = 54
+    w = (1152 - gap * (len(stages)-1)) / len(stages)
+    parallel = composition.get('flow') == 'parallel'
+    title_y, visual_y = (280, 356) if parallel else (204, 286)
+    if parallel:
+        _text(parent, 64, 204, 1152, 64, composition.get('input', ''), bold=True, color=color)
+    for i, stage in enumerate(stages):
+        x = 64 + i * (w+gap)
+        _text(parent, x, title_y, w, 64, stage['title'], role='body_heading', bold=True, color=color)
+        visual = stage.get('visual', {})
+        kind = visual.get('type')
+        if kind == 'matrix':
+            rows, columns = visual.get('rows', []), visual.get('columns', [])
+            if not rows or not columns or len(rows) > (3 if parallel else 5) or len(columns) > 4:
+                raise ValueError('Matrix needs actual row/column labels, at most 5 × 4')
+            left = min(94, w*.30); cw = (w-left)/len(columns); rh = 36
+            for j, label in enumerate(columns):
+                _text(parent, x+left+j*cw, visual_y, cw, 62, label, role='secondary', align='center')
+            for r, label in enumerate(rows):
+                yy = visual_y + 68 + r*rh
+                _text(parent, x, yy, left-4, rh, label, role='secondary')
+                for j in range(len(columns)):
+                    _node(parent, 'rect', x=x+left+j*cw+4, y=yy+3, width=cw-8, height=rh-6,
+                          fill=color, fill_opacity='.12', stroke=color, stroke_width='.5')
+        elif kind == 'formula':
+            formulas = visual.get('lines', [])
+            if not formulas or len(formulas) > 3:
+                raise ValueError('Formula stage needs source-supported expressions')
+            for j, formula in enumerate(formulas):
+                _text(parent, x, visual_y+24+j*54, w, 54, str(formula), color=color)
+        elif kind == 'groups':
+            labels = visual.get('labels', [])
+            if not 1 <= len(labels) <= (3 if parallel else 4):
+                raise ValueError('Output groups need 1–4 source-supported labels')
+            for j, label in enumerate(labels):
+                _text(parent, x, visual_y+14+j*48, w, 42, str(label), bold=True, color=color)
+                _node(parent, 'line', x1=x, x2=x+w, y1=visual_y+56+j*48, y2=visual_y+56+j*48, stroke=color, stroke_opacity='.25')
+        else:
+            raise ValueError('NATIVE-METHOD-VISUAL: stages need a matrix, formula or meaningful output grouping; prose plus arrows is insufficient')
+        _text(parent, x, 548, w, 76, '\n'.join(stage.get('facts', [])), role='secondary')
+        if i < len(stages)-1 and not parallel:
+            _arrow(parent, x+w+9, x+w+gap-9, 410, color)
+    _text(parent, 64, 632, 1152, 30, composition.get('caption', ''), role='caption', align='center')
+
+
+def _table(parent, x, y, width, height, headers, rows, color):
+    if not headers or not rows or len(rows) > 6 or len(headers) > 5:
+        raise ValueError('Comparison table needs 1–6 actual rows and at most 5 columns')
+    table = _node(parent, 'g', data_pptx_table='true', data_pptx_table_x=x, data_pptx_table_y=y,
+                  data_pptx_table_w=width, data_pptx_table_h=height)
+    rh, cw = height/(len(rows)+1), width/len(headers)
+    for r, values in enumerate([headers, *rows]):
+        if len(values) != len(headers):
+            raise ValueError('Comparison table row width must match headers')
+        for c, value in enumerate(values):
+            cell = _node(table, 'g', data_pptx_table_cell='true', data_pptx_table_row=r+1, data_pptx_table_col=c+1)
+            _node(cell, 'rect', x=x+c*cw, y=y+r*rh, width=cw, height=rh, fill='#FFFFFF', stroke='#D3E4DA', stroke_width='.5')
+            _text(cell, x+c*cw+10, y+r*rh+6, cw-20, rh-12, str(value), bold=r==0, color=color if r==0 else '#17251F')
+
+
+def render_composition(composition: dict, *, image_resolver: Callable[[str], str], colors: dict) -> ET.Element:
+    kind = composition.get('kind')
+    if kind not in KINDS:
+        raise ValueError(f'Unknown scientific composition: {kind}')
+    parent = _node(None, 'g', id='scientific-body', data_composition_kind=kind)
+    color = colors.get('primary', '#194A37')
+    if kind == 'method_diagram':
+        _method(parent, composition, color)
+    elif kind == 'figure_analysis':
+        fig = composition['figure']
+        # Aspect-informed width avoids putting a portrait graph in a huge banner slot.
+        aspect = float(fig.get('aspect_ratio', 1.5))
+        w = max(460, min(760, aspect*330+40))
+        _figure(parent, (64, 212, w, 340), fig, image_resolver)
+        _text(parent, 64, 566, w, 88, fig['caption'], role='caption', align='center')
+        _facts(parent, 64+w+42, 226, 1110-w, 404, composition.get('facts'), color)
+    elif kind == 'figure_comparison':
+        figures = composition.get('figures', [])
+        if not 2 <= len(figures) <= 4:
+            raise ValueError('Figure comparison requires 2–4 complementary panels')
+        columns = 2 if len(figures) == 4 else len(figures)
+        w = (1152-32*(columns-1))/columns
+        legend = composition.get('legend')
+        if legend:
+            _text(parent, 64, 204, 1152, 34, legend, role='secondary')
+        for i, fig in enumerate(figures):
+            x = 64+(i % columns)*(w+32)
+            if len(figures) == 4:
+                y = (248+(i // columns)*204) if legend else (204+(i // columns)*224)
+                _text(parent, x, y, w, 34, fig.get('title', ''), bold=True, color=color)
+                _figure(parent, (x, y+40, w, 108 if legend else 130), fig, image_resolver)
+                _text(parent, x, y+(154 if legend else 176), w, 50, fig['caption'], role='caption', align='center')
+            else:
+                _text(parent, x, 244 if legend else 204, w, 32 if legend else 64, fig.get('title', ''), bold=True, color=color)
+                _figure(parent, (x, 274, w, 276), fig, image_resolver)
+                _text(parent, x, 566, w, 88, fig['caption'], role='caption', align='center')
+    elif kind == 'evidence_atlas':
+        metrics, figures = composition.get('metrics', []), composition.get('figures', [])
+        if not 2 <= len(metrics) <= 4 or not 1 <= len(figures) <= 3:
+            raise ValueError('Evidence atlas needs 2–4 linked metrics and 1–3 evidence panels')
+        mw = (1152-42*(len(metrics)-1))/len(metrics)
+        for i, metric in enumerate(metrics):
+            x = 64+i*(mw+42)
+            _text(parent, x, 204, mw, 56, str(metric['value']), role='display', bold=True, color=color)
+            _text(parent, x, 266, mw, 54, metric['label'], role='secondary')
+            if i < len(metrics)-1: _arrow(parent, x+mw+5, x+mw+37, 242, color)
+        w = (1152-28*(len(figures)-1))/len(figures)
+        for i, fig in enumerate(figures):
+            x = 64+i*(w+28)
+            _figure(parent, (x, 330, w, 210), fig, image_resolver)
+            _text(parent, x, 552, w, 100, fig['caption'], role='caption', align='center')
+    elif kind == 'evidence_matrix':
+        figures = composition.get('figures', [])
+        table_y = 204
+        if figures:
+            if len(figures) > 3: raise ValueError('Use at most three evidence columns')
+            aligned = len(composition['headers']) == len(figures)+1
+            cw = 1152/len(composition['headers'])
+            w = cw-20 if aligned else (1152-30*(len(figures)-1))/len(figures)
+            if aligned and composition.get('figure_label'):
+                _text(parent, 64, 244, cw-20, 114, composition['figure_label'], bold=True, color=color)
+            for i, fig in enumerate(figures):
+                x = 64+(i+1)*cw+10 if aligned else 64+i*(w+30)
+                _figure(parent, (x, 204, w, 150), fig, image_resolver)
+                _text(parent, x, 364, w, 70, fig['caption'], role='caption', align='center')
+            table_y = 442
+        _table(parent, 64, table_y, 1152, 654-table_y, composition['headers'], composition['rows'], color)
+    return parent
+
+
+def _copy_text(value: Any) -> list[str]:
+    if isinstance(value, str): return [value]
+    if isinstance(value, list): return [s for v in value for s in _copy_text(v)]
+    if isinstance(value, dict):
+        return [s for k,v in value.items() if k not in {'path','source_id','source_ids','kind','type','aspect_ratio'} for s in _copy_text(v)]
+    return []
+
+
+def validate_academic_authoring(plan: dict) -> list[dict]:
+    if plan.get('authoring_contract') != CONTRACT:
+        return []  # existing edits and other production schemes keep their contract
+    issues = []
+    def fail(code, message, path, severity='error'):
+        issues.append(dict(code=code, severity=severity, message=message, path=path))
+    source_map = plan.get('source_map', [])
+    source_ids = {str(x.get('id')) for x in source_map if isinstance(x, dict)} if isinstance(source_map, list) else set(source_map)
+    if (plan.get('academic_brief') or {}).get('source_policy') not in {'supplied_only','research','hybrid'}:
+        fail('NATIVE-SOURCE-POLICY', 'Resolve evidence scope with the user; do not invent permission or supplied-only constraints', 'academic_brief.source_policy')
+    recent = []
+    for i, slide in enumerate(plan.get('slides', [])):
+        if not isinstance(slide, dict) or slide.get('role') in FUNCTIONAL_ROLES: continue
+        loc = f'slides[{i}]'
+        brief = slide.get('page_brief') or {}
+        if not isinstance(brief, dict): brief = {}
+        for key in ('question','information_gain','visual_rationale'):
+            if not isinstance(brief.get(key), str) or not brief[key].strip():
+                fail('NATIVE-PAGE-BRIEF', f'Every content page needs {key}, not a filler text quota', f'{loc}.page_brief.{key}')
+        composition = slide.get('composition')
+        payload = slide.get('slot_payload') or {}
+        copy = [slide.get('action_title',''), *_copy_text(payload), *_copy_text(composition)]
+        if any(TEACHING_COPY.search(s) for s in copy):
+            fail('NATIVE-AUDIENCE-LANGUAGE', 'Use source-supported academic judgments, without teaching/meta reading labels', loc)
+        title = re.sub(r'\W', '', str(payload.get('PAGE_TITLE', slide.get('action_title',''))))
+        for key in ('KEY_MESSAGE','TAKEAWAY'):
+            hint = re.sub(r'\W', '', ''.join(_copy_text(payload.get(key))))
+            if len(title) >= 8 and title == hint:
+                fail('NATIVE-REPEATED-COPY', 'Page title and hint must add complementary information', f'{loc}.slot_payload.{key}')
+        if not isinstance(composition, dict):
+            if not payload.get('FIGURE') and not str(slide.get('layout_id','')).endswith('result_table'):
+                fail('NATIVE-SCIENTIFIC-VISUAL', 'Provide scientific evidence, a model/analysis diagram or a visual comparison; prose/arrow lists do not suffice', loc)
+            continue
+        if str(slide.get('layout_id', 'scientific_composition')).split('/')[-1] != 'scientific_composition':
+            fail('NATIVE-COMPOSITION-ROUTE', 'Scientific composition must use its registered renderer, not a legacy text layout', f'{loc}.layout_id')
+        kind = composition.get('kind')
+        if kind not in KINDS:
+            fail('NATIVE-COMPOSITION', f'Use a supported scientific composition or extend the registered composer: {kind}', loc)
+            continue
+        recent.append(kind)
+        if len(recent) >= 3 and len(set(recent[-3:])) == 1:
+            fail('NATIVE-LAYOUT-REPETITION', 'Three consecutive identical compositions require re-planning the visual argument', loc)
+        refs = {x.get('source_id') for x in slide.get('evidence_sources', []) if isinstance(x, dict)}
+        if not refs or not refs <= source_ids:
+            fail('NATIVE-EVIDENCE', 'Page claims and explanatory diagrams need resolvable source references', f'{loc}.evidence_sources')
+        figures = composition.get('figures') or []
+        if not isinstance(figures, list):
+            fail('NATIVE-VISUAL-SOURCE', 'figures must be a list of scientific image records', loc)
+            figures = []
+        figures = figures + ([composition['figure']] if composition.get('figure') else [])
+        for j, fig in enumerate(figures):
+            if not isinstance(fig, dict) or not fig.get('path') or not fig.get('caption') or fig.get('source_id') not in source_ids or fig.get('source_id') not in refs:
+                fail('NATIVE-VISUAL-SOURCE', 'Scientific image requires a file, substantive caption and a source cited on this page', f'{loc}.composition.figures[{j}]')
+        if kind == 'method_diagram':
+            for stage in composition.get('stages', []):
+                if (stage.get('visual') or {}).get('type') not in {'matrix','formula','groups'}:
+                    fail('NATIVE-METHOD-VISUAL', 'Method stages need actual inputs, model/transform or outputs; words and arrows are insufficient', loc)
+    return issues

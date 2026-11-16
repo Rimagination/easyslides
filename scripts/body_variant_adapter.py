@@ -135,12 +135,20 @@ def load_body_variant_registry(template: str | Path) -> BodyVariantRegistry:
     template_dir = resolve_template_dir(template)
     payload = _read_json(template_dir / "body_variants.json")
     template_id = str(payload.get("template_id") or template_dir.name)
+    # Legacy semantic packs declare their slot contract once in layouts.json.
+    # An absent variant-level override inherits it; explicit [] still means empty.
+    layouts_path = template_dir / "layouts.json"
+    layouts = _read_json(layouts_path).get("layouts", []) if layouts_path.is_file() else []
+    layout_slots = {row.get("layout_id"): row.get("slots", []) for row in layouts if isinstance(row, dict)}
     variants: dict[str, BodyVariant] = {}
     for item in payload.get("variants", []):
         if not isinstance(item, dict) or not item.get("variant_id"):
             continue
         variant_id = str(item["variant_id"])
-        slot_contracts = _variant_slot_contracts(item.get("slots"))
+        values = item.get("slots") if "slots" in item else layout_slots.get(item.get("layout_id", variant_id), [])
+        slot_contracts = _variant_slot_contracts(values)
+        slot_contracts = tuple({**slot, "required": False} if slot.get("value_policy") == "automatic_slide_index" else slot
+                               for slot in slot_contracts)
         variants[variant_id] = BodyVariant(
             variant_id=variant_id,
             best_for=str(item.get("best_for") or ""),

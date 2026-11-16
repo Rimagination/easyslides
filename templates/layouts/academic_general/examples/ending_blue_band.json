@@ -1,0 +1,14 @@
+{
+  "topic": "Attention Is All You Need",
+  "slides": [
+    {
+      "role": "ending",
+      "slot_payload": {
+        "THANK_YOU": "敬请各位老师批评指正",
+        "PAPER_TITLE": "Attention Is All You Need · Transformer 论文精读",
+        "REPORTER": "汇报人：待填写",
+        "DATE": "日期：待填写"
+      }
+    }
+  ]
+}

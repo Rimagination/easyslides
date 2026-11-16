@@ -25,6 +25,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
         index_path = layouts_root / "layouts_index.json"
         expected_templates = {
             "academic_general",
+            "academic_classic",
             "academic_scqa",
             "defense_leftnav",
             "defense_topnav",
@@ -55,12 +56,12 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
         self.assertTrue(index_path.exists(), "layouts_index.json is required")
         layouts_index = json.loads(index_path.read_text(encoding="utf-8"))
         self.assertEqual(set(layouts_index), expected_templates)
-        self.assertEqual(len(layouts_index), 7)
+        self.assertEqual(len(layouts_index), len(expected_templates))
 
         aliases = json.loads((layouts_root / "aliases.json").read_text(encoding="utf-8"))
-        self.assertEqual(aliases["academic01"], "academic_general")
+        self.assertEqual(aliases["academic01"], "academic_classic")
         self.assertEqual(aliases["academic02"], "academic_scqa")
-        self.assertEqual(aliases["academic_defense"], "academic_general")
+        self.assertEqual(aliases["academic_defense"], "academic_classic")
         self.assertEqual(aliases["defense01"], "defense_leftnav")
         self.assertEqual(aliases["defense02"], "defense_topnav")
         self.assertEqual(aliases["defense_s01"], "defense_leftnav")
@@ -91,7 +92,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
 
     def test_official_templates_use_center_locked_native_text_slots(self):
         official_template_ids = {
-            "academic_general",
+            "academic_classic",
             "academic_scqa",
             "defense_leftnav",
             "defense_topnav",
@@ -229,7 +230,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
         self.assertIn("developer-facing language", reference)
         self.assertIn("one audience-state shift", reference)
 
-        for template_id in ["academic_general", "academic_scqa"]:
+        for template_id in ["academic_classic", "academic_scqa"]:
             template_dir = TEMPLATES / "layouts" / template_id
             spec_text = (template_dir / "design_spec.md").read_text(encoding="utf-8")
             rules_text = (template_dir / "rules.md").read_text(encoding="utf-8")
@@ -245,7 +246,7 @@ class PptMasterTemplateLibraryTests(unittest.TestCase):
                 self.assertEqual(story["transfer_path"][0]["role"], "hook")
                 self.assertEqual(story["transfer_path"][-1]["role"], "takeaway")
 
-        academic_general_spec = (TEMPLATES / "layouts" / "academic_general" / "design_spec.md").read_text(
+        academic_general_spec = (TEMPLATES / "layouts" / "academic_classic" / "design_spec.md").read_text(
             encoding="utf-8"
         )
         for banned in [

@@ -186,7 +186,11 @@ def asset_allowed_for_template(asset: dict[str, Any], capability: dict[str, Any]
 def build_capability_registry(*, layouts_root: str | Path = LAYOUTS_ROOT, write_profiles: bool = False) -> dict[str, Any]:
     root = Path(layouts_root).resolve()
     rows: list[dict[str, Any]] = []
+    aliases_path = root / "aliases.json"
+    aliases = _read_json(aliases_path) if aliases_path.is_file() else {}
     for directory in sorted(path for path in root.iterdir() if path.is_dir()):
+        if directory.name in aliases:
+            continue
         profile_path = directory / PROFILE_FILENAME
         if write_profiles:
             _write_json(profile_path, derive_capability_profile(directory))

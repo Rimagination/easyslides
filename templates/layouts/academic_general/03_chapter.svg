@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+
+  <g id="numeral" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif">
+    <text x="1180" y="520" font-size="200" font-weight="700" fill="#2F759B" fill-opacity="0.12" text-anchor="end" data-slot="CHAPTER_NUM" data-pptx-box-x="920.0" data-pptx-box-y="270.0" data-pptx-box-w="260.0" data-pptx-box-h="330.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{CHAPTER_NUM}}</text>
+  </g>
+  <rect id="tab" x="64" y="281" width="6" height="28" fill="#2F759B" />
+  <g id="kicker" font-family="'SF Mono', Consolas, 'Courier New', monospace" fill="#53616E">
+    <text x="86" y="262" font-size="13" letter-spacing="2" data-pptx-box-x="86.0" data-pptx-box-y="245.8" data-pptx-box-w="1090.0" data-pptx-box-h="21.4" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">PAPER READING</text>
+  </g>
+  <g id="title" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#102F4A">
+    <text x="86" y="312" font-size="40" font-weight="700" data-slot="CHAPTER_TITLE" data-pptx-box-x="86.0" data-pptx-box-y="262.0" data-pptx-box-w="840.0" data-pptx-box-h="66.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{CHAPTER_TITLE}}</text>
+  </g>
+  <g id="framing" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#53616E">
+    <text x="86" y="360" font-size="20" font-weight="400" data-slot="CHAPTER_DESC" data-pptx-box-x="86.0" data-pptx-box-y="335.0" data-pptx-box-w="840.0" data-pptx-box-h="33.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{CHAPTER_DESC}}</text>
+  </g>
+  <path id="page-number-badge" d="M 1244 672 H 1280 V 720 H 1232 V 684 Q 1232 672 1244 672 Z" fill="#D8E1E9" />
+  <g id="meta" font-family="'SF Mono', Consolas, 'Courier New', monospace" fill="#53616E">
+    <text x="64" y="696" font-size="12" data-slot="SOURCE" data-pptx-box-x="64.0" data-pptx-box-y="681.0" data-pptx-box-w="430.0" data-pptx-box-h="19.8" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{SOURCE}}</text>
+    <text x="1256" y="703" font-size="21.3333333" text-anchor="middle" data-slot="PAGE_NUM" data-pptx-box-x="1232" data-pptx-box-y="672" data-pptx-box-w="48" data-pptx-box-h="48" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" font-family="Cambria" font-weight="700" fill="#2F759B" data-center-lock="true">{{PAGE_NUM}}</text>
+  </g>
+</svg>

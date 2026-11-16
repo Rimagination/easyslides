@@ -113,7 +113,7 @@ class PresentationContractTests(unittest.TestCase):
     def test_template_package_can_be_registered_and_validated(self):
         from scripts.template_package import build_package_manifest, validate_package
 
-        template_dir = ROOT / "templates" / "layouts" / "academic_general"
+        template_dir = ROOT / "templates" / "layouts" / "academic_classic"
         manifest = build_package_manifest(template_dir)
         report = validate_package(template_dir, manifest=manifest)
         self.assertEqual(report["status"], "pass", report["issues"])
@@ -144,7 +144,9 @@ class PresentationContractTests(unittest.TestCase):
             (deck_dir / "design_plan.json").write_text(json.dumps(design_plan(), ensure_ascii=False), encoding="utf-8")
             component = build_component_plan(plan)
             (deck_dir / "component_plan.json").write_text(json.dumps(component, ensure_ascii=False), encoding="utf-8")
-            clarification = build_clarification_request("new_deck")
+            clarification = build_clarification_request(
+                "new_deck", known={"template_id": "literature_minimal"}
+            )
             clarification = answer_clarification_request(
                 clarification,
                 {str(row["id"]): str(row["recommended_option_id"]) for row in clarification["question_bank"]},

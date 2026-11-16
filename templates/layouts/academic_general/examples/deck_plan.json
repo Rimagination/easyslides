@@ -1,0 +1,156 @@
+{
+  "slides": [
+    {
+      "role": "cover",
+      "slot_payload": {
+        "TITLE": [
+          "学术论文汇报示例",
+          "方法与证据展示"
+        ],
+        "AUTHORS": "论文作者信息 · 示例",
+        "REPORTER": "汇报人 · 示例",
+        "DATE": "日期 · 示例"
+      }
+    },
+    {
+      "role": "toc",
+      "slot_payload": {
+        "PAGE_TITLE": "目录",
+        "TOC_ITEM_1_TITLE": "研究背景",
+        "TOC_ITEM_2_TITLE": "研究方法",
+        "TOC_ITEM_3_TITLE": "研究结果",
+        "TOC_ITEM_4_TITLE": "结论讨论",
+        "TOC_ITEM_5_TITLE": "展望借鉴"
+      }
+    },
+    {
+      "role": "chapter",
+      "slot_payload": {
+        "CHAPTER_NUM": "01",
+        "CHAPTER_TITLE": "研究背景与问题",
+        "CHAPTER_DESC": "从研究背景进入核心问题"
+      }
+    },
+    {
+      "role": "content",
+      "content_shape": "background",
+      "slot_payload": {
+        "PAGE_TITLE": "用一句话概括论文提出的研究问题",
+        "KEY_MESSAGE": "此页面的内容仅用于演示版式",
+        "BACKGROUND_LINE1": "交代相关领域的研究背景。",
+        "BACKGROUND_LINE2": "指出现有研究仍存在的空白。",
+        "BACKGROUND_LINE3": "说明论文希望解决的问题。",
+        "CORE_PROBLEM": "此处填写论文中的真实问题",
+        "DIAGRAM_TITLE": "研究逻辑",
+        "DIAGRAM_STEP_1": "研究背景",
+        "DIAGRAM_STEP_2": "已有空白",
+        "DIAGRAM_STEP_3": "研究问题",
+        "CHAPTER_LABEL": "研究背景"
+      }
+    },
+    {
+      "role": "content",
+      "content_shape": "method",
+      "slot_payload": {
+        "PAGE_TITLE": "用流程展示论文的研究方法",
+        "KEY_MESSAGE": "每个节点对应实际研究步骤",
+        "STEP_1_LABEL": "研究设计",
+        "STEP_1_DESC": "示例",
+        "STEP_2_LABEL": "资料采集",
+        "STEP_2_DESC": "示例",
+        "STEP_3_LABEL": "分析方法",
+        "STEP_3_DESC": "示例",
+        "STEP_4_LABEL": "结果验证",
+        "STEP_4_DESC": "示例",
+        "STEP_1_DETAIL": "确定研究对象",
+        "STEP_2_DETAIL": "整理原始资料",
+        "STEP_3_DETAIL": "实施分析方法",
+        "STEP_4_DETAIL": "核对分析结果",
+        "CHAPTER_LABEL": "研究方法"
+      }
+    },
+    {
+      "role": "content",
+      "content_shape": "figure",
+      "slot_payload": {
+        "PAGE_TITLE": "用原论文图展示主要证据",
+        "FIGURE": "../assets/example_figure.png",
+        "FIGURE_CAPTION": "图示仅用于说明图片位置",
+        "TAKEAWAY": "用一句话说明图中最重要的发现",
+        "SOURCE": "来源：示例图",
+        "CHAPTER_LABEL": "研究结果"
+      }
+    },
+    {
+      "role": "content",
+      "content_shape": "table",
+      "slot_payload": {
+        "PAGE_TITLE": "用表格比较研究结果",
+        "TABLE_COL1": "项目",
+        "TABLE_COL2": "结果一",
+        "TABLE_COL3": "结果二",
+        "TABLE_COL4": "说明",
+        "TABLE_R1_NAME": "样例一",
+        "TABLE_R1_V2": "—",
+        "TABLE_R1_V3": "—",
+        "TABLE_R1_V4": "示例",
+        "TABLE_R2_NAME": "样例二",
+        "TABLE_R2_V2": "—",
+        "TABLE_R2_V3": "—",
+        "TABLE_R2_V4": "示例",
+        "TABLE_R4_NAME": "重点",
+        "TABLE_R4_V2": "—",
+        "TABLE_R4_V3": "—",
+        "TABLE_R4_V4": "示例",
+        "STAT_VALUE": "示例",
+        "STAT_LABEL": "此处填写有来源的结果",
+        "CHAPTER_LABEL": "研究结果",
+        "KEY_MESSAGE": "示例数值仅用于展示比较方式。"
+      }
+    },
+    {
+      "role": "content",
+      "content_shape": "conclusion",
+      "slot_payload": {
+        "PAGE_TITLE": "概括论文的主要结论",
+        "KEY_MESSAGE": "结论应与论文证据保持一致",
+        "IMPLICATION_LINE1": "总结作者报告的核心发现。",
+        "IMPLICATION_LINE2": "说明该发现适用的条件。",
+        "IMPLICATION_LINE3": "讨论对自身研究的启发。",
+        "STAT_VALUE": "示例",
+        "STAT_LABEL": "此处填写关键结论",
+        "CHAPTER_LABEL": "结论讨论"
+      }
+    },
+    {
+      "role": "content",
+      "content_shape": "outlook",
+      "slot_payload": {
+        "PAGE_TITLE": "讨论研究的价值、局限与下一步",
+        "POINT_1": [
+          "说明值得借鉴的",
+          "研究思路。"
+        ],
+        "POINT_2": [
+          "指出有依据的",
+          "研究限制。"
+        ],
+        "POINT_3": [
+          "提出与证据相符的",
+          "后续方向。"
+        ],
+        "CHAPTER_LABEL": "展望借鉴",
+        "KEY_MESSAGE": "以下内容用于说明讨论页的结构。"
+      }
+    },
+    {
+      "role": "ending",
+      "slot_payload": {
+        "THANK_YOU": "感谢垂听",
+        "KEY_MESSAGE": "欢迎交流与讨论",
+        "REPORTER": "汇报人 · 示例",
+        "REF_1": "此处填写论文的参考信息（示例）"
+      }
+    }
+  ]
+}

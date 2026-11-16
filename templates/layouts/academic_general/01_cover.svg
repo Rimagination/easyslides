@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
-  <rect width="1280" height="720" fill="#FFFFFF"/>
-  <rect width="1280" height="100" fill="#003366"/>
-  <rect width="6" height="100" fill="#CC0000"/>
-  <text x="1160" y="58" text-anchor="middle" fill="#FFFFFF" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" font-weight="700" data-slot="LOGO" data-slot-id="LOGO" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="1075" data-pptx-box-y="20" data-pptx-box-w="170" data-pptx-box-h="54" data-pptx-valign="middle" data-center-lock="true">LOGO</text>
-  <text x="640" y="340" text-anchor="middle" fill="#003366" font-family="Microsoft YaHei, Arial, sans-serif" font-size="56" font-weight="700" data-slot="TITLE" data-slot-id="TITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="120" data-pptx-box-y="270" data-pptx-box-w="1040" data-pptx-box-h="100" data-pptx-valign="middle" data-center-lock="true">TITLE</text>
-  <text x="640" y="408" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="27" data-slot="SUBTITLE" data-slot-id="SUBTITLE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="190" data-pptx-box-y="378" data-pptx-box-w="900" data-pptx-box-h="50" data-pptx-valign="middle" data-center-lock="true">SUBTITLE</text>
-  <line x1="420" y1="455" x2="860" y2="455" stroke="#0066CC" stroke-width="2"/>
-  <circle cx="640" cy="455" r="5" fill="#0066CC"/>
-  <text x="640" y="520" text-anchor="middle" fill="#26384A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="23" data-slot="AUTHOR" data-slot-id="AUTHOR" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="390" data-pptx-box-y="495" data-pptx-box-w="500" data-pptx-box-h="42" data-pptx-valign="middle" data-center-lock="true">AUTHOR</text>
-  <text x="640" y="558" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="19" data-slot="ADVISOR" data-slot-id="ADVISOR" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="390" data-pptx-box-y="536" data-pptx-box-w="500" data-pptx-box-h="35" data-pptx-valign="middle" data-center-lock="true">ADVISOR</text>
-  <text x="640" y="596" text-anchor="middle" fill="#52657A" font-family="Microsoft YaHei, Arial, sans-serif" font-size="18" data-slot="INSTITUTION" data-slot-id="INSTITUTION" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="310" data-pptx-box-y="576" data-pptx-box-w="660" data-pptx-box-h="32" data-pptx-valign="middle" data-center-lock="true">INSTITUTION</text>
-  <rect x="0" y="665" width="1280" height="55" fill="#F5F7FA"/>
-  <text x="640" y="699" text-anchor="middle" fill="#6B7C8F" font-family="Microsoft YaHei, Arial, sans-serif" font-size="14" data-slot="DATE" data-slot-id="DATE" data-slot-kind="text" data-pptx-textbox="true" data-pptx-box-x="460" data-pptx-box-y="681" data-pptx-box-w="360" data-pptx-box-h="25" data-pptx-valign="middle" data-center-lock="true">DATE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+
+  <g id="chrome" font-family="'SF Mono', Consolas, 'Courier New', monospace" fill="#53616E">
+    <text x="64" y="96" font-size="13" letter-spacing="2" data-pptx-box-x="64.0" data-pptx-box-y="79.8" data-pptx-box-w="700.0" data-pptx-box-h="21.4" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">PAPER READING REPORT</text>
+    <text x="1216" y="96" font-size="13" text-anchor="end" data-slot="VENUE_YEAR" data-pptx-box-x="866.0" data-pptx-box-y="79.8" data-pptx-box-w="350.0" data-pptx-box-h="21.4" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{VENUE_YEAR}}</text>
+  </g>
+  <rect id="tab" x="64" y="120" width="56" height="6" fill="#2F759B" />
+  <g id="title" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#102F4A" font-weight="700">
+    <text x="64" y="300" font-size="48" letter-spacing="-1" data-slot="TITLE" data-pptx-box-x="64.0" data-pptx-box-y="240.0" data-pptx-box-w="1152.0" data-pptx-box-h="136.0" data-pptx-valign="middle" data-pptx-textbox="true">{{TITLE}}</text>
+    </g>
+  <g id="subtitle" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#53616E">
+    <text x="64" y="412" font-size="18" font-weight="400" data-slot="AUTHORS" data-pptx-box-x="64.0" data-pptx-box-y="389.5" data-pptx-box-w="1000.0" data-pptx-box-h="29.7" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{AUTHORS}}</text>
+  </g>
+  <g id="meta" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#171C22">
+    <text x="64" y="608" font-size="17" font-weight="400" data-slot="REPORTER" data-pptx-box-x="64.0" data-pptx-box-y="586.8" data-pptx-box-w="550.0" data-pptx-box-h="28.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{REPORTER}}</text>
+    <text x="64" y="638" font-size="17" font-weight="400" data-slot="ADVISOR_GROUP" data-pptx-box-x="64.0" data-pptx-box-y="616.8" data-pptx-box-w="550.0" data-pptx-box-h="28.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{ADVISOR_GROUP}}</text>
+    <text x="1216" y="608" font-size="17" font-weight="400" text-anchor="end" data-slot="DATE" data-pptx-box-x="996.0" data-pptx-box-y="586.8" data-pptx-box-w="220.0" data-pptx-box-h="28.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{DATE}}</text>
+  </g>
+  <g id="meta-mono" font-family="'SF Mono', Consolas, 'Courier New', monospace" fill="#53616E">
+    <text x="1216" y="638" font-size="12" text-anchor="end" data-slot="DOI" data-pptx-box-x="836.0" data-pptx-box-y="623.0" data-pptx-box-w="380.0" data-pptx-box-h="19.8" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{DOI}}</text>
+  </g>
 </svg>

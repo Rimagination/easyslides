@@ -72,7 +72,7 @@ Add the manifest path to the deck plan when the deck should consume it:
 
 ```json
 {
-  "template_id": "academic_general",
+  "template_id": "academic_classic",
   "image_manifest": "images/image_prompts.json",
   "slides": [
     {

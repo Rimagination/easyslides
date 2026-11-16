@@ -45,7 +45,6 @@ class EasySlidesCliTests(unittest.TestCase):
         self.assertIn("explicitly identified user institution", result.stdout)
         self.assertIn("--institution", result.stdout)
 
-
     def test_component_pack_help_delegates_to_pack_manager(self):
         result = run_cli("scripts/easyslides.py", "component", "--help")
 

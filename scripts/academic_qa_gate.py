@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 try:
+    from scripts.academic_composition import validate_academic_authoring
     from scripts.deck_plan_contract import validate_deck_plan, validate_deck_plan_file
     from scripts.scenario_profiles import (
         duration_page_band,
@@ -25,6 +26,7 @@ try:
         validate_profiles,
     )
 except ModuleNotFoundError:  # pragma: no cover - supports direct script execution
+    from academic_composition import validate_academic_authoring
     from deck_plan_contract import validate_deck_plan, validate_deck_plan_file
     from scenario_profiles import (
         duration_page_band,
@@ -205,7 +207,7 @@ def _layout_run_issues(
             previous = ""
             run = 0
             continue
-        layout = str(slide.get("layout_id") or "").rsplit("/", 1)[-1]
+        layout = _composition_identity(slide)
         if layout and layout == previous:
             run += 1
         else:
@@ -217,6 +219,13 @@ def _layout_run_issues(
 
 
 CONTENT_SHELL_ROLES = {"cover", "toc", "chapter", "ending"}
+
+
+def _composition_identity(slide: dict[str, Any]) -> str:
+    composition = slide.get("composition")
+    if isinstance(composition, dict) and composition.get("kind"):
+        return str(composition["kind"])
+    return str(slide.get("layout_id") or "").rsplit("/", 1)[-1]
 
 
 def _content_quality_policy(
@@ -272,6 +281,16 @@ def _run_content_quality_qa(
     variant: dict[str, Any],
     issues: list[dict[str, str]],
 ) -> dict[str, Any]:
+    if plan.get("authoring_contract") == "academic_native.v1":
+        # New authoring is checked by its source/page/visual contract below.
+        # A source-text character quota rewards padding and cannot assess density.
+        body = [s for s in slides if s.get("role") not in CONTENT_SHELL_ROLES]
+        native_issues = validate_academic_authoring(plan)
+        return {"status": "fail" if native_issues else "pass", "basis": "declared_evidence_and_page_structure",
+                "checked_pages": len(body), "adequate_pages": len(body) if not native_issues else 0,
+                "thin_pages": [], "placeholder_pages": [],
+                "distinct_layouts": len({_composition_identity(s) for s in body}),
+                "scientific_truth_verified": False}
     policy, explicit = _content_quality_policy(plan, variant)
     if not explicit:
         return {
@@ -641,6 +660,7 @@ def run_academic_qa(plan: dict[str, Any], *, repo_root: Path | str | None = None
             _run_thesis_defense_qa(plan, slides, profile, variant, issues, repo)
 
     content_quality_summary = _run_content_quality_qa(plan, slides, variant, issues)
+    issues.extend(validate_academic_authoring(plan))
 
     for index, slide in enumerate(slides):
         path = f"slides[{index}]"
@@ -750,6 +770,10 @@ def run_academic_qa_file(path: Path, *, repo_root: Path | str | None = None) -> 
     file_contract = validate_deck_plan_file(path, repo_root=Path(repo_root) if repo_root else None)
     if file_contract["status"] == "fail" and report["contract_status"] == "pass":
         report["contract_status"] = "fail"
+        report["status"] = "fail"
+        file_errors = [dict(item, severity="error") for item in file_contract.get("issues", []) if item.get("severity", "error") == "error"]
+        report["issues"].extend(file_errors)
+        report["error_count"] += len(file_errors)
     return report
 
 

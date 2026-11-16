@@ -14,7 +14,7 @@ from pptx.util import Inches
 
 ROOT = Path(__file__).resolve().parents[1]
 NSFC = ROOT / "templates" / "layouts" / "nsfc_defense"
-ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_general"
+ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_classic"
 FIXTURE = ROOT / "tests" / "fixtures" / "nsfc_composable_deck_plan.json"
 
 
@@ -56,7 +56,7 @@ class SlideCompilerTests(unittest.TestCase):
         template_ir = compile_template(ACADEMIC_GENERAL)["template_ir"]
         slide_ir = compile_slides(
             {
-                "template_id": "academic_general",
+                "template_id": "academic_classic",
                 "slides": [
                     {
                         "page": "P01",
@@ -108,13 +108,13 @@ class SlideCompilerTests(unittest.TestCase):
             ["01", "02"],
         )
 
-    def test_academic_general_open_composition_accepts_only_local_registered_components(self) -> None:
+    def test_academic_classic_open_composition_accepts_only_local_registered_components(self) -> None:
         from scripts.slide_compiler import SlideCompileError, compile_slides
         from scripts.template_compiler import compile_template
 
         template_ir = compile_template(ACADEMIC_GENERAL)["template_ir"]
         plan = {
-            "template_id": "academic_general",
+            "template_id": "academic_classic",
             "slides": [
                 {
                     "page": "P01",
@@ -144,7 +144,7 @@ class SlideCompilerTests(unittest.TestCase):
         layers = slide_ir["slides"][0]["layers"]
         metric = next(layer for layer in layers if layer.get("instance_id") == "primary_metric")
 
-        self.assertEqual(metric["asset_id"], "component/academic_general/metric_tile")
+        self.assertEqual(metric["asset_id"], "component/academic_classic/metric_tile")
         self.assertEqual(metric["composition_source"], "explicit_body_components")
 
         plan["slides"][0]["body_components"][0]["component_id"] = "component/nsfc_defense/metric_tile"

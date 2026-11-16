@@ -18,11 +18,13 @@ details within the requested editing scope.
 ## Mandatory production-scheme choice
 
 An unspecified scheme is always blocking for a new or regenerated PPT. MUST ask
-the user to choose directly generated editable PPT, full-image reconstruction,
-or partial-image reconstruction, using the exact user-facing labels in
+the user to choose native editable PPT or images followed by editable
+reconstruction, using the two default user-facing choices in
 `workflows/clarification-gate.md`. No automatic default; wait for the user's answer
 before slide planning, image generation, SVG reconstruction or PPTX production.
 An explicit choice already made for the same task must not be asked again.
+An explicit partial-image reconstruction request is still supported; do not
+require switching it to full reconstruction.
 
 ## Mandatory reconstruction-mode choice
 
@@ -89,6 +91,37 @@ the ambiguity. Do not ask again for a value the user already made explicit.
 ## State contract
 
 Use the repository question catalog and state machine:
+
+The first unresolved production question is the route. After `direct_editable`
+is chosen for a new deck and no template was specified, the state machine
+selects the official default `academic_general`. Explicit templates take
+precedence. The next question is theme color: record `theme_palette` as a preset
+or confirmed `#RRGGBB`; skip known choices. Read
+`references/default-academic-template.md` for the complete intake and method.
+
+Next ask how to obtain the “主题图”: reuse the template's 14 discipline theme
+images (`template_assets`, recommended), or generate a dedicated topic image
+(`generate_new`, extra generation time/usage). This question is independent of
+theme color and production route. Skip an already explicit choice or supplied
+theme image (`user_provided` and `theme_image_path`). Generate only after the
+topic is understood; save the output path and reuse it across page crops.
+Do not silently fall back to the library after a custom image was requested.
+
+For this template, `presentation_identity` is a source-inspection task covering
+discipline, presenter, presenter institution and date. Read materials first,
+ask only about missing/conflicting fields, and record facts with sources or
+explicit omissions. Never infer the presenter's school from paper authors or
+reference branding. Pass identified fields with the confirmed brief to the
+deck plan. Existing approved tasks are not reopened for this new default or
+the newly added theme-image question.
+
+When `clarify next` returns a theme question with a `preview`, show the provided
+local image inline before asking the native popup question. The existing image
+is a reusable example, so do not regenerate or re-inspect it for each deck;
+the illustrated color–discipline pairings are optional and user choices take
+precedence. If the preview file is missing, ask with text options instead of
+generating a replacement automatically. Generate or revise example previews
+only when the user requests a new visual example.
 
 For new academic content tasks, add `--academic` to `clarify init`. This extends
 the same blocking state machine with academic goals, evidence policy, audience,

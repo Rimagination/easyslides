@@ -1,0 +1,16 @@
+{
+  "slides": [
+    {
+      "role": "cover",
+      "layout_id": "cover_blue_band",
+      "slot_payload": {
+        "RESEARCH_FIELD": "研究方向与核心主题",
+        "TITLE": "学术研究与成果汇报",
+        "SUBTITLE": "研究主题 · 学科方向",
+        "REPORTER": "汇报人：姓名",
+        "AFFILIATION": "所在单位：院系或研究机构",
+        "DATE": "日期：填写日期"
+      }
+    }
+  ]
+}

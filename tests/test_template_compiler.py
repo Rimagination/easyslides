@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NSFC = ROOT / "templates" / "layouts" / "nsfc_defense"
-ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_general"
+ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_classic"
 
 
 class TemplateCompilerTests(unittest.TestCase):
@@ -85,14 +85,14 @@ class TemplateCompilerTests(unittest.TestCase):
         by_id = {row["template_id"]: row for row in report["templates"]}
 
         self.assertEqual(report["status"], "pass")
-        self.assertEqual(report["template_count"], 7)
+        self.assertEqual(report["template_count"], 8)
         self.assertGreaterEqual(report["package_count"], 3)
         self.assertEqual(by_id["nsfc_defense"]["capability_level"], "production")
         self.assertTrue(by_id["nsfc_defense"]["managed_package"])
-        self.assertEqual(by_id["academic_general"]["capability_level"], "production")
-        self.assertTrue(by_id["academic_general"]["managed_package"])
+        self.assertEqual(by_id["academic_classic"]["capability_level"], "production")
+        self.assertTrue(by_id["academic_classic"]["managed_package"])
 
-    def test_academic_general_is_a_managed_component_template_package(self) -> None:
+    def test_academic_classic_is_a_managed_component_template_package(self) -> None:
         from scripts.template_compiler import compile_template
 
         report = compile_template(ACADEMIC_GENERAL)
@@ -117,7 +117,7 @@ class TemplateCompilerTests(unittest.TestCase):
         content = next(shell for shell in template_ir["shells"] if shell["shell_id"] == "content")
         self.assertEqual(content["content_shell_policy"], "template_component_composition_required")
         self.assertEqual(content["body_canvas"], {"x": 52.0, "y": 135.0, "width": 1176.0, "height": 515.0})
-        self.assertEqual(template_ir["component_pack"]["pack_id"], "template/academic_general/components")
+        self.assertEqual(template_ir["component_pack"]["pack_id"], "template/academic_classic/components")
         self.assertEqual(template_ir["capability_profile"]["composition"]["mode"], "template_composable")
         self.assertFalse(template_ir["capability_profile"]["composition"]["allow_global_component_fallback"])
 
@@ -126,7 +126,7 @@ class TemplateCompilerTests(unittest.TestCase):
         from scripts.template_production_gate import validate_compiled_contract
 
         with tempfile.TemporaryDirectory() as tmp:
-            template = Path(tmp) / "academic_general"
+            template = Path(tmp) / "academic_classic"
             import shutil
 
             shutil.copytree(ACADEMIC_GENERAL, template)

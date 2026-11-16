@@ -31,7 +31,7 @@ def inventory_for(*, contract=None, element=None):
 
 
 class AlignmentContractTests(unittest.TestCase):
-    def test_native_table_columns_use_grid_width_and_keep_multiline_cells(self):
+    def test_native_table_widths_preserve_paragraph_breaks(self):
         from scripts.alignment_contract import _iter_pptx_text_frames, validate_pptx_alignment
 
         with tempfile.TemporaryDirectory() as tmp:
@@ -44,7 +44,9 @@ class AlignmentContractTests(unittest.TestCase):
             table.cell(0, 0).text = "First"
             table.cell(0, 1).text = "Two\nlines"
             prs.save(path)
+
             frames = _iter_pptx_text_frames(path)[0]
+            self.assertEqual(frames[1]["text"], "Two\nlines")
             self.assertAlmostEqual(frames[0]["box"].width, 192)
             self.assertAlmostEqual(frames[1]["box"].x, 288)
             self.assertAlmostEqual(frames[1]["box"].width, 288)
@@ -53,11 +55,57 @@ class AlignmentContractTests(unittest.TestCase):
                 "bbox_percent": {"x": 30, "y": 10, "w": 30, "h": 10},
             })
             self.assertEqual(validate_pptx_alignment(path, inventory)["status"], "pass")
-            table.columns[0].width = Inches(2.5)
-            table.columns[1].width = Inches(2.5)
+
+            table.cell(0, 1).text = "Two\vlines"
+            prs.save(path)
+            frames = _iter_pptx_text_frames(path)[0]
+            self.assertEqual(frames[1]["text"], "Two\nlines")
+            self.assertEqual(validate_pptx_alignment(path, inventory)["status"], "pass")
+
+            table.cell(0, 1).text = "Twolines"
             prs.save(path)
             report = validate_pptx_alignment(path, inventory)
-            self.assertIn("ALIGNMENT-PPTX-BOX-DRIFT", {i["code"] for i in report["issues"]})
+            self.assertIn("ALIGNMENT-PPTX-TEXT-MISSING", {item["code"] for item in report["issues"]})
+
+    def test_native_table_geometry_handles_row_and_column_spans(self):
+        from scripts.alignment_contract import _iter_pptx_text_frames, default_contract, validate_pptx_alignment
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "merged-table.pptx"
+            prs = Presentation()
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            table = slide.shapes.add_table(2, 3, Inches(1), Inches(.75), Inches(6), Inches(1.5)).table
+            table.cell(0, 0).merge(table.cell(1, 0))
+            table.cell(0, 0).text = "Vertical"
+            table.cell(0, 1).text = "Top"
+            table.cell(0, 2).text = "Right"
+            table.cell(1, 1).merge(table.cell(1, 2))
+            table.cell(1, 1).text = "Bottom"
+            prs.save(path)
+
+            frames = {frame["text"]: frame["box"] for frame in _iter_pptx_text_frames(path)[0]}
+            self.assertAlmostEqual(frames["Vertical"].x, 96)
+            self.assertAlmostEqual(frames["Vertical"].y, 72)
+            self.assertAlmostEqual(frames["Vertical"].width, 192)
+            self.assertAlmostEqual(frames["Vertical"].height, 144)
+            self.assertAlmostEqual(frames["Bottom"].x, 288)
+            self.assertAlmostEqual(frames["Bottom"].y, 144)
+            self.assertAlmostEqual(frames["Bottom"].width, 384)
+            self.assertAlmostEqual(frames["Bottom"].height, 72)
+            inventory = {
+                "production_scheme": "image_full_rebuild",
+                "alignment_contract": default_contract(),
+                "slides": [{
+                    "slide_id": "s01",
+                    "elements": [
+                        {"element_id": "vertical", "layer": "C", "text": "Vertical", "bbox_percent": {"x": 10, "y": 10, "w": 20, "h": 20}},
+                        {"element_id": "top", "layer": "C", "text": "Top", "bbox_percent": {"x": 30, "y": 10, "w": 20, "h": 10}},
+                        {"element_id": "right", "layer": "C", "text": "Right", "bbox_percent": {"x": 50, "y": 10, "w": 20, "h": 10}},
+                        {"element_id": "bottom", "layer": "C", "text": "Bottom", "bbox_percent": {"x": 30, "y": 20, "w": 40, "h": 10}},
+                    ],
+                }],
+            }
+            self.assertEqual(validate_pptx_alignment(path, inventory)["status"], "pass")
 
     def test_slide_relationship_targets_resolve_from_package_or_part(self):
         import io

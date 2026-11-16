@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import colorsys
 import json
 import re
 import shutil
@@ -31,6 +32,39 @@ def _normalize_hex(value: str) -> str:
     return value.upper()
 
 
+def _custom_academic_colors(value: str) -> dict[str, str]:
+    """Derive legible shades for the paper-report template from a chosen hue."""
+    color = _normalize_hex(value)
+    rgb = tuple(int(color[index:index + 2], 16) / 255 for index in (1, 3, 5))
+    hue, lightness, saturation = colorsys.rgb_to_hls(*rgb)
+
+    def as_hex(level: float, sat: float | None = None) -> str:
+        channels = colorsys.hls_to_rgb(hue, level, saturation if sat is None else sat)
+        return "#" + "".join(f"{round(channel * 255):02X}" for channel in channels)
+
+    def contrast_with_white(value: str) -> float:
+        channels = [int(value[index:index + 2], 16) / 255 for index in (1, 3, 5)]
+        linear = [v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4 for v in channels]
+        luminance = 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+        return 1.05 / (luminance + 0.05)
+
+    primary = color
+    while contrast_with_white(primary) < 4.5 and lightness > 0:
+        lightness = max(0, lightness - 0.02)
+        primary = as_hex(lightness)
+    tones = {
+        "accent": 0.34, "header_surface": 0.96, "border": 0.88,
+        "band_shadow": 0.13, "toc_dark": 0.17, "toc_mid": 0.42,
+        "toc_light": 0.87, "toc_network": 0.84, "cover_line": 0.67,
+        "cover_detail": 0.70,
+    }
+    colors = {role: as_hex(level, saturation * 0.35 if role == "header_surface" else None)
+              for role, level in tones.items()}
+    for role in ("primary", "band", "field_text", "cover_dots", "ending_ink"):
+        colors[role] = primary
+    return colors
+
+
 def read_palette_catalog(template_dir: Path) -> dict[str, Any]:
     """Read ``theme_palettes.json`` from a template directory."""
     catalog_path = template_dir / PALETTE_FILENAME
@@ -53,7 +87,8 @@ def palette_color_replacements(catalog: dict[str, Any], palette_id: str) -> dict
     default_palette_id = str(catalog.get("default_palette", ""))
     if not default_palette_id or default_palette_id not in palettes:
         raise PaletteError("Palette catalog default_palette is missing or unknown")
-    if palette_id not in palettes:
+    custom = bool(catalog.get("allow_custom_hex")) and bool(re.fullmatch(r"#[0-9A-Fa-f]{6}", palette_id))
+    if palette_id not in palettes and not custom:
         available = ", ".join(sorted(palettes))
         raise PaletteError(f"Unknown palette {palette_id!r}; available: {available}")
 
@@ -62,7 +97,7 @@ def palette_color_replacements(catalog: dict[str, Any], palette_id: str) -> dict
         raise PaletteError("Palette catalog replace_roles must be a non-empty list")
 
     default_colors = palettes[default_palette_id].get("colors", {})
-    target_colors = palettes[palette_id].get("colors", {})
+    target_colors = _custom_academic_colors(palette_id) if custom else palettes[palette_id].get("colors", {})
     replacements: dict[str, str] = {}
     for role in replace_roles:
         if role not in default_colors:

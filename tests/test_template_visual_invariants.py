@@ -9,7 +9,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 NSFC = ROOT / "templates" / "layouts" / "nsfc_defense"
-ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_general"
+ACADEMIC_GENERAL = ROOT / "templates" / "layouts" / "academic_classic"
 
 
 class TemplateVisualInvariantTests(unittest.TestCase):

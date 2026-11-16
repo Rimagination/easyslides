@@ -1,29 +1,31 @@
 # EasySlides Template Library
 
 `templates/layouts/` contains the formal template library. In this project,
-formal means one of the seven IDs in `templates/template_policy.json`.
+formal means one of the eight IDs in `templates/template_policy.json`.
 
 - **Canonical policy**: [template_policy.json](../template_policy.json) defines
-  the seven official IDs and the development-only IDs.
+  the eight official IDs, the native default and the development-only IDs.
 - **Package registry**: [template_registry.json](../template_registry.json)
   records package metadata, capability levels, and QA status; QA status does
   not override the official-template policy.
 - **Generated index**: [layouts_index.json](./layouts_index.json) is the
   human-facing projection of the retained formal library. Non-legacy packages
   are archived outside the project.
-- **Selection rule**: templates are opt-in. A deck uses a layout only when the
-  user gives an explicit directory path such as
-  `templates/layouts/literature_minimal/`. Bare names remain discovery hints, not
-  triggers.
+- **Selection rule**: after the user chooses native editable production, use
+  `academic_general` if no template was specified. Explicit user templates
+  take precedence. Confirm color and inspect discipline/presenter information.
 - **Legacy aliases**: [aliases.json](./aliases.json) maps old IDs such as
   `defense_s01` and `literature_s01` to their maintained replacements.
+  The customized default is now `academic_general`; the former general pack is
+  retained as `academic_classic`. `academic_paper_report` remains a compatibility name.
 
 ## Quick Template Index
 
 <!-- quick-index:begin -->
 | Template Name | Category | Use Cases | Primary Color | Design Tone |
 |---------------|----------|-----------|---------------|-------------|
-| `academic_general` | General | Research talks, course reports, progress reviews, paper explainers, scholarly exchange | `#003366` | Professional, rigorous, audience-facing, AST/SCQA-guided |
+| `academic_general` | Native default | Academic reports, paper reading, journal clubs and research presentations | Confirmed blue, purple, green, technology blue or custom | White, evidence-led, varied, dense, precisely aligned |
+| `academic_classic` | General | Research talks, course reports, progress reviews, paper explainers, scholarly exchange | `#003366` | Professional, rigorous, audience-facing, AST/SCQA-guided |
 | `academic_scqa` | Scenario | Academic reports, laboratory technical briefings, research progress reviews, project reviews | `#0046A5` | Formal, institutional, data-driven, audience-facing, AST/SCQA-structured |
 | `defense_leftnav` | Scenario | Thesis defense, graduation defense, proposal defense, research progress reports | `#8B0012` | Compact, formal, burgundy, left navigation, reusable |
 | `defense_topnav` | Scenario | Thesis defense, proposal defense, opening defense, research progress reports | `#183A6A` | Academic, calm, blue-white, structured, source-faithful |
@@ -37,7 +39,8 @@ formal means one of the seven IDs in `templates/template_policy.json`.
 
 | Template | Role |
 |----------|------|
-| `academic_general` | Neutral production academic template with shared Audience-State-Transfer and SCQA orchestration, seven reviewed content variants, and bounded template-local component composition. |
+| `academic_general` | Default native academic template with discipline images, visual methods, 20/18/16 pt hierarchy and exact alignment. |
+| `academic_classic` | Neutral production academic template with shared Audience-State-Transfer and SCQA orchestration, seven reviewed content variants, and bounded template-local component composition. |
 | `academic_scqa` | Blue-cyan structured academic and technical report shells with AST/SCQA body-variant guidance. |
 | `defense_leftnav` | Compact left-navigation thesis defense shells with wine, academic-blue, academic-purple, and academic-green palettes. |
 | `defense_topnav` | Academic-blue thesis defense shells with dynamic top navigation and flexible content canvas. |
@@ -75,7 +78,7 @@ to the global component registry. A template with body variants must receive a
 declared local `layout_id` or explicit local component; distilled and raster
 reference directories are marked non-generative.
 
-The current project route uses only the seven official templates in
+The current project route uses only the eight official templates in
 `template_policy.json`. Review, quarantined, distilled, and style-pack assets
 are development-only and must not be selected by default.
 

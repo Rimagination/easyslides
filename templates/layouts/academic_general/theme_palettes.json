@@ -2,54 +2,55 @@
   "schema_version": "easyslides.theme_palettes.v1",
   "template_id": "academic_general",
   "default_palette": "academic_blue",
-  "replace_roles": ["background", "surface", "primary", "primary_dark", "accent", "accent_secondary", "border", "text_on_light"],
+  "allow_custom_hex": true,
+  "replace_roles": [
+    "primary", "accent", "header_surface", "border", "band", "band_shadow",
+    "field_text", "cover_dots", "ending_ink", "toc_dark", "toc_mid",
+    "toc_light", "toc_network", "cover_line", "cover_detail"
+  ],
   "palettes": {
     "academic_blue": {
-      "name": "Academic Blue",
+      "name": "学术深蓝",
+      "preview_example": {"discipline_code": "06", "label": "历史学", "research_field": "历史学 · 考古研究"},
       "colors": {
-        "background": "#FFFFFF",
-        "surface": "#F5F7FA",
-        "primary": "#003366",
-        "primary_dark": "#002244",
-        "accent": "#0066CC",
-        "accent_secondary": "#CC0000",
-        "text_on_light": "#333333",
-        "text_on_dark": "#FFFFFF",
-        "muted_on_light": "#666666",
-        "muted_on_dark": "#E8F4FC",
-        "border": "#D0D7E0"
-      }
-    },
-    "academic_green": {
-      "name": "Academic Green",
-      "colors": {
-        "background": "#FFFFFF",
-        "surface": "#F2F8F4",
-        "primary": "#146B4A",
-        "primary_dark": "#0C4932",
-        "accent": "#2A9D8F",
-        "accent_secondary": "#D97706",
-        "text_on_light": "#1F2937",
-        "text_on_dark": "#FFFFFF",
-        "muted_on_light": "#5B6B64",
-        "muted_on_dark": "#D7F0E3",
-        "border": "#C9DED3"
+        "primary": "#102F4A", "accent": "#2F759B", "header_surface": "#EEF5F9",
+        "border": "#D8E1E9", "band": "#063C8D", "band_shadow": "#08264D",
+        "field_text": "#123C70", "cover_dots": "#153F78", "ending_ink": "#1C3E6C",
+        "toc_dark": "#0A3058", "toc_mid": "#3779A7", "toc_light": "#C9DDEB",
+        "toc_network": "#C1DDEE", "cover_line": "#91A3B7", "cover_detail": "#83AEE6"
       }
     },
     "academic_purple": {
-      "name": "Academic Purple",
+      "name": "清华风紫",
+      "preview_example": {"discipline_code": "05", "label": "文学", "research_field": "文学 · 语言研究"},
       "colors": {
-        "background": "#FFFFFF",
-        "surface": "#F7F3F9",
-        "primary": "#6B2A7A",
-        "primary_dark": "#451A52",
-        "accent": "#9B59B6",
-        "accent_secondary": "#C00000",
-        "text_on_light": "#2D2533",
-        "text_on_dark": "#FFFFFF",
-        "muted_on_light": "#6F6375",
-        "muted_on_dark": "#EADCF0",
-        "border": "#DCCCE2"
+        "primary": "#562660", "accent": "#865292", "header_surface": "#F5EFF7",
+        "border": "#E3D9E6", "band": "#6C327F", "band_shadow": "#3B1847",
+        "field_text": "#592A65", "cover_dots": "#663273", "ending_ink": "#592A65",
+        "toc_dark": "#3F1C4C", "toc_mid": "#885493", "toc_light": "#E2CDE5",
+        "toc_network": "#DCC3DF", "cover_line": "#B7A2BD", "cover_detail": "#C69BD0"
+      }
+    },
+    "academic_green": {
+      "name": "深绿色",
+      "preview_example": {"discipline_code": "09", "label": "农学", "research_field": "农学 · 农业研究"},
+      "colors": {
+        "primary": "#194A37", "accent": "#347E62", "header_surface": "#EDF5F0",
+        "border": "#D3E4DA", "band": "#165A40", "band_shadow": "#0D3023",
+        "field_text": "#18523A", "cover_dots": "#1C5B40", "ending_ink": "#1B513A",
+        "toc_dark": "#0F392B", "toc_mid": "#4B896B", "toc_light": "#C8DFD1",
+        "toc_network": "#BAD9C7", "cover_line": "#97B0A1", "cover_detail": "#8DBFA1"
+      }
+    },
+    "technology_blue": {
+      "name": "科技蓝",
+      "preview_example": {"discipline_code": "08", "label": "工学", "research_field": "工学 · 智能技术"},
+      "colors": {
+        "primary": "#0A4A7D", "accent": "#1886C3", "header_surface": "#EAF4FB",
+        "border": "#D1E2EF", "band": "#0870BC", "band_shadow": "#06335B",
+        "field_text": "#07548B", "cover_dots": "#0A5B9E", "ending_ink": "#105787",
+        "toc_dark": "#073762", "toc_mid": "#2789C3", "toc_light": "#C6E4F4",
+        "toc_network": "#B9DDF2", "cover_line": "#8EACC4", "cover_detail": "#8BC5ED"
       }
     }
   }

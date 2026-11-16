@@ -11,7 +11,7 @@ from scripts.template_text_fit_check import validate_template_text_fit  # noqa: 
 
 
 ACTIVE_ACADEMIC_TEMPLATES = (
-    "academic_general",
+    "academic_classic",
     "academic_scqa",
     "defense_leftnav",
     "defense_topnav",

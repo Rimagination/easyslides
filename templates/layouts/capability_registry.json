@@ -1,10 +1,10 @@
 {
   "schema_version": "easyslides.template_capability_registry.v1",
   "status": "pass",
-  "template_count": 8,
+  "template_count": 9,
   "templates": [
     {
-      "template_id": "academic_general",
+      "template_id": "academic_classic",
       "status": "pass",
       "lifecycle": "production",
       "generation_enabled": true,
@@ -14,7 +14,20 @@
         "page_module",
         "template_component"
       ],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\academic_general\\capability_profile.json",
+      "profile": "templates/layouts/academic_classic/capability_profile.json",
+      "issue_count": 0
+    },
+    {
+      "template_id": "academic_general",
+      "status": "pass",
+      "lifecycle": "legacy",
+      "generation_enabled": true,
+      "composition_mode": "body_variant_only",
+      "allowed_granularities": [
+        "body_variant",
+        "page_module"
+      ],
+      "profile": "templates/layouts/academic_general/capability_profile.json",
       "issue_count": 0
     },
     {
@@ -27,7 +40,7 @@
         "body_variant",
         "page_module"
       ],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\academic_scqa\\capability_profile.json",
+      "profile": "templates/layouts/academic_scqa/capability_profile.json",
       "issue_count": 0
     },
     {
@@ -37,7 +50,7 @@
       "generation_enabled": false,
       "composition_mode": "non_template",
       "allowed_granularities": [],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\assets\\capability_profile.json",
+      "profile": "templates/layouts/assets/capability_profile.json",
       "issue_count": 0
     },
     {
@@ -50,7 +63,7 @@
         "body_variant",
         "page_module"
       ],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\defense_leftnav\\capability_profile.json",
+      "profile": "templates/layouts/defense_leftnav/capability_profile.json",
       "issue_count": 0
     },
     {
@@ -63,7 +76,7 @@
         "body_variant",
         "page_module"
       ],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\defense_topnav\\capability_profile.json",
+      "profile": "templates/layouts/defense_topnav/capability_profile.json",
       "issue_count": 0
     },
     {
@@ -76,7 +89,7 @@
         "body_variant",
         "page_module"
       ],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\literature_minimal\\capability_profile.json",
+      "profile": "templates/layouts/literature_minimal/capability_profile.json",
       "issue_count": 0
     },
     {
@@ -90,7 +103,7 @@
         "page_module",
         "template_component"
       ],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\nsfc_defense\\capability_profile.json",
+      "profile": "templates/layouts/nsfc_defense/capability_profile.json",
       "issue_count": 0
     },
     {
@@ -104,7 +117,7 @@
         "page_module",
         "template_component"
       ],
-      "profile": "D:\\scansci\\easyslides\\templates\\layouts\\thu_speech\\capability_profile.json",
+      "profile": "templates/layouts/thu_speech/capability_profile.json",
       "issue_count": 0
     }
   ],

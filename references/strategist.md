@@ -83,7 +83,7 @@ visual exploration is off by default and may be inserted only when the user
 explicitly requests upstream visual exploration; source figures remain the
 scientific evidence.
 
-For `academic_general` or `academic_scqa`, also read
+For `academic_classic` or `academic_scqa`, also read
 `references/academic-orchestration.md` before writing the outline. Capture the
 Audience-State-Transfer contract in the deck plan and use SCQA as the default
 academic spine. Keep slide copy audience-facing; do not leak template, slot,
@@ -126,7 +126,11 @@ for two-sided or tabular material. Do not fill a card grid when the source
 does not supply parallel items.
 
 When the chosen template has `body_variants.json`, bind content pages to its
-verified body variants instead of inventing free layouts. Record
+registered body variants instead of inventing an unrelated export path. For
+new `academic_general` work, use its `scientific_composition` variant with
+`slide.composition` and the `academic_native.v1` page brief. This is bounded
+scientific body composition, not legacy paragraph-slot filling. Read
+`academic-native-authoring.md` and preserve evidence provenance. Record
 `content_shape` and an exact `slot_payload` for the chosen variant. The
 `scripts/deck_plan_contract.py` report must show a passing `body_variant_status`;
 the underlying `scripts/body_variant_adapter.py` supplies the

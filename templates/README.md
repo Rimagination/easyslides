@@ -3,6 +3,7 @@
 ## Directory Map
 
 - `layouts/`: page layout packs only.
+- `development/`: explicitly requested, opt-in template packages; not part of the official default library.
 - `page_layouts/`: PPT Master-style whole-page layout recipes for SVG execution.
 - `style_packs/`: archived non-legacy style migrations; not part of the current project library.
 - `cards/`: fixed-size card components with slot capacity contracts and an agent assembly manual.
@@ -23,9 +24,10 @@
 
 The `layouts/` directory exposes the current formal template library. The
 canonical project policy is [template_policy.json](./template_policy.json):
-only `academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`,
+only `academic_general`, `academic_classic`, `academic_scqa`, `defense_leftnav`, `defense_topnav`,
 `literature_minimal`, `nsfc_defense`, and `thu_speech` are official and may be
-selected by default.
+selected by default. After a native editable choice, `academic_general`
+is the default unless the user specifies another template.
 
 The broader brand, government, enterprise, domain-specific, and special-style PPT Master packs
 were moved out of the active library for review because EasySlides is focused
@@ -39,6 +41,11 @@ on academic scenarios.
 Review, quarantined, and unregistered style-pack assets are intentionally kept
 outside this project and managed as a separate archive. They are not selected
 by the default EasySlides template route.
+
+[Academic Paper Report](./layouts/academic_general/README.md) is now the
+official native default, with theme confirmation, discipline images and
+source-located presenter identity. The former development path is a local
+compatibility junction for older projects, not a second template ID.
 
 ## Template Asset Bank
 

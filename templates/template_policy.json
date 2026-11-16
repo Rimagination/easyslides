@@ -2,8 +2,10 @@
   "schema_version": "easyslides.template_policy.v1",
   "policy": "official_templates_only",
   "naming_rule": "lower_snake_case",
+  "default_native_template_id": "academic_general",
   "official_template_ids": [
     "academic_general",
+    "academic_classic",
     "academic_scqa",
     "defense_leftnav",
     "defense_topnav",
@@ -26,5 +28,5 @@
     "guizang_ppt",
     "l001_notebook_defense"
   ],
-  "selection_rule": "Only official_template_ids may be selected without an explicit user request."
+  "selection_rule": "After the user chooses direct_editable, use default_native_template_id when no template is specified. Explicit user templates take precedence. Other defaults must be in official_template_ids; development assets remain explicit-only."
 }

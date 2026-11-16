@@ -49,6 +49,64 @@ class SvgToPptxTextLayoutTests(unittest.TestCase):
 
         self.assertIn('anchor="ctr"', slide_xml)
 
+    def test_square_bullet_is_native_paragraph_format_not_a_text_prefix_or_shape(self):
+        svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<g id="takeaway"><rect x="64" y="110" width="10" height="10" fill="#102F4A" data-pptx-preview-only="true"/>
+<text x="88" y="120" data-pptx-textbox="true" data-pptx-box-x="64" data-pptx-box-y="90" data-pptx-box-w="400" data-pptx-box-h="40" data-pptx-valign="middle" data-pptx-bullet="square" data-pptx-bullet-indent="24" font-family="Arial, sans-serif" font-size="20" fill="#102F4A">可编辑说明</text></g>
+</svg>"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "bullet.svg"
+            path.write_text(svg, encoding="utf-8")
+            slide_xml, _, _, targets = convert_svg_to_slide_shapes(path)
+
+        self.assertEqual(slide_xml.count("<p:sp>"), 1)
+        self.assertNotIn("<p:grpSp>", slide_xml)
+        self.assertIn('<a:buChar char="■"/>', slide_xml)
+        self.assertIn('marL="228600" indent="-228600"', slide_xml)
+        self.assertIn('<a:t>可编辑说明</a:t>', slide_xml)
+        self.assertNotIn('<a:t>■', slide_xml)
+        self.assertEqual(len(targets), 1)
+        self.assertEqual(targets[0][1], "takeaway")
+        self.assertIn(f'<p:cNvPr id="{targets[0][0]}"', slide_xml)
+
+    def test_single_text_component_group_is_preserved(self):
+        svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<g id="component" data-easyslides-instance="example"><text x="100" y="120" font-size="20">内容</text></g>
+</svg>"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "component.svg"
+            path.write_text(svg, encoding="utf-8")
+            slide_xml, _, _, _ = convert_svg_to_slide_shapes(path)
+        self.assertIn("<p:grpSp>", slide_xml)
+
+    def test_native_bullet_can_use_exact_font_and_point_size(self):
+        svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">
+<text x="64" y="100" font-family="Microsoft YaHei" font-size="24" data-pptx-textbox="true"
+ data-pptx-bullet="square" data-pptx-bullet-font="Microsoft YaHei"
+ data-pptx-bullet-char="◼" data-pptx-bullet-size-pt="18"
+ data-pptx-line-spacing-pct="130"><tspan>第一条说明</tspan><tspan x="64" dy="32">第二条说明</tspan></text></svg>"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "bullet-size.svg"
+            path.write_text(svg, encoding="utf-8")
+            slide_xml, _, _, _ = convert_svg_to_slide_shapes(path)
+        self.assertEqual(slide_xml.count('<p:sp>'), 1)
+        self.assertEqual(slide_xml.count('<a:buSzPts val="1800"/>'), 2)
+        self.assertEqual(slide_xml.count('<a:buFont typeface="Microsoft YaHei"/>'), 2)
+        self.assertEqual(slide_xml.count('<a:buChar char="◼"/>'), 2)
+        self.assertIn('sz="1800"', slide_xml)
+        self.assertEqual(slide_xml.count('<a:lnSpc><a:spcPct val="130000"/></a:lnSpc>'), 2)
+
+    def test_text_without_bullet_keeps_plain_paragraph_format(self):
+        svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<text x="100" y="120" font-family="Arial" font-size="20">普通文字</text>
+</svg>"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "plain.svg"
+            path.write_text(svg, encoding="utf-8")
+            slide_xml, _, _, _ = convert_svg_to_slide_shapes(path)
+        self.assertNotIn('<a:buChar', slide_xml)
+        self.assertIn('<a:pPr algn="l"/>', slide_xml)
+
     def test_flipped_tagged_textbox_exports_positive_extent(self):
         svg = """<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
 <g transform="translate(150 100) scale(-1 1) translate(-150 -100)">

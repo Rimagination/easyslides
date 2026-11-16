@@ -1,6 +1,6 @@
 {
   "name": "easyslides",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Create editable research presentations directly, or approve AI-generated slide images and rebuild whole slides or selected regions. Includes native templates, image references, and PPTX distillation.",
   "author": {
     "name": "EasySlides contributors"
@@ -15,9 +15,9 @@
     "PPTX distillation",
     "template extraction",
     "EasySlides",
-    "\u84b8\u998fPPT",
-    "PPT\u6a21\u677f",
-    "\u7b54\u8fa9PPT"
+    "蒸馏PPT",
+    "PPT模板",
+    "答辩PPT"
   ],
   "skills": "./skills/",
   "interface": {
@@ -37,7 +37,7 @@
       "Run visual QA"
     ],
     "defaultPrompt": [
-      "\u4f7f\u7528 EasySlides \u628a\u8fd9\u4e2a PPTX \u84b8\u998f\u4e3a\u65e0\u5185\u5bb9\u7684\u8bed\u4e49\u6a21\u677f\u3001\u7ec4\u4ef6\u548c\u7b26\u53f7\u8d44\u4ea7\u3002",
+      "使用 EasySlides 把这个 PPTX 蒸馏为无内容的语义模板、组件和符号资产。",
       "Use EasySlides to create a research presentation. Ask me to choose a production method and show relative time and token costs.",
       "Use EasySlides to rebuild the annotated regions of these approved slide images. Ask which reconstruction mode I prefer."
     ],

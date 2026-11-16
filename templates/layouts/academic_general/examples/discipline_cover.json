@@ -1,0 +1,17 @@
+{
+  "slides": [
+    {
+      "role": "cover",
+      "layout_id": "cover_blue_band",
+      "slot_payload": {
+        "BAND_IMAGE": "../cover_banners/08_工学.png",
+        "RESEARCH_FIELD": "芯片与计算系统",
+        "TITLE": "智能计算与芯片研究",
+        "SUBTITLE": "学术研究与交流",
+        "REPORTER": "汇报人：待填写",
+        "AFFILIATION": "单位：待填写",
+        "DATE": "日期：待填写"
+      }
+    }
+  ]
+}

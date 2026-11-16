@@ -1,0 +1,65 @@
+{
+  "schema_version": "easyslides.academic_paper_report.cover_banners.v1",
+  "template_id": "academic_general",
+  "layout_id": "cover_blue_band",
+  "slot_id": "BAND_IMAGE",
+  "source": "user-approved images generated individually with built-in imagegen",
+  "purpose": "optional decorative cover imagery",
+  "selection": "Use an explicit discipline or image first; otherwise infer a discipline from topic and field keywords. Uncertain or conflicting matches require review.",
+  "classification": {
+    "keywords": {
+      "01": ["哲学", "伦理学", "美学", "哲理", "认识论", "形而上学", "philosophy", "ethics", "epistemology"],
+      "02": ["经济学", "理论经济", "应用经济", "金融", "宏观经济", "微观经济", "计量经济", "国际贸易", "经济增长", "economics", "economy", "economic", "finance", "financial"],
+      "03": ["法学", "法律", "法治", "宪法", "刑法", "民法", "政治学", "社会学", "民族学", "马克思主义理论", "公安学", "中共党史党建学", "纪检监察学", "jurisprudence", "law", "legal", "political science", "sociology"],
+      "04": ["教育学", "教育研究", "教育教学", "教学", "课程", "心理学", "心理健康", "体育学", "运动训练", "education", "pedagogy", "psychology", "physical education"],
+      "05": ["文学", "语言文学", "语言学", "小说", "诗歌", "诗词", "新闻传播", "新闻学", "文学研究", "literature", "linguistics", "literary", "journalism"],
+      "06": ["历史学", "历史研究", "考古学", "考古", "中国史", "世界史", "古代史", "近代史", "history", "historical", "archaeology", "archeology"],
+      "07": ["理学", "数学", "物理", "化学", "天文学", "天文", "地理学", "地理", "大气科学", "海洋科学", "地球物理", "地质学", "生物学", "生命科学", "生物演化", "生物进化", "进化论", "生命演化", "生命进化", "物种演化", "物种进化", "物种多样性", "系统科学", "科学技术史", "生态学", "生态系统", "生态环境", "生物多样性", "统计学", "mathematics", "physics", "chemistry", "biology", "biological", "astronomy", "geography", "ecology", "ecosystem", "biodiversity", "evolution", "evolutionary"],
+      "08": ["工学", "力学", "机械工程", "光学工程", "仪器科学", "材料科学", "冶金", "动力工程", "电气工程", "电子科学", "通信工程", "控制科学", "计算机", "计算系统", "建筑学", "土木工程", "水利工程", "测绘", "化学工程", "地质工程", "矿业", "石油", "纺织", "交通运输工程", "船舶", "航空航天", "航空宇航", "核科学", "农业工程", "环境工程", "环境科学与工程", "生物医学工程", "食品科学与工程", "城乡规划", "软件工程", "生物工程", "安全科学", "网络安全", "网络空间安全", "人工智能", "机器学习", "深度学习", "自然语言处理", "机器翻译", "自注意力", "芯片", "机器人", "engineering", "computer science", "machine learning", "deep learning", "artificial intelligence", "natural language processing", "self-attention", "transformer", "attention is all you need", "semiconductor", "robotics"],
+      "09": ["农学", "农业", "作物学", "作物", "水稻", "小麦", "育种", "园艺学", "农业资源", "植物保护", "畜牧学", "兽医学", "林学", "林业", "水产", "草学", "水土保持", "荒漠化", "agriculture", "agricultural", "agronomy", "crop", "crops", "forestry", "veterinary"],
+      "10": ["医学", "临床", "药学", "中医学", "中药学", "护理学", "公共卫生", "预防医学", "法医学", "疾病", "病理", "患者", "治疗", "medical", "medicine", "clinical", "healthcare", "disease", "pharmacy"],
+      "11": ["军事学", "军事", "国防", "军队", "军兵种", "联合作战", "军事战略", "军事历史", "military", "defence strategy", "defense strategy"],
+      "12": ["管理学", "管理科学", "工商管理", "企业管理", "农林经济管理", "公共管理", "信息资源管理", "管理研究", "管理机制", "组织管理", "企业治理", "management", "business administration", "public administration"],
+      "13": ["艺术学", "艺术史", "美术", "书法", "绘画", "音乐", "舞蹈", "戏剧", "影视", "戏曲", "曲艺", "艺术创作", "art history", "fine arts", "music", "dance", "theatre", "theater"],
+      "14": ["交叉学科", "跨学科", "多学科", "集成电路科学与工程", "国家安全学", "设计学", "遥感科学与技术", "智能科学与技术", "纳米科学与工程", "区域国别学", "interdisciplinary", "multidisciplinary", "nanoscience", "integrated circuit science"]
+    },
+    "specialized_assets": [
+      {
+        "discipline_code": "07",
+        "file": "../assets/evolution_cover_photographic.png",
+        "subject": "生命演化与物种多样性",
+        "width": 2172,
+        "height": 724,
+        "generation_method": "built-in imagegen, photorealistic conceptual panorama",
+        "keywords": ["生物演化", "生命演化", "生命进化", "生物进化", "物种演化", "物种进化", "进化论", "evolution", "evolutionary"]
+      }
+    ]
+  },
+  "use": {
+    "path_base": "this manifest directory",
+    "fit": "native PowerPoint center crop",
+    "band_size": [1280, 330],
+    "picture_transparency_percent": 30,
+    "overlay": "native navy gradient above the image: 18% opacity at both edges, 100% at center",
+    "originals_preserved": true,
+    "preview": "preview.html",
+    "prompts": "generation_prompts.md"
+  },
+  "asset_count": 14,
+  "assets": [
+    {"discipline_code": "01", "discipline": "哲学", "file": "01_哲学.png", "subject": "古典图书馆与思想", "width": 2172, "height": 724},
+    {"discipline_code": "02", "discipline": "经济学", "file": "02_经济学.png", "subject": "城市港口与贸易", "width": 2138, "height": 736},
+    {"discipline_code": "03", "discipline": "法学", "file": "03_法学.png", "subject": "法院与天平", "width": 2172, "height": 724},
+    {"discipline_code": "04", "discipline": "教育学", "file": "04_教育学.png", "subject": "大学研讨课堂", "width": 2172, "height": 724},
+    {"discipline_code": "05", "discipline": "文学", "file": "05_文学.png", "subject": "书桌与阅读", "width": 2172, "height": 724},
+    {"discipline_code": "06", "discipline": "历史学", "file": "06_历史学.png", "subject": "考古遗址", "width": 2172, "height": 724},
+    {"discipline_code": "07", "discipline": "理学", "file": "07_理学.png", "subject": "山地天文台", "width": 2182, "height": 721},
+    {"discipline_code": "08", "discipline": "工学", "file": "08_工学.png", "subject": "晶圆与精密设备", "width": 2138, "height": 735},
+    {"discipline_code": "09", "discipline": "农学", "file": "09_农学.png", "subject": "农业试验田", "width": 2175, "height": 723},
+    {"discipline_code": "10", "discipline": "医学", "file": "10_医学.png", "subject": "医学研究实验室", "width": 2172, "height": 724},
+    {"discipline_code": "11", "discipline": "军事学", "file": "11_军事学.png", "subject": "地形模型与战略", "width": 2149, "height": 732},
+    {"discipline_code": "12", "discipline": "管理学", "file": "12_管理学.png", "subject": "学术团队研讨", "width": 2143, "height": 734},
+    {"discipline_code": "13", "discipline": "艺术学", "file": "13_艺术学.png", "subject": "艺术工作室", "width": 2172, "height": 724},
+    {"discipline_code": "14", "discipline": "交叉学科", "file": "14_交叉学科.png", "subject": "跨学科实验室", "width": 2173, "height": 724}
+  ]
+}

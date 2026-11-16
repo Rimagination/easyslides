@@ -1258,9 +1258,46 @@ def convert_text(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
         box_h = abs(box_h)
         flip_attr += ' flipV="1"'
 
+    bullet_style = str(elem.get('data-pptx-bullet') or '').strip().lower()
+    if bullet_style and bullet_style != 'square':
+        raise ValueError(f'Unsupported native PowerPoint bullet style: {bullet_style}')
+    line_spacing_pct = elem.get('data-pptx-line-spacing-pct')
+    if line_spacing_pct is not None:
+        spacing = round(float(line_spacing_pct) * 1000)
+        if not 1000 <= spacing <= 1000000:
+            raise ValueError('PowerPoint line spacing must be between 1 and 1000 percent')
+        spacing_xml = f'<a:lnSpc><a:spcPct val="{spacing}"/></a:lnSpc>'
+    else:
+        spacing_xml = ''
+    if bullet_style == 'square':
+        bullet_indent = abs(ctx_w(_f(elem.get('data-pptx-bullet-indent'), 24.0), ctx))
+        if bullet_indent <= 0:
+            raise ValueError('Native PowerPoint bullet indent must be positive')
+        margin_emu = px_to_emu(bullet_indent)
+        bullet_font = str(elem.get('data-pptx-bullet-font') or 'Arial').strip()
+        bullet_char = str(elem.get('data-pptx-bullet-char') or '■')
+        if len(bullet_char) != 1:
+            raise ValueError('Native PowerPoint bullet must be one Unicode character')
+        bullet_size_pt = elem.get('data-pptx-bullet-size-pt')
+        if bullet_size_pt is not None:
+            bullet_size = round(float(bullet_size_pt) * 100)
+            if not 100 <= bullet_size <= 400000:
+                raise ValueError('Native PowerPoint bullet size must be between 1 and 4000 pt')
+            bullet_size_xml = f'<a:buSzPts val="{bullet_size}"/>'
+        else:
+            bullet_size_xml = '<a:buSzPct val="65000"/>'
+        paragraph_properties = (
+            f'<a:pPr algn="{algn}" marL="{margin_emu}" indent="-{margin_emu}">'
+            f'{spacing_xml}{bullet_size_xml}<a:buFont typeface="{_xml_escape(bullet_font)}"/>'
+            f'<a:buChar char="{_xml_escape(bullet_char)}"/></a:pPr>'
+        )
+    else:
+        paragraph_properties = (f'<a:pPr algn="{algn}">{spacing_xml}</a:pPr>' if spacing_xml
+                                else f'<a:pPr algn="{algn}"/>')
+
     paragraphs_xml = '\n'.join(
         '<a:p>\n'
-        f'<a:pPr algn="{algn}"/>\n'
+        + paragraph_properties + '\n'
         + '\n'.join(_build_run_xml(r, fonts, ctx, text_effect_xml) for r in paragraph)
         + '\n</a:p>'
         for paragraph in paragraphs

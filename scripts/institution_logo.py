@@ -21,6 +21,117 @@ API = ORIGIN + "/api/logos"
 VARIANTS = ("emblem", "brand", "lockup_horizontal", "lockup_vertical", "wordmark")
 MAX_BYTES = 8 * 1024 * 1024
 
+_PLACEHOLDER = re.compile(r"(?:待填写|待补充|未填写|未知|示例|待定|^xxx+$|^n/?a$)", re.I)
+_UNIVERSITY = re.compile(r"[\u3400-\u9fff·]{2,40}?大学")
+_COLLEGE = re.compile(r"[\u3400-\u9fff·]{2,40}?学院")
+_DOMAIN = re.compile(r"\b(?:[a-z0-9-]+\.)+(?:edu(?:\.cn)?|ac\.[a-z]{2})\b", re.I)
+_ENGLISH_SCHOOL = re.compile(
+    r"(?:(?:the\s+)?(?:university|college)\s+of\s+[a-z][a-z0-9 .,&'_-]{1,100}|"
+    r"[a-z][a-z0-9 .&'_-]{1,100}\s+(?:university|college|institute of technology))", re.I
+)
+_PERSONAL_SCHOOL = re.compile(
+    r"(?:我的(?:学校|单位)(?:是|为|[:：])|我(?:是|来自|就读于|在|任职于)|"
+    r"本人(?:来自|就读于|在|任职于)|(?:汇报人|报告人|演讲者)(?:的)?"
+    r"(?:学校|单位)?(?:是|为|来自|[:：]))\s*"
+    r"([\u3400-\u9fff·]{2,40}?(?:大学|学院))"
+)
+
+
+def _school_names(value: str, *, accept_alias: bool = False) -> list[str]:
+    """Extract school names only from a field known to describe the presenter."""
+    value = value.strip()
+    if not value or _PLACEHOLDER.search(value):
+        return []
+    english = re.sub(r"^(?:presenter(?:'s)?\s+)?(?:affiliation|institution|school|university)\s*[:：]\s*",
+                     "", value, flags=re.I).strip()
+    if _ENGLISH_SCHOOL.fullmatch(english):
+        return [english]
+    names: list[str] = []
+    for part in re.split(r"[，,；;、/|（）()\[\]\n]+", value):
+        part = part.strip()
+        if not part or re.search(r"论文作者|作者单位|作者所属|作者团队|paper author|author affiliation", part, re.I):
+            continue
+        part = re.sub(
+            r"^(?:(?:本人|我)(?:是|来自|就读于|在|任职于)|"
+            r"(?:汇报人|报告人|演讲者)(?:的)?(?:学校|单位)?(?:是|为|来自)?|"
+            r"(?:所属|所在)?(?:学校|单位|机构)|和|与|及)\s*[:：=]?\s*", "", part,
+        )
+        if re.search(r"大学(?:附属|附中|附小)", part):
+            continue
+        domains = _DOMAIN.findall(part)
+        if domains:
+            names.extend(domain.casefold() for domain in domains)
+            continue
+        universities = _UNIVERSITY.findall(part)
+        if universities:
+            names.extend(re.sub(r"^(?:和|与|及)", "", name) for name in universities)
+            continue
+        colleges = _COLLEGE.findall(part)
+        if colleges:
+            names.extend(re.sub(r"^(?:和|与|及)", "", name) for name in colleges)
+            continue
+        # Exact provider aliases are valid only in a dedicated school field,
+        # never in arbitrary presenter or paper-author text.
+        if accept_alias and (re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9 .&'_-]{1,100}", part) or
+                             re.fullmatch(r"[\u3400-\u9fff·]{2,15}", part)):
+            names.append(part.strip())
+    return names
+
+
+def identify_presenter_institution(plan: dict, slides: list[dict]) -> dict:
+    """Identify the presenter's school without interpreting cited-paper metadata."""
+    matches: dict[str, dict] = {}
+
+    def collect(field: str, value: object, *, accept_alias: bool = False) -> None:
+        if not isinstance(value, str):
+            return
+        for name in _school_names(value, accept_alias=accept_alias):
+            if not name:
+                continue
+            key = name.casefold()
+            if key not in matches:
+                matches[key] = {"institution": name, "evidence": []}
+            if field not in matches[key]["evidence"]:
+                matches[key]["evidence"].append(field)
+
+    contexts = [("", plan)]
+    if isinstance(plan.get("metadata"), dict):
+        contexts.append(("metadata.", plan["metadata"]))
+    if isinstance(plan.get("academic_brief"), dict):
+        contexts.append(("academic_brief.", plan["academic_brief"]))
+    for prefix, context in contexts:
+        for key in ("presenter_institution", "presenter_affiliation", "institution", "university", "school", "affiliation"):
+            collect(prefix + key, context.get(key), accept_alias=key != "affiliation")
+        presenter = context.get("presenter")
+        if isinstance(presenter, dict):
+            for key in ("institution", "affiliation", "university", "school"):
+                collect(prefix + "presenter." + key, presenter.get(key), accept_alias=key != "affiliation")
+        else:
+            collect(prefix + "presenter", presenter)
+
+    for index, slide in enumerate(slides):
+        role = str(slide.get("role") or "").lower()
+        payload = slide.get("slot_payload")
+        if role not in {"cover", "ending"} or not isinstance(payload, dict):
+            continue
+        fields = ("AFFILIATION", "REPORTER", "PRESENTER") if role == "cover" else ("REPORTER", "PRESENTER")
+        for key in fields:
+            collect(f"slides[{index}].slot_payload.{key}", payload.get(key))
+
+    brief = plan.get("academic_brief") if isinstance(plan.get("academic_brief"), dict) else {}
+    for field, value in (("user_request", plan.get("user_request")),
+                         ("academic_brief.academic_goal", brief.get("academic_goal"))):
+        if isinstance(value, str):
+            for match in _PERSONAL_SCHOOL.finditer(value):
+                collect(field, match.group(1))
+
+    candidates = list(matches.values())
+    if len(candidates) == 1:
+        return {"status": "identified", **candidates[0]}
+    if candidates:
+        return {"status": "ambiguous", "reason": "conflicting_presenter_affiliations", "candidates": candidates}
+    return {"status": "not_identified", "reason": "presenter_institution_not_identified"}
+
 
 def _read(url: str, timeout: float) -> bytes:
     request = Request(url, headers={"User-Agent": "EasySlides/ScanSci-Logos"})

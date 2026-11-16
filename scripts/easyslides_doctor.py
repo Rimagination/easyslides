@@ -93,7 +93,7 @@ def _template_checks() -> list[dict[str, Any]]:
     return rows
 
 
-def build_report(*, host_native_imagegen: bool = False) -> dict[str, Any]:
+def build_report(*, host_native_imagegen: bool = False, image_input: str = "unknown") -> dict[str, Any]:
     capability = detect_imagegen_capability(
         host_native_override=True if host_native_imagegen else None,
     )
@@ -101,6 +101,18 @@ def build_report(*, host_native_imagegen: bool = False) -> dict[str, Any]:
     host_native = bool(capability["host_native_available"])
     skill_path = detect_imagegen_skill()
     checks: dict[str, Any] = {
+        "runtime": {
+            "root": str(ROOT.resolve()),
+            "same_named_user_skill": str(Path.home() / ".agents/skills/easyslides")
+                if (Path.home() / ".agents/skills/easyslides/SKILL.md").is_file() else None,
+            "loaded_skill_root_must_match": True,
+        },
+        "visual_review": {
+            "image_input": image_input,
+            "model_can_review_images": True if image_input == "available" else False if image_input == "unavailable" else None,
+            "rendering_is_visual_review": False,
+            "unavailable_action": "Use a vision-capable model or human review; otherwise deliver a clearly marked preview draft.",
+        },
         "python": {"available": True, "version": sys.version.split()[0], "path": sys.executable},
         "node": _command_version("node"),
         "npm": _command_version("npm"),
@@ -126,6 +138,8 @@ def build_report(*, host_native_imagegen: bool = False) -> dict[str, Any]:
     template_failures = sum(row.get("status") != "pass" for row in checks["templates"])
     blockers = []
     warnings = []
+    if image_input != "available":
+        warnings.append("Model image input is unverified or unavailable; rendered files and pixel counts do not establish visual review")
     for module in ("pillow", "pptx", "lxml", "flask"):
         if not checks[module]["available"]:
             blockers.append(f"Required runtime dependency unavailable: {module}")
@@ -150,9 +164,10 @@ def build_report(*, host_native_imagegen: bool = False) -> dict[str, Any]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Diagnose EasySlides local runtime and image capabilities.")
     parser.add_argument("--host-native-imagegen", action="store_true")
+    parser.add_argument("--image-input", choices=("available", "unavailable", "unknown"), default="unknown")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
-    report = build_report(host_native_imagegen=args.host_native_imagegen)
+    report = build_report(host_native_imagegen=args.host_native_imagegen, image_input=args.image_input)
     print(json.dumps(report, ensure_ascii=False, indent=2) if args.json else f"EasySlides doctor: {report['status']}")
     return 0 if report["status"] == "pass" else 1
 

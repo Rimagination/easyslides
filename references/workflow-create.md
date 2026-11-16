@@ -106,7 +106,7 @@ Use scenario first, template second: the scenario controls content organization
 and evidence obligations; the template controls visual containers. A template
 route is not a scenario.
 
-If the selected route is `academic_general` or `academic_scqa`, read
+If the selected route is `academic_classic` or `academic_scqa`, read
 `references/academic-orchestration.md` and capture the Audience-State-Transfer
 contract before writing the outline. Use SCQA as a default academic spine while
 keeping source-faithful materials intact.

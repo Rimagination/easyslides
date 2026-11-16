@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="header-base" x="0" y="0" width="1280" height="92" fill="#EEF5F9" />
+  <svg id="header-chapter-image" x="0" y="0" width="266" height="92" viewBox="0 0 1 1" preserveAspectRatio="none" data-slot="CHAPTER_IMAGE"><image x="0" y="0" width="1" height="1" preserveAspectRatio="none" href="{{CHAPTER_IMAGE}}" /></svg>
+  <rect id="header-chapter" x="0" y="0" width="266" height="92" fill="#08264D" fill-opacity="0.75" />
+  <text id="header-chapter-label" x="133" y="65" font-family="Microsoft YaHei" font-size="37.3333333" font-weight="600" fill="#FFFFFF" text-anchor="middle" data-slot="CHAPTER_LABEL" data-pptx-box-x="23" data-pptx-box-y="15" data-pptx-box-w="220" data-pptx-box-h="62" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-text-role="chapter_title" data-center-lock="true" data-easyslides-center-container="header-chapter">{{CHAPTER_LABEL}}</text>
+  <g id="title" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#102F4A">
+    <text x="308" y="65" font-size="37.3333333" font-weight="600" data-slot="PAGE_TITLE" data-pptx-box-x="308" data-pptx-box-y="15" data-pptx-box-w="902" data-pptx-box-h="62" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" font-family="Microsoft YaHei" data-text-role="page_title" data-center-lock="true" data-easyslides-center-container="header-chapter">{{PAGE_TITLE}}</text>
+  </g>
+  <g id="key-message" font-family="'Microsoft YaHei'" fill="#53616E">
+    <rect x="65" y="128" width="17.8" height="17.8" fill="#171C22" data-pptx-preview-only="true" />
+    <text x="94" y="149" font-size="26.6666667" font-weight="400" data-slot="KEY_MESSAGE" data-pptx-box-x="64" data-pptx-box-y="116" data-pptx-box-w="1152" data-pptx-box-h="70" data-pptx-valign="top" data-pptx-textbox="true" data-pptx-no-wrap="true" font-family="Microsoft YaHei" fill="#171C22" data-pptx-bullet="square" data-pptx-bullet-indent="30" data-pptx-bullet-font="Microsoft YaHei" data-pptx-bullet-size-pt="20" data-pptx-line-spacing-pct="130" data-pptx-bullet-char="◼" data-text-role="hint">{{KEY_MESSAGE}}</text>
+  </g>
+  <text x="92" y="245.550" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="92" data-pptx-box-y="218.200" data-pptx-box-w="490" data-pptx-box-h="37.900" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="DIAGRAM_STEP_1" data-text-role="body_heading">{{DIAGRAM_STEP_1}}</text>
+  <text x="684" y="245.550" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="684" data-pptx-box-y="218.200" data-pptx-box-w="490" data-pptx-box-h="37.900" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="DIAGRAM_STEP_3" data-text-role="body_heading">{{DIAGRAM_STEP_3}}</text>
+  <line x1="92" y1="264" x2="596" y2="264" stroke="#3B817B" stroke-width="2" />
+  <line x1="684" y1="264" x2="1188" y2="264" stroke="#3B817B" stroke-width="2" />
+  <text x="152.5" y="324.750" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="102.5" data-pptx-box-y="300.150" data-pptx-box-w="100" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" text-anchor="middle" data-slot="LEFT_NODE_1" data-text-role="body_heading">{{LEFT_NODE_1}}</text>
+  <line x1="205" y1="317" x2="240" y2="317" stroke="#3B817B" stroke-width="2" />
+  <polygon points="232,312 232,322 240,317" fill="#3B817B" />
+  <text x="302.5" y="324.750" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="252.5" data-pptx-box-y="300.150" data-pptx-box-w="100" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" text-anchor="middle" data-slot="LEFT_NODE_2" data-text-role="body_heading">{{LEFT_NODE_2}}</text>
+  <line x1="355" y1="317" x2="390" y2="317" stroke="#3B817B" stroke-width="2" />
+  <polygon points="382,312 382,322 390,317" fill="#3B817B" />
+  <text x="452.5" y="324.750" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="402.5" data-pptx-box-y="300.150" data-pptx-box-w="100" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" text-anchor="middle" data-slot="LEFT_NODE_3" data-text-role="body_heading">{{LEFT_NODE_3}}</text>
+  <text x="746.5" y="325.600" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="696.5" data-pptx-box-y="301.000" data-pptx-box-w="100" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" text-anchor="middle" data-slot="RIGHT_NODE_1" data-text-role="body_heading">{{RIGHT_NODE_1}}</text>
+  <line x1="799" y1="317" x2="834" y2="317" stroke="#3B817B" stroke-width="2" />
+  <polygon points="826,312 826,322 834,317" fill="#3B817B" />
+  <text x="896.5" y="325.600" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="846.5" data-pptx-box-y="301.000" data-pptx-box-w="100" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" text-anchor="middle" data-slot="RIGHT_NODE_2" data-text-role="body_heading">{{RIGHT_NODE_2}}</text>
+  <line x1="949" y1="317" x2="984" y2="317" stroke="#3B817B" stroke-width="2" />
+  <polygon points="976,312 976,322 984,317" fill="#3B817B" />
+  <text x="1046.5" y="325.600" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="996.5" data-pptx-box-y="301.000" data-pptx-box-w="100" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" text-anchor="middle" data-slot="RIGHT_NODE_3" data-text-role="body_heading">{{RIGHT_NODE_3}}</text>
+  <line x1="746" y1="278" x2="1046" y2="278" stroke="#3B817B" stroke-width="2" />
+  <polygon points="1038,273 1038,283 1046,278" fill="#3B817B" />
+  <text x="92" y="396.750" font-size="24" font-weight="400" fill="#171C22" font-family="Microsoft YaHei" data-pptx-box-x="92" data-pptx-box-y="372.150" data-pptx-box-w="500" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="BACKGROUND_LINE1" data-text-role="body">{{BACKGROUND_LINE1}}</text>
+  <text x="92" y="441.750" font-size="24" font-weight="400" fill="#171C22" font-family="Microsoft YaHei" data-pptx-box-x="92" data-pptx-box-y="417.150" data-pptx-box-w="500" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="BACKGROUND_LINE2" data-text-role="body">{{BACKGROUND_LINE2}}</text>
+  <text x="92" y="489.750" font-size="24" font-weight="700" fill="#2F759B" font-family="Microsoft YaHei" data-pptx-box-x="92" data-pptx-box-y="465.150" data-pptx-box-w="500" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="DIAGRAM_STEP_2" data-text-role="body_heading">{{DIAGRAM_STEP_2}}</text>
+  <text x="684" y="396.750" font-size="24" font-weight="400" fill="#171C22" font-family="Microsoft YaHei" data-pptx-box-x="684" data-pptx-box-y="372.150" data-pptx-box-w="500" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="BACKGROUND_LINE3" data-text-role="body">{{BACKGROUND_LINE3}}</text>
+  <text x="684" y="444.600" font-size="24" font-weight="700" fill="#53616E" font-family="Microsoft YaHei" data-pptx-box-x="684" data-pptx-box-y="420.000" data-pptx-box-w="450" data-pptx-box-h="32.400" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="DIAGRAM_TITLE" data-text-role="body_heading">{{DIAGRAM_TITLE}}</text>
+  <text x="88" y="616.517" font-size="21.3333333" font-weight="700" fill="#3B817B" font-family="Microsoft YaHei" data-pptx-box-x="88" data-pptx-box-y="594.650" data-pptx-box-w="108" data-pptx-box-h="28.800" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-text-role="secondary">核心要点</text>
+  <text x="205" y="615.500" font-size="24" font-weight="700" fill="#102F4A" font-family="Microsoft YaHei" data-pptx-box-x="205" data-pptx-box-y="589.800" data-pptx-box-w="980" data-pptx-box-h="34.600" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-slot="CORE_PROBLEM" data-text-role="body_heading">{{CORE_PROBLEM}}</text>
+  <path id="page-number-badge" d="M 1244 672 H 1280 V 720 H 1232 V 684 Q 1232 672 1244 672 Z" fill="#D8E1E9" />
+  <g id="meta" font-family="'SF Mono', Consolas, 'Courier New', monospace" fill="#53616E">
+    <text x="64" y="696" font-size="12" data-slot="SOURCE" data-pptx-box-x="64.0" data-pptx-box-y="681.0" data-pptx-box-w="430.0" data-pptx-box-h="19.8" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" data-text-role="source" font-family="Arial">{{SOURCE}}</text>
+    <text x="1256" y="703" font-size="21.3333333" text-anchor="middle" data-slot="PAGE_NUM" data-pptx-box-x="1232" data-pptx-box-y="672" data-pptx-box-w="48" data-pptx-box-h="48" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true" font-family="Cambria" font-weight="700" fill="#2F759B" data-text-role="page_number" data-center-lock="true">{{PAGE_NUM}}</text>
+  </g>
+  <polygon points="807,312 807,322 799,317" fill="#3B817B" />
+  <polygon points="957,312 957,322 949,317" fill="#3B817B" />
+  <polygon points="754,273 754,283 746,278" fill="#3B817B" />
+  <line id="open-layout-separator-1" x1="64" y1="570" x2="1216" y2="570" stroke="#D8E1E9" stroke-width="1" />
+</svg>

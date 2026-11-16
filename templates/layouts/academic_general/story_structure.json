@@ -1,68 +1,64 @@
 {
-  "schema_version": "easyslides.academic_general.story_structure.v1",
+  "schema_version": "easyslides.academic_paper_report.story.v1",
   "template_id": "academic_general",
-  "narrative_model": "AST_SCQA",
-  "default_order": ["cover", "toc", "hook", "S", "C", "Q", "A", "takeaway", "ending"],
-  "ast_questions": [
-    "Who is the audience?",
-    "What is their initial state?",
-    "What desired state should the deck create?",
-    "What core tension makes the talk worth hearing?",
-    "How does each slide move the audience forward?"
+  "recommended_sections": [
+    "background",
+    "related_work",
+    "research_gap",
+    "method",
+    "results",
+    "comparative_discussion",
+    "synthesis"
   ],
-  "transfer_path": [
-    {
-      "role": "hook",
-      "purpose": "Establish why this academic topic matters now.",
-      "preferred_shell": "01_cover"
+  "default_audience": "academically_experienced",
+  "layout_arrow": {
+    "kind": "editable_solid_block",
+    "fill": "theme_accent",
+    "outline": "none",
+    "head_length_fraction": 0.33,
+    "shaft_to_head_height": 0.44,
+    "head_height_px": "clamp(length*0.5,16,30)",
+    "shadow": {
+      "dx_px": 0,
+      "dy_px": 2,
+      "std_deviation_px": 2,
+      "opacity": 0.16
     },
-    {
-      "role": "conflict",
-      "purpose": "Surface the gap, limitation, contradiction, or unresolved question.",
-      "preferred_shell": "03_content"
-    },
-    {
-      "role": "method",
-      "purpose": "Explain the approach, framework, data, or experiment without process noise.",
-      "preferred_shell": "03_content"
-    },
-    {
-      "role": "proof",
-      "purpose": "Build trust with source-faithful figures, tables, results, or examples.",
-      "preferred_shell": "03_content"
-    },
-    {
-      "role": "takeaway",
-      "purpose": "Leave a portable judgment, implication, or next step.",
-      "preferred_shell": "04_ending"
-    }
-  ],
-  "scqa_phases": [
-    {
-      "phase": "S",
-      "name": "Situation",
-      "purpose": "Frame shared academic context."
-    },
-    {
-      "phase": "C",
-      "name": "Complication",
-      "purpose": "Expose the gap, limitation, conflict, or challenge."
-    },
-    {
-      "phase": "Q",
-      "name": "Question",
-      "purpose": "Condense the research or teaching question."
-    },
-    {
-      "phase": "A",
-      "name": "Answer",
-      "purpose": "Show method, evidence, result, implication, and next step."
-    }
-  ],
-  "deck_rules": [
-    "Use cover first and ending last.",
-    "Use contents when the deck has at least two sections.",
-    "Use chapter slides only for major audience-state transitions.",
-    "Every content slide should carry one defensible claim plus source-linked evidence or a clear reasoning block."
-  ]
+    "scientific_relations": "preserve original arrows, tree/network edges and meaningful dashed or feedback relations",
+    "branch_geometry": "single_closed_silhouette_equal_shafts_heads_and_tip_baseline_no_stubs"
+  },
+  "body_contract": {
+    "text_hierarchy": "layouts.json#text_hierarchy",
+    "requires_scientific_visual_and_text": true,
+    "paragraph_only_pages": false,
+    "distinct_information_gain_per_page": true,
+    "max_consecutive_same_composition": 2,
+    "disallowed_teaching_labels": [
+      "如何解读",
+      "读图指南",
+      "这页告诉我们"
+    ],
+    "method_diagram": "meaningful_native_graphics_not_prose_blocks_with_arrows",
+    "parallel_alignment": "shared_columns_illustration_bounds_text_baselines"
+  },
+  "paper_figure_caption": {
+    "format": "{substantive_figure_name} ({author_year})",
+    "example": "A对B的影响 (Tim et al., 2025)",
+    "figure_locator_location": [
+      "source_manifest",
+      "presenter_notes"
+    ],
+    "font_chinese": "KaiTi",
+    "font_latin": "Times New Roman",
+    "font_size_pt": 14,
+    "overflow": "wrap_before_citation_without_shrinking"
+  },
+  "figure_acquisition": {
+    "background_and_frontier": "Follow relevant Introduction references to original scholarly figures.",
+    "methods": "Use original figures or source-supported editable schematics of actual inputs, model stages, outputs and validation.",
+    "results": "Use the focal paper's figures and verified data.",
+    "discussion": "Include external-study figures and compare systems, response variables, scale and methods.",
+    "proposals": "Visualize proposed designs separately from observed evidence; never fabricate results."
+  },
+  "selection_rule": "Establish background, related work and research gap before methods/results. Select varied layouts by the actual argument, evidence and capacity. Section names are narrative roles, not mandatory renderer layout IDs."
 }

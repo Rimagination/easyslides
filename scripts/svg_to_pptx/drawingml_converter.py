@@ -200,9 +200,25 @@ def convert_g(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     if not child_results:
         return None
 
-    # Single-child non-semantic groups are flattened to reduce nesting. Top-level
-    # semantic groups are preserved so animations target the group, not its
-    # individual child shapes.
+    # A semantic group containing only one actual text box adds a redundant
+    # selection frame in PowerPoint. Use the text box itself as the animation
+    # target when there is no group transform/effect or component contract.
+    visible_children = [
+        child for child in elem
+        if child.tag.replace(f'{{{SVG_NS}}}', '') not in _NON_VISUAL_TAGS
+        and str(child.get('data-pptx-preview-only') or '').strip().lower() not in {'1', 'true', 'yes'}
+    ]
+    if (len(child_results) == 1 and should_animate_group and not preserve_component_group
+            and not transform and not filter_id and not ctx.filter_id
+            and len(visible_children) == 1
+            and visible_children[0].tag.replace(f'{{{SVG_NS}}}', '') == 'text'):
+        match = re.search(r'<p:cNvPr id="(\d+)"', child_results[0].xml)
+        if match:
+            ctx.anim_targets.append((int(match.group(1)), elem_id))
+            return child_results[0]
+
+    # Single-child non-semantic groups are flattened to reduce nesting. Other
+    # semantic groups retain their wrapper as a shared animation target.
     if len(child_results) == 1 and not should_animate_group and not preserve_component_group:
         return child_results[0]
 
@@ -363,6 +379,10 @@ def collect_defs(root: ET.Element) -> dict[str, ET.Element]:
 
 def convert_element(elem: ET.Element, ctx: ConvertContext) -> ShapeResult | None:
     """Dispatch an SVG element to the appropriate converter."""
+    # Some native PowerPoint features have no SVG equivalent. Their SVG-only
+    # preview markers must not become duplicate, independently editable shapes.
+    if str(elem.get('data-pptx-preview-only') or '').strip().lower() in {'1', 'true', 'yes'}:
+        return None
     tag = elem.tag.replace(f'{{{SVG_NS}}}', '')
 
     if tag == 'g' and is_native_table(elem):

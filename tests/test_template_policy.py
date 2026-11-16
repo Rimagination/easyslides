@@ -13,6 +13,7 @@ class TemplatePolicyTests(unittest.TestCase):
         policy = json.loads(POLICY.read_text(encoding="utf-8"))
         expected = {
             "academic_general",
+            "academic_classic",
             "academic_scqa",
             "defense_leftnav",
             "defense_topnav",
@@ -25,10 +26,12 @@ class TemplatePolicyTests(unittest.TestCase):
     def test_only_official_templates_are_in_the_project_layout_root(self) -> None:
         policy = json.loads(POLICY.read_text(encoding="utf-8"))
         official = set(policy["official_template_ids"])
+        aliases = json.loads((LAYOUTS / "aliases.json").read_text(encoding="utf-8"))
         actual = {
             path.name
             for path in LAYOUTS.iterdir()
-            if path.is_dir() and path.name != "assets" and (path / "layouts.json").is_file()
+            if path.is_dir() and path.name not in aliases and path.name != "assets"
+            and (path / "layouts.json").is_file()
         }
         self.assertEqual(actual, official)
 

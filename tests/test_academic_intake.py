@@ -86,7 +86,7 @@ def test_cli_academic_init_and_free_text_answer(tmp_path, capsys):
     request = json.loads(path.read_text(encoding="utf-8"))
     assert request["academic_intake"] is True
     assert request["decisions"]["academic_goal"] == "论文答辩，解释我的贡献"
-    assert next_clarification_question(request)["question_id"] == "source_policy"
+    assert next_clarification_question(request)["question_id"] == "production_scheme"
 
 
 def test_plan_gate_requires_confirmed_brief_handoff(tmp_path, monkeypatch):

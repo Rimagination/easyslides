@@ -2,6 +2,33 @@
 
 ## Unreleased
 
+### 1.2.2 — native academic authoring (local candidate)
+
+- Make expert-level page arguments, complementary scientific evidence and
+  source permissions explicit in the default skill and DSH bootstrap.
+- Add registered native scientific body compositions, inherited slot contracts,
+  no-shrink text frames and unified block arrows; keep captions and table columns
+  aligned and author-year citations together.
+- Extract research figures with MinerU Precision / configured PDFFigures2,
+  reuse machine layout coordinates, retain source/provenance and never treat
+  text-only parsing as successful figure extraction.
+- Check actual exported text-frame centres and require genuine final-render
+  review. A host without image input reports `needs_visual_review`.
+- Lower single-line `academic_general` cover titles while preserving two-line
+  placement; keep native textboxes and template previews synchronized. Refresh
+  README theme examples and identify this default template's recent enhancements
+  separately from the other native templates.
+- Resolve historical template paths without machine-local junctions and keep
+  registry layout counts and compiled-IR availability accurate.
+
+- Add a Qoder Plugin manifest, host guide and privacy-safe ZIP builder using the
+  shared runtime. Include marketplace listing copy and separate local upload
+  from public submission and platform review.
+- Add a DeepSeek Harness bundle with the npm name `easyslides`, native skill
+  registration, shared runtime and existing academic defaults. Stage releases
+  through the privacy-safe bundle builder and an npm file allowlist; package
+  installation has no lifecycle hooks. Local packing does not publish to npm.
+
 ## 1.2.1 - 2026-10-12
 
 ### 机构 Logo 与智能搭配

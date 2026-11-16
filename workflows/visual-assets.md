@@ -13,7 +13,7 @@ illustration, or no image at all.
 ```powershell
 python scripts/easyslides.py visual-plan <project>/deck_plan.json `
   --out-dir <project>/images `
-  --template-dir templates/layouts/academic_general `
+  --template-dir templates/layouts/academic_classic `
   --palette academic_green `
   --imagegen `
   --write-deck-plan --json
@@ -39,7 +39,7 @@ For a one-command, reviewable build that keeps the source plan untouched:
 
 ```powershell
 python scripts/easyslides.py build <project>/deck_plan.json `
-  --template academic_general `
+  --template academic_classic `
   --palette academic_green `
   --out-dir <project>/build `
   --json
@@ -49,7 +49,7 @@ The selected palette is inherited by image prompts and runtime SVG/PPTX theme
 replacement. Inspect the resolved semantic contract with:
 
 ```powershell
-python scripts/easyslides.py theme validate academic_general --palette academic_green
+python scripts/easyslides.py theme validate academic_classic --palette academic_green
 ```
 
 User color choices override the selected palette by semantic role and are

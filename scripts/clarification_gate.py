@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -292,9 +293,8 @@ PRODUCTION_ROUTES = {"new_deck", "paper_deck", "template_fill", "image_reconstru
 PRODUCTION_QUESTION = _question(
     "production_scheme", "production_scheme", "选择 PPT 制作方案（消耗和耗时为相对估计）",
     [
-        _option("direct_editable", "直接生成可编辑 PPT", "Token 消耗：中；耗时：中。"),
-        _option("image_full_rebuild", "AI 生图后整页重建", "Token 消耗：高；耗时：长。生图消耗另行说明。"),
-        _option("image_partial_rebuild", "AI 生图后局部重建", "已有图片、少量选区时 Token 消耗：低至中；耗时：短至中。首次生图另计。"),
+        _option("direct_editable", "原生可编辑 PPT", "文字、图表和布局直接编辑；Token 消耗：中；耗时：中。"),
+        _option("image_full_rebuild", "先生图，再转为可编辑 PPT", "先确定整页图片效果，再重建文字和结构；Token 消耗：高；耗时：长。生图用量另计。"),
     ], "direct_editable", "确认制作路线后再开始；不自动采用推荐项。",
 )
 RECONSTRUCTION_QUESTION = _question(
@@ -303,6 +303,29 @@ RECONSTRUCTION_QUESTION = _question(
         _option("full_vector", "全图矢量重建", "Token 消耗：高至很高；耗时：长至很长。细节可能与原图有差异。"),
         _option("preserve_complex_images", "保留复杂配图", "Token 消耗：中；耗时：中。文字和简单结构可编辑。"),
     ], "preserve_complex_images", "两种方式均使用原生文本框；生图额外说明，用户确认后执行。",
+)
+ACADEMIC_PAPER_THEME_QUESTION = _question(
+    "theme_palette", "theme_palette", "这份学术论文汇报希望使用什么主题色？也可输入自定义的 #RRGGBB。",
+    [
+        _option("academic_blue", "学术深蓝", "沉稳的深蓝色，沿用当前模板基调。"),
+        _option("academic_purple", "清华风紫", "紫色主题，保留浅色背景和深色正文。"),
+        _option("academic_green", "深绿色", "深绿色主题，适合自然和科研汇报。"),
+        _option("technology_blue", "科技蓝", "更明亮的蓝色主题，适合技术类汇报。"),
+    ], "academic_blue", "主题色会影响封面、目录、正文页眉及结束页；推荐项不会自动选定。",
+)
+ACADEMIC_PAPER_THEME_IDS = {option["id"] for option in ACADEMIC_PAPER_THEME_QUESTION["options"]}
+ACADEMIC_PAPER_THEME_QUESTION["allow_custom_hex"] = True
+THEME_IMAGE_SOURCES = {"template_assets", "generate_new", "user_provided"}
+THEME_IMAGE_QUESTION = _question(
+    "theme_image_source", "theme_image_source", "这份汇报的主题图采用哪种方式？",
+    [
+        _option("template_assets", "使用模板主题图", "复用 14 个学科门类的已有主题图，按材料匹配并裁剪；无需生图。"),
+        _option("generate_new", "单独生成主题图", "根据本次汇报主题定制无文字主题图；会增加生图耗时和用量，具体另行说明。"),
+    ], "template_assets", "主题图用于封面、目录、章标题裁剪和结尾；推荐项不自动选定，用户提供的图片优先。",
+)
+ACADEMIC_PAPER_THEME_PREVIEW = (
+    Path(__file__).resolve().parents[1]
+    / "templates/layouts/academic_general/assets/theme_palette_preview.png"
 )
 QUESTION_CATALOG["image_reconstruction"] = []
 for _route in PRODUCTION_ROUTES:
@@ -348,9 +371,78 @@ def _question_ids(request: dict[str, Any]) -> list[str]:
     return [str(item["id"]) for item in request.get("question_bank", []) if isinstance(item, dict)]
 
 
+def _uses_academic_paper_template(known: dict[str, Any]) -> bool:
+    """Recognize the canonical template and the prior explicit-path location."""
+    if known.get("template_id") in {"academic_general", "academic_paper", "academic_paper_report"}:
+        return True
+    expected_paths = ("templates/layouts/academic_general", "templates/layouts/academic_paper",
+                      "templates/layouts/academic_paper_report",
+                      "templates/development/academic_paper_report")
+    for key in ("template", "template_path", "template_dir"):
+        value = str(known.get(key) or "").strip().replace("\\", "/").rstrip("/")
+        if any(value == expected or value.endswith("/" + expected) for expected in expected_paths):
+            return True
+    return False
+
+
+def _valid_academic_paper_theme(value: Any) -> bool:
+    return isinstance(value, str) and (
+        value in ACADEMIC_PAPER_THEME_IDS or bool(re.fullmatch(r"#[0-9A-Fa-f]{6}", value))
+    )
+
+
 def _brief_question(field: str, prompt: str, *, inspect: bool = False) -> dict[str, Any]:
     return {"id": field, "field": field, "prompt": prompt,
             "input_type": "text", "blocking": True, "agent_inspection": inspect}
+
+
+def _add_native_template_dependencies(request: dict[str, Any]) -> None:
+    """Apply the project default only after a native choice, then inspect identity.
+
+    This flag is set on new requests. Existing approved requests are not
+    retroactively assigned a template or reopened for new intake questions.
+    """
+    if not request.get("native_template_intake"):
+        return
+    decisions = request["decisions"]
+    if decisions.get("template_id") in {"academic_paper", "academic_paper_report"}:
+        decisions["template_id"] = "academic_general"
+    scheme = decisions.get("production_scheme")
+    template_fields = ("template_id", "template", "template_path", "template_dir")
+    if (scheme == "direct_editable" and request["route"] in {"new_deck", "paper_deck"}
+            and not any(_known_value(decisions, key) for key in template_fields)):
+        policy_path = Path(__file__).resolve().parents[1] / "templates/template_policy.json"
+        policy = json.loads(policy_path.read_text(encoding="utf-8"))
+        template_id = policy["default_native_template_id"]
+        if template_id not in policy["official_template_ids"]:
+            raise ClarificationError("native default must be an official template")
+        decisions["template_id"] = template_id
+        request["template_selection"] = {"source": "project_default", "template_id": template_id}
+    if not _uses_academic_paper_template(decisions) or scheme in {"image_full_rebuild", "image_partial_rebuild"}:
+        return
+    request["theme_confirmation_required"] = True
+    if _known_value(decisions, "theme_palette") and not _valid_academic_paper_theme(decisions["theme_palette"]):
+        raise ClarificationError("unknown academic paper report theme_palette")
+    questions = [copy.deepcopy(ACADEMIC_PAPER_THEME_QUESTION)]
+    if request.get("theme_image_intake"):
+        if _known_value(decisions, "theme_image_path") and not _known_value(decisions, "theme_image_source"):
+            decisions["theme_image_source"] = "user_provided"
+        if (_known_value(decisions, "theme_image_source")
+                and decisions["theme_image_source"] not in THEME_IMAGE_SOURCES):
+            raise ClarificationError("unknown theme_image_source")
+        questions.append(copy.deepcopy(THEME_IMAGE_QUESTION))
+    questions.append(_brief_question(
+        "presentation_identity",
+        "检查材料与对话中的学科、汇报人、汇报人学校和日期，记录来源；不要采用论文作者单位。"
+        "缺失或冲突项集中向用户补问，可明确省略；将已识别信息和明确省略项一并记录。",
+        inspect=True,
+    ))
+    for question in questions:
+        if question["id"] not in _question_ids(request) and not _known_value(decisions, question["field"]):
+            request["question_bank"].append(question)
+    if request.get("academic_intake") and not _known_value(decisions, "style_intent"):
+        decisions["style_intent"] = "使用 academic_general 默认学术模板，按材料选择版式；用户选择优先。"
+        request["question_bank"] = [q for q in request["question_bank"] if q["id"] != "style_intent"]
 
 
 ACADEMIC_QUESTIONS = [
@@ -389,7 +481,7 @@ def _add_academic_dependencies(request: dict[str, Any]) -> None:
 
 def _invalid_academic_text(decisions: dict[str, Any]) -> list[str]:
     fields = {q["field"] for q in ACADEMIC_QUESTIONS if q.get("input_type") == "text"}
-    fields.update({"research_scope", "material_inventory"})
+    fields.update({"research_scope", "material_inventory", "presentation_identity"})
     return [field for field in fields if field in decisions and
             (not isinstance(decisions[field], str) or not decisions[field].strip())]
 
@@ -399,12 +491,23 @@ def _unanswered_ids(request: dict[str, Any]) -> list[str]:
     return [question_id for question_id in _question_ids(request) if question_id not in answers]
 
 
+def _question_priority(request: dict[str, Any]) -> list[str]:
+    first = ['production_scheme', 'reconstruction_mode', 'theme_palette', 'theme_image_source', 'presentation_identity']
+    if request.get('academic_intake'):
+        return first + ['academic_goal', 'source_policy', 'material_inventory', 'research_scope',
+                        'audience', 'talk_timing', 'style_intent', 'content_boundaries']
+    return first + ['purpose', 'presentation_mode', 'audience']
+
+
 def _refresh_round(request: dict[str, Any]) -> dict[str, Any]:
+    _add_native_template_dependencies(request)
     _add_academic_dependencies(request)
     scheme = request.get("decisions", {}).get("production_scheme")
     if scheme in PRODUCTION_SCHEMES - {"direct_editable"} and not request["decisions"].get("reconstruction_mode"):
         if "reconstruction_mode" not in _question_ids(request):
             request["question_bank"].insert(0, copy.deepcopy(RECONSTRUCTION_QUESTION))
+    priority = _question_priority(request)
+    request['question_bank'].sort(key=lambda q: priority.index(q['id']) if q['id'] in priority else len(priority))
     unanswered = _unanswered_ids(request)
     by_id = {str(item["id"]): item for item in request.get("question_bank", []) if isinstance(item, dict)}
     current_ids = unanswered[:MAX_QUESTIONS_PER_ROUND]
@@ -463,6 +566,8 @@ def build_clarification_request(
         "decisions": copy.deepcopy(known_fields),
         "assumptions": [],
         "academic_intake": academic,
+        "native_template_intake": canonical in {"new_deck", "paper_deck", "template_fill"},
+        "theme_image_intake": canonical in {"new_deck", "paper_deck", "template_fill"},
     }
     return _refresh_round(request)
 
@@ -528,16 +633,37 @@ def validate_clarification_request(request: dict[str, Any]) -> dict[str, Any]:
         elif next((q.get("input_type") for q in bank if q.get("id") == question_id), None) == "text":
             if not isinstance(answer, str) or not answer.strip():
                 issues.append({"code": "ANSWER-TEXT", "message": "free-text answers must be non-empty strings"})
-        elif answer not in option_map.get(question_id, set()):
+        elif (
+            answer not in option_map.get(question_id, set())
+            and not (question_id == "production_scheme" and answer in PRODUCTION_SCHEMES)
+            and not (question_id == "theme_image_source" and answer in THEME_IMAGE_SOURCES)
+            and not (
+                next((q.get("allow_custom_hex") for q in bank if q.get("id") == question_id), False)
+                and _valid_academic_paper_theme(answer)
+            )
+        ):
             issues.append({"code": "ANSWER-OPTION", "message": f"answer {answer!r} is not valid for {question_id!r}"})
 
     unanswered = [question_id for question_id in ordered_ids if question_id not in answers]
     status = request.get("status")
+    if (request.get("theme_confirmation_required")
+            and not _valid_academic_paper_theme(request.get("decisions", {}).get("theme_palette"))
+            and "theme_palette" not in unanswered):
+        issues.append({"code": "THEME-CHOICE-MISSING", "message": "the selected template requires a confirmed theme palette"})
     if status == "confirmed" and request.get("route") in PRODUCTION_ROUTES:
         try:
             require_production_decisions(request.get("decisions", {}))
         except ClarificationError as exc:
             issues.append({"code": "PRODUCTION-CHOICE-MISSING", "message": str(exc)})
+    if request.get("native_template_intake"):
+        expected_native = copy.deepcopy(request)
+        try:
+            _add_native_template_dependencies(expected_native)
+            for question in expected_native["question_bank"]:
+                if question["id"] not in ids and not _known_value(request.get("decisions", {}), question["field"]):
+                    issues.append({"code": "NATIVE-INTAKE-MISSING", "message": f"missing native requirement: {question['field']}"})
+        except (ClarificationError, KeyError, OSError, ValueError) as exc:
+            issues.append({"code": "NATIVE-INTAKE-INVALID", "message": str(exc)})
     for question in bank:
         if isinstance(question, dict) and question.get("id") in answers:
             if request.get("decisions", {}).get(question.get("field")) != answers[question["id"]]:
@@ -604,7 +730,12 @@ def answer_clarification_request(
         valid_options = {str(option["id"]) for option in by_id[question_id]["options"]}
         if option_id in {"recommended", "recommendation", "按推荐"}:
             option_id = str(by_id[question_id]["recommended_option_id"])
-        if option_id not in valid_options:
+        if (
+            option_id not in valid_options
+            and not (question_id == "production_scheme" and option_id in PRODUCTION_SCHEMES)
+            and not (question_id == "theme_image_source" and option_id in THEME_IMAGE_SOURCES)
+            and not (by_id[question_id].get("allow_custom_hex") and _valid_academic_paper_theme(option_id))
+        ):
             raise ClarificationError(f"invalid option {option_id!r} for question {question_id!r}")
         next_answers[question_id] = option_id
 
@@ -686,11 +817,9 @@ def next_clarification_question(request: dict[str, Any]) -> dict[str, Any]:
     unanswered = set(_unanswered_ids(request))
     if not unanswered:
         return {'status': 'ready_for_summary', 'questions': [], 'decisions': request['decisions']}
-    # Establish purpose before technical options; an image choice immediately
-    # exposes its dependent mode question. Existing batch-state remains compatible.
-    priority = ['reconstruction_mode', 'purpose', 'presentation_mode', 'audience', 'production_scheme']
-    if request.get('academic_intake'):
-        priority = ['academic_goal', 'source_policy', 'material_inventory', 'research_scope', 'audience', 'talk_timing', 'style_intent', 'content_boundaries', 'reconstruction_mode', 'production_scheme']
+    # The user selects production first. The native branch then confirms color
+    # and inspects identity; an image branch immediately asks its reconstruction mode.
+    priority = _question_priority(request)
     bank = [q for q in request['question_bank'] if q['id'] in unanswered]
     question = min(bank, key=lambda q: priority.index(q['id']) if q['id'] in priority else len(priority))
     if question.get('input_type') == 'text':
@@ -703,9 +832,15 @@ def next_clarification_question(request: dict[str, Any]) -> dict[str, Any]:
     title = question['prompt']
     if question['id'] in ('production_scheme', 'reconstruction_mode'):
         title += ' Token 与耗时为相对估计，随任务复杂度变化；如需生图，另有生成阶段和用量。'
-    return {'status': 'needs_answer', 'question_id': question['id'], 'field': question['field'],
-            'option_ids': [o['id'] for o in options],
-            'questions': [{'title': title, 'options': labels}]}
+    result = {'status': 'needs_answer', 'question_id': question['id'], 'field': question['field'],
+              'option_ids': [o['id'] for o in options],
+              'questions': [{'title': title, 'options': labels}]}
+    if question['id'] == 'theme_palette' and ACADEMIC_PAPER_THEME_PREVIEW.is_file():
+        result['preview'] = {
+            'path': ACADEMIC_PAPER_THEME_PREVIEW.as_posix(),
+            'alt': '四种主题色与学科配图示意，配色和图片可自由组合。',
+        }
+    return result
 
 
 def _parse_answers(values: list[str]) -> dict[str, str]:

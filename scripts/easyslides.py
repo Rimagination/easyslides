@@ -19,6 +19,8 @@ DELEGATED_COMMANDS = {
     "guide": "user_guide.py",
     "build": "build_pipeline.py",
     "doctor": "easyslides_doctor.py",
+    "academic-gate": "academic_native_gate.py",
+    "figure-extract": "extract_scientific_figures.py",
     "image-reconstruct": "image_reconstruction_pipeline.py",
     "image-acquire": "image_acquisition.py",
     "project": "project_manager.py",
@@ -64,6 +66,8 @@ def build_parser() -> argparse.ArgumentParser:
             "  guide         Conversation-first onboarding; optional --html reference\n"
             "  build         Build a deck with explicit production decisions\n"
             "  doctor        Diagnose dependencies and unverified capabilities\n"
+            "  academic-gate Check academic story, actual geometry and final render review\n"
+            "  figure-extract Extract scientific regions from PDF parser coordinates\n"
             "  image-reconstruct Initialize or validate an image reconstruction project\n"
             "  image-acquire Prepare full-slide ImageGen requests and record actual results\n"
             "  project       Project creation, source import, validation\n"

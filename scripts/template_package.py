@@ -19,6 +19,7 @@ CAPABILITY_LEVELS = ("shell", "semantic", "composable", "production")
 DEFAULT_OFFICIAL_TEMPLATE_IDS = frozenset(
     {
         "academic_general",
+        "academic_classic",
         "academic_scqa",
         "defense_leftnav",
         "defense_topnav",
@@ -310,7 +311,7 @@ def _registry_row(
             "production_eligible": bool(manifest.get("production_eligible", False)),
             "managed_package": True,
             "keywords": list(legacy_meta.get("keywords") or []),
-            "compiled_ir": "compiled/template_ir.json",
+            "compiled_ir": "compiled/template_ir.json" if (directory / "compiled/template_ir.json").is_file() else "",
         }
     return {
         "package_id": "",
@@ -343,8 +344,12 @@ def rebuild_template_registry(
     rows: list[dict[str, Any]] = []
     packages: list[dict[str, Any]] = []
     official_template_ids = _official_template_ids(root)
+    aliases_path = layouts_root / "aliases.json"
+    aliases = _read_json(aliases_path) if aliases_path.is_file() else {}
     skipped = {"assets", "__pycache__"}
     for directory in sorted(path for path in layouts_root.iterdir() if path.is_dir() and path.name not in skipped):
+        if directory.name in aliases:
+            continue  # Compatibility paths do not register a second template.
         if not (directory / "layouts.json").is_file():
             continue
         manifest = _read_json(directory / "template_package.json") if (directory / "template_package.json").is_file() else None

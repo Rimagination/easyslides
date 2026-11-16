@@ -1,510 +1,2914 @@
 {
-  "schema_version": "easyslides.academic_general.layouts.v1",
+  "schema_version": "easyslides.academic_paper_report.layouts.v1",
   "template_id": "academic_general",
-  "replication_mode": "classic",
-  "style_system": "academic_general_blue",
-  "colors": {
-    "primary": "#003366",
-    "accent": "#0066CC",
-    "emphasis": "#CC0000",
-    "surface": "#F5F7FA",
-    "ink": "#26384A"
-  },
+  "mode": "semantic_named_slots",
+  "replication_mode": "slot_guided_mirror",
   "canvas": {
     "width": 1280,
     "height": 720,
     "format": "ppt169"
   },
-  "native_text_policy": {
-    "schema_version": "easyslides.native_text_policy.v1",
-    "required_textbox_attributes": [
-      "data-pptx-box-x",
-      "data-pptx-box-y",
-      "data-pptx-box-w",
-      "data-pptx-box-h",
-      "data-pptx-valign"
-    ],
-    "default_vertical_anchor": "middle",
-    "center_lock_requires_middle": true,
-    "minimum_box_height_ratio": 1.6,
-    "single_line_requires_no_wrap": true,
-    "body_slots_allowed_top_anchor": ["CONTENT_BODY", "CONTENT_AREA"],
-    "minimum_inter_slot_gap_px": 8
+  "colors": {
+    "background": "#FFFFFF",
+    "primary": "#102F4A",
+    "text": "#171C22",
+    "surface": "#EEF5F9",
+    "muted": "#53616E",
+    "border": "#D8E1E9",
+    "accent_blue": "#2F759B",
+    "accent_teal": "#3B817B",
+    "accent_amber": "#B98B4F",
+    "accent_violet": "#7473A1"
   },
-  "shells": [
-    {
-      "page_id": "cover",
-      "svg_path": "01_cover.svg",
-      "role": "cover",
-      "slots": [
-        "LOGO",
-        "TITLE",
-        "SUBTITLE",
-        "AUTHOR",
-        "ADVISOR",
-        "INSTITUTION",
-        "DATE"
-      ]
+  "text_hierarchy": {
+    "unit": "pt",
+    "scope": "authored_content_pages",
+    "chapter_title": {
+      "size_pt": 28,
+      "font_family": "Microsoft YaHei"
     },
-    {
-      "page_id": "toc",
-      "svg_path": "02_toc.svg",
-      "role": "toc",
-      "slots": [
-        "LOGO",
-        "TOC_ITEM_1_TITLE",
-        "TOC_ITEM_2_TITLE",
-        "TOC_ITEM_3_TITLE",
-        "TOC_ITEM_4_TITLE",
-        "TOC_ITEM_5_TITLE",
-        "TOC_ITEM_6_TITLE",
-        "TOC_ITEM_1_DESC",
-        "TOC_ITEM_2_DESC",
-        "TOC_ITEM_3_DESC",
-        "TOC_ITEM_4_DESC",
-        "PAGE_NUM"
-      ]
+    "page_title": {
+      "size_pt": 28,
+      "font_family": "Microsoft YaHei"
     },
-    {
-      "page_id": "chapter",
-      "svg_path": "02_chapter.svg",
-      "role": "chapter",
-      "slots": [
-        "CHAPTER_NUM",
-        "CHAPTER_TITLE",
-        "CHAPTER_DESC",
-        "TITLE"
-      ]
+    "hint": {
+      "size_pt": 20,
+      "font_family": "Microsoft YaHei",
+      "bullet_size_pt": 20,
+      "line_spacing_pct": 130
     },
-    {
-      "page_id": "content",
-      "svg_path": "03_content.svg",
-      "role": "content",
-      "page_archetype": "bounded_component_composition",
-      "content_shell_policy": "template_component_composition_required",
-      "body_variants": [
-        "figure_evidence",
-        "comparison_synthesis",
-        "process_outcome",
-        "metrics_evidence",
-        "evidence_argument",
-        "table_decision",
-        "open_component_composition"
-      ],
-      "regions": [
-        {
-          "region_id": "running_title",
-          "frame": {"x": 0, "y": 0, "width": 1280, "height": 70},
-          "z_index": 0
-        },
-        {
-          "region_id": "central_message",
-          "frame": {"x": 0, "y": 70, "width": 1280, "height": 50},
-          "z_index": 1,
-          "purpose": "central_message_only"
-        },
-        {
-          "region_id": "body_canvas",
-          "frame": {"x": 52, "y": 135, "width": 1176, "height": 515},
-          "z_index": 10,
-          "fit": "contain",
-          "purpose": "template_local_component_composition_only"
-        },
-        {
-          "region_id": "footer",
-          "frame": {"x": 0, "y": 665, "width": 1280, "height": 55},
-          "z_index": 1
-        }
-      ],
-      "body_canvas": {"x": 52, "y": 135, "width": 1176, "height": 515},
-      "slots": [
-        "SECTION_NUM",
-        "PAGE_TITLE",
-        "LOGO",
-        "KEY_MESSAGE",
-        "SOURCE",
-        "SECTION_NAME",
-        "PAGE_NUM"
-      ]
+    "body": {
+      "size_pt": 18,
+      "font_family": "Microsoft YaHei"
     },
-    {
-      "page_id": "ending",
-      "svg_path": "04_ending.svg",
-      "role": "ending",
-      "slots": [
-        "LOGO",
-        "THANK_YOU",
-        "ENDING_SUBTITLE",
-        "CONTACT_INFO",
-        "EMAIL",
-        "INSTITUTION",
-        "COPYRIGHT",
-        "PAGE_NUM"
-      ]
-    }
-  ],
-  "text_fit_policy": {
-    "schema_version": "easyslides.template_text_fit_policy.v1",
-    "overflow_strategy_order": [
-      "compress_text_to_capacity",
-      "choose_lower_density_layout",
-      "split_across_slides",
-      "shrink_font_with_floor"
-    ],
-    "allowed_overflow_actions": [
-      "split",
-      "truncate"
-    ],
-    "role_defaults": {
-      "logo": {
-        "default_font_size_px": 18,
-        "min_font_size_px": 14,
-        "line_height": 1.15,
-        "max_chars_per_line_zh": 8,
-        "overflow_action": "truncate",
-        "max_lines": 1
-      },
-      "cover_title": {
-        "default_font_size_px": 56,
-        "min_font_size_px": 42,
-        "line_height": 1.15,
-        "max_chars_per_line_zh": 18,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "title": {
-        "default_font_size_px": 36,
-        "min_font_size_px": 26,
-        "line_height": 1.2,
-        "max_chars_per_line_zh": 20,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "subtitle": {
-        "default_font_size_px": 28,
-        "min_font_size_px": 20,
-        "line_height": 1.2,
-        "max_chars_per_line_zh": 28,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "metadata": {
-        "default_font_size_px": 20,
-        "min_font_size_px": 14,
-        "line_height": 1.2,
-        "max_chars_per_line_zh": 18,
-        "overflow_action": "truncate",
-        "max_lines": 1
-      },
-      "toc_item": {
-        "default_font_size_px": 26,
-        "min_font_size_px": 18,
-        "line_height": 1.2,
-        "max_chars_per_line_zh": 18,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "toc_desc": {
-        "default_font_size_px": 17,
-        "min_font_size_px": 13,
-        "line_height": 1.2,
-        "max_chars_per_line_zh": 28,
-        "overflow_action": "truncate",
-        "max_lines": 2
-      },
-      "chapter_number": {
-        "default_font_size_px": 48,
-        "min_font_size_px": 36,
-        "line_height": 1.1,
-        "max_chars_per_line_zh": 4,
-        "overflow_action": "truncate",
-        "max_lines": 1
-      },
-      "chapter_title": {
-        "default_font_size_px": 56,
-        "min_font_size_px": 36,
-        "line_height": 1.15,
-        "max_chars_per_line_zh": 16,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "chapter_desc": {
-        "default_font_size_px": 24,
-        "min_font_size_px": 16,
-        "line_height": 1.25,
-        "max_chars_per_line_zh": 30,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "page_title": {
-        "default_font_size_px": 30,
-        "min_font_size_px": 22,
-        "line_height": 1.15,
-        "max_chars_per_line_zh": 20,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "section_label": {
-        "default_font_size_px": 24,
-        "min_font_size_px": 16,
-        "line_height": 1.15,
-        "max_chars_per_line_zh": 10,
-        "overflow_action": "truncate",
-        "max_lines": 1
-      },
-      "key_message": {
-        "default_font_size_px": 21,
-        "min_font_size_px": 16,
-        "line_height": 1.25,
-        "max_chars_per_line_zh": 34,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "body": {
-        "default_font_size_px": 22,
-        "min_font_size_px": 16,
-        "line_height": 1.28,
-        "max_chars_per_line_zh": 30,
-        "overflow_action": "split",
-        "max_lines": 12
-      },
-      "source": {
-        "default_font_size_px": 14,
-        "min_font_size_px": 10,
-        "line_height": 1.15,
-        "max_chars_per_line_zh": 42,
-        "overflow_action": "truncate",
-        "max_lines": 1
-      },
-      "closing_title": {
-        "default_font_size_px": 64,
-        "min_font_size_px": 42,
-        "line_height": 1.1,
-        "max_chars_per_line_zh": 10,
-        "overflow_action": "split",
-        "max_lines": 2
-      },
-      "contact": {
-        "default_font_size_px": 20,
-        "min_font_size_px": 14,
-        "line_height": 1.2,
-        "max_chars_per_line_zh": 24,
-        "overflow_action": "truncate",
-        "max_lines": 1
-      }
-    }
+    "body_heading": {
+      "size_pt": 18,
+      "font_family": "Microsoft YaHei",
+      "bold": true
+    },
+    "secondary": {
+      "size_pt": 16,
+      "font_family": "Microsoft YaHei"
+    },
+    "caption": {
+      "size_pt": 14,
+      "font_family": "'Times New Roman', KaiTi",
+      "font_chinese": "KaiTi",
+      "font_latin": "Times New Roman"
+    },
+    "page_number": {
+      "size_pt": 16,
+      "font_family": "Cambria",
+      "bold": true
+    },
+    "source": {
+      "size_pt": 9,
+      "font_family": "Arial"
+    },
+    "metric": {
+      "size_pt": null,
+      "purpose": "standalone quantitative emphasis; never ordinary prose"
+    },
+    "overflow_policy": "shorten_or_relayout_without_font_shrinking",
+    "source_figure_text": "preserve_original",
+    "cover_toc_ending": "use_their_separate_display_typography"
   },
-  "slot_models": {
-    "cover": [
-      {
-        "slot_id": "LOGO",
-        "role": "logo",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "TITLE",
-        "role": "cover_title",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "SUBTITLE",
-        "role": "subtitle",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "AUTHOR",
-        "role": "metadata",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "ADVISOR",
-        "role": "metadata",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "INSTITUTION",
-        "role": "metadata",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "DATE",
-        "role": "metadata",
-        "max_lines": 1
-      }
+  "background_policy": "powerpoint_default",
+  "title_marker": {
+    "kind": "vertical_bar",
+    "alignment": "title_text_box_vertical_center",
+    "title_slots": [
+      "PAGE_TITLE",
+      "CHAPTER_TITLE"
     ],
-    "toc": [
-      {
-        "slot_id": "LOGO",
-        "role": "logo",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "TOC_ITEM_1_TITLE",
-        "role": "toc_item",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_2_TITLE",
-        "role": "toc_item",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_3_TITLE",
-        "role": "toc_item",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_4_TITLE",
-        "role": "toc_item",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_5_TITLE",
-        "role": "toc_item",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_6_TITLE",
-        "role": "toc_item",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_1_DESC",
-        "role": "toc_desc",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_2_DESC",
-        "role": "toc_desc",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_3_DESC",
-        "role": "toc_desc",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TOC_ITEM_4_DESC",
-        "role": "toc_desc",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "PAGE_NUM",
-        "role": "page_number",
-        "fixed_geometry": true
-      }
-    ],
-    "chapter": [
-      {
-        "slot_id": "CHAPTER_NUM",
-        "role": "chapter_number",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "CHAPTER_TITLE",
-        "role": "chapter_title",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "CHAPTER_DESC",
-        "role": "chapter_desc",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "TITLE",
-        "role": "title",
-        "max_lines": 2
-      }
-    ],
-    "content": [
-      {
-        "slot_id": "SECTION_NUM",
-        "role": "section_label",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "PAGE_TITLE",
-        "role": "page_title",
-        "max_lines": 1,
-        "capacity": {
-          "single_line_required": true,
-          "max_chars_per_line": 30,
-          "overflow_action": "shorten_or_split"
-        }
-      },
-      {
-        "slot_id": "LOGO",
-        "role": "logo",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "KEY_MESSAGE",
-        "role": "key_message",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "CONTENT_AREA",
-        "role": "body",
-        "max_lines": 12
-      },
-      {
-        "slot_id": "SOURCE",
-        "role": "source",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "SECTION_NAME",
-        "role": "source",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "PAGE_NUM",
-        "role": "page_number",
-        "fixed_geometry": true,
-        "value_policy": "automatic_slide_index"
-      }
-    ],
-    "ending": [
-      {
-        "slot_id": "LOGO",
-        "role": "logo",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "THANK_YOU",
-        "role": "closing_title",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "ENDING_SUBTITLE",
-        "role": "subtitle",
-        "max_lines": 2
-      },
-      {
-        "slot_id": "CONTACT_INFO",
-        "role": "contact",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "EMAIL",
-        "role": "contact",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "INSTITUTION",
-        "role": "metadata",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "COPYRIGHT",
-        "role": "source",
-        "max_lines": 1
-      },
-      {
-        "slot_id": "PAGE_NUM",
-        "role": "page_number",
-        "fixed_geometry": true
-      }
+    "excluded_roles": [
+      "cover",
+      "content",
+      "ending",
+      "toc"
     ]
-  }
+  },
+  "pagination": {
+    "numbering": "physical",
+    "format": "integer",
+    "total": "omitted",
+    "position": {
+      "x": 1232,
+      "y": 672,
+      "width": 48,
+      "height": 48
+    },
+    "alignment": "center",
+    "font_family": "Cambria",
+    "font_size_px": 21.3333333,
+    "font_weight": "bold",
+    "color": "#2F759B",
+    "omitted_roles": [
+      "cover",
+      "toc",
+      "ending"
+    ],
+    "value_policy": "automatic_slide_index",
+    "color_role": "accent",
+    "badge": {
+      "shape": "square",
+      "x": 1232,
+      "y": 672,
+      "width": 48,
+      "height": 48,
+      "rounded_corner": "top_left",
+      "radius": 12,
+      "fill": "#D8E1E9",
+      "fill_role": "border"
+    }
+  },
+  "layouts": [
+    {
+      "id": "cover",
+      "layout_id": "cover",
+      "svg": "01_cover.svg",
+      "role": "cover",
+      "story_role": "cover",
+      "slots": [
+        {
+          "slot_id": "VENUE_YEAR",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 22,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 22,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 60,
+          "require_explicit_line_breaks": true
+        },
+        {
+          "slot_id": "AUTHORS",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 46,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "REPORTER",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "ADVISOR_GROUP",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "DATE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "DOI",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split"
+        }
+      ]
+    },
+    {
+      "id": "cover_blue_band",
+      "layout_id": "cover_blue_band",
+      "svg": "17_cover_blue_band.svg",
+      "role": "cover",
+      "story_role": "cover",
+      "explicit_only": true,
+      "slots": [
+        {
+          "slot_id": "BAND_IMAGE",
+          "kind": "image",
+          "asset_catalog": "cover_banners/manifest.json",
+          "required": false
+        },
+        {
+          "slot_id": "RESEARCH_FIELD",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 14,
+          "require_explicit_line_breaks": true,
+          "line_height": 84,
+          "multiline_layout": {
+            "baseline_y": 235,
+            "textbox_y": 145,
+            "textbox_height": 180
+          },
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "SUBTITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 24,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "REPORTER",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "AFFILIATION",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 28,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "DATE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 16,
+          "overflow_policy": "shorten_or_split"
+        }
+      ]
+    },
+    {
+      "id": "toc",
+      "layout_id": "toc",
+      "svg": "02_toc.svg",
+      "role": "toc",
+      "story_role": "toc",
+      "slots": [
+        {
+          "slot_id": "TOC_IMAGE",
+          "kind": "image",
+          "asset_catalog": "cover_banners/manifest.json",
+          "required": false
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 2,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 2
+        },
+        {
+          "slot_id": "TOC_ITEM_1_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_2_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_3_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_4_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_5_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_6_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_7_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_8_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "TOC_ITEM_9_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 15,
+          "overflow_policy": "shorten_or_split"
+        }
+      ],
+      "numbered_toc": {
+        "max_items": 9,
+        "first_row_y": 174,
+        "last_row_y": 606
+      }
+    },
+    {
+      "id": "chapter",
+      "layout_id": "chapter",
+      "svg": "03_chapter.svg",
+      "role": "chapter",
+      "story_role": "chapter",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 2,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "CHAPTER_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "CHAPTER_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 34,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index"
+        }
+      ]
+    },
+    {
+      "id": "background",
+      "layout_id": "background",
+      "svg": "04_background.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "BACKGROUND_LINE1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 24
+        },
+        {
+          "slot_id": "BACKGROUND_LINE2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 24
+        },
+        {
+          "slot_id": "BACKGROUND_LINE3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 24
+        },
+        {
+          "slot_id": "DIAGRAM_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 16
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 15
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 15
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 15
+        },
+        {
+          "slot_id": "CORE_PROBLEM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 42,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 40
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "method_pipeline",
+      "layout_id": "method_pipeline",
+      "svg": "05_method_pipeline.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "STEP_1_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_1_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_1_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_2_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_2_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_2_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_3_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_3_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_3_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_4_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_4_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_4_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "result_figure",
+      "layout_id": "result_figure",
+      "svg": "06_result_figure.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "FIGURE",
+          "kind": "image",
+          "required": true
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "FIGURE_CAPTION",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 36,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "caption",
+          "font_size_pt": 14
+        },
+        {
+          "slot_id": "TAKEAWAY",
+          "kind": "text",
+          "rendering": "native_powerpoint_square_bullet",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "result_table",
+      "layout_id": "result_table",
+      "svg": "07_result_table.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "TABLE_COL1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 13,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_COL2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 6
+        },
+        {
+          "slot_id": "TABLE_COL3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 5
+        },
+        {
+          "slot_id": "TABLE_COL4",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 3
+        },
+        {
+          "slot_id": "TABLE_R1_NAME",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "TABLE_R1_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 7
+        },
+        {
+          "slot_id": "TABLE_R1_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 6
+        },
+        {
+          "slot_id": "TABLE_R1_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 3
+        },
+        {
+          "slot_id": "TABLE_R2_NAME",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "TABLE_R2_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 7
+        },
+        {
+          "slot_id": "TABLE_R2_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 6
+        },
+        {
+          "slot_id": "TABLE_R2_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 3
+        },
+        {
+          "slot_id": "TABLE_R3_NAME",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "TABLE_R3_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 7
+        },
+        {
+          "slot_id": "TABLE_R3_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 6
+        },
+        {
+          "slot_id": "TABLE_R3_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 3
+        },
+        {
+          "slot_id": "TABLE_R4_NAME",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "TABLE_R4_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 7
+        },
+        {
+          "slot_id": "TABLE_R4_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 6
+        },
+        {
+          "slot_id": "TABLE_R4_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 3
+        },
+        {
+          "slot_id": "STAT_VALUE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "metric"
+        },
+        {
+          "slot_id": "STAT_LABEL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "layout_id": "conclusion",
+      "svg": "08_conclusion.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "IMPLICATION_LINE1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 24
+        },
+        {
+          "slot_id": "IMPLICATION_LINE2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 24
+        },
+        {
+          "slot_id": "IMPLICATION_LINE3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 24
+        },
+        {
+          "slot_id": "STAT_VALUE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "metric"
+        },
+        {
+          "slot_id": "STAT_LABEL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 20,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 16
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "outlook",
+      "layout_id": "outlook",
+      "svg": "09_outlook.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "POINT_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 14,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 36,
+          "require_explicit_line_breaks": true,
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 12
+        },
+        {
+          "slot_id": "POINT_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 14,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 36,
+          "require_explicit_line_breaks": true,
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 12
+        },
+        {
+          "slot_id": "POINT_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 14,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 36,
+          "require_explicit_line_breaks": true,
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 12
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "ending_blue_band",
+      "layout_id": "ending_blue_band",
+      "svg": "18_ending_blue_band.svg",
+      "role": "ending",
+      "story_role": "ending",
+      "slots": [
+        {
+          "slot_id": "BAND_IMAGE",
+          "kind": "image",
+          "asset_catalog": "cover_banners/manifest.json",
+          "required": false
+        },
+        {
+          "slot_id": "INSTITUTION_LOGO",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "THANK_YOU",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "PAPER_TITLE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 40,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "REPORTER",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "DATE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "overflow_policy": "shorten_or_split"
+        }
+      ]
+    },
+    {
+      "id": "ending",
+      "layout_id": "ending",
+      "svg": "10_ending.svg",
+      "role": "ending",
+      "story_role": "ending",
+      "explicit_only": true,
+      "slots": [
+        {
+          "slot_id": "THANK_YOU",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "REF_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 60,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "REF_2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 60,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "REF_3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 60,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "REPORTER",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "CONTACT",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split"
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split"
+        }
+      ]
+    },
+    {
+      "id": "background_parallel",
+      "layout_id": "background_parallel",
+      "svg": "11_background_parallel.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "BACKGROUND_LINE1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "BACKGROUND_LINE2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "BACKGROUND_LINE3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "DIAGRAM_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 11
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "CORE_PROBLEM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 42,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 40
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        },
+        {
+          "slot_id": "BRANCH_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "BRANCH_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "BRANCH_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "BRANCH_4",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 10,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        }
+      ]
+    },
+    {
+      "id": "background_equation",
+      "layout_id": "background_equation",
+      "svg": "12_background_equation.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "BACKGROUND_LINE1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 14
+        },
+        {
+          "slot_id": "BACKGROUND_LINE2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 14
+        },
+        {
+          "slot_id": "BACKGROUND_LINE3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 14
+        },
+        {
+          "slot_id": "DIAGRAM_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 15
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 13
+        },
+        {
+          "slot_id": "CORE_PROBLEM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 42,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 40
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "method_grid",
+      "layout_id": "method_grid",
+      "svg": "13_method_grid.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "STEP_1_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_1_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "STEP_1_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "STEP_2_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_2_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "STEP_2_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "STEP_3_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_3_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "STEP_3_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "STEP_4_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_4_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "STEP_4_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 10
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "method_timeline",
+      "layout_id": "method_timeline",
+      "svg": "14_method_timeline.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "STEP_1_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_1_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_1_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_2_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_2_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_2_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_3_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_3_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_3_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_4_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STEP_4_DESC",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "STEP_4_DETAIL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 11,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        },
+        {
+          "slot_id": "TRAINING_NOTE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 23
+        },
+        {
+          "slot_id": "INFERENCE_NOTE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 23
+        }
+      ]
+    },
+    {
+      "id": "result_scorecards",
+      "layout_id": "result_scorecards",
+      "svg": "15_result_scorecards.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "TABLE_COL1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 13,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 12
+        },
+        {
+          "slot_id": "TABLE_COL2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 9,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "TABLE_COL3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "TABLE_COL4",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 7
+        },
+        {
+          "slot_id": "TABLE_R1_NAME",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 14
+        },
+        {
+          "slot_id": "TABLE_R1_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R1_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R1_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "TABLE_R2_NAME",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 14
+        },
+        {
+          "slot_id": "TABLE_R2_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R2_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R2_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "TABLE_R3_NAME",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 14
+        },
+        {
+          "slot_id": "TABLE_R3_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R3_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R3_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "TABLE_R4_NAME",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 12,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 14
+        },
+        {
+          "slot_id": "TABLE_R4_V2",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 8,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R4_V3",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 7,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 9
+        },
+        {
+          "slot_id": "TABLE_R4_V4",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 4,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "secondary",
+          "font_size_pt": 16,
+          "max_cjk_chars_per_line": 8
+        },
+        {
+          "slot_id": "STAT_VALUE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "metric"
+        },
+        {
+          "slot_id": "STAT_LABEL",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 18,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 31
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ]
+    },
+    {
+      "id": "background_contrast",
+      "layout_id": "background_contrast",
+      "svg": "16_background_contrast.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "BACKGROUND_LINE1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 20
+        },
+        {
+          "slot_id": "BACKGROUND_LINE2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 20
+        },
+        {
+          "slot_id": "BACKGROUND_LINE3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 31,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 20
+        },
+        {
+          "slot_id": "DIAGRAM_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 26,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 18
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 20
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 20
+        },
+        {
+          "slot_id": "DIAGRAM_STEP_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 17,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 20
+        },
+        {
+          "slot_id": "CORE_PROBLEM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 42,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 40
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        },
+        {
+          "slot_id": "LEFT_NODE_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 6,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 4
+        },
+        {
+          "slot_id": "LEFT_NODE_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 6,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 4
+        },
+        {
+          "slot_id": "LEFT_NODE_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 6,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 4
+        },
+        {
+          "slot_id": "RIGHT_NODE_1",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 6,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 4
+        },
+        {
+          "slot_id": "RIGHT_NODE_2",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 6,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 4
+        },
+        {
+          "slot_id": "RIGHT_NODE_3",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 6,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "body_heading",
+          "font_size_pt": 18,
+          "max_cjk_chars_per_line": 4
+        }
+      ]
+    },
+    {
+      "id": "scientific_composition",
+      "layout_id": "scientific_composition",
+      "svg": "19_scientific_composition.svg",
+      "role": "content",
+      "story_role": "content",
+      "slots": [
+        {
+          "slot_id": "CHAPTER_IMAGE",
+          "kind": "image",
+          "required": false
+        },
+        {
+          "slot_id": "CHAPTER_LABEL",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 5,
+          "overflow_policy": "shorten_or_split",
+          "max_codepoints": 5,
+          "text_role": "chapter_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "PAGE_TITLE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 23,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "page_title",
+          "font_size_pt": 28
+        },
+        {
+          "slot_id": "KEY_MESSAGE",
+          "kind": "text",
+          "required": true,
+          "max_lines": 2,
+          "max_chars_per_line": 45,
+          "overflow_policy": "shorten_or_split",
+          "line_height": 32,
+          "require_explicit_line_breaks": true,
+          "text_role": "hint",
+          "font_size_pt": 20,
+          "max_cjk_chars_per_line": 42
+        },
+        {
+          "slot_id": "SOURCE",
+          "kind": "text",
+          "required": false,
+          "max_lines": 1,
+          "max_chars_per_line": 29,
+          "overflow_policy": "shorten_or_split",
+          "text_role": "source",
+          "font_size_pt": 9
+        },
+        {
+          "slot_id": "PAGE_NUM",
+          "kind": "text",
+          "required": true,
+          "max_lines": 1,
+          "max_chars_per_line": 3,
+          "overflow_policy": "shorten_or_split",
+          "value_policy": "automatic_slide_index",
+          "text_role": "page_number",
+          "font_size_pt": 16
+        }
+      ],
+      "body_renderer": "academic_composition",
+      "body_canvas": {
+        "x": 64,
+        "y": 204,
+        "width": 1152,
+        "height": 450
+      }
+    }
+  ]
 }

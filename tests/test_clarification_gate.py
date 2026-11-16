@@ -28,10 +28,11 @@ class ClarificationGateTests(unittest.TestCase):
         )
 
         self.assertEqual(request["status"], "needs_confirmation")
-        self.assertEqual(request["pending_question_ids"], ["page_budget", "canvas_format"])
-        self.assertEqual(len(request["questions"]), 2)
+        self.assertEqual(request["pending_question_ids"], ["theme_palette", "theme_image_source", "presentation_identity", "page_budget", "canvas_format"])
+        self.assertEqual(len(request["questions"]), 3)
 
-        request = answer_clarification_request(request, {"page_budget": "standard", "canvas_format": "16:9"})
+        request = answer_clarification_request(request, {"page_budget": "standard", "canvas_format": "16:9",
+            "theme_palette": "academic_green", "theme_image_source": "template_assets", "presentation_identity": "材料已检查；汇报人和学校用户明确省略。"})
 
         self.assertEqual(request["status"], "confirmed")
         self.assertEqual(request["pending_question_ids"], [])
@@ -43,7 +44,8 @@ class ClarificationGateTests(unittest.TestCase):
 
         request = build_clarification_request(
             "new_deck",
-            known={"production_scheme": "direct_editable", "purpose": "defense", "audience": "peers", "story_policy": "restructure"},
+            known={"production_scheme": "direct_editable", "purpose": "defense", "audience": "peers", "story_policy": "restructure",
+                   "theme_palette": "academic_blue", "theme_image_source": "template_assets", "presentation_identity": "已检查材料，身份字段用户明确省略。"},
         )
 
         self.assertEqual([item["id"] for item in request["questions"]], ["page_budget", "canvas_format"])
@@ -63,7 +65,9 @@ class ClarificationGateTests(unittest.TestCase):
             request = build_clarification_request("new_deck")
             for answers in (
                 {"production_scheme": "direct_editable", "purpose": "defense", "audience": "peers", "story_policy": "restructure"},
-                {"page_budget": "standard", "canvas_format": "16:9"},
+                {"page_budget": "standard", "canvas_format": "16:9", "theme_palette": "academic_blue",
+                 "theme_image_source": "template_assets",
+                 "presentation_identity": "材料已检查；身份字段用户明确省略。"},
             ):
                 request = answer_clarification_request(request, answers)
             path.write_text(json.dumps(request, ensure_ascii=False), encoding="utf-8")

@@ -2,54 +2,56 @@
   "schema_version": "easyslides.template_package.v1",
   "package_id": "template/academic_general",
   "template_id": "academic_general",
-  "version": "2.0.0",
-  "status": "production",
+  "version": "0.2.0",
+  "status": "review",
   "display_name": "Academic General",
-  "description": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
+  "description": "Default native academic report template with confirmed theme colors, discipline assets, evidence-led visual methods and precise text hierarchy.",
   "installability": "repo_relative_template_package",
   "entrypoints": {
     "template": "template.json",
     "layouts": "layouts.json",
     "body_variants": "body_variants.json",
-    "slots": "slot_contracts.json",
-    "geometry": "geometry_contract.json",
-    "components": "component_catalog.json",
-    "assets": "assets/asset_manifest.json",
-    "qa": "qa_policy.json",
     "design_spec": "design_spec.md",
     "rules": "rules.md",
-    "story": "story_structure.json"
+    "story": "story_structure.json",
+    "cover_banners": "cover_banners/manifest.json",
+    "source_attribution": "ATTRIBUTION.md",
+    "source_license": "LICENSE"
   },
   "source_of_truth": {
     "package": "template_package.json",
     "shells": "layouts.json",
-    "body_variants": "body_variants.json",
-    "components": "component_catalog.json",
-    "component_pack": "component_pack.json",
-    "design_tokens": "design_tokens.json",
-    "qa": "qa_policy.json",
-    "story": "story_structure.json"
+    "body_variants": "body_variants.json"
   },
   "derived_outputs": {
-    "template_ir": "compiled/template_ir.json",
-    "lock": "compiled/template.lock.json",
-    "projections": "compiled/projections",
-    "registry": "templates/template_registry.json"
+    "render_manifest": "render_manifest.json"
   },
-  "capability_level": "production",
+  "capability_level": "semantic",
   "compatibility": {
     "canvas_format": "ppt169",
-    "canvas": {"width": 1280, "height": 720},
+    "canvas": {
+      "width": 1280,
+      "height": 720
+    },
     "output_contract": "editable-native-pptx",
-    "layout_mode": "template_component_composition",
+    "layout_mode": "semantic_named_slots",
     "required_renderer": "svg_to_pptx"
   },
-  "capabilities": ["named_slots", "editable_native_pptx", "component_asset_catalog", "geometry_contract", "text_capacity_contract", "bounded_component_composition"],
-  "scenarios": ["general_academic_presentation", "research_seminar", "project_update", "conference_talk"],
-  "examples": ["templates/layouts/academic_general/03_content.svg"],
-  "layout_count": 5,
-  "source_template_id": "",
+  "capabilities": [
+    "named_slots",
+    "editable_native_pptx",
+    "text_capacity_contract",
+    "physical_page_numbering",
+    "scientific_body_composition"
+  ],
+  "scenarios": [
+    "paper_reading",
+    "journal_club",
+    "research_progress"
+  ],
+  "examples": [],
+  "layout_count": 19,
+  "source_template_id": "academic_paper_report",
   "production_eligible": true,
-  "runtime_contract": "compiled/template_ir.json",
-  "dependency_lock": "compiled/template.lock.json"
+  "selection_policy": "native_default_unless_user_specifies"
 }

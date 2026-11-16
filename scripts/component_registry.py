@@ -641,6 +641,8 @@ def assets_from_template_component_catalogs(
     if not layouts_root.exists():
         return assets
     for path in sorted(layouts_root.glob("*/component_catalog.json")):
+        if path.parent.name != path.parent.resolve().name:
+            continue  # Renamed-template compatibility links are not extra assets.
         payload = read_json(path)
         template_id = str(payload.get("template_id") or path.parent.name)
         for component in expanded_catalog_components(path.parent, payload):
@@ -714,6 +716,8 @@ def assets_from_body_variants(layouts_root: Path = LAYOUTS_ROOT) -> list[dict[st
     if not layouts_root.exists():
         return assets
     for path in sorted(layouts_root.glob("*/body_variants.json")):
+        if path.parent.name != path.parent.resolve().name:
+            continue
         payload = read_json(path)
         template_id = str(payload.get("template_id") or path.parent.name)
         recipe_map = body_variant_recipe_map(path.parent) if (path.parent / "component_pack.json").is_file() else {}

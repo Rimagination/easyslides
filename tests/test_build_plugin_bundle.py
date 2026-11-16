@@ -15,6 +15,10 @@ class BuildPluginBundleTests(unittest.TestCase):
             manifest = build_bundle(output)
 
             self.assertEqual(manifest["status"], "pass")
+            self.assertEqual(manifest["host"], "codex")
+            self.assertTrue((output / ".codex-plugin/plugin.json").is_file())
+            self.assertFalse((output / ".qoder-plugin").exists())
+            self.assertFalse((output / "qoder.md").exists())
             self.assertEqual(
                 sorted(manifest["skills"]),
                 ["easyslides", "easyslides-clarify", "easyslides-distill"],
@@ -27,7 +31,7 @@ class BuildPluginBundleTests(unittest.TestCase):
             from unittest.mock import patch
             with patch("scripts.easyslides_doctor.ROOT", output):
                 checks = _template_checks()
-            self.assertEqual(len(checks), 7)
+            self.assertEqual(len(checks), 8)
             self.assertTrue(all(row["status"] == "pass" for row in checks), checks)
             policy = json.loads((output / "templates/template_policy.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest["layouts"], sorted(policy["official_template_ids"]))

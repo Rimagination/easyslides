@@ -8,3 +8,4 @@ Strategist, Executor, and template-building workflows.
 - `template_asset_bank.json`: generated exact-reuse template asset bank.
 - `assets/university_emblems/`: transparent PNG university emblem assets exported from a source PPTX, with manifest and contact sheet.
 - `institution-logos.md`: ScanSci Logos lookup and placeholder replacement when the user's institution is identified.
+- `default-academic-template.md`: default native academic intake, discipline assets, typography, scientific visuals, layout, arrows and pagination.

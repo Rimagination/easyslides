@@ -28,6 +28,22 @@ Without `--institution`, it records a fallback and makes no network request.
 
 ## Intelligent matching during generation
 
+For the default `academic_general` semantic template, the ending renderer
+does this automatically when `INSTITUTION_LOGO` is not supplied. It identifies
+the presenter school from explicit `presenter_institution`, `institution`,
+`university` or `school` metadata, a presenter-affiliation field, or an
+unambiguous presenter cover affiliation. The plan's `academic_brief` may also
+contain an explicit first-person school statement. Only the identified school
+name is sent to the public API. The reviewed `emblem` is inserted without
+stretching; a missing or conflicted identity leaves the neutral mark. The
+project retains `assets/logos/institution_logo.json` and the original asset;
+`render_manifest.json` records the evidence and result. An explicit logo slot
+or an explicit empty slot bypasses automatic lookup.
+When authoring a semantic deck plan, carry a clearly stated presenter school
+from the user's brief into `presenter_institution`; do not substitute the
+paper's author affiliation. This makes the automatic lookup available even
+when the school is not printed on the cover.
+
 Once the user's institution is identified, resolve and add its logo during
 normal deck generation without a separate approval round. Prefer existing logo
 frames; choose the mark from the frame proportions and page role:

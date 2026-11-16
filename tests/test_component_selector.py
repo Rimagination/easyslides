@@ -46,7 +46,7 @@ class ComponentSelectorTests(unittest.TestCase):
         self.assertEqual(result["status"], "found")
         self.assertEqual(result["matches"][0]["asset_id"], "body_variant/defense_topnav/three_card_summary")
 
-    def test_academic_general_selects_its_declared_comparison_variant(self):
+    def test_academic_classic_selects_its_declared_comparison_variant(self):
         from scripts.component_registry import build_component_registry
         from scripts.component_selector import select_components
 
@@ -54,14 +54,14 @@ class ComponentSelectorTests(unittest.TestCase):
             content_shape="comparison",
             item_count=2,
             preferred_granularity="body_variant",
-            template_id="academic_general",
+            template_id="academic_classic",
             registry=build_component_registry(include_template_asset_bank=False),
         )
 
         self.assertEqual(result["status"], "found")
-        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/academic_general/comparison_synthesis")
+        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/academic_classic/comparison_synthesis")
 
-    def test_academic_general_evidence_variant_is_template_affine(self):
+    def test_academic_classic_evidence_variant_is_template_affine(self):
         from scripts.component_registry import build_component_registry
         from scripts.component_selector import select_components
 
@@ -69,15 +69,15 @@ class ComponentSelectorTests(unittest.TestCase):
             content_shape="argument",
             item_count=3,
             preferred_granularity="body_variant",
-            template_id="academic_general",
+            template_id="academic_classic",
             registry=build_component_registry(include_template_asset_bank=False),
         )
 
         self.assertEqual(result["status"], "found")
-        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/academic_general/evidence_argument")
+        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/academic_classic/evidence_argument")
         self.assertIn("template match", result["matches"][0]["reason"])
 
-    def test_academic_general_selects_process_variant_from_nested_selection(self):
+    def test_academic_classic_selects_process_variant_from_nested_selection(self):
         from scripts.component_registry import build_component_registry
         from scripts.component_selector import select_components
 
@@ -85,14 +85,14 @@ class ComponentSelectorTests(unittest.TestCase):
             content_shape="process",
             item_count=3,
             preferred_granularity="body_variant",
-            template_id="academic_general",
+            template_id="academic_classic",
             registry=build_component_registry(include_template_asset_bank=False),
         )
 
         self.assertEqual(result["status"], "found")
-        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/academic_general/process_outcome")
+        self.assertEqual(result["matches"][0]["asset_id"], "body_variant/academic_classic/process_outcome")
 
-    def test_academic_general_selects_a_local_leaf_component_for_explicit_assembly(self):
+    def test_academic_classic_selects_a_local_leaf_component_for_explicit_assembly(self):
         from scripts.component_registry import build_component_registry
         from scripts.component_selector import select_components
 
@@ -100,12 +100,12 @@ class ComponentSelectorTests(unittest.TestCase):
             content_shape="process",
             item_count=3,
             preferred_granularity="template_component",
-            template_id="academic_general",
+            template_id="academic_classic",
             registry=build_component_registry(include_template_asset_bank=False),
         )
 
         self.assertEqual(result["status"], "found")
-        self.assertEqual(result["matches"][0]["asset_id"], "component/academic_general/process_step")
+        self.assertEqual(result["matches"][0]["asset_id"], "component/academic_classic/process_step")
         self.assertIn("template match", result["matches"][0]["reason"])
 
     def test_recent_asset_reuse_is_penalized_for_content_arrangement(self):

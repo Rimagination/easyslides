@@ -48,8 +48,45 @@ blocking choice remains unanswered.
 For every new or regenerated PPT, an unspecified production scheme is a blocking
 choice even when the topic, template and content are otherwise clear. MUST ask
 the user to choose and wait before planning slides or generating images/SVG/PPTX.
-Follow `workflows/clarification-gate.md` for the exact three options and examples.
+Follow `workflows/clarification-gate.md` for the two default options and examples.
 No automatic default. Reuse only the user's explicit choice for the same task.
+
+## Default native academic template
+
+After the user chooses `direct_editable`, use `academic_general` at
+`templates/layouts/academic_general/` unless another template was specified.
+This is the official native default in `templates/template_policy.json`; an
+explicit path or approval of the default is not required. Confirm theme color
+next, then ask whether to reuse the template's theme images or generate a
+topic-specific theme image. Record `theme_image_source` as `template_assets`,
+`generate_new` or `user_provided`; an explicitly supplied image takes precedence and skips this
+question. The 14 discipline images are collectively called “主题图”. Generate
+once after topic inspection and reuse its crops; generation adds time and usage.
+Then inspect discipline, presenter, presenter school and date from the
+materials. Ask only about missing/conflicting facts; respect explicit omissions.
+Match existing discipline assets and a reviewed school emblem without treating
+paper authors' affiliations as the presenter's identity.
+
+Read [the default academic method](references/default-academic-template.md)
+before planning. It consolidates evidence-backed expert content, varied dense
+layouts, 20/18/16 pt hierarchy, exact alignment, visual methods, unified arrows,
+asset reuse, captions and pagination. Use the template's `rules.md` and geometry
+for execution. Explicit templates and approved image-route references prevail.
+
+For new native academic decks, also load
+[the native authoring method](references/academic-native-authoring.md). Record
+`authoring_contract: academic_native.v1`; each content page has a `page_brief`
+(`question`, `information_gain`, `visual_rationale`) alongside its existing
+claim and evidence. For `academic_general`, use its registered
+`scientific_composition` body to combine actual scientific figures, method
+structures and comparisons. Other explicitly selected templates retain their
+own registered body contracts.
+The composer owns geometry and the normal SVG/DrawingML exporter owns output.
+Do not substitute text-slot filling for content planning. For expert audiences,
+use supported judgments and complementary evidence rather than reading guides,
+repeated takeaway sentences or increased word count. Confirm unresolved source
+permissions; source files alone do not establish a `supplied_only` policy.
+These rules supplement academic QA; they do not redesign an existing local edit.
 
 ## Mandatory reconstruction-mode choice
 
@@ -93,7 +130,7 @@ can override it; do not rewrite verbatim source quotations or archived files.
 1. **Create from scratch**: Source content → SVG pages → DrawingML shapes → editable PPTX
 2. **Edit existing PPTX**: Unpack → edit XML → validate → repack
 3. **HTML/JSX authoring path**: Use HTML/JSX as an experimental upstream authoring layer, then normalize into EasySlides-compatible SVG or shape IR before the existing DrawingML backend
-4. **Academic scenario/template system**: Scenario-first academic planning with template-extensible output. The official template set is `academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`, `literature_minimal`, `nsfc_defense`, and `thu_speech`; `templates/template_policy.json` is authoritative.
+4. **Academic scenario/template system**: Scenario-first academic planning with template-extensible output. The official template set is `academic_general` (native default), `academic_classic`, `academic_scqa`, `defense_leftnav`, `defense_topnav`, `literature_minimal`, `nsfc_defense`, and `thu_speech`; `templates/template_policy.json` is authoritative.
 5. **71 visualization templates**: Charts, infographics, diagrams, strategic frameworks, and tables
 6. **11,635 icons**: Six SVG icon families for consistent academic and business visuals, with `lucide` preferred for new generic icons and emoji replacement
 7. **Template Asset Bank**: Convert many real PPTX templates into exact-reuse slide modules for manual-template-substitution quality
@@ -309,11 +346,21 @@ python scripts/project_manager.py import-sources <path> <files...> --move
 
 Supported source formats: PDF, DOCX, XLSX, PPTX, URL, Markdown.
 
-**MinerU PDF Preprocessing**: When importing PDFs, the system automatically tries [MinerU](https://mineru.net) for structural extraction before falling back to PyMuPDF. MinerU provides richer output: Markdown with figure/table identification, layout JSON, and extracted images — enabling better PPTX generation with automatic figure extraction.
+**Scientific figure extraction**: For academic source figures, run
+`python scripts/easyslides.py figure-extract paper.pdf --out <project>/extracted/paper`
+before planning visual pages. Reuse an existing `--layout layout.json` to avoid
+repeat parsing. This uses MinerU Precision or configured local PDFFigures2,
+retains parser coordinates/provenance and never downgrades figure extraction
+to text-only parsing. See [the figure workflow](references/scientific-figure-extraction.md).
+Do not default to eye-picked crop coordinates. Complete axes, legends and
+published figure/panel identity still require review.
+
+General source import may use the following text-oriented fallback chain;
+its success does not establish successful scientific-figure extraction:
 
 | Method | Token Required | Output | Limits |
 |--------|---------------|--------|--------|
-| Precision Extract API | Yes (`MINERU_API_TOKEN` env or `.mineru_token` file) | Markdown + JSON + images | ≤200 MB, ≤600 pages |
+| Precision Extract API | Yes (`MINERU_API_TOKEN` env or `.mineru_token` file) | Markdown + JSON + images | Service limits apply |
 | Agent Lightweight API | No (IP-rate limited) | Markdown only | ≤10 MB, ≤20 pages |
 | PyMuPDF fallback | No | Text + images (heuristic) | None |
 
@@ -463,14 +510,18 @@ with `scripts/deck_execution_lock.py --validate` and fix the plan before SVG
 authoring.
 
 When the selected template has `body_variants.json`, every executable content
-slide must use a verified body variant in `layout_id`, provide `content_shape`,
+slide must use a registered body variant in `layout_id`, provide `content_shape`,
 and fill `slot_payload` with exactly the slots declared by that variant. The
 `scripts/deck_plan_contract.py` report includes `body_variant_status` from
 `scripts/body_variant_adapter.py`; `body_variant_contract`, `template_tokens`,
 `text_capacity`, `svg_quality_checker`, `preview_render`, `pptx_roundtrip`, and
 `visual_measure_gate`
-are blocking gates before SVG authoring. Do not let Executor bypass this by
-writing arbitrary SVG into a template body canvas.
+are blocking gates at their corresponding authoring/export stages. Do not let Executor bypass this by
+writing arbitrary SVG into a template body canvas. For `academic_general`, the
+registered `scientific_composition` variant is the default new-body route: its
+chrome uses declared slots while `slide.composition` carries source-led figures,
+model inputs/transforms/outputs and comparisons. Its body is composed by
+`academic_composition.py`, rather than squeezed into legacy paragraph slots.
 
 For managed template packages, compile the canonical sources before rendering:
 
@@ -542,6 +593,8 @@ Once consequential questions are resolved, summarize the brief and output
 
 Choose the design foundation from the confirmed scenario and template route:
 
+- For new native editable work without a user template, bind
+  `templates/layouts/academic_general/` and follow its default method.
 - If the user provides an explicit template path, inspect that template and bind
   the story roles to its available shells or reusable modules.
 - If the user asks to use an available EasySlides template, select the best
@@ -549,8 +602,8 @@ Choose the design foundation from the confirmed scenario and template route:
 - If no matching template exists, create a free academic design or use a
   general/domain academic pack; do not force a defense or literature-report
   template onto unrelated academic scenarios.
-- `academic_general` is the neutral general academic fallback when no domain or
-  scenario-specific pack fits.
+- `academic_classic` remains an available neutral pack when explicitly selected;
+  it does not override the native default.
 - `academic_scqa` is the structured academic/technical report variant when the
   material benefits from visible Audience-State-Transfer and SCQA progression.
 
@@ -562,9 +615,12 @@ for the required 11-section structure, then pull the selected template's
 
 ### Step 3: SVG Generation
 
-Generate SVG pages sequentially (one at a time). In Path A, each page is
-hand-written SVG. In Path C, generated SVG must be normalized to the same
-contract before validation and export.
+For `academic_general`, render the planned scientific compositions through
+`semantic_template_renderer.py`; its composer produces the body SVG. Manual
+SVG authoring remains available on routes that require it, including PPT Master
+compatibility. In Path C, generated SVG must be normalized to the same contract
+before validation and export. Do not replace the composer with a new per-deck
+generator or squeeze evidence back into legacy paragraph slots.
 
 **Critical rules**:
 - viewBox must match canvas (e.g., `0 0 1280 720`)
@@ -617,7 +673,7 @@ If speaker notes are enabled, package validation must prove that
 relationship, and the deck has the expected `notesSlide*.xml` files. Missing
 notes master relationships are blocking even if slide previews look fine.
 
-`visual_measure_gate.py` is the blocking exit gate. It aggregates template slot
+`visual_measure_gate.py` is a blocking structural gate. It aggregates template slot
 contracts, template geometry, PPTX text layout, and optional rendered-PNG diff
 reports into `visual_measure_report.json`; it invokes
 `scripts/validate_pptx_text_layout.py` and writes `text_layout_report.json` as
@@ -633,6 +689,7 @@ frame, and any declared container relation must share the same vertical centre.
 Mirrored decoration pairs must be literal 180-degree copies without SVG filters
 that could introduce directional rendering differences. Never mark an unboxed,
 source-faithful label as centre-locked merely to satisfy this gate.
+Read the actual checked counts; zero checks do not certify an invariant.
 
 Render the final PPTX itself, not just the source SVGs. On Windows the wrapper
 `scripts/render_pptx_png.py` automatically prefers the installed Microsoft
@@ -645,9 +702,17 @@ skip visual QA. Inspect full-size previews for dense cards, process pages,
 tables, references, and any text that was ported from a larger template.
 Contact sheets are useful for rhythm only and can hide one-line overflow.
 
+For `academic_native.v1`, finish with `python scripts/easyslides.py academic-gate`
+on the final project and PPTX, following
+[the scientific composition review contract](references/scientific-composition.md#render-and-review).
+Record a pass only after an image-capable reviewer has inspected every final
+PowerPoint/Office render and resolved findings. If the model cannot read images,
+use `--image-input unavailable` and leave `needs_visual_review`; PNG export,
+character counts and pixel/ink measurements cannot establish visual approval.
+
 ### Academic Page Layouts
 
-When `academic_general` is selected as the neutral fallback, use these base layout
+When `academic_classic` is selected as the neutral fallback, use these base layout
 patterns:
 
 | Layout | Use For | SVG Template |
@@ -666,14 +731,14 @@ Content page variants:
 - **Evidence argument**: a text-rich claim plus three auditable arguments
 - **Table decision**: compact three-by-three decision matrix
 - **Open local composition**: explicitly requested placement of registered
-  `academic_general` components, bounded by the invisible body canvas
+  `academic_classic` components, bounded by the invisible body canvas
 
 ### Academic Built-in Layout Library
 
-Use `templates/layouts/` when the user explicitly asks to use a template path
-or asks what formal templates are available. The mandatory project policy is
+Use `templates/layouts/` for the native default, an explicitly selected template
+or discovery of formal templates. The mandatory project policy is
 `templates/template_policy.json`; the official set is exactly
-`academic_general`, `academic_scqa`, `defense_leftnav`, `defense_topnav`,
+`academic_general`, `academic_classic`, `academic_scqa`, `defense_leftnav`, `defense_topnav`,
 `literature_minimal`, `nsfc_defense`, and `thu_speech`. Package QA status such as `review`
 does not make `nsfc_defense` non-official. All other templates are development
 assets and require an explicit user request.
@@ -692,7 +757,7 @@ Discovery:
 
 Do not fuzzy-match a bare template name when following PPT Master's stricter
 template flow. Prefer an explicit directory path such as
-`templates/layouts/academic_general/`.
+`templates/layouts/academic_classic/`.
 
 ### Archived Style Packs
 
@@ -848,9 +913,14 @@ python scripts/office/pack.py unpacked/ output.pptx --original template.pptx
 
 ## Design Quality Standards (from guizang-ppt-skill)
 
+These are generic free-design suggestions. An approved template's background,
+pt hierarchy, geometry, palette and pagination take precedence; they do not
+override `academic_general`'s white body pages or 28/20/18/16/14 pt hierarchy.
+
 ### Layout Rhythm
 
-- Alternate light/dark/hero pages — no 3+ consecutive same-theme pages
+- Vary evidence composition within the selected template; do not repeat the
+  same body arrangement for three consecutive pages or force light/dark swaps
 - Use varied layouts across the deck
 - Maintain consistent spacing (card gap 20px, content block gap 24px)
 
@@ -942,7 +1012,7 @@ python scripts/office/pack.py unpacked/ output.pptx --original template.pptx
 │   │   ├── 02_chapter.svg            # Chapter divider
 │   │   ├── 03_content.svg            # Content page
 │   │   └── 04_ending.svg             # Ending page
-│   ├── layouts/                      # 7 active academic layout template packs
+│   ├── layouts/                      # 8 official academic layout template packs
 │   ├── charts/                       # 71 visualization SVG templates
 │   └── icons/                        # 11,635 icons across six libraries
 │       ├── chunk-filled/

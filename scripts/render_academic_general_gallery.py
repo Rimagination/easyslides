@@ -16,9 +16,9 @@ except ModuleNotFoundError:  # pragma: no cover - direct script execution
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEMPLATE = ROOT / "templates" / "layouts" / "academic_general"
+TEMPLATE = ROOT / "templates" / "layouts" / "academic_classic"
 FIGURE = TEMPLATE / "assets" / "figure_placeholder.svg"
-DEFAULT_OUTPUT = ROOT / "output" / "academic_general_template_gallery"
+DEFAULT_OUTPUT = ROOT / "output" / "academic_classic_template_gallery"
 
 
 def _content_shell(section: str, title: str, message: str) -> dict[str, str]:
@@ -265,7 +265,7 @@ def build_plan() -> dict:
     return {
         "schema_version": "easyslides.deck_plan.v1",
         "deck_id": "academic-general-template-gallery",
-        "template_id": "academic_general",
+        "template_id": "academic_classic",
         "slides": slides,
     }
 
@@ -274,19 +274,19 @@ def render_gallery(output: Path) -> dict:
     output.mkdir(parents=True, exist_ok=True)
     template_ir = compile_template(TEMPLATE)["template_ir"]
     plan = build_plan()
-    (output / "academic_general_gallery_plan.json").write_text(
+    (output / "academic_classic_gallery_plan.json").write_text(
         json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     slide_ir = compile_slides(plan, template_ir)
-    (output / "academic_general_gallery_slide_ir.json").write_text(
+    (output / "academic_classic_gallery_slide_ir.json").write_text(
         json.dumps(slide_ir, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     report = render_slide_ir_to_pptx(
         slide_ir,
-        output / "academic_general_template_gallery.pptx",
+        output / "academic_classic_template_gallery.pptx",
         svg_output_dir=output / "svg",
     )
-    (output / "academic_general_gallery_report.json").write_text(
+    (output / "academic_classic_gallery_report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     return report

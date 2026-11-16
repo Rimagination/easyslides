@@ -1,0 +1,68 @@
+{
+  "schema_version": "easyslides.academic_classic.story_structure.v1",
+  "template_id": "academic_classic",
+  "narrative_model": "AST_SCQA",
+  "default_order": ["cover", "toc", "hook", "S", "C", "Q", "A", "takeaway", "ending"],
+  "ast_questions": [
+    "Who is the audience?",
+    "What is their initial state?",
+    "What desired state should the deck create?",
+    "What core tension makes the talk worth hearing?",
+    "How does each slide move the audience forward?"
+  ],
+  "transfer_path": [
+    {
+      "role": "hook",
+      "purpose": "Establish why this academic topic matters now.",
+      "preferred_shell": "01_cover"
+    },
+    {
+      "role": "conflict",
+      "purpose": "Surface the gap, limitation, contradiction, or unresolved question.",
+      "preferred_shell": "03_content"
+    },
+    {
+      "role": "method",
+      "purpose": "Explain the approach, framework, data, or experiment without process noise.",
+      "preferred_shell": "03_content"
+    },
+    {
+      "role": "proof",
+      "purpose": "Build trust with source-faithful figures, tables, results, or examples.",
+      "preferred_shell": "03_content"
+    },
+    {
+      "role": "takeaway",
+      "purpose": "Leave a portable judgment, implication, or next step.",
+      "preferred_shell": "04_ending"
+    }
+  ],
+  "scqa_phases": [
+    {
+      "phase": "S",
+      "name": "Situation",
+      "purpose": "Frame shared academic context."
+    },
+    {
+      "phase": "C",
+      "name": "Complication",
+      "purpose": "Expose the gap, limitation, conflict, or challenge."
+    },
+    {
+      "phase": "Q",
+      "name": "Question",
+      "purpose": "Condense the research or teaching question."
+    },
+    {
+      "phase": "A",
+      "name": "Answer",
+      "purpose": "Show method, evidence, result, implication, and next step."
+    }
+  ],
+  "deck_rules": [
+    "Use cover first and ending last.",
+    "Use contents when the deck has at least two sections.",
+    "Use chapter slides only for major audience-state transitions.",
+    "Every content slide should carry one defensible claim plus source-linked evidence or a clear reasoning block."
+  ]
+}

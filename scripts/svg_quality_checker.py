@@ -477,7 +477,7 @@ class SVGQualityChecker:
             result['errors'].append("Detected forbidden SMIL animation element <set> (SVG animations are not exported)")
         if '<script' in content_lower:
             result['errors'].append("Detected forbidden <script> element (scripts and event handlers forbidden)")
-        if re.search(r'\bon\w+\s*=', content):  # onclick, onload etc.
+        if re.search(r'(?<![\w-])\bon\w+\s*=', content):  # onclick/onload, not data-*-only
             result['errors'].append("Detected forbidden event attributes (e.g., onclick, onload)")
 
         # Other discouraged elements

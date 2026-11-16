@@ -1,8 +1,65 @@
 # EasySlides Installation
 
-EasySlides is a project-backed Codex skill. The skill entrypoint is useful for
+EasySlides uses project-backed skills for its supported hosts. The entrypoint is useful for
 agent routing, but the actual PPTX generation and QA capabilities require this
 repository and its local runtime.
+
+## Qoder
+
+Use `python scripts/build_qoder_plugin.py` to create
+`build/easyslides-qoder-1.2.2.zip`. In Qoder, choose Plugins → Add plugin → Upload
+Plugin and select this ZIP. Upload installs to the current device; a public
+listing requires submission through Qoder's **My publications** page and review.
+See [Qoder setup](references/qoder.md) and
+[marketplace submission details](references/qoder-marketplace.md).
+
+## DeepSeek Harness / npm
+
+The published npm package is named **`easyslides`**. Open DeepSeek
+Harness → Plugins → Add plugin, choose the npm registry and enter:
+
+```text
+easyslides
+```
+
+The equivalent CLI command is:
+
+```sh
+dsh plugin --profile desktop add easyslides
+```
+
+Use `--profile web` for a web profile. Enable the installed bundle when prompted.
+An ordinary `npm install easyslides` downloads the package, but DSH's plugin
+manager also adds and activates its configuration layer.
+
+The bundle contains the three EasySlides skills, the Python runtime, eight
+official native templates, fourteen discipline theme images and thirteen image
+reference styles. It preserves the default `academic_general` template and the
+production-scheme, theme-color and theme-image questions. It has no install-time
+scripts and includes no user projects or source papers.
+
+Requires DSH `>=0.2.2-rc.1 <0.3.0` and Node.js `>=24.9.0`. Making PPTX files
+also requires Python 3.10+ and the runtime dependencies; on first use the agent
+checks them and can install missing dependencies in a workspace-local virtual
+environment. PowerPoint or LibreOffice is required for rendered previews;
+image generation requires a supported host tool or configured backend. See
+[DSH host details](references/deepseek-harness.md).
+
+### Maintainer: build and try before publishing
+
+```sh
+npm install --ignore-scripts
+npm test
+python -m pytest tests/test_build_plugin_bundle.py tests/test_npm_package.py -q
+npm pack --pack-destination build
+dsh plugin --profile easyslides-test add ./build/easyslides-1.2.2.tgz
+```
+
+`npm pack` rebuilds a privacy-safe `runtime/` using the existing bundle builder;
+only `dsh/`, `runtime/` and the standard npm manifest/README/license enter the
+tarball. It does not publish. Publishing requires ownership of the npm name and
+an authenticated maintainer, and is a separate action. Use the local tarball when
+testing changes before publication.
 
 ## Installation Levels
 
@@ -81,7 +138,7 @@ python scripts/build_plugin_bundle.py --out build/plugin-bundle/easyslides
 ```
 
 Use a new output directory each time; existing directories are never replaced.
-The bundle contains the runtime, three skills, seven native templates, thirteen
+The bundle contains the runtime, three skills, eight native templates, thirteen
 image-reference styles, and installation/license documents. It excludes private
 source documents, local projects, browser caches, tests, and deck outputs.
 Install its `requirements.txt` in a fresh environment and run the commands above

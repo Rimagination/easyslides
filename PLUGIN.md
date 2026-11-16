@@ -1,7 +1,35 @@
-# EasySlides Codex Plugin
+# EasySlides Plugins
 
-EasySlides is now structured as a lightweight Codex plugin while keeping its
-existing repository-backed workflow intact.
+EasySlides uses thin host adapters around one shared presentation workflow and
+Python runtime.
+
+## Qoder Plugin
+
+`.qoder-plugin/plugin.json` declares the three canonical skills and the existing
+logo. `qoder.md` and `references/qoder.md` adapt first-use setup and tool access
+to Qoder. `python scripts/build_qoder_plugin.py` creates a physical runtime and
+a ZIP with the Qoder manifest at its root. The builder reuses the existing
+privacy filters, excludes other hosts' active manifests, and preserves the
+default `academic_general` workflow. It does not edit installed-plugin settings.
+
+Local upload and public marketplace submission are separate steps. See
+[Qoder installation](references/qoder.md) and the
+[submission copy](references/qoder-marketplace.md).
+
+## DeepSeek Harness npm bundle
+
+`package.json` publishes the `easyslides` package as a DSH bundle;
+`dsh/cordis.patch.yml` mounts `dsh/index.mjs`. This adapter contributes the three
+canonical skills to the host's skill registry at bundled priority, with local
+resource directories and on-demand instruction loading. Disabling the plugin
+removes its provider through Cordis's registration lifecycle. It adds no model
+provider, MCP server or second PPTX backend.
+
+`npm pack` stages `runtime/` through `scripts/build_plugin_bundle.py`; npm's
+explicit `files` allowlist includes only that sanitized runtime and `dsh/`.
+Installation runs no build or Python install hooks. The host adapter's setup,
+compatibility range and publishing status are documented in [INSTALL.md](INSTALL.md)
+and [references/deepseek-harness.md](references/deepseek-harness.md).
 
 ## What was added
 

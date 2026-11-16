@@ -16,6 +16,16 @@ scheme MUST trigger that question even when all other requirements are clear.
 No automatic default; recommendations do not authorize execution. Preserve an
 explicit choice already made for the same task. Apply deterministic technical
 routing only after this choice, subject to the selected route's prerequisites.
+The normal initial question offers native editable or images followed by editable
+reconstruction; explicit partial-image reconstruction stays supported.
+
+For new `direct_editable` content with no specified template, select the official
+`academic_general` default from `templates/template_policy.json`. This is a
+real template binding without an explicit path. Confirm color and theme-image
+source (existing theme images or a dedicated generated image), inspect discipline,
+presenter, school and date, and resolve missing facts before production; read
+`references/default-academic-template.md`. Explicit templates, raw template fills,
+approved image references and existing-deck edits retain their route and source.
 
 ## Image-reference template routing
 

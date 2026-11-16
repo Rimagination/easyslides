@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+
+  <rect id="tab" x="64" y="120" width="56" height="6" fill="#2F759B" />
+  <g id="title" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#102F4A">
+    <text x="64" y="232" font-size="48" font-weight="700" letter-spacing="-1" data-slot="THANK_YOU" data-pptx-box-x="64.0" data-pptx-box-y="172.0" data-pptx-box-w="1090.0" data-pptx-box-h="79.2" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{THANK_YOU}}</text>
+  </g>
+  <g id="subtitle" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#53616E">
+    <text x="64" y="278" font-size="20" font-weight="600" data-slot="KEY_MESSAGE" data-pptx-box-x="64.0" data-pptx-box-y="253.0" data-pptx-box-w="1090.0" data-pptx-box-h="33.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{KEY_MESSAGE}}</text>
+  </g>
+  <line x1="64" y1="332" x2="1216" y2="332" stroke="#102F4A" stroke-width="2" />
+  <g id="references" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif">
+    <text x="64" y="378" font-size="13" font-weight="600" fill="#53616E" letter-spacing="1" data-pptx-box-x="64.0" data-pptx-box-y="361.8" data-pptx-box-w="1090.0" data-pptx-box-h="21.4" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">KEY REFERENCES</text>
+    <text x="64" y="416" font-size="15" font-weight="400" fill="#171C22" data-slot="REF_1" data-pptx-box-x="64.0" data-pptx-box-y="397.2" data-pptx-box-w="1090.0" data-pptx-box-h="24.8" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{REF_1}}</text>
+    <text x="64" y="448" font-size="15" font-weight="400" fill="#171C22" data-slot="REF_2" data-pptx-box-x="64.0" data-pptx-box-y="429.2" data-pptx-box-w="1090.0" data-pptx-box-h="24.8" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{REF_2}}</text>
+    <text x="64" y="480" font-size="15" font-weight="400" fill="#171C22" data-slot="REF_3" data-pptx-box-x="64.0" data-pptx-box-y="461.2" data-pptx-box-w="1090.0" data-pptx-box-h="24.8" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{REF_3}}</text>
+  </g>
+  <g id="meta" font-family="'Helvetica Neue', Arial, 'Microsoft YaHei', 'PingFang SC', sans-serif" fill="#171C22">
+    <text x="64" y="608" font-size="17" font-weight="400" data-slot="REPORTER" data-pptx-box-x="64.0" data-pptx-box-y="586.8" data-pptx-box-w="650.0" data-pptx-box-h="28.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{REPORTER}}</text>
+    <text x="64" y="638" font-size="17" font-weight="400" data-slot="CONTACT" data-pptx-box-x="64.0" data-pptx-box-y="616.8" data-pptx-box-w="650.0" data-pptx-box-h="28.0" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{CONTACT}}</text>
+  </g>
+  <g id="meta-mono" font-family="'SF Mono', Consolas, 'Courier New', monospace" fill="#53616E">
+    <text x="1216" y="638" font-size="12" text-anchor="end" data-slot="SOURCE" data-pptx-box-x="836.0" data-pptx-box-y="623.0" data-pptx-box-w="380.0" data-pptx-box-h="19.8" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{SOURCE}}</text>
+  </g>
+</svg>

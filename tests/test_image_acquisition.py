@@ -116,9 +116,9 @@ class ImageAcquisitionTests(unittest.TestCase):
             scaffold_hero_manifest(manifest_path, topic="气候风险")
             (manifest_path.parent / "cover_bg.png").write_bytes(ONE_PIXEL_PNG)
 
-            template_ir = compile_template("academic_general")["template_ir"]
+            template_ir = compile_template("academic_classic")["template_ir"]
             deck_plan = {
-                "template_id": "academic_general",
+                "template_id": "academic_classic",
                 "slides": [
                     {
                         "page": "C01",
@@ -166,10 +166,10 @@ class ImageAcquisitionTests(unittest.TestCase):
             manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
             Image.new("RGB", (1280, 720), (120, 120, 120)).save(manifest_path.parent / "cover_bg.png")
 
-            template_ir = compile_template("academic_general")["template_ir"]
+            template_ir = compile_template("academic_classic")["template_ir"]
             slide_ir = compile_slides(
                 {
-                    "template_id": "academic_general",
+                    "template_id": "academic_classic",
                     "slides": [
                         {
                             "page": "C01",
@@ -231,9 +231,9 @@ class ImageAcquisitionTests(unittest.TestCase):
             manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
             (manifest_path.parent / "cover_illustration.png").write_bytes(ONE_PIXEL_PNG)
 
-            template_ir = compile_template("academic_general")["template_ir"]
+            template_ir = compile_template("academic_classic")["template_ir"]
             deck_plan = {
-                "template_id": "academic_general",
+                "template_id": "academic_classic",
                 "slides": [
                     {
                         "page": "C01",
@@ -300,10 +300,10 @@ class ImageAcquisitionTests(unittest.TestCase):
             manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
             (manifest_path.parent / "p01_illustration.png").write_bytes(ONE_PIXEL_PNG)
 
-            template_ir = compile_template("academic_general")["template_ir"]
+            template_ir = compile_template("academic_classic")["template_ir"]
             slide_ir = compile_slides(
                 {
-                    "template_id": "academic_general",
+                    "template_id": "academic_classic",
                     "slides": [
                         {
                             "page": "P01",

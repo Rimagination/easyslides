@@ -103,7 +103,17 @@ def _copy_templates(target_root: Path) -> list[str]:
         shutil.copy2(layouts_source / filename, layouts_target / filename)
     selected_layouts = _selected_layout_ids()
     for layout_id in selected_layouts:
-        _copy_tree(layouts_source / layout_id, layouts_target / layout_id)
+        source = layouts_source / layout_id
+        if layout_id == "academic_general":
+            # Ship the official adapted runtime, not archived source evidence.
+            def ignore_source(directory: str, names: list[str]) -> set[str]:
+                ignored = _ignore_runtime(directory, names)
+                if Path(directory) == source:
+                    ignored.add("source")
+                return ignored
+            shutil.copytree(source, layouts_target / layout_id, ignore=ignore_source)
+        else:
+            _copy_tree(source, layouts_target / layout_id)
     if (layouts_source / "assets").is_dir():
         _copy_tree(layouts_source / "assets", layouts_target / "assets")
 
@@ -192,18 +202,25 @@ def _validate_bundle(output_dir: Path) -> dict[str, object]:
     }
 
 
-def build_bundle(output_dir: Path) -> dict[str, object]:
+def build_bundle(output_dir: Path, *, host: str = "codex") -> dict[str, object]:
+    if host not in {"codex", "qoder"}:
+        raise ValueError(f"Unsupported plugin host: {host}")
+    manifest_dir = f".{host}-plugin"
+    if not (ROOT / manifest_dir / "plugin.json").is_file():
+        raise ValueError(f"Missing {host} plugin manifest")
     output_dir = output_dir.resolve()
     if output_dir == ROOT or output_dir in ROOT.parents:
         raise ValueError("refusing to replace the repository or one of its parents")
-    for source in ("scripts", "templates", "skills", "workflows", "assets", "references", ".codex-plugin"):
+    for source in ("scripts", "templates", "skills", "workflows", "assets", "references", ".codex-plugin", ".qoder-plugin"):
         if output_dir.is_relative_to(ROOT / source):
             raise ValueError("bundle output must be outside runtime source directories")
     if output_dir.exists():
         raise FileExistsError(f"bundle destination already exists; choose a new directory: {output_dir}")
     output_dir.mkdir(parents=True)
 
-    _copy_tree(ROOT / ".codex-plugin", output_dir / ".codex-plugin")
+    _copy_tree(ROOT / manifest_dir, output_dir / manifest_dir)
+    if host == "qoder":
+        shutil.copy2(ROOT / "qoder.md", output_dir / "qoder.md")
     _copy_tree(ROOT / "assets", output_dir / "assets")
     for filename in ROOT_FILES:
         source = ROOT / filename
@@ -221,6 +238,7 @@ def build_bundle(output_dir: Path) -> dict[str, object]:
         "schema_version": "easyslides.plugin_bundle.v1",
         "status": "pass",
         "plugin": "easyslides",
+        "host": host,
         "skills": list(CANONICAL_SKILLS),
         "layouts": selected_layouts,
         "privacy_policy": {
@@ -239,12 +257,13 @@ def build_bundle(output_dir: Path) -> dict[str, object]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build a physical privacy-safe EasySlides Codex plugin bundle.")
+    parser = argparse.ArgumentParser(description="Build a physical privacy-safe EasySlides plugin bundle.")
     parser.add_argument("--out", type=Path, default=ROOT / "build" / "plugin-bundle" / "easyslides")
+    parser.add_argument("--host", choices=("codex", "qoder"), default="codex")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     try:
-        result = build_bundle(args.out)
+        result = build_bundle(args.out, host=args.host)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"Error: {exc}")
         return 2

@@ -364,7 +364,7 @@ This section describes downstream reuse. The `Template_Designer` role itself is 
 
 ```
 templates/layouts/
-├── academic_general/      # Classic academic defense style
+├── academic_classic/      # Classic academic defense style
 ├── defense_leftnav/       # Compact wine-red thesis defense style
 ├── defense_topnav/       # Academic-blue top-navigation defense style
 └── literature_minimal/    # Minimal blue literature report family

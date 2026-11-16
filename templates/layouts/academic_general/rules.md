@@ -1,26 +1,243 @@
-# Academic General Rules
+# Academic General — Usage Rules
 
-Authoritative visual identity lives in `design_spec.md`; this file keeps the hard academic orchestration rules short.
+The consolidated Chinese record of user requests and current implementation
+parameters is [user_requirements_zh.md](user_requirements_zh.md). These rules
+and the slot contracts below remain the authoring requirements; visual review
+and source verification are not automatically guaranteed by the text itself.
 
-- Use `references/academic-orchestration.md` before planning this template.
-- Treat `academic_general` as the neutral general academic base, not a thesis-defense-only template.
-- Start with Audience-State-Transfer: audience, initial state, desired state, core tension, and transfer path.
-- Use SCQA as the default academic spine: Situation, Complication, Question, Answer. Do not force the labels onto the slide if a source-faithful order is clearer.
-- Every content slide must create one audience-state shift and carry one defensible claim.
-- Every content slide must select one declared body variant. Use a reviewed
-  variant first; use `open_component_composition` only when the user explicitly
-  needs a new arrangement of `academic_general` local components.
-- Do not import global or cross-template components into `academic_general`.
-- Keep the running title to one visual line. The central message is one or two
-  short lines and must not repeat the title or component-level copy.
-- The body canvas is an invisible planning boundary. Never render it as a
-  frame, placeholder, or dashed guide.
-- All declared center-locked text must be vertically centered using native
-  middle alignment. Do not simulate centering with manual offsets.
-- When the request does not make the intended page form clear, ask the user to
-  choose from the relevant body variants before composing the slide.
-- Write page titles and key messages for the audience, not for the generator.
-- Avoid developer-facing language in visible slide text and speaker-facing plan fields: template, slot, placeholder, executor, renderer, generation, pipeline, implementation.
-- Preserve source claims, figures, tables, captions, and citations for journal papers, theses, and mature reports.
-- Use chapter pages only for real audience transitions, not because the template has a chapter shell.
-- If content cannot fit at readable size, split the slide instead of shrinking into dense developer-style notes.
+1. This is the official default for a new native editable deck when the user
+   has not specified another template. Use `templates/layouts/academic_general/`.
+   Confirm production route first, then theme color and theme-image source
+   (reuse the 14 discipline theme images or generate a dedicated topic image);
+   inspect discipline,
+   presenter, presenter school and date, asking only missing/conflicting facts.
+   Explicit templates and supplied visual assets take precedence. Follow
+   `references/default-academic-template.md` for the shared intake method.
+2. Render through `scripts/semantic_template_renderer.py`, then use the shared
+   SVG-to-DrawingML exporter. Bind content to declared `data-slot` IDs; never
+   bind by DOM order or source page number.
+3. Select content layouts from `body_variants.json` by story role and content
+   shape. Repeat or omit layouts as necessary. The optional roadmap accepts one
+   to nine consecutive real section names.
+4. `TITLE` takes one or two explicit lines, as a string or list. Never rely on
+   automatic wrapping of an overlong line. Follow every slot's declared capacity.
+   On `cover_blue_band`, a single line uses baseline y=267 and a vertically
+   centered textbox at y=209, h=116. Two lines retain baseline y=235 and the
+   y=145, h=180 textbox through the title slot's `multiline_layout` contract.
+   Do not move the subtitle or shrink the title to compensate for line count.
+   Do not add a horizontal divider above the cover presenter details.
+5. Supply an actual figure path for the `result_figure` layout. Tables, values,
+   conclusions and source citations must come from the user's evidence. Remove
+   empty optional slots; do not invent data or citations. The legacy
+   reference-focused ending requires `REF_1`, a real reference for the paper.
+6. Pagination is deck-wide: physical slide index without zero padding; no number
+   on cover, table of contents or ending. The renderer fills `PAGE_NUM`; a
+   conflicting value is an error. Use a light theme-colored 48 × 48 px square
+   flush with the bottom-right corner, rounded only at top-left; center the
+   editable Cambria bold 16 pt numeral in both directions. Do not add a footer
+   rule. Show each source on the left at its first appearance; suppress later
+   repetitions while retaining evidence and figure locators in the plan.
+7. Before delivery, run the shared PPTX text-layout validator and inspect the
+   rendered PPTX, including the footer on every numbered page.
+8. Keep the chapter title bar centred on its title text frame. The TOC uses its
+   own bilingual title and gold rule. Do not add a separator bar to content headers. Render the figure-page
+   `TAKEAWAY` as a native PowerPoint solid-square paragraph bullet; do not type
+   the bullet into the content or add a separate PPTX marker shape.
+9. Use the default PowerPoint slide background; do not add a full-canvas solid
+   shape or a background image. Keep main text dark; use the selected theme and
+   restrained supporting accents. The original unthemed appearance is navy blue.
+10. The roadmap uses a topic-matched image on the left and gold numbered
+    section titles on the right, separated by a clear gutter of at least 40
+    canvas pixels. Use a separate `TOC_IMAGE` override only when
+    appropriate; otherwise reuse the cover image. Crop natively in PowerPoint.
+    Supply consecutive `TOC_ITEM_n_TITLE` slots starting at 1; the renderer
+    distributes one to nine items vertically. When classification is uncertain,
+    use the editable neutral illustration and record `needs_review`.
+11. Content pages should use the page width and height to organize real
+    information and vary layouts according to evidence. The existing
+    `04_background.svg` variant has slots for three points, a titled three-step
+    editable diagram and a takeaway; select it only when the source supports
+    that structure. Do not require three points or a three-step diagram on all
+    background pages, and never invent labels to fill the space. Method stages
+    can carry one additional concise factual detail each.
+12. Place pictures directly on the slide, without an added background panel or
+    border. Keep the picture and its caption independently selectable.
+13. On content pages, use a short chapter label (at most five characters) and
+    the page title in the two-part header, both in Microsoft
+    YaHei 28 pt. Center the white chapter label horizontally and vertically in
+    its dark theme-colored rectangle. Crop the cover image to a focused central
+    region behind a 75%-opaque dark theme overlay; keep the image, overlay, and
+    text separately editable. An explicit `CHAPTER_IMAGE` takes priority. With
+    no available image, use a solid dark header. Align both title text boxes to
+    the exact same vertical position, height and header midpoint; keep their
+    font, size and weight consistent and use native vertical centering. The
+    contents has its own layout.
+14. Place one or two explanatory paragraphs in a single editable text box below
+    the content-page header. Use native solid-square PowerPoint bullets and
+    Microsoft YaHei 18 pt for both bullet and text, with 1.3 line spacing.
+    Align each bullet visually with its first text line. Do not type a square
+    as text, add a second PowerPoint marker shape, or stack duplicate text boxes
+    over the hint. Leave at least 24 canvas pixels between the header and the
+    top of that text box.
+15. Figure captions use KaiTi for Chinese and Times New Roman for Latin text,
+    both at 14 pt. Do not force these caption fonts onto the slide footer.
+16. The blue-band cover can be selected with `layout_id: cover_blue_band`;
+    an unspecified, compatible cover also selects it when a topic image is
+    available. Preserve explicitly selected and incompatible legacy layouts.
+    Use the slot capacities in `layouts.json`,
+    and keep its title, subtitle, presenter, affiliation and date editable.
+    Do not copy the institution or presenter shown in the reference image.
+    Its optional `BAND_IMAGE` is topic-specific, confined to the blue band,
+    placed behind the text, and rendered as an editable picture with 30%
+    transparency. Do not generate or bind an unrelated decorative image.
+    Place a separately editable dark, theme-colored gradient rectangle over the
+    picture and behind the white title: both ends are 18% opaque and the center
+    is fully opaque, with a symmetric gradual transition across the band. Keep the
+    existing 30% picture transparency independently adjustable.
+    Choose photographic, scientific or abstract imagery and its colors to match
+    the topic instead of forcing a dark-blue or technology-only motif. Check
+    the white title's contrast against the selected image.
+17. `cover_banners/manifest.json` is the user-approved image library. Prefer
+    an explicit `discipline_code` or `discipline`, then an unambiguous topic
+    match. Explicit `BAND_IMAGE` and `TOC_IMAGE` values take priority. Record
+    the selection in the render manifest and review matches whose subject is
+    not representative of the research. Preserve the original image; cover,
+    TOC and ending slots own their native crops, with cover transparency unchanged.
+18. Use `ending_blue_band` for the reference-inspired ending. `THANK_YOU` is
+    required; `PAPER_TITLE`, `REPORTER`, `DATE`, `BAND_IMAGE` and
+    `INSTITUTION_LOGO` are optional. Reuse the actual cover image in the ending,
+    crop both to 1280 × 330, and preserve the 30% picture transparency and the
+    editable symmetric dark-blue overlay. Respect an explicit ending override.
+    The neutral mark is editable. Prefer an explicitly supplied logo; otherwise,
+    resolve a reviewed ScanSci emblem from the presenter's unambiguous school
+    metadata or affiliation. Unknown, conflicting or unavailable identities
+    retain the neutral mark. Record the logo source and matching evidence.
+    Never infer the presenter school from paper authors or the reference. Omit an
+    unused metadata icon with its text. The lower metadata contains only the
+    presenter and date; do not add a supervisor field. No source footer or page number is shown.
+    Legacy reference-heavy ending payloads continue to select `ending`.
+19. Do not wrap individual facts or comparison entries in repeated tinted
+    rectangular cards, outlined cards, or decorative colored sidebars. Arrange
+    facts through typography, alignment, whitespace, and restrained separators.
+    Keep shapes that carry data, meaningful diagrams, the specified chapter
+    header, and the cover/ending image bands.
+20. Keep chart-adjacent annotation concise. Prefer direct data labels and avoid
+    explanatory gray notes that repeat the chart, its axes, or the page's
+    takeaway. Retain figure captions, source, units, comparison baselines, and
+    any limitations needed to interpret the evidence; phrase them briefly and
+    place them close to the relevant content. Put supporting detail in presenter
+    notes when appropriate rather than adding more on-slide commentary.
+21. Scientific figures and charts must be traceable to the user's materials or
+    to a relevant scientific paper or scholarly tutorial. Prefer the original
+    figure when it explains the subject well. Redraw a chart only from verified
+    source data, preserve its meaning and mark it as redrawn or adapted; record
+    the exact work and figure/table in the source manifest and cite it on the
+    slide. Do not invent chart values, heatmaps, examples, or evidence to fill a
+    layout, even if labelled illustrative, unless the user explicitly asks for
+    a hypothetical example. If a suitable empirical figure is unavailable,
+    use a source-supported, editable conceptual diagram, technical route or
+    comparison table; distinguish it from an empirical result.
+22. At the beginning of a new deck using this template, ask the user to confirm
+    the theme color before visual planning. Present `academic_blue` (学术深蓝),
+    `academic_purple` (清华风紫), `academic_green` (深绿色), and
+    `technology_blue` (科技蓝) as examples; a confirmed `#RRGGBB` can also be
+    used to derive a custom palette. If a color was already explicitly
+    chosen, do not ask again. Record the selected `theme_palette` in the deck
+    plan or `academic_brief`. Use the same palette across the cover, contents,
+    content headers, and ending, while preserving white backgrounds, contrast,
+    actual image colors, and figure data. Existing plans without a theme retain
+    their original appearance for compatibility.
+23. The color–discipline pairs in `theme_palettes.json` are preview examples
+    only. In a real deck, honor the user's image and subject choices first;
+    otherwise select imagery from the actual discipline or topic. Do not infer a
+    discipline, institution, or school logo from the theme color.
+24. Reuse `assets/theme_palette_preview.png` when presenting theme choices;
+    do not regenerate the example for each deck. After selection, render the
+    actual deck locally with the chosen palette and topic-specific image.
+25. Check precision throughout the deck: consistent repeated typography,
+    margins and baselines, and even dimensions and gaps for parallel elements.
+    Inspect the native render for optical misalignment while retaining layout
+    variety appropriate to the content.
+26. Assume an academically experienced audience unless the user specifies
+    otherwise. Do not put teaching prompts such as “如何解读”, “读图指南”,
+    or “这页告诉我们” on slides. Use substantive headings that name the
+    scientific question, finding, mechanism or disagreement instead.
+27. Give each content page a distinct contribution to the argument. Record
+    that contribution and its evidence in the deck plan. Remove paragraphs
+    that merely restate the title, axes, legend, previous slide or a nearby
+    number. Revisit evidence only for a new comparison or synthesis.
+28. Structure a paper report around research background, related work and
+    frontier, research gap, study design and methods, results, and comparative
+    discussion. Do not open the body with methods or results without first
+    establishing the scientific problem. Follow relevant Introduction
+    references to their original papers and figures; add later studies when
+    they materially inform the discussion. Represent domestic/international
+    work by actual relevant contributions, without inventing geographic
+    contrasts or equating author affiliation with sampling location.
+29. Every body page must combine concise scientific text with a meaningful
+    visual: a source figure, verified data chart, editable model/route,
+    relationship diagram, or visual comparison table. No paragraph-only page
+    or uniform collection of text boxes. Convert genuinely textual material
+    into a structured visual when justified; decorative imagery or empty
+    shapes do not satisfy the requirement for scientific evidence.
+30. Explain the actual methods visually, including model inputs, units of
+    analysis, transformations, inference stages, outputs and validation.
+    A native editable schematic may be drawn when the paper has none; cite
+    the paper/method and label the schematic as such. Do not invent model
+    settings, training samples, feature values or performance. Preserve the
+    distinction between separate models used at separate stages.
+    A method mentioned by the user as an example is not evidence that the focal
+    paper used it. Verify the focal paper before naming or illustrating a method.
+31. Increase information density through complementary panels, aligned
+    comparisons, parameter/assumption tables and connected evidence, while
+    preserving the agreed typography and readable source axes. Use the
+    working area from below the hint to above the footer. Do not fill space
+    through repetition, unnecessary commentary, tiny text or fact cards.
+    Vary compositions to suit their argument; avoid three successive pages
+    using the same figure-left/commentary-right arrangement.
+32. Ground discussion in figures from relevant external studies and compare
+    study systems, response variables, scale and methods. Separate a source's
+    result from the presenter's inference or proposed experiment in the plan
+    and notes. A proposal may be visualized as a design, never as fabricated
+    observed data. A final synthesis must add a judgment, testable question
+    or implication rather than re-listing earlier facts.
+33. For a figure from a paper, write its caption as a substantive figure name
+    followed by the author–year citation: “A对B的影响 (Tim et al., 2025)”.
+    Use a scientifically accurate title; an association must not be renamed a
+    causal effect. Do not prefix the on-slide caption with “原论文图 X” or
+    put the citation before the figure name. Keep the original figure/panel
+    identifier in the source manifest and presenter notes. Preserve KaiTi for
+    Chinese and Times New Roman for Latin text, both 14 pt. A long caption may
+    break before the parenthesized citation; do not reduce its font size.
+34. Use editable solid block arrows for connections between layout stages,
+    matching the user reference's broad rectangular shaft and triangular head.
+    Use the theme accent, no outline, and a restrained soft shadow. Keep the
+    arrow centered in its inter-stage gap with space from text. The head is
+    roughly one third of the total arrow length and the shaft thickness is
+    44% of the head's height. At 1280 × 720, use a head height of half the arrow
+    length, clamped to 16–30 px. Preserve original-paper arrows, tree branches,
+    network edges and meaningful dashed/causal/feedback relations; styling a
+    layout connection must not alter the scientific meaning of a diagram.
+35. Apply the text hierarchy in `layouts.json#text_hierarchy` by semantic role:
+    hint 20 pt with a 20 pt native square bullet; ordinary body 18 pt; subordinate
+    explanation 16 pt. Body subheadings also use 18 pt, with weight for emphasis.
+    Chapter/page titles remain 28 pt, figure captions 14 pt and page counters
+    16 pt. Keep a single hint textbox and its 130% line spacing. Never reduce
+    body text below its role's size to fit a slot; shorten or reorganize content.
+    Cover/TOC/ending display typography, standalone quantitative emphasis,
+    source metadata and the text embedded in original figures are separate roles.
+36. A method diagram must encode the scientific operations with meaningful
+    graphics, such as a matrix, model structure, grouping, map or comparison.
+    Do not present six prose blocks connected by arrows as a visual workflow.
+    Share column widths, illustration bounds and text baselines across parallel
+    stages; use a single clear reading path and attach every branch to its
+    actual upstream object. Keep only essential counts and labels on the slide,
+    placing model details in notes. Mark an original schematic as a method
+    schematic; illustrative cells, branches, nodes and gene tracks must never
+    masquerade as observations, learned structure or measured quantities.
+37. Build a solid branching connector as one closed silhouette, with one
+    shared shaft width, identical arrowheads and clean tangent turns. Do not
+    overlay separate stroked lines and arrow objects at junctions: mismatched
+    thickness, exposed stubs, gaps and doubled shadows are visual failures.
+    Apply any shadow once to the unified shape and inspect junctions enlarged
+    in the actual PowerPoint render before delivery.

@@ -1,7 +1,9 @@
 {
-  "academic01": "academic_general",
+  "academic01": "academic_classic",
   "academic02": "academic_scqa",
-  "academic_defense": "academic_general",
+  "academic_defense": "academic_classic",
+  "academic_paper": "academic_general",
+  "academic_paper_report": "academic_general",
   "defense01": "defense_leftnav",
   "defense02": "defense_topnav",
   "defense_s01": "defense_leftnav",
@@ -9,6 +11,6 @@
   "literature02": "literature_minimal",
   "literature_s01": "literature_minimal",
   "literature_s02": "literature_minimal",
-  "nsfc_semantic": "nsfc_defense",
-  "nsfc_purple": "nsfc_defense"
+  "nsfc_purple": "nsfc_defense",
+  "nsfc_semantic": "nsfc_defense"
 }

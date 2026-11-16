@@ -59,9 +59,12 @@ question and wait for the user's answer before outlining slides, writing a deck
 plan, calling imagegen, reconstructing SVGs, or generating PPTX.
 
 > 你希望采用哪种方案制作这份 PPT？
-> 1. **直接生成可编辑 PPT（推荐）**：直接制作，方便修改文字、图表和布局。Token 消耗：中；耗时：中。
-> 2. **图片整页重建**：先确定图片效果，再将整页重建为可编辑 PPT；配图处理方式需进一步选择。Token 消耗：高；耗时：长。
-> 3. **图片局部重建**：保留原图，只把你指定的部分变成可编辑元素。Token 消耗：低至中；耗时：短至中（已有图片、少量区域时）。
+> 1. **原生可编辑 PPT（推荐）**：直接制作，方便修改文字、图表和布局。Token 消耗：中；耗时：中。
+> 2. **先生图，再转为可编辑 PPT**：先确定整页图片效果，再重建文字和结构；配图处理方式需进一步选择。Token 消耗：高；耗时：长。生图用量另计。
+
+These are the two normal intake choices. Explicit partial-image reconstruction
+remains `image_partial_rebuild` with a scoped mode choice; do not add a third
+initial option to every new-deck interview.
 
 No automatic default. A recommendation or preselected UI option is not user
 consent. Silence, urgency, complete source materials, or a familiar template
@@ -84,6 +87,37 @@ clarification rounds. Record only explicit user choices. The CLI inserts the
 scheme question, adds the reconstruction-mode question for an image route, and
 rejects a confirmed request without these decisions. The build and image-init
 entry points check the recorded choices before creating outputs.
+
+## Native default, color and identity
+
+After a native choice, when no template is specified, automatically select
+`academic_general` from `templates/layouts/academic_general/`, as
+declared by `template_policy.json.default_native_template_id`. Do not ask the
+user to select the default template. Explicit templates take precedence;
+raw PPTX template-fill and existing-slide edits keep their selected source.
+
+Ask color next (academic blue, purple, dark green, technology blue or custom
+hex), skipping known choices or explicit delegation. Reuse the saved palette
+example instead of regenerating samples.
+Choose the theme-image source after color: use template theme images, or
+generate a dedicated topic image. Call the 14 discipline assets “主题图”.
+Record `theme_image_source` (`template_assets` / `generate_new`); disclose
+generation time and usage. An explicit user image skips the question and uses
+`user_provided` with `theme_image_path`. Reuse one image across page crops;
+do not substitute template assets for an unfulfilled custom-image request.
+
+Inspect discipline, presenter, presenter school and date from messages and
+materials. `presentation_identity`
+is an inspection task with no popup payload. Only unresolved/conflicting facts
+are put to the user, in one compact follow-up where possible. Respect omissions.
+Never use paper authors' affiliations as presenter identity. Match the existing
+discipline assets and supplied or reviewed ScanSci emblem. Read
+`references/default-academic-template.md` before native planning.
+
+Sequence: production choice → native default → color → theme-image choice → source-located identity
+and material inspection plus necessary follow-ups → evidence and production.
+Read-only inspection may happen before questions. Do not repeat intake on edits
+or reopen an approved task because a default changed.
 
 ## Mandatory reconstruction-mode choice
 

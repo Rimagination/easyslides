@@ -1,0 +1,17 @@
+{
+  "slides": [
+    {
+      "role": "cover",
+      "layout_id": "cover_blue_band",
+      "slot_payload": {
+        "BAND_IMAGE": "../assets/evolution_cover_photographic.png",
+        "RESEARCH_FIELD": "演化生物学 · 生命科学",
+        "TITLE": "生命演化与物种多样性",
+        "SUBTITLE": "学术研究与交流",
+        "REPORTER": "汇报人：待填写",
+        "AFFILIATION": "单位：待填写",
+        "DATE": "日期：待填写"
+      }
+    }
+  ]
+}

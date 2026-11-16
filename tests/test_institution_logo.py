@@ -8,7 +8,7 @@ from urllib.error import HTTPError, URLError
 
 from PIL import Image
 
-from scripts.institution_logo import fetch_logo
+from scripts.institution_logo import fetch_logo, identify_presenter_institution
 
 
 def json_response(payload):
@@ -29,6 +29,43 @@ def logo_metadata(**changes):
 
 
 class InstitutionLogoTests(unittest.TestCase):
+    def test_identifies_presenter_school_from_explicit_fields_and_cover(self):
+        cases = [
+            ({"presenter_institution": "浙江大学"}, [], "浙江大学"),
+            ({"metadata": {"presenter": {"school": "清华大学"}}}, [], "清华大学"),
+            ({"academic_brief": {"presenter_institution": "浙江大学"}}, [], "浙江大学"),
+            ({"university": "zju.edu.cn"}, [], "zju.edu.cn"),
+            ({"institution": "Tsinghua University"}, [], "Tsinghua University"),
+            ({"presenter_affiliation": "University of California, Berkeley"}, [], "University of California, Berkeley"),
+            ({"academic_brief": {"academic_goal": "我是浙江大学的博士生，需要进行论文汇报。"}}, [], "浙江大学"),
+            ({}, [{"role": "cover", "slot_payload": {"AFFILIATION": "单位：浙江大学计算机学院"}}], "浙江大学"),
+            ({}, [{"role": "ending", "slot_payload": {"REPORTER": "汇报人：张三（浙江大学）"}}], "浙江大学"),
+        ]
+        for plan, slides, expected in cases:
+            with self.subTest(expected=expected, plan=plan):
+                result = identify_presenter_institution(plan, slides)
+                self.assertEqual(result["status"], "identified")
+                self.assertEqual(result["institution"], expected)
+                self.assertTrue(result["evidence"])
+
+    def test_does_not_use_author_or_template_identity_and_flags_conflicts(self):
+        cases = [
+            ({"source_map": [{"title": "论文", "affiliation": "浙江大学"}]}, []),
+            ({"template_id": "zhejiang_university"}, []),
+            ({}, [{"role": "cover", "slot_payload": {"AFFILIATION": "论文作者单位：浙江大学"}}]),
+            ({}, [{"role": "ending", "slot_payload": {"PAPER_TITLE": "浙江大学的某项研究"}}]),
+            ({"presenter_institution": "浙江大学附属中学"}, []),
+            ({"presenter_institution": "待填写"}, []),
+        ]
+        for plan, slides in cases:
+            with self.subTest(plan=plan, slides=slides):
+                self.assertEqual(identify_presenter_institution(plan, slides)["status"], "not_identified")
+        conflicting = identify_presenter_institution(
+            {"presenter_institution": "浙江大学", "metadata": {"institution": "清华大学"}}, []
+        )
+        self.assertEqual(conflicting["status"], "ambiguous")
+        self.assertEqual({row["institution"] for row in conflicting["candidates"]}, {"浙江大学", "清华大学"})
+
     def test_no_identified_institution_keeps_placeholder_without_network(self):
         with tempfile.TemporaryDirectory() as tmp, patch("scripts.institution_logo.urlopen") as request:
             report = fetch_logo(tmp)

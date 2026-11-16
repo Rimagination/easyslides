@@ -1,263 +1,226 @@
 ---
 template_id: academic_general
-display_name_zh: 学术通用
-category: general
-summary: General academic base for research talks, course reports, progress reviews, paper explainers, and scholarly exchange.
-keywords:
-  - general_academic
-  - Audience-State-Transfer
-  - SCQA
-  - research-oriented
-  - neutral_base
-primary_color: "#003366"
+display_name_zh: 学术通用汇报
+category: scenario
+summary: Default native academic report template with discipline assets, confirmed colors, visual methods and exact typography.
+keywords: [paper_reading, journal_club, research_report, light_navy]
+primary_color: "#102F4A"
 canvas_format: ppt169
-replication_mode: classic
-use_cases: Research talks, course reports, progress reviews, paper explainers, scholarly exchange
-design_tone: Professional, rigorous, audience-facing, AST/SCQA-guided
+replication_mode: slot_guided_mirror
 ---
 
-# Academic General - Design Specification
+# Academic General — Design Specification
 
-> Neutral general-purpose academic shells for research talks, course reports,
-> progress reviews, paper explainers, scholarly exchanges, and thesis-adjacent
-> summaries when no narrower scenario template is selected.
+This official native-default template adapts Academic PPT Master's ten
+`academic_paper_report` source pages to EasySlides named slots and adds six
+reusable content variants and two user-requested cover/ending shells. Its
+identity combines a blue-band cover and ending, an image-led contents page,
+two-part content headers, and an evidence-first academic visual style. Content
+headers omit the original vertical title marker; the chapter-transition layout
+can retain its own marker and large pale number. Content pages use the available
+canvas for evidence and diagrams, with comfortable margins. Upstream pages and
+specifications may be kept locally in `source/` for maintainer reference; the
+runtime does not require them. The package carries the upstream MIT license
+and attribution at its root.
 
----
+See [user_requirements_zh.md](user_requirements_zh.md) for the consolidated
+user requirements and [rules.md](rules.md) for the authoring rules. The
+current slot geometry and capacities remain defined by `layouts.json`.
+For a new deck, confirm native versus image production first, then the palette
+and source-located presenter/discipline information; record `theme_palette`. The
+`theme_palettes.json` catalog declares the supported theme variants. The colors
+listed below describe the original academic-blue appearance.
 
-## I. Template Overview
+## Canvas and colors
 
-| Property | Description |
-|---|---|
-| Template Name | `academic_general` |
-| Category | General academic base |
-| Use Cases | General academic presentations, research progress reports, course reports, paper explainers, thesis-adjacent summaries, scholarly exchange |
-| Design Tone | Professional, rigorous, research-oriented, audience-facing, clear hierarchy |
-| Theme Mode | Light theme with white background and dark-blue title bar |
+Use a 1280 × 720 canvas with PowerPoint's default white slide background; do
+not place a slide-sized background shape or picture. Titles are deep navy
+`#102F4A`, body copy is near-black `#171C22`, and secondary copy and footers use
+`#53616E`. Use blue `#2F759B`, teal `#3B817B`, warm amber `#B98B4F`, and muted
+violet `#7473A1` as restrained accents. Organize content on the white slide with
+typography, alignment, meaningful connectors and occasional fine rules. Avoid
+repeated tinted rectangular cards, outlines and colored sidebars around individual
+facts. Keep rectangles that encode actual data or serve the explicitly requested
+header and cover/ending bands. Do not reintroduce fabricated chart values or the
+original decorative progress bar.
 
-## I-A. Academic Orchestration Contract
+Use native editable text and the font stacks specified in the SVGs. Follow
+`layouts.json` for slot capacities; split or shorten copy when it exceeds a
+slot. `TITLE` accepts up to two explicitly separated lines. The existing
+`04_background.svg` layout combines three short points with a titled, three-step
+editable diagram and a full-width takeaway; use it only when the source supports
+that structure. Other background layouts can use different evidence and
+geometry. Supply real labels for diagrams; do not invent content simply to fill
+space. Method pages can include an additional factual detail for each step. The
+table, conclusion and outlook layouts use the content area vertically so that
+short content does not cluster in one corner.
 
-Read `references/academic-orchestration.md` before planning with this template.
-`academic_general` follows a human-centered academic contract:
+Content pages use a two-part header: a chapter name of at most five
+characters in white on a dark theme-colored rectangle on the left, and the
+dark page title on a pale background on the right, both Microsoft YaHei
+28 pt. Center the chapter name horizontally and vertically in its rectangle.
+Both title boxes share the same top, height and vertical midpoint of the header,
+with identical font, size and weight and PowerPoint vertical centering.
+Place a focused crop of the cover asset under a 75%-opaque dark theme overlay;
+keep the crop, overlay, and label separately editable. With no selected image,
+the header is solid. An explicit `CHAPTER_IMAGE` overrides the cover image.
+The table of contents retains its own layout. Below each content header,
+one editable text box holds one or two concise paragraphs in Microsoft YaHei
+20 pt, with a native solid-square PowerPoint bullet at 20 pt and 1.3 line
+spacing. The SVG square is only a preview and is not exported as a shape. The
+figure caption uses KaiTi for Chinese and Times New Roman for Latin text, both
+at 14 pt. Content headers have no vertical separator. Leave a clear gap between
+the header and the hint box, and reserve enough room for two bullet paragraphs.
+The chapter layout retains its existing title marker; the table of contents
+uses its own bilingual header and gold rule without a title marker.
+The cover has no horizontal divider above its presenter details.
+The fixed body hierarchy is declared in `layouts.json#text_hierarchy`: hints
+20 pt, ordinary body and bold body subheadings 18 pt, subordinate explanations
+16 pt. Use semantic roles consistently; shorten or relayout content instead of
+shrinking fonts. Titles remain 28 pt, captions 14 pt and counters 16 pt. Source
+metadata, standalone quantitative emphasis and cover/TOC/ending display type
+retain their own roles. Preserve typography embedded in original paper figures.
+Place figures directly on the slide without an added background rectangle or
+border. Keep the picture and caption as separately selectable objects.
 
-- Start with **Audience-State-Transfer**: identify the audience, initial state,
-  desired state, core tension, and slide-by-slide transfer path.
-- Use **SCQA** as the default academic spine: Situation, Complication,
-  Question, Answer. Treat it as a story path, not as visible section labels.
-- Each content page should create one audience-state shift and carry one
-  defensible claim supported by source-linked evidence or clear reasoning.
-- Visible slide text is audience-facing. Avoid developer-facing language such
-  as template, slot, placeholder, executor, renderer, generation, pipeline, or
-  implementation unless the talk is explicitly about software development.
+## Page roster
 
----
+| File | Role | Best for |
+| --- | --- | --- |
+| `01_cover.svg` | cover | Paper title, authors and presenter metadata |
+| `17_cover_blue_band.svg` | cover | User-requested centered cover with a deep-blue title band and optional topic image |
+| `02_toc.svg` | toc | Numbered paper-reading roadmap with one to nine sections |
+| `03_chapter.svg` | chapter | A section transition with a pale large numeral |
+| `04_background.svg` | content | Research background, gap and core question |
+| `05_method_pipeline.svg` | content | Four-stage study or method pipeline |
+| `06_result_figure.svg` | content | One supplied figure, caption and takeaway |
+| `07_result_table.svg` | content | A comparison table and one evidenced result |
+| `08_conclusion.svg` | content | Conclusions, implications and a highlighted finding |
+| `09_outlook.svg` | content | Reference value, limitation and next step |
+| `10_ending.svg` | ending | Legacy closing, key references and presenter contact |
+| `18_ending_blue_band.svg` | ending | Centered closing statement, paper title and optional presenter details |
+| `11_background_parallel.svg` | content | Three facts and an editable four-branch diagram |
+| `12_background_equation.svg` | content | Concept flow and three concise explanations |
+| `13_method_grid.svg` | content | Four stages presented in a two-by-two grid |
+| `14_method_timeline.svg` | content | Four-stage timeline and two contextual comparisons |
+| `15_result_scorecards.svg` | content | An open comparison table with four rows and two measured outcomes |
+| `16_background_contrast.svg` | content | Side-by-side comparison with an editable schematic |
 
-## II. Canvas Specification
+Select and repeat pages according to content; the original ten-page sequence is
+not a required deck length. Follow `story_structure.json` and `rules.md`.
+The optional blue-band cover reproduces the user-supplied reference
+`source/blue_band_cover_reference.jpg`: its top
+research-field line, full-width blue title panel, centered white title and
+subtitle, and lower presenter, affiliation and date. The band and labels are
+editable; no personal or institutional information is copied from the reference.
+The title has explicit one-/two-line geometry at the same font size: a single
+line is lowered by 32 canvas pixels (baseline y=267; textbox y=209, h=116),
+while two lines keep the original position (baseline y=235; textbox y=145,
+h=180). `layouts.json` supplies the multiline override to the semantic renderer;
+keep SVG previews and native textbox placement consistent. The subtitle stays fixed.
+Select it with `layout_id: cover_blue_band`. When a topic image is selected
+and the cover layout is unspecified, the renderer also chooses this cover if
+the supplied fields fit; an explicit layout or incompatible legacy fields keep
+their existing layout. The slide background remains PowerPoint's default white.
+An optional `BAND_IMAGE` slot places a topic-relevant image strictly inside
+the blue band, center-cropped and in front of the blue fill but behind all
+text, with PowerPoint picture transparency set to 30% (70% opacity).
+The supplied image remains a separately editable native picture. An independent
+native gradient rectangle covers the band above the image and below the title.
+In the original blue palette it is navy `#08264D`; other selected palettes
+replace the hue while retaining the same opacity stops: 18% at both edges and
+fully opaque at the horizontal center. Keep the symmetric gradient and its stops
+editable in PowerPoint. When the image is omitted, retain the gradient over the band.
+Select the image's subject, medium and colors from the actual presentation
+topic: it may be a photograph, a scientific illustration, or an abstract visual.
+Do not impose a dark-blue image or reuse technology imagery for unrelated
+subjects. Check that the title remains legible at the specified transparency.
+`cover_banners/manifest.json` lists 14 user-approved generated images by
+discipline and a topic-specific evolution image. Use the deck's explicit
+discipline when provided, otherwise infer from the topic and field when the
+keyword evidence is unambiguous. The semantic render manifest records the
+selection and its basis. User-provided `BAND_IMAGE` and `TOC_IMAGE` slots take
+priority; the actual cover image also supplies the default TOC and ending
+picture. An empty cover image leaves the ending unillustrated unless overridden. An
+unknown or tied subject is marked for review instead of guessed. These are
+decorative visuals, not research evidence. Preserve the original image and use
+native, adjustable PowerPoint crops for both frames.
+The roadmap retains its bilingual title, fine gold rule and editable numbered
+section names; its left image uses the matching cover asset with its own crop.
+Keep at least 40 canvas pixels between the image and the section-number column.
+If no image can be selected, a neutral editable network fills the visual area.
+One to nine consecutive section slots are supported. The renderer distributes
+occupied rows across the available height and removes unused numbers.
+Select content variants according to the argument and evidence; do not repeat
+the same page composition across a long run merely to fill space.
 
-| Property | Value |
-|---|---|
-| Format | Standard 16:9 |
-| Dimensions | 1280 x 720 px |
-| viewBox | `0 0 1280 720` |
-| Page Margins | Left/right 40px, top 0px, bottom 35px |
-| Safe Area | x: 40-1240, y: 70-665 |
+The default ending follows the supplied reference: PowerPoint's white slide
+background, a fine navy line, a full-width navy middle band, a centered white
+closing statement and paper title, and up to two lower metadata columns with
+editable icons. A neutral editable book mark sits across the line and band;
+replace it with the user-supplied `INSTITUTION_LOGO` or a reviewed ScanSci
+emblem for an unambiguously identified presenter school. Record the school
+evidence and logo source; do not infer it from the paper or reference image.
+Unknown, conflicting or unavailable identities retain the neutral mark. The
+ending band matches the cover's 1280 × 330 crop, carries the same editable image
+at 30% transparency, and uses the same dark symmetric gradient for legibility.
+The band, mark, icons and text remain independently editable. Omit unused metadata
+and their icons; the ending has no footer or page number. Existing ending
+payloads containing reference fields continue to use `10_ending.svg`.
 
----
+## Scientific narrative and body composition
 
-## III. Color Scheme
+Connections between layout stages use editable solid block arrows: broad shaft,
+triangular head, theme accent, no outline and a light soft shadow. Center them
+in the available gap. The head occupies one third of the length; the shaft is
+44% of the head height. On the 1280 × 720 canvas, head height is half the arrow
+length, clamped to 16–30 px. Scientific relations retain their meaning: preserve
+original-paper arrows, tree branches, network edges and meaningful dashed or
+feedback connections.
 
-| Role | Value | Usage |
-|---|---|---|
-| Primary dark blue | `#003366` | Header background, chapter surfaces, main headings |
-| Accent blue | `#0066CC` | Card borders, icons, secondary decorations |
-| Accent red | `#CC0000` | Key emphasis and left decorative bar |
-| Light blue-gray | `#E8F4FC` | Key-message bar and calm evidence surfaces |
-| Background white | `#FFFFFF` | Main page background |
-| Primary text | `#333333` | Body content |
-| Secondary text | `#666666` | Captions and annotations |
-| Muted gray | `#999999` | Footer and auxiliary info |
-| Card gray | `#F5F7FA` | Card inner backgrounds |
-| Border gray | `#D0D7E0` | Dividers and soft borders |
+Paper-derived figure captions use a substantive name followed by a citation,
+for example “A对B的影响 (Tim et al., 2025)”. Use wording appropriate to the
+evidence, including “关系” or “关联” for an association. Original figure and
+panel identifiers belong in the notes and source manifest, rather than a
+prefix such as “原论文图 X”. Captions retain KaiTi for Chinese and Times New
+Roman for Latin text at 14 pt; wrap before the citation when necessary.
 
----
+The default audience is academically experienced. Write scientific claims and
+questions, not classroom prompts such as “如何解读” or “读图指南”. Each page
+must add a distinct piece of evidence, comparison, mechanism or judgment;
+repeating a title, legend, number or prior conclusion is not information gain.
 
-## IV. Typography System
+For a paper report, establish the background and related frontier before the
+research gap and design, then present methods, results and comparative
+discussion. Follow the Introduction's references to original figures and use
+relevant external-study figures in discussion. Record actual locations and
+affiliations separately; do not manufacture national contrasts.
 
-Use `"Microsoft YaHei", Arial, sans-serif`.
+Every body slide combines concise text with scientific visual content.
+Source figures, verified data plots, native model schematics, technical routes,
+relationship diagrams and visual comparison tables are valid; paragraph-only
+pages and decoration standing in for evidence are not. Method schematics must
+faithfully show the study's actual inputs, analysis units, model stages and
+outputs, with no invented settings or accuracy. Identify a newly drawn
+explanation as a schematic based on its scientific source.
 
-| Level | Usage | Size | Weight |
-|---|---|---|---|
-| H1 | Cover main title | 56px | Bold |
-| H2 | Page title | 28px | Bold |
-| H3 | Chapter title | 56px | Bold |
-| H4 | Card title | 24px | Bold |
-| Body | Main content | 18px | Regular |
-| Highlight | Data or key number | 36px | Bold |
-| Caption | Notes and sources | 14px | Regular |
-| Footer | Page number and copyright | 12px | Regular |
+Use complementary panels and structured comparisons to fill the working area
+between hint and footer. Preserve readable typography and source axes; do not
+use tiny fonts, repeated fact cards or redundant prose as density. Match each
+composition to its role and avoid three consecutive figure-left/commentary-right
+pages. Keep figure-specific detail in notes when it does not advance the argument.
+Distinguish source results, presenter's inference and proposed experiments in
+the plan and notes; proposed work must never be depicted as observed data.
 
----
+## Pagination
 
-## V. Page Structure
-
-| Area | Position / Height | Role |
-|---|---|---|
-| Header | y=0, h=70px | Page title and section identity |
-| Key Message Bar | y=70, h=50px | Conclusion or audience-state shift |
-| Content Area | y=135, h=515px | Main claim, evidence, and explanation |
-| Footer | y=665, h=55px | Source, section name, page number |
-
-Decorative elements:
-
-- Left red bar: `#CC0000`, 6px wide, used for header and emphasis.
-- Blue border: `#0066CC`, used for card borders and selected rules.
-- Decorative divider: `#0066CC`, paired with restrained dots or line accents.
-
----
-
-## VI. Page Types
-
-| SVG | Role | Description |
-|---|---|---|
-| `01_cover.svg` | cover | Title, subtitle, presenter, affiliation, date, and optional logo. |
-| `02_toc.svg` | toc | Two-column agenda for major audience steps or academic sections. |
-| `02_chapter.svg` | chapter | Major audience-state transition or section opener. |
-| `03_content.svg` | content | Reusable claim-plus-evidence shell with key-message bar and footer. |
-| `04_ending.svg` | ending | Takeaway, thanks, contact, or next-step closing page. |
-
----
-
-## VII. Layout Patterns
-
-| Pattern | Use Cases |
-|---|---|
-| Single column centered | Cover, ending, one key point |
-| Two-column cards | TOC, paired concepts, two evidence groups |
-| Left-right split 5:5 | Comparison display |
-| Left-right split 4:6 | Image-text or figure-explanation layout |
-| Card grid | Research content list or categorized evidence |
-| Timeline | Research progress or chronological development |
-| Table | Data comparison and experiment results |
-| Claim + evidence | One main finding with figure, table, or reasoning block |
-| SCQA transition | Situation-to-gap, gap-to-question, or answer synthesis |
-
----
-
-## VII-A. Content Composition Contract
-
-`academic_general` is a bounded component-first template. A content page keeps
-the common running title, central message, footer, and page number, then selects
-one declared body variant:
-
-| Variant | Use when the page needs |
-|---|---|
-| `figure_evidence` | One primary figure and three concise observations |
-| `comparison_synthesis` | Two alternatives followed by a decision |
-| `process_outcome` | Three ordered steps and their shared outcome |
-| `metrics_evidence` | Three metrics explained by two evidence rows |
-| `evidence_argument` | A text-rich claim supported by three auditable arguments |
-| `table_decision` | A compact 3 by 3 decision matrix |
-| `open_component_composition` | An explicitly requested arrangement of registered local components |
-
-The last route is deliberately bounded: it may use only components registered
-by `academic_general`, and every component frame must remain inside the content
-body canvas. It is not a route for importing a global card library or changing
-the template's visual tokens.
-
-The body canvas is a planning region, not a visible rectangle. No helper frame,
-dashed outline, or placeholder label may appear in the exported slide.
-
----
-
-## VIII. Spacing Guidelines
-
-| Element | Value |
-|---|---|
-| Card gap | 20px |
-| Content block gap | 24px |
-| Card padding | 20px |
-| Card border radius | 8px |
-| Icon-to-text gap | 12px |
-
----
-
-## IX. SVG Technical Constraints
-
-Mandatory rules:
-
-1. viewBox: `0 0 1280 720`.
-2. Use `<rect>` elements for backgrounds.
-3. Use `<tspan>` for text wrapping; do not use `<foreignObject>`.
-4. Use `fill-opacity` / `stroke-opacity` for transparency; do not use `rgba()`.
-5. Prohibited: `mask`, `<style>`, `class`, `textPath`, `animate*`, and `script`.
-6. `clipPath` is allowed only on `<image>` under `shared-standards.md` section 1.2.
-7. `marker-start` / `marker-end` are conditionally allowed when marker shapes follow `shared-standards.md` section 1.1.
-
-PPT compatibility:
-
-- Do not use group opacity; set opacity on each child element individually.
-- Use overlay layers for image transparency.
-- Use inline styles only; do not use external CSS or `@font-face`.
-
----
-
-## X. Placeholder Specification
-
-Templates use `{{PLACEHOLDER}}` format placeholders. These are production
-anchors, not visible slide copy.
-
-| Placeholder | Description |
-|---|---|
-| `{{TITLE}}` | Main title |
-| `{{SUBTITLE}}` | Subtitle |
-| `{{AUTHOR}}` | Presenter name |
-| `{{ADVISOR}}` | Optional advisor or mentor |
-| `{{INSTITUTION}}` | University, lab, organization, or affiliation |
-| `{{DATE}}` | Presentation date |
-| `{{PAGE_TITLE}}` | Short running title |
-| `{{SECTION_NUM}}` | Section number |
-| `{{CHAPTER_NUM}}` | Chapter number |
-| `{{CHAPTER_TITLE}}` | Chapter title |
-| `{{CHAPTER_DESC}}` | Chapter description |
-| `{{KEY_MESSAGE}}` | Conclusion or audience-state shift |
-| `{{PAGE_NUM}}` | Page number |
-| `{{SOURCE}}` | Data or source note |
-| `{{SECTION_NAME}}` | Section name in footer |
-| `{{TOC_ITEM_N_TITLE}}` | TOC item title |
-| `{{TOC_ITEM_N_DESC}}` | TOC item description |
-| `{{THANK_YOU}}` | Closing message |
-| `{{ENDING_SUBTITLE}}` | Closing subtitle or takeaway |
-| `{{CONTACT_INFO}}` | Contact information |
-| `{{EMAIL}}` | Email address |
-| `{{COPYRIGHT}}` | Copyright or source note |
-| `{{LOGO}}` | Logo image or text fallback |
-
----
-
-## XI. Human-Facing Composition Rules
-
-1. Write for the audience's next judgment, not for the production process.
-2. Use conclusion-style page titles; avoid vague labels such as "Background"
-   unless paired with a clear claim.
-3. Keep one main idea per slide. If a slide contains two state shifts, split it.
-4. Prefer source-faithful figures, tables, and captions for academic evidence.
-5. Use decorative tags and arrows only when they clarify the argument path.
-6. Use the running title for the page topic and the key-message rail for the
-   smallest defensible conclusion. Do not repeat one as the other.
-7. Keep the content-page running title on one visual line. Shorten it rather
-   than wrapping it into the content area.
-8. Text in a declared centered container must use native middle vertical
-   alignment with its text center aligned to the container center.
-
----
-
-## XII. Template Boundaries
-
-- `academic_general` is the neutral academic fallback. Prefer a narrower template
-  such as `literature_minimal`, `defense_leftnav`, or `defense_topnav` when the
-  user explicitly selects that scenario.
-- The visual shell provides hierarchy and rhythm; the academic scenario and
-  source material define the argument.
-- For mature source materials, preserve source claims, figures, tables,
-  captions, and citations. Add external material only when requested.
-- When the requested visual form is unclear, ask the user to choose between
-  the relevant declared variants before generating the page.
+The cover, table of contents and ending omit page numbers. The table of
+contents also omits the source footer. Every other page uses its physical
+slide index without padding or a total: for example `3` or `11`. A 48 × 48 px
+square sits flush at (1232, 672), with only its top-left corner rounded. Use
+the light theme border color for the square and the theme accent for a native,
+centered Cambria bold 16 pt numeral. The semantic renderer owns `PAGE_NUM` and
+rejects inconsistent caller values. There is no footer divider. Show a source
+on the left on first appearance only; retain distinct citations and scientific
+figure locators in the content and source records. Validate the exported PPTX
+and inspect rendered footers before delivery.

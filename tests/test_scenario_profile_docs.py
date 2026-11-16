@@ -50,7 +50,7 @@ class ScenarioProfileDocsTests(unittest.TestCase):
         self.assertIn("Template and Design Foundation", text)
         self.assertIn("If the user provides an explicit template path", text)
         self.assertIn("If no matching template exists", text)
-        self.assertIn("academic_general` is the neutral general academic fallback", text)
+        self.assertIn("academic_classic` remains an available neutral pack when explicitly selected", text)
         self.assertIn("academic_scqa` is the structured academic/technical report variant", text)
 
 

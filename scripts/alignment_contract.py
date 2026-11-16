@@ -297,7 +297,10 @@ def validate_inventory_alignment(inventory: dict[str, Any]) -> dict[str, Any]:
 
 
 def _normal_text(value: Any) -> str:
-    return "".join(str(value or "").split())
+    text = str(value or "").replace("\r\n", "\n").replace("\r", "\n")
+    # Whitespace inside a line is formatting noise, but line boundaries are
+    # semantic for table paragraphs and explicit line breaks.
+    return "\n".join("".join(line.split()) for line in text.split("\n"))
 
 
 def _shape_name(sp: ET.Element) -> str:
@@ -307,6 +310,76 @@ def _shape_name(sp: ET.Element) -> str:
 
 def _text_content(sp: ET.Element) -> str:
     return "".join(node.text or "" for node in sp.findall(".//a:t", PPTX_NS)).strip()
+
+
+def _table_cell_text(cell: ET.Element) -> str:
+    """Read a table cell while retaining paragraph and soft line breaks."""
+    tx_body = cell.find("a:txBody", PPTX_NS)
+    if tx_body is None:
+        return ""
+    paragraphs: list[str] = []
+    for paragraph in tx_body.findall("a:p", PPTX_NS):
+        parts: list[str] = []
+        for node in paragraph.iter():
+            local = node.tag.rsplit("}", 1)[-1] if isinstance(node.tag, str) else ""
+            if local == "t":
+                parts.append(node.text or "")
+            elif local == "br":
+                parts.append("\n")
+            elif local == "tab":
+                parts.append("\t")
+        paragraphs.append("".join(parts))
+    text = "\n".join(paragraphs)
+    return text if text.strip() else ""
+
+
+def _positive_int(value: str | None, default: int = 1) -> int:
+    try:
+        return max(int(value), 1) if value is not None else default
+    except (TypeError, ValueError):
+        return default
+
+
+def _table_cell_anchors(
+    rows: list[ET.Element], column_count: int,
+) -> list[tuple[ET.Element, int, int, int, int]]:
+    """Return table cells with their row/column origin and merge spans."""
+    occupied = [[False] * column_count for _ in rows]
+    anchors: list[tuple[ET.Element, int, int, int, int]] = []
+
+    for row_index, row in enumerate(rows):
+        column_index = 0
+        for cell in row.findall("a:tc", PPTX_NS):
+            h_merge = str(cell.get("hMerge") or "").lower() in {"1", "true"}
+            v_merge = str(cell.get("vMerge") or "").lower() in {"1", "true"}
+            if h_merge:
+                # A gridSpan anchor already consumed this logical column.
+                continue
+            if v_merge:
+                # Vertical merge slaves occupy one source column; their
+                # anchor already supplies the frame geometry.
+                column_index += 1
+                continue
+            while column_index < column_count and occupied[row_index][column_index]:
+                column_index += 1
+            if column_index >= column_count:
+                continue
+
+            column_span = min(
+                _positive_int(cell.get("gridSpan")),
+                column_count - column_index,
+            )
+            row_span = min(
+                _positive_int(cell.get("rowSpan")),
+                len(rows) - row_index,
+            )
+            anchors.append((cell, row_index, column_index, column_span, row_span))
+            for row_offset in range(row_span):
+                for column_offset in range(column_span):
+                    occupied[row_index + row_offset][column_index + column_offset] = True
+            column_index += column_span
+
+    return anchors
 
 
 def _pptx_slide_order(pptx_path: Path) -> list[str]:
@@ -394,27 +467,51 @@ def _iter_pptx_text_frames(pptx_path: Path) -> list[list[dict[str, Any]]]:
                         if box is not None and text:
                             box = layout_metrics.transform_box(box, _pptx_rotation(xfrm, box))
                             box = layout_metrics.transform_box(box, parent_matrix)
-                            slide_frames.append({"text": text, "box": box, "shape_name": _shape_name(child), "kind": "text_box"})
+                            body_pr = child.find("p:txBody/a:bodyPr", PPTX_NS)
+                            anchor = body_pr.get("anchor", "t") if body_pr is not None else "t"
+                            slide_frames.append({"text": text, "box": box, "shape_name": _shape_name(child), "kind": "text_box", "vertical_anchor": anchor})
                         continue
                     if local == "graphicFrame":
                         xfrm = child.find("p:xfrm", PPTX_NS)
                         table_box = _pptx_box(xfrm)
                         table = child.find(".//a:tbl", PPTX_NS)
                         if table_box is not None and table is not None:
-                            columns = [layout_metrics.emu_to_px(col.get("w")) for col in table.findall("a:tblGrid/a:gridCol", PPTX_NS)]
-                            rows = [layout_metrics.emu_to_px(row.get("h")) for row in table.findall("a:tr", PPTX_NS)]
-                            if columns and rows:
-                                y = table_box.y
-                                for row_index, (row, row_height) in enumerate(zip(table.findall("a:tr", PPTX_NS), rows)):
-                                    x = table_box.x
-                                    for col_index, (cell, col_width) in enumerate(zip(row.findall("a:tc", PPTX_NS), columns)):
-                                        text = "".join(node.text or "" for node in cell.findall(".//a:t", PPTX_NS)).strip()
-                                        if text:
-                                            cell_box = layout_metrics.Box(x=x, y=y, width=col_width, height=row_height)
-                                            cell_box = layout_metrics.transform_box(cell_box, parent_matrix)
-                                            slide_frames.append({"text": text, "box": cell_box, "shape_name": f"{_shape_name(child)}[{row_index},{col_index}]", "kind": "table_cell"})
-                                        x += col_width
-                                    y += row_height
+                            column_widths = [
+                                layout_metrics.emu_to_px(col.get("w"))
+                                for col in table.findall("a:tblGrid/a:gridCol", PPTX_NS)
+                            ]
+                            table_rows = table.findall("a:tr", PPTX_NS)
+                            row_heights = [
+                                layout_metrics.emu_to_px(row.get("h"))
+                                for row in table_rows
+                            ]
+                            intrinsic_width = sum(column_widths)
+                            intrinsic_height = sum(row_heights)
+                            if column_widths and table_rows and intrinsic_width > 0 and intrinsic_height > 0:
+                                # Match the table renderer when the graphic
+                                # frame stretches the intrinsic grid.
+                                scale_x = table_box.width / intrinsic_width if table_box.width > 0 else 1.0
+                                scale_y = table_box.height / intrinsic_height if table_box.height > 0 else 1.0
+                                column_widths = [width * scale_x for width in column_widths]
+                                row_heights = [height * scale_y for height in row_heights]
+                                column_starts = [table_box.x]
+                                for width in column_widths[:-1]:
+                                    column_starts.append(column_starts[-1] + width)
+                                row_starts = [table_box.y]
+                                for height in row_heights[:-1]:
+                                    row_starts.append(row_starts[-1] + height)
+                                for cell, row_index, col_index, col_span, row_span in _table_cell_anchors(table_rows, len(column_widths)):
+                                    text = _table_cell_text(cell)
+                                    if not text:
+                                        continue
+                                    cell_box = layout_metrics.Box(
+                                        x=column_starts[col_index],
+                                        y=row_starts[row_index],
+                                        width=sum(column_widths[col_index:col_index + col_span]),
+                                        height=sum(row_heights[row_index:row_index + row_span]),
+                                    )
+                                    cell_box = layout_metrics.transform_box(cell_box, parent_matrix)
+                                    slide_frames.append({"text": text, "box": cell_box, "shape_name": f"{_shape_name(child)}[{row_index},{col_index}]", "kind": "table_cell"})
                         continue
                     walk(child, parent_matrix)
 

@@ -1,0 +1,26 @@
+{
+  "slides": [
+    {
+      "role": "cover",
+      "slot_payload": {
+        "RESEARCH_FIELD": "自然语言处理 · 自注意力",
+        "TITLE": "Attention Is All You Need",
+        "SUBTITLE": "Transformer 论文精读",
+        "REPORTER": "论文研读 · 学术组会",
+        "AFFILIATION": "Ashish Vaswani et al.",
+        "DATE": "NeurIPS 2017"
+      }
+    },
+    {
+      "role": "toc",
+      "slot_payload": {
+        "PAGE_TITLE": "目录",
+        "TOC_ITEM_1_TITLE": "研究背景",
+        "TOC_ITEM_2_TITLE": "模型架构",
+        "TOC_ITEM_3_TITLE": "注意力机制",
+        "TOC_ITEM_4_TITLE": "实验结果",
+        "TOC_ITEM_5_TITLE": "总结与讨论"
+      }
+    }
+  ]
+}

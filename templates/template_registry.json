@@ -3,13 +3,13 @@
   "generation_policy": "discover_template_packages_and_legacy_layouts",
   "templates": [
     {
-      "package_id": "template/academic_general",
-      "template_id": "academic_general",
+      "package_id": "template/academic_classic",
+      "template_id": "academic_classic",
       "version": "2.0.0",
       "status": "production",
-      "display_name": "Academic General",
+      "display_name": "Academic Classic",
       "description": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
-      "path": "templates/layouts/academic_general",
+      "path": "templates/layouts/academic_classic",
       "canvas_format": "ppt169",
       "layout_count": 5,
       "capability_level": "production",
@@ -23,6 +23,23 @@
         "neutral_base"
       ],
       "compiled_ir": "compiled/template_ir.json",
+      "official": true
+    },
+    {
+      "package_id": "template/academic_general",
+      "template_id": "academic_general",
+      "version": "0.2.0",
+      "status": "review",
+      "display_name": "Academic General",
+      "description": "Default native academic report template with confirmed theme colors, discipline assets, evidence-led visual methods and precise text hierarchy.",
+      "path": "templates/layouts/academic_general",
+      "canvas_format": "ppt169",
+      "layout_count": 19,
+      "capability_level": "semantic",
+      "production_eligible": true,
+      "managed_package": true,
+      "keywords": [],
+      "compiled_ir": "",
       "official": true
     },
     {
@@ -96,18 +113,18 @@
       "official": true
     },
     {
-      "package_id": "",
+      "package_id": "template/literature_minimal",
       "template_id": "literature_minimal",
-      "version": "",
-      "status": "legacy",
-      "display_name": "literature_minimal",
-      "description": "Minimal blue-white literature report and paper-reading template with five reusable classic page shells.",
+      "version": "1.0.1",
+      "status": "review",
+      "display_name": "Literature Minimal",
+      "description": "Minimal literature-report template with generous whitespace, restrained typography, and optional source or decorative imagery.",
       "path": "templates/layouts/literature_minimal",
       "canvas_format": "ppt169",
       "layout_count": 5,
       "capability_level": "semantic",
       "production_eligible": false,
-      "managed_package": false,
+      "managed_package": true,
       "keywords": [
         "academic_report",
         "literature_report",
@@ -115,7 +132,7 @@
         "minimal_blue_white",
         "research_report"
       ],
-      "compiled_ir": "",
+      "compiled_ir": "compiled/template_ir.json",
       "official": true
     },
     {
@@ -155,13 +172,13 @@
   ],
   "packages": [
     {
-      "package_id": "template/academic_general",
-      "template_id": "academic_general",
+      "package_id": "template/academic_classic",
+      "template_id": "academic_classic",
       "version": "2.0.0",
       "status": "production",
-      "display_name": "Academic General",
+      "display_name": "Academic Classic",
       "description": "Neutral blue academic template with bounded local component composition for research talks, seminars, and project updates.",
-      "path": "templates/layouts/academic_general",
+      "path": "templates/layouts/academic_classic",
       "canvas_format": "ppt169",
       "layout_count": 5,
       "capability_level": "production",
@@ -173,6 +190,46 @@
         "SCQA",
         "research-oriented",
         "neutral_base"
+      ],
+      "compiled_ir": "compiled/template_ir.json",
+      "official": true
+    },
+    {
+      "package_id": "template/academic_general",
+      "template_id": "academic_general",
+      "version": "0.2.0",
+      "status": "review",
+      "display_name": "Academic General",
+      "description": "Default native academic report template with confirmed theme colors, discipline assets, evidence-led visual methods and precise text hierarchy.",
+      "path": "templates/layouts/academic_general",
+      "canvas_format": "ppt169",
+      "layout_count": 19,
+      "capability_level": "semantic",
+      "production_eligible": true,
+      "managed_package": true,
+      "keywords": [],
+      "compiled_ir": "",
+      "official": true
+    },
+    {
+      "package_id": "template/literature_minimal",
+      "template_id": "literature_minimal",
+      "version": "1.0.1",
+      "status": "review",
+      "display_name": "Literature Minimal",
+      "description": "Minimal literature-report template with generous whitespace, restrained typography, and optional source or decorative imagery.",
+      "path": "templates/layouts/literature_minimal",
+      "canvas_format": "ppt169",
+      "layout_count": 5,
+      "capability_level": "semantic",
+      "production_eligible": false,
+      "managed_package": true,
+      "keywords": [
+        "academic_report",
+        "literature_report",
+        "paper_reading",
+        "minimal_blue_white",
+        "research_report"
       ],
       "compiled_ir": "compiled/template_ir.json",
       "official": true
@@ -212,6 +269,6 @@
       "official": true
     }
   ],
-  "template_count": 7,
-  "package_count": 3
+  "template_count": 8,
+  "package_count": 5
 }

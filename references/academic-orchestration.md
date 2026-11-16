@@ -5,6 +5,14 @@ of template or production scheme. For edits, apply only within the requested
 scope. An approved image deck being reconstructed retains its content, order
 and geometry; narrative redesign requires separate user authorization.
 
+For new native work without a user template, apply the official
+`academic_general` default and read
+[the default academic method](default-academic-template.md). Ask production first,
+then color and template-versus-generated theme-image choice; inspect discipline,
+presenter, presenter school and date. Keep
+source-located facts and explicit omissions and ask only missing/conflicting
+facts. The default supplies visual style, not evidence or a claimed affiliation.
+
 ## Academic intake: adaptive, evidence-aware
 
 Inspect messages and accessible materials first, then ask one consequential
@@ -153,7 +161,7 @@ Use:
 
 ## Template Roles
 
-`academic_general` is the neutral general academic base. It should handle broad
+`academic_classic` is the neutral general academic base. It should handle broad
 academic talks, course reports, research progress, thesis-adjacent summaries,
 and scholarly exchanges when no stronger scenario template is selected.
 

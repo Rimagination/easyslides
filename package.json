@@ -1,0 +1,56 @@
+{
+  "name": "easyslides",
+  "version": "1.2.2",
+  "description": "Editable academic presentations, native templates and PPTX distillation for DeepSeek Harness.",
+  "main": "./dsh/index.mjs",
+  "exports": {
+    ".": "./dsh/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dsh/",
+    "runtime/"
+  ],
+  "scripts": {
+    "build": "node scripts/build-npm.mjs",
+    "prepack": "npm run build",
+    "test": "node --test tests/dsh_plugin.test.mjs"
+  },
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./dsh/cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "easyslides",
+    "pptx",
+    "academic",
+    "presentation",
+    "skills"
+  ],
+  "license": "MIT",
+  "author": "EasySlides contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rimagination/easyslides.git"
+  },
+  "homepage": "https://github.com/Rimagination/easyslides#readme",
+  "bugs": {
+    "url": "https://github.com/Rimagination/easyslides/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.1.0",
+    "@deepseek-ai/dsh-skill": "0.2.2-rc.1",
+    "js-yaml": "4.3.2"
+  }
+}

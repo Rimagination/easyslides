@@ -41,7 +41,7 @@ class VisualIntelligenceTests(unittest.TestCase):
 
         themed = plan_visual_assets(
             {"slides": [{"page": "P01", "role": "cover", "title": "Theme"}]},
-            template_dir=ROOT / "templates" / "layouts" / "academic_general",
+            template_dir=ROOT / "templates" / "layouts" / "academic_classic",
             palette_id="academic_green",
             imagegen_available=True,
         )
@@ -163,7 +163,7 @@ class VisualIntelligenceTests(unittest.TestCase):
             deck_path.write_text(
                 json.dumps(
                     {
-                        "template_id": "academic_general",
+                        "template_id": "academic_classic",
                         "production_scheme": "direct_editable",
                         "image_manifest": "images/image_prompts.json",
                         "slides": [
@@ -207,7 +207,7 @@ class VisualIntelligenceTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            plan = {"template_id": "academic_general", "production_scheme": "direct_editable",
+            plan = {"template_id": "academic_classic", "production_scheme": "direct_editable",
                     "slides": [{"page": "C01", "role": "cover", "shell_payload": {
                         "LOGO": "LAB", "TITLE": "Native title", "SUBTITLE": "Subtitle",
                         "AUTHOR": "A", "ADVISOR": "B", "INSTITUTION": "C", "DATE": "2026"}}]}
