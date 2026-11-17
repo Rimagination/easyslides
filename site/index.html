@@ -1961,17 +1961,17 @@
 <body data-lang="zh" data-view="home" data-player-visible="true">
   <header class="topbar">
     <div class="brand-cluster" aria-label="Brand navigation">
-      <a class="product-brand" href="index.html">EasySlides<span class="brand-dot">.</span></a>
-      <a class="brand" href="https://www.scansci.com/" aria-label="ScanSci 出品">
-        <img class="brand-logo" src="assets/brand/scansci-app-icon-64.png?v=20260523" alt="" aria-hidden="true">
-        <span>by ScanSci</span>
+      <a class="brand" href="https://www.scansci.com/" aria-label="ScanSci 首页">
+        <img class="brand-logo" src="assets/brand/scansci-app-icon-64.png?v=20260523" alt="" width="30" height="30" aria-hidden="true">
+        <span>ScanSci</span>
       </a>
+      <a class="product-brand" href="index.html" aria-label="EasySlides 首页">EasySlides</a>
     </div>
     <nav class="main-navigation" aria-label="Main navigation">
       <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
+      <a href="#image-references"><span data-i18n="navReferences">图片参考模板</span><small>13</small></a>
       <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
       <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
-      <a href="#image-references"><span data-i18n="navReferences">参考风格</span><small>13</small></a>
     </nav>
     <div class="gallery-search" role="search">
       <span data-lucide="search"></span>
@@ -2011,9 +2011,9 @@
     <section class="catalog" id="catalog">
       <nav class="gallery-nav" aria-label="Gallery sections">
         <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
+        <a href="#image-references"><span data-i18n="navReferences">图片参考模板</span><small>13</small></a>
         <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
         <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
-        <a href="#image-references"><span data-i18n="navReferences">参考风格</span><small>13</small></a>
       </nav>
       <p class="gallery-search-status" id="gallerySearchStatus" role="status" aria-live="polite"></p>
       <section class="gallery-section" id="native-templates" aria-labelledby="nativeTemplateTitle">
@@ -2023,6 +2023,14 @@
         </div>
         <div class="template-grid" id="nativeTemplateGrid"></div>
         <p class="gallery-status" id="nativeTemplateStatus" role="status"></p>
+      </section>
+      <section class="gallery-section" id="image-references" aria-labelledby="imageLibraryTitle">
+        <div class="section-heading">
+          <div><h2 id="imageLibraryTitle" data-i18n="imageReferences">图片参考模板</h2><p data-i18n="imageReferenceDescription">十三套整套缩略图，选择喜欢的配色与版式。点击图片看大图，复制 ID 即可指定风格。</p></div>
+          <span class="section-count" data-i18n="thirteenStyles">13 套</span>
+        </div>
+        <div class="works-grid" id="imageGrid"></div>
+        <p class="gallery-status" id="imageLibraryStatus" role="status"></p>
       </section>
       <div class="showcase-heading">
         <h2 data-i18n="finishedDecks">成品展示</h2>
@@ -2046,14 +2054,6 @@
           <span class="section-count" data-route-count="rebuild">3</span>
         </div>
         <div class="works-grid" id="rebuildWorksGrid"></div>
-      </section>
-      <section class="gallery-section" id="image-references" aria-labelledby="imageLibraryTitle">
-        <div class="section-heading">
-          <div><h2 id="imageLibraryTitle" data-i18n="imageReferences">图片参考风格</h2><p data-i18n="imageReferenceDescription">十三套整套缩略图，选择喜欢的配色与版式。点击图片看大图，复制 ID 即可指定风格。</p></div>
-          <span class="section-count" data-i18n="thirteenStyles">13 套</span>
-        </div>
-        <div class="works-grid" id="imageGrid"></div>
-        <p class="gallery-status" id="imageLibraryStatus" role="status"></p>
       </section>
     </section>
 
@@ -2137,7 +2137,7 @@
         allNativeTemplates: "查看全部 8 套模板",
         navNative: "原生成品",
         navRebuild: "生图重建",
-        navReferences: "参考风格",
+        navReferences: "图片参考模板",
         searchLabel: "搜索模板、论文或风格",
         searchPlaceholder: "搜索模板、论文、风格…",
         startCreating: "开始制作",
@@ -2147,7 +2147,7 @@
         nativeTemplates: "原生模板",
         nativeShowcase: "原生生成成品",
         rebuildShowcase: "生图重建成品",
-        imageReferences: "图片参考风格",
+        imageReferences: "图片参考模板",
         eightTemplates: "8 套",
         sixCases: "6 份",
         threeCases: "3 份",
@@ -2213,7 +2213,7 @@
         allNativeTemplates: "View all 8 templates",
         navNative: "Native decks",
         navRebuild: "Image rebuilds",
-        navReferences: "References",
+        navReferences: "Image templates",
         searchLabel: "Search templates, papers or styles",
         searchPlaceholder: "Search templates, papers, styles…",
         startCreating: "Get started",

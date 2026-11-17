@@ -1,4 +1,18 @@
 /* Shared website chrome. Actual slides retain their original colors. */
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/dm-sans-semibold-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/dm-sans-bold-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
 :root {
   --site-background: #ffffff;
   --site-walnut: var(--site-background);
@@ -16,6 +30,32 @@ html, body { overflow-x: clip; }
 body { color: var(--site-ink); }
 .lucide { display: inline-block; width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
 .topbar { width: 100%; max-width: 100%; background: var(--site-walnut); border-bottom-color: var(--site-line); }
+/* Shared ScanSci brand lockup, matching the Journal Scout header. */
+.topbar .brand-cluster { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 0 0 auto; }
+.topbar .brand { display: flex; align-items: center; gap: 12px; color: var(--site-ink); font-family: "DM Sans", sans-serif; font-size: 19px; font-weight: 700; line-height: normal; letter-spacing: 0; text-decoration: none; white-space: nowrap; }
+.topbar .brand-logo { width: 30px; height: 30px; object-fit: contain; flex: none; border-radius: 7px; background: none; box-shadow: none; }
+.topbar .product-brand { color: #707070; font-family: "DM Sans", sans-serif; font-size: 15px; font-weight: 600; line-height: normal; letter-spacing: 0; text-decoration: none; white-space: nowrap; }
+.topbar .brand:hover, .topbar .product-brand:hover { color: var(--site-gold); }
+.guide-header { height: 60px; min-height: 60px; padding: 0 5.2%; border-bottom: 1px solid var(--site-line); background: #fff; box-shadow: none; }
+.guide-header .nav { display: flex; align-items: center; flex: none; gap: 8px; }
+.guide-header .nav > a { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 34px; padding: 7px 10px; color: var(--site-ink); background: var(--site-gold-wash); border: 1px solid var(--site-champagne); border-radius: 10px; font-family: "DM Sans", var(--font-sans); font-size: 13px; font-weight: 700; line-height: 18px; letter-spacing: 0; text-decoration: none; white-space: nowrap; }
+.guide-header .nav > a:is(:hover, [aria-current="page"]) { background: #f2e9d9; border-color: var(--site-gold-light); text-decoration: none; }
+.guide-header .nav .lucide { width: 15px; height: 15px; }
+@media (max-width: 720px) {
+  .guide-header { padding-inline: 18px; }
+  .topbar .product-brand { font-size: 13px; }
+}
+@media (max-width: 680px) {
+  .guide-header .nav > a:last-child { display: none; }
+}
+@media (max-width: 520px) {
+  .topbar .product-brand { display: none; }
+  .guide-header .nav { gap: 6px; }
+}
+@media (max-width: 360px) {
+  .guide-header { padding-inline: 12px; gap: 8px; }
+  .topbar .brand { gap: 8px; font-size: 17px; }
+}
 :focus-visible { outline: 2px solid var(--site-gold); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -54,7 +94,7 @@ body:has(.page-shell) {
 .page-shell .copy-button .lucide { width: 14px; height: 14px; }
 .page-shell .copy-button:hover { color: var(--site-ink); background: var(--site-gold-light); border-color: var(--site-gold); }
 .page-shell pre code { color: inherit; background: transparent; }
-.topbar .brand, .topbar .product-brand, .topbar .nav a { color: var(--site-ink); }
+.topbar .nav a { color: var(--site-ink); }
 .guide-hero { color: var(--site-ink); background: var(--site-background); border-bottom: 1px solid var(--site-champagne); }
 .guide-hero .hero-lead, .guide-hero .hero-panel p { color: var(--site-muted); }
 .guide-hero .eyebrow { color: var(--site-gold); }
@@ -62,6 +102,5 @@ body:has(.page-shell) {
 .guide-hero .hero-panel strong { color: var(--site-ink); }
 .guide-hero .quick-links a { color: var(--site-ink); background: #fff; border-color: var(--site-line); }
 .guide-hero .quick-links a:hover { border-color: var(--site-gold); }
-.topbar .nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--site-gold-light); text-underline-offset: 7px; }
 .footer { color: var(--site-muted); background: #fff; }
 .footer a { color: var(--site-ink); text-decoration-color: var(--site-gold-light); }

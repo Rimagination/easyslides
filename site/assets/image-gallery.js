@@ -135,9 +135,9 @@
     });
     const sections = [
       ['native-templates', '#nativeTemplateGrid > article'],
+      ['image-references', '#imageGrid > article'],
       ['native-work', '#worksGrid > article'],
       ['rebuild-work', '#rebuildWorksGrid > article'],
-      ['image-references', '#imageGrid > article'],
     ];
     let matches = 0;
     sections.forEach(([id, selector]) => {

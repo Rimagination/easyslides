@@ -25,9 +25,7 @@ html { scrollbar-color: #aaa #fff; }
   border: 0;
 }
 .brand-cluster { gap: 15px; flex: 0 0 auto; }
-.product-brand { color: var(--site-ink); font-family: "Inter Tight", sans-serif; font-size: 27px; font-weight: 750; letter-spacing: -.035em; text-decoration: none; }
 .brand-dot { color: var(--site-gold); }
-.brand { display: none; }
 .main-navigation { display: flex; align-items: center; gap: 21px; flex: 0 0 auto; }
 .main-navigation a { display: inline-flex; gap: 5px; align-items: baseline; color: var(--site-ink); font-size: 14px; white-space: nowrap; text-decoration: none; }
 .main-navigation small { display: inline-grid; place-items: center; min-width: 19px; height: 19px; padding: 0 4px; border-radius: 50%; color: var(--site-ink); background: var(--site-gold-wash); border: 1px solid var(--site-champagne); font-size: 10px; font-variant-numeric: tabular-nums; }
@@ -275,7 +273,6 @@ body[data-view="detail"] .detail-stage .slide-controls #pageCount { left: 80px; 
 @media (max-width: 680px) {
   :root { --gallery-width: calc(100% - 32px); }
   .topbar { gap: 12px 10px; padding: 12px 16px 10px; }
-  .product-brand { font-size: 25px; }
   .top-actions { order: 1; gap: 10px; }
   .header-start { min-height: 35px; padding: 0 12px; font-size: 12px; }
   .lang-toggle button { font-size: 10px; min-height: 30px; padding: 0 4px; }
