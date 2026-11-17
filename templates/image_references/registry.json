@@ -20,6 +20,48 @@
       "style_summary": "蓝白主色、科技背景、竖排目录、密集项目申报布局"
     },
     {
+      "id": "nsfc_green",
+      "name": "国自然-绿色",
+      "image": "nsfc_green.png",
+      "source_filename": "5绿色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 17,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_green_preview.jpg",
+      "version": 1,
+      "style_summary": "绿色分区、侧栏目录、研究问题与技术路线布局"
+    },
+    {
+      "id": "nsfc_red",
+      "name": "国自然-红色",
+      "image": "nsfc_red.png",
+      "source_filename": "6红色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 19,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_red_preview.jpg",
+      "version": 1,
+      "style_summary": "红白主色、竖排目录、居中标题、项目分解与团队布局"
+    },
+    {
+      "id": "nsfc_purple",
+      "name": "国自然-紫色",
+      "image": "nsfc_purple.png",
+      "source_filename": "7紫色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
+      "slide_count": 17,
+      "image_size": [
+        3384,
+        2634
+      ],
+      "preview": "nsfc_purple_preview.jpg",
+      "version": 1,
+      "style_summary": "紫白主色、弧形页角、编号标题栏、科研图文分区"
+    },
+    {
       "id": "nsfc_dark_blue",
       "name": "国自然-深蓝",
       "image": "nsfc_dark_blue.png",
@@ -74,48 +116,6 @@
       "preview": "nsfc_white_blue_preview.jpg",
       "version": 1,
       "style_summary": "白底蓝色条带、竖排目录、紧凑成果与研究计划布局"
-    },
-    {
-      "id": "nsfc_green",
-      "name": "国自然-绿色",
-      "image": "nsfc_green.png",
-      "source_filename": "5绿色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
-      "slide_count": 17,
-      "image_size": [
-        3384,
-        2634
-      ],
-      "preview": "nsfc_green_preview.jpg",
-      "version": 1,
-      "style_summary": "绿色分区、侧栏目录、研究问题与技术路线布局"
-    },
-    {
-      "id": "nsfc_red",
-      "name": "国自然-红色",
-      "image": "nsfc_red.png",
-      "source_filename": "6红色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
-      "slide_count": 19,
-      "image_size": [
-        3384,
-        2634
-      ],
-      "preview": "nsfc_red_preview.jpg",
-      "version": 1,
-      "style_summary": "红白主色、竖排目录、居中标题、项目分解与团队布局"
-    },
-    {
-      "id": "nsfc_purple",
-      "name": "国自然-紫色",
-      "image": "nsfc_purple.png",
-      "source_filename": "7紫色系-国家自然科学项目申请答辩结题汇报PPT.pptx",
-      "slide_count": 17,
-      "image_size": [
-        3384,
-        2634
-      ],
-      "preview": "nsfc_purple_preview.jpg",
-      "version": 1,
-      "style_summary": "紫白主色、弧形页角、编号标题栏、科研图文分区"
     },
     {
       "id": "afm_dark_blue",
