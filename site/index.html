@@ -1970,7 +1970,7 @@
     <nav class="main-navigation" aria-label="Main navigation">
       <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
       <a href="#image-references"><span data-i18n="navReferences">图片参考模板</span><small>13</small></a>
-      <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
+      <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>7</small></a>
       <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
     </nav>
     <div class="gallery-search" role="search">
@@ -2012,7 +2012,7 @@
       <nav class="gallery-nav" aria-label="Gallery sections">
         <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
         <a href="#image-references"><span data-i18n="navReferences">图片参考模板</span><small>13</small></a>
-        <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
+        <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>7</small></a>
         <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
       </nav>
       <p class="gallery-search-status" id="gallerySearchStatus" role="status" aria-live="polite"></p>
@@ -2149,7 +2149,7 @@
         rebuildShowcase: "生图重建成品",
         imageReferences: "图片参考模板",
         eightTemplates: "8 套",
-        sixCases: "6 份",
+        sixCases: "7 份",
         threeCases: "3 份",
         thirteenStyles: "13 套",
         nativeTemplateDescription: "八套原生版式，文字与图形可继续编辑。默认增强学术模板支持学科主题图与自定配色。",
@@ -2188,7 +2188,8 @@
           ["grant", "基金申请", "12 页", "社会学习促进听觉学习", "先生成整页图片，再重建文字、表格和导航；复杂配图保留为图片。", "重点研发-蓝色科技", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
           ["journal", "文献综述", "14 页", "植物功能性状与生态系统", "叶经济谱、根系策略与全球变化。文字与部分结构可编辑。", "国自然-绿色", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
           ["journal", "研究综述", "12 页", "基于多模态数据的城市交通流量预测", "交通时序、事件文本与空间信息融合。5 页原图对比超阈值，使用前请复核。", "国自然-亮蓝白", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
-          ["journal", "论文汇报", "16 页", "生物多样性与生产力", "Nature 2017：绿色主题、论文原图比较与方法图示，文字和图形原生可编辑。", "学术论文汇报", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
+          ["journal", "论文汇报", "16 页", "生物多样性与生产力", "Nature 2017：绿色主题、论文原图比较与方法图示，文字和图形原生可编辑。", "学术论文汇报", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"],
+          ["journal", "文献汇报", "14 页", "全球优势土壤细菌图谱", "聚焦优势类群、环境筛选与全球分布特征的蓝色主题论文汇报。", "文献汇报", "academic_general", "assets/decks/soil-bacteria-global-atlas-blue-0046A5.pptx"]
         ],
       },
       en: {
@@ -2225,7 +2226,7 @@
         rebuildShowcase: "Image-rebuilt decks",
         imageReferences: "Image reference styles",
         eightTemplates: "8 templates",
-        sixCases: "6 decks",
+        sixCases: "7 decks",
         threeCases: "3 decks",
         thirteenStyles: "13 styles",
         nativeTemplateDescription: "Eight editable layouts. The enhanced default supports discipline imagery and custom colors.",
@@ -2264,7 +2265,8 @@
           ["grant", "Grant Proposal", "12 slides", "Social Learning Facilitates Auditory Learning", "Full-slide images reconstructed into editable text, tables and navigation; complex figures remain images.", "ZDYF Blue Technology", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
           ["journal", "Literature Review", "14 slides", "Plant Functional Traits and Ecosystems", "Leaf economics, root strategies and global change. Text and some structures are editable.", "NSFC Green", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
           ["journal", "Research Review", "12 slides", "Multimodal Urban Traffic Flow Prediction", "Traffic, event text and spatial fusion. Five pages exceed source-comparison thresholds; review before reuse.", "NSFC Bright Blue White", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
-          ["journal", "Paper Report", "16 slides", "Biodiversity and Productivity", "Nature 2017, with a green theme, original-figure comparisons and method diagrams. Natively editable text and graphics.", "Academic Paper Report", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
+          ["journal", "Paper Report", "16 slides", "Biodiversity and Productivity", "Nature 2017, with a green theme, original-figure comparisons and method diagrams. Natively editable text and graphics.", "Academic Paper Report", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"],
+          ["journal", "Journal Club", "14 slides", "Global Atlas of Dominant Soil Bacteria", "A blue academic report on dominant soil bacteria, environmental filtering and global distribution.", "Journal Club", "academic_general", "assets/decks/soil-bacteria-global-atlas-blue-0046A5.pptx"]
         ],
       }
     };
@@ -2276,12 +2278,12 @@
     let activeRoute = new URLSearchParams(location.search).get("route") === "rebuild" ? "rebuild" : "native";
 
     // Keep published work indices stable so existing detail links continue to work.
-    const workRoutes = ["native", "native", "native", "native", "native", "rebuild", "rebuild", "rebuild", "native"];
-    const workDisplayOrder = [8, 0, 1, 2, 3, 4, 5, 6, 7];
+    const workRoutes = ["native", "native", "native", "native", "native", "rebuild", "rebuild", "rebuild", "native", "native"];
+    const workDisplayOrder = [9, 8, 0, 1, 2, 3, 4, 5, 6, 7];
     const casePreviewAssets = [
       "assets/case-previews/work-01.webp", "assets/case-previews/work-02.webp", "assets/case-previews/work-03.webp",
       "assets/case-previews/work-04.webp", "assets/case-previews/work-05.webp", "assets/case-previews/work-06.webp",
-      "assets/case-previews/work-07.webp", "assets/case-previews/work-08.webp", "assets/case-previews/work-09.webp",
+      "assets/case-previews/work-07.webp", "assets/case-previews/work-08.webp", "assets/case-previews/work-09.webp", "assets/case-previews/work-10.webp",
     ];
 
     const slideAssets = {
@@ -2459,7 +2461,23 @@
         "assets/slides/work-09/slide-13.jpg",
         "assets/slides/work-09/slide-14.jpg",
         "assets/slides/work-09/slide-15.jpg",
-        "assets/slides/work-09/slide-16.jpg"
+        "assets/slides/work-09/slide-16.jpg",
+      ],
+      9: [
+        "assets/slides/work-10/slide-01.jpg",
+        "assets/slides/work-10/slide-02.jpg",
+        "assets/slides/work-10/slide-03.jpg",
+        "assets/slides/work-10/slide-04.jpg",
+        "assets/slides/work-10/slide-05.jpg",
+        "assets/slides/work-10/slide-06.jpg",
+        "assets/slides/work-10/slide-07.jpg",
+        "assets/slides/work-10/slide-08.jpg",
+        "assets/slides/work-10/slide-09.jpg",
+        "assets/slides/work-10/slide-10.jpg",
+        "assets/slides/work-10/slide-11.jpg",
+        "assets/slides/work-10/slide-12.jpg",
+        "assets/slides/work-10/slide-13.jpg",
+        "assets/slides/work-10/slide-14.jpg"
       ]
     };
 

@@ -52,6 +52,10 @@ assets/slides/work-08/slide-12.jpg
 assets/slides/work-09/slide-01.jpg  academic_general — biodiversity and productivity
 ...
 assets/slides/work-09/slide-16.jpg
+
+assets/slides/work-10/slide-01.jpg  academic_general — global soil bacteria
+...
+assets/slides/work-10/slide-14.jpg
 ```
 
 The two new galleries use actual PowerPoint renders of their downloadable PPTX
@@ -64,6 +68,8 @@ pages from `projects/ecology_high_density_green_20261116/academic_general`.
 Its download, `assets/decks/biodiversity-productivity-2017-native.pptx`, is an
 unchanged copy of `biodiversity_productivity_2017.pptx`. The public previews are
 1600 × 900 JPEG conversions of the corresponding rendered PNGs.
+
+The native `academic_general` case in `work-10` is the 14-page blue (#0046A5) soil-bacteria report. Its public previews are 1600 × 900 JPEG conversions of its PowerPoint renders.
 
 Register page paths in `slideAssets` inside `index.html`. Each matching
 `copy.*.works` item ends with the template ID and PPTX download path. Keep both
