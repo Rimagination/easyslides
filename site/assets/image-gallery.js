@@ -2,6 +2,7 @@
   const nativeGrid = document.querySelector('#nativeTemplateGrid');
   const imageGrid = document.querySelector('#imageGrid');
   const english = () => document.documentElement.lang === 'en';
+  const demoWorks = { academic_general: 8, literature_minimal: 0, defense_leftnav: 1, defense_topnav: 2, nsfc_defense: 3, thu_speech: 4 };
   const nativeTemplates = [
     ['academic_general', '默认增强学术', 'Enhanced academic', '高信息密度 · 学科主题图 · 自定配色', 'Dense evidence · discipline imagery · custom colors', 'assets/slides/work-09/slide-09.jpg'],
     ['academic_classic', '经典通用学术', 'Classic academic', '研究背景 · 方法 · 结果 · 讨论', 'Background · methods · results · discussion', 'assets/native-templates/template-academic-classic.png'],
@@ -30,12 +31,15 @@
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'copy-id';
-    button.textContent = english() ? 'Copy ID' : '复制 ID';
+    const label = document.createElement('span');
+    label.textContent = english() ? 'Copy ID' : '复制 ID';
+    button.append(EasySlidesIcons.create('copy'), label);
     button.setAttribute('aria-label', (english() ? 'Copy template ID: ' : '复制模板 ID：') + id);
     button.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(id);
-        button.textContent = english() ? 'Copied' : '已复制';
+        label.textContent = english() ? 'Copied' : '已复制';
+        button.querySelector('.lucide').replaceWith(EasySlidesIcons.create('check'));
         status.textContent = (english() ? 'Copied: ' : '已复制：') + id;
       } catch {
         const range = document.createRange();
@@ -51,12 +55,32 @@
 
   function render() {
     const en = english();
+    const query = document.querySelector('#gallerySearch').value.trim().toLowerCase();
     nativeGrid.replaceChildren();
     imageGrid.replaceChildren();
     const nativeStatus = document.querySelector('#nativeTemplateStatus');
     const imageStatus = document.querySelector('#imageLibraryStatus');
     nativeStatus.textContent = imageStatus.textContent = '';
+    const demoGrid = document.querySelector('#heroTemplateGrid');
+    demoGrid.replaceChildren();
+    nativeTemplates.forEach(([id, zh, name]) => {
+      if (!(id in demoWorks)) return;
+      const workIndex = demoWorks[id];
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'player-template';
+      button.dataset.heroWork = workIndex;
+      button.setAttribute('aria-pressed', String(Number(document.querySelector('#heroWorkSelect').value) === workIndex));
+      const img = document.createElement('img');
+      Object.assign(img, { src: `assets/native-templates/template-${id.replaceAll('_', '-')}.webp`, alt: '', width: 480, height: 270, loading: 'lazy', decoding: 'async' });
+      const label = document.createElement('span');
+      label.textContent = en ? name : zh;
+      button.append(img, label);
+      button.addEventListener('click', () => window.selectHeroWork(workIndex));
+      demoGrid.append(button);
+    });
     nativeTemplates.forEach(([id, zh, name, zhDescription, description, source]) => {
+      if (query && ![id, zh, name, zhDescription, description].join(' ').toLowerCase().includes(query)) return;
       const title = en ? name : zh;
       const card = document.createElement('article');
       card.className = 'template-card';
@@ -90,6 +114,7 @@
       return;
     }
     entries.forEach(entry => {
+      if (query && ![entry.id, entry.name, entry.style_summary].join(' ').toLowerCase().includes(query)) return;
       const card = document.createElement('article');
       card.className = 'work-card image-card';
       const source = 'assets/image-references/' + entry.image;
@@ -108,10 +133,40 @@
       card.append(preview, h3, p, code, actions);
       imageGrid.append(card);
     });
+    const sections = [
+      ['native-templates', '#nativeTemplateGrid > article'],
+      ['native-work', '#worksGrid > article'],
+      ['rebuild-work', '#rebuildWorksGrid > article'],
+      ['image-references', '#imageGrid > article'],
+    ];
+    let matches = 0;
+    sections.forEach(([id, selector]) => {
+      const count = document.querySelectorAll(selector).length;
+      matches += count;
+      document.getElementById(id).hidden = Boolean(query && !count);
+    });
+    document.querySelector('.showcase-heading').hidden = Boolean(query && !document.querySelector('#worksGrid > article, #rebuildWorksGrid > article'));
+    document.querySelector('#gallerySearchStatus').textContent = query
+      ? en ? `${matches} results for “${query}”` : `“${query}” · ${matches} 项匹配`
+      : '';
   }
 
   window.renderImageReferences = render;
   render();
+  const playerObserver = new IntersectionObserver(([entry]) => {
+    document.body.dataset.playerVisible = String(entry.isIntersecting);
+  }, { rootMargin: '-88px 0px 0px 0px', threshold: 0 });
+  playerObserver.observe(document.querySelector('#heroStageMount'));
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      document.querySelectorAll('.gallery-nav a').forEach(link => {
+        if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-165px 0px -45% 0px', threshold: 0 });
+  document.querySelectorAll('.gallery-section').forEach(section => sectionObserver.observe(section));
   // Old category URLs now lead to an open section without hiding the others.
   const params = new URLSearchParams(location.search);
   if (params.get('view') !== 'detail' && (!location.hash || location.hash === '#catalog')) {

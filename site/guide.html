@@ -974,20 +974,26 @@ Rimagination/easyslides</code></pre>
     EasySlides 让学术材料更容易被讲清楚。<a href="index.html#catalog">查看真实案例</a>，或访问 <a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noreferrer">GitHub 仓库</a>。
   </footer>
 
+  <script src="assets/icons.js"></script>
   <script>
     document.querySelectorAll("[data-copy-target]").forEach((button) => {
+      const label = document.createElement('span');
+      label.textContent = button.textContent;
+      button.replaceChildren(EasySlidesIcons.create('copy'), label);
       button.addEventListener("click", async () => {
         const target = document.getElementById(button.dataset.copyTarget);
         if (!target) return;
-        const original = button.textContent;
+        const original = label.textContent;
         try {
           await navigator.clipboard.writeText(target.textContent.trim());
-          button.textContent = "已复制";
+          label.textContent = "已复制";
+          button.querySelector('.lucide').replaceWith(EasySlidesIcons.create('check'));
         } catch {
-          button.textContent = "请手动复制";
+          label.textContent = "请手动复制";
         }
         window.setTimeout(() => {
-          button.textContent = original;
+          label.textContent = original;
+          button.querySelector('.lucide').replaceWith(EasySlidesIcons.create('copy'));
         }, 1500);
       });
     });

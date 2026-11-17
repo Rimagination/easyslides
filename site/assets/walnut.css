@@ -1,15 +1,20 @@
 /* Shared website chrome. Actual slides retain their original colors. */
 :root {
-  --site-walnut: #594837;
-  --site-surface: #65513f;
-  --site-ink: #fff6e8;
-  --site-muted: #dfd0bc;
-  --site-gold: #e9c88c;
-  --site-line: rgba(233, 200, 140, .32);
+  --site-background: #ffffff;
+  --site-walnut: var(--site-background);
+  --site-surface: #f7f7f7;
+  --site-ink: #181818;
+  --site-muted: #626262;
+  --site-gold: #91713e;
+  --site-gold-light: #c6a76e;
+  --site-champagne: #e5d1ae;
+  --site-gold-wash: #f8f4ec;
+  --site-line: rgba(24, 24, 24, .14);
 }
 html, body, .detail { background: var(--site-walnut); }
 html, body { overflow-x: clip; }
 body { color: var(--site-ink); }
+.lucide { display: inline-block; width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
 .topbar { width: 100%; max-width: 100%; background: var(--site-walnut); border-bottom-color: var(--site-line); }
 :focus-visible { outline: 2px solid var(--site-gold); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
@@ -17,7 +22,7 @@ body { color: var(--site-ink); }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* Guide: the same walnut canvas and warm, readable text. */
+/* The guide shares the white canvas and dark text. */
 body:has(.page-shell) {
   --ink: var(--site-ink);
   --muted: var(--site-muted);
@@ -25,22 +30,38 @@ body:has(.page-shell) {
   --paper: var(--site-walnut);
   --paper-soft: var(--site-surface);
   --line: var(--site-line);
-  --line-strong: rgba(212, 177, 115, .45);
+  --line-strong: rgba(32, 32, 32, .32);
   --red: var(--site-gold);
   --gold-deep: var(--site-gold);
 }
-.page-shell a { color: var(--site-gold); text-decoration-color: var(--site-line); }
-.page-shell a:hover { color: #fff0ce; }
+.page-shell a { color: var(--site-ink); text-decoration-color: var(--site-gold-light); }
+.page-shell a:hover { color: var(--site-gold); }
 .page-shell .article { background: transparent; box-shadow: none; }
 .page-shell .article h3, .page-shell .article h4,
 .page-shell .template-card strong { color: var(--site-ink); }
-.page-shell .article p, .page-shell .article li { color: #ded0ba; }
-.page-shell code { color: #edd09c; background: rgba(212,177,115,.09); }
+.page-shell .article p, .page-shell .article li { color: #454545; }
+.page-shell code { color: var(--site-ink); background: var(--site-surface); }
 .page-shell .step-list > div, .page-shell .template-card,
 .page-shell .scenario, .page-shell .note, .page-shell .warning { background: var(--site-surface); }
 .page-shell .warning { border-color: rgba(212,177,115,.45); }
 .page-shell .example-strip figure { background: var(--site-surface); }
-.page-shell .template-card code { color: #edd09c; background: #554232; }
+.page-shell .template-card code { color: var(--site-ink); background: var(--site-surface); }
 .page-shell .prompt-box { background: var(--site-surface); }
+.page-shell pre, .page-shell .prompt-head { color: var(--site-ink); }
+.page-shell .prompt-head { border-bottom-color: var(--site-line); }
+.page-shell .copy-button { color: var(--site-ink); background: var(--site-champagne); border-color: var(--site-gold-light); }
+.page-shell .copy-button { gap: 7px; }
+.page-shell .copy-button .lucide { width: 14px; height: 14px; }
+.page-shell .copy-button:hover { color: var(--site-ink); background: var(--site-gold-light); border-color: var(--site-gold); }
 .page-shell pre code { color: inherit; background: transparent; }
-.guide-hero { background: linear-gradient(110deg, #554232, #5f4d3d); }
+.topbar .brand, .topbar .product-brand, .topbar .nav a { color: var(--site-ink); }
+.guide-hero { color: var(--site-ink); background: var(--site-background); border-bottom: 1px solid var(--site-champagne); }
+.guide-hero .hero-lead, .guide-hero .hero-panel p { color: var(--site-muted); }
+.guide-hero .eyebrow { color: var(--site-gold); }
+.guide-hero .hero-panel { background: var(--site-surface); border-color: var(--site-line); box-shadow: none; }
+.guide-hero .hero-panel strong { color: var(--site-ink); }
+.guide-hero .quick-links a { color: var(--site-ink); background: #fff; border-color: var(--site-line); }
+.guide-hero .quick-links a:hover { border-color: var(--site-gold); }
+.topbar .nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--site-gold-light); text-underline-offset: 7px; }
+.footer { color: var(--site-muted); background: #fff; }
+.footer a { color: var(--site-ink); text-decoration-color: var(--site-gold-light); }

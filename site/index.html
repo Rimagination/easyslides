@@ -1568,7 +1568,7 @@
       background: rgba(248,250,247,0.58);
     }
 
-    .photo-frame .slide-controls {
+    .detail-stage .slide-controls {
       position: fixed;
       inset: 0;
       z-index: 8;
@@ -1579,7 +1579,7 @@
       text-shadow: none;
     }
 
-    .photo-frame .slide-controls button {
+    .detail-stage .slide-controls button {
       position: absolute;
       top: 50%;
       display: inline-flex;
@@ -1607,7 +1607,7 @@
       transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
     }
 
-    .photo-frame .slide-controls button::before {
+    .detail-stage .slide-controls button::before {
       content: "";
       width: clamp(10px, 1.4vw, 14px);
       height: clamp(10px, 1.4vw, 14px);
@@ -1615,23 +1615,23 @@
       border-left: 2px solid currentColor;
     }
 
-    .photo-frame .slide-controls button:first-of-type {
+    .detail-stage .slide-controls button:first-of-type {
       left: max(18px, calc(var(--stage-side-space) / 2 - var(--slide-control-size) / 2));
     }
 
-    .photo-frame .slide-controls button:first-of-type::before {
+    .detail-stage .slide-controls button:first-of-type::before {
       transform: translateX(2px) rotate(-45deg);
     }
 
-    .photo-frame .slide-controls button:last-of-type {
+    .detail-stage .slide-controls button:last-of-type {
       right: max(18px, calc(var(--stage-side-space) / 2 - var(--slide-control-size) / 2));
     }
 
-    .photo-frame .slide-controls button:last-of-type::before {
+    .detail-stage .slide-controls button:last-of-type::before {
       transform: translateX(-2px) rotate(135deg);
     }
 
-    .photo-frame .slide-controls button:hover {
+    .detail-stage .slide-controls button:hover {
       background:
         linear-gradient(180deg, rgba(255, 250, 235, 0.92), rgba(224, 181, 101, 0.9));
       border-color: rgba(255, 238, 190, 0.96);
@@ -1642,7 +1642,7 @@
       transform: translateY(-50%) scale(1.035);
     }
 
-    .photo-frame .slide-controls #pageCount {
+    .detail-stage .slide-controls #pageCount {
       position: absolute;
       left: 50%;
       top: clamp(12px, 2vw, 28px);
@@ -1667,7 +1667,7 @@
       transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
     }
 
-    .photo-frame .slide-controls #pageCount:hover {
+    .detail-stage .slide-controls #pageCount:hover {
       background: rgba(255, 246, 225, 0.9);
       border-color: rgba(255, 232, 181, 0.98);
       color: var(--hall-walnut);
@@ -1956,70 +1956,66 @@
   </style>
   <link rel="stylesheet" href="assets/walnut.css">
   <link rel="stylesheet" href="assets/image-gallery.css">
+  <link rel="preload" href="assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
-<body data-lang="zh" data-view="home">
+<body data-lang="zh" data-view="home" data-player-visible="true">
   <header class="topbar">
     <div class="brand-cluster" aria-label="Brand navigation">
+      <a class="product-brand" href="index.html">EasySlides<span class="brand-dot">.</span></a>
       <a class="brand" href="https://www.scansci.com/" aria-label="ScanSci 出品">
         <img class="brand-logo" src="assets/brand/scansci-app-icon-64.png?v=20260523" alt="" aria-hidden="true">
-        <span>ScanSci 出品</span>
+        <span>by ScanSci</span>
       </a>
-      <span class="brand-divider" aria-hidden="true"></span>
-      <a class="product-brand" href="index.html">EasySlides</a>
+    </div>
+    <nav class="main-navigation" aria-label="Main navigation">
+      <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
+      <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
+      <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
+      <a href="#image-references"><span data-i18n="navReferences">参考风格</span><small>13</small></a>
+    </nav>
+    <div class="gallery-search" role="search">
+      <span data-lucide="search"></span>
+      <span class="visually-hidden" id="gallerySearchLabel" data-i18n="searchLabel">搜索模板、论文或风格</span>
+      <input id="gallerySearch" type="search" aria-labelledby="gallerySearchLabel" autocomplete="off" placeholder="搜索模板、论文、风格…" data-i18n-placeholder="searchPlaceholder">
+      <button id="gallerySearchClear" type="button" aria-label="清空搜索 / Clear search" hidden><span data-lucide="x"></span></button>
     </div>
     <div class="top-actions">
-      <nav class="nav">
-        <a href="#catalog" data-i18n="navCatalog">模板与案例</a>
-        <a href="guide.html" data-i18n="navDetail">使用教程</a>
-      </nav>
       <div class="lang-toggle" aria-label="Language switcher">
         <button type="button" data-lang="zh">中</button>
         <button type="button" data-lang="en">EN</button>
       </div>
+      <a class="header-start" href="guide.html" data-i18n="startCreating">开始制作</a>
     </div>
   </header>
 
   <main class="home">
     <section class="home-hero">
       <div class="home-hero-inner">
-        <div class="hero-intro">
-          <p class="hero-label">EasySlides / Academic Presentations</p>
-          <h1><span data-i18n="heroTitle">生成最懂学术的</span><br><em>AI PPT</em></h1>
-          <p class="hero-lead" data-i18n="heroLead">论文汇报、学位答辩、基金申请。两种制作路线，先看效果，再选风格。</p>
-          <div class="hero-actions">
-            <a class="primary-link" href="#native-templates" data-i18n="heroBrowse">浏览全部模板</a>
-            <a class="text-link" href="guide.html" data-i18n="heroGuide">如何开始 ↗</a>
-          </div>
-          <p class="hero-footnote" data-i18n="heroFootnote">真实 PPT 页面 · 可逐页预览与下载</p>
+        <div class="player-intro">
+          <div><h1 data-i18n="heroTagline">生成最懂学术的 AI PPT</h1><p data-i18n="playerIntroduction">把真实的汇报场景，提前搬到你面前。</p></div>
+          <a href="#native-templates" data-i18n="heroBrowse">浏览全部模板</a>
         </div>
-        <div class="hero-previews" aria-label="Gallery overview">
-          <a class="hero-preview" href="#native-templates">
-            <img src="assets/native-templates/template-academic-general.webp" width="480" height="270" alt="绿色学术模板正文页" fetchpriority="high">
-            <span><strong data-i18n="nativeTemplates">原生模板</strong><small data-i18n="eightTemplates">8 套</small><i aria-hidden="true">↗</i></span>
-          </a>
-          <a class="hero-preview" href="#native-work">
-            <img src="assets/case-previews/work-09.webp" width="900" height="506" alt="生物多样性与生产力成品封面" fetchpriority="high">
-            <span><strong data-i18n="nativeShowcase">原生生成成品</strong><small data-i18n="sixCases">6 份</small><i aria-hidden="true">↗</i></span>
-          </a>
-          <a class="hero-preview" href="#rebuild-work">
-            <img src="assets/case-previews/work-06.webp" width="900" height="506" alt="社会学习基金汇报重建成品封面">
-            <span><strong data-i18n="rebuildShowcase">生图重建成品</strong><small data-i18n="threeCases">3 份</small><i aria-hidden="true">↗</i></span>
-          </a>
-          <a class="hero-preview" href="#image-references">
-            <img class="hero-reference" src="assets/style-previews/nsfc_purple.webp" width="640" height="498" alt="紫色图片参考风格整套缩略图">
-            <span><strong data-i18n="imageReferences">图片参考风格</strong><small data-i18n="thirteenStyles">13 套</small><i aria-hidden="true">↗</i></span>
-          </a>
+        <div class="hero-player" id="heroStageMount" role="region" aria-label="沉浸式 PPT 播放器"><button class="player-exit-fullscreen" id="heroExitFullscreen" type="button"><span data-lucide="minimize"></span><span data-i18n="exitFullscreenPlayer">退出全屏</span></button></div>
+        <div class="player-toolbar">
+          <div class="player-field player-work-select"><span id="heroWorkLabel" data-i18n="demoWork">演示作品</span><select id="heroWorkSelect" aria-labelledby="heroWorkLabel"></select></div>
+          <div class="player-field player-scene-select"><span id="heroSceneLabel" data-i18n="demoScene">播放场景</span><select id="heroSceneSelect" aria-labelledby="heroSceneLabel"><option value="meeting" data-i18n="sceneMeeting" data-thumbnail="assets/scenes-16x9/meeting-room.webp">会议室</option><option value="seminar" data-i18n="sceneSeminar" data-thumbnail="assets/seminar-hall.webp">报告厅</option><option value="classroom" data-i18n="sceneClassroom" data-thumbnail="assets/classroom.webp">教室</option></select></div>
+          <span class="player-work-meta" id="heroWorkMeta"></span>
+          <button class="player-fullscreen" id="heroFullscreen" type="button" aria-pressed="false"><span data-lucide="maximize"></span><span data-i18n="fullscreenPlayer">全屏播放</span></button>
+          <a class="player-download" id="heroDownload" href="assets/decks/biodiversity-productivity-2017-native.pptx" download><span data-i18n="downloadPptx">下载 PPTX</span><span data-lucide="download"></span></a>
         </div>
+        <div class="player-template-heading"><h2 data-i18n="tryPlayerTemplates">换个模板看看</h2><a href="#native-templates" data-i18n="allNativeTemplates">查看全部 8 套模板</a></div>
+        <div class="player-template-grid" id="heroTemplateGrid" role="group" aria-label="切换演示模板"></div>
       </div>
     </section>
 
     <section class="catalog" id="catalog">
       <nav class="gallery-nav" aria-label="Gallery sections">
         <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
-        <a href="#native-work"><span data-i18n="nativeShowcase">原生生成成品</span><small>6</small></a>
-        <a href="#rebuild-work"><span data-i18n="rebuildShowcase">生图重建成品</span><small>3</small></a>
-        <a href="#image-references"><span data-i18n="imageReferences">图片参考风格</span><small>13</small></a>
+        <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
+        <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
+        <a href="#image-references"><span data-i18n="navReferences">参考风格</span><small>13</small></a>
       </nav>
+      <p class="gallery-search-status" id="gallerySearchStatus" role="status" aria-live="polite"></p>
       <section class="gallery-section" id="native-templates" aria-labelledby="nativeTemplateTitle">
         <div class="section-heading">
           <div><h2 id="nativeTemplateTitle" data-i18n="nativeTemplates">原生模板</h2><p data-i18n="nativeTemplateDescription">八套版式直接预览。默认增强学术模板支持高信息密度、学科主题图与自定主题色。</p></div>
@@ -2064,18 +2060,18 @@
     <section class="home-guide-cta" aria-labelledby="homeGuideTitle">
       <div class="home-guide-cta-inner">
         <div class="home-guide-cta-copy">
-          <span class="home-guide-cta-kicker" data-i18n="guideCtaKicker">Start with the guide</span>
           <h2 id="homeGuideTitle" data-i18n="guideCtaTitle">第一次使用？先看一遍使用教程</h2>
           <p data-i18n="guideCtaDescription">了解如何交给 Agent 材料、指定模板 ID，并直接生成可编辑的 PPTX。</p>
         </div>
         <a class="home-guide-link" href="guide.html" data-i18n="guideCtaAction">查看使用教程</a>
       </div>
     </section>
+    <footer class="gallery-footer"><a href="index.html" class="footer-wordmark">EasySlides.</a><div><a href="https://www.scansci.com/">ScanSci</a><a href="https://github.com/Rimagination/easyslides" target="_blank" rel="noopener">GitHub</a><a href="guide.html" data-i18n="navDetail">使用教程</a></div></footer>
   </main>
 
   <main class="detail" id="detail">
     <div class="detail-top">
-      <button class="back-button" type="button" aria-label="返回目录" title="返回目录"></button>
+      <button class="back-button" type="button" aria-label="返回目录" title="返回目录"><span data-lucide="arrow-left"></span></button>
     </div>
 
     <section class="detail-stage">
@@ -2098,12 +2094,6 @@
           </div>
         </div>
 
-        <div class="slide-controls">
-          <button type="button" aria-label="Previous slide"></button>
-          <span id="pageCount">06 / 24</span>
-          <button type="button" aria-label="Next slide"></button>
-        </div>
-
         <div class="contact-strip" aria-label="Contact sheet">
           <div class="thumb active"><i></i><i></i><i></i></div>
           <div class="thumb"><i></i><i></i><i></i></div>
@@ -2113,9 +2103,16 @@
           <div class="thumb"><i></i><i></i><i></i></div>
         </div>
       </div>
+      <div class="slide-controls">
+        <button type="button" aria-label="Previous slide"><span data-lucide="chevron-left"></span></button>
+        <span id="pageCount">06 / 24</span>
+        <button type="button" aria-label="Next slide"><span data-lucide="chevron-right"></span></button>
+      </div>
     </section>
   </main>
 
+  <script src="assets/icons.js"></script>
+  <script src="assets/select-menu.js"></script>
   <script>
     const copy = {
       zh: {
@@ -2125,9 +2122,27 @@
         homeTitle: "EasySlides",
         homeSlogan: "生成最懂学术的AI PPT",
         heroTitle: "生成最懂学术的",
-        heroLead: "论文汇报、学位答辩、基金申请。两种制作路线，先看效果，再选风格。",
+        heroLead: "原生生成与生图重建，从论文到可编辑的学术演示。",
+        heroTagline: "生成最懂学术的 AI PPT",
+        featuredTitle: "生物多样性与生产力",
+        playerIntroduction: "把真实的汇报场景，提前搬到你面前。",
+        demoWork: "演示作品",
+        demoScene: "播放场景",
+        sceneMeeting: "会议室",
+        sceneSeminar: "报告厅",
+        sceneClassroom: "教室",
+        fullscreenPlayer: "全屏播放",
+        exitFullscreenPlayer: "退出全屏",
+        tryPlayerTemplates: "换个模板看看",
+        allNativeTemplates: "查看全部 8 套模板",
+        navNative: "原生成品",
+        navRebuild: "生图重建",
+        navReferences: "参考风格",
+        searchLabel: "搜索模板、论文或风格",
+        searchPlaceholder: "搜索模板、论文、风格…",
+        startCreating: "开始制作",
         heroBrowse: "浏览全部模板",
-        heroGuide: "如何开始 ↗",
+        heroGuide: "如何开始",
         heroFootnote: "真实 PPT 页面 · 可逐页预览与下载",
         nativeTemplates: "原生模板",
         nativeShowcase: "原生生成成品",
@@ -2137,8 +2152,8 @@
         sixCases: "6 份",
         threeCases: "3 份",
         thirteenStyles: "13 套",
-        nativeTemplateDescription: "八套版式直接预览。默认增强学术模板支持高信息密度、学科主题图与自定主题色。",
-        imageReferenceDescription: "十三套整套缩略图，选择喜欢的配色与版式。点击图片看大图，复制 ID 即可指定风格。",
+        nativeTemplateDescription: "八套原生版式，文字与图形可继续编辑。默认增强学术模板支持学科主题图与自定配色。",
+        imageReferenceDescription: "十三套完整风格参考。查看大图，或复制 ID 交给 Agent。",
         finishedDecks: "成品展示",
         statExamples: "案例",
         statPages: "真实页图",
@@ -2156,24 +2171,24 @@
         filterGrant: "基金申请",
         catalogNote: "让科研成果更快被看见",
         guideCtaKicker: "Start with the guide",
-        guideCtaTitle: "第一次使用？先看一遍使用教程",
-        guideCtaDescription: "了解如何交给 Agent 材料、指定模板 ID，并直接生成可编辑的 PPTX。",
+        guideCtaTitle: "你的下一场汇报，从这里开始。",
+        guideCtaDescription: "安装插件，把材料和需求交给 Agent，生成后继续在 PowerPoint 中编辑。",
         guideCtaAction: "查看使用教程",
-        enter: "逐页预览 ↗",
+        enter: "逐页预览",
         downloadPptx: "下载 PPTX",
         templateLabel: "模板",
         slideKicker: "第 04 页 / 问题",
         slideTitle: "Transformer 论文精读展示",
         works: [
-          ["journal", "组会汇报", "16 页", "Attention Is All You Need", "基于 NIPS 2017 经典 Transformer 论文的文献汇报样例，已接入真实导出的 PPT 页面。", "组会汇报", "literature_minimal", "assets/decks/attention-transformer-literature.pptx"],
-          ["defense", "答辩", "29 页", "她为什么换了导师", "基于学位论文《她为什么换了导师》的答辩 PPT 样例，使用左侧导航答辩模板并接入真实 PPT 导出页面。", "答辩", "defense_leftnav", "assets/decks/she-why-changed-advisor-defense.pptx"],
-          ["defense", "答辩", "29 页", "她为什么换了导师（顶部导航版）", "基于学位论文《她为什么换了导师》的答辩 PPT 样例，使用顶部导航答辩模板并接入真实 PPT 导出页面。", "答辩", "defense_topnav", "assets/decks/she-why-changed-advisor-defense-topnav.pptx"],
-          ["grant", "基金申请", "14 页", "社会学习促进听觉学习", "以 NIH R01 社会学习与听觉学习研究计划为素材，按中国国自然基金申请答辩的叙事组织，并使用 nsfc_defense 模板生成。", "国自然基金答辩", "nsfc_defense", "assets/decks/nih-r01-social-learning-nsfc-defense.pptx"],
-          ["journal", "清华学术汇报", "16 页", "Attention Is All You Need（清华版）", "同一篇 Transformer 论文的清华大学学术汇报样例，使用 thu_speech 正式模板生成，并接入真实导出的 PPT 页面。", "清华学术汇报", "thu_speech", "assets/decks/attention-all-you-need-thu-speech.pptx"],
-          ["grant", "基金申请", "12 页", "社会学习促进听觉学习（图片整页重建·可编辑）", "采用图片整页重建路线，参考“重点研发-蓝色科技”图片模板；复杂配图保留为图片，标题、正文、表格与导航重建为可编辑 PowerPoint 元素。", "重点研发-蓝色科技", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
-          ["journal", "文献综述", "14 页", "植物功能性状与生态系统", "参考“国自然-绿色”图片模板的整页重建案例，涵盖叶经济谱、根系策略与全球变化；文字和部分结构可编辑，论文原图与复杂插画保留为图片。", "国自然-绿色", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
-          ["journal", "研究综述", "12 页", "基于多模态数据的城市交通流量预测", "参考“国自然-亮蓝白”图片模板，比较交通时序、事件文本与空间信息融合。文字与简单结构可编辑，保留论文原图；当前示例有5页原图对比超阈值记录，使用前请复核。", "国自然-亮蓝白", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
-          ["journal", "论文汇报", "16 页", "生物多样性与生产力", "基于 Duffy 等发表于 Nature 的 2017 年论文，使用增强版 academic_general 模板：绿色主题、高信息密度、论文原图对比与方法图示。文字与图形直接构建为可编辑对象。", "学术论文汇报", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
+          ["journal", "组会汇报", "16 页", "Attention Is All You Need", "Transformer 论文汇报：自注意力、模型架构与实验结果。", "组会汇报", "literature_minimal", "assets/decks/attention-transformer-literature.pptx"],
+          ["defense", "答辩", "29 页", "她为什么换了导师", "左侧章节导航，呈现研究问题、理论框架与访谈证据。", "答辩", "defense_leftnav", "assets/decks/she-why-changed-advisor-defense.pptx"],
+          ["defense", "答辩", "29 页", "她为什么换了导师（顶部导航版）", "同一学位论文的顶部导航版，展示完整答辩结构。", "答辩", "defense_topnav", "assets/decks/she-why-changed-advisor-defense-topnav.pptx"],
+          ["grant", "基金申请", "14 页", "社会学习促进听觉学习", "以 NIH R01 计划为材料，组织研究问题、技术路线与创新点。", "国自然基金答辩", "nsfc_defense", "assets/decks/nih-r01-social-learning-nsfc-defense.pptx"],
+          ["journal", "清华学术汇报", "16 页", "Attention Is All You Need（清华版）", "Transformer 论文的清华学术汇报版，包含机制图与实验对比。", "清华学术汇报", "thu_speech", "assets/decks/attention-all-you-need-thu-speech.pptx"],
+          ["grant", "基金申请", "12 页", "社会学习促进听觉学习", "先生成整页图片，再重建文字、表格和导航；复杂配图保留为图片。", "重点研发-蓝色科技", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
+          ["journal", "文献综述", "14 页", "植物功能性状与生态系统", "叶经济谱、根系策略与全球变化。文字与部分结构可编辑。", "国自然-绿色", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
+          ["journal", "研究综述", "12 页", "基于多模态数据的城市交通流量预测", "交通时序、事件文本与空间信息融合。5 页原图对比超阈值，使用前请复核。", "国自然-亮蓝白", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
+          ["journal", "论文汇报", "16 页", "生物多样性与生产力", "Nature 2017：绿色主题、论文原图比较与方法图示，文字和图形原生可编辑。", "学术论文汇报", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
         ],
       },
       en: {
@@ -2183,9 +2198,27 @@
         homeTitle: "EasySlides",
         homeSlogan: "Generate AI PPTs that understand academia.",
         heroTitle: "Present your research",
-        heroLead: "Paper reports, thesis defenses and grant proposals. Explore two production routes and choose your style.",
+        heroLead: "From research papers to editable presentations. Native generation or image reconstruction.",
+        heroTagline: "Present research with clarity.",
+        featuredTitle: "Biodiversity and Productivity",
+        playerIntroduction: "See your presentation in a real setting.",
+        demoWork: "Presentation",
+        demoScene: "Setting",
+        sceneMeeting: "Meeting room",
+        sceneSeminar: "Lecture hall",
+        sceneClassroom: "Classroom",
+        fullscreenPlayer: "Full screen",
+        exitFullscreenPlayer: "Exit full screen",
+        tryPlayerTemplates: "Try another template",
+        allNativeTemplates: "View all 8 templates",
+        navNative: "Native decks",
+        navRebuild: "Image rebuilds",
+        navReferences: "References",
+        searchLabel: "Search templates, papers or styles",
+        searchPlaceholder: "Search templates, papers, styles…",
+        startCreating: "Get started",
         heroBrowse: "Explore templates",
-        heroGuide: "Get started ↗",
+        heroGuide: "Get started",
         heroFootnote: "Real PPT slides · Preview every page or download",
         nativeTemplates: "Native templates",
         nativeShowcase: "Native-generated decks",
@@ -2195,8 +2228,8 @@
         sixCases: "6 decks",
         threeCases: "3 decks",
         thirteenStyles: "13 styles",
-        nativeTemplateDescription: "Eight layouts at a glance. The enhanced default supports dense evidence, discipline imagery and custom colors.",
-        imageReferenceDescription: "Thirteen whole-deck style sheets. Open a full-size preview or copy an ID to choose a style.",
+        nativeTemplateDescription: "Eight editable layouts. The enhanced default supports discipline imagery and custom colors.",
+        imageReferenceDescription: "Thirteen whole-deck style sheets. Open a full-size preview or give an ID to your Agent.",
         finishedDecks: "Finished decks",
         statExamples: "Cases",
         statPages: "Pages",
@@ -2214,32 +2247,32 @@
         filterGrant: "Grant",
         catalogNote: "Let research results be seen faster.",
         guideCtaKicker: "Start with the guide",
-        guideCtaTitle: "New to EasySlides? Start with the guide.",
-        guideCtaDescription: "Learn how to provide materials, call a template by ID, and generate an editable PPTX.",
+        guideCtaTitle: "Your next presentation starts here.",
+        guideCtaDescription: "Install the plugin, give your Agent the materials, then keep editing in PowerPoint.",
         guideCtaAction: "Open the guide",
-        enter: "Preview slides ↗",
+        enter: "Preview slides",
         downloadPptx: "Download PPTX",
         templateLabel: "Template",
         slideKicker: "Slide 04 / Problem",
         slideTitle: "Transformer paper reading deck.",
         works: [
-          ["journal", "Journal Club", "16 slides", "Attention Is All You Need", "A real exported literature-report deck based on the NIPS 2017 Transformer paper, placed inside presentation scenes.", "Journal Club", "literature_minimal", "assets/decks/attention-transformer-literature.pptx"],
-          ["defense", "Defense", "29 slides", "Why She Changed Advisor", "A real exported thesis-defense deck based on the dissertation, built with the left-navigation defense template.", "Defense", "defense_leftnav", "assets/decks/she-why-changed-advisor-defense.pptx"],
-          ["defense", "Defense", "29 slides", "Why She Changed Advisor (Top Nav)", "A real exported thesis-defense deck based on the dissertation, built with the top-navigation defense template.", "Defense", "defense_topnav", "assets/decks/she-why-changed-advisor-defense-topnav.pptx"],
-          ["grant", "Grant Proposal", "14 slides", "Social Learning Facilitates Auditory Learning", "A NIH R01 research plan reorganized as a Chinese NSFC-style grant-defense deck, generated with the nsfc_defense template.", "NSFC-style Grant Defense", "nsfc_defense", "assets/decks/nih-r01-social-learning-nsfc-defense.pptx"],
-          ["journal", "Tsinghua Academic Talk", "16 slides", "Attention Is All You Need (Tsinghua)", "A real exported Transformer paper deck generated with the official thu_speech template and placed inside presentation scenes.", "Tsinghua Academic Talk", "thu_speech", "assets/decks/attention-all-you-need-thu-speech.pptx"],
-          ["grant", "Grant Proposal", "12 slides", "Social Learning Facilitates Auditory Learning (Image Rebuild · Editable)", "An image-reconstruction case study based on the “重点研发-蓝色科技” image template; complex figures remain images while headings, body copy, tables, and navigation are rebuilt as editable PowerPoint elements.", "ZDYF Blue Technology", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
-          ["journal", "Literature Review", "14 slides", "Plant Functional Traits and Ecosystems", "Full-slide reconstruction using the NSFC Green image reference, covering leaf economics, root strategies and global change. Text and some structures are editable; original paper figures and complex illustrations remain images.", "NSFC Green", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
-          ["journal", "Research Review", "12 slides", "Multimodal Urban Traffic Flow Prediction", "An NSFC Bright Blue White reconstruction comparing traffic time series, event text and spatial information. Text and simple structures are editable; paper figures remain images. Five pages exceed source-comparison thresholds; review before reuse.", "NSFC Bright Blue White", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
-          ["journal", "Paper Report", "16 slides", "Biodiversity and Productivity", "Duffy et al.'s 2017 Nature paper, presented with the enhanced academic_general template: a green theme, dense evidence, original-figure comparisons and method diagrams. Text and graphics are created as editable objects.", "Academic Paper Report", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
+          ["journal", "Journal Club", "16 slides", "Attention Is All You Need", "The Transformer paper: self-attention, architecture and experimental evidence.", "Journal Club", "literature_minimal", "assets/decks/attention-transformer-literature.pptx"],
+          ["defense", "Defense", "29 slides", "Why She Changed Advisor", "Side chapter navigation, research questions, theory and interview evidence.", "Defense", "defense_leftnav", "assets/decks/she-why-changed-advisor-defense.pptx"],
+          ["defense", "Defense", "29 slides", "Why She Changed Advisor (Top Nav)", "The same dissertation with top navigation and a full defense structure.", "Defense", "defense_topnav", "assets/decks/she-why-changed-advisor-defense-topnav.pptx"],
+          ["grant", "Grant Proposal", "14 slides", "Social Learning Facilitates Auditory Learning", "A NIH R01 plan organized around research questions, methods and novelty.", "NSFC-style Grant Defense", "nsfc_defense", "assets/decks/nih-r01-social-learning-nsfc-defense.pptx"],
+          ["journal", "Tsinghua Academic Talk", "16 slides", "Attention Is All You Need (Tsinghua)", "The Transformer paper in Tsinghua style, with mechanism diagrams and comparisons.", "Tsinghua Academic Talk", "thu_speech", "assets/decks/attention-all-you-need-thu-speech.pptx"],
+          ["grant", "Grant Proposal", "12 slides", "Social Learning Facilitates Auditory Learning", "Full-slide images reconstructed into editable text, tables and navigation; complex figures remain images.", "ZDYF Blue Technology", "zdyf_blue", "assets/decks/nih-social-learning-image-rebuild-editable.pptx"],
+          ["journal", "Literature Review", "14 slides", "Plant Functional Traits and Ecosystems", "Leaf economics, root strategies and global change. Text and some structures are editable.", "NSFC Green", "nsfc_green", "assets/decks/plant-functional-ecology-editable.pptx"],
+          ["journal", "Research Review", "12 slides", "Multimodal Urban Traffic Flow Prediction", "Traffic, event text and spatial fusion. Five pages exceed source-comparison thresholds; review before reuse.", "NSFC Bright Blue White", "nsfc_bright_blue_white", "assets/decks/urban-multimodal-traffic-editable.pptx"],
+          ["journal", "Paper Report", "16 slides", "Biodiversity and Productivity", "Nature 2017, with a green theme, original-figure comparisons and method diagrams. Natively editable text and graphics.", "Academic Paper Report", "academic_general", "assets/decks/biodiversity-productivity-2017-native.pptx"]
         ],
       }
     };
 
     let currentLang = "zh";
-    let activeWorkIndex = 0;
+    let activeWorkIndex = 8;
     let activeSlideIndex = 0;
-    let activeSceneId = "seminar";
+    let activeSceneId = "meeting";
     let activeRoute = new URLSearchParams(location.search).get("route") === "rebuild" ? "rebuild" : "native";
 
     // Keep published work indices stable so existing detail links continue to work.
@@ -2455,8 +2488,13 @@
       document.querySelectorAll("[data-i18n]").forEach((node) => {
         node.textContent = copy[lang][node.dataset.i18n];
       });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+        node.placeholder = copy[lang][node.dataset.i18nPlaceholder];
+      });
       renderWorks(document.querySelector(".filter-tabs button.active")?.dataset.filter || "all");
       if (document.body.dataset.view === "detail") updateDetail(activeWorkIndex);
+      else if (document.querySelector("#heroStageMount .detail-stage")) updateDetail(activeWorkIndex);
+      renderHeroToolbar();
       window.renderImageReferences?.();
     }
 
@@ -2466,12 +2504,14 @@
         rebuild: document.querySelector("#rebuildWorksGrid"),
       };
       Object.values(grids).forEach((grid) => grid.replaceChildren());
+      const query = document.querySelector("#gallerySearch").value.trim().toLowerCase();
       document.querySelectorAll("[data-route-count]").forEach((node) => {
         node.textContent = workRoutes.filter((route) => route === node.dataset.routeCount).length;
       });
       workDisplayOrder.forEach((index) => {
         const work = copy[currentLang].works[index];
         if (filter !== "all" && work[0] !== filter) return;
+        if (query && !work.join(" ").toLowerCase().includes(query)) return;
         const grid = grids[workRoutes[index]];
         const card = document.createElement("article");
         card.className = "work-card";
@@ -2493,8 +2533,8 @@
           </div>
           <div class="work-card-footer">
             <div class="work-card-actions">
-              <a class="enter-link" href="?view=detail&work=${index}">${t("enter")}</a>
-              <a class="download-link" href="${work[7]}" download>${t("downloadPptx")}</a>
+              <a class="enter-link" href="?view=detail&work=${index}">${t("enter")}<span data-lucide="arrow-up-right"></span></a>
+              <a class="download-link" href="${work[7]}" download>${t("downloadPptx")}<span data-lucide="download"></span></a>
             </div>
             <span class="work-page-count">${work[2]}</span>
           </div>
@@ -2506,6 +2546,7 @@
             openDetail(index);
           });
         });
+        EasySlidesIcons.render(card);
         grid.appendChild(card);
       });
       Object.values(grids).forEach((grid) => {
@@ -2518,12 +2559,13 @@
       });
     }
 
-    function openDetail(index) {
+    function openDetail(index, preserveSlide = false) {
       if (!copy[currentLang].works[index]) index = 0;
       activeRoute = workRoutes[index];
       activeWorkIndex = index;
-      activeSlideIndex = 0;
-      activeSceneId = sceneForType((copy[currentLang].works[index] || copy[currentLang].works[0])[0]);
+      if (!preserveSlide) activeSlideIndex = 0;
+      if (!preserveSlide) activeSceneId = sceneForType((copy[currentLang].works[index] || copy[currentLang].works[0])[0]);
+      document.querySelector("#detail").append(document.querySelector(".detail-stage"));
       document.body.dataset.view = "detail";
       const url = new URL(location.href);
       url.searchParams.set("view", "detail");
@@ -2531,11 +2573,57 @@
       url.hash = "";
       history.replaceState(null, "", url);
       updateDetail(index);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     }
 
     function getSlideImages(index) {
       return slideAssets[index] || [];
+    }
+
+    function renderHeroToolbar() {
+      const select = document.querySelector("#heroWorkSelect");
+      select.replaceChildren();
+      ["native", "rebuild"].forEach((route) => {
+        const group = document.createElement("optgroup");
+        group.label = t(route === "native" ? "nativeShowcase" : "rebuildShowcase");
+        workDisplayOrder.filter((index) => workRoutes[index] === route).forEach((index) => {
+          const option = document.createElement("option");
+          option.value = index;
+          option.textContent = copy[currentLang].works[index][3];
+          option.dataset.thumbnail = casePreviewAssets[index];
+          option.dataset.detail = `${copy[currentLang].works[index][6]} · ${copy[currentLang].works[index][2]}`;
+          group.append(option);
+        });
+        select.append(group);
+      });
+      select.value = activeWorkIndex;
+      document.querySelector("#heroSceneSelect").value = activeSceneId;
+      EasySlidesSelect.sync(select);
+      EasySlidesSelect.sync(document.querySelector("#heroSceneSelect"));
+      const work = copy[currentLang].works[activeWorkIndex];
+      document.querySelector("#heroWorkMeta").textContent = `${work[6]} · ${work[2]}`;
+      document.querySelector("#heroDownload").href = work[7];
+      document.querySelectorAll("[data-hero-work]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(Number(button.dataset.heroWork) === activeWorkIndex));
+      });
+    }
+
+    function mountHeroPlayer() {
+      const stage = document.querySelector(".detail-stage");
+      document.querySelector("#heroStageMount").append(stage);
+      stage.tabIndex = 0;
+      stage.setAttribute("aria-label", currentLang === "en" ? "Presentation. Use left and right arrows to change slides." : "PPT 播放，左右方向键翻页");
+      updateDetail(activeWorkIndex);
+      renderHeroToolbar();
+    }
+
+    function selectHeroWork(index) {
+      if (!copy[currentLang].works[index]) return;
+      activeWorkIndex = index;
+      activeSlideIndex = 0;
+      activeSceneId = sceneForType(copy[currentLang].works[index][0]);
+      updateDetail(index);
+      renderHeroToolbar();
     }
 
     function formatPage(current, total) {
@@ -2617,22 +2705,52 @@
       button.addEventListener("click", () => setLanguage(button.dataset.lang));
     });
 
+    document.querySelectorAll("[data-open-work]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        openDetail(Number(link.dataset.openWork));
+      });
+    });
+
+    function updateGallerySearch() {
+      document.querySelector("#gallerySearchClear").hidden = !document.querySelector("#gallerySearch").value;
+      renderWorks(document.querySelector(".filter-tabs button.active")?.dataset.filter || "all");
+      window.renderImageReferences?.();
+    }
+    const gallerySearch = document.querySelector("#gallerySearch");
+    gallerySearch.addEventListener("input", updateGallerySearch);
+    document.querySelector("#gallerySearchClear").addEventListener("click", () => {
+      gallerySearch.value = "";
+      updateGallerySearch();
+      gallerySearch.focus();
+    });
+    gallerySearch.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") document.querySelector("#catalog").scrollIntoView({ behavior: "smooth" });
+      if (event.key === "Escape") {
+        gallerySearch.value = "";
+        updateGallerySearch();
+      }
+    });
+
     document.querySelectorAll(".filter-tabs button").forEach((button) => {
       button.addEventListener("click", () => {
         document.querySelectorAll(".filter-tabs button").forEach((item) => item.classList.remove("active"));
         button.classList.add("active");
         renderWorks(button.dataset.filter);
+        window.renderImageReferences?.();
       });
     });
 
     document.querySelector(".back-button").addEventListener("click", () => {
       document.body.dataset.view = "home";
+      mountHeroPlayer();
       const url = new URL(location.href);
       url.searchParams.delete("view");
       url.searchParams.delete("work");
       url.hash = activeRoute === "rebuild" ? "rebuild-work" : "native-work";
       history.replaceState(null, "", url);
-      document.getElementById(url.hash.slice(1)).scrollIntoView({ behavior: "smooth" });
+      document.getElementById(url.hash.slice(1)).scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     });
 
     document.querySelectorAll(".slide-controls button").forEach((button, index) => {
@@ -2645,6 +2763,34 @@
       });
     });
 
+    document.querySelector("#heroWorkSelect").addEventListener("change", (event) => selectHeroWork(Number(event.target.value)));
+    document.querySelector("#heroSceneSelect").addEventListener("change", (event) => {
+      activeSceneId = event.target.value;
+      updateDetail(activeWorkIndex);
+    });
+    document.querySelector("#heroFullscreen").addEventListener("click", async () => {
+      const player = document.querySelector("#heroStageMount");
+      try {
+        if (document.fullscreenElement === player) await document.exitFullscreen();
+        else if (player.requestFullscreen) await player.requestFullscreen();
+        else openDetail(activeWorkIndex, true);
+      } catch { openDetail(activeWorkIndex, true); }
+    });
+    document.addEventListener("fullscreenchange", () => {
+      const full = document.fullscreenElement === document.querySelector("#heroStageMount");
+      const button = document.querySelector("#heroFullscreen");
+      button.setAttribute("aria-pressed", String(full));
+      button.querySelector("span").textContent = t(full ? "exitFullscreenPlayer" : "fullscreenPlayer");
+    });
+    document.querySelector("#heroExitFullscreen").addEventListener("click", () => document.exitFullscreen());
+    document.querySelector(".detail-stage").addEventListener("keydown", (event) => {
+      if (event.target.matches("input, select, textarea")) return;
+      if (!["ArrowLeft", "ArrowRight", "PageUp", "PageDown"].includes(event.key)) return;
+      event.preventDefault();
+      const buttons = document.querySelectorAll(".slide-controls button");
+      buttons[event.key === "ArrowLeft" || event.key === "PageUp" ? 0 : 1].click();
+    });
+
     document.querySelector(".next-entry")?.addEventListener("click", () => {
       document.querySelector("#catalog")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -2655,7 +2801,7 @@
     if (params.get("view") === "detail") {
       const requested = Number(params.get("work") || "0");
       openDetail(Number.isFinite(requested) ? requested : 0);
-    }
+    } else mountHeroPlayer();
   </script>
   <script src="assets/image-references/catalog.js"></script>
   <script src="assets/image-gallery.js"></script>
