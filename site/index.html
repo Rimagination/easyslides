@@ -1970,8 +1970,8 @@
     <nav class="main-navigation" aria-label="Main navigation">
       <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
       <a href="#image-references"><span data-i18n="navReferences">图片参考模板</span><small>13</small></a>
-      <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>7</small></a>
-      <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
+      <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
+      <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>4</small></a>
     </nav>
     <div class="gallery-search" role="search">
       <span data-lucide="search"></span>
@@ -2012,8 +2012,8 @@
       <nav class="gallery-nav" aria-label="Gallery sections">
         <a href="#native-templates"><span data-i18n="nativeTemplates">原生模板</span><small>8</small></a>
         <a href="#image-references"><span data-i18n="navReferences">图片参考模板</span><small>13</small></a>
-        <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>7</small></a>
-        <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>3</small></a>
+        <a href="#native-work"><span data-i18n="navNative">原生成品</span><small>6</small></a>
+        <a href="#rebuild-work"><span data-i18n="navRebuild">生图重建</span><small>4</small></a>
       </nav>
       <p class="gallery-search-status" id="gallerySearchStatus" role="status" aria-live="polite"></p>
       <section class="gallery-section" id="native-templates" aria-labelledby="nativeTemplateTitle">
@@ -2149,8 +2149,8 @@
         rebuildShowcase: "生图重建成品",
         imageReferences: "图片参考模板",
         eightTemplates: "8 套",
-        sixCases: "7 份",
-        threeCases: "3 份",
+        sixCases: "6 份",
+        threeCases: "4 份",
         thirteenStyles: "13 套",
         nativeTemplateDescription: "八套原生版式，文字与图形可继续编辑。默认增强学术模板支持学科主题图与自定配色。",
         imageReferenceDescription: "十三套完整风格参考。查看大图，或复制 ID 交给 Agent。",
@@ -2226,8 +2226,8 @@
         rebuildShowcase: "Image-rebuilt decks",
         imageReferences: "Image reference styles",
         eightTemplates: "8 templates",
-        sixCases: "7 decks",
-        threeCases: "3 decks",
+        sixCases: "6 decks",
+        threeCases: "4 decks",
         thirteenStyles: "13 styles",
         nativeTemplateDescription: "Eight editable layouts. The enhanced default supports discipline imagery and custom colors.",
         imageReferenceDescription: "Thirteen whole-deck style sheets. Open a full-size preview or give an ID to your Agent.",
@@ -2278,7 +2278,7 @@
     let activeRoute = new URLSearchParams(location.search).get("route") === "rebuild" ? "rebuild" : "native";
 
     // Keep published work indices stable so existing detail links continue to work.
-    const workRoutes = ["native", "native", "native", "native", "native", "rebuild", "rebuild", "rebuild", "native", "native"];
+    const workRoutes = ["native", "native", "native", "rebuild", "native", "rebuild", "rebuild", "rebuild", "native", "native"];
     const workDisplayOrder = [9, 8, 0, 1, 2, 3, 4, 5, 6, 7];
     const casePreviewAssets = [
       "assets/case-previews/work-01.webp", "assets/case-previews/work-02.webp", "assets/case-previews/work-03.webp",
