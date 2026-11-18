@@ -32,7 +32,7 @@ Python 3.10+ 和运行依赖用于实际制作；预览需要 PowerPoint 或 Lib
 
 **Logo:** `assets/logo.png`
 
-**Package:** `build/easyslides-qoder-1.2.2.zip`
+**Package:** `build/easyslides-qoder-<version>.zip`
 
 ## Submission
 

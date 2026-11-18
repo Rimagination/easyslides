@@ -75,6 +75,8 @@ cropped for cover, TOC, chapter headers and ending. Then inspect
 materials for discipline, presenter, presenter school and date, and ask only
 about missing/conflicting facts before starting. Reuse matching discipline
 assets for cover, TOC, chapter crops and ending. User choices always win.
+For a themed cover or TOC, render the picture with its rectangle and useful
+gradient. Omit artwork that serves only as a fallback when the picture is absent.
 
 Apply these native academic defaults before writing body pages:
 
@@ -93,6 +95,28 @@ Apply these native academic defaults before writing body pages:
   needs a source-supported claim, meaningful scientific visual and complementary
   body content. Native method diagrams and comparison tables count as visuals;
   decorative icons do not.
+- Choose each body layout for its evidence and review the deck's thumbnails
+  for recurring text-and-table pages. Use directly editable native tables for
+  exact lookup, and use plots, maps and diagrams for the relationships they
+  convey. On thin figure-led pages, enlarge the source figure before adding
+  complementary evidence. Follow the [native authoring method](../../references/academic-native-authoring.md).
+- For new `academic_general` body pages, identify what readers need to do
+  on each page and set `composition.kind: auto` with a `reading_task` and its
+  actual evidence. Choose the task from the [routing table](../../references/scientific-composition.md#choose-by-reading-task).
+  The renderer selects the composition. For instance, trace data sources to
+  a shared dataset, connect a data matrix to a model, or read a primary result
+  figure alongside its interpretation. Use the same distinction when revising
+  a page that lacks visual variety or meaningful information.
+- When comparing two compatible measurements across categories, consider the
+  editable `paired_comparison` composition. Distinguish units and denominators;
+  use separate scales when they differ. Assess actual rendered pages for the
+  figure's legibility, complementary evidence, typography and page-to-page
+  variety. Structural QA and its `adequate_pages` count do not verify visual
+  quality or meaningful information gain.
+- Review visible content against the page grid. Align parallel groups around
+  their own axes, align each number with its unit, and distribute comparable
+  groups evenly. Check the left and right margins of the actual rendered
+  content, especially when one group has fewer items.
 - Draw methods from actual inputs → model/transformation → output/validation.
   Show data structure, variables, branches or validation relations with native
   graphics; prose boxes connected by arrows are insufficient. Distinguish

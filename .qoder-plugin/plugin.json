@@ -1,7 +1,7 @@
 {
   "name": "easyslides",
   "displayName": "EasySlides",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Create editable academic presentations, reconstruct approved slide images or selected regions, and distill reusable PPTX templates.",
   "descriptionZh": "制作原生可编辑学术 PPT，将确认后的幻灯片图片或选区重建为可编辑内容，并从已有 PPTX 提取可复用模板。",
   "author": {

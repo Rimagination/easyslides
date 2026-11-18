@@ -1,5 +1,6 @@
 """Regression cases from the Harness density/layout audit."""
 from copy import deepcopy
+import json
 from pathlib import Path
 import tempfile
 from xml.etree import ElementTree as ET
@@ -85,3 +86,161 @@ def test_composition_text_never_silently_shrinks_or_overflows():
     c['stages'][0]['facts'] = ['非常冗长的没有必要的重复说明' * 80]
     with pytest.raises(ValueError, match='fit|capacity'):
         render_composition(c, image_resolver=lambda _: '', colors={})
+
+
+def test_figure_analysis_gives_nearly_square_source_figures_more_height():
+    from scripts.academic_composition import render_composition
+
+    fig = {'path': 'map.png', 'caption': '采样覆盖 (Example et al., 2025)', 'aspect_ratio': 1.03}
+    root = render_composition({'kind': 'figure_analysis', 'figure': fig, 'facts': ['样本来自不同来源']}, image_resolver=str, colors={})
+    result = root.find('{http://www.w3.org/2000/svg}image')
+    assert min(float(result.get('width')) / fig['aspect_ratio'], float(result.get('height'))) >= 385
+
+
+def test_bar_comparison_uses_a_common_zero_baseline_and_editable_values():
+    from scripts.academic_composition import render_composition
+
+    composition = {'kind': 'bar_comparison', 'unit': '个', 'caption': '按区域比较样本数 (Example et al., 2025)',
+                   'series': [{'label': '甲', 'value': 120}, {'label': '乙', 'value': 60}, {'label': '丙', 'value': 0}]}
+    root = render_composition(composition, image_resolver=str, colors={})
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    bars = root.findall('s:rect', ns)
+    assert len(bars) == 2
+    assert bars[0].get('x') == bars[1].get('x')
+    assert float(bars[0].get('width')) == 2 * float(bars[1].get('width'))
+    values = {''.join(node.itertext()) for node in root.findall('s:text', ns)}
+    assert {'120', '60', '0'} <= values
+
+
+def test_paired_comparison_encodes_shared_scale_and_keeps_values_editable(tmp_path):
+    from scripts.academic_composition import render_composition
+    from scripts.svg_to_pptx.drawingml_converter import convert_svg_to_slide_shapes
+
+    composition = {
+        'kind': 'paired_comparison', 'unit': '种',
+        'value_labels': ['观测', '估计'],
+        'caption': '各地区的树种估计 (Example et al., 2025)',
+        'series': [{'label': '甲', 'first': 50, 'second': 100},
+                   {'label': '乙', 'first': 0, 'second': 50}],
+    }
+    root = render_composition(composition, image_resolver=str, colors={})
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    circles = root.findall('s:circle', ns)[2:]
+    assert float(circles[0].get('cx')) == float(circles[3].get('cx'))
+    assert float(circles[2].get('cx')) < float(circles[0].get('cx')) < float(circles[1].get('cx'))
+    texts = [''.join(node.itertext()) for node in root.findall('s:text', ns)]
+    assert '50 / 100' in texts and '0 / 50' in texts
+    svg = ET.Element('{http://www.w3.org/2000/svg}svg', {'viewBox': '0 0 1280 720', 'width': '1280', 'height': '720'})
+    svg.append(root)
+    svg_path = tmp_path / 'paired.svg'
+    ET.ElementTree(svg).write(svg_path, encoding='utf-8')
+    xml, _, _, _ = convert_svg_to_slide_shapes(svg_path)
+    assert '50 / 100' in xml and '0 / 50' in xml
+
+
+def test_paired_comparison_rejects_invalid_pairs():
+    import pytest
+    from scripts.academic_composition import render_composition
+
+    composition = {'kind': 'paired_comparison', 'unit': '种', 'value_labels': ['观测', '估计'],
+                   'caption': '比较 (Example et al., 2025)',
+                   'series': [{'label': '甲', 'first': 1, 'second': 2},
+                              {'label': '乙', 'first': -1, 'second': 2}]}
+    with pytest.raises(ValueError, match='nonnegative'):
+        render_composition(composition, image_resolver=str, colors={})
+
+
+def test_paired_comparison_renders_through_semantic_template(tmp_path):
+    from scripts.semantic_template_renderer import render_deck
+    from scripts.svg_to_pptx.drawingml_converter import convert_svg_to_slide_shapes
+
+    plan = plan_fixture()
+    slide = plan['slides'][0]
+    slide['layout_id'] = 'scientific_composition'
+    slide['slot_payload'] = {'CHAPTER_LABEL': '结果', 'PAGE_TITLE': '比较地区估计', 'KEY_MESSAGE': '两项指标使用同一单位'}
+    slide['composition'] = {'kind': 'paired_comparison', 'unit': '种',
+                            'value_labels': ['观测', '估计'],
+                            'series': [{'label': '甲', 'first': 12, 'second': 20},
+                                       {'label': '乙', 'first': 30, 'second': 35}],
+                            'caption': '地区比较 (Example et al., 2025)'}
+    plan_path = tmp_path / 'deck_plan.json'
+    plan_path.write_text(json.dumps(plan, ensure_ascii=False), encoding='utf-8')
+    output = tmp_path / 'svg_output'
+    render_deck(TEMPLATE, plan_path, output)
+    xml, _, _, _ = convert_svg_to_slide_shapes(next(output.glob('*.svg')))
+    assert '12 / 20' in xml and '30 / 35' in xml
+
+
+def test_automatic_layouts_reach_semantic_render_and_native_export(tmp_path):
+    from PIL import Image
+    from scripts.semantic_template_renderer import render_deck
+    from scripts.svg_to_pptx.drawingml_converter import convert_svg_to_slide_shapes
+
+    plan = plan_fixture()
+    slide = plan['slides'][0]
+    slide['layout_id'] = 'scientific_composition'
+    slide['slot_payload'] = {'CHAPTER_LABEL': '研究', 'PAGE_TITLE': '识别数据与分析的关系', 'KEY_MESSAGE': '依据样本与模型选择展示结构'}
+    caption = '合成测试数据'
+    Image.new('RGB', (600, 200)).save(tmp_path / 'result.png')
+    fig = {'path': 'result.png', 'source_id': 'paper', 'caption': caption, 'aspect_ratio': 3}
+    series = [{'label': '甲', 'value': 12}, {'label': '乙', 'value': 24}]
+    cases = [
+        ('merge_data', {'inputs': [{'title': '调查', 'metrics': [{'value': '1,200', 'label': '样点'},
+                                                           {'value': '150', 'label': '样本'}]},
+                                  {'title': '名录', 'metrics': [{'value': '250', 'label': '名称'}]}],
+                        'output': {'title': '合并数据', 'metrics': [{'value': '800', 'label': '匹配记录'}]}},
+         'data_convergence', '匹配记录'),
+        ('explain_method', {'matrix': {'title': '输入矩阵', 'rows': ['样点甲'], 'columns': ['物种甲', '物种乙'],
+                                       'cells': [[True, False]], 'note': '仅结构示意'},
+                            'formula': {'title': '外推模型', 'lines': ['S = Sobs + Δ'], 'facts': ['Δ 为外推量']}},
+         'method_model', 'S = Sobs + Δ'),
+        ('read_result', {'figure': fig, 'facts': [{'value': '24', 'label': '总样点'},
+                                                 {'heading': '覆盖边界', 'text': '样点集中在流域内'}]},
+         'figure_analysis', '覆盖边界'),
+        ('compare', {'series': series, 'unit': '份', 'focus': 'rank'}, 'dot_comparison', '24'),
+        ('compare', {'series': series, 'unit': '份'}, 'bar_comparison', '12'),
+        ('compare', {'panels': [{'title': '记录数量', 'unit': '份', 'series': series},
+                                {'title': '覆盖比例', 'unit': '%', 'series': [{'label': '甲', 'value': 80},
+                                                                            {'label': '乙', 'value': 90}]}]},
+         'split_comparison', '独立量尺'),
+    ]
+    plan['slides'] = [dict(slide, composition=dict(fields, kind='auto', reading_task=task, caption=caption))
+                      for task, fields, _, _ in cases]
+    plan_path = tmp_path / 'deck_plan.json'
+    plan_path.write_text(json.dumps(plan, ensure_ascii=False), encoding='utf-8')
+    output = tmp_path / 'svg_output'
+    manifest = render_deck(TEMPLATE, plan_path, output)
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    for assignment, (_, _, kind, value) in zip(manifest['assignments'], cases, strict=True):
+        assert assignment['composition_kind'] == kind
+        xml, _, _, _ = convert_svg_to_slide_shapes(output / assignment['svg'])
+        assert value in xml
+        body = ET.parse(output / assignment['svg']).find('s:g[@id="scientific-body"]', ns)
+        if kind == 'data_convergence':
+            assert len(body.findall('s:path', ns)) == 1
+            centers = {''.join(node.itertext()): float(node.get('x'))
+                       for node in body.findall('s:text', ns) if node.get('text-anchor') == 'middle'}
+            assert (centers['1,200'] + centers['150']) / 2 == centers['调查']
+            assert centers['250'] == centers['名录']
+            assert centers['调查'] + centers['名录'] == 2*centers['合并数据']
+            assert centers['800'] == centers['匹配记录'] == centers['合并数据']
+        elif kind == 'method_model':
+            assert len(body.findall('s:circle', ns)) == 1
+        elif kind == 'figure_analysis':
+            assert assignment['figure_placement'] == 'above'
+            assert body.find('s:image', ns).get('width') == '1152'
+        elif kind == 'dot_comparison':
+            assert len(body.findall('s:circle', ns)) == 2
+            assert xml.index('>乙<') < xml.index('>甲<')
+        elif kind == 'split_comparison':
+            bars = body.findall('s:rect', ns)
+            assert bars[0].get('x') != bars[2].get('x')
+            assert bars[1].get('width') == bars[3].get('width')  # distinct maxima use separate scales
+
+
+def test_auto_layout_requires_evidence_for_the_requested_task():
+    from scripts.academic_composition import validate_academic_authoring
+
+    plan = plan_fixture()
+    plan['slides'][0]['composition'] = {'kind': 'auto', 'reading_task': 'merge_data', 'rows': [['25', '30']]}
+    assert {issue['code'] for issue in validate_academic_authoring(plan)} == {'NATIVE-COMPOSITION'}

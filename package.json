@@ -1,6 +1,6 @@
 {
   "name": "easyslides",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Editable academic presentations, native templates and PPTX distillation for DeepSeek Harness.",
   "main": "./dsh/index.mjs",
   "exports": {

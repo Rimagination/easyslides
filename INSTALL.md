@@ -7,7 +7,7 @@ repository and its local runtime.
 ## Qoder
 
 Use `python scripts/build_qoder_plugin.py` to create
-`build/easyslides-qoder-1.2.2.zip`. In Qoder, choose Plugins → Add plugin → Upload
+`build/easyslides-qoder-1.2.3.zip`. In Qoder, choose Plugins → Add plugin → Upload
 Plugin and select this ZIP. Upload installs to the current device; a public
 listing requires submission through Qoder's **My publications** page and review.
 See [Qoder setup](references/qoder.md) and
@@ -52,7 +52,7 @@ npm install --ignore-scripts
 npm test
 python -m pytest tests/test_build_plugin_bundle.py tests/test_npm_package.py -q
 npm pack --pack-destination build
-dsh plugin --profile easyslides-test add ./build/easyslides-1.2.2.tgz
+dsh plugin --profile easyslides-test add ./build/easyslides-1.2.3.tgz
 ```
 
 `npm pack` rebuilds a privacy-safe `runtime/` using the existing bundle builder;

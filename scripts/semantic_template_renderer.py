@@ -21,13 +21,13 @@ from typing import Any
 import xml.etree.ElementTree as ET
 
 try:
-    from scripts.academic_composition import render_composition, validate_academic_authoring
+    from scripts.academic_composition import render_composition, resolve_composition, validate_academic_authoring
     from scripts.svg_slot_binding import set_image_slot_href, slot_content_node
     from scripts.academic_paper_visuals import VisualSelectionError, select_discipline_image
     from scripts.institution_logo import fetch_logo, identify_presenter_institution
     from scripts.template_palette import PaletteError, apply_color_replacements, palette_color_replacements, read_palette_catalog
 except ModuleNotFoundError:  # direct script execution
-    from academic_composition import render_composition, validate_academic_authoring
+    from academic_composition import render_composition, resolve_composition, validate_academic_authoring
     from svg_slot_binding import set_image_slot_href, slot_content_node
     from academic_paper_visuals import VisualSelectionError, select_discipline_image
     from institution_logo import fetch_logo, identify_presenter_institution
@@ -477,8 +477,12 @@ def render_slide(
                 raise SemanticTemplateError(f"scientific figure is missing: {source}")
             return _copy_image(source, assets_dir)
         try:
-            body = render_composition(slide["composition"], image_resolver=resolve_body_image,
-                                      colors={"primary": (palette_replacements or {}).get("#102F4A", "#102F4A")})
+            palette = palette_replacements or {}
+            body = render_composition(
+                slide["composition"], image_resolver=resolve_body_image,
+                colors={"primary": palette.get("#102F4A", "#102F4A"),
+                        "accent": palette.get("#2F759B", "#2F759B")},
+            )
         except (KeyError, TypeError, ValueError) as exc:
             raise SemanticTemplateError(f"scientific body: {exc}") from exc
         root.append(body)
@@ -668,6 +672,14 @@ def render_deck(template_dir: Path, deck_plan_path: Path, output_dir: Path) -> d
                 "svg": filename,
                 "rendered_slots": rendered_slots,
             }
+        if layout["layout_id"] == "scientific_composition":
+            composition = slide["composition"]
+            kind, placement = resolve_composition(composition)
+            assignment["composition_kind"] = kind
+            if composition.get("kind") == "auto":
+                assignment["reading_task"] = composition["reading_task"]
+            if placement:
+                assignment["figure_placement"] = placement
         if footer_source is not None:
             assignment["footer_source"] = footer_source
         assignments.append(assignment)

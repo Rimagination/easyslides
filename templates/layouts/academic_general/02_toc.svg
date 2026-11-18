@@ -15,7 +15,7 @@
   <text x="192" y="84" font-family="Arial, 'Microsoft YaHei'" font-size="24" fill="#102F4A" data-pptx-box-x="192" data-pptx-box-y="54" data-pptx-box-w="240" data-pptx-box-h="36" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">CONTENTS</text>
   <line x1="64" y1="105" x2="1216" y2="105" stroke="#B99A4C" stroke-width="1" />
   <rect x="0" y="171" width="640" height="549" fill="url(#toc-fallback)" />
-  <g id="toc-neutral-network" stroke="#C1DDEE" stroke-opacity="0.32" fill="none" stroke-width="1">
+  <g id="toc-neutral-network" data-visible-unless-slot="TOC_IMAGE" stroke="#C1DDEE" stroke-opacity="0.32" fill="none" stroke-width="1">
     <path d="M 36 564 L 133 406 L 258 541 L 352 343 L 456 449 L 582 338" />
     <path d="M 50 297 L 133 406 L 352 343 L 472 250 M 133 406 L 285 253 L 456 449 L 546 626" />
     <path d="M 36 564 L 219 666 L 258 541 L 456 449 L 573 575" />

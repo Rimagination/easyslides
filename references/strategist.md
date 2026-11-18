@@ -128,9 +128,9 @@ does not supply parallel items.
 When the chosen template has `body_variants.json`, bind content pages to its
 registered body variants instead of inventing an unrelated export path. For
 new `academic_general` work, use its `scientific_composition` variant with
-`slide.composition` and the `academic_native.v1` page brief. This is bounded
-scientific body composition, not legacy paragraph-slot filling. Read
-`academic-native-authoring.md` and preserve evidence provenance. Record
+`slide.composition` and the `academic_native.v1` page brief. Use `kind: auto`,
+then declare the [reading task and its evidence](scientific-composition.md#choose-by-reading-task).
+Read `academic-native-authoring.md` and preserve evidence provenance. Record
 `content_shape` and an exact `slot_payload` for the chosen variant. The
 `scripts/deck_plan_contract.py` report must show a passing `body_variant_status`;
 the underlying `scripts/body_variant_adapter.py` supplies the

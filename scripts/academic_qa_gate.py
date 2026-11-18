@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from scripts.academic_composition import validate_academic_authoring
+    from scripts.academic_composition import resolve_composition, validate_academic_authoring
     from scripts.deck_plan_contract import validate_deck_plan, validate_deck_plan_file
     from scripts.scenario_profiles import (
         duration_page_band,
@@ -26,7 +26,7 @@ try:
         validate_profiles,
     )
 except ModuleNotFoundError:  # pragma: no cover - supports direct script execution
-    from academic_composition import validate_academic_authoring
+    from academic_composition import resolve_composition, validate_academic_authoring
     from deck_plan_contract import validate_deck_plan, validate_deck_plan_file
     from scenario_profiles import (
         duration_page_band,
@@ -224,7 +224,11 @@ CONTENT_SHELL_ROLES = {"cover", "toc", "chapter", "ending"}
 def _composition_identity(slide: dict[str, Any]) -> str:
     composition = slide.get("composition")
     if isinstance(composition, dict) and composition.get("kind"):
-        return str(composition["kind"])
+        try:
+            kind, placement = resolve_composition(composition)
+            return f"{kind}:{placement}" if placement else kind
+        except (KeyError, TypeError, ValueError):
+            return str(composition["kind"])
     return str(slide.get("layout_id") or "").rsplit("/", 1)[-1]
 
 
@@ -290,7 +294,9 @@ def _run_content_quality_qa(
                 "checked_pages": len(body), "adequate_pages": len(body) if not native_issues else 0,
                 "thin_pages": [], "placeholder_pages": [],
                 "distinct_layouts": len({_composition_identity(s) for s in body}),
-                "scientific_truth_verified": False}
+                "scientific_truth_verified": False,
+                "visual_quality_verified": False,
+                "adequacy_note": "adequate_pages counts structural compliance only; it does not assess visual design or meaningful information density"}
     policy, explicit = _content_quality_policy(plan, variant)
     if not explicit:
         return {

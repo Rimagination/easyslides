@@ -114,6 +114,11 @@ def test_custom_theme_image_requires_the_actual_asset_and_reuses_it(tmp_path):
         node = next(n for n in root.iter() if n.get('data-slot') == slot)
         paths.append(next(n.get('href') for n in node.iter() if n.get('href')))
     assert len(set(paths)) == 1
+    assert not any(node.get('id') == 'title-band-fallback-bars'
+                   for node in ET.parse(tmp_path / 'ready' / '01_cover_blue_band.svg').getroot().iter())
+    toc = ET.parse(tmp_path / 'ready' / '02_toc.svg').getroot()
+    assert not any(node.get('id') == 'toc-neutral-network' for node in toc.iter())
+    assert any(node.get('fill') == 'url(#toc-image-fade)' for node in toc)
 
 
 @pytest.mark.parametrize("theme", ["academic_blue", "academic_purple", "academic_green", "technology_blue", "#E4BE30"])
@@ -126,6 +131,8 @@ def test_theme_is_applied_to_all_layouts_without_touching_user_text_or_picture(t
     replacements = palette_color_replacements(catalog, theme)
     assert manifest["theme_palette"]["id"] == theme
     assert _node(out / "01_cover_blue_band.svg", "title-band").get("fill") == replacements["#063C8D"]
+    assert len(_node(out / "01_cover_blue_band.svg", "title-band-fallback-bars")) == 6
+    assert _node(out / "02_toc.svg", "toc-neutral-network") is not None
     assert _node(out / "03_result_figure.svg", "header-chapter").get("fill") == replacements["#08264D"]
     assert _node(out / "03_result_figure.svg", "header-base").get("fill") == replacements["#EEF5F9"]
     assert _node(out / "03_result_figure.svg", "page-number-badge").get("fill") == replacements["#D8E1E9"]

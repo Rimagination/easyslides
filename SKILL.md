@@ -79,7 +79,10 @@ For new native academic decks, also load
 (`question`, `information_gain`, `visual_rationale`) alongside its existing
 claim and evidence. For `academic_general`, use its registered
 `scientific_composition` body to combine actual scientific figures, method
-structures and comparisons. Other explicitly selected templates retain their
+structures and comparisons. For that body, default to `composition.kind: auto`
+with a `reading_task` and the evidence needed for the task. See the
+[reading-task routing table](references/scientific-composition.md#choose-by-reading-task).
+Other explicitly selected templates retain their
 own registered body contracts.
 The composer owns geometry and the normal SVG/DrawingML exporter owns output.
 Do not substitute text-slot filling for content planning. For expert audiences,

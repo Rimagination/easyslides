@@ -51,7 +51,7 @@ python scripts/build_qoder_plugin.py
 ```
 
 The builder creates `build/qoder-plugin/easyslides/` and
-`build/easyslides-qoder-1.2.2.zip`. Existing destinations are never replaced.
+`build/easyslides-qoder-<version>.zip`. Existing destinations are never replaced.
 The ZIP directly contains `.qoder-plugin/plugin.json`, `qoder.md`, `skills/`,
 scripts, templates, public assets and shared guidance. It excludes user projects,
 source papers, credentials, development-only templates and other hosts' active

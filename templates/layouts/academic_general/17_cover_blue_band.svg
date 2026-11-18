@@ -14,12 +14,14 @@
   <circle cx="858" cy="96" r="4" fill="#153F78" />
   <text x="640" y="102" text-anchor="middle" font-family="'Microsoft YaHei', sans-serif" font-size="20" font-weight="700" fill="#123C70" data-slot="RESEARCH_FIELD" data-pptx-box-x="435" data-pptx-box-y="76" data-pptx-box-w="410" data-pptx-box-h="40" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-no-wrap="true">{{RESEARCH_FIELD}}</text>
   <rect id="title-band" x="0" y="120" width="1280" height="330" fill="#063C8D" />
-  <rect x="28" y="334" width="22" height="116" fill="#83AEE6" opacity="0.10" />
-  <rect x="56" y="309" width="20" height="141" fill="#83AEE6" opacity="0.10" />
-  <rect x="81" y="351" width="24" height="99" fill="#83AEE6" opacity="0.10" />
-  <rect x="1165" y="350" width="22" height="100" fill="#83AEE6" opacity="0.10" />
-  <rect x="1193" y="306" width="19" height="144" fill="#83AEE6" opacity="0.10" />
-  <rect x="1218" y="330" width="22" height="120" fill="#83AEE6" opacity="0.10" />
+  <g id="title-band-fallback-bars" data-visible-unless-slot="BAND_IMAGE">
+    <rect x="28" y="334" width="22" height="116" fill="#83AEE6" opacity="0.10" />
+    <rect x="56" y="309" width="20" height="141" fill="#83AEE6" opacity="0.10" />
+    <rect x="81" y="351" width="24" height="99" fill="#83AEE6" opacity="0.10" />
+    <rect x="1165" y="350" width="22" height="100" fill="#83AEE6" opacity="0.10" />
+    <rect x="1193" y="306" width="19" height="144" fill="#83AEE6" opacity="0.10" />
+    <rect x="1218" y="330" width="22" height="120" fill="#83AEE6" opacity="0.10" />
+  </g>
   <image id="band-image" x="0" y="120" width="1280" height="330" opacity="0.70" preserveAspectRatio="xMidYMid slice" data-slot="BAND_IMAGE" href="{{BAND_IMAGE}}" />
   <rect id="title-band-gradient-overlay" x="0" y="120" width="1280" height="330" fill="url(#title-band-gradient)" stroke="none" />
   <text x="640" y="267" text-anchor="middle" font-family="'SimSun', 'Songti SC', serif" font-weight="700" fill="#FFFFFF" font-size="80" data-slot="TITLE" data-pptx-box-x="64" data-pptx-box-y="209" data-pptx-box-w="1152" data-pptx-box-h="116" data-pptx-valign="middle" data-pptx-textbox="true" data-pptx-line-height-ratio="1.0" data-pptx-line-spacing-pct="100">{{TITLE}}</text>
