@@ -27,7 +27,7 @@ EasySlides 是面向科研汇报的 Agent 插件，用于论文组会、学术�
 | --- | --- |
 | [![原生路线示例：绿色学术论文汇报，比较两幅原图，文字和版式直接构建为可编辑对象](assets/readme/previews/native-editable.webp)](assets/readme/native-editable.png) | [![图片整页重建示例：蓝色研究计划汇报，保留复杂实验配图，重建标题、文字和简单结构](assets/readme/previews/image-rebuild.webp)](https://easyslides.scansci.com/?view=detail&work=5) |
 
-**近期重点增强：默认原生模板 `academic_general`**，支持多图比较、可编辑方法图示、灵活图文组合与统一对齐。其他模板尚未全部同步这些增强。
+**近期重点增强：默认原生模板 `academic_general`**，根据论文证据和每页的阅读任务自动选择版式，支持数据汇合、可编辑方法图、多图对照，以及条形图、点图等数量比较。
 
 <details>
 <summary><strong>展开看原生方法页</strong></summary>
@@ -181,7 +181,7 @@ Install `easyslides` through DeepSeek Harness's npm plugin installer. For other 
 
 Theme colors are user-defined. The four palettes above are examples and are not tied to particular disciplines.
 
-The default `academic_general` has recently gained richer figure comparisons, editable method diagrams and varied content layouts. Other templates have not all received these enhancements. Preserved research figures remain images; final visual review needs a human or an image-capable model.
+The default native template `academic_general` now selects slide layouts based on the paper’s evidence and the reader’s task. It supports data-source diagrams, editable method diagrams, side-by-side figures, and bar and dot plots. Preserved research figures remain images. Final visual review needs a human or an image-capable model.
 
 [Examples](https://easyslides.scansci.com/) · [Release status](CHANGELOG.md) · [中文](#中文)
 
