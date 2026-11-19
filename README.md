@@ -163,6 +163,8 @@ dsh plugin --profile desktop add easyslides
 
 代码使用 MIT 许可，见 [LICENSE](LICENSE)；第三方模板与图片遵循各自许可。
 
+社区链接：[LINUX DO](https://linux.do/)
+
 <details>
 <summary><strong>致谢项目</strong></summary>
 
