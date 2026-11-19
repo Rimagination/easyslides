@@ -33,6 +33,8 @@ DELEGATED_COMMANDS = {
     "enhance": "native_enhance_pptx.py",
     "beautify": "beautify_pptx.py",
     "review": "visual_review.py",
+    "powerpoint-demo": "powerpoint_demo.py",
+    "replay-video": "replay_video.py",
     "brand": "create_brand.py",
     "confirm": "confirm_ui.py",
     "clarify": "clarification_gate.py",
@@ -80,6 +82,8 @@ def build_parser() -> argparse.ArgumentParser:
             "  enhance       Native append-only PPTX notes/audio/timing enhancement\n"
             "  beautify      Conservative 1:1 PPTX beautification\n"
             "  review        Visual review package generation\n"
+            "  powerpoint-demo Show native PowerPoint objects step by step and optionally record MP4\n"
+            "  replay-video Edit MP4 speed, add original music and credits, or render standalone music\n"
             "  brand         Brand preset creation and inspection\n"
             "  confirm       Confirmation page generation\n"
             "  clarify       Blocking user-choice clarification gate\n"

@@ -1,7 +1,7 @@
 # DeepSeek Harness host adapter
 
-The npm bundle registers `easyslides`, `easyslides-distill` and
-`easyslides-clarify` through DSH's native skill provider. Use the host's `skill`
+The npm bundle registers `easyslides`, `easyslides-distill`,
+`easyslides-clarify` and `video` through DSH's native skill provider. Use the host's `skill`
 loader; the loaded skill names its absolute runtime directory. Relative paths
 in that skill resolve from its `resourceBase`, so `../../SKILL.md` is the shared
 operating guide. This adapter uses the same templates and Python commands as

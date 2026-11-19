@@ -18,6 +18,10 @@ const skills = [
     name: 'easyslides-clarify',
     description: 'Resolve result-affecting choices before EasySlides production: production scheme, theme color, theme image source and unresolved presentation requirements. Reuse explicit answers and wait for unresolved blocking choices. 制作前澄清需求。',
   },
+  {
+    name: 'video',
+    description: 'Replay PowerPoint slides step by step, record the PowerPoint window to MP4, and edit speed, music, and credits. 逐步演示、录屏、倍速、配乐和花字水印。',
+  },
 ];
 
 /** A bundled provider leaves workspace and user skill overrides at their normal priority. */

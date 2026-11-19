@@ -21,9 +21,13 @@ class BuildPluginBundleTests(unittest.TestCase):
             self.assertFalse((output / "qoder.md").exists())
             self.assertEqual(
                 sorted(manifest["skills"]),
-                ["easyslides", "easyslides-clarify", "easyslides-distill"],
+                ["easyslides", "easyslides-clarify", "easyslides-distill", "video"],
             )
             self.assertTrue((output / "skills" / "easyslides" / "SKILL.md").is_file())
+            self.assertTrue((output / "skills/video/SKILL.md").is_file())
+            self.assertTrue((output / "workflows/powerpoint-replay.md").is_file())
+            self.assertTrue((output / "scripts/office/record_window.py").is_file())
+            self.assertTrue((output / "scripts/replay_video.py").is_file())
             self.assertTrue((output / "scripts" / "semantic_template_renderer.py").is_file())
             self.assertTrue((output / "scripts" / "institution_logo.py").is_file())
             self.assertTrue((output / "references" / "institution-logos.md").is_file())

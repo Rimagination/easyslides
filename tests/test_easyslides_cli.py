@@ -1,4 +1,5 @@
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -37,6 +38,42 @@ class EasySlidesCliTests(unittest.TestCase):
         self.assertIn("chart", result.stdout)
         self.assertIn("icon", result.stdout)
         self.assertIn("logo", result.stdout)
+        self.assertIn("powerpoint-demo", result.stdout)
+
+    def test_powerpoint_demo_help_lists_playback_and_recording_options(self):
+        result = run_cli("scripts/easyslides.py", "powerpoint-demo", "--help")
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("--slide", result.stdout)
+        self.assertIn("--delay", result.stdout)
+        self.assertIn("--record", result.stdout)
+        self.assertIn("--per-element", result.stdout)
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "FFmpeg is required")
+    def test_replay_video_speed_preserves_video_frames_and_retimes_audio(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "recording.mp4"
+            output = Path(tmp) / "recording 2x.mp4"
+            subprocess.run(
+                ["ffmpeg", "-v", "error", "-f", "lavfi", "-i", "testsrc2=s=160x90:r=10:d=1",
+                 "-f", "lavfi", "-i", "sine=f=440:d=1", "-c:v", "mpeg4", "-c:a", "aac", str(source)],
+                check=True,
+            )
+            original = source.read_bytes()
+            result = run_cli(
+                "scripts/easyslides.py", "replay-video", "edit", str(source),
+                "--out", str(output), "--speed", "2",
+            )
+
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual(source.read_bytes(), original)
+            probe = json.loads(subprocess.check_output(
+                ["ffprobe", "-v", "error", "-show_streams", "-of", "json", str(output)],
+            ))
+            video, audio = probe["streams"]
+            self.assertEqual(int(video["nb_frames"]), 10)
+            self.assertAlmostEqual(float(video["duration"]), 0.5, places=3)
+            self.assertAlmostEqual(float(audio["duration"]), 0.5, places=2)
 
     def test_logo_help_delegates_to_institution_resource(self):
         result = run_cli("scripts/easyslides.py", "logo", "--help")

@@ -23,7 +23,10 @@ Read the file to discover its contents; ask the user about intent and priorities
 Keep a compact `academic_brief` in the existing project requirements notes;
 after clarification, carry it into `deck_plan.json`. Record each fact's origin
 (user message or inspected file locator), unresolved items and conflicts.
-Initialize new academic content work using `clarify init --academic`. Store
+Initialize new academic content work using `clarify init --academic`. Add
+`--offer-recording` when PowerPoint capture is available for the new deck.
+Follow the [recording workflow](../workflows/powerpoint-replay.md) to explain
+the capture mode and ask about recording separately before producing slides. Store
 answers in the existing clarification state; `clarify next` chooses unresolved
 academic questions and source-inspection work, and `clarify require` blocks
 incomplete records. Its `decisions` become the plan's `academic_brief`.

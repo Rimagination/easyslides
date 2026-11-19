@@ -5,7 +5,7 @@ Python runtime.
 
 ## Qoder Plugin
 
-`.qoder-plugin/plugin.json` declares the three canonical skills and the existing
+`.qoder-plugin/plugin.json` declares the plugin-local skills and the existing
 logo. `qoder.md` and `references/qoder.md` adapt first-use setup and tool access
 to Qoder. `python scripts/build_qoder_plugin.py` creates a physical runtime and
 a ZIP with the Qoder manifest at its root. The builder reuses the existing
@@ -19,7 +19,7 @@ Local upload and public marketplace submission are separate steps. See
 ## DeepSeek Harness npm bundle
 
 `package.json` publishes the `easyslides` package as a DSH bundle;
-`dsh/cordis.patch.yml` mounts `dsh/index.mjs`. This adapter contributes the three
+`dsh/cordis.patch.yml` mounts `dsh/index.mjs`. This adapter contributes the four
 canonical skills to the host's skill registry at bundled priority, with local
 resource directories and on-demand instruction loading. Disabling the plugin
 removes its provider through Cordis's registration lifecycle. It adds no model
@@ -39,6 +39,7 @@ and [references/deepseek-harness.md](references/deepseek-harness.md).
 - `skills/easyslides-distill/SKILL.md` — the source-PPTX distillation Skill.
 - `skills/easyslides-distill/agents/openai.yaml` — distillation invocation metadata.
 - `skills/easyslides/agents/openai.yaml` — Codex UI and invocation metadata.
+- `skills/video/SKILL.md` — PowerPoint replay, recording, video editing and music.
 - `scripts/easyslides.py` remains the single command hub for the runtime.
 
 ## Local use
@@ -67,6 +68,8 @@ The supported user-facing capabilities are:
 - distill a source PPTX into reusable template language, component slots, and
   an EasySlides template draft;
 - render previews and produce visual review packages;
+- show and record [PowerPoint replays](workflows/powerpoint-replay.md), adjust
+  video speed, add original or supplied music, and apply credits;
 - validate slide geometry, text capacity, and export quality.
 
 For rendered previews, `scripts/render_pptx_png.py` automatically uses native

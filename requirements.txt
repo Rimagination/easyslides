@@ -117,3 +117,6 @@ lxml
 
 # Native Windows PowerPoint rendering; Office itself is installed separately.
 pywin32>=306; sys_platform == "win32"
+
+# Original soundtrack synthesis for replay-video music and --music presets.
+scipy>=1.10

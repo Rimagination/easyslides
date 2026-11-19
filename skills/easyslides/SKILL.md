@@ -12,6 +12,16 @@ description: >
 
 # EasySlides Academic PPTX
 
+For a new PPT on a host with PowerPoint capture, use `clarify init
+--offer-recording` and `clarify next` to ask separately whether to record the
+PowerPoint window as elements appear, before producing slides. State the
+available mode upfront: live capture of the first build or replay of the
+finished deck. Reuse an explicit choice and confirm any change of mode.
+Hand off an accepted recording to [video](../video/SKILL.md) before authoring.
+Live capture must start before the first insertion. Replay uses the finished,
+reviewed PPTX. Start with a silent recording, then share it and ask about
+music and a 花字水印. Narration requires an explicit request.
+
 EasySlides is a repository-backed plugin for supported agent hosts. This skill is a thin adapter
 around the canonical operating guide at `../../SKILL.md`; read that file
 completely before executing a presentation task.

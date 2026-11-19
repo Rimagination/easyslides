@@ -21,6 +21,13 @@ existing source maps and deck plans. Resolve those contextual requirements even
 when `clarify next` reports `ready_for_summary`; that status covers only the
 option catalog. Storytelling is shared planning, independent of visual templates.
 
+For new presentations on a host that supports PowerPoint capture, include
+`--offer-recording` with `clarify init`. After the main PPT decisions, use
+`clarify next` to ask the recording question on its own and state the actual
+capture mode. Resolve it before producing slides and reuse explicit choices.
+Follow [the video workflow](powerpoint-replay.md) for mode selection and for
+the follow-up after the raw MP4 is saved.
+
 Maintain a compact brief: purpose/outcome, audience, sources and supplementation
 permission, duration/page budget, production scheme, applicable reconstruction
 mode, reference template and protected content/regions. Ask only unresolved,

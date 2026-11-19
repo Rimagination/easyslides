@@ -1,7 +1,7 @@
 {
   "name": "easyslides",
   "version": "1.2.3",
-  "description": "Create editable research presentations directly, or approve AI-generated slide images and rebuild whole slides or selected regions. Includes native templates, image references, and PPTX distillation.",
+  "description": "Create editable research presentations, rebuild approved slide images or selected regions, distill PPTX templates, and record PowerPoint replays with optional music and credits.",
   "author": {
     "name": "EasySlides contributors"
   },
@@ -34,7 +34,9 @@
       "Rebuild AI-generated slide images",
       "Rebuild selected image regions",
       "Render previews",
-      "Run visual QA"
+      "Run visual QA",
+      "Record step-by-step PowerPoint replays",
+      "Edit recording speed, music, and credits"
     ],
     "defaultPrompt": [
       "使用 EasySlides 把这个 PPTX 蒸馏为无内容的语义模板、组件和符号资产。",

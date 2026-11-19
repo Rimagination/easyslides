@@ -8,7 +8,7 @@ import yaml from 'js-yaml';
 import { apply, createSkillProvider, inject } from '../dsh/index.mjs';
 
 const runtime = new URL('../', import.meta.url);
-const expected = ['easyslides', 'easyslides-clarify', 'easyslides-distill'];
+const expected = ['easyslides', 'easyslides-clarify', 'easyslides-distill', 'video'];
 
 test('bundle patch resolves the package entry without overriding host services', async () => {
   const manifest = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
@@ -17,7 +17,7 @@ test('bundle patch resolves the package entry without overriding host services',
   assert.deepEqual(inject, ['skills']);
 });
 
-test('all three skills load their existing instructions and resolve local resources', async () => {
+test('all bundled skills load their instructions and resolve local resources', async () => {
   const provider = createSkillProvider(runtime);
   const candidates = await provider.list();
   assert.deepEqual(candidates.map(row => row.name).sort(), expected);
@@ -35,6 +35,8 @@ test('all three skills load their existing instructions and resolve local resour
   assert.match(main.content, /academic_general/u);
   assert.match(main.content, /theme_image_source/u);
   assert.match(main.content, /MUST ask which production scheme/u);
+  const video = await provider.get(candidates.find(row => row.name === 'video'));
+  assert.match(video.content, /powerpoint-demo --per-element/u);
   assert.equal(await provider.get({ name: '../outside' }), undefined);
 });
 

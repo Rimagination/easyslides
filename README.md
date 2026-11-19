@@ -140,6 +140,12 @@ dsh plugin --profile desktop add easyslides
 
 </details>
 
+## 在 PowerPoint 中逐步演示
+
+在 Windows 桌面版 PowerPoint 中，可逐个回放成稿的文字、图片和图形，并用 FFmpeg 录成 MP4。成片可调倍速、加配乐和水印。
+
+[录屏与回放用法](workflows/powerpoint-replay.md)
+
 <a id="docs"></a>
 
 ## 文档
@@ -184,6 +190,8 @@ Install `easyslides` through DeepSeek Harness's npm plugin installer. For other 
 Theme colors are user-defined. The four palettes above are examples and are not tied to particular disciplines.
 
 The default native template `academic_general` now selects slide layouts based on the paper’s evidence and the reader’s task. It supports data-source diagrams, editable method diagrams, side-by-side figures, and bar and dot plots. Preserved research figures remain images. Final visual review needs a human or an image-capable model.
+
+On Windows, desktop PowerPoint can replay the finished slides element by element and record them as an MP4 with FFmpeg. Video editing supports speed, music and watermarks. [Replay and recording guide](workflows/powerpoint-replay.md).
 
 [Examples](https://easyslides.scansci.com/) · [Release status](CHANGELOG.md) · [中文](#中文)
 

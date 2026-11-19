@@ -1,6 +1,6 @@
 # EasySlides for Qoder
 
-The Qoder Plugin ZIP contains the same three canonical skills and Python runtime
+The Qoder Plugin ZIP contains the same four canonical skills and Python runtime
 as the other host adapters. The active manifest is `.qoder-plugin/plugin.json`;
 `qoder.md` is the host guide. The package adds no MCP server or background service.
 

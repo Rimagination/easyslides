@@ -85,6 +85,17 @@ copy/paste to discover requirements unless the user explicitly requests that UI.
    the agreed outcome and proceed. No confirmation of the confirmation. Resolve
    conflicts first. Missing files call for the specific file, not more options.
 
+For a new PPT with PowerPoint capture available, use `clarify init
+--offer-recording`. Before producing slides, present the `recording` question
+from `clarify next` on its own, separate from evidence scope, audience and
+design. Its wording must say whether the PowerPoint elements will appear in
+live capture or a finished-deck replay. Use `--recording-mode live` only once
+the selected authoring method can write to the visible PowerPoint window.
+In `--known-json`, carry explicit choices as `recording: "record"` for replay,
+`"live"` for live capture, or `"skip"` for PPT only. See the
+[recording workflow](../../workflows/powerpoint-replay.md) when a requested
+mode is unavailable or for the follow-up after recording.
+
 Do not ask open-ended “请再描述一下” questions when a choice set can expose
 the ambiguity. Do not ask again for a value the user already made explicit.
 

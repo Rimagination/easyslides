@@ -1,0 +1,6 @@
+interface:
+  display_name: "视频制作"
+  short_description: "PowerPoint 逐步录屏、视频倍速、原创配乐和水印"
+  default_prompt: "用 $video 逐步录屏这份 PPT，成片加速到 2 倍，配连奏音乐并加花字署名。"
+policy:
+  allow_implicit_invocation: true

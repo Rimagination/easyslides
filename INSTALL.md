@@ -32,7 +32,7 @@ Use `--profile web` for a web profile. Enable the installed bundle when prompted
 An ordinary `npm install easyslides` downloads the package, but DSH's plugin
 manager also adds and activates its configuration layer.
 
-The bundle contains the three EasySlides skills, the Python runtime, eight
+The bundle contains the four EasySlides skills, the Python runtime, eight
 official native templates, fourteen discipline theme images and thirteen image
 reference styles. It preserves the default `academic_general` template and the
 production-scheme, theme-color and theme-image questions. It has no install-time
@@ -138,7 +138,7 @@ python scripts/build_plugin_bundle.py --out build/plugin-bundle/easyslides
 ```
 
 Use a new output directory each time; existing directories are never replaced.
-The bundle contains the runtime, three skills, eight native templates, thirteen
+The bundle contains the runtime, four skills, eight native templates, thirteen
 image-reference styles, and installation/license documents. It excludes private
 source documents, local projects, browser caches, tests, and deck outputs.
 Install its `requirements.txt` in a fresh environment and run the commands above
@@ -177,6 +177,13 @@ Do not commit private source documents, generated decks, rendered previews, or
 real credentials.
 
 ## Optional External Tools
+
+### PowerPoint Replay and Recording
+
+Step-by-step replay uses Windows desktop PowerPoint and `pywin32`. Install
+FFmpeg for MP4 recording, and have both FFmpeg and FFprobe on PATH for MP4
+editing. Original soundtrack presets use SciPy and a local General MIDI DLS
+soundbank. See the [replay and recording workflow](workflows/powerpoint-replay.md).
 
 Different workflows need different tools.
 

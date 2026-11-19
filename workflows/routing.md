@@ -116,6 +116,7 @@ request is confirmed.
 | Data chart calibration | `verify-charts` | Generated SVG pages contain charts | Fixed chart geometry before export |
 | Object-level animation tuning | `customize-animations` | SVG groups or exported context exist | Validated animation config |
 | Browser preview or annotations | `live-preview` | Project exists; original images for source-image review, or exported SVGs for SVG editing | Read-only originals with built-in browser feedback, or SVG editor annotations |
+| Watch slide objects appear in PowerPoint, record the process, speed up a recording, add music or use a decorative credit | [`video` Skill](../skills/video/SKILL.md) with [`powerpoint-replay`](powerpoint-replay.md) | PPTX and Windows desktop PowerPoint for live demonstration, an existing MP4 for editing, or a requested duration for standalone music | Independent step-by-step view, raw or edited MP4, or standalone soundtrack |
 | Confirmation page/checklist before execution | `confirm-ui` | Project exists | Confirmation JSON and local HTML page |
 | Visual review/self-check/shareable preview | `visual-review` | PPTX exists or rendered slide PNGs exist | Review manifest, HTML page, and contact sheet |
 | Brand preset creation or inspection | `create-brand` | Brand name, palette, logo, or existing brand id exists | Brand JSON and registry entry |

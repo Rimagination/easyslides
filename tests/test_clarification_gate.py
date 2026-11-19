@@ -57,6 +57,38 @@ class ClarificationGateTests(unittest.TestCase):
         with self.assertRaises(ClarificationError):
             answer_clarification_request(build_clarification_request("new_deck"), {"purpose": "unknown"})
 
+    def test_recording_question_states_capture_mode_and_preserves_the_choice(self):
+        from scripts.clarification_gate import (
+            answer_clarification_request,
+            build_clarification_request,
+            next_clarification_question,
+        )
+
+        deck = {
+            "production_scheme": "direct_editable", "purpose": "defense", "audience": "peers",
+            "story_policy": "restructure", "theme_palette": "academic_green",
+            "theme_image_source": "template_assets", "presentation_identity": "用户明确省略署名。",
+            "page_budget": "standard",
+        }
+        for mode, choice, wording in (("replay", "record", "成稿回放"), ("live", "live", "实时录制")):
+            with self.subTest(mode=mode):
+                request = build_clarification_request("new_deck", known=deck, offer_recording=True, recording_mode=mode)
+                self.assertEqual([q["id"] for q in request["questions"]], ["canvas_format"])
+                request = answer_clarification_request(request, {"canvas_format": "16:9"})
+                popup = next_clarification_question(request)
+                self.assertEqual(popup["question_id"], "recording")
+                self.assertEqual(popup["option_ids"], ["skip", choice])
+                self.assertEqual(len(popup["questions"]), 1)
+                self.assertIn("逐元素", popup["questions"][0]["title"])
+                self.assertIn(wording, popup["questions"][0]["title"])
+                self.assertIn("默认无配音", popup["questions"][0]["title"])
+                request = answer_clarification_request(request, {"recording": choice})
+                self.assertEqual(request["status"], "confirmed")
+                self.assertEqual(request["decisions"]["recording"], choice)
+
+        explicit = build_clarification_request("new_deck", known={**deck, "recording": "live"}, offer_recording=True)
+        self.assertNotIn("recording", explicit["pending_question_ids"])
+
     def test_require_confirmed_reads_state_file(self):
         from scripts.clarification_gate import build_clarification_request, require_confirmed, answer_clarification_request
 

@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CANONICAL_SKILLS = ("easyslides", "easyslides-distill", "easyslides-clarify")
+CANONICAL_SKILLS = ("easyslides", "easyslides-distill", "easyslides-clarify", "video")
 ROOT_FILES = (
     "SKILL.md",
     "ARCHITECTURE.md",

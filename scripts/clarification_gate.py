@@ -290,6 +290,22 @@ class ClarificationError(ValueError):
 PRODUCTION_SCHEMES = {"direct_editable", "image_full_rebuild", "image_partial_rebuild"}
 RECONSTRUCTION_MODES = {"full_vector", "preserve_complex_images"}
 PRODUCTION_ROUTES = {"new_deck", "paper_deck", "template_fill", "image_reconstruction"}
+REPLAY_RECORDING_QUESTION = _question(
+    "recording", "recording",
+    "要录制 PowerPoint 逐元素制作过程吗？当前方案采用成稿回放，标题、图和标注会逐个出现，默认无配音。",
+    [
+        _option("skip", "只交付 PPT", "按当前方案制作 PPT。"),
+        _option("record", "录制成稿回放", "成稿通过检查后，在 PowerPoint 中逐元素回放并录成 MP4。"),
+    ], "skip", "录屏是可选交付，用户可在看到录像后选择配乐和水印。",
+)
+LIVE_RECORDING_QUESTION = _question(
+    "recording", "recording",
+    "要实时录制 PowerPoint 逐元素制作过程吗？从第一次制作的空白页开始录，默认无配音。",
+    [
+        _option("skip", "只交付 PPT", "按当前方案制作 PPT。"),
+        _option("live", "实时录制制作过程", "添加第一个元素前开始录制，另附 MP4。"),
+    ], "skip", "实时录制需要在打开的 PowerPoint 中添加元素。",
+)
 PRODUCTION_QUESTION = _question(
     "production_scheme", "production_scheme", "选择 PPT 制作方案（消耗和耗时为相对估计）",
     [
@@ -499,6 +515,13 @@ def _question_priority(request: dict[str, Any]) -> list[str]:
     return first + ['purpose', 'presentation_mode', 'audience']
 
 
+def _current_question_ids(request: dict[str, Any], unanswered: list[str]) -> list[str]:
+    if request.get("recording_intake"):
+        # Ask about capture on its own after the deck decisions, even in a batched UI.
+        unanswered = [item for item in unanswered if item != "recording"] or unanswered
+    return unanswered[:MAX_QUESTIONS_PER_ROUND]
+
+
 def _refresh_round(request: dict[str, Any]) -> dict[str, Any]:
     _add_native_template_dependencies(request)
     _add_academic_dependencies(request)
@@ -510,7 +533,7 @@ def _refresh_round(request: dict[str, Any]) -> dict[str, Any]:
     request['question_bank'].sort(key=lambda q: priority.index(q['id']) if q['id'] in priority else len(priority))
     unanswered = _unanswered_ids(request)
     by_id = {str(item["id"]): item for item in request.get("question_bank", []) if isinstance(item, dict)}
-    current_ids = unanswered[:MAX_QUESTIONS_PER_ROUND]
+    current_ids = _current_question_ids(request, unanswered)
     request["questions"] = [copy.deepcopy(by_id[item]) for item in current_ids]
     request["pending_question_ids"] = unanswered
     request["blocking_question_ids"] = _question_ids(request)
@@ -530,6 +553,8 @@ def build_clarification_request(
     known: dict[str, Any] | None = None,
     title: str | None = None,
     academic: bool = False,
+    offer_recording: bool = False,
+    recording_mode: str = "replay",
 ) -> dict[str, Any]:
     canonical = canonical_route(route)
     known_fields = known or {}
@@ -537,6 +562,10 @@ def build_clarification_request(
         raise ClarificationError("invalid production_scheme")
     if "reconstruction_mode" in known_fields and known_fields["reconstruction_mode"] not in RECONSTRUCTION_MODES:
         raise ClarificationError("invalid reconstruction_mode")
+    if "recording" in known_fields and known_fields["recording"] not in ("record", "live", "skip"):
+        raise ClarificationError("recording must be record, live, or skip")
+    if recording_mode not in ("replay", "live"):
+        raise ClarificationError("recording mode must be replay or live")
     catalog = QUESTION_CATALOG[canonical]
     if academic:
         invalid = _invalid_academic_text(known_fields)
@@ -546,6 +575,10 @@ def build_clarification_request(
         catalog = ACADEMIC_QUESTIONS + [q for q in catalog if q["field"] not in replaced]
         if known_fields.get("source_policy") not in {None, "supplied_only", "research", "hybrid"}:
             raise ClarificationError("invalid source_policy")
+    recording_intake = offer_recording and canonical in PRODUCTION_ROUTES
+    if recording_intake:
+        recording_question = LIVE_RECORDING_QUESTION if recording_mode == "live" else REPLAY_RECORDING_QUESTION
+        catalog = [*catalog, recording_question]
     question_bank = [
         copy.deepcopy(question)
         for question in catalog
@@ -569,6 +602,8 @@ def build_clarification_request(
         "native_template_intake": canonical in {"new_deck", "paper_deck", "template_fill"},
         "theme_image_intake": canonical in {"new_deck", "paper_deck", "template_fill"},
     }
+    if recording_intake:
+        request["recording_intake"] = recording_mode
     return _refresh_round(request)
 
 
@@ -691,7 +726,7 @@ def validate_clarification_request(request: dict[str, Any]) -> dict[str, Any]:
     if request.get("pending_question_ids") != expected_pending:
         issues.append({"code": "REQUEST-PENDING", "message": "pending_question_ids does not match unanswered questions"})
     current_ids = [str(item.get("id")) for item in request.get("questions", []) if isinstance(item, dict)]
-    expected_current = unanswered[:MAX_QUESTIONS_PER_ROUND]
+    expected_current = _current_question_ids(request, unanswered)
     if current_ids != expected_current:
         issues.append({"code": "REQUEST-ROUND", "message": "questions does not match the current clarification round"})
 
@@ -791,6 +826,10 @@ def build_parser() -> argparse.ArgumentParser:
     init.add_argument("--known-json", type=Path, help="JSON object of values already explicitly supplied by the user.")
     init.add_argument("--title")
     init.add_argument("--academic", action="store_true", help="Enable evidence-aware academic intake for a new content task.")
+    init.add_argument("--offer-recording", action="store_true",
+                      help="Ask separately about optional PowerPoint recording on new presentation routes.")
+    init.add_argument("--recording-mode", choices=("replay", "live"), default="replay",
+                      help="Capture mode offered with --offer-recording. Live requires visible PowerPoint authoring.")
 
     validate = subparsers.add_parser("validate", help="Validate a clarification request.")
     validate.add_argument("request", type=Path)
@@ -814,14 +853,10 @@ def next_clarification_question(request: dict[str, Any]) -> dict[str, Any]:
         raise ClarificationError('repair invalid clarification state before asking the next question')
     if request.get('status') == 'cancelled':
         return {'status': 'cancelled', 'questions': []}
-    unanswered = set(_unanswered_ids(request))
-    if not unanswered:
+    questions = request.get("questions", [])
+    if not questions:
         return {'status': 'ready_for_summary', 'questions': [], 'decisions': request['decisions']}
-    # The user selects production first. The native branch then confirms color
-    # and inspects identity; an image branch immediately asks its reconstruction mode.
-    priority = _question_priority(request)
-    bank = [q for q in request['question_bank'] if q['id'] in unanswered]
-    question = min(bank, key=lambda q: priority.index(q['id']) if q['id'] in priority else len(priority))
+    question = questions[0]
     if question.get('input_type') == 'text':
         return {'status': 'needs_material_inspection' if question.get('agent_inspection') else 'needs_answer',
                 'question_id': question['id'], 'field': question['field'],
@@ -867,7 +902,9 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "init":
             known = _read_json(args.known_json) if args.known_json else {}
-            request = build_clarification_request(args.route, known=known, title=args.title, academic=args.academic)
+            request = build_clarification_request(args.route, known=known, title=args.title,
+                                                  academic=args.academic, offer_recording=args.offer_recording,
+                                                  recording_mode=args.recording_mode)
             _write_json(args.out, request)
             print(json.dumps(request, ensure_ascii=False, indent=2))
             return 0

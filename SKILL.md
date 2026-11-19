@@ -713,6 +713,16 @@ PowerPoint/Office render and resolved findings. If the model cannot read images,
 use `--image-input unavailable` and leave `needs_visual_review`; PNG export,
 character counts and pixel/ink measurements cannot establish visual approval.
 
+### Optional PowerPoint Replay and Video Editing
+
+Use the [video Skill](skills/video/SKILL.md) for 逐步演示、制作过程录屏、
+视频倍速、原创配乐和文字水印. On supported hosts, ask about recording separately
+before producing a new PPT using the [recording workflow](workflows/powerpoint-replay.md).
+Explain the capture mode during intake. Start live capture before the first
+insertion, or replay after export and QA. Share the silent raw recording before
+asking about background music and 花字水印. Narration requires an explicit request.
+An existing PPTX or MP4 goes directly to the requested stage.
+
 ### Academic Page Layouts
 
 When `academic_classic` is selected as the neutral fallback, use these base layout
