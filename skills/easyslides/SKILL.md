@@ -110,6 +110,20 @@ Apply these native academic defaults before writing body pages:
   exact lookup, and use plots, maps and diagrams for the relationships they
   convey. On thin figure-led pages, enlarge the source figure before adding
   complementary evidence. Follow the [native authoring method](../../references/academic-native-authoring.md).
+- Deck-wide layout variety means genuinely different page structures selected
+  for their content: for example, a figure with interpretation, full-width
+  image with annotation, side-by-side visual comparison, spatial diagram, or
+  meaningful process/relationship figure. Change visual hierarchy and the
+  placement and proportion of images, diagrams and text as appropriate. A new
+  color, label, brace or divider on the same layout does not count as variety.
+  Review the entire thumbnail sequence for overuse, including alternating and
+  nonconsecutive repetition; the three-consecutive-page check is only a minimum.
+  Preserve information density and consistent template identity.
+- For researched and teaching decks, choose figures by what the audience
+  should observe or compare. Use the [image acquisition and review rules](../../references/image-acquisition.md#research-led-visual-variety)
+  to source varied visuals, spot repeated body images, and review picture size
+  and relevance in the rendered PPTX. This also applies when revising body
+  visuals in an existing deck.
 - For new `academic_general` body pages, identify what readers need to do
   on each page and set `composition.kind: auto` with a `reading_task` and its
   actual evidence. Choose the task from the [routing table](../../references/scientific-composition.md#choose-by-reading-task).
@@ -127,6 +141,18 @@ Apply these native academic defaults before writing body pages:
   their own axes, align each number with its unit, and distribute comparable
   groups evenly. Check the left and right margins of the actual rendered
   content, especially when one group has fewer items.
+- For substantial teaching or explanatory text, preserve the meaningful
+  content and organize heading–paragraph blocks with visibly more space between
+  blocks than within them. On the 1280×720 default composition use at least
+  16 px between group text boxes; if a vertical stack cannot fit, put headings
+  beside their paragraphs, enlarge the text region or split the page without
+  shrinking type or removing needed content. Inspect actual rendered spacing,
+  punctuation and number wraps. Braces are optional, only denote actual groups, and appear
+  on at most one page per deck. If using
+  label boxes or circles, keep comparable dimensions consistent and center
+  their labels horizontally and vertically within the shape; omit decorative
+  vertical rules. See the `figure_analysis`
+  layouts in `../../references/scientific-composition.md`.
 - Draw methods from actual inputs → model/transformation → output/validation.
   Show data structure, variables, branches or validation relations with native
   graphics; prose boxes connected by arrows are insufficient. Distinguish
@@ -141,7 +167,8 @@ Apply these native academic defaults before writing body pages:
   Never invent permission or silently record `source_policy=supplied_only`.
   Theme images provide identity and cannot replace scientific evidence.
 - Give title, 20 pt lead, figure caption and body different jobs; do not restate
-  one conclusion four times. Put long explanation in notes. Unless teaching is
+  one conclusion four times. State observations and supported limits directly.
+  Put long explanation in notes. Unless teaching is
   requested, omit “如何解读”, “读图指南”, “这页告诉我们”, “给小白” and filler summaries.
 - Choose body structure from the evidence. New `academic_general` bodies use
   its registered `scientific_composition` route; other selected templates retain

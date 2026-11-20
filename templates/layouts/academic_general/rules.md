@@ -21,10 +21,12 @@ and source verification are not automatically guaranteed by the text itself.
    to nine consecutive real section names.
 4. `TITLE` takes one or two explicit lines, as a string or list. Never rely on
    automatic wrapping of an overlong line. Follow every slot's declared capacity.
-   On `cover_blue_band`, a single line uses baseline y=267 and a vertically
-   centered textbox at y=209, h=116. Two lines retain baseline y=235 and the
-   y=145, h=180 textbox through the title slot's `multiline_layout` contract.
-   Do not move the subtitle or shrink the title to compensate for line count.
+   On `cover_blue_band`, center the title block horizontally and vertically in
+   the visible title band. A two-line title is one block. When `SUBTITLE` is
+   supplied, center the title and subtitle together and retain their spacing
+   and font sizes. Check the rendered text against the actual band bounds.
+   Put a secondary topic or explanatory line in `SUBTITLE` when it serves as a
+   subtitle. Use two `TITLE` lines for a main title that needs a line break.
    Do not add a horizontal divider above the cover presenter details.
 5. Supply an actual figure path for the `result_figure` layout. Tables, values,
    conclusions and source citations must come from the user's evidence. Remove
@@ -241,3 +243,60 @@ and source verification are not automatically guaranteed by the text itself.
     thickness, exposed stubs, gaps and doubled shadows are visual failures.
     Apply any shadow once to the unified shape and inspect junctions enlarged
     in the actual PowerPoint render before delivery.
+
+38. Choose the main exhibit for each new body page before placing text. Use a
+    chart for quantities on a common scale, a paper figure for spatial or other
+    shown patterns, and a diagram for an actual relationship or procedure.
+    Reserve tables for exact lookups and comparisons across multiple fields.
+    New tables use `scientific_composition` with `evidence_matrix`: a directly
+    selectable PowerPoint table, strong theme-colored header, pale alternating
+    rows, padded cells, and right-aligned numeric columns.
+39. Review the deck in thumbnail view for recurring text-and-table or
+    figure-and-commentary arrangements. Compare like-for-like exhibits on
+    consistent axes and grids when this aids comparison. On sparse figure-led
+    pages, enlarge the evidence figure with its labels and legend intact, and use
+    the adjacent area for sourced interpretation, such as data origins and
+    sample units. Keep picture and caption readable above the footer.
+40. Organize substantive explanatory text into clear groups: keep each
+    subheading close to its paragraph and leave a clearly larger gap before the
+    next group. For the 1280×720 scientific body, leave at least 16 px between
+    group text boxes (with 4 px inside a vertical heading–paragraph group).
+    If needed, place each heading beside its paragraph, widen the text region
+    or split the page; never shrink type or omit substantive content to fit.
+    Inspect the final PowerPoint render and keep comma-separated numbers and
+    Chinese closing punctuation from being stranded across lines.
+    Use braces only for genuine group membership and on at most one page
+    across the deck, and vary the arrangement
+    with the material. Filled labels, when used, share consistent dimensions
+    and are centered horizontally and vertically; labels inside circles must
+    likewise be centered on both axes within the circle. Omit decorative vertical
+    rules. Preserve meaningful content and agreed type sizes; change layout or
+    split the page if it cannot fit. The `figure_analysis` stacked, inline and braced
+    payloads are documented in `references/scientific-composition.md`.
+41. Plan and review actual page-level variety across the whole deck, including
+    alternating or nonconsecutive repeats. Vary structure, visual hierarchy,
+    and relative positions and sizes of figures, diagrams and text according to
+    the material. Changing only color, labels, braces or decorative lines does
+    not create a new layout. The existing three-consecutive-page check is a
+    minimum, not sufficient evidence of variety. Keep content density and a
+    coherent template identity; do not invent decoration to meet a quota.
+42. In a research-led deck, plan image diversity alongside layout diversity.
+    Gather enough individually sourced, relevant visuals to explain distinct
+    pages; vary perspective and medium when useful. Audit all body-page images
+    for exact or near-duplicate reuse, including nonadjacent pages, and replace
+    repetitions that do not serve the argument. Do not disrupt meaningful
+    same-location time-series or template-owned cover/chapter theme imagery.
+    Check the image's actual subject, time, source, credit and use conditions;
+    ensure captions and notes match any replacement. Preserve text and readable
+    paragraph grouping throughout.
+43. Size the visible figure for the observation the audience needs to make.
+    Check the actual fitted image, its important features, labels and legend
+    at presentation size. Use a larger frame, a dedicated comparison or fewer
+    panels if the evidence is too small. Keep comparison extent and scale
+    aligned where they carry meaning. Keep captions close to their figures,
+    preserve body type sizes and spacing, and review the rendered change.
+44. Use editable text for standalone wording and a source figure or a native
+    diagram for substantive evidence or relationships. Omit slide thumbnails
+    and generic boxes joined by arrows from body evidence positions. When
+    replacing such graphics, retain material information on the slide or
+    in the speaker notes. State supported observations and limits directly.

@@ -54,8 +54,10 @@ structure rather than inventing figures, metrics or stages to meet a range.
 figure_analysis:
   figure: <figure record>
   placement: auto | left | right | above  # optional; explicit legacy kind defaults to left
+  figure_width: <460–760 canvas px>  # optional beside text; preserve the actual figure aspect_ratio
+  fact_layout: stacked | inline | braced  # optional; stacked is the default
   facts: [<18 pt complementary statement>,
-          {heading: <brief role or claim>, text: <condition or interpretation>},
+          {heading: <brief role or claim>, text: <condition or interpretation>, group: <optional semantic group>},
           {value: <prominent estimate>, label: <denominator / condition>}]
 
 figure_comparison:
@@ -135,6 +137,36 @@ method_diagram:
   caption: <operation / relationship (Author et al., year)>
 ```
 
+For headed facts, `stacked` lays each heading close to its own paragraph and
+separates the blocks using their actual wrapped heights. On the 1280×720 canvas,
+the heading–paragraph gap is 4 px and the gap between group text boxes is at
+least 16 px. If stacked blocks cannot fit at that spacing, the renderer tries
+`inline` headings beside the paragraphs; authors may also select `inline`
+explicitly. All facts must have both heading and text for this fallback. Use
+these layouts for independent points without cutting explanation. `braced` is available beside a
+figure: every fact must have `heading`, `text` and `group`; facts in each group
+must be contiguous, with at least two groups and two facts per group. The group
+label is centered and the brace expresses that real relationship; it is not a
+decoration. None of these layouts silently reduces font size or omits content: if it
+cannot fit, choose a wider region, reorganize or split the page. A panoramic
+figure above the text supports `stacked` only. Use short group labels that fit.
+For a side-by-side page, `figure_width` can give the explanation more room;
+check that the figure and its labels remain legible in the actual render.
+Use the braced composition on at most one page across the whole deck, including
+across chapter boundaries. The academic authoring validator rejects a second
+`figure_analysis` page with `fact_layout: braced`.
+
+Where other compositions use filled labels, use consistent box geometry and
+center each label in both directions. Do not add a redundant vertical rule
+beside a label merely for decoration. Respect specific user visual preferences.
+
+Two- and three-panel figure comparisons share the same image band. Title,
+caption and interpretation bands use the tallest wrapped item in each role.
+Omit a title when the caption already identifies the panel. Supply the true
+`aspect_ratio` so the band can stop at the tallest fitted image. Pictures keep
+their proportions and align to the captions. Inspect render size and keep
+shared spatial extents, axes and units where comparison requires them.
+
 Parallel branches share an input and have no arrows suggesting a false sequence.
 Sequential stages use one closed block-arrow silhouette between stages.
 Use a native PowerPoint table for values and conditions that readers need to look up.
@@ -155,6 +187,13 @@ These are initial executable compositions, not a demand to make every paper
 look identical. For evidence requiring other geometry, extend and register the
 composer before using it, or use a compatible registered source-figure layout.
 Never solve layout repetition by relabeling an identical arrangement.
+
+Review visual variety across the full sequence, not just consecutive pages:
+alternating the same two compositions can also feel repetitive. Change the
+overall structure, relative prominence and placement of exhibits and text to
+fit each page's material; color, badges or decorative rules alone do not make
+a different layout. Maintain information density and the selected template's
+identity rather than forcing a fixed quota of arrangements.
 
 ## Render and review
 

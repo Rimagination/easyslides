@@ -5,6 +5,44 @@ declares image resources; the acquisition layer chooses a provider; the
 Executor consumes files from `project/images/` without knowing which provider
 created them.
 
+## Research-led visual variety
+
+1. **Plan the image around the page.** In the existing `page_brief.visual_rationale`
+   or source ledger, name what the audience should see or compare and what the
+   text adds. Verify the subject, location, observed time, units and scope
+   that matter to that claim. Label context photographs and teaching diagrams
+   by their role. A single photograph can show a state. A claim about change
+   needs comparable observations across time or another traceable source.
+2. **Search by observation.** Within the agreed source scope, gather a set
+   of independently useful candidate visuals before freezing layouts. Search
+   for the needed observation, viewpoint or comparison. Consider field
+   photographs, archival material, maps, surveys, satellite imagery, charts
+   and diagrams according to the content. Record page, visual purpose, subject,
+   observation date when known, creator, source locator, original URL and terms
+   in the existing ledger. Keep observation and publication dates distinct.
+3. **Choose the frame for the figure.** Use the visible image after aspect-ratio
+   fitting as the measure of its size. Check the feature the audience needs
+   to see, plus relevant labels, axis, scale and legend. If it is too small,
+   try a larger frame, a different composition, fewer panels or a relevant
+   detail with the source context preserved. Keep comparative panels at
+   comparable scale when the comparison depends on it.
+4. **Check the final renders.** Scan the whole deck for exact reuse and
+   visually near-identical images, including nonadjacent pages and crops.
+   Review the actual slides at presentation size for figure-to-content fit,
+   visible scale and caption proximity. Shared cover and section theme art
+   serves the template. Keep repeated evidence when comparing or revisiting
+   it adds a specific observation. Aligned images of the same area at different
+   dates remain a valid comparison. After a replacement, update the caption,
+   source credit and notes together. See the
+   [visual review workflow](../workflows/visual-review.md#review-scope).
+
+Use native text for standalone explanations. A miniature slide or a chain
+of text cards with generic arrows is a poor substitute for evidence. Use an
+editable diagram when shapes show a specific spatial relationship, comparison,
+mechanism or operation. Preserve the meaningful information when replacing a
+graphic. Keep points needed for reading on the slide and move supporting
+explanation to the notes as appropriate.
+
 ## Resource manifest
 
 Create a starter manifest with:

@@ -71,6 +71,10 @@ figures/tables for the selected evidence pages during research, before ImageGen;
 text-only literature notes are not a complete research-slide handoff.
 Keep figure IDs, captions, source page/URL and permission/license notes with each
 asset. Do not assume that a publicly readable paper grants unrestricted reuse.
+Plan candidate images around page-level observations and comparisons. Search
+for a wider range of relevant subjects and media when the project depends on
+original research. Follow the [figure sourcing and review rules](../references/image-acquisition.md#research-led-visual-variety)
+for purpose, attribution and reuse.
 Compare quantitative results only under compatible tasks, splits and metrics.
 Stop when the planned claims have sufficient traceable evidence and remaining
 gaps are explicit; do not invent metrics or illustrations that look like results.

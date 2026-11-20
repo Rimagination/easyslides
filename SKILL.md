@@ -82,6 +82,25 @@ claim and evidence. For `academic_general`, use its registered
 structures and comparisons. For that body, default to `composition.kind: auto`
 with a `reading_task` and the evidence needed for the task. See the
 [reading-task routing table](references/scientific-composition.md#choose-by-reading-task).
+For content-rich explanations, retain substantive text and group it visibly:
+keep each subheading close to its paragraph and leave clearly visible space
+between complete groups. In the default 1280×720 academic composition, use at
+least 16 px between group text boxes; if vertical stacks do not fit, use inline
+heading–paragraph groups, a wider text region or split the page without shrinking
+type or dropping substantive content. Check the rendered PPTX, not just boxes.
+Use braces only for actual semantic groups and on at most one page per deck;
+use consistent centered label boxes
+without decorative vertical rules. Apply these choices to the content, not as a
+mandatory page motif; see the figure-analysis layouts in the same reference.
+Layout variety means changing the overall composition across the deck, not
+merely changing a label, divider, color or ornament on an otherwise identical
+page. Plan visual structures according to each page's content and inspect all
+thumbnails for overused layouts, including alternating or nonconsecutive repeats.
+Plan visual variety in both composition and source material. Follow
+[research-led image acquisition and review](references/image-acquisition.md#research-led-visual-variety)
+for research and teaching decks. Choose images for a specific claim, observation
+or classroom task. Review relevance, readable figure size and reuse on the
+final renders before delivery, including when revising an existing deck.
 Other explicitly selected templates retain their
 own registered body contracts.
 The composer owns geometry and the normal SVG/DrawingML exporter owns output.

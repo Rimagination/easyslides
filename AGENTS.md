@@ -64,3 +64,11 @@ Run the shared PPTX text-layout validator and inspect rendered footers before
 delivery. Inconsistent counters are blocking. Raster-only or unrecognized
 counter formats require manual contract review; an automated pass alone does
 not establish pagination compliance.
+
+## Body figures
+
+For academic and teaching decks, use the
+[image acquisition and review rules](references/image-acquisition.md#research-led-visual-variety).
+Review figure-to-content fit and legibility in the final PPTX renders. Check
+the full sequence for unnecessary reuse, including nonadjacent pages.
+Use the selected template's rules for placement and text grouping.
