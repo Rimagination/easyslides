@@ -272,6 +272,22 @@ def _set_text(node: ET.Element, lines: list[str], *, bullet: bool, line_height: 
         tspan.text = f"• {line}" if bullet else line
 
 
+def _center_cover_band_title(root: ET.Element, nodes: dict[str, ET.Element], rendered_slots: list[str]) -> None:
+    band = next(node for node in root.iter() if node.get("id") == "title-band")
+    slots = ("TITLE", "SUBTITLE") if "SUBTITLE" in rendered_slots else ("TITLE",)
+    text_nodes = [slot_content_node(nodes[slot], "text") for slot in slots]
+    top = min(float(node.attrib["data-pptx-box-y"]) for node in text_nodes)
+    bottom = max(float(node.attrib["data-pptx-box-y"]) + float(node.attrib["data-pptx-box-h"])
+                 for node in text_nodes)
+    offset = float(band.attrib["y"]) + float(band.attrib["height"]) / 2 - (top + bottom) / 2
+    for node in text_nodes:
+        for attr in ("y", "data-pptx-box-y"):
+            node.set(attr, f"{float(node.attrib[attr]) + offset:g}")
+        node.set("data-center-lock", "true")
+    if len(text_nodes) == 1:
+        text_nodes[0].set("data-easyslides-center-container", "title-band")
+
+
 def _copy_image(source: Path, assets_dir: Path) -> str:
     digest = hashlib.sha256(str(source.resolve()).encode("utf-8")).hexdigest()[:10]
     target = assets_dir / f"{digest}_{source.name}"
@@ -465,6 +481,9 @@ def render_slide(
         else:
             raise SemanticTemplateError(f"unsupported slot kind {kind!r}")
         rendered_slots.append(slot_id)
+
+    if layout.get("layout_id") == "cover_blue_band":
+        _center_cover_band_title(root, nodes, rendered_slots)
 
     if layout.get("layout_id") == "scientific_composition":
         if not isinstance(slide.get("composition"), dict):
@@ -697,6 +716,8 @@ def render_deck(template_dir: Path, deck_plan_path: Path, output_dir: Path) -> d
         manifest["institution_logo"] = logo_selection
     if theme_selection is not None:
         manifest["theme_palette"] = theme_selection
+    if authoring_issues:
+        manifest["authoring_warnings"] = authoring_issues
     _write_json(output_dir / "render_manifest.json", manifest)
     return manifest
 

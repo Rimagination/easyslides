@@ -265,17 +265,21 @@ class AcademicPaperReportTemplateTests(unittest.TestCase):
             self.assertTrue(any("学术研究与成果汇报" in text for text in texts))
             self.assertTrue(any("汇报人：姓名" in text for text in texts))
 
-    def test_blue_band_cover_lowers_one_line_and_preserves_two_line_position(self):
+    def test_blue_band_cover_centers_visible_title_block_in_native_output(self):
         from scripts.svg_to_pptx.drawingml_converter import convert_svg_to_slide_shapes
 
         ns = {"p": "http://schemas.openxmlformats.org/presentationml/2006/main",
               "a": "http://schemas.openxmlformats.org/drawingml/2006/main"}
-        cases = ("学术论文汇报", "Attention Is All You Need",
-                 ["生物多样性变化", "与生态系统生产力"], "生物多样性变化\n与生态系统生产力")
-        for title in cases:
-            with self.subTest(title=title), tempfile.TemporaryDirectory() as tmp:
+        cases = (("学术论文汇报", False), ("Attention Is All You Need", True),
+                 (["生物多样性变化", "与生态系统生产力"], True),
+                 ("景观为何而变？\n从《易经》到景观生态学", False))
+        for title, with_subtitle in cases:
+            with self.subTest(title=title, subtitle=with_subtitle), tempfile.TemporaryDirectory() as tmp:
                 plan = json.loads((TEMPLATE / "examples" / "blue_band_cover.json").read_text(encoding="utf-8"))
-                plan["slides"][0]["slot_payload"]["TITLE"] = title
+                payload = plan["slides"][0]["slot_payload"]
+                payload["TITLE"] = title
+                if not with_subtitle:
+                    payload.pop("SUBTITLE")
                 work = Path(tmp)
                 output = work / "svg_output"
                 manifest = render_deck(TEMPLATE, write_plan(work, plan), output)
@@ -284,20 +288,24 @@ class AcademicPaperReportTemplateTests(unittest.TestCase):
                 node = next(n for n in root.iter() if n.get("data-slot") == "TITLE")
                 lines = title if isinstance(title, list) else title.splitlines()
                 self.assertEqual([n.text for n in node], lines)
-                baseline, top, height = (267, 209, 116) if len(lines) == 1 else (235, 145, 180)
-                self.assertEqual(tuple(float(node.get(key)) for key in
-                                       ("y", "data-pptx-box-y", "data-pptx-box-h")),
-                                 (baseline, top, height))
-                subtitle = next(n for n in root.iter() if n.get("data-slot") == "SUBTITLE")
-                self.assertEqual(subtitle.get("y"), "384")
+                expected_height = 116 if len(lines) == 1 else 180
+                xml_band = next(n for n in root.iter() if n.get("id") == "title-band")
+                band_y = float(xml_band.get("y")) + float(xml_band.get("height")) / 2
                 xml, _, _, _ = convert_svg_to_slide_shapes(svg)
                 slide = ET.fromstring(xml)
-                shape = next(n for n in slide.findall(".//p:sp", ns)
-                             if [t.text for t in n.findall(".//a:t", ns)] == lines)
-                transform = shape.find("p:spPr/a:xfrm", ns)
-                self.assertEqual(int(transform.find("a:off", ns).get("y")), top * 9525)
-                self.assertEqual(int(transform.find("a:ext", ns).get("cy")), height * 9525)
-                self.assertEqual(shape.find("p:txBody/a:bodyPr", ns).get("anchor"), "ctr")
+                boxes = []
+                for text in ([lines, [payload["SUBTITLE"]]] if with_subtitle else [lines]):
+                    shape = next(n for n in slide.findall(".//p:sp", ns)
+                                 if [t.text for t in n.findall(".//a:t", ns)] == text)
+                    offset = shape.find("p:spPr/a:xfrm/a:off", ns)
+                    extent = shape.find("p:spPr/a:xfrm/a:ext", ns)
+                    self.assertAlmostEqual((int(offset.get("x")) + int(extent.get("cx")) / 2) / 9525, 640, places=3)
+                    boxes.append((int(offset.get("y")) / 9525, int(extent.get("cy")) / 9525))
+                    self.assertEqual(shape.find("p:txBody/a:bodyPr", ns).get("anchor"), "ctr")
+                self.assertEqual(boxes[0][1], expected_height)
+                self.assertAlmostEqual((boxes[0][0] + sum(boxes[-1])) / 2, band_y, places=3)
+                if with_subtitle:
+                    self.assertAlmostEqual(boxes[1][0] - sum(boxes[0]), 5, places=3)
 
     def test_blue_band_cover_image_is_cropped_and_30_percent_transparent(self):
         from scripts.svg_to_pptx.drawingml_converter import convert_svg_to_slide_shapes

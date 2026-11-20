@@ -7,6 +7,7 @@ It checks declared evidence/structure, not whether a scientific claim is true.
 from __future__ import annotations
 
 import math
+import posixpath
 import re
 from typing import Callable, Any
 from xml.etree import ElementTree as ET
@@ -91,10 +92,14 @@ def _wrap(value: str, width: float, size: float) -> list[str]:
     result = []
     for paragraph in str(value).split('\n'):
         line = ''
-        # Keep author-year citations together; never strand a year or bracket.
-        for token in re.findall(r'\([^()\n]*\bet al\.[^()\n]*\)|[A-Za-z0-9_]+|\s+|.', paragraph):
+        # Keep citations and grouped numbers together, including 1,302.5.
+        for token in re.findall(r'\([^()\n]*\bet al\.[^()\n]*\)|\d{1,3}(?:,\d{3})+(?:\.\d+)?|[A-Za-z0-9_]+|\s+|.', paragraph):
             if line and estimate_text_width_px(line + token, size) > width - 6:
-                result.append(line.rstrip()); line = token.lstrip()
+                if token in '、，。；：！？）】》”’' and re.search(r'[\u4e00-\u9fff]$', line) and len(line) > 1:
+                    # Keep Chinese closing punctuation attached to a character.
+                    result.append(line[:-1].rstrip()); line = line[-1] + token
+                else:
+                    result.append(line.rstrip()); line = token.lstrip()
             else:
                 line += token
         result.append(line.rstrip())
@@ -142,29 +147,122 @@ def _arrow(parent, x1, x2, y, color):
     _node(parent, 'path', d=d, fill=color, filter='url(#layout-arrow-shadow)', data_layout_arrow='solid-block')
 
 
-def _figure(parent, box, figure, resolve):
+def _figure(parent, box, figure, resolve, *, alignment='xMidYMid'):
     x, y, w, h = box
     if not figure.get('path') or not figure.get('caption'):
         raise ValueError('Scientific figure requires path and substantive caption with author/year')
     href = resolve(str(figure['path']))
     _node(parent, 'image', x=x, y=y, width=w, height=h, href=href,
-          preserveAspectRatio='xMidYMid meet', data_evidence_source=figure.get('source_id', ''))
+          preserveAspectRatio=f'{alignment} meet', data_evidence_source=figure.get('source_id', ''))
 
 
-def _facts(parent, x, y, w, height, facts, color):
+def _facts(parent, x, y, w, height, facts, color, layout='stacked'):
     if not isinstance(facts, list) or not facts:
         raise ValueError('Figure analysis needs complementary facts, estimates or comparisons')
-    step = height / len(facts)
-    for i, fact in enumerate(facts):
-        top = y+i*step
+    if layout not in {'stacked', 'inline', 'braced'}:
+        raise ValueError(f'Unknown figure fact layout: {layout}')
+    headed = all(isinstance(f, dict) and 'heading' in f and 'text' in f for f in facts)
+    if layout == 'braced':
+        if not headed or any(not isinstance(f.get('group'), str) or not f['group'].strip() for f in facts):
+            raise ValueError('Braced facts require a meaningful group on every headed fact')
+        groups = []
+        for fact in facts:
+            if not groups or groups[-1][0] != fact['group']:
+                if any(label == fact['group'] for label, _ in groups):
+                    raise ValueError('Braced fact groups must be contiguous')
+                groups.append((fact['group'], []))
+            groups[-1][1].append(fact)
+        if len(groups) < 2 or any(len(items) < 2 for _, items in groups):
+            raise ValueError('Braced layout needs at least two groups with two or more facts each')
+        label_w, brace_w, heading_w, gap = 56, 20, 110, 12
+        body_x = x + label_w + brace_w + heading_w + gap
+        body_w = x + w - body_x
+        if body_w <= 0:
+            raise ValueError('Braced layout lacks text capacity; use a wider region or another layout')
+        group_heights = []
+        for label, items in groups:
+            row_heights = [max(len(_wrap(f['heading'], heading_w, 24)), len(_wrap(f['text'], body_w, 24))) * 31.2 for f in items]
+            group_heights.append((max(sum(row_heights) + 16 * (len(items)-1), len(_wrap(label, label_w, 24))*31.2), row_heights))
+        needed = sum(h for h, _ in group_heights) + 16 * (len(groups)-1)
+        if needed > height + 0.01:
+            raise ValueError('Braced facts exceed capacity; use a wider region or another layout')
+        group_gap = min(28, (height - sum(h for h, _ in group_heights)) / (len(groups)-1))
+        top = y
+        for (label, items), (group_h, rows) in zip(groups, group_heights):
+            _text(parent, x, top, label_w, group_h, label, bold=True, color=color, align='center', valign='middle')
+            bx = x + label_w + 5
+            mid, bottom = top + group_h/2, top + group_h
+            d = (f'M {bx+15} {top} C {bx+2} {top} {bx+5} {top+12} {bx+5} {mid-12} '
+                 f'C {bx+5} {mid-4} {bx} {mid} {bx-2} {mid} '
+                 f'C {bx} {mid} {bx+5} {mid+4} {bx+5} {mid+12} '
+                 f'C {bx+5} {bottom-12} {bx+2} {bottom} {bx+15} {bottom}')
+            _node(parent, 'path', d=d, fill='none', stroke=color, stroke_width=1.5, data_fact_brace='group')
+            row_y = top
+            for fact, row_h in zip(items, rows):
+                _text(parent, x+label_w+brace_w, row_y, heading_w, row_h, fact['heading'], role='body_heading', bold=True, color=color)
+                _text(parent, body_x, row_y, body_w, row_h, fact['text'])
+                row_y += row_h + 16
+            top += group_h + group_gap
+        return
+    if layout == 'inline' and not headed:
+        raise ValueError('Inline fact layout requires a heading and text for every fact')
+    if headed:
+        # Size each block from its real wrapped text; keep the title near its own
+        # paragraph and distribute the remaining space between blocks.
+        blocks = [(len(_wrap(f['heading'], w, 24))*31.2, len(_wrap(f['text'], w, 24))*31.2) for f in facts]
+        needed = sum(h + 4 + b for h, b in blocks) + max(0, len(facts)-1)*16
+        if layout == 'inline' or needed > height + 0.01:
+            heading_w = min(140, max(72, max(estimate_text_width_px(f['heading'], 24) for f in facts) + 10))
+            body_x = x + heading_w + 14
+            body_w = w - heading_w - 14
+            if body_w < 100:
+                raise ValueError('Inline grouped facts exceed capacity; use a wider region or another layout')
+            rows = [max(len(_wrap(f['heading'], heading_w, 24)), len(_wrap(f['text'], body_w, 24)))*31.2 for f in facts]
+            if sum(rows) + max(0, len(rows)-1)*16 > height + 0.01:
+                raise ValueError('Grouped facts exceed capacity; use a wider region or another layout')
+            gap = min(28, (height - sum(rows))/(len(rows)-1)) if len(rows) > 1 else 0
+            top = y
+            for fact, row_h in zip(facts, rows):
+                _text(parent, x, top, heading_w, row_h, fact['heading'], role='body_heading', bold=True, color=color)
+                _text(parent, body_x, top, body_w, row_h, fact['text'])
+                top += row_h + gap
+            return
+        group_gap = min(28, (height - sum(h + 4 + b for h, b in blocks)) / (len(facts)-1)) if len(facts) > 1 else 0
+        top = y
+        for fact, (heading_h, body_h) in zip(facts, blocks):
+            _text(parent, x, top, w, heading_h, fact['heading'], role='body_heading', bold=True, color=color)
+            _text(parent, x, top+heading_h+4, w, body_h, fact['text'])
+            top += heading_h + 4 + body_h + group_gap
+        return
+    # Mixed plain statements, headed explanations and estimates still need
+    # real inter-group spacing; measure their actual wrapped text, not slots.
+    blocks = []
+    for fact in facts:
         if isinstance(fact, str):
-            _text(parent, x, top, w, step-12, fact)
-        elif 'heading' in fact:
-            _text(parent, x, top, w, 32, fact['heading'], role='body_heading', bold=True, color=color)
-            _text(parent, x, top+38, w, step-46, fact['text'])
+            blocks.append(('plain', len(_wrap(fact, w, 24))*31.2, 0))
+        elif isinstance(fact, dict) and 'heading' in fact and 'text' in fact:
+            blocks.append(('heading', len(_wrap(fact['heading'], w, 24))*31.2,
+                           len(_wrap(fact['text'], w, 24))*31.2))
+        elif isinstance(fact, dict) and 'value' in fact and 'label' in fact:
+            blocks.append(('metric', len(_wrap(str(fact['value']), w, 40))*52,
+                           len(_wrap(str(fact['label']), w, 64/3))*(64/3)*1.3))
         else:
-            _text(parent, x, top, w, 56, str(fact['value']), role='display', bold=True, color=color)
-            _text(parent, x, top+60, w, step-66, str(fact['label']), role='secondary')
+            raise ValueError('A fact must be text, heading/text or value/label')
+    heights = [first + (4 + second if kind != 'plain' else 0) for kind, first, second in blocks]
+    if sum(heights) + max(0, len(facts)-1)*16 > height + 0.01:
+        raise ValueError('Grouped facts exceed capacity; use a wider region or another layout')
+    gap = min(28, (height-sum(heights))/(len(facts)-1)) if len(facts) > 1 else 0
+    top = y
+    for fact, (kind, first, second), block_h in zip(facts, blocks, heights):
+        if kind == 'plain':
+            _text(parent, x, top, w, first, fact)
+        elif kind == 'heading':
+            _text(parent, x, top, w, first, fact['heading'], role='body_heading', bold=True, color=color)
+            _text(parent, x, top+first+4, w, second, fact['text'])
+        else:
+            _text(parent, x, top, w, first, str(fact['value']), role='display', bold=True, color=color)
+            _text(parent, x, top+first+4, w, second, str(fact['label']), role='secondary')
+        top += block_h + gap
 
 
 def _metrics(parent, x, y, width, metrics, color):
@@ -385,7 +483,10 @@ def _paired_comparison(parent, composition, color, accent):
 
 def _figure_analysis(parent, composition, placement, resolve, color):
     fig, facts = composition['figure'], composition.get('facts')
+    fact_layout = composition.get('fact_layout', 'stacked')
     if placement == 'above':
+        if fact_layout != 'stacked':
+            raise ValueError('Inline or braced facts require a figure beside the text')
         if not isinstance(facts, list) or not 1 <= len(facts) <= 4:
             raise ValueError('Full-width figure analysis needs 1–4 complementary facts')
         _figure(parent, (64, 197, 1152, 298), fig, resolve)
@@ -397,12 +498,63 @@ def _figure_analysis(parent, composition, placement, resolve, color):
 
     # Aspect-informed width avoids squeezing compact figures into a banner.
     w = max(460, min(760, _figure_aspect(fig)*330+40))
+    if 'figure_width' in composition:
+        w = float(composition['figure_width'])
+        if not math.isfinite(w) or not 460 <= w <= 760:
+            raise ValueError('Figure width must be between 460 and 760 canvas pixels')
     caption_h = 88 if len(_wrap(fig['caption'], w, 56/3)) > 2 else 54
     caption_y = 662-caption_h
     figure_x, facts_x = (1216-w, 64) if placement == 'right' else (64, 64+w+42)
     _figure(parent, (figure_x, 204, w, caption_y-212), fig, resolve)
     _text(parent, figure_x, caption_y, w, caption_h, fig['caption'], role='caption', align='center')
-    _facts(parent, facts_x, 212, 1110-w, 428, facts, color)
+    _facts(parent, facts_x, 212, 1110-w, 428, facts, color, layout=fact_layout)
+
+
+def _comparison_band_height(values, width, size):
+    return math.ceil(max((len(_wrap(value, width, size)) for value in values if value), default=0) * size * 1.3)
+
+
+def _figure_comparison(parent, composition, resolve, color):
+    figures = composition.get('figures', [])
+    if not 2 <= len(figures) <= 4:
+        raise ValueError('Figure comparison requires 2–4 complementary panels')
+    legend = composition.get('legend')
+    if legend:
+        _text(parent, 64, 204, 1152, 34, legend, role='secondary')
+    if len(figures) == 4:
+        if any(fig.get('note') for fig in figures):
+            raise ValueError('Use fewer panels when each figure needs an interpretation note')
+        for i, fig in enumerate(figures):
+            x = 64+(i % 2)*592
+            y = (248+(i // 2)*204) if legend else (204+(i // 2)*224)
+            _text(parent, x, y, 560, 34, fig.get('title', ''), bold=True, color=color)
+            _figure(parent, (x, y+40, 560, 108 if legend else 130), fig, resolve)
+            _text(parent, x, y+(154 if legend else 176), 560, 50, fig['caption'], role='caption', align='center')
+        return
+
+    width = (1152-32*(len(figures)-1))/len(figures)
+    title_y = 248 if legend else 204
+    title_h = _comparison_band_height((fig.get('title') for fig in figures), width, 24)
+    caption_h = _comparison_band_height((fig['caption'] for fig in figures), width, 56/3)
+    note_h = _comparison_band_height((fig.get('note') for fig in figures), width, 64/3)
+    figure_y = title_y + (title_h+8 if title_h else 0)
+    figure_h = 662-note_h-caption_h-(9 if note_h else 0)-9-figure_y
+    if figure_h <= 0:
+        raise ValueError('Comparison text leaves no room for the figures; shorten captions or split the comparison')
+    if all('aspect_ratio' in fig for fig in figures):
+        # Stop at the tallest natural fit. A width-limited image gains nothing
+        # from a taller frame, which only pushes its caption away from the image.
+        figure_h = min(figure_h, max(width/_figure_aspect(fig) for fig in figures))
+    caption_y = figure_y+figure_h+9
+    note_y = caption_y+caption_h+9
+    for i, fig in enumerate(figures):
+        x = 64+i*(width+32)
+        if fig.get('title'):
+            _text(parent, x, title_y, width, title_h, fig['title'], bold=True, color=color)
+        _figure(parent, (x, figure_y, width, figure_h), fig, resolve, alignment='xMidYMax')
+        _text(parent, x, caption_y, width, caption_h, fig['caption'], role='caption', align='center')
+        if fig.get('note'):
+            _text(parent, x, note_y, width, note_h, fig['note'], role='secondary')
 
 
 def render_composition(composition: dict, *, image_resolver: Callable[[str], str], colors: dict) -> ET.Element:
@@ -425,30 +577,7 @@ def render_composition(composition: dict, *, image_resolver: Callable[[str], str
     elif kind == 'figure_analysis':
         _figure_analysis(parent, composition, placement, image_resolver, color)
     elif kind == 'figure_comparison':
-        figures = composition.get('figures', [])
-        if not 2 <= len(figures) <= 4:
-            raise ValueError('Figure comparison requires 2–4 complementary panels')
-        if len(figures) == 4 and any(fig.get('note') for fig in figures):
-            raise ValueError('Use fewer panels when each figure needs an interpretation note')
-        columns = 2 if len(figures) == 4 else len(figures)
-        w = (1152-32*(columns-1))/columns
-        legend = composition.get('legend')
-        if legend:
-            _text(parent, 64, 204, 1152, 34, legend, role='secondary')
-        for i, fig in enumerate(figures):
-            x = 64+(i % columns)*(w+32)
-            if len(figures) == 4:
-                y = (248+(i // columns)*204) if legend else (204+(i // columns)*224)
-                _text(parent, x, y, w, 34, fig.get('title', ''), bold=True, color=color)
-                _figure(parent, (x, y+40, w, 108 if legend else 130), fig, image_resolver)
-                _text(parent, x, y+(154 if legend else 176), w, 50, fig['caption'], role='caption', align='center')
-            else:
-                _text(parent, x, 244 if legend else 204, w, 32 if legend else 64, fig.get('title', ''), bold=True, color=color)
-                _figure(parent, (x, 274, w, 276), fig, image_resolver)
-                note = fig.get('note')
-                _text(parent, x, 553 if note else 566, w, 49 if note else 88, fig['caption'], role='caption', align='center')
-                if note:
-                    _text(parent, x, 606, w, 56, note, role='secondary')
+        _figure_comparison(parent, composition, image_resolver, color)
     elif kind == 'evidence_atlas':
         metrics, figures = composition.get('metrics', []), composition.get('figures', [])
         if not 2 <= len(metrics) <= 4 or not 1 <= len(figures) <= 3:
@@ -501,9 +630,12 @@ def validate_academic_authoring(plan: dict) -> list[dict]:
         issues.append(dict(code=code, severity=severity, message=message, path=path))
     source_map = plan.get('source_map', [])
     source_ids = {str(x.get('id')) for x in source_map if isinstance(x, dict)} if isinstance(source_map, list) else set(source_map)
-    if (plan.get('academic_brief') or {}).get('source_policy') not in {'supplied_only','research','hybrid'}:
+    source_policy = (plan.get('academic_brief') or {}).get('source_policy')
+    if source_policy not in {'supplied_only','research','hybrid'}:
         fail('NATIVE-SOURCE-POLICY', 'Resolve evidence scope with the user; do not invent permission or supplied-only constraints', 'academic_brief.source_policy')
     recent = []
+    first_braced_slide = None
+    first_figure_slide = {}
     for i, slide in enumerate(plan.get('slides', [])):
         if not isinstance(slide, dict) or slide.get('role') in FUNCTIONAL_ROLES: continue
         loc = f'slides[{i}]'
@@ -534,6 +666,11 @@ def validate_academic_authoring(plan: dict) -> list[dict]:
             fail('NATIVE-COMPOSITION', str(exc), f'{loc}.composition')
             recent.clear()
             continue
+        if kind == 'figure_analysis' and composition.get('fact_layout') == 'braced':
+            if first_braced_slide is not None:
+                fail('NATIVE-BRACE-REPETITION', f'Use the braced composition on at most one page per deck; first used at slides[{first_braced_slide}]', f'{loc}.composition.fact_layout')
+            else:
+                first_braced_slide = i
         recent.append((kind, placement))
         if len(recent) >= 3 and len(set(recent[-3:])) == 1:
             fail('NATIVE-LAYOUT-REPETITION', 'Three consecutive identical compositions require re-planning the visual argument', loc)
@@ -548,6 +685,13 @@ def validate_academic_authoring(plan: dict) -> list[dict]:
         for j, fig in enumerate(figures):
             if not isinstance(fig, dict) or not fig.get('path') or not fig.get('caption') or fig.get('source_id') not in source_ids or fig.get('source_id') not in refs:
                 fail('NATIVE-VISUAL-SOURCE', 'Scientific image requires a file, substantive caption and a source cited on this page', f'{loc}.composition.figures[{j}]')
+            elif source_policy in {'research', 'hybrid'}:
+                image_path = posixpath.normpath(str(fig['path']).replace('\\', '/'))
+                first = first_figure_slide.setdefault(image_path, i)
+                if first != i:
+                    fail('NATIVE-REUSED-FIGURE',
+                         f'Figure file also appears on slide {first+1}. Review whether this later use adds a comparison or interpretation.',
+                         f'{loc}.composition.figures[{j}]', severity='warning')
         if kind == 'method_diagram':
             for stage in composition.get('stages', []):
                 if (stage.get('visual') or {}).get('type') not in {'matrix','formula','groups'}:

@@ -38,3 +38,23 @@ python scripts/visual_review.py <deck.pptx> --out <project>/reports/visual_revie
 Inspect full-size slide previews for readability, alignment, missing assets,
 unexpected clipping, broken charts, and page rhythm. Contact sheets are useful
 for rhythm, but full-size slides remain authoritative for text overflow.
+
+For academic and teaching decks, use the page claim and source ledger alongside
+the final render:
+
+- Check that each figure shows the observation or comparison named on the slide.
+  Verify its caption, source, time and place where they matter. Identify evidence,
+  context and teaching figures by the job each performs.
+- Read the actual figure area after fitting. Ensure the audience can see the
+  relevant feature, labels, scale and legend. Check caption alignment and
+  paragraph spacing when enlarging it. Keep information that the audience needs
+  on screen and fuller explanations in the speaker notes.
+- Use the contact sheet to review repeated pictures, near-duplicate crops and
+  page compositions. Preserve common theme art and purposeful comparisons.
+  Note the related pages when deliberately returning to the same evidence.
+
+Record page numbers and concrete fixes in the existing review findings. Render
+again after changes and inspect the affected slides and their neighbors.
+Exact-path reuse warnings are a prompt to inspect the images. Visual review
+is needed to recognize near-duplicates and judge whether the figure fits the
+page and is readable.

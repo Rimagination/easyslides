@@ -113,11 +113,11 @@ The optional blue-band cover reproduces the user-supplied reference
 research-field line, full-width blue title panel, centered white title and
 subtitle, and lower presenter, affiliation and date. The band and labels are
 editable; no personal or institutional information is copied from the reference.
-The title has explicit one-/two-line geometry at the same font size: a single
-line is lowered by 32 canvas pixels (baseline y=267; textbox y=209, h=116),
-while two lines keep the original position (baseline y=235; textbox y=145,
-h=180). `layouts.json` supplies the multiline override to the semantic renderer;
-keep SVG previews and native textbox placement consistent. The subtitle stays fixed.
+The title uses a 116 px frame for one line and a 180 px frame for two lines at
+the same font size. The semantic renderer centers the full title block within
+the 330 px band after resolving optional slots. A visible subtitle joins the
+block with its existing spacing. The SVG baselines and editable PowerPoint
+frames move together.
 Select it with `layout_id: cover_blue_band`. When a topic image is selected
 and the cover layout is unspecified, the renderer also chooses this cover if
 the supplied fields fit; an explicit layout or incompatible legacy fields keep
@@ -169,6 +169,31 @@ and their icons; the ending has no footer or page number. Existing ending
 payloads containing reference fields continue to use `10_ending.svg`.
 
 ## Scientific narrative and body composition
+
+Deck-wide variety concerns the composition of the whole page: image/text
+placement and proportion, hierarchy, and the choice of comparison, diagram,
+process or figure-led arrangements. Changing only decorative details does not
+change the layout. Review thumbnails for overuse throughout the deck, including
+alternating repeats, while matching each page to its content and retaining a
+coherent theme and substantive information.
+
+Visual variety includes image subject and provenance, not only placement.
+For researched subjects, gather a diverse, relevant source set: for example,
+field photographs, aerial images, maps, archival objects, and scientific
+diagrams when each helps explain its page. Review the full deck for reused or
+visually near-identical body images. Reuse a visual only for a clear narrative
+reason, such as a deliberately continued case, and prefer a different view when
+that preserves meaning. Legitimate same-place temporal comparisons and the
+template's common theme imagery remain intact. Document credits and image dates.
+
+Give evidence space according to the feature the audience needs to see.
+Use the fitted picture area to judge scale. On a two- or three-panel comparison,
+the template sizes the title, caption and interpretation bands to their actual
+text. It gives the remaining space to aligned, aspect-preserving figures and
+keeps their lower edges next to the caption band. Use a larger composition or
+fewer panels if source annotations remain too small. For a visual with no
+independent evidence or relationship, use readable native copy and choose
+another relevant visual when appropriate.
 
 Connections between layout stages use editable solid block arrows: broad shaft,
 triangular head, theme accent, no outline and a light soft shadow. Center them
@@ -224,3 +249,17 @@ rejects inconsistent caller values. There is no footer divider. Show a source
 on the left on first appearance only; retain distinct citations and scientific
 figure locators in the content and source records. Validate the exported PPTX
 and inspect rendered footers before delivery.
+
+For content-rich explanations, use clearly separated heading–paragraph groups;
+on the 1280×720 scientific body, keep group text boxes at least 16 px apart
+and vertical headings 4 px from their own paragraph. Inline headings can retain
+the explanation and a clear group gap when a vertical stack cannot fit. Check
+actual PowerPoint renders and keep numbers and Chinese punctuation together.
+When there is a real grouping relationship, a brace can join related points on
+at most one page across the deck.
+Filled labels use consistent geometry and centered text in both directions;
+text inside a circle is also centered horizontally and vertically within it,
+without an ornamental vertical line. Retain the relevant explanation at the
+specified type sizes; choose a different composition or split the page if needed.
+The editable figure-analysis variants and constraints are defined in
+`references/scientific-composition.md`.

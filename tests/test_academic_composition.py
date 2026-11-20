@@ -11,6 +11,115 @@ ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = ROOT / 'templates/layouts/academic_general'
 
 
+def test_figure_interpretations_preserve_content_and_separate_text_groups():
+    from scripts.academic_composition import render_composition
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    facts = [{'heading': h, 'text': '景观中不同要素之间具有动态联系，变化需要结合时空尺度观察。'}
+             for h in ['符号结构', '取象', '观察方式', '解释边界']]
+    composition = {'kind': 'figure_analysis', 'figure': {'path': 'f.png', 'caption': '示意图', 'aspect_ratio': 1}, 'facts': facts}
+    root = render_composition(composition, image_resolver=lambda _: 'f.png', colors={})
+    texts = [node for node in root.findall('.//s:text', ns) if node.get('data-text-role') != 'caption']
+    assert len(texts) == 8
+    for index, fact in enumerate(facts):
+        heading, body = texts[2 * index:2 * index + 2]
+        assert ''.join(heading.itertext()) == fact['heading']
+        assert ''.join(body.itertext()) == fact['text']
+        assert heading.get('data-pptx-textbox') == body.get('data-pptx-textbox') == 'true'
+        if index:
+            previous = texts[2 * index - 1]
+            assert float(heading.get('data-pptx-box-y')) - (float(previous.get('data-pptx-box-y')) + float(previous.get('data-pptx-box-h'))) >= 16 - 0.01
+
+
+def test_dense_facts_use_spaced_inline_groups_when_stacked_cannot_fit():
+    from scripts.academic_composition import render_composition
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    facts = [{'heading': h, 'text': '景观中不同要素之间具有动态联系，变化需要结合时空尺度观察。'}
+             for h in ['符号结构', '取象', '观察方式', '解释边界']]
+    c = {'kind': 'figure_analysis', 'figure': {'path': 'f.png', 'caption': '示意图', 'aspect_ratio': 1}, 'facts': facts}
+    root = render_composition(c, image_resolver=lambda _: 'f.png', colors={})
+    texts = [n for n in root.findall('.//s:text', ns) if n.get('data-text-role') != 'caption']
+    for i, fact in enumerate(facts):
+        heading, body = texts[2*i:2*i+2]
+        assert ''.join(body.itertext()) == fact['text']
+        assert float(heading.get('data-pptx-box-y')) == float(body.get('data-pptx-box-y'))
+        assert float(heading.get('data-pptx-box-x')) < float(body.get('data-pptx-box-x'))
+        if i:
+            prev = texts[2*i-1]
+            assert float(body.get('data-pptx-box-y')) - (float(prev.get('data-pptx-box-y')) + float(prev.get('data-pptx-box-h'))) >= 16 - 0.01
+
+
+def test_comma_separated_numbers_never_break_across_lines():
+    from scripts.academic_composition import _wrap
+    text = '面积由约 308 增至 1,302 平方千米。'
+    for width in (100, 130, 160, 190, 220):
+        lines = _wrap(text, width, 24)
+        assert any('1,302' in line for line in lines)
+
+
+def test_inline_fact_layout_rejects_unfittable_text_instead_of_shrinking():
+    import pytest
+    from scripts.academic_composition import render_composition
+    composition = {'kind': 'figure_analysis', 'figure': {'path': 'f.png', 'caption': '示意图', 'aspect_ratio': 1},
+                   'fact_layout': 'inline', 'facts': [{'heading': '条件', 'text': '说明' * 500}]}
+    with pytest.raises(ValueError, match='capacity'):
+        render_composition(composition, image_resolver=lambda _: 'f.png', colors={})
+
+
+def test_mixed_fact_groups_also_get_visible_separation():
+    from scripts.academic_composition import render_composition
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    c = {'kind': 'figure_analysis', 'figure': {'path': 'f.png', 'caption': '示意图', 'aspect_ratio': 1},
+         'facts': ['景观尺度决定观测范围。', {'heading': '条件', 'text': '同时观察空间配置。'},
+                   {'value': '308', 'label': '平方千米'}]}
+    root = render_composition(c, image_resolver=lambda _: 'f.png', colors={})
+    texts = [n for n in root.findall('.//s:text', ns) if n.get('data-text-role') != 'caption']
+    def gap(first, second):
+        return float(second.get('data-pptx-box-y')) - float(first.get('data-pptx-box-y')) - float(first.get('data-pptx-box-h'))
+    assert gap(texts[0], texts[1]) >= 16 - .01
+    assert gap(texts[2], texts[3]) >= 16 - .01
+
+
+def test_braces_require_real_groups_and_keep_all_text_editable():
+    import pytest
+    from scripts.academic_composition import render_composition
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    facts = [{'heading': h, 'text': '观测自然现象并解释景观变化。', 'group': group}
+             for h, group in [('结构', '传统表达'), ('取象', '传统表达'), ('观察', '课堂运用'), ('边界', '课堂运用')]]
+    composition = {'kind': 'figure_analysis', 'figure': {'path': 'f.png', 'caption': '示意图', 'aspect_ratio': 1}, 'facts': facts, 'fact_layout': 'braced'}
+    root = render_composition(composition, image_resolver=lambda _: 'f.png', colors={})
+    assert len(root.findall('.//s:path[@data-fact-brace]', ns)) == 2
+    text = ''.join(''.join(node.itertext()) for node in root.findall('.//s:text', ns))
+    assert all(fact['heading'] in text and fact['text'] in text for fact in facts)
+    assert all(node.get('data-pptx-textbox') == 'true' for node in root.findall('.//s:text', ns))
+    composition['facts'][1]['group'] = '课堂运用'
+    with pytest.raises(ValueError, match='contiguous|group'):
+        render_composition(composition, image_resolver=lambda _: 'f.png', colors={})
+
+
+def test_wrapped_chinese_punctuation_does_not_start_a_line():
+    from scripts.academic_composition import _wrap
+    text = '阳爻为连续线，阴爻为断线；不同组合形成乾、坤、震、巽、坎、离、艮、兑。'
+    lines = _wrap(text, 650, 24)
+    assert ''.join(lines) == text
+    assert len(lines) > 1
+    assert not any(line.startswith(('、', '，', '。', '；', '：', '！', '？', '）', '”')) for line in lines)
+
+
+def test_braced_composition_is_limited_to_one_page_across_the_deck():
+    from scripts.academic_composition import validate_academic_authoring
+    plan = plan_fixture()
+    figure = {'kind': 'figure_analysis', 'figure': {'path': 'f.png', 'source_id': 'paper', 'caption': '示意图'},
+              'facts': [{'heading': '结构', 'text': '内容', 'group': '第一组'}], 'fact_layout': 'braced'}
+    first = deepcopy(plan['slides'][0])
+    first['composition'] = figure
+    second = deepcopy(first)
+    plan['slides'] = [first, {'role': 'chapter'}, second]
+    codes = {issue['code'] for issue in validate_academic_authoring(plan)}
+    assert 'NATIVE-BRACE-REPETITION' in codes
+    second['composition']['fact_layout'] = 'stacked'
+    assert 'NATIVE-BRACE-REPETITION' not in {issue['code'] for issue in validate_academic_authoring(plan)}
+
+
 def plan_fixture():
     return {
         'authoring_contract': 'academic_native.v1', 'template_id': 'academic_general',
@@ -77,6 +186,43 @@ def test_native_contract_checks_visual_sources_and_repeated_composition():
     codes = {x['code'] for x in validate_academic_authoring(p)}
     assert 'NATIVE-VISUAL-SOURCE' in codes
     assert 'NATIVE-LAYOUT-REPETITION' in codes
+
+
+def test_two_panel_comparison_uses_free_space_and_keeps_captions_with_images():
+    from scripts.academic_composition import render_composition
+    figures = [
+        {'path': 'before.png', 'caption': '2000 年 8 月', 'aspect_ratio': 1},
+        {'path': 'after.png', 'caption': '2014 年 8 月', 'aspect_ratio': 1},
+    ]
+    ns = {'s': 'http://www.w3.org/2000/svg'}
+    root = render_composition({'kind': 'figure_comparison', 'figures': figures},
+                              image_resolver=str, colors={})
+    images = root.findall('s:image', ns)
+    captions = root.findall("s:text[@data-text-role='caption']", ns)
+    assert len(images) == len(captions) == 2
+    for image, caption in zip(images, captions):
+        assert float(image.get('y')) == 204
+        assert float(image.get('height')) > 276
+        assert image.get('preserveAspectRatio') == 'xMidYMax meet'
+        assert float(caption.get('data-pptx-box-y')) == float(image.get('y')) + float(image.get('height')) + 9
+
+
+def test_researched_plan_flags_reuse_of_the_same_file_across_pages():
+    from scripts.academic_composition import validate_academic_authoring
+    plan = plan_fixture()
+    plan['academic_brief']['source_policy'] = 'research'
+    first = plan['slides'][0]
+    first['composition'] = {'kind': 'figure_analysis', 'facts': ['同一范围内的岸线'],
+                            'figure': {'path': 'images/before.png', 'caption': '2000 年', 'source_id': 'paper'}}
+    second = deepcopy(first)
+    second['composition']['figure'].update(path='images/after.png', caption='2014 年')
+    third = deepcopy(first)
+    third['composition']['figure']['path'] = './images\\before.png'
+    plan['slides'] = [first, second, third]
+    reused = [issue for issue in validate_academic_authoring(plan) if issue['code'] == 'NATIVE-REUSED-FIGURE']
+    assert len(reused) == 1
+    assert reused[0]['severity'] == 'warning'
+    assert reused[0]['path'].startswith('slides[2]')
 
 
 def test_composition_text_never_silently_shrinks_or_overflows():
